@@ -2,7 +2,7 @@
 
 A project to track how interconnected global forces — AI, labor, governance, economics, climate, and information systems — appear in the news, and to surface the connections between them that most coverage misses.
 
-Built by [Elise Hasseltine](https://elise-centerfortomorrow.netlify.app/) as research infrastructure for the [Center for Tomorrow](https://www.centerfortomorrow.com/).
+Built by [Elise Hasseltine](https://www.elisehasseltine.com/).
 
 ## What it does
 

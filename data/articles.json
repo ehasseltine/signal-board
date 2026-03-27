@@ -1,40 +1,55 @@
 {
-  "last_updated": "2026-03-27T23:15:33Z",
+  "last_updated": "2026-03-27T23:46:16Z",
   "stats": {
     "total_articles": 479,
     "total_sources": 27,
-    "cross_domain_count": 26,
-    "today_count": 127,
+    "cross_domain_count": 143,
+    "today_count": 123,
     "domains": {
       "ai": {
         "label": "AI",
-        "count": 7,
-        "today": 1
+        "count": 6,
+        "today": 0
       },
       "labor": {
         "label": "Labor",
-        "count": 36,
+        "count": 38,
         "today": 7
       },
       "governance": {
         "label": "Governance",
-        "count": 31,
-        "today": 9
+        "count": 30,
+        "today": 8
       },
       "information": {
         "label": "Information",
-        "count": 32,
+        "count": 33,
         "today": 7
       },
       "economics": {
         "label": "Economics",
-        "count": 31,
-        "today": 6
+        "count": 30,
+        "today": 5
       },
       "climate": {
         "label": "Climate",
         "count": 65,
-        "today": 19
+        "today": 18
+      },
+      "security": {
+        "label": "Security",
+        "count": 143,
+        "today": 38
+      },
+      "geopolitics": {
+        "label": "Geopolitics",
+        "count": 57,
+        "today": 29
+      },
+      "domestic_politics": {
+        "label": "Politics",
+        "count": 77,
+        "today": 17
       }
     },
     "by_tier": {
@@ -45,6 +60,21 @@
   },
   "articles": [
     {
+      "id": "beaca8e59559",
+      "title": "When Will TSA Workers Be Paid? Here’s What We Know",
+      "url": "https://www.nytimes.com/2026/03/27/us/politics/tsa-pay.html",
+      "summary": "President Trump on Friday directed the Homeland Security Department to pay thousands of airport security officers.",
+      "source": "New York Times",
+      "tier": "national",
+      "region": "us",
+      "domains": [
+        "labor"
+      ],
+      "cross_domain": false,
+      "date": "2026-03-28",
+      "ingested": "2026-03-27T23:45:51Z"
+    },
+    {
       "id": "57b4a8d7c7c5",
       "title": "Stocks Keep Falling as Investor Lose Patience With the War in Iran",
       "url": "https://www.nytimes.com/2026/03/27/business/iran-war-stock-market-investors.html",
@@ -53,11 +83,12 @@
       "tier": "national",
       "region": "us",
       "domains": [
-        "economics"
+        "economics",
+        "security"
       ],
-      "cross_domain": false,
+      "cross_domain": true,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:07Z"
+      "ingested": "2026-03-27T23:45:51Z"
     },
     {
       "id": "750e8745acb8",
@@ -67,10 +98,12 @@
       "source": "New York Times",
       "tier": "national",
       "region": "us",
-      "domains": [],
+      "domains": [
+        "security"
+      ],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:07Z"
+      "ingested": "2026-03-27T23:45:51Z"
     },
     {
       "id": "7abc535bcef7",
@@ -80,10 +113,12 @@
       "source": "New York Times",
       "tier": "national",
       "region": "us",
-      "domains": [],
+      "domains": [
+        "security"
+      ],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:07Z"
+      "ingested": "2026-03-27T23:45:51Z"
     },
     {
       "id": "324f8bdf171a",
@@ -93,10 +128,13 @@
       "source": "New York Times",
       "tier": "national",
       "region": "us",
-      "domains": [],
-      "cross_domain": false,
+      "domains": [
+        "security",
+        "domestic_politics"
+      ],
+      "cross_domain": true,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:07Z"
+      "ingested": "2026-03-27T23:45:51Z"
     },
     {
       "id": "2216ee668314",
@@ -109,7 +147,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:07Z"
+      "ingested": "2026-03-27T23:45:51Z"
     },
     {
       "id": "429e2d785c33",
@@ -120,11 +158,13 @@
       "tier": "national",
       "region": "us",
       "domains": [
-        "labor"
+        "labor",
+        "security",
+        "domestic_politics"
       ],
-      "cross_domain": false,
+      "cross_domain": true,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:07Z"
+      "ingested": "2026-03-27T23:45:51Z"
     },
     {
       "id": "6d3bfc480921",
@@ -134,10 +174,12 @@
       "source": "New York Times",
       "tier": "national",
       "region": "us",
-      "domains": [],
+      "domains": [
+        "domestic_politics"
+      ],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:07Z"
+      "ingested": "2026-03-27T23:45:51Z"
     },
     {
       "id": "ea0e27f7419c",
@@ -147,10 +189,13 @@
       "source": "New York Times",
       "tier": "national",
       "region": "us",
-      "domains": [],
-      "cross_domain": false,
+      "domains": [
+        "security",
+        "domestic_politics"
+      ],
+      "cross_domain": true,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:07Z"
+      "ingested": "2026-03-27T23:45:51Z"
     },
     {
       "id": "21ab9978f85a",
@@ -163,7 +208,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:07Z"
+      "ingested": "2026-03-27T23:45:51Z"
     },
     {
       "id": "08d4e1be14e0",
@@ -176,7 +221,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:07Z"
+      "ingested": "2026-03-27T23:45:51Z"
     },
     {
       "id": "4a816580400a",
@@ -189,7 +234,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:07Z"
+      "ingested": "2026-03-27T23:45:51Z"
     },
     {
       "id": "eeac1638d7f2",
@@ -202,7 +247,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:07Z"
+      "ingested": "2026-03-27T23:45:51Z"
     },
     {
       "id": "71fbbd75a267",
@@ -212,10 +257,12 @@
       "source": "New York Times",
       "tier": "national",
       "region": "us",
-      "domains": [],
+      "domains": [
+        "domestic_politics"
+      ],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:07Z"
+      "ingested": "2026-03-27T23:45:51Z"
     },
     {
       "id": "c8e9c982d89b",
@@ -225,10 +272,12 @@
       "source": "New York Times",
       "tier": "national",
       "region": "us",
-      "domains": [],
+      "domains": [
+        "security"
+      ],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:07Z"
+      "ingested": "2026-03-27T23:45:51Z"
     },
     {
       "id": "e4440e00692c",
@@ -238,10 +287,12 @@
       "source": "New York Times",
       "tier": "national",
       "region": "us",
-      "domains": [],
+      "domains": [
+        "domestic_politics"
+      ],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:07Z"
+      "ingested": "2026-03-27T23:45:51Z"
     },
     {
       "id": "e0bcaea5e47e",
@@ -252,11 +303,12 @@
       "tier": "national",
       "region": "us",
       "domains": [
-        "governance"
+        "governance",
+        "domestic_politics"
       ],
-      "cross_domain": false,
+      "cross_domain": true,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:07Z"
+      "ingested": "2026-03-27T23:45:51Z"
     },
     {
       "id": "9ce85977636b",
@@ -266,10 +318,12 @@
       "source": "New York Times",
       "tier": "national",
       "region": "us",
-      "domains": [],
+      "domains": [
+        "domestic_politics"
+      ],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:07Z"
+      "ingested": "2026-03-27T23:45:51Z"
     },
     {
       "id": "22cbe42b2ee6",
@@ -282,7 +336,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:07Z"
+      "ingested": "2026-03-27T23:45:51Z"
     },
     {
       "id": "3904e78ef073",
@@ -297,20 +351,7 @@
       ],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:07Z"
-    },
-    {
-      "id": "4aabaa7e1bbb",
-      "title": "Overlooked No More: Gertrude Chandler Warner, Author of ‘The Boxcar Children’",
-      "url": "https://www.nytimes.com/2026/03/27/obituaries/gertrude-chandler-warner-overlooked.html",
-      "summary": "Her best-selling series, about four children who live in a train car and solve mysteries, inspired sequels, spinoffs and animated films.",
-      "source": "New York Times",
-      "tier": "national",
-      "region": "us",
-      "domains": [],
-      "cross_domain": false,
-      "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:07Z"
+      "ingested": "2026-03-27T23:45:51Z"
     },
     {
       "id": "c51fa170e51b",
@@ -323,7 +364,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:18Z"
+      "ingested": "2026-03-27T23:46:01Z"
     },
     {
       "id": "900afb2026ed",
@@ -336,7 +377,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:18Z"
+      "ingested": "2026-03-27T23:46:01Z"
     },
     {
       "id": "cb4d6629ad81",
@@ -346,10 +387,12 @@
       "source": "AP News",
       "tier": "national",
       "region": "us",
-      "domains": [],
+      "domains": [
+        "domestic_politics"
+      ],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:18Z"
+      "ingested": "2026-03-27T23:46:01Z"
     },
     {
       "id": "2321324b255b",
@@ -362,7 +405,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:18Z"
+      "ingested": "2026-03-27T23:46:01Z"
     },
     {
       "id": "8f18a3c266a8",
@@ -372,10 +415,13 @@
       "source": "AP News",
       "tier": "national",
       "region": "us",
-      "domains": [],
-      "cross_domain": false,
+      "domains": [
+        "security",
+        "domestic_politics"
+      ],
+      "cross_domain": true,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:18Z"
+      "ingested": "2026-03-27T23:46:01Z"
     },
     {
       "id": "088055f5f27c",
@@ -385,10 +431,12 @@
       "source": "NPR",
       "tier": "national",
       "region": "us",
-      "domains": [],
+      "domains": [
+        "security"
+      ],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:19Z"
+      "ingested": "2026-03-27T23:46:02Z"
     },
     {
       "id": "3381b9e6f80b",
@@ -398,10 +446,12 @@
       "source": "NPR",
       "tier": "national",
       "region": "us",
-      "domains": [],
+      "domains": [
+        "domestic_politics"
+      ],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:19Z"
+      "ingested": "2026-03-27T23:46:02Z"
     },
     {
       "id": "0bbfbfee093a",
@@ -414,7 +464,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:19Z"
+      "ingested": "2026-03-27T23:46:02Z"
     },
     {
       "id": "d50d5bc138fa",
@@ -424,10 +474,13 @@
       "source": "NPR",
       "tier": "national",
       "region": "us",
-      "domains": [],
-      "cross_domain": false,
+      "domains": [
+        "security",
+        "domestic_politics"
+      ],
+      "cross_domain": true,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:19Z"
+      "ingested": "2026-03-27T23:46:02Z"
     },
     {
       "id": "889109f32803",
@@ -438,11 +491,12 @@
       "tier": "national",
       "region": "us",
       "domains": [
-        "information"
+        "information",
+        "security"
       ],
-      "cross_domain": false,
+      "cross_domain": true,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:19Z"
+      "ingested": "2026-03-27T23:46:02Z"
     },
     {
       "id": "bf628aa5486c",
@@ -454,11 +508,43 @@
       "region": "us",
       "domains": [
         "economics",
-        "climate"
+        "climate",
+        "security"
       ],
       "cross_domain": true,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:19Z"
+      "ingested": "2026-03-27T23:46:02Z"
+    },
+    {
+      "id": "1ddf473012e3",
+      "title": "Wall Street Week | China’s Role in Iran War, Global Fertilizer Disruptions, Matcha’s Supply Problem",
+      "url": "https://www.bloomberg.com/news/videos/2026-03-27/wall-street-week-global-fertilizer-supply-disruptions-video",
+      "summary": "This week, the Fed holds rates steady, anticipating greater uncertainty and higher prices as war in Iran drives up fertilizer and fuel costs. Plus, letting first-time homebuyers tap retirement savings might ease down payments, but it can also fuel demand and push home prices higher. Later, can farmers respond quickly enough when social media spikes demand for their produce, or do viral trends create more risk than opportunity? (Source: Bloomberg)",
+      "source": "Bloomberg",
+      "tier": "national",
+      "region": "us",
+      "domains": [
+        "information",
+        "economics",
+        "security",
+        "geopolitics"
+      ],
+      "cross_domain": true,
+      "date": "2026-03-28",
+      "ingested": "2026-03-27T23:46:03Z"
+    },
+    {
+      "id": "674dafd8b14a",
+      "title": "The Close 3/27/2026",
+      "url": "https://www.bloomberg.com/news/videos/2026-03-27/the-close-3-27-2026-video",
+      "summary": "Bloomberg Television brings you the latest news and analysis leading up to the final minutes and seconds before and after the closing bell on Wall Street. Today's guests are Morgan Stanley’s Jim Caron, Los Angeles Mayor Karen Bass, Bernstein Research’s Stacy Rasgon, TWG Global Managing Partner Amos Hochstein, Envestnet’s Dana D’Auria, Bokeh Capital Partners’ Kim Forrest, Citi’s Michael Anderson, Evercore ISI’s Sarah Bianchi. (Source: Bloomberg)",
+      "source": "Bloomberg",
+      "tier": "national",
+      "region": "us",
+      "domains": [],
+      "cross_domain": false,
+      "date": "2026-03-28",
+      "ingested": "2026-03-27T23:46:03Z"
     },
     {
       "id": "f5b9baee864a",
@@ -474,7 +560,7 @@
       ],
       "cross_domain": true,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:20Z"
+      "ingested": "2026-03-27T23:46:03Z"
     },
     {
       "id": "59874359a198",
@@ -487,7 +573,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:20Z"
+      "ingested": "2026-03-27T23:46:03Z"
     },
     {
       "id": "a07e8d4d405a",
@@ -497,10 +583,13 @@
       "source": "Bloomberg",
       "tier": "national",
       "region": "us",
-      "domains": [],
-      "cross_domain": false,
+      "domains": [
+        "security",
+        "domestic_politics"
+      ],
+      "cross_domain": true,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:20Z"
+      "ingested": "2026-03-27T23:46:03Z"
     },
     {
       "id": "56483f7e4cae",
@@ -516,7 +605,7 @@
       ],
       "cross_domain": true,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:20Z"
+      "ingested": "2026-03-27T23:46:03Z"
     },
     {
       "id": "9e66de2a4ed3",
@@ -529,7 +618,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:20Z"
+      "ingested": "2026-03-27T23:46:03Z"
     },
     {
       "id": "5e6c3d6a04e1",
@@ -539,10 +628,12 @@
       "source": "Bloomberg",
       "tier": "national",
       "region": "us",
-      "domains": [],
+      "domains": [
+        "security"
+      ],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:20Z"
+      "ingested": "2026-03-27T23:46:03Z"
     },
     {
       "id": "ce591ef6ab29",
@@ -553,11 +644,12 @@
       "tier": "national",
       "region": "us",
       "domains": [
-        "information"
+        "information",
+        "security"
       ],
-      "cross_domain": false,
+      "cross_domain": true,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:20Z"
+      "ingested": "2026-03-27T23:46:03Z"
     },
     {
       "id": "77995fb8696e",
@@ -570,7 +662,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:20Z"
+      "ingested": "2026-03-27T23:46:03Z"
     },
     {
       "id": "d893e29b852d",
@@ -583,7 +675,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:20Z"
+      "ingested": "2026-03-27T23:46:03Z"
     },
     {
       "id": "e6ac3d617e22",
@@ -596,7 +688,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:20Z"
+      "ingested": "2026-03-27T23:46:03Z"
     },
     {
       "id": "d8b118fbbe30",
@@ -609,7 +701,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:20Z"
+      "ingested": "2026-03-27T23:46:03Z"
     },
     {
       "id": "f86749c47f7a",
@@ -619,10 +711,12 @@
       "source": "Bloomberg",
       "tier": "national",
       "region": "us",
-      "domains": [],
+      "domains": [
+        "domestic_politics"
+      ],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:20Z"
+      "ingested": "2026-03-27T23:46:03Z"
     },
     {
       "id": "7f36de70048f",
@@ -635,7 +729,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:20Z"
+      "ingested": "2026-03-27T23:46:03Z"
     },
     {
       "id": "f280d6a9c6b0",
@@ -647,11 +741,12 @@
       "region": "us",
       "domains": [
         "information",
-        "climate"
+        "climate",
+        "security"
       ],
       "cross_domain": true,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:20Z"
+      "ingested": "2026-03-27T23:46:03Z"
     },
     {
       "id": "b66a615f5b64",
@@ -664,7 +759,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:20Z"
+      "ingested": "2026-03-27T23:46:03Z"
     },
     {
       "id": "d4427d7f7b94",
@@ -677,7 +772,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:20Z"
+      "ingested": "2026-03-27T23:46:03Z"
     },
     {
       "id": "d7f81f3752d2",
@@ -688,11 +783,12 @@
       "tier": "national",
       "region": "us",
       "domains": [
-        "climate"
+        "climate",
+        "geopolitics"
       ],
-      "cross_domain": false,
+      "cross_domain": true,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:20Z"
+      "ingested": "2026-03-27T23:46:03Z"
     },
     {
       "id": "cc964b262265",
@@ -705,7 +801,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:20Z"
+      "ingested": "2026-03-27T23:46:03Z"
     },
     {
       "id": "a8c3f0c80885",
@@ -718,7 +814,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:20Z"
+      "ingested": "2026-03-27T23:46:03Z"
     },
     {
       "id": "eae47fe2521f",
@@ -729,11 +825,12 @@
       "tier": "national",
       "region": "us",
       "domains": [
-        "economics"
+        "economics",
+        "security"
       ],
-      "cross_domain": false,
+      "cross_domain": true,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:20Z"
+      "ingested": "2026-03-27T23:46:03Z"
     },
     {
       "id": "6e2e1170fe37",
@@ -744,11 +841,27 @@
       "tier": "national",
       "region": "us",
       "domains": [
+        "climate",
+        "security"
+      ],
+      "cross_domain": true,
+      "date": "2026-03-28",
+      "ingested": "2026-03-27T23:46:03Z"
+    },
+    {
+      "id": "b03ebe7e2260",
+      "title": "Expensive Plane Tickets Are a Preview",
+      "url": "https://www.theatlantic.com/newsletters/2026/03/expensive-plane-tickets-oil-iran/686604/?utm_source=feed",
+      "summary": "Airfare is way up. It’s a signal of what could come next.",
+      "source": "The Atlantic",
+      "tier": "national",
+      "region": "us",
+      "domains": [
         "climate"
       ],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:20Z"
+      "ingested": "2026-03-27T23:46:03Z"
     },
     {
       "id": "e64efff7f1ab",
@@ -761,7 +874,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:20Z"
+      "ingested": "2026-03-27T23:46:03Z"
     },
     {
       "id": "f50888620413",
@@ -774,7 +887,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:20Z"
+      "ingested": "2026-03-27T23:46:03Z"
     },
     {
       "id": "3ee5a3f9641b",
@@ -787,7 +900,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:20Z"
+      "ingested": "2026-03-27T23:46:03Z"
     },
     {
       "id": "5214ed37f800",
@@ -802,7 +915,7 @@
       ],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:20Z"
+      "ingested": "2026-03-27T23:46:03Z"
     },
     {
       "id": "d00e3b520984",
@@ -812,10 +925,13 @@
       "source": "BBC World",
       "tier": "international",
       "region": "uk",
-      "domains": [],
-      "cross_domain": false,
+      "domains": [
+        "security",
+        "domestic_politics"
+      ],
+      "cross_domain": true,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:21Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "cbde9d88c3b4",
@@ -828,7 +944,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:21Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "d43db0eaac27",
@@ -838,10 +954,13 @@
       "source": "BBC World",
       "tier": "international",
       "region": "uk",
-      "domains": [],
-      "cross_domain": false,
+      "domains": [
+        "security",
+        "domestic_politics"
+      ],
+      "cross_domain": true,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:21Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "4a6a176afa5e",
@@ -854,7 +973,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:21Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "e16d024ce4f4",
@@ -866,11 +985,12 @@
       "region": "uk",
       "domains": [
         "labor",
-        "governance"
+        "governance",
+        "domestic_politics"
       ],
       "cross_domain": true,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:21Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "239932cce21a",
@@ -881,11 +1001,12 @@
       "tier": "international",
       "region": "uk",
       "domains": [
-        "information"
+        "information",
+        "security"
       ],
-      "cross_domain": false,
+      "cross_domain": true,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:21Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "77df10f73b9e",
@@ -900,7 +1021,7 @@
       ],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:21Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "d07e939cb751",
@@ -913,7 +1034,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:21Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "ed083a1bf3c8",
@@ -923,10 +1044,12 @@
       "source": "BBC World",
       "tier": "international",
       "region": "uk",
-      "domains": [],
+      "domains": [
+        "geopolitics"
+      ],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:21Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "d3b5fd1a2709",
@@ -941,7 +1064,7 @@
       ],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:21Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "7d46568f9444",
@@ -954,7 +1077,22 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:21Z"
+      "ingested": "2026-03-27T23:46:04Z"
+    },
+    {
+      "id": "b3f44eb17b6e",
+      "title": "Labor to underwrite Australian fuel imports under new security powers to ensure supply",
+      "url": "https://www.theguardian.com/australia-news/2026/mar/28/anthony-albanese-chris-bowen-fuel-security-powers-oil-crisis-petrol-diesel-prices",
+      "summary": "Albanese announces forthcoming legislation to guarantee private sector purchases of fuel and fertiliser The Australian government will take on the financial risk of importing essential products affected by the war in the Middle East to get additional supplies of petrol, diesel, and fertiliser into the country. The prime minister, Anthony Albanese, announced the new fuel security powers on Saturday after a month of soaring diesel and petrol prices and widespread shortages at service stations, par",
+      "source": "The Guardian World",
+      "tier": "international",
+      "region": "uk",
+      "domains": [
+        "security"
+      ],
+      "cross_domain": false,
+      "date": "2026-03-28",
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "9dd6db142d2e",
@@ -967,7 +1105,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:21Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "3315eb591d5d",
@@ -980,7 +1118,23 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:21Z"
+      "ingested": "2026-03-27T23:46:04Z"
+    },
+    {
+      "id": "f88c8cae6918",
+      "title": "Rescue workers rush to save lives after south Tehran missile strike",
+      "url": "https://www.aljazeera.com/video/newsfeed/2026/3/27/rescue-workers-rush-to-save-lives-after-south-tehran-missile-strike?traffic_source=rss",
+      "summary": "Iranian rescue workers have been pulling survivors and bodies out of a building after a missile strike on south Tehran.",
+      "source": "Al Jazeera",
+      "tier": "international",
+      "region": "qatar",
+      "domains": [
+        "labor",
+        "security"
+      ],
+      "cross_domain": true,
+      "date": "2026-03-28",
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "693818269d84",
@@ -990,10 +1144,12 @@
       "source": "Al Jazeera",
       "tier": "international",
       "region": "qatar",
-      "domains": [],
+      "domains": [
+        "security"
+      ],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:21Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "aa0f1480594a",
@@ -1003,10 +1159,12 @@
       "source": "Al Jazeera",
       "tier": "international",
       "region": "qatar",
-      "domains": [],
+      "domains": [
+        "security"
+      ],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:21Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "d959c9ba6c09",
@@ -1019,7 +1177,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:21Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "04834a3a0be0",
@@ -1029,10 +1187,12 @@
       "source": "Al Jazeera",
       "tier": "international",
       "region": "qatar",
-      "domains": [],
+      "domains": [
+        "security"
+      ],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:21Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "ebc62cc1fb7e",
@@ -1043,11 +1203,12 @@
       "tier": "international",
       "region": "qatar",
       "domains": [
-        "economics"
+        "economics",
+        "security"
       ],
-      "cross_domain": false,
+      "cross_domain": true,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:21Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "95ff99da5559",
@@ -1057,10 +1218,12 @@
       "source": "Al Jazeera",
       "tier": "international",
       "region": "qatar",
-      "domains": [],
+      "domains": [
+        "security"
+      ],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:21Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "18db403563ba",
@@ -1070,10 +1233,12 @@
       "source": "Al Jazeera",
       "tier": "international",
       "region": "qatar",
-      "domains": [],
+      "domains": [
+        "security"
+      ],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:21Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "fbd6d787c349",
@@ -1084,11 +1249,12 @@
       "tier": "international",
       "region": "qatar",
       "domains": [
-        "climate"
+        "climate",
+        "security"
       ],
-      "cross_domain": false,
+      "cross_domain": true,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:21Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "4f674bf5dcb2",
@@ -1099,11 +1265,12 @@
       "tier": "international",
       "region": "qatar",
       "domains": [
-        "labor"
+        "labor",
+        "security"
       ],
-      "cross_domain": false,
+      "cross_domain": true,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:21Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "908b9da1da2d",
@@ -1113,10 +1280,12 @@
       "source": "Al Jazeera",
       "tier": "international",
       "region": "qatar",
-      "domains": [],
+      "domains": [
+        "security"
+      ],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:21Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "ddb33101f99d",
@@ -1127,11 +1296,12 @@
       "tier": "international",
       "region": "qatar",
       "domains": [
-        "labor"
+        "labor",
+        "domestic_politics"
       ],
-      "cross_domain": false,
+      "cross_domain": true,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:21Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "cb789d0072f8",
@@ -1141,10 +1311,12 @@
       "source": "Al Jazeera",
       "tier": "international",
       "region": "qatar",
-      "domains": [],
+      "domains": [
+        "security"
+      ],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:21Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "e7c168313566",
@@ -1155,11 +1327,12 @@
       "tier": "international",
       "region": "qatar",
       "domains": [
-        "climate"
+        "climate",
+        "security"
       ],
-      "cross_domain": false,
+      "cross_domain": true,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:21Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "695741254746",
@@ -1170,11 +1343,12 @@
       "tier": "international",
       "region": "qatar",
       "domains": [
-        "labor"
+        "labor",
+        "security"
       ],
-      "cross_domain": false,
+      "cross_domain": true,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:21Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "d0a745afd258",
@@ -1187,7 +1361,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:21Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "b16f67bc77b2",
@@ -1202,7 +1376,7 @@
       ],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:21Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "c324c89f65ad",
@@ -1212,10 +1386,12 @@
       "source": "Al Jazeera",
       "tier": "international",
       "region": "qatar",
-      "domains": [],
+      "domains": [
+        "security"
+      ],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:21Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "40c6450b280a",
@@ -1225,10 +1401,13 @@
       "source": "Al Jazeera",
       "tier": "international",
       "region": "qatar",
-      "domains": [],
-      "cross_domain": false,
+      "domains": [
+        "security",
+        "domestic_politics"
+      ],
+      "cross_domain": true,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:21Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "5ebc5c7ee4ee",
@@ -1238,10 +1417,13 @@
       "source": "Al Jazeera",
       "tier": "international",
       "region": "qatar",
-      "domains": [],
-      "cross_domain": false,
+      "domains": [
+        "geopolitics",
+        "domestic_politics"
+      ],
+      "cross_domain": true,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:21Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "1a043c09588d",
@@ -1251,10 +1433,12 @@
       "source": "Al Jazeera",
       "tier": "international",
       "region": "qatar",
-      "domains": [],
+      "domains": [
+        "security"
+      ],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:21Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "00ea8ff2dce1",
@@ -1265,11 +1449,12 @@
       "tier": "international",
       "region": "qatar",
       "domains": [
-        "labor"
+        "labor",
+        "security"
       ],
-      "cross_domain": false,
+      "cross_domain": true,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:21Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "844db204fd84",
@@ -1279,10 +1464,12 @@
       "source": "Al Jazeera",
       "tier": "international",
       "region": "qatar",
-      "domains": [],
+      "domains": [
+        "security"
+      ],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:21Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "c2c1d6f79eed",
@@ -1292,10 +1479,13 @@
       "source": "Al Jazeera",
       "tier": "international",
       "region": "qatar",
-      "domains": [],
-      "cross_domain": false,
+      "domains": [
+        "security",
+        "domestic_politics"
+      ],
+      "cross_domain": true,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:21Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "4d29987fadd1",
@@ -1308,20 +1498,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:21Z"
-    },
-    {
-      "id": "7617bed659dc",
-      "title": "Russia declares protagonist of Oscar-winning documentary a ‘foreign agent’",
-      "url": "https://www.aljazeera.com/news/2026/3/27/russia-declares-protagonist-of-oscar-winning-documentary-a-foreign-agent?traffic_source=rss",
-      "summary": "The teacher had spent two years documenting pro-war propaganda at a school before smuggling footage out of Russia.",
-      "source": "Al Jazeera",
-      "tier": "international",
-      "region": "qatar",
-      "domains": [],
-      "cross_domain": false,
-      "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:21Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "6f25356ff19e",
@@ -1334,7 +1511,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:22Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "cdf82b463bcd",
@@ -1347,7 +1524,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:22Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "589434c1ac83",
@@ -1358,11 +1535,12 @@
       "tier": "international",
       "region": "germany",
       "domains": [
-        "governance"
+        "governance",
+        "domestic_politics"
       ],
-      "cross_domain": false,
+      "cross_domain": true,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:22Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "8b5728a2153b",
@@ -1373,11 +1551,12 @@
       "tier": "international",
       "region": "germany",
       "domains": [
-        "labor"
+        "labor",
+        "security"
       ],
-      "cross_domain": false,
+      "cross_domain": true,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:22Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "283a773b8f7f",
@@ -1390,7 +1569,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:22Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "4dd365472869",
@@ -1405,7 +1584,7 @@
       ],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:22Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "3c985f74f8f2",
@@ -1418,7 +1597,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:22Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "4419238d79e5",
@@ -1428,10 +1607,12 @@
       "source": "Deutsche Welle",
       "tier": "international",
       "region": "germany",
-      "domains": [],
+      "domains": [
+        "geopolitics"
+      ],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:22Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "5e69a50f4584",
@@ -1441,10 +1622,12 @@
       "source": "Deutsche Welle",
       "tier": "international",
       "region": "germany",
-      "domains": [],
+      "domains": [
+        "security"
+      ],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:22Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "9a847afc7e89",
@@ -1455,11 +1638,12 @@
       "tier": "international",
       "region": "germany",
       "domains": [
-        "information"
+        "information",
+        "security"
       ],
-      "cross_domain": false,
+      "cross_domain": true,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:22Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "b269ccb47b07",
@@ -1469,10 +1653,12 @@
       "source": "Deutsche Welle",
       "tier": "international",
       "region": "germany",
-      "domains": [],
+      "domains": [
+        "security"
+      ],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:22Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "b1a026482472",
@@ -1482,10 +1668,13 @@
       "source": "France 24",
       "tier": "international",
       "region": "france",
-      "domains": [],
-      "cross_domain": false,
+      "domains": [
+        "security",
+        "domestic_politics"
+      ],
+      "cross_domain": true,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:22Z"
+      "ingested": "2026-03-27T23:46:05Z"
     },
     {
       "id": "9f96d1f82de4",
@@ -1495,10 +1684,12 @@
       "source": "France 24",
       "tier": "international",
       "region": "france",
-      "domains": [],
+      "domains": [
+        "security"
+      ],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:22Z"
+      "ingested": "2026-03-27T23:46:05Z"
     },
     {
       "id": "2881dd0183c9",
@@ -1511,7 +1702,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:22Z"
+      "ingested": "2026-03-27T23:46:05Z"
     },
     {
       "id": "b2f47d207c53",
@@ -1521,10 +1712,12 @@
       "source": "France 24",
       "tier": "international",
       "region": "france",
-      "domains": [],
+      "domains": [
+        "security"
+      ],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:22Z"
+      "ingested": "2026-03-27T23:46:05Z"
     },
     {
       "id": "fa25186192f3",
@@ -1539,7 +1732,7 @@
       ],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:22Z"
+      "ingested": "2026-03-27T23:46:05Z"
     },
     {
       "id": "b4e09b1f5c48",
@@ -1549,10 +1742,13 @@
       "source": "France 24",
       "tier": "international",
       "region": "france",
-      "domains": [],
-      "cross_domain": false,
+      "domains": [
+        "security",
+        "geopolitics"
+      ],
+      "cross_domain": true,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:22Z"
+      "ingested": "2026-03-27T23:46:05Z"
     },
     {
       "id": "0a64310fd717",
@@ -1563,11 +1759,12 @@
       "tier": "international",
       "region": "france",
       "domains": [
-        "governance"
+        "governance",
+        "geopolitics"
       ],
-      "cross_domain": false,
+      "cross_domain": true,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:22Z"
+      "ingested": "2026-03-27T23:46:05Z"
     },
     {
       "id": "0491a2aea772",
@@ -1580,7 +1777,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:22Z"
+      "ingested": "2026-03-27T23:46:05Z"
     },
     {
       "id": "26691a1b12bf",
@@ -1595,7 +1792,7 @@
       ],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:22Z"
+      "ingested": "2026-03-27T23:46:05Z"
     },
     {
       "id": "6f68cb86a22e",
@@ -1606,11 +1803,13 @@
       "tier": "international",
       "region": "france",
       "domains": [
-        "governance"
+        "governance",
+        "security",
+        "geopolitics"
       ],
-      "cross_domain": false,
+      "cross_domain": true,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:22Z"
+      "ingested": "2026-03-27T23:46:05Z"
     },
     {
       "id": "f083871a3fab",
@@ -1621,11 +1820,12 @@
       "tier": "international",
       "region": "france",
       "domains": [
-        "information"
+        "information",
+        "security"
       ],
-      "cross_domain": false,
+      "cross_domain": true,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:22Z"
+      "ingested": "2026-03-27T23:46:05Z"
     },
     {
       "id": "06cad3ec4670",
@@ -1636,11 +1836,12 @@
       "tier": "international",
       "region": "france",
       "domains": [
-        "climate"
+        "climate",
+        "domestic_politics"
       ],
-      "cross_domain": false,
+      "cross_domain": true,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:22Z"
+      "ingested": "2026-03-27T23:46:05Z"
     },
     {
       "id": "46740cba4fc1",
@@ -1653,7 +1854,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:22Z"
+      "ingested": "2026-03-27T23:46:05Z"
     },
     {
       "id": "a4c5c9bc7602",
@@ -1666,7 +1867,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:22Z"
+      "ingested": "2026-03-27T23:46:05Z"
     },
     {
       "id": "18f84de364ad",
@@ -1677,11 +1878,30 @@
       "tier": "international",
       "region": "france",
       "domains": [
-        "economics"
+        "economics",
+        "security",
+        "geopolitics",
+        "domestic_politics"
       ],
-      "cross_domain": false,
+      "cross_domain": true,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:22Z"
+      "ingested": "2026-03-27T23:46:05Z"
+    },
+    {
+      "id": "e66b24d523b6",
+      "title": "Iran strike wounds US troops and damages planes at Saudi airbase",
+      "url": "https://www.scmp.com/news/world/middle-east/article/3348220/iran-strike-wounds-us-troops-and-damages-planes-saudi-airbase?utm_source=rss_feed",
+      "summary": "An Iranian missile attack on Friday left at least 10 US service members wounded and damaged several planes at a military base in Saudi Arabia, according to two US officials familiar with the situation. The attack on Prince Sultan Air Base damaged several US refuelling aircraft, said the officials, who spoke on condition of anonymity to discuss sensitive military matters. One of the officials said two of the troops were seriously wounded. Satellite imagery that appeared to show the damage to the.",
+      "source": "South China Morning Post",
+      "tier": "international",
+      "region": "hong_kong",
+      "domains": [
+        "labor",
+        "security"
+      ],
+      "cross_domain": true,
+      "date": "2026-03-28",
+      "ingested": "2026-03-27T23:46:05Z"
     },
     {
       "id": "59189385f93f",
@@ -1692,11 +1912,14 @@
       "tier": "international",
       "region": "hong_kong",
       "domains": [
-        "economics"
+        "economics",
+        "security",
+        "geopolitics",
+        "domestic_politics"
       ],
-      "cross_domain": false,
+      "cross_domain": true,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:23Z"
+      "ingested": "2026-03-27T23:46:05Z"
     },
     {
       "id": "295573a23974",
@@ -1706,10 +1929,12 @@
       "source": "South China Morning Post",
       "tier": "international",
       "region": "hong_kong",
-      "domains": [],
+      "domains": [
+        "geopolitics"
+      ],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:23Z"
+      "ingested": "2026-03-27T23:46:05Z"
     },
     {
       "id": "57517c3b1213",
@@ -1720,11 +1945,13 @@
       "tier": "international",
       "region": "hong_kong",
       "domains": [
-        "climate"
+        "climate",
+        "security",
+        "geopolitics"
       ],
-      "cross_domain": false,
+      "cross_domain": true,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:23Z"
+      "ingested": "2026-03-27T23:46:05Z"
     },
     {
       "id": "b13178283a1f",
@@ -1737,7 +1964,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:23Z"
+      "ingested": "2026-03-27T23:46:05Z"
     },
     {
       "id": "aeb4e3037169",
@@ -1747,10 +1974,12 @@
       "source": "South China Morning Post",
       "tier": "international",
       "region": "hong_kong",
-      "domains": [],
+      "domains": [
+        "geopolitics"
+      ],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:23Z"
+      "ingested": "2026-03-27T23:46:05Z"
     },
     {
       "id": "780a38aa5510",
@@ -1763,7 +1992,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:23Z"
+      "ingested": "2026-03-27T23:46:05Z"
     },
     {
       "id": "a2c6a9c2a026",
@@ -1776,7 +2005,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:23Z"
+      "ingested": "2026-03-27T23:46:05Z"
     },
     {
       "id": "2e08788fc906",
@@ -1786,10 +2015,13 @@
       "source": "South China Morning Post",
       "tier": "international",
       "region": "hong_kong",
-      "domains": [],
-      "cross_domain": false,
+      "domains": [
+        "security",
+        "domestic_politics"
+      ],
+      "cross_domain": true,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:23Z"
+      "ingested": "2026-03-27T23:46:05Z"
     },
     {
       "id": "f4fd89888669",
@@ -1799,10 +2031,13 @@
       "source": "The Hindu",
       "tier": "international",
       "region": "india",
-      "domains": [],
-      "cross_domain": false,
+      "domains": [
+        "security",
+        "domestic_politics"
+      ],
+      "cross_domain": true,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:24Z"
+      "ingested": "2026-03-27T23:46:06Z"
     },
     {
       "id": "2d820372c63f",
@@ -1815,7 +2050,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:24Z"
+      "ingested": "2026-03-27T23:46:06Z"
     },
     {
       "id": "d3661525486f",
@@ -1828,7 +2063,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:24Z"
+      "ingested": "2026-03-27T23:46:06Z"
     },
     {
       "id": "90467198bc80",
@@ -1841,7 +2076,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:24Z"
+      "ingested": "2026-03-27T23:46:06Z"
     },
     {
       "id": "c02eab8a8b33",
@@ -1854,7 +2089,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:24Z"
+      "ingested": "2026-03-27T23:46:06Z"
     },
     {
       "id": "c7fea95cd08c",
@@ -1869,7 +2104,7 @@
       ],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:24Z"
+      "ingested": "2026-03-27T23:46:06Z"
     },
     {
       "id": "1789e8c40f48",
@@ -1882,7 +2117,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:24Z"
+      "ingested": "2026-03-27T23:46:06Z"
     },
     {
       "id": "10f78fccfbbf",
@@ -1895,7 +2130,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:24Z"
+      "ingested": "2026-03-27T23:46:06Z"
     },
     {
       "id": "dd836c780f22",
@@ -1906,11 +2141,12 @@
       "tier": "international",
       "region": "india",
       "domains": [
-        "governance"
+        "governance",
+        "domestic_politics"
       ],
-      "cross_domain": false,
+      "cross_domain": true,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:24Z"
+      "ingested": "2026-03-27T23:46:06Z"
     },
     {
       "id": "f07390674ccd",
@@ -1920,10 +2156,12 @@
       "source": "The Hindu",
       "tier": "international",
       "region": "india",
-      "domains": [],
+      "domains": [
+        "domestic_politics"
+      ],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:24Z"
+      "ingested": "2026-03-27T23:46:06Z"
     },
     {
       "id": "75dce7e6e2b7",
@@ -1933,10 +2171,12 @@
       "source": "The Hindu",
       "tier": "international",
       "region": "india",
-      "domains": [],
+      "domains": [
+        "security"
+      ],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:24Z"
+      "ingested": "2026-03-27T23:46:06Z"
     },
     {
       "id": "4dae7b275298",
@@ -1951,7 +2191,7 @@
       ],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:24Z"
+      "ingested": "2026-03-27T23:46:06Z"
     },
     {
       "id": "34999917dd18",
@@ -1962,11 +2202,12 @@
       "tier": "international",
       "region": "india",
       "domains": [
-        "economics"
+        "economics",
+        "security"
       ],
-      "cross_domain": false,
+      "cross_domain": true,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:24Z"
+      "ingested": "2026-03-27T23:46:06Z"
     },
     {
       "id": "22c652b48a8d",
@@ -1979,7 +2220,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:24Z"
+      "ingested": "2026-03-27T23:46:06Z"
     },
     {
       "id": "f642a4a52d5a",
@@ -1992,7 +2233,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:24Z"
+      "ingested": "2026-03-27T23:46:06Z"
     },
     {
       "id": "1ae04412d20c",
@@ -2007,7 +2248,7 @@
       ],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:24Z"
+      "ingested": "2026-03-27T23:46:06Z"
     },
     {
       "id": "f393d560a491",
@@ -2023,7 +2264,7 @@
       ],
       "cross_domain": true,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:24Z"
+      "ingested": "2026-03-27T23:46:06Z"
     },
     {
       "id": "a2cf1afb14cb",
@@ -2038,7 +2279,7 @@
       ],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:24Z"
+      "ingested": "2026-03-27T23:46:06Z"
     },
     {
       "id": "e0e9966f654c",
@@ -2049,11 +2290,12 @@
       "tier": "international",
       "region": "india",
       "domains": [
-        "governance"
+        "governance",
+        "security"
       ],
-      "cross_domain": false,
+      "cross_domain": true,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:24Z"
+      "ingested": "2026-03-27T23:46:06Z"
     },
     {
       "id": "b8375074c3af",
@@ -2066,7 +2308,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:24Z"
+      "ingested": "2026-03-27T23:46:06Z"
     },
     {
       "id": "527c0b1bc630",
@@ -2081,7 +2323,7 @@
       ],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:24Z"
+      "ingested": "2026-03-27T23:46:06Z"
     },
     {
       "id": "4bfb8313687f",
@@ -2092,11 +2334,12 @@
       "tier": "international",
       "region": "india",
       "domains": [
-        "economics"
+        "economics",
+        "security"
       ],
-      "cross_domain": false,
+      "cross_domain": true,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:24Z"
+      "ingested": "2026-03-27T23:46:06Z"
     },
     {
       "id": "d0f105c5b4af",
@@ -2106,10 +2349,12 @@
       "source": "The Hindu",
       "tier": "international",
       "region": "india",
-      "domains": [],
+      "domains": [
+        "security"
+      ],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:24Z"
+      "ingested": "2026-03-27T23:46:06Z"
     },
     {
       "id": "4dc778e4dbc6",
@@ -2119,10 +2364,12 @@
       "source": "The Hindu",
       "tier": "international",
       "region": "india",
-      "domains": [],
+      "domains": [
+        "geopolitics"
+      ],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:24Z"
+      "ingested": "2026-03-27T23:46:06Z"
     },
     {
       "id": "6bc8f8f07d5e",
@@ -2135,20 +2382,20 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:24Z"
+      "ingested": "2026-03-27T23:46:06Z"
     },
     {
       "id": "f99ff4dc330c",
       "title": "イラン軍事作戦1か月 米国務長官 “終結に向け調整”",
       "url": "http://www3.nhk.or.jp/news/html/20260328/k10015086371000.html",
-      "summary": "アメリカとイスラエルがイランへの軍事作戦を始めてから28日で1か月となります。アメリカのルビオ国務長官は「軍事作戦は予定どおり、または予定を前倒しして進んでいる」と述べるとともに、戦闘の終結に向けたイラン側との調整を進めているとしていますが、イラン側は製鉄所などが攻撃を受けたとして強く反発しています。",
+      "summary": "アメリカとイスラエルがイランへの軍事作戦を始めてから28日で1か月となります。アメリカのルビオ国務長官は「軍事作戦は予定どおり、または予定を前倒しして進んでいる」と述べるとともに、戦闘の終結に向けたイラン側との調整を進めているとしていますが、イラン側は製鉄所などが攻撃を受けたとして強く反発しています。記事後半では、この1か月の経緯などもお伝えしています。",
       "source": "NHK World",
       "tier": "international",
       "region": "japan",
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:24Z"
+      "ingested": "2026-03-27T23:46:06Z"
     },
     {
       "id": "d5197fb439bd",
@@ -2161,7 +2408,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:24Z"
+      "ingested": "2026-03-27T23:46:06Z"
     },
     {
       "id": "351a87bf04a1",
@@ -2174,7 +2421,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:24Z"
+      "ingested": "2026-03-27T23:46:06Z"
     },
     {
       "id": "21d1e65d5ca0",
@@ -2187,7 +2434,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:24Z"
+      "ingested": "2026-03-27T23:46:06Z"
     },
     {
       "id": "e59a6419564d",
@@ -2200,7 +2447,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:24Z"
+      "ingested": "2026-03-27T23:46:06Z"
     },
     {
       "id": "9c8076ff5257",
@@ -2213,7 +2460,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:24Z"
+      "ingested": "2026-03-27T23:46:06Z"
     },
     {
       "id": "ab6cd0a616a4",
@@ -2223,10 +2470,12 @@
       "source": "NHK World",
       "tier": "international",
       "region": "japan",
-      "domains": [],
+      "domains": [
+        "geopolitics"
+      ],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:24Z"
+      "ingested": "2026-03-27T23:46:06Z"
     },
     {
       "id": "f3380bd667b6",
@@ -2239,7 +2488,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:24Z"
+      "ingested": "2026-03-27T23:46:06Z"
     },
     {
       "id": "b00a9cd0f33c",
@@ -2252,7 +2501,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:24Z"
+      "ingested": "2026-03-27T23:46:06Z"
     },
     {
       "id": "c30de2cb348e",
@@ -2265,7 +2514,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:24Z"
+      "ingested": "2026-03-27T23:46:06Z"
     },
     {
       "id": "232d72995edf",
@@ -2278,7 +2527,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:24Z"
+      "ingested": "2026-03-27T23:46:06Z"
     },
     {
       "id": "3d85d91862c6",
@@ -2291,7 +2540,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:24Z"
+      "ingested": "2026-03-27T23:46:06Z"
     },
     {
       "id": "7e4f79fa1fc7",
@@ -2301,10 +2550,12 @@
       "source": "ABC Australia",
       "tier": "international",
       "region": "australia",
-      "domains": [],
+      "domains": [
+        "domestic_politics"
+      ],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:24Z"
+      "ingested": "2026-03-27T23:46:06Z"
     },
     {
       "id": "0cd72b8c4505",
@@ -2319,7 +2570,7 @@
       ],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:24Z"
+      "ingested": "2026-03-27T23:46:06Z"
     },
     {
       "id": "c683059e2e06",
@@ -2332,7 +2583,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:24Z"
+      "ingested": "2026-03-27T23:46:06Z"
     },
     {
       "id": "85bf5e90d3de",
@@ -2345,7 +2596,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:24Z"
+      "ingested": "2026-03-27T23:46:06Z"
     },
     {
       "id": "df11805519ab",
@@ -2358,7 +2609,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:24Z"
+      "ingested": "2026-03-27T23:46:06Z"
     },
     {
       "id": "2b750c22fe75",
@@ -2369,11 +2620,13 @@
       "tier": "international",
       "region": "australia",
       "domains": [
-        "labor"
+        "labor",
+        "security",
+        "domestic_politics"
       ],
-      "cross_domain": false,
+      "cross_domain": true,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:24Z"
+      "ingested": "2026-03-27T23:46:06Z"
     },
     {
       "id": "0f0aa8c52ffc",
@@ -2383,10 +2636,12 @@
       "source": "ABC Australia",
       "tier": "international",
       "region": "australia",
-      "domains": [],
+      "domains": [
+        "security"
+      ],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:24Z"
+      "ingested": "2026-03-27T23:46:06Z"
     },
     {
       "id": "d4cf3afac446",
@@ -2401,7 +2656,7 @@
       ],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:24Z"
+      "ingested": "2026-03-27T23:46:06Z"
     },
     {
       "id": "3b68cf626650",
@@ -2414,7 +2669,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:24Z"
+      "ingested": "2026-03-27T23:46:06Z"
     },
     {
       "id": "9db8ec693228",
@@ -2429,7 +2684,7 @@
       ],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:24Z"
+      "ingested": "2026-03-27T23:46:06Z"
     },
     {
       "id": "d4c07ed2cdf9",
@@ -2439,25 +2694,25 @@
       "source": "ABC Australia",
       "tier": "international",
       "region": "australia",
-      "domains": [],
-      "cross_domain": false,
-      "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:24Z"
-    },
-    {
-      "id": "a84aa5d5bfb8",
-      "title": "Live: US-Israeli strikes hit two Iranian nuclear facilities",
-      "url": "https://www.abc.net.au/news/2026-03-28/attacks-on-iran-to-escalate-and-expand/106505482",
-      "summary": "US Secretary of State Marco Rubio says America's war aims can be achieved without ground troops and operations will be complete in the \"next couple of weeks\". Follow live.",
-      "source": "ABC Australia",
-      "tier": "international",
-      "region": "australia",
       "domains": [
-        "labor"
+        "security"
       ],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:24Z"
+      "ingested": "2026-03-27T23:46:06Z"
+    },
+    {
+      "id": "a84aa5d5bfb8",
+      "title": "Live: New fuel security powers to get Australia 'ready for what may come', PM says",
+      "url": "https://www.abc.net.au/news/2026-03-28/attacks-on-iran-to-escalate-and-expand/106505482",
+      "summary": "Anthony Albanese has announced new fuel security powers to get \"fuel restocked\" so Australia is \"ready for what may come\". Follow live.",
+      "source": "ABC Australia",
+      "tier": "international",
+      "region": "australia",
+      "domains": [],
+      "cross_domain": false,
+      "date": "2026-03-28",
+      "ingested": "2026-03-27T23:46:06Z"
     },
     {
       "id": "0e6619183bf9",
@@ -2470,7 +2725,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:24Z"
+      "ingested": "2026-03-27T23:46:06Z"
     },
     {
       "id": "77d7fe7bf05d",
@@ -2480,10 +2735,12 @@
       "source": "ABC Australia",
       "tier": "international",
       "region": "australia",
-      "domains": [],
+      "domains": [
+        "security"
+      ],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:24Z"
+      "ingested": "2026-03-27T23:46:06Z"
     },
     {
       "id": "d2e0de44406a",
@@ -2496,7 +2753,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:24Z"
+      "ingested": "2026-03-27T23:46:06Z"
     },
     {
       "id": "c9d66b70ca42",
@@ -2511,7 +2768,7 @@
       ],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:24Z"
+      "ingested": "2026-03-27T23:46:06Z"
     },
     {
       "id": "25fba2c69de2",
@@ -2524,7 +2781,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:24Z"
+      "ingested": "2026-03-27T23:46:06Z"
     },
     {
       "id": "2bad12b05fc5",
@@ -2539,7 +2796,7 @@
       ],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:24Z"
+      "ingested": "2026-03-27T23:46:06Z"
     },
     {
       "id": "00341493dc4d",
@@ -2550,11 +2807,13 @@
       "tier": "international",
       "region": "australia",
       "domains": [
-        "climate"
+        "climate",
+        "security",
+        "domestic_politics"
       ],
-      "cross_domain": false,
+      "cross_domain": true,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:24Z"
+      "ingested": "2026-03-27T23:46:06Z"
     },
     {
       "id": "bd784570682f",
@@ -2564,10 +2823,12 @@
       "source": "ABC Australia",
       "tier": "international",
       "region": "australia",
-      "domains": [],
+      "domains": [
+        "security"
+      ],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:24Z"
+      "ingested": "2026-03-27T23:46:06Z"
     },
     {
       "id": "a1707d81d2dc",
@@ -2580,7 +2841,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:32Z"
+      "ingested": "2026-03-27T23:46:15Z"
     },
     {
       "id": "66140da1b9db",
@@ -2592,11 +2853,12 @@
       "region": "economics",
       "domains": [
         "information",
-        "climate"
+        "climate",
+        "security"
       ],
       "cross_domain": true,
       "date": "2026-03-28",
-      "ingested": "2026-03-27T23:15:33Z"
+      "ingested": "2026-03-27T23:46:15Z"
     },
     {
       "id": "d8dec5d099ed",
@@ -2607,11 +2869,12 @@
       "tier": "national",
       "region": "us",
       "domains": [
-        "labor"
+        "labor",
+        "domestic_politics"
       ],
-      "cross_domain": false,
+      "cross_domain": true,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:07Z"
+      "ingested": "2026-03-27T23:45:51Z"
     },
     {
       "id": "f2ea8b601eb9",
@@ -2622,11 +2885,12 @@
       "tier": "national",
       "region": "us",
       "domains": [
-        "climate"
+        "climate",
+        "security"
       ],
-      "cross_domain": false,
+      "cross_domain": true,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:07Z"
+      "ingested": "2026-03-27T23:45:51Z"
     },
     {
       "id": "dbd76c898eef",
@@ -2639,7 +2903,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:07Z"
+      "ingested": "2026-03-27T23:45:51Z"
     },
     {
       "id": "316d90cb9d88",
@@ -2652,7 +2916,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:07Z"
+      "ingested": "2026-03-27T23:45:51Z"
     },
     {
       "id": "ea55cf736274",
@@ -2665,7 +2929,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:07Z"
+      "ingested": "2026-03-27T23:45:51Z"
     },
     {
       "id": "2ff1ea0db279",
@@ -2678,7 +2942,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:18Z"
+      "ingested": "2026-03-27T23:46:01Z"
     },
     {
       "id": "24e4239df618",
@@ -2693,7 +2957,7 @@
       ],
       "cross_domain": false,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:18Z"
+      "ingested": "2026-03-27T23:46:01Z"
     },
     {
       "id": "8dec5ef4448e",
@@ -2706,7 +2970,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:18Z"
+      "ingested": "2026-03-27T23:46:01Z"
     },
     {
       "id": "774346428265",
@@ -2719,7 +2983,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:18Z"
+      "ingested": "2026-03-27T23:46:01Z"
     },
     {
       "id": "ffe2ea998c8a",
@@ -2730,11 +2994,12 @@
       "tier": "national",
       "region": "us",
       "domains": [
-        "governance"
+        "governance",
+        "domestic_politics"
       ],
-      "cross_domain": false,
+      "cross_domain": true,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:18Z"
+      "ingested": "2026-03-27T23:46:01Z"
     },
     {
       "id": "883d7b37e272",
@@ -2744,10 +3009,13 @@
       "source": "AP News",
       "tier": "national",
       "region": "us",
-      "domains": [],
-      "cross_domain": false,
+      "domains": [
+        "security",
+        "geopolitics"
+      ],
+      "cross_domain": true,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:18Z"
+      "ingested": "2026-03-27T23:46:01Z"
     },
     {
       "id": "aef0290ade71",
@@ -2760,7 +3028,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:18Z"
+      "ingested": "2026-03-27T23:46:01Z"
     },
     {
       "id": "152b2430830c",
@@ -2771,11 +3039,12 @@
       "tier": "national",
       "region": "us",
       "domains": [
-        "information"
+        "information",
+        "security"
       ],
-      "cross_domain": false,
+      "cross_domain": true,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:18Z"
+      "ingested": "2026-03-27T23:46:01Z"
     },
     {
       "id": "360199214855",
@@ -2785,10 +3054,12 @@
       "source": "NPR",
       "tier": "national",
       "region": "us",
-      "domains": [],
+      "domains": [
+        "domestic_politics"
+      ],
       "cross_domain": false,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:19Z"
+      "ingested": "2026-03-27T23:46:02Z"
     },
     {
       "id": "de1a45d6f0e5",
@@ -2803,7 +3074,7 @@
       ],
       "cross_domain": false,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:19Z"
+      "ingested": "2026-03-27T23:46:02Z"
     },
     {
       "id": "284d1c9259f3",
@@ -2818,7 +3089,7 @@
       ],
       "cross_domain": false,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:19Z"
+      "ingested": "2026-03-27T23:46:02Z"
     },
     {
       "id": "9f08ea31a526",
@@ -2831,7 +3102,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:19Z"
+      "ingested": "2026-03-27T23:46:02Z"
     },
     {
       "id": "313bd9bc5db3",
@@ -2847,7 +3118,7 @@
       ],
       "cross_domain": true,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:20Z"
+      "ingested": "2026-03-27T23:46:03Z"
     },
     {
       "id": "76011f2bf364",
@@ -2858,42 +3129,12 @@
       "tier": "national",
       "region": "us",
       "domains": [
-        "economics"
-      ],
-      "cross_domain": false,
-      "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:20Z"
-    },
-    {
-      "id": "f4e06550eff0",
-      "title": "Wall Street’s FX Roadmap Roiled by Dollar’s Best Run Since 2024",
-      "url": "https://www.bloomberg.com/news/articles/2026-03-26/dollar-s-best-month-since-july-roils-wall-street-s-fx-roadmap",
-      "summary": "The dollar is on track for its best month since December 2024 as the conflict in the Middle East scrambles Wall Street’s playbook for the world’s dominant reserve currency.",
-      "source": "Bloomberg",
-      "tier": "national",
-      "region": "us",
-      "domains": [
         "economics",
-        "climate"
+        "security"
       ],
       "cross_domain": true,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:20Z"
-    },
-    {
-      "id": "79047aef6bb3",
-      "title": "Cyber Stocks Sink on Report Anthropic AI Model Poses Security Risks",
-      "url": "https://www.bloomberg.com/news/articles/2026-03-27/cyber-stocks-sink-on-report-anthropic-model-poses-security-risks",
-      "summary": "Cybersecurity stocks slumped on Friday after a Fortune report raised concern that an Anthropic PBC artificial intelligence model being tested may be used by hackers to skirt current cyber defenses.",
-      "source": "Bloomberg",
-      "tier": "national",
-      "region": "us",
-      "domains": [
-        "ai"
-      ],
-      "cross_domain": false,
-      "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:20Z"
+      "ingested": "2026-03-27T23:46:03Z"
     },
     {
       "id": "89a445b9590d",
@@ -2903,10 +3144,12 @@
       "source": "The Atlantic",
       "tier": "national",
       "region": "us",
-      "domains": [],
+      "domains": [
+        "domestic_politics"
+      ],
       "cross_domain": false,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:20Z"
+      "ingested": "2026-03-27T23:46:03Z"
     },
     {
       "id": "be93379bddc6",
@@ -2916,10 +3159,12 @@
       "source": "The Atlantic",
       "tier": "national",
       "region": "us",
-      "domains": [],
+      "domains": [
+        "domestic_politics"
+      ],
       "cross_domain": false,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:20Z"
+      "ingested": "2026-03-27T23:46:03Z"
     },
     {
       "id": "06cb4aa04d0b",
@@ -2932,7 +3177,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:20Z"
+      "ingested": "2026-03-27T23:46:03Z"
     },
     {
       "id": "bcd53a0adf71",
@@ -2945,7 +3190,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:20Z"
+      "ingested": "2026-03-27T23:46:03Z"
     },
     {
       "id": "cc9f48f7f124",
@@ -2958,7 +3203,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:20Z"
+      "ingested": "2026-03-27T23:46:03Z"
     },
     {
       "id": "991fccc23236",
@@ -2968,10 +3213,12 @@
       "source": "The Atlantic",
       "tier": "national",
       "region": "us",
-      "domains": [],
+      "domains": [
+        "domestic_politics"
+      ],
       "cross_domain": false,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:20Z"
+      "ingested": "2026-03-27T23:46:03Z"
     },
     {
       "id": "fe8605d24956",
@@ -2981,10 +3228,12 @@
       "source": "The Atlantic",
       "tier": "national",
       "region": "us",
-      "domains": [],
+      "domains": [
+        "geopolitics"
+      ],
       "cross_domain": false,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:20Z"
+      "ingested": "2026-03-27T23:46:03Z"
     },
     {
       "id": "91de0caf459a",
@@ -2997,7 +3246,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:20Z"
+      "ingested": "2026-03-27T23:46:03Z"
     },
     {
       "id": "895652312485",
@@ -3010,7 +3259,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:20Z"
+      "ingested": "2026-03-27T23:46:03Z"
     },
     {
       "id": "d3ac8db09dfb",
@@ -3023,7 +3272,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:20Z"
+      "ingested": "2026-03-27T23:46:03Z"
     },
     {
       "id": "7c3fce394af7",
@@ -3036,7 +3285,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:20Z"
+      "ingested": "2026-03-27T23:46:03Z"
     },
     {
       "id": "b10a4a3858e3",
@@ -3049,7 +3298,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:20Z"
+      "ingested": "2026-03-27T23:46:03Z"
     },
     {
       "id": "1a75292c4265",
@@ -3059,10 +3308,12 @@
       "source": "The Atlantic",
       "tier": "national",
       "region": "us",
-      "domains": [],
+      "domains": [
+        "domestic_politics"
+      ],
       "cross_domain": false,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:20Z"
+      "ingested": "2026-03-27T23:46:03Z"
     },
     {
       "id": "e56dcb623985",
@@ -3077,7 +3328,7 @@
       ],
       "cross_domain": false,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:20Z"
+      "ingested": "2026-03-27T23:46:03Z"
     },
     {
       "id": "bbe964de6f73",
@@ -3087,10 +3338,12 @@
       "source": "The Atlantic",
       "tier": "national",
       "region": "us",
-      "domains": [],
+      "domains": [
+        "security"
+      ],
       "cross_domain": false,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:20Z"
+      "ingested": "2026-03-27T23:46:03Z"
     },
     {
       "id": "4b39f4f0175f",
@@ -3100,10 +3353,12 @@
       "source": "The Atlantic",
       "tier": "national",
       "region": "us",
-      "domains": [],
+      "domains": [
+        "security"
+      ],
       "cross_domain": false,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:20Z"
+      "ingested": "2026-03-27T23:46:03Z"
     },
     {
       "id": "34afa379474a",
@@ -3116,7 +3371,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:20Z"
+      "ingested": "2026-03-27T23:46:03Z"
     },
     {
       "id": "aa43dd797855",
@@ -3131,7 +3386,7 @@
       ],
       "cross_domain": false,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:20Z"
+      "ingested": "2026-03-27T23:46:03Z"
     },
     {
       "id": "f2fd69cec410",
@@ -3141,10 +3396,13 @@
       "source": "The Atlantic",
       "tier": "national",
       "region": "us",
-      "domains": [],
-      "cross_domain": false,
+      "domains": [
+        "security",
+        "geopolitics"
+      ],
+      "cross_domain": true,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:20Z"
+      "ingested": "2026-03-27T23:46:03Z"
     },
     {
       "id": "2ef0eb62be03",
@@ -3157,7 +3415,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:21Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "c9d97b1193c7",
@@ -3168,11 +3426,12 @@
       "tier": "international",
       "region": "uk",
       "domains": [
-        "governance"
+        "governance",
+        "geopolitics"
       ],
-      "cross_domain": false,
+      "cross_domain": true,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:21Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "041ff8c06f1f",
@@ -3185,7 +3444,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:21Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "916fb131c034",
@@ -3195,10 +3454,12 @@
       "source": "BBC World",
       "tier": "international",
       "region": "uk",
-      "domains": [],
+      "domains": [
+        "security"
+      ],
       "cross_domain": false,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:21Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "4c6aa68fb2bb",
@@ -3209,11 +3470,12 @@
       "tier": "international",
       "region": "uk",
       "domains": [
-        "labor"
+        "labor",
+        "security"
       ],
-      "cross_domain": false,
+      "cross_domain": true,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:21Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "af05009dc09c",
@@ -3226,7 +3488,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:21Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "d72ccd9d3fda",
@@ -3239,7 +3501,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:21Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "b7d397e737a8",
@@ -3250,11 +3512,13 @@
       "tier": "international",
       "region": "uk",
       "domains": [
-        "governance"
+        "governance",
+        "security",
+        "domestic_politics"
       ],
-      "cross_domain": false,
+      "cross_domain": true,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:21Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "288ef95577e6",
@@ -3264,10 +3528,13 @@
       "source": "BBC World",
       "tier": "international",
       "region": "uk",
-      "domains": [],
-      "cross_domain": false,
+      "domains": [
+        "security",
+        "domestic_politics"
+      ],
+      "cross_domain": true,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:21Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "384b84b22571",
@@ -3277,10 +3544,13 @@
       "source": "BBC World",
       "tier": "international",
       "region": "uk",
-      "domains": [],
-      "cross_domain": false,
+      "domains": [
+        "security",
+        "geopolitics"
+      ],
+      "cross_domain": true,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:21Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "cf5447b51a24",
@@ -3293,7 +3563,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:21Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "316e9a98262d",
@@ -3306,7 +3576,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:21Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "156ff8e9cab1",
@@ -3317,11 +3587,13 @@
       "tier": "international",
       "region": "uk",
       "domains": [
-        "climate"
+        "climate",
+        "security",
+        "geopolitics"
       ],
-      "cross_domain": false,
+      "cross_domain": true,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:21Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "9c0603093705",
@@ -3331,10 +3603,12 @@
       "source": "BBC World",
       "tier": "international",
       "region": "uk",
-      "domains": [],
+      "domains": [
+        "security"
+      ],
       "cross_domain": false,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:21Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "26937e9abd9e",
@@ -3347,7 +3621,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:21Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "761cd1a2fea1",
@@ -3358,11 +3632,12 @@
       "tier": "international",
       "region": "uk",
       "domains": [
-        "labor"
+        "labor",
+        "geopolitics"
       ],
-      "cross_domain": false,
+      "cross_domain": true,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:21Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "055fd04242ad",
@@ -3372,10 +3647,12 @@
       "source": "The Guardian World",
       "tier": "international",
       "region": "uk",
-      "domains": [],
+      "domains": [
+        "geopolitics"
+      ],
       "cross_domain": false,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:21Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "f013047896ca",
@@ -3388,7 +3665,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:21Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "11af964e6e86",
@@ -3398,10 +3675,12 @@
       "source": "The Guardian World",
       "tier": "international",
       "region": "uk",
-      "domains": [],
+      "domains": [
+        "geopolitics"
+      ],
       "cross_domain": false,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:21Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "f4b56cefb946",
@@ -3414,7 +3693,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:21Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "4d13e042d706",
@@ -3424,10 +3703,12 @@
       "source": "The Guardian World",
       "tier": "international",
       "region": "uk",
-      "domains": [],
+      "domains": [
+        "domestic_politics"
+      ],
       "cross_domain": false,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:21Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "21fc3edafaaa",
@@ -3437,10 +3718,12 @@
       "source": "The Guardian World",
       "tier": "international",
       "region": "uk",
-      "domains": [],
+      "domains": [
+        "security"
+      ],
       "cross_domain": false,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:21Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "075dbe85c3a1",
@@ -3451,11 +3734,12 @@
       "tier": "international",
       "region": "uk",
       "domains": [
-        "economics"
+        "economics",
+        "security"
       ],
-      "cross_domain": false,
+      "cross_domain": true,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:21Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "f41f569b845a",
@@ -3472,7 +3756,7 @@
       ],
       "cross_domain": true,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:21Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "984253308206",
@@ -3485,7 +3769,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:21Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "4b6218222184",
@@ -3498,22 +3782,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:21Z"
-    },
-    {
-      "id": "a10877c336b6",
-      "title": "WA premier issues transparency warning to fuel suppliers – as it happened",
-      "url": "https://www.theguardian.com/australia-news/live/2026/mar/27/tropical-cyclone-narelle-fuel-crisis-petrol-cost-of-living-inflation-iran-war-storm-anthony-albanese-angus-taylor-ntwnfb",
-      "summary": "This blog is now closed Pauline Hanson’s One Nation likely to win second South Australian seat Albanese government says fuel supply ‘same, if not higher’ in coming weeks as Coalition calls for halving of excise Get our breaking news email , free app or daily news podcast Power outages in Sydney after storms hit city overnight Power outages continue across Sydney this morning after heavy storms battered the city and surrounding areas overnight. Continue reading...",
-      "source": "The Guardian World",
-      "tier": "international",
-      "region": "uk",
-      "domains": [
-        "governance"
-      ],
-      "cross_domain": false,
-      "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:21Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "9549805f39af",
@@ -3525,11 +3794,13 @@
       "region": "uk",
       "domains": [
         "governance",
-        "climate"
+        "climate",
+        "security",
+        "geopolitics"
       ],
       "cross_domain": true,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:21Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "637867474b57",
@@ -3542,7 +3813,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:21Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "bdae27111139",
@@ -3552,10 +3823,13 @@
       "source": "The Guardian World",
       "tier": "international",
       "region": "uk",
-      "domains": [],
-      "cross_domain": false,
+      "domains": [
+        "security",
+        "geopolitics"
+      ],
+      "cross_domain": true,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:21Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "58c673b1ee05",
@@ -3565,10 +3839,13 @@
       "source": "Deutsche Welle",
       "tier": "international",
       "region": "germany",
-      "domains": [],
-      "cross_domain": false,
+      "domains": [
+        "security",
+        "geopolitics"
+      ],
+      "cross_domain": true,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:22Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "9410407fcafd",
@@ -3578,10 +3855,12 @@
       "source": "Deutsche Welle",
       "tier": "international",
       "region": "germany",
-      "domains": [],
+      "domains": [
+        "geopolitics"
+      ],
       "cross_domain": false,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:22Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "e5f133489412",
@@ -3596,7 +3875,7 @@
       ],
       "cross_domain": false,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:22Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "ad4ea43bc1b9",
@@ -3606,10 +3885,12 @@
       "source": "Deutsche Welle",
       "tier": "international",
       "region": "germany",
-      "domains": [],
+      "domains": [
+        "geopolitics"
+      ],
       "cross_domain": false,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:22Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "23d76d9cafa4",
@@ -3622,7 +3903,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:22Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "34f4fb26a036",
@@ -3632,10 +3913,12 @@
       "source": "Deutsche Welle",
       "tier": "international",
       "region": "germany",
-      "domains": [],
+      "domains": [
+        "geopolitics"
+      ],
       "cross_domain": false,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:22Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "e47a5edbbc88",
@@ -3650,7 +3933,7 @@
       ],
       "cross_domain": false,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:22Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "bd9dc6782c0d",
@@ -3663,7 +3946,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:22Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "eea718d45047",
@@ -3674,11 +3957,12 @@
       "tier": "international",
       "region": "germany",
       "domains": [
-        "climate"
+        "climate",
+        "security"
       ],
-      "cross_domain": false,
+      "cross_domain": true,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:22Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "e7468d196fff",
@@ -3693,7 +3977,7 @@
       ],
       "cross_domain": false,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:22Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "d43b655b8154",
@@ -3706,7 +3990,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:22Z"
+      "ingested": "2026-03-27T23:46:05Z"
     },
     {
       "id": "05731af25aa1",
@@ -3719,7 +4003,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:22Z"
+      "ingested": "2026-03-27T23:46:05Z"
     },
     {
       "id": "6d21df401836",
@@ -3731,11 +4015,12 @@
       "region": "france",
       "domains": [
         "labor",
-        "climate"
+        "climate",
+        "security"
       ],
       "cross_domain": true,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:22Z"
+      "ingested": "2026-03-27T23:46:05Z"
     },
     {
       "id": "eafa774b8fb6",
@@ -3745,10 +4030,14 @@
       "source": "France 24",
       "tier": "international",
       "region": "france",
-      "domains": [],
-      "cross_domain": false,
+      "domains": [
+        "security",
+        "geopolitics",
+        "domestic_politics"
+      ],
+      "cross_domain": true,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:22Z"
+      "ingested": "2026-03-27T23:46:05Z"
     },
     {
       "id": "6ba85feba75e",
@@ -3759,11 +4048,12 @@
       "tier": "international",
       "region": "france",
       "domains": [
-        "information"
+        "information",
+        "security"
       ],
-      "cross_domain": false,
+      "cross_domain": true,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:22Z"
+      "ingested": "2026-03-27T23:46:05Z"
     },
     {
       "id": "15708f2be98d",
@@ -3773,10 +4063,12 @@
       "source": "France 24",
       "tier": "international",
       "region": "france",
-      "domains": [],
+      "domains": [
+        "geopolitics"
+      ],
       "cross_domain": false,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:22Z"
+      "ingested": "2026-03-27T23:46:05Z"
     },
     {
       "id": "195fb4c66fcb",
@@ -3786,10 +4078,14 @@
       "source": "France 24",
       "tier": "international",
       "region": "france",
-      "domains": [],
-      "cross_domain": false,
+      "domains": [
+        "security",
+        "geopolitics",
+        "domestic_politics"
+      ],
+      "cross_domain": true,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:22Z"
+      "ingested": "2026-03-27T23:46:05Z"
     },
     {
       "id": "356f8fc0561d",
@@ -3800,11 +4096,12 @@
       "tier": "international",
       "region": "france",
       "domains": [
-        "information"
+        "information",
+        "security"
       ],
-      "cross_domain": false,
+      "cross_domain": true,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:22Z"
+      "ingested": "2026-03-27T23:46:05Z"
     },
     {
       "id": "a63db4f6fa79",
@@ -3814,10 +4111,12 @@
       "source": "South China Morning Post",
       "tier": "international",
       "region": "hong_kong",
-      "domains": [],
+      "domains": [
+        "domestic_politics"
+      ],
       "cross_domain": false,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:23Z"
+      "ingested": "2026-03-27T23:46:05Z"
     },
     {
       "id": "e1744f8e41e4",
@@ -3827,10 +4126,13 @@
       "source": "South China Morning Post",
       "tier": "international",
       "region": "hong_kong",
-      "domains": [],
-      "cross_domain": false,
+      "domains": [
+        "geopolitics",
+        "domestic_politics"
+      ],
+      "cross_domain": true,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:23Z"
+      "ingested": "2026-03-27T23:46:05Z"
     },
     {
       "id": "af6a36af1d2b",
@@ -3841,11 +4143,12 @@
       "tier": "international",
       "region": "hong_kong",
       "domains": [
-        "economics"
+        "economics",
+        "geopolitics"
       ],
-      "cross_domain": false,
+      "cross_domain": true,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:23Z"
+      "ingested": "2026-03-27T23:46:05Z"
     },
     {
       "id": "ad2aa064011b",
@@ -3858,7 +4161,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:23Z"
+      "ingested": "2026-03-27T23:46:05Z"
     },
     {
       "id": "c0a386a8a298",
@@ -3868,10 +4171,13 @@
       "source": "South China Morning Post",
       "tier": "international",
       "region": "hong_kong",
-      "domains": [],
-      "cross_domain": false,
+      "domains": [
+        "security",
+        "geopolitics"
+      ],
+      "cross_domain": true,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:23Z"
+      "ingested": "2026-03-27T23:46:05Z"
     },
     {
       "id": "30d6b8df2040",
@@ -3886,7 +4192,7 @@
       ],
       "cross_domain": false,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:23Z"
+      "ingested": "2026-03-27T23:46:05Z"
     },
     {
       "id": "a2990ba8a051",
@@ -3896,10 +4202,12 @@
       "source": "South China Morning Post",
       "tier": "international",
       "region": "hong_kong",
-      "domains": [],
+      "domains": [
+        "geopolitics"
+      ],
       "cross_domain": false,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:23Z"
+      "ingested": "2026-03-27T23:46:05Z"
     },
     {
       "id": "133b351e5136",
@@ -3909,10 +4217,13 @@
       "source": "South China Morning Post",
       "tier": "international",
       "region": "hong_kong",
-      "domains": [],
-      "cross_domain": false,
+      "domains": [
+        "security",
+        "geopolitics"
+      ],
+      "cross_domain": true,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:23Z"
+      "ingested": "2026-03-27T23:46:05Z"
     },
     {
       "id": "ba46b3a06852",
@@ -3923,11 +4234,12 @@
       "tier": "international",
       "region": "hong_kong",
       "domains": [
-        "climate"
+        "climate",
+        "geopolitics"
       ],
-      "cross_domain": false,
+      "cross_domain": true,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:23Z"
+      "ingested": "2026-03-27T23:46:05Z"
     },
     {
       "id": "16628fcf592e",
@@ -3937,10 +4249,12 @@
       "source": "South China Morning Post",
       "tier": "international",
       "region": "hong_kong",
-      "domains": [],
+      "domains": [
+        "security"
+      ],
       "cross_domain": false,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:23Z"
+      "ingested": "2026-03-27T23:46:05Z"
     },
     {
       "id": "b0ed706da0bd",
@@ -3955,7 +4269,7 @@
       ],
       "cross_domain": false,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:23Z"
+      "ingested": "2026-03-27T23:46:05Z"
     },
     {
       "id": "40718e12304e",
@@ -3965,10 +4279,13 @@
       "source": "South China Morning Post",
       "tier": "international",
       "region": "hong_kong",
-      "domains": [],
-      "cross_domain": false,
+      "domains": [
+        "security",
+        "geopolitics"
+      ],
+      "cross_domain": true,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:23Z"
+      "ingested": "2026-03-27T23:46:05Z"
     },
     {
       "id": "7e54766f0f1a",
@@ -3979,11 +4296,13 @@
       "tier": "international",
       "region": "hong_kong",
       "domains": [
-        "governance"
+        "governance",
+        "security",
+        "geopolitics"
       ],
-      "cross_domain": false,
+      "cross_domain": true,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:23Z"
+      "ingested": "2026-03-27T23:46:05Z"
     },
     {
       "id": "c33437c7b034",
@@ -3993,10 +4312,13 @@
       "source": "South China Morning Post",
       "tier": "international",
       "region": "hong_kong",
-      "domains": [],
-      "cross_domain": false,
+      "domains": [
+        "security",
+        "geopolitics"
+      ],
+      "cross_domain": true,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:23Z"
+      "ingested": "2026-03-27T23:46:05Z"
     },
     {
       "id": "5b65ac15a4dd",
@@ -4006,10 +4328,12 @@
       "source": "South China Morning Post",
       "tier": "international",
       "region": "hong_kong",
-      "domains": [],
+      "domains": [
+        "security"
+      ],
       "cross_domain": false,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:23Z"
+      "ingested": "2026-03-27T23:46:05Z"
     },
     {
       "id": "f1f598ef98eb",
@@ -4019,23 +4343,14 @@
       "source": "South China Morning Post",
       "tier": "international",
       "region": "hong_kong",
-      "domains": [],
-      "cross_domain": false,
+      "domains": [
+        "security",
+        "geopolitics",
+        "domestic_politics"
+      ],
+      "cross_domain": true,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:23Z"
-    },
-    {
-      "id": "f80582c51a09",
-      "title": "Hong Kong’s MTR Corp to keep fares unchanged for second year in row",
-      "url": "https://www.scmp.com/news/hong-kong/transport/article/3348194/hong-kongs-mtr-corp-keep-fares-unchanged-second-year-row?utm_source=rss_feed",
-      "summary": "Hong Kong’s rail operator has announced it will keep fares unchanged for the coming year after an annual review, marking the second year without any increase. The fare freeze was decided based on the so-called direct-drive formula under the fare adjustment mechanism, which takes into account factors such as inflation, the latest wages in the transport sector, the MTR Corporation’s productivity and profitability, and the affordability of the people. MTR Corp Hong Kong transport services director.",
-      "source": "South China Morning Post",
-      "tier": "international",
-      "region": "hong_kong",
-      "domains": [],
-      "cross_domain": false,
-      "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:23Z"
+      "ingested": "2026-03-27T23:46:05Z"
     },
     {
       "id": "b68b1a706c14",
@@ -4048,7 +4363,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:26Z"
+      "ingested": "2026-03-27T23:46:08Z"
     },
     {
       "id": "fdd36f4af66d",
@@ -4061,7 +4376,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:26Z"
+      "ingested": "2026-03-27T23:46:08Z"
     },
     {
       "id": "f208db32d32b",
@@ -4074,7 +4389,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:28Z"
+      "ingested": "2026-03-27T23:46:10Z"
     },
     {
       "id": "5926732ba680",
@@ -4086,11 +4401,12 @@
       "region": "information",
       "domains": [
         "governance",
-        "information"
+        "information",
+        "security"
       ],
       "cross_domain": true,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:29Z"
+      "ingested": "2026-03-27T23:46:10Z"
     },
     {
       "id": "d6a7e791474c",
@@ -4103,7 +4419,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:29Z"
+      "ingested": "2026-03-27T23:46:10Z"
     },
     {
       "id": "b22d4f1be6c6",
@@ -4116,7 +4432,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:30Z"
+      "ingested": "2026-03-27T23:46:12Z"
     },
     {
       "id": "3c7aa6c77963",
@@ -4129,7 +4445,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:30Z"
+      "ingested": "2026-03-27T23:46:12Z"
     },
     {
       "id": "6f6eacf8fcaa",
@@ -4142,7 +4458,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:31Z"
+      "ingested": "2026-03-27T23:46:13Z"
     },
     {
       "id": "57815684a1c7",
@@ -4157,7 +4473,7 @@
       ],
       "cross_domain": false,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:31Z"
+      "ingested": "2026-03-27T23:46:13Z"
     },
     {
       "id": "f558fb996d7c",
@@ -4172,7 +4488,7 @@
       ],
       "cross_domain": false,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:31Z"
+      "ingested": "2026-03-27T23:46:13Z"
     },
     {
       "id": "99472752079d",
@@ -4187,7 +4503,7 @@
       ],
       "cross_domain": false,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:31Z"
+      "ingested": "2026-03-27T23:46:13Z"
     },
     {
       "id": "fbebf0860f4b",
@@ -4200,7 +4516,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:31Z"
+      "ingested": "2026-03-27T23:46:13Z"
     },
     {
       "id": "580abe421aee",
@@ -4212,11 +4528,12 @@
       "region": "climate",
       "domains": [
         "information",
-        "climate"
+        "climate",
+        "security"
       ],
       "cross_domain": true,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:31Z"
+      "ingested": "2026-03-27T23:46:13Z"
     },
     {
       "id": "447f28824cce",
@@ -4231,7 +4548,7 @@
       ],
       "cross_domain": false,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:32Z"
+      "ingested": "2026-03-27T23:46:15Z"
     },
     {
       "id": "603acf1ec659",
@@ -4244,7 +4561,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:32Z"
+      "ingested": "2026-03-27T23:46:15Z"
     },
     {
       "id": "29cdd854286c",
@@ -4257,7 +4574,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:33Z"
+      "ingested": "2026-03-27T23:46:15Z"
     },
     {
       "id": "915bba3712d0",
@@ -4270,7 +4587,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:33Z"
+      "ingested": "2026-03-27T23:46:15Z"
     },
     {
       "id": "432e0d9047b8",
@@ -4281,11 +4598,13 @@
       "tier": "domain",
       "region": "economics",
       "domains": [
-        "labor"
+        "labor",
+        "security",
+        "domestic_politics"
       ],
-      "cross_domain": false,
+      "cross_domain": true,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:33Z"
+      "ingested": "2026-03-27T23:46:15Z"
     },
     {
       "id": "ce429814952d",
@@ -4295,10 +4614,14 @@
       "source": "Naked Capitalism",
       "tier": "domain",
       "region": "economics",
-      "domains": [],
-      "cross_domain": false,
+      "domains": [
+        "security",
+        "geopolitics",
+        "domestic_politics"
+      ],
+      "cross_domain": true,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:33Z"
+      "ingested": "2026-03-27T23:46:15Z"
     },
     {
       "id": "13c0a4e1d8a5",
@@ -4311,7 +4634,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:33Z"
+      "ingested": "2026-03-27T23:46:15Z"
     },
     {
       "id": "6ec15e57816b",
@@ -4321,10 +4644,12 @@
       "source": "Naked Capitalism",
       "tier": "domain",
       "region": "economics",
-      "domains": [],
+      "domains": [
+        "security"
+      ],
       "cross_domain": false,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:33Z"
+      "ingested": "2026-03-27T23:46:15Z"
     },
     {
       "id": "5aa4849153f5",
@@ -4337,7 +4662,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-27",
-      "ingested": "2026-03-27T23:15:33Z"
+      "ingested": "2026-03-27T23:46:16Z"
     },
     {
       "id": "cdd033a0765f",
@@ -4350,7 +4675,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-26",
-      "ingested": "2026-03-27T23:15:18Z"
+      "ingested": "2026-03-27T23:46:01Z"
     },
     {
       "id": "c61f96bc5852",
@@ -4363,22 +4688,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-26",
-      "ingested": "2026-03-27T23:15:20Z"
-    },
-    {
-      "id": "daa462f2957c",
-      "title": "A Novel About Women Who Trade One Kind of Captivity for Another",
-      "url": "https://www.theatlantic.com/books/2026/03/charlotte-wood-natural-way-things-prison/686548/?utm_source=feed",
-      "summary": "In Charlotte Wood’s The Natural Way of Things , a group of captive women discover who they might become beyond the control of men.",
-      "source": "The Atlantic",
-      "tier": "national",
-      "region": "us",
-      "domains": [
-        "economics"
-      ],
-      "cross_domain": false,
-      "date": "2026-03-26",
-      "ingested": "2026-03-27T23:15:20Z"
+      "ingested": "2026-03-27T23:46:03Z"
     },
     {
       "id": "0774e0ae2a01",
@@ -4389,11 +4699,12 @@
       "tier": "international",
       "region": "uk",
       "domains": [
-        "economics"
+        "economics",
+        "geopolitics"
       ],
-      "cross_domain": false,
+      "cross_domain": true,
       "date": "2026-03-26",
-      "ingested": "2026-03-27T23:15:21Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "59b05801977e",
@@ -4404,11 +4715,12 @@
       "tier": "international",
       "region": "uk",
       "domains": [
-        "labor"
+        "labor",
+        "security"
       ],
-      "cross_domain": false,
+      "cross_domain": true,
       "date": "2026-03-26",
-      "ingested": "2026-03-27T23:15:21Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "bc0f016d6f68",
@@ -4418,10 +4730,12 @@
       "source": "The Guardian World",
       "tier": "international",
       "region": "uk",
-      "domains": [],
+      "domains": [
+        "security"
+      ],
       "cross_domain": false,
       "date": "2026-03-26",
-      "ingested": "2026-03-27T23:15:21Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "e06372081aaa",
@@ -4431,10 +4745,14 @@
       "source": "The Guardian World",
       "tier": "international",
       "region": "uk",
-      "domains": [],
-      "cross_domain": false,
+      "domains": [
+        "security",
+        "geopolitics",
+        "domestic_politics"
+      ],
+      "cross_domain": true,
       "date": "2026-03-26",
-      "ingested": "2026-03-27T23:15:21Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "229f2aeb6576",
@@ -4444,10 +4762,13 @@
       "source": "Deutsche Welle",
       "tier": "international",
       "region": "germany",
-      "domains": [],
-      "cross_domain": false,
+      "domains": [
+        "security",
+        "geopolitics"
+      ],
+      "cross_domain": true,
       "date": "2026-03-26",
-      "ingested": "2026-03-27T23:15:22Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "4a6f6ca500ef",
@@ -4460,7 +4781,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-26",
-      "ingested": "2026-03-27T23:15:22Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "5b8720c8209a",
@@ -4470,10 +4791,12 @@
       "source": "Deutsche Welle",
       "tier": "international",
       "region": "germany",
-      "domains": [],
+      "domains": [
+        "security"
+      ],
       "cross_domain": false,
       "date": "2026-03-26",
-      "ingested": "2026-03-27T23:15:22Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "f8faac49e127",
@@ -4483,10 +4806,12 @@
       "source": "Deutsche Welle",
       "tier": "international",
       "region": "germany",
-      "domains": [],
+      "domains": [
+        "security"
+      ],
       "cross_domain": false,
       "date": "2026-03-26",
-      "ingested": "2026-03-27T23:15:22Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "b2df86898b19",
@@ -4501,7 +4826,7 @@
       ],
       "cross_domain": false,
       "date": "2026-03-26",
-      "ingested": "2026-03-27T23:15:26Z"
+      "ingested": "2026-03-27T23:46:08Z"
     },
     {
       "id": "1a67c37c0ca9",
@@ -4514,7 +4839,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-26",
-      "ingested": "2026-03-27T23:15:26Z"
+      "ingested": "2026-03-27T23:46:08Z"
     },
     {
       "id": "9de0ac1c6c1b",
@@ -4525,11 +4850,12 @@
       "tier": "domain",
       "region": "ai",
       "domains": [
-        "climate"
+        "climate",
+        "security"
       ],
-      "cross_domain": false,
+      "cross_domain": true,
       "date": "2026-03-26",
-      "ingested": "2026-03-27T23:15:26Z"
+      "ingested": "2026-03-27T23:46:08Z"
     },
     {
       "id": "a2f0d2ed92cd",
@@ -4542,7 +4868,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-26",
-      "ingested": "2026-03-27T23:15:26Z"
+      "ingested": "2026-03-27T23:46:08Z"
     },
     {
       "id": "a17556430038",
@@ -4555,7 +4881,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-26",
-      "ingested": "2026-03-27T23:15:28Z"
+      "ingested": "2026-03-27T23:46:10Z"
     },
     {
       "id": "18c890d2d4c8",
@@ -4568,7 +4894,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-26",
-      "ingested": "2026-03-27T23:15:28Z"
+      "ingested": "2026-03-27T23:46:10Z"
     },
     {
       "id": "b040bdf36d19",
@@ -4578,10 +4904,12 @@
       "source": "Nieman Lab",
       "tier": "domain",
       "region": "information",
-      "domains": [],
+      "domains": [
+        "geopolitics"
+      ],
       "cross_domain": false,
       "date": "2026-03-26",
-      "ingested": "2026-03-27T23:15:29Z"
+      "ingested": "2026-03-27T23:46:10Z"
     },
     {
       "id": "dc50bf985be4",
@@ -4594,7 +4922,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-26",
-      "ingested": "2026-03-27T23:15:29Z"
+      "ingested": "2026-03-27T23:46:10Z"
     },
     {
       "id": "04ec2421b93a",
@@ -4607,7 +4935,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-26",
-      "ingested": "2026-03-27T23:15:30Z"
+      "ingested": "2026-03-27T23:46:12Z"
     },
     {
       "id": "76440ad2c0a0",
@@ -4620,7 +4948,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-26",
-      "ingested": "2026-03-27T23:15:30Z"
+      "ingested": "2026-03-27T23:46:12Z"
     },
     {
       "id": "046164f744c8",
@@ -4630,10 +4958,12 @@
       "source": "ProPublica",
       "tier": "domain",
       "region": "governance",
-      "domains": [],
+      "domains": [
+        "security"
+      ],
       "cross_domain": false,
       "date": "2026-03-26",
-      "ingested": "2026-03-27T23:15:30Z"
+      "ingested": "2026-03-27T23:46:12Z"
     },
     {
       "id": "954d4f354079",
@@ -4643,10 +4973,12 @@
       "source": "ProPublica",
       "tier": "domain",
       "region": "governance",
-      "domains": [],
+      "domains": [
+        "domestic_politics"
+      ],
       "cross_domain": false,
       "date": "2026-03-26",
-      "ingested": "2026-03-27T23:15:30Z"
+      "ingested": "2026-03-27T23:46:12Z"
     },
     {
       "id": "87acebb0e283",
@@ -4659,7 +4991,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-26",
-      "ingested": "2026-03-27T23:15:30Z"
+      "ingested": "2026-03-27T23:46:12Z"
     },
     {
       "id": "5daadf19a8aa",
@@ -4670,11 +5002,12 @@
       "tier": "domain",
       "region": "climate",
       "domains": [
-        "climate"
+        "climate",
+        "security"
       ],
-      "cross_domain": false,
+      "cross_domain": true,
       "date": "2026-03-26",
-      "ingested": "2026-03-27T23:15:31Z"
+      "ingested": "2026-03-27T23:46:13Z"
     },
     {
       "id": "b51f07fd0c35",
@@ -4687,7 +5020,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-26",
-      "ingested": "2026-03-27T23:15:31Z"
+      "ingested": "2026-03-27T23:46:13Z"
     },
     {
       "id": "ccb3badb5301",
@@ -4698,11 +5031,12 @@
       "tier": "domain",
       "region": "climate",
       "domains": [
-        "climate"
+        "climate",
+        "security"
       ],
-      "cross_domain": false,
+      "cross_domain": true,
       "date": "2026-03-26",
-      "ingested": "2026-03-27T23:15:31Z"
+      "ingested": "2026-03-27T23:46:13Z"
     },
     {
       "id": "edde34e2c332",
@@ -4713,11 +5047,12 @@
       "tier": "domain",
       "region": "climate",
       "domains": [
-        "climate"
+        "climate",
+        "security"
       ],
-      "cross_domain": false,
+      "cross_domain": true,
       "date": "2026-03-26",
-      "ingested": "2026-03-27T23:15:31Z"
+      "ingested": "2026-03-27T23:46:13Z"
     },
     {
       "id": "410f578b938f",
@@ -4727,10 +5062,12 @@
       "source": "Grist",
       "tier": "domain",
       "region": "climate",
-      "domains": [],
+      "domains": [
+        "security"
+      ],
       "cross_domain": false,
       "date": "2026-03-26",
-      "ingested": "2026-03-27T23:15:31Z"
+      "ingested": "2026-03-27T23:46:13Z"
     },
     {
       "id": "a2d8ed42deed",
@@ -4743,7 +5080,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-26",
-      "ingested": "2026-03-27T23:15:31Z"
+      "ingested": "2026-03-27T23:46:13Z"
     },
     {
       "id": "8e63084fc882",
@@ -4758,7 +5095,7 @@
       ],
       "cross_domain": false,
       "date": "2026-03-26",
-      "ingested": "2026-03-27T23:15:31Z"
+      "ingested": "2026-03-27T23:46:13Z"
     },
     {
       "id": "ee128e4974f5",
@@ -4771,7 +5108,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-26",
-      "ingested": "2026-03-27T23:15:32Z"
+      "ingested": "2026-03-27T23:46:15Z"
     },
     {
       "id": "56d6eb2f9983",
@@ -4784,7 +5121,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-26",
-      "ingested": "2026-03-27T23:15:32Z"
+      "ingested": "2026-03-27T23:46:15Z"
     },
     {
       "id": "d510d9817b7a",
@@ -4800,7 +5137,7 @@
       ],
       "cross_domain": true,
       "date": "2026-03-26",
-      "ingested": "2026-03-27T23:15:32Z"
+      "ingested": "2026-03-27T23:46:15Z"
     },
     {
       "id": "8645dc1184f2",
@@ -4815,7 +5152,7 @@
       ],
       "cross_domain": false,
       "date": "2026-03-26",
-      "ingested": "2026-03-27T23:15:32Z"
+      "ingested": "2026-03-27T23:46:15Z"
     },
     {
       "id": "8d5a1ecc8d7c",
@@ -4825,10 +5162,12 @@
       "source": "Naked Capitalism",
       "tier": "domain",
       "region": "economics",
-      "domains": [],
+      "domains": [
+        "security"
+      ],
       "cross_domain": false,
       "date": "2026-03-26",
-      "ingested": "2026-03-27T23:15:33Z"
+      "ingested": "2026-03-27T23:46:15Z"
     },
     {
       "id": "d2170396bd2f",
@@ -4841,7 +5180,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-26",
-      "ingested": "2026-03-27T23:15:33Z"
+      "ingested": "2026-03-27T23:46:15Z"
     },
     {
       "id": "ed7023388013",
@@ -4852,11 +5191,12 @@
       "tier": "domain",
       "region": "economics",
       "domains": [
-        "economics"
+        "economics",
+        "security"
       ],
-      "cross_domain": false,
+      "cross_domain": true,
       "date": "2026-03-26",
-      "ingested": "2026-03-27T23:15:33Z"
+      "ingested": "2026-03-27T23:46:15Z"
     },
     {
       "id": "3057724ea465",
@@ -4872,7 +5212,7 @@
       ],
       "cross_domain": true,
       "date": "2026-03-26",
-      "ingested": "2026-03-27T23:15:33Z"
+      "ingested": "2026-03-27T23:46:16Z"
     },
     {
       "id": "8d1d3b7e3f28",
@@ -4882,10 +5222,12 @@
       "source": "The Guardian World",
       "tier": "international",
       "region": "uk",
-      "domains": [],
+      "domains": [
+        "geopolitics"
+      ],
       "cross_domain": false,
       "date": "2026-03-25",
-      "ingested": "2026-03-27T23:15:21Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "2b35746ca2c4",
@@ -4896,11 +5238,13 @@
       "tier": "international",
       "region": "uk",
       "domains": [
-        "climate"
+        "climate",
+        "security",
+        "geopolitics"
       ],
-      "cross_domain": false,
+      "cross_domain": true,
       "date": "2026-03-25",
-      "ingested": "2026-03-27T23:15:21Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "c09d32ab9cd2",
@@ -4911,11 +5255,12 @@
       "tier": "international",
       "region": "uk",
       "domains": [
-        "climate"
+        "climate",
+        "security"
       ],
-      "cross_domain": false,
+      "cross_domain": true,
       "date": "2026-03-25",
-      "ingested": "2026-03-27T23:15:21Z"
+      "ingested": "2026-03-27T23:46:04Z"
     },
     {
       "id": "f3500499a7b4",
@@ -4931,7 +5276,7 @@
       ],
       "cross_domain": true,
       "date": "2026-03-25",
-      "ingested": "2026-03-27T23:15:26Z"
+      "ingested": "2026-03-27T23:46:08Z"
     },
     {
       "id": "84656a8392ac",
@@ -4942,11 +5287,12 @@
       "tier": "domain",
       "region": "ai",
       "domains": [
-        "economics"
+        "economics",
+        "security"
       ],
-      "cross_domain": false,
+      "cross_domain": true,
       "date": "2026-03-25",
-      "ingested": "2026-03-27T23:15:26Z"
+      "ingested": "2026-03-27T23:46:08Z"
     },
     {
       "id": "b8be43d03f82",
@@ -4959,7 +5305,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-25",
-      "ingested": "2026-03-27T23:15:26Z"
+      "ingested": "2026-03-27T23:46:08Z"
     },
     {
       "id": "dbb0252a5af7",
@@ -4972,7 +5318,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-25",
-      "ingested": "2026-03-27T23:15:26Z"
+      "ingested": "2026-03-27T23:46:08Z"
     },
     {
       "id": "d2ca02135ba7",
@@ -4987,7 +5333,7 @@
       ],
       "cross_domain": false,
       "date": "2026-03-25",
-      "ingested": "2026-03-27T23:15:28Z"
+      "ingested": "2026-03-27T23:46:10Z"
     },
     {
       "id": "a78fb0e93074",
@@ -5002,7 +5348,7 @@
       ],
       "cross_domain": false,
       "date": "2026-03-25",
-      "ingested": "2026-03-27T23:15:28Z"
+      "ingested": "2026-03-27T23:46:10Z"
     },
     {
       "id": "4a0c4756cbb9",
@@ -5018,7 +5364,7 @@
       ],
       "cross_domain": true,
       "date": "2026-03-25",
-      "ingested": "2026-03-27T23:15:28Z"
+      "ingested": "2026-03-27T23:46:10Z"
     },
     {
       "id": "fee371625e68",
@@ -5033,7 +5379,7 @@
       ],
       "cross_domain": false,
       "date": "2026-03-25",
-      "ingested": "2026-03-27T23:15:29Z"
+      "ingested": "2026-03-27T23:46:10Z"
     },
     {
       "id": "79b31f430e11",
@@ -5049,7 +5395,7 @@
       ],
       "cross_domain": true,
       "date": "2026-03-25",
-      "ingested": "2026-03-27T23:15:29Z"
+      "ingested": "2026-03-27T23:46:10Z"
     },
     {
       "id": "d9f64b4376b7",
@@ -5062,7 +5408,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-25",
-      "ingested": "2026-03-27T23:15:30Z"
+      "ingested": "2026-03-27T23:46:12Z"
     },
     {
       "id": "4ac3977cdca3",
@@ -5073,11 +5419,12 @@
       "tier": "domain",
       "region": "governance",
       "domains": [
-        "labor"
+        "labor",
+        "domestic_politics"
       ],
-      "cross_domain": false,
+      "cross_domain": true,
       "date": "2026-03-25",
-      "ingested": "2026-03-27T23:15:30Z"
+      "ingested": "2026-03-27T23:46:12Z"
     },
     {
       "id": "b395f556aae2",
@@ -5088,11 +5435,12 @@
       "tier": "domain",
       "region": "climate",
       "domains": [
-        "climate"
+        "climate",
+        "security"
       ],
-      "cross_domain": false,
+      "cross_domain": true,
       "date": "2026-03-25",
-      "ingested": "2026-03-27T23:15:31Z"
+      "ingested": "2026-03-27T23:46:13Z"
     },
     {
       "id": "03895a16be0b",
@@ -5107,7 +5455,7 @@
       ],
       "cross_domain": false,
       "date": "2026-03-25",
-      "ingested": "2026-03-27T23:15:31Z"
+      "ingested": "2026-03-27T23:46:13Z"
     },
     {
       "id": "b1c452c6c2b3",
@@ -5122,7 +5470,7 @@
       ],
       "cross_domain": false,
       "date": "2026-03-25",
-      "ingested": "2026-03-27T23:15:31Z"
+      "ingested": "2026-03-27T23:46:13Z"
     },
     {
       "id": "76fe7befab04",
@@ -5133,11 +5481,12 @@
       "tier": "domain",
       "region": "climate",
       "domains": [
-        "climate"
+        "climate",
+        "domestic_politics"
       ],
-      "cross_domain": false,
+      "cross_domain": true,
       "date": "2026-03-25",
-      "ingested": "2026-03-27T23:15:31Z"
+      "ingested": "2026-03-27T23:46:13Z"
     },
     {
       "id": "1ba520b66db9",
@@ -5152,7 +5501,7 @@
       ],
       "cross_domain": false,
       "date": "2026-03-25",
-      "ingested": "2026-03-27T23:15:32Z"
+      "ingested": "2026-03-27T23:46:15Z"
     },
     {
       "id": "83d2384def9a",
@@ -5163,11 +5512,13 @@
       "tier": "domain",
       "region": "information",
       "domains": [
-        "information"
+        "information",
+        "security",
+        "domestic_politics"
       ],
-      "cross_domain": false,
+      "cross_domain": true,
       "date": "2026-03-25",
-      "ingested": "2026-03-27T23:15:32Z"
+      "ingested": "2026-03-27T23:46:15Z"
     },
     {
       "id": "4a67a43fa6a1",
@@ -5182,7 +5533,7 @@
       ],
       "cross_domain": false,
       "date": "2026-03-25",
-      "ingested": "2026-03-27T23:15:32Z"
+      "ingested": "2026-03-27T23:46:15Z"
     },
     {
       "id": "295e071330bb",
@@ -5195,7 +5546,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-25",
-      "ingested": "2026-03-27T23:15:33Z"
+      "ingested": "2026-03-27T23:46:16Z"
     },
     {
       "id": "321a4e4635c9",
@@ -5206,11 +5557,12 @@
       "tier": "domain",
       "region": "information",
       "domains": [
-        "information"
+        "information",
+        "geopolitics"
       ],
-      "cross_domain": false,
+      "cross_domain": true,
       "date": "2026-03-24",
-      "ingested": "2026-03-27T23:15:28Z"
+      "ingested": "2026-03-27T23:46:10Z"
     },
     {
       "id": "2f18bc19e353",
@@ -5223,7 +5575,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-24",
-      "ingested": "2026-03-27T23:15:29Z"
+      "ingested": "2026-03-27T23:46:10Z"
     },
     {
       "id": "c7a867c02da0",
@@ -5236,7 +5588,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-24",
-      "ingested": "2026-03-27T23:15:29Z"
+      "ingested": "2026-03-27T23:46:10Z"
     },
     {
       "id": "9092da5a14d9",
@@ -5251,7 +5603,7 @@
       ],
       "cross_domain": false,
       "date": "2026-03-24",
-      "ingested": "2026-03-27T23:15:30Z"
+      "ingested": "2026-03-27T23:46:12Z"
     },
     {
       "id": "0586ec766407",
@@ -5266,7 +5618,7 @@
       ],
       "cross_domain": false,
       "date": "2026-03-24",
-      "ingested": "2026-03-27T23:15:31Z"
+      "ingested": "2026-03-27T23:46:13Z"
     },
     {
       "id": "56a0b8bb75ca",
@@ -5276,10 +5628,12 @@
       "source": "Grist",
       "tier": "domain",
       "region": "climate",
-      "domains": [],
+      "domains": [
+        "domestic_politics"
+      ],
       "cross_domain": false,
       "date": "2026-03-24",
-      "ingested": "2026-03-27T23:15:31Z"
+      "ingested": "2026-03-27T23:46:13Z"
     },
     {
       "id": "ef50cd13f208",
@@ -5292,7 +5646,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-24",
-      "ingested": "2026-03-27T23:15:33Z"
+      "ingested": "2026-03-27T23:46:16Z"
     },
     {
       "id": "4c78da07faad",
@@ -5303,11 +5657,12 @@
       "tier": "domain",
       "region": "labor",
       "domains": [
-        "labor"
+        "labor",
+        "security"
       ],
-      "cross_domain": false,
+      "cross_domain": true,
       "date": "2026-03-24",
-      "ingested": "2026-03-27T23:15:33Z"
+      "ingested": "2026-03-27T23:46:16Z"
     },
     {
       "id": "0a5e04c003bb",
@@ -5320,7 +5675,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-23",
-      "ingested": "2026-03-27T23:15:28Z"
+      "ingested": "2026-03-27T23:46:10Z"
     },
     {
       "id": "9b2104c30076",
@@ -5333,7 +5688,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-23",
-      "ingested": "2026-03-27T23:15:28Z"
+      "ingested": "2026-03-27T23:46:10Z"
     },
     {
       "id": "19883c172091",
@@ -5344,11 +5699,12 @@
       "tier": "domain",
       "region": "governance",
       "domains": [
-        "economics"
+        "economics",
+        "domestic_politics"
       ],
-      "cross_domain": false,
+      "cross_domain": true,
       "date": "2026-03-23",
-      "ingested": "2026-03-27T23:15:30Z"
+      "ingested": "2026-03-27T23:46:12Z"
     },
     {
       "id": "aa3fa9b1fa87",
@@ -5358,10 +5714,13 @@
       "source": "ProPublica",
       "tier": "domain",
       "region": "governance",
-      "domains": [],
-      "cross_domain": false,
+      "domains": [
+        "geopolitics",
+        "domestic_politics"
+      ],
+      "cross_domain": true,
       "date": "2026-03-23",
-      "ingested": "2026-03-27T23:15:30Z"
+      "ingested": "2026-03-27T23:46:12Z"
     },
     {
       "id": "4949e3199161",
@@ -5374,7 +5733,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-23",
-      "ingested": "2026-03-27T23:15:30Z"
+      "ingested": "2026-03-27T23:46:12Z"
     },
     {
       "id": "b378f076c06f",
@@ -5387,7 +5746,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-23",
-      "ingested": "2026-03-27T23:15:31Z"
+      "ingested": "2026-03-27T23:46:13Z"
     },
     {
       "id": "a2e01263bda8",
@@ -5397,10 +5756,12 @@
       "source": "Grist",
       "tier": "domain",
       "region": "climate",
-      "domains": [],
+      "domains": [
+        "domestic_politics"
+      ],
       "cross_domain": false,
       "date": "2026-03-23",
-      "ingested": "2026-03-27T23:15:31Z"
+      "ingested": "2026-03-27T23:46:13Z"
     },
     {
       "id": "bea65a71eefe",
@@ -5415,7 +5776,7 @@
       ],
       "cross_domain": false,
       "date": "2026-03-23",
-      "ingested": "2026-03-27T23:15:31Z"
+      "ingested": "2026-03-27T23:46:13Z"
     },
     {
       "id": "2e88c69c9ecc",
@@ -5428,7 +5789,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-23",
-      "ingested": "2026-03-27T23:15:33Z"
+      "ingested": "2026-03-27T23:46:16Z"
     },
     {
       "id": "c33d086f262a",
@@ -5443,7 +5804,7 @@
       ],
       "cross_domain": false,
       "date": "2026-03-23",
-      "ingested": "2026-03-27T23:15:33Z"
+      "ingested": "2026-03-27T23:46:16Z"
     },
     {
       "id": "30cd6dcdfe9b",
@@ -5454,11 +5815,12 @@
       "tier": "domain",
       "region": "climate",
       "domains": [
-        "climate"
+        "climate",
+        "domestic_politics"
       ],
-      "cross_domain": false,
+      "cross_domain": true,
       "date": "2026-03-22",
-      "ingested": "2026-03-27T23:15:31Z"
+      "ingested": "2026-03-27T23:46:13Z"
     },
     {
       "id": "76de4b072441",
@@ -5468,10 +5830,12 @@
       "source": "Grist",
       "tier": "domain",
       "region": "climate",
-      "domains": [],
+      "domains": [
+        "security"
+      ],
       "cross_domain": false,
       "date": "2026-03-21",
-      "ingested": "2026-03-27T23:15:31Z"
+      "ingested": "2026-03-27T23:46:13Z"
     },
     {
       "id": "1425f73030c3",
@@ -5484,7 +5848,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-20",
-      "ingested": "2026-03-27T23:15:28Z"
+      "ingested": "2026-03-27T23:46:10Z"
     },
     {
       "id": "a53df455b3ff",
@@ -5499,7 +5863,7 @@
       ],
       "cross_domain": false,
       "date": "2026-03-20",
-      "ingested": "2026-03-27T23:15:29Z"
+      "ingested": "2026-03-27T23:46:10Z"
     },
     {
       "id": "993751ba17c0",
@@ -5514,7 +5878,7 @@
       ],
       "cross_domain": false,
       "date": "2026-03-20",
-      "ingested": "2026-03-27T23:15:29Z"
+      "ingested": "2026-03-27T23:46:10Z"
     },
     {
       "id": "34cef65d89fb",
@@ -5527,7 +5891,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-20",
-      "ingested": "2026-03-27T23:15:30Z"
+      "ingested": "2026-03-27T23:46:12Z"
     },
     {
       "id": "0bceed235299",
@@ -5537,10 +5901,12 @@
       "source": "ProPublica",
       "tier": "domain",
       "region": "governance",
-      "domains": [],
+      "domains": [
+        "domestic_politics"
+      ],
       "cross_domain": false,
       "date": "2026-03-20",
-      "ingested": "2026-03-27T23:15:30Z"
+      "ingested": "2026-03-27T23:46:12Z"
     },
     {
       "id": "d23c32936c7b",
@@ -5550,10 +5916,12 @@
       "source": "ProPublica",
       "tier": "domain",
       "region": "governance",
-      "domains": [],
+      "domains": [
+        "domestic_politics"
+      ],
       "cross_domain": false,
       "date": "2026-03-20",
-      "ingested": "2026-03-27T23:15:30Z"
+      "ingested": "2026-03-27T23:46:12Z"
     },
     {
       "id": "b38912555a61",
@@ -5566,7 +5934,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-20",
-      "ingested": "2026-03-27T23:15:30Z"
+      "ingested": "2026-03-27T23:46:12Z"
     },
     {
       "id": "e5a90101e476",
@@ -5579,7 +5947,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-20",
-      "ingested": "2026-03-27T23:15:31Z"
+      "ingested": "2026-03-27T23:46:13Z"
     },
     {
       "id": "44bf87189bfd",
@@ -5592,7 +5960,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-20",
-      "ingested": "2026-03-27T23:15:31Z"
+      "ingested": "2026-03-27T23:46:13Z"
     },
     {
       "id": "f570c1a6c2cc",
@@ -5607,7 +5975,7 @@
       ],
       "cross_domain": false,
       "date": "2026-03-20",
-      "ingested": "2026-03-27T23:15:33Z"
+      "ingested": "2026-03-27T23:46:16Z"
     },
     {
       "id": "710ac618bf57",
@@ -5617,10 +5985,12 @@
       "source": "EPI Blog",
       "tier": "domain",
       "region": "labor",
-      "domains": [],
+      "domains": [
+        "domestic_politics"
+      ],
       "cross_domain": false,
       "date": "2026-03-19",
-      "ingested": "2026-03-27T23:15:28Z"
+      "ingested": "2026-03-27T23:46:09Z"
     },
     {
       "id": "66299c7653ec",
@@ -5632,11 +6002,12 @@
       "region": "labor",
       "domains": [
         "labor",
-        "economics"
+        "economics",
+        "domestic_politics"
       ],
       "cross_domain": true,
       "date": "2026-03-19",
-      "ingested": "2026-03-27T23:15:28Z"
+      "ingested": "2026-03-27T23:46:09Z"
     },
     {
       "id": "827d4188241a",
@@ -5649,7 +6020,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-19",
-      "ingested": "2026-03-27T23:15:29Z"
+      "ingested": "2026-03-27T23:46:10Z"
     },
     {
       "id": "328b6949b23e",
@@ -5662,7 +6033,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-19",
-      "ingested": "2026-03-27T23:15:30Z"
+      "ingested": "2026-03-27T23:46:12Z"
     },
     {
       "id": "e056a51e32a0",
@@ -5673,11 +6044,12 @@
       "tier": "domain",
       "region": "governance",
       "domains": [
-        "governance"
+        "governance",
+        "domestic_politics"
       ],
-      "cross_domain": false,
+      "cross_domain": true,
       "date": "2026-03-19",
-      "ingested": "2026-03-27T23:15:30Z"
+      "ingested": "2026-03-27T23:46:12Z"
     },
     {
       "id": "234dba851d07",
@@ -5690,7 +6062,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-19",
-      "ingested": "2026-03-27T23:15:31Z"
+      "ingested": "2026-03-27T23:46:13Z"
     },
     {
       "id": "2bbca8819719",
@@ -5705,7 +6077,7 @@
       ],
       "cross_domain": false,
       "date": "2026-03-19",
-      "ingested": "2026-03-27T23:15:31Z"
+      "ingested": "2026-03-27T23:46:13Z"
     },
     {
       "id": "3e62d953d398",
@@ -5720,7 +6092,7 @@
       ],
       "cross_domain": false,
       "date": "2026-03-19",
-      "ingested": "2026-03-27T23:15:31Z"
+      "ingested": "2026-03-27T23:46:13Z"
     },
     {
       "id": "07e3d65418c6",
@@ -5735,7 +6107,7 @@
       ],
       "cross_domain": false,
       "date": "2026-03-19",
-      "ingested": "2026-03-27T23:15:33Z"
+      "ingested": "2026-03-27T23:46:16Z"
     },
     {
       "id": "497bfebe74f2",
@@ -5751,7 +6123,7 @@
       ],
       "cross_domain": true,
       "date": "2026-03-18",
-      "ingested": "2026-03-27T23:15:29Z"
+      "ingested": "2026-03-27T23:46:10Z"
     },
     {
       "id": "b4e46e8439d9",
@@ -5764,7 +6136,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-18",
-      "ingested": "2026-03-27T23:15:29Z"
+      "ingested": "2026-03-27T23:46:10Z"
     },
     {
       "id": "f0be0b6cbe9f",
@@ -5779,7 +6151,7 @@
       ],
       "cross_domain": false,
       "date": "2026-03-18",
-      "ingested": "2026-03-27T23:15:29Z"
+      "ingested": "2026-03-27T23:46:10Z"
     },
     {
       "id": "787584ad66ee",
@@ -5792,7 +6164,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-18",
-      "ingested": "2026-03-27T23:15:30Z"
+      "ingested": "2026-03-27T23:46:12Z"
     },
     {
       "id": "4a5c843c98c3",
@@ -5805,7 +6177,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-18",
-      "ingested": "2026-03-27T23:15:31Z"
+      "ingested": "2026-03-27T23:46:13Z"
     },
     {
       "id": "7c282a30be49",
@@ -5820,7 +6192,7 @@
       ],
       "cross_domain": false,
       "date": "2026-03-18",
-      "ingested": "2026-03-27T23:15:33Z"
+      "ingested": "2026-03-27T23:46:16Z"
     },
     {
       "id": "789ad7e6b521",
@@ -5833,7 +6205,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-17",
-      "ingested": "2026-03-27T23:15:29Z"
+      "ingested": "2026-03-27T23:46:10Z"
     },
     {
       "id": "1e5a45053324",
@@ -5846,7 +6218,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-13",
-      "ingested": "2026-03-27T23:15:29Z"
+      "ingested": "2026-03-27T23:46:10Z"
     },
     {
       "id": "020d82abc2db",
@@ -5861,7 +6233,7 @@
       ],
       "cross_domain": false,
       "date": "2026-03-12",
-      "ingested": "2026-03-27T23:15:28Z"
+      "ingested": "2026-03-27T23:46:09Z"
     },
     {
       "id": "785f1f58cce8",
@@ -5874,7 +6246,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-12",
-      "ingested": "2026-03-27T23:15:29Z"
+      "ingested": "2026-03-27T23:46:10Z"
     },
     {
       "id": "1bf83566c775",
@@ -5889,7 +6261,7 @@
       ],
       "cross_domain": false,
       "date": "2026-03-12",
-      "ingested": "2026-03-27T23:15:29Z"
+      "ingested": "2026-03-27T23:46:10Z"
     },
     {
       "id": "f7def8d5df77",
@@ -5904,7 +6276,7 @@
       ],
       "cross_domain": false,
       "date": "2026-03-12",
-      "ingested": "2026-03-27T23:15:29Z"
+      "ingested": "2026-03-27T23:46:10Z"
     },
     {
       "id": "33aedbd6d69e",
@@ -5917,7 +6289,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-11",
-      "ingested": "2026-03-27T23:15:29Z"
+      "ingested": "2026-03-27T23:46:10Z"
     },
     {
       "id": "1d92807f2eaf",
@@ -5928,11 +6300,12 @@
       "tier": "domain",
       "region": "labor",
       "domains": [
-        "labor"
+        "labor",
+        "domestic_politics"
       ],
-      "cross_domain": false,
+      "cross_domain": true,
       "date": "2026-03-10",
-      "ingested": "2026-03-27T23:15:28Z"
+      "ingested": "2026-03-27T23:46:09Z"
     },
     {
       "id": "8e720e01bbd9",
@@ -5945,7 +6318,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-10",
-      "ingested": "2026-03-27T23:15:29Z"
+      "ingested": "2026-03-27T23:46:10Z"
     },
     {
       "id": "2fea1110ff24",
@@ -5960,7 +6333,7 @@
       ],
       "cross_domain": false,
       "date": "2026-03-10",
-      "ingested": "2026-03-27T23:15:29Z"
+      "ingested": "2026-03-27T23:46:10Z"
     },
     {
       "id": "936ab38a210d",
@@ -5972,11 +6345,12 @@
       "region": "information",
       "domains": [
         "information",
-        "climate"
+        "climate",
+        "security"
       ],
       "cross_domain": true,
       "date": "2026-03-10",
-      "ingested": "2026-03-27T23:15:29Z"
+      "ingested": "2026-03-27T23:46:10Z"
     },
     {
       "id": "8b2e1c43a2fc",
@@ -5989,7 +6363,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-09",
-      "ingested": "2026-03-27T23:15:27Z"
+      "ingested": "2026-03-27T23:46:09Z"
     },
     {
       "id": "41d33a7fc4d3",
@@ -6002,7 +6376,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-07",
-      "ingested": "2026-03-27T23:15:27Z"
+      "ingested": "2026-03-27T23:46:09Z"
     },
     {
       "id": "be545aeb1c2a",
@@ -6013,11 +6387,12 @@
       "tier": "domain",
       "region": "information",
       "domains": [
-        "governance"
+        "governance",
+        "domestic_politics"
       ],
-      "cross_domain": false,
+      "cross_domain": true,
       "date": "2026-03-06",
-      "ingested": "2026-03-27T23:15:27Z"
+      "ingested": "2026-03-27T23:46:09Z"
     },
     {
       "id": "1bd3b3e1da15",
@@ -6033,7 +6408,7 @@
       ],
       "cross_domain": true,
       "date": "2026-03-06",
-      "ingested": "2026-03-27T23:15:28Z"
+      "ingested": "2026-03-27T23:46:09Z"
     },
     {
       "id": "7a9bc01fa0d1",
@@ -6046,7 +6421,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-03-06",
-      "ingested": "2026-03-27T23:15:29Z"
+      "ingested": "2026-03-27T23:46:10Z"
     },
     {
       "id": "94fbd57be4b7",
@@ -6062,7 +6437,7 @@
       ],
       "cross_domain": true,
       "date": "2026-03-05",
-      "ingested": "2026-03-27T23:15:29Z"
+      "ingested": "2026-03-27T23:46:10Z"
     },
     {
       "id": "bd63c96c9df8",
@@ -6078,7 +6453,7 @@
       ],
       "cross_domain": true,
       "date": "2026-03-04",
-      "ingested": "2026-03-27T23:15:28Z"
+      "ingested": "2026-03-27T23:46:09Z"
     },
     {
       "id": "5ccab866c3d5",
@@ -6089,11 +6464,12 @@
       "tier": "domain",
       "region": "labor",
       "domains": [
-        "economics"
+        "economics",
+        "domestic_politics"
       ],
-      "cross_domain": false,
+      "cross_domain": true,
       "date": "2026-03-03",
-      "ingested": "2026-03-27T23:15:28Z"
+      "ingested": "2026-03-27T23:46:09Z"
     },
     {
       "id": "ddc23910bdf1",
@@ -6104,11 +6480,12 @@
       "tier": "domain",
       "region": "information",
       "domains": [
-        "governance"
+        "governance",
+        "domestic_politics"
       ],
-      "cross_domain": false,
+      "cross_domain": true,
       "date": "2026-02-28",
-      "ingested": "2026-03-27T23:15:27Z"
+      "ingested": "2026-03-27T23:46:09Z"
     },
     {
       "id": "98b65f5e7323",
@@ -6123,7 +6500,7 @@
       ],
       "cross_domain": false,
       "date": "2026-02-28",
-      "ingested": "2026-03-27T23:15:28Z"
+      "ingested": "2026-03-27T23:46:09Z"
     },
     {
       "id": "c6afbe4d981c",
@@ -6136,7 +6513,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-02-28",
-      "ingested": "2026-03-27T23:15:28Z"
+      "ingested": "2026-03-27T23:46:09Z"
     },
     {
       "id": "75e5513a9e7a",
@@ -6147,11 +6524,12 @@
       "tier": "domain",
       "region": "labor",
       "domains": [
-        "labor"
+        "labor",
+        "domestic_politics"
       ],
-      "cross_domain": false,
+      "cross_domain": true,
       "date": "2026-02-26",
-      "ingested": "2026-03-27T23:15:28Z"
+      "ingested": "2026-03-27T23:46:09Z"
     },
     {
       "id": "f2b569f4f740",
@@ -6164,7 +6542,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-02-21",
-      "ingested": "2026-03-27T23:15:27Z"
+      "ingested": "2026-03-27T23:46:09Z"
     },
     {
       "id": "f20b566b4483",
@@ -6179,7 +6557,7 @@
       ],
       "cross_domain": false,
       "date": "2026-02-10",
-      "ingested": "2026-03-27T23:15:27Z"
+      "ingested": "2026-03-27T23:46:09Z"
     },
     {
       "id": "43457df738bb",
@@ -6192,7 +6570,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-01-31",
-      "ingested": "2026-03-27T23:15:27Z"
+      "ingested": "2026-03-27T23:46:09Z"
     },
     {
       "id": "6f7674f555e9",
@@ -6203,11 +6581,12 @@
       "tier": "domain",
       "region": "information",
       "domains": [
-        "information"
+        "information",
+        "security"
       ],
-      "cross_domain": false,
+      "cross_domain": true,
       "date": "2026-01-30",
-      "ingested": "2026-03-27T23:15:27Z"
+      "ingested": "2026-03-27T23:46:09Z"
     },
     {
       "id": "8b92f5c2ce88",
@@ -6217,10 +6596,13 @@
       "source": "The Markup",
       "tier": "domain",
       "region": "information",
-      "domains": [],
-      "cross_domain": false,
+      "domains": [
+        "security",
+        "geopolitics"
+      ],
+      "cross_domain": true,
       "date": "2026-01-24",
-      "ingested": "2026-03-27T23:15:27Z"
+      "ingested": "2026-03-27T23:46:09Z"
     },
     {
       "id": "7e41010081c5",
@@ -6235,7 +6617,7 @@
       ],
       "cross_domain": false,
       "date": "2026-01-21",
-      "ingested": "2026-03-27T23:15:27Z"
+      "ingested": "2026-03-27T23:46:09Z"
     },
     {
       "id": "3d1c21fa148d",
@@ -6250,7 +6632,7 @@
       ],
       "cross_domain": false,
       "date": "2026-01-21",
-      "ingested": "2026-03-27T23:15:27Z"
+      "ingested": "2026-03-27T23:46:09Z"
     },
     {
       "id": "65ae02276e19",
@@ -6260,10 +6642,12 @@
       "source": "The Markup",
       "tier": "domain",
       "region": "information",
-      "domains": [],
+      "domains": [
+        "domestic_politics"
+      ],
       "cross_domain": false,
       "date": "2026-01-15",
-      "ingested": "2026-03-27T23:15:27Z"
+      "ingested": "2026-03-27T23:46:09Z"
     },
     {
       "id": "faa3f380fbbd",
@@ -6276,7 +6660,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2026-01-08",
-      "ingested": "2026-03-27T23:15:27Z"
+      "ingested": "2026-03-27T23:46:09Z"
     },
     {
       "id": "dfd2c3fff612",
@@ -6291,7 +6675,7 @@
       ],
       "cross_domain": false,
       "date": "2026-01-05",
-      "ingested": "2026-03-27T23:15:27Z"
+      "ingested": "2026-03-27T23:46:09Z"
     },
     {
       "id": "ed9f3fcd78e7",
@@ -6304,7 +6688,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2025-12-17",
-      "ingested": "2026-03-27T23:15:27Z"
+      "ingested": "2026-03-27T23:46:09Z"
     },
     {
       "id": "a5df59c5d2ae",
@@ -6316,11 +6700,12 @@
       "region": "information",
       "domains": [
         "ai",
-        "governance"
+        "governance",
+        "domestic_politics"
       ],
       "cross_domain": true,
       "date": "2025-12-12",
-      "ingested": "2026-03-27T23:15:27Z"
+      "ingested": "2026-03-27T23:46:09Z"
     },
     {
       "id": "a1a7f19cbbf9",
@@ -6333,7 +6718,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2025-11-22",
-      "ingested": "2026-03-27T23:15:27Z"
+      "ingested": "2026-03-27T23:46:09Z"
     },
     {
       "id": "e192030c653f",
@@ -6346,7 +6731,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2025-11-14",
-      "ingested": "2026-03-27T23:15:27Z"
+      "ingested": "2026-03-27T23:46:09Z"
     },
     {
       "id": "6e9b9d15f6ac",
@@ -6361,7 +6746,7 @@
       ],
       "cross_domain": false,
       "date": "2025-11-09",
-      "ingested": "2026-03-27T23:15:27Z"
+      "ingested": "2026-03-27T23:46:09Z"
     },
     {
       "id": "a164a1021080",
@@ -6374,7 +6759,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2025-11-06",
-      "ingested": "2026-03-27T23:15:27Z"
+      "ingested": "2026-03-27T23:46:09Z"
     },
     {
       "id": "ef1fece440bc",
@@ -6384,10 +6769,12 @@
       "source": "Wall Street Journal",
       "tier": "national",
       "region": "us",
-      "domains": [],
+      "domains": [
+        "security"
+      ],
       "cross_domain": false,
       "date": "2025-01-28",
-      "ingested": "2026-03-27T23:15:19Z"
+      "ingested": "2026-03-27T23:46:02Z"
     },
     {
       "id": "c0947ba2da47",
@@ -6398,11 +6785,12 @@
       "tier": "national",
       "region": "us",
       "domains": [
-        "climate"
+        "climate",
+        "geopolitics"
       ],
-      "cross_domain": false,
+      "cross_domain": true,
       "date": "2025-01-28",
-      "ingested": "2026-03-27T23:15:19Z"
+      "ingested": "2026-03-27T23:46:02Z"
     },
     {
       "id": "c5b7b9bfba52",
@@ -6412,10 +6800,12 @@
       "source": "Wall Street Journal",
       "tier": "national",
       "region": "us",
-      "domains": [],
+      "domains": [
+        "security"
+      ],
       "cross_domain": false,
       "date": "2025-01-28",
-      "ingested": "2026-03-27T23:15:19Z"
+      "ingested": "2026-03-27T23:46:02Z"
     },
     {
       "id": "1e2d243ff7c2",
@@ -6425,10 +6815,13 @@
       "source": "Wall Street Journal",
       "tier": "national",
       "region": "us",
-      "domains": [],
-      "cross_domain": false,
+      "domains": [
+        "security",
+        "geopolitics"
+      ],
+      "cross_domain": true,
       "date": "2025-01-28",
-      "ingested": "2026-03-27T23:15:19Z"
+      "ingested": "2026-03-27T23:46:02Z"
     },
     {
       "id": "ba63e9bf867d",
@@ -6438,10 +6831,12 @@
       "source": "Wall Street Journal",
       "tier": "national",
       "region": "us",
-      "domains": [],
+      "domains": [
+        "security"
+      ],
       "cross_domain": false,
       "date": "2025-01-27",
-      "ingested": "2026-03-27T23:15:19Z"
+      "ingested": "2026-03-27T23:46:02Z"
     },
     {
       "id": "0b622257a94c",
@@ -6454,7 +6849,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2025-01-27",
-      "ingested": "2026-03-27T23:15:19Z"
+      "ingested": "2026-03-27T23:46:02Z"
     },
     {
       "id": "8564febaf24f",
@@ -6467,7 +6862,7 @@
       "domains": [],
       "cross_domain": false,
       "date": "2025-01-27",
-      "ingested": "2026-03-27T23:15:19Z"
+      "ingested": "2026-03-27T23:46:02Z"
     },
     {
       "id": "667cea4ce9bd",
@@ -6477,10 +6872,12 @@
       "source": "Wall Street Journal",
       "tier": "national",
       "region": "us",
-      "domains": [],
+      "domains": [
+        "security"
+      ],
       "cross_domain": false,
       "date": "2025-01-27",
-      "ingested": "2026-03-27T23:15:19Z"
+      "ingested": "2026-03-27T23:46:02Z"
     },
     {
       "id": "fcc99343f20b",
@@ -6491,11 +6888,12 @@
       "tier": "national",
       "region": "us",
       "domains": [
-        "climate"
+        "climate",
+        "geopolitics"
       ],
-      "cross_domain": false,
+      "cross_domain": true,
       "date": "2025-01-27",
-      "ingested": "2026-03-27T23:15:19Z"
+      "ingested": "2026-03-27T23:46:02Z"
     },
     {
       "id": "22869cdda85e",
@@ -6506,11 +6904,12 @@
       "tier": "national",
       "region": "us",
       "domains": [
-        "economics"
+        "economics",
+        "domestic_politics"
       ],
-      "cross_domain": false,
+      "cross_domain": true,
       "date": "2025-01-27",
-      "ingested": "2026-03-27T23:15:19Z"
+      "ingested": "2026-03-27T23:46:02Z"
     },
     {
       "id": "9ae11a6f98fe",
@@ -6525,7 +6924,7 @@
       ],
       "cross_domain": false,
       "date": "2025-01-27",
-      "ingested": "2026-03-27T23:15:19Z"
+      "ingested": "2026-03-27T23:46:02Z"
     },
     {
       "id": "9e90fa39edd5",
@@ -6540,7 +6939,7 @@
       ],
       "cross_domain": false,
       "date": "2025-01-27",
-      "ingested": "2026-03-27T23:15:19Z"
+      "ingested": "2026-03-27T23:46:02Z"
     },
     {
       "id": "dadb7d529bd7",
@@ -6550,10 +6949,13 @@
       "source": "Wall Street Journal",
       "tier": "national",
       "region": "us",
-      "domains": [],
-      "cross_domain": false,
+      "domains": [
+        "security",
+        "domestic_politics"
+      ],
+      "cross_domain": true,
       "date": "2025-01-27",
-      "ingested": "2026-03-27T23:15:19Z"
+      "ingested": "2026-03-27T23:46:02Z"
     },
     {
       "id": "b3d833a8e4c5",
@@ -6563,10 +6965,12 @@
       "source": "Wall Street Journal",
       "tier": "national",
       "region": "us",
-      "domains": [],
+      "domains": [
+        "security"
+      ],
       "cross_domain": false,
       "date": "2025-01-26",
-      "ingested": "2026-03-27T23:15:19Z"
+      "ingested": "2026-03-27T23:46:02Z"
     },
     {
       "id": "24981af5f45c",
@@ -6576,10 +6980,12 @@
       "source": "Wall Street Journal",
       "tier": "national",
       "region": "us",
-      "domains": [],
+      "domains": [
+        "security"
+      ],
       "cross_domain": false,
       "date": "2025-01-26",
-      "ingested": "2026-03-27T23:15:19Z"
+      "ingested": "2026-03-27T23:46:02Z"
     },
     {
       "id": "b1f8e6fce66a",
@@ -6589,10 +6995,12 @@
       "source": "Wall Street Journal",
       "tier": "national",
       "region": "us",
-      "domains": [],
+      "domains": [
+        "security"
+      ],
       "cross_domain": false,
       "date": "2025-01-25",
-      "ingested": "2026-03-27T23:15:19Z"
+      "ingested": "2026-03-27T23:46:02Z"
     },
     {
       "id": "ea3cf6416707",
@@ -6602,10 +7010,12 @@
       "source": "Wall Street Journal",
       "tier": "national",
       "region": "us",
-      "domains": [],
+      "domains": [
+        "security"
+      ],
       "cross_domain": false,
       "date": "2025-01-25",
-      "ingested": "2026-03-27T23:15:19Z"
+      "ingested": "2026-03-27T23:46:02Z"
     },
     {
       "id": "fbb361b8ee1d",
@@ -6615,10 +7025,13 @@
       "source": "Wall Street Journal",
       "tier": "national",
       "region": "us",
-      "domains": [],
-      "cross_domain": false,
+      "domains": [
+        "security",
+        "domestic_politics"
+      ],
+      "cross_domain": true,
       "date": "2025-01-25",
-      "ingested": "2026-03-27T23:15:19Z"
+      "ingested": "2026-03-27T23:46:02Z"
     },
     {
       "id": "b8ab8a7540b9",
@@ -6629,11 +7042,13 @@
       "tier": "national",
       "region": "us",
       "domains": [
-        "climate"
+        "climate",
+        "geopolitics",
+        "domestic_politics"
       ],
-      "cross_domain": false,
+      "cross_domain": true,
       "date": "2025-01-25",
-      "ingested": "2026-03-27T23:15:19Z"
+      "ingested": "2026-03-27T23:46:02Z"
     },
     {
       "id": "1feff6549057",
@@ -6643,10 +7058,12 @@
       "source": "Wall Street Journal",
       "tier": "national",
       "region": "us",
-      "domains": [],
+      "domains": [
+        "domestic_politics"
+      ],
       "cross_domain": false,
       "date": "2025-01-25",
-      "ingested": "2026-03-27T23:15:19Z"
+      "ingested": "2026-03-27T23:46:02Z"
     }
   ]
 }
