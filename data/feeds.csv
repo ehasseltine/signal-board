@@ -1,0 +1,36 @@
+name,url,tier,region
+New York Times,https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml,national,us
+Washington Post,https://feeds.washingtonpost.com/rss/national,national,us
+AP News,https://feedx.net/rss/ap.xml,national,us
+Reuters,https://www.reutersagency.com/feed/?best-topics=political-general&post_type=best,national,us
+NPR,https://feeds.npr.org/1001/rss.xml,national,us
+CNN,https://rss.cnn.com/rss/cnn_topstories.rss,national,us
+Wall Street Journal,https://feeds.a.dj.com/rss/RSSWorldNews.xml,national,us
+Bloomberg,https://feeds.bloomberg.com/markets/news.rss,national,us
+Politico,https://www.politico.com/rss/politicopicks.xml,national,us
+The Atlantic,https://www.theatlantic.com/feed/all/,national,us
+BBC World,https://feeds.bbci.co.uk/news/world/rss.xml,international,uk
+The Guardian World,https://www.theguardian.com/world/rss,international,uk
+Al Jazeera,https://www.aljazeera.com/xml/rss/all.xml,international,qatar
+Deutsche Welle,https://rss.dw.com/rdf/rss-en-all,international,germany
+France 24,https://www.france24.com/en/rss,international,france
+South China Morning Post,https://www.scmp.com/rss/91/feed,international,hong_kong
+The Hindu,https://www.thehindu.com/news/feeder/default.rss,international,india
+NHK World,https://www3.nhk.or.jp/rss/news/cat0.xml,international,japan
+ABC Australia,https://www.abc.net.au/news/feed/51120/rss.xml,international,australia
+Nikkei Asia,https://asia.nikkei.com/rss,international,japan
+MIT Technology Review,https://www.technologyreview.com/feed/,domain,ai
+The Markup,https://themarkup.org/feeds/rss.xml,domain,information
+EPI Blog,https://www.epi.org/blog/feed/,domain,labor
+American Prospect,https://prospect.org/api/rss/all.rss,domain,labor
+Columbia Journalism Review,https://www.cjr.org/feed,domain,information
+Nieman Lab,https://www.niemanlab.org/feed/,domain,information
+Brookings,https://www.brookings.edu/feed,domain,governance
+Lawfare,https://www.lawfaremedia.org/feed,domain,governance
+ProPublica,https://feeds.propublica.org/propublica/main,domain,governance
+Carbon Brief,https://www.carbonbrief.org/feed,domain,climate
+Grist,https://grist.org/feed/,domain,climate
+Yale E360,https://e360.yale.edu/feed.rss,domain,climate
+Press Gazette,https://pressgazette.co.uk/feed/,domain,information
+Naked Capitalism,https://www.nakedcapitalism.com/feed,domain,economics
+OnLabor,https://onlabor.org/feed/,domain,labor

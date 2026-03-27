@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Signal Board</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0a0a;
+    --surface: #141414;
+    --surface-hover: #1a1a1a;
+    --border: #222;
+    --text: #e8e8e8;
+    --text-dim: rgba(235,230,245,0.6);
+    --text-mid: rgba(235,230,245,0.8);
+    --purple: #6652FF;
+    --pink: #FF0054;
+    --magenta: #9E0059;
+    --orange: #FF5400;
+    --teal: #00C2A8;
+    --green: #4CAF50;
+    --ai: #6652FF;
+    --labor: #FF5400;
+    --governance: #FF0054;
+    --information: #9E0059;
+    --economics: #00C2A8;
+    --climate: #4CAF50;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    line-height: 1.5;
+  }
+
+  /* ─── HEADER ─── */
+  .header {
+    padding: 2.5rem 2rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  .header h1 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 1.8rem;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.3rem;
+  }
+  .header .tagline {
+    color: var(--text-dim);
+    font-size: 0.9rem;
+    max-width: 600px;
+  }
+  .header .meta {
+    margin-top: 0.8rem;
+    font-size: 0.75rem;
+    color: var(--text-dim);
+  }
+  .header .meta span { margin-right: 1.5rem; }
+  .header .meta strong { color: var(--text-mid); }
+
+  /* ─── MAIN LAYOUT ─── */
+  .main {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1.5rem 2rem;
+  }
+
+  /* ─── DOMAIN HEAT BAR ─── */
+  .heat-section {
+    margin-bottom: 2rem;
+  }
+  .heat-section h2 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-dim);
+    margin-bottom: 0.8rem;
+  }
+  .heat-bar {
+    display: flex;
+    height: 40px;
+    border-radius: 6px;
+    overflow: hidden;
+    gap: 2px;
+  }
+  .heat-segment {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: rgba(0,0,0,0.7);
+    cursor: pointer;
+    transition: opacity 0.2s;
+    min-width: 40px;
+  }
+  .heat-segment:hover { opacity: 0.85; }
+  .heat-segment .seg-label {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0 0.4rem;
+  }
+
+  /* ─── FILTER TABS ─── */
+  .filters {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .filter-btn {
+    padding: 0.4rem 0.9rem;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text-dim);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .filter-btn:hover { border-color: var(--text-dim); color: var(--text); }
+  .filter-btn.active { background: var(--purple); border-color: var(--purple); color: #fff; }
+  .filter-btn.active-cross { background: #fff; border-color: #fff; color: #000; }
+
+  /* ─── TIER TABS ─── */
+  .tier-filters {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .tier-btn {
+    padding: 0.35rem 0.75rem;
+    border-radius: 4px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text-dim);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .tier-btn:hover { border-color: var(--text-dim); }
+  .tier-btn.active { background: var(--surface); border-color: var(--text-dim); color: var(--text); }
+
+  /* ─── CROSS-DOMAIN HIGHLIGHT ─── */
+  .cross-section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.2rem 1.5rem;
+    margin-bottom: 2rem;
+  }
+  .cross-section h2 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-mid);
+    margin-bottom: 0.8rem;
+  }
+  .cross-section .cross-desc {
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    margin-bottom: 1rem;
+  }
+
+  /* ─── ARTICLE LIST ─── */
+  .articles-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.8rem;
+  }
+  .articles-header h2 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-dim);
+  }
+  .articles-count {
+    font-size: 0.75rem;
+    color: var(--text-dim);
+  }
+
+  .article-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+  }
+
+  .article-card {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 1rem;
+    align-items: start;
+    padding: 0.9rem 1rem;
+    background: var(--surface);
+    border-radius: 4px;
+    text-decoration: none;
+    color: var(--text);
+    transition: background 0.15s;
+  }
+  .article-card:hover { background: var(--surface-hover); }
+
+  .article-title {
+    font-size: 0.88rem;
+    font-weight: 500;
+    line-height: 1.4;
+  }
+  .article-meta {
+    display: flex;
+    gap: 0.6rem;
+    align-items: center;
+    margin-top: 0.3rem;
+    font-size: 0.72rem;
+    color: var(--text-dim);
+  }
+  .article-source {
+    font-weight: 600;
+    color: var(--text-mid);
+  }
+
+  .domain-tags {
+    display: flex;
+    gap: 0.3rem;
+    flex-shrink: 0;
+    align-self: center;
+  }
+  .domain-tag {
+    padding: 0.15rem 0.5rem;
+    border-radius: 3px;
+    font-size: 0.65rem;
+    font-weight: 600;
+    color: rgba(0,0,0,0.8);
+    white-space: nowrap;
+  }
+
+  .load-more {
+    display: block;
+    width: 100%;
+    padding: 0.8rem;
+    margin-top: 0.5rem;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text-dim);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.2s;
+  }
+  .load-more:hover { border-color: var(--text-dim); color: var(--text); }
+
+  /* ─── FOOTER ─── */
+  .footer {
+    max-width: 1400px;
+    margin: 3rem auto 2rem;
+    padding: 1.5rem 2rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.75rem;
+    color: var(--text-dim);
+  }
+  .footer a { color: var(--purple); text-decoration: none; }
+  .footer a:hover { text-decoration: underline; }
+
+  /* ─── EMPTY STATE ─── */
+  .empty-state {
+    text-align: center;
+    padding: 3rem;
+    color: var(--text-dim);
+    font-size: 0.9rem;
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 768px) {
+    .header, .main, .footer { padding-left: 1rem; padding-right: 1rem; }
+    .article-card { grid-template-columns: 1fr; }
+    .domain-tags { margin-top: 0.4rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Signal Board</h1>
+  <p class="tagline">Tracking how interconnected forces appear in the news, and surfacing the connections between them that most coverage misses.</p>
+  <div class="meta" id="meta"></div>
+</div>
+
+<div class="main">
+  <div class="heat-section">
+    <h2>Domain activity</h2>
+    <div class="heat-bar" id="heatBar"></div>
+  </div>
+
+  <div class="filters" id="filters"></div>
+
+  <div class="tier-filters" id="tierFilters"></div>
+
+  <div class="cross-section" id="crossSection">
+    <h2>Cross-domain signals</h2>
+    <p class="cross-desc">Articles that touch multiple domains at once. These are the structural connections that single-beat coverage misses.</p>
+    <div class="article-list" id="crossList"></div>
+  </div>
+
+  <div>
+    <div class="articles-header">
+      <h2>All articles</h2>
+      <span class="articles-count" id="articlesCount"></span>
+    </div>
+    <div class="article-list" id="articleList"></div>
+    <button class="load-more" id="loadMore" style="display:none">Load more</button>
+  </div>
+</div>
+
+<div class="footer">
+  Built by <a href="https://elise-centerfortomorrow.netlify.app/">Elise Hasseltine</a> as research infrastructure for the <a href="https://www.centerfortomorrow.com/">Center for Tomorrow</a>.
+</div>
+
+<script>
+const DOMAIN_COLORS = {
+  ai: '#6652FF',
+  labor: '#FF5400',
+  governance: '#FF0054',
+  information: '#9E0059',
+  economics: '#00C2A8',
+  climate: '#4CAF50',
+};
+const DOMAIN_LABELS = {
+  ai: 'AI',
+  labor: 'Labor',
+  governance: 'Governance',
+  information: 'Information',
+  economics: 'Economics',
+  climate: 'Climate',
+};
+
+let allArticles = [];
+let stats = {};
+let activeFilter = 'all';
+let activeTier = 'all';
+let displayCount = 50;
+
+async function init() {
+  try {
+    // Try relative path (GitHub Pages) then fallback to local
+    let resp;
+    try {
+      resp = await fetch('./data/articles.json');
+      if (!resp.ok) throw new Error();
+    } catch {
+      resp = await fetch('../data/articles.json');
+    }
+    const data = await resp.json();
+    allArticles = data.articles || [];
+    stats = data.stats || {};
+
+    document.getElementById('meta').innerHTML = `
+      <span><strong>${stats.total_articles || 0}</strong> articles</span>
+      <span><strong>${stats.total_sources || 0}</strong> sources</span>
+      <span><strong>${stats.cross_domain_count || 0}</strong> cross-domain</span>
+      <span>Updated ${formatDate(data.last_updated)}</span>
+    `;
+
+    renderHeatBar();
+    renderFilters();
+    renderTierFilters();
+    renderCrossDomain();
+    renderArticles();
+  } catch (e) {
+    document.getElementById('articleList').innerHTML =
+      '<div class="empty-state">No data yet. Run the ingest script to populate.</div>';
+    console.error(e);
+  }
+}
+
+function renderHeatBar() {
+  const bar = document.getElementById('heatBar');
+  if (!stats.domains) return;
+
+  const total = Object.values(stats.domains).reduce((s, d) => s + d.count, 0);
+  if (total === 0) return;
+
+  bar.innerHTML = Object.entries(stats.domains)
+    .sort((a, b) => b[1].count - a[1].count)
+    .map(([key, d]) => {
+      const pct = Math.max((d.count / total) * 100, 5);
+      return `<div class="heat-segment" style="width:${pct}%;background:${DOMAIN_COLORS[key]}"
+                   onclick="setFilter('${key}')" title="${d.label}: ${d.count} articles">
+        <span class="seg-label">${d.label} ${d.count}</span>
+      </div>`;
+    }).join('');
+}
+
+function renderFilters() {
+  const container = document.getElementById('filters');
+  let html = `<button class="filter-btn ${activeFilter === 'all' ? 'active' : ''}" onclick="setFilter('all')">All</button>`;
+  html += `<button class="filter-btn ${activeFilter === 'cross' ? 'active-cross' : ''}" onclick="setFilter('cross')">Cross-domain</button>`;
+
+  for (const [key, label] of Object.entries(DOMAIN_LABELS)) {
+    const isActive = activeFilter === key;
+    html += `<button class="filter-btn" onclick="setFilter('${key}')"
+      style="${isActive ? `background:${DOMAIN_COLORS[key]};border-color:${DOMAIN_COLORS[key]};color:rgba(0,0,0,0.8)` : ''}"
+    >${label}</button>`;
+  }
+  container.innerHTML = html;
+}
+
+function renderTierFilters() {
+  const container = document.getElementById('tierFilters');
+  const tiers = [
+    ['all', 'All sources'],
+    ['national', 'US National'],
+    ['international', 'International'],
+    ['domain', 'Domain-specific'],
+  ];
+  container.innerHTML = tiers.map(([key, label]) =>
+    `<button class="tier-btn ${activeTier === key ? 'active' : ''}" onclick="setTier('${key}')">${label}</button>`
+  ).join('');
+}
+
+function setFilter(f) {
+  activeFilter = f;
+  displayCount = 50;
+  renderFilters();
+  renderArticles();
+
+  const crossSection = document.getElementById('crossSection');
+  crossSection.style.display = f === 'all' || f === 'cross' ? 'block' : 'none';
+}
+
+function setTier(t) {
+  activeTier = t;
+  displayCount = 50;
+  renderTierFilters();
+  renderArticles();
+  renderCrossDomain();
+}
+
+function getFiltered() {
+  let articles = allArticles;
+  if (activeTier !== 'all') {
+    articles = articles.filter(a => a.tier === activeTier);
+  }
+  if (activeFilter === 'cross') {
+    articles = articles.filter(a => a.cross_domain);
+  } else if (activeFilter !== 'all') {
+    articles = articles.filter(a => a.domains && a.domains.includes(activeFilter));
+  }
+  return articles;
+}
+
+function renderCrossDomain() {
+  const list = document.getElementById('crossList');
+  let cross = allArticles.filter(a => a.cross_domain);
+  if (activeTier !== 'all') {
+    cross = cross.filter(a => a.tier === activeTier);
+  }
+  cross = cross.slice(0, 8);
+
+  if (cross.length === 0) {
+    list.innerHTML = '<div class="empty-state">No cross-domain signals found.</div>';
+    return;
+  }
+
+  list.innerHTML = cross.map(a => articleCard(a)).join('');
+}
+
+function renderArticles() {
+  const list = document.getElementById('articleList');
+  const filtered = getFiltered();
+  const showing = filtered.slice(0, displayCount);
+
+  document.getElementById('articlesCount').textContent = `${filtered.length} articles`;
+
+  if (showing.length === 0) {
+    list.innerHTML = '<div class="empty-state">No articles match this filter.</div>';
+    document.getElementById('loadMore').style.display = 'none';
+    return;
+  }
+
+  list.innerHTML = showing.map(a => articleCard(a)).join('');
+
+  const loadMore = document.getElementById('loadMore');
+  if (filtered.length > displayCount) {
+    loadMore.style.display = 'block';
+    loadMore.textContent = `Load more (${filtered.length - displayCount} remaining)`;
+    loadMore.onclick = () => { displayCount += 50; renderArticles(); };
+  } else {
+    loadMore.style.display = 'none';
+  }
+}
+
+function articleCard(a) {
+  const tags = (a.domains || []).map(d =>
+    `<span class="domain-tag" style="background:${DOMAIN_COLORS[d]}">${DOMAIN_LABELS[d]}</span>`
+  ).join('');
+
+  const tierLabel = a.tier === 'national' ? 'US' : a.tier === 'international' ? a.region?.toUpperCase() || 'INTL' : '';
+
+  return `<a class="article-card" href="${a.url}" target="_blank" rel="noopener">
+    <div>
+      <div class="article-title">${escHtml(a.title)}</div>
+      <div class="article-meta">
+        <span class="article-source">${escHtml(a.source)}</span>
+        <span>${a.date}</span>
+        ${tierLabel ? `<span>${tierLabel}</span>` : ''}
+      </div>
+    </div>
+    <div class="domain-tags">${tags}</div>
+  </a>`;
+}
+
+function formatDate(iso) {
+  if (!iso) return '';
+  const d = new Date(iso);
+  return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', hour: '2-digit', minute: '2-digit' });
+}
+
+function escHtml(str) {
+  const div = document.createElement('div');
+  div.textContent = str || '';
+  return div.innerHTML;
+}
+
+init();
+</script>
+</body>
+</html>
