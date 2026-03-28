@@ -361,13 +361,14 @@ let displayCount = 50;
 
 async function init() {
   try {
-    // Try relative path (GitHub Pages) then fallback to local
+    // Cache-bust so browsers always load fresh data
+    const cb = '?v=' + Date.now();
     let resp;
     try {
-      resp = await fetch('./data/articles.json');
+      resp = await fetch('./data/articles.json' + cb);
       if (!resp.ok) throw new Error();
     } catch {
-      resp = await fetch('../data/articles.json');
+      resp = await fetch('../data/articles.json' + cb);
     }
     const data = await resp.json();
     allArticles = data.articles || [];
