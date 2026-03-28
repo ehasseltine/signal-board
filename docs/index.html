@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Signal Board tracks how interconnected forces appear in the news and surfaces structural connections most coverage misses. 59 sources, 10 domains, updated daily.">
-<meta property="og:title" content="Signal Board — Structural Connections in the News">
-<meta property="og:description" content="Signal Board tracks how interconnected forces appear in the news and surfaces structural connections most coverage misses. 59 sources, 10 domains, updated daily.">
+<meta property="og:title" content="Signal Board — See the Connections the News Misses">
+<meta property="og:description" content="The forces reshaping the world don't stay in lanes. Signal Board tracks 59 sources across 10 domains and surfaces the structural connections most coverage misses.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://elisehasseltine.com/signal-board/">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Signal Board — Structural Connections in the News">
-<meta name="twitter:description" content="Signal Board tracks how interconnected forces appear in the news and surfaces structural connections most coverage misses.">
+<meta name="twitter:title" content="Signal Board — See the Connections the News Misses">
+<meta name="twitter:description" content="The forces reshaping the world don't stay in lanes. Signal Board surfaces structural connections across 59 sources and 10 domains.">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -18,25 +18,21 @@
   "name": "Signal Board",
   "description": "A research tool that tracks how interconnected forces appear in the news and surfaces the structural connections between them that most coverage misses.",
   "url": "https://elisehasseltine.com/signal-board/",
-  "creator": {
-    "@type": "Person",
-    "name": "Elise Hasseltine",
-    "url": "https://www.elisehasseltine.com/"
-  }
+  "creator": { "@type": "Person", "name": "Elise Hasseltine", "url": "https://www.elisehasseltine.com/" }
 }
 </script>
-<title>Signal Board — Structural Connections in the News</title>
+<title>Signal Board — See the Connections the News Misses</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg: #0a0a0a;
-    --surface: #141414;
-    --surface-hover: #1a1a1a;
-    --border: #222;
+    --surface: #131316;
+    --surface-hover: #1a1a1f;
+    --border: #1f1f25;
     --text: #e8e8e8;
-    --text-dim: rgba(235,230,245,0.55);
-    --text-mid: rgba(235,230,245,0.8);
+    --text-dim: rgba(235,230,245,0.45);
+    --text-mid: rgba(235,230,245,0.75);
     --purple: #6652FF;
   }
 
@@ -47,378 +43,317 @@
     background: var(--bg);
     color: var(--text);
     min-height: 100vh;
-    line-height: 1.5;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
   }
 
   /* ─── HEADER ─── */
   .header {
-    padding: 3rem 2rem 1.5rem;
-    max-width: 1400px;
+    padding: 3.5rem 2rem 0;
+    max-width: 1200px;
     margin: 0 auto;
+    text-align: center;
   }
   .header h1 {
-    font-family: 'Archivo Black', sans-serif;
-    font-size: 2.2rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
     letter-spacing: -0.03em;
-    margin-bottom: 0.4rem;
-    background: linear-gradient(135deg, #fff 0%, rgba(235,230,245,0.7) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    margin-bottom: 0.6rem;
+    color: #fff;
   }
   .header .tagline {
     color: var(--text-dim);
-    font-size: 0.88rem;
-    max-width: 520px;
+    font-size: 0.95rem;
+    max-width: 500px;
+    margin: 0 auto 1.5rem;
+    line-height: 1.55;
   }
   .header .meta {
-    margin-top: 1rem;
     display: flex;
-    gap: 0.4rem;
+    gap: 0.5rem;
+    justify-content: center;
     flex-wrap: wrap;
+    margin-bottom: 2rem;
   }
   .meta-pill {
-    padding: 0.3rem 0.7rem;
+    padding: 0.25rem 0.65rem;
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 20px;
-    font-size: 0.72rem;
+    font-size: 0.68rem;
     color: var(--text-dim);
   }
-  .meta-pill strong {
-    color: var(--text-mid);
-    font-weight: 600;
-  }
-  .header-divider {
-    height: 1px;
-    background: linear-gradient(90deg, var(--border) 0%, transparent 100%);
-    margin-top: 1.5rem;
-    max-width: 1400px;
-    margin-left: auto;
-    margin-right: auto;
-  }
+  .meta-pill strong { color: var(--text-mid); font-weight: 600; }
 
-  /* ─── MAIN LAYOUT ─── */
-  .main {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 1.5rem 2rem;
+  /* ─── PULSE BAR ─── */
+  .pulse-section {
+    max-width: 1200px;
+    margin: 0 auto 2rem;
+    padding: 0 2rem;
   }
-
-  /* ─── SECTION HEADERS ─── */
-  .section-label {
-    font-family: 'Archivo Black', sans-serif;
-    font-size: 0.7rem;
+  .pulse-label {
+    font-size: 0.68rem;
     text-transform: uppercase;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.1em;
     color: var(--text-dim);
-    margin-bottom: 1rem;
+    margin-bottom: 0.6rem;
+    text-align: center;
   }
-
-  /* ─── DOMAIN HEAT BAR ─── */
-  .heat-section { margin-bottom: 2rem; }
-  .heat-bar {
+  .pulse-bar {
     display: flex;
-    height: 44px;
-    border-radius: 8px;
+    height: 8px;
+    border-radius: 4px;
     overflow: hidden;
     gap: 2px;
   }
-  .heat-segment {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.68rem;
-    font-weight: 700;
-    color: rgba(0,0,0,0.75);
+  .pulse-seg {
     cursor: pointer;
     transition: all 0.25s ease;
-    min-width: 40px;
     position: relative;
   }
-  .heat-segment:hover {
-    filter: brightness(1.15);
-    transform: scaleY(1.08);
+  .pulse-seg:hover {
+    filter: brightness(1.2);
+    transform: scaleY(2.5);
+    border-radius: 2px;
   }
-  .heat-segment .seg-label {
+  .pulse-tooltip {
+    display: none;
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1a1a1f;
+    border: 1px solid var(--border);
+    padding: 0.35rem 0.6rem;
+    border-radius: 6px;
+    font-size: 0.68rem;
     white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    padding: 0 0.4rem;
+    color: var(--text);
+    z-index: 10;
+    pointer-events: none;
+  }
+  .pulse-seg:hover .pulse-tooltip { display: block; }
+
+  /* ─── MAIN ─── */
+  .main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem 2rem;
   }
 
-  /* ─── HOT TOPICS ─── */
-  .hot-topics-section { margin-bottom: 2.5rem; }
-  .hot-topics-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 0.8rem;
+  /* ─── EXPLORE BAR ─── */
+  .explore-bar {
+    display: flex;
+    gap: 0.35rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 2.5rem;
   }
-  .hot-topic-card {
-    position: relative;
-    border-radius: 10px;
-    padding: 1.2rem 1.2rem 1rem;
-    cursor: default;
-    overflow: hidden;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    border: 1px solid rgba(255,255,255,0.06);
-  }
-  .hot-topic-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.4);
-  }
-  .hot-topic-pair {
-    font-family: 'Archivo Black', sans-serif;
-    font-size: 0.95rem;
-    color: #fff;
-    margin-bottom: 0.15rem;
+  .explore-btn {
+    padding: 0.4rem 0.85rem;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text-dim);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.4rem;
   }
-  .hot-topic-pair .pair-connector {
-    font-size: 0.75rem;
-    opacity: 0.6;
+  .explore-btn:hover { border-color: rgba(255,255,255,0.15); color: var(--text); }
+  .explore-btn.active { color: #fff; }
+  .explore-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    flex-shrink: 0;
   }
-  .hot-topic-count {
+
+  /* ─── SECTION STYLING ─── */
+  .section {
+    margin-bottom: 3rem;
+  }
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+    margin-bottom: 0.3rem;
+  }
+  .section-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #fff;
+  }
+  .section-count {
     font-size: 0.7rem;
-    color: rgba(255,255,255,0.5);
+    color: var(--text-dim);
+  }
+  .section-desc {
+    font-size: 0.82rem;
+    color: var(--text-dim);
+    margin-bottom: 1.2rem;
+    max-width: 600px;
+    line-height: 1.5;
+  }
+
+  /* ─── COLLISION CARDS (Hot Topics) ─── */
+  .collision-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 0.7rem;
+  }
+  .collision-card {
+    border-radius: 12px;
+    padding: 1.1rem;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid rgba(255,255,255,0.05);
+    cursor: default;
+  }
+  .collision-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+  }
+  .collision-pair {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-bottom: 0.15rem;
+  }
+  .collision-pair .domain-name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 700;
+  }
+  .collision-pair .x { font-size: 0.7rem; color: rgba(255,255,255,0.3); }
+  .collision-count {
+    font-size: 0.65rem;
+    color: rgba(255,255,255,0.35);
     margin-bottom: 0.8rem;
   }
-  .hot-topic-articles { display: flex; flex-direction: column; gap: 0.5rem; }
-  .hot-topic-article {
-    padding: 0.5rem 0.6rem;
+  .collision-articles { display: flex; flex-direction: column; gap: 0.4rem; }
+  .collision-article {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    padding: 0.45rem 0.55rem;
     background: rgba(0,0,0,0.2);
     border-radius: 6px;
     transition: background 0.15s;
   }
-  .hot-topic-article:hover { background: rgba(0,0,0,0.35); }
-  .hot-topic-article a {
-    text-decoration: none;
-    color: inherit;
-  }
-  .hot-topic-article-title {
-    font-size: 0.78rem;
-    color: rgba(255,255,255,0.9);
+  .collision-article:hover { background: rgba(0,0,0,0.4); }
+  .collision-article-title {
+    font-size: 0.76rem;
+    color: rgba(255,255,255,0.85);
     line-height: 1.35;
     font-weight: 500;
   }
-  .hot-topic-article-meta {
-    font-size: 0.65rem;
-    color: rgba(255,255,255,0.4);
-    margin-top: 0.15rem;
+  .collision-article-meta {
+    font-size: 0.62rem;
+    color: rgba(255,255,255,0.3);
+    margin-top: 0.1rem;
   }
 
-  /* ─── UNDER THE RADAR ─── */
-  .radar-section { margin-bottom: 2.5rem; }
+  /* ─── RADAR CARDS ─── */
   .radar-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
-    gap: 0.8rem;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 0.7rem;
   }
   .radar-card {
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 10px;
-    padding: 1.1rem 1.2rem;
+    padding: 1rem 1.1rem;
     transition: transform 0.2s ease, border-color 0.2s;
-    cursor: pointer;
     text-decoration: none;
     color: inherit;
     display: block;
   }
   .radar-card:hover {
     transform: translateY(-1px);
-    border-color: rgba(255,255,255,0.1);
+    border-color: rgba(255,255,255,0.08);
   }
-  .radar-card-tags {
+  .radar-tags {
     display: flex;
-    gap: 0.35rem;
+    gap: 0.3rem;
     flex-wrap: wrap;
-    margin-bottom: 0.7rem;
+    margin-bottom: 0.6rem;
   }
-  .radar-domain-tag {
-    padding: 0.15rem 0.55rem;
+  .radar-tag {
+    padding: 0.12rem 0.5rem;
     border-radius: 3px;
-    font-size: 0.6rem;
+    font-size: 0.58rem;
     font-weight: 700;
     color: rgba(0,0,0,0.85);
     text-transform: uppercase;
     letter-spacing: 0.03em;
   }
-  .radar-card-title {
-    font-size: 0.88rem;
+  .radar-title {
+    font-size: 0.85rem;
     font-weight: 600;
     color: var(--text);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
     line-height: 1.35;
   }
-  .radar-card-summary {
-    font-size: 0.78rem;
+  .radar-summary {
+    font-size: 0.76rem;
     color: var(--text-dim);
-    margin-bottom: 0.7rem;
+    margin-bottom: 0.5rem;
     line-height: 1.5;
     display: -webkit-box;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
-  .radar-card-meta {
-    display: flex;
-    gap: 0.6rem;
-    font-size: 0.7rem;
-    color: var(--text-dim);
-  }
-  .radar-card-source { font-weight: 600; color: var(--text-mid); }
-
-  /* ─── FILTER TABS ─── */
-  .filters {
-    display: flex;
-    gap: 0.4rem;
-    margin-bottom: 1.2rem;
-    flex-wrap: wrap;
-  }
-  .filter-btn {
-    padding: 0.35rem 0.8rem;
-    border-radius: 20px;
-    border: 1px solid var(--border);
-    background: transparent;
-    color: var(--text-dim);
-    font-family: 'Inter', sans-serif;
-    font-size: 0.75rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.2s;
-  }
-  .filter-btn:hover { border-color: var(--text-dim); color: var(--text); }
-  .filter-btn.active { background: var(--purple); border-color: var(--purple); color: #fff; }
-  .filter-btn.active-cross { background: #fff; border-color: #fff; color: #000; }
-
-  /* ─── TIER TABS ─── */
-  .tier-filters {
-    display: flex;
-    gap: 0.4rem;
-    margin-bottom: 1.5rem;
-    flex-wrap: wrap;
-  }
-  .tier-btn {
-    padding: 0.3rem 0.7rem;
-    border-radius: 4px;
-    border: 1px solid var(--border);
-    background: transparent;
-    color: var(--text-dim);
-    font-family: 'Inter', sans-serif;
-    font-size: 0.7rem;
-    cursor: pointer;
-    transition: all 0.2s;
-  }
-  .tier-btn:hover { border-color: var(--text-dim); }
-  .tier-btn.active { background: var(--surface); border-color: var(--text-dim); color: var(--text); }
-
-  /* ─── CROSS-DOMAIN CLUSTERS ─── */
-  .cross-section { margin-bottom: 2.5rem; }
-  .cluster-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
-    gap: 0.8rem;
-  }
-  .cluster-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 1rem 1.2rem;
-    transition: border-color 0.2s;
-  }
-  .cluster-card:hover { border-color: rgba(255,255,255,0.08); }
-  .cluster-header {
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    margin-bottom: 0.7rem;
-  }
-  .cluster-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    flex-shrink: 0;
-  }
-  .cluster-label {
-    font-size: 0.78rem;
-    font-weight: 600;
-    color: var(--text);
-  }
-  .cluster-count {
+  .radar-meta {
     font-size: 0.65rem;
     color: var(--text-dim);
-    margin-left: auto;
   }
-  .cluster-articles { display: flex; flex-direction: column; gap: 1px; }
-  .cluster-article {
-    display: block;
-    text-decoration: none;
-    color: var(--text);
-    padding: 0.45rem 0;
-    border-bottom: 1px solid rgba(255,255,255,0.04);
-    transition: color 0.15s;
-  }
-  .cluster-article:last-child { border-bottom: none; }
-  .cluster-article:hover { color: #fff; }
-  .cluster-article-title { font-size: 0.8rem; line-height: 1.4; }
-  .cluster-article-meta { font-size: 0.65rem; color: var(--text-dim); margin-top: 0.1rem; }
+  .radar-source { font-weight: 600; color: var(--text-mid); }
 
-  /* ─── ARTICLE LIST ─── */
-  .articles-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    margin-bottom: 0.8rem;
-  }
-  .articles-header h2 {
-    font-family: 'Archivo Black', sans-serif;
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    color: var(--text-dim);
-  }
-  .articles-count { font-size: 0.7rem; color: var(--text-dim); }
-
-  .article-list { display: flex; flex-direction: column; gap: 1px; }
-  .article-card {
+  /* ─── FEED (All Articles) ─── */
+  .feed-list { display: flex; flex-direction: column; gap: 1px; }
+  .feed-item {
     display: grid;
     grid-template-columns: 1fr auto;
     gap: 1rem;
-    align-items: start;
-    padding: 0.8rem 1rem;
+    align-items: center;
+    padding: 0.65rem 0.8rem;
     background: var(--surface);
     border-radius: 4px;
     text-decoration: none;
     color: var(--text);
     transition: background 0.15s;
   }
-  .article-card:hover { background: var(--surface-hover); }
-  .article-title { font-size: 0.85rem; font-weight: 500; line-height: 1.4; }
-  .article-meta {
+  .feed-item:hover { background: var(--surface-hover); }
+  .feed-title { font-size: 0.82rem; font-weight: 500; line-height: 1.35; }
+  .feed-meta {
     display: flex;
-    gap: 0.5rem;
+    gap: 0.4rem;
     align-items: center;
-    margin-top: 0.25rem;
-    font-size: 0.7rem;
+    margin-top: 0.15rem;
+    font-size: 0.65rem;
     color: var(--text-dim);
   }
-  .article-source { font-weight: 600; color: var(--text-mid); }
-
-  .domain-tags {
+  .feed-source { font-weight: 600; color: var(--text-mid); }
+  .feed-tags {
     display: flex;
-    gap: 0.25rem;
+    gap: 0.2rem;
     flex-shrink: 0;
-    align-self: center;
     flex-wrap: wrap;
     justify-content: flex-end;
   }
-  .domain-tag {
-    padding: 0.12rem 0.45rem;
+  .feed-tag {
+    padding: 0.1rem 0.4rem;
     border-radius: 3px;
-    font-size: 0.6rem;
+    font-size: 0.55rem;
     font-weight: 700;
     color: rgba(0,0,0,0.85);
     white-space: nowrap;
@@ -427,85 +362,99 @@
   .load-more {
     display: block;
     width: 100%;
-    padding: 0.7rem;
+    padding: 0.65rem;
     margin-top: 0.5rem;
     border: 1px solid var(--border);
     background: transparent;
     color: var(--text-dim);
     font-family: 'Inter', sans-serif;
-    font-size: 0.75rem;
+    font-size: 0.72rem;
     cursor: pointer;
     border-radius: 4px;
     transition: all 0.2s;
   }
-  .load-more:hover { border-color: var(--text-dim); color: var(--text); }
+  .load-more:hover { border-color: rgba(255,255,255,0.15); color: var(--text); }
 
   /* ─── FAQ ─── */
-  .faq-section { margin-bottom: 3rem; max-width: 760px; }
-  .faq-item { margin-bottom: 0.6rem; }
-  .faq-question {
+  .faq-section { max-width: 680px; margin-bottom: 2rem; }
+  .faq-item { margin-bottom: 0.5rem; }
+  .faq-q {
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 8px;
-    padding: 0.9rem 1rem;
+    padding: 0.8rem 1rem;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
     align-items: center;
     transition: all 0.2s;
+    width: 100%;
+    text-align: left;
+    font-family: inherit;
+    color: var(--text);
   }
-  .faq-question:hover { background: var(--surface-hover); }
-  .faq-question-text { font-size: 0.85rem; font-weight: 500; color: var(--text); }
-  .faq-toggle {
-    font-size: 1.1rem;
-    color: var(--text-dim);
-    transition: transform 0.2s;
-    flex-shrink: 0;
-    margin-left: 0.5rem;
-  }
+  .faq-q:hover { background: var(--surface-hover); }
+  .faq-q-text { font-size: 0.82rem; font-weight: 500; }
+  .faq-toggle { font-size: 1rem; color: var(--text-dim); transition: transform 0.2s; flex-shrink: 0; margin-left: 0.5rem; }
   .faq-toggle.open { transform: rotate(45deg); }
-  .faq-answer {
-    background: rgba(20,20,20,0.6);
+  .faq-a {
+    background: rgba(19,19,22,0.8);
     border: 1px solid var(--border);
     border-top: none;
     border-radius: 0 0 8px 8px;
-    padding: 0.9rem 1rem;
-    font-size: 0.82rem;
+    padding: 0.8rem 1rem;
+    font-size: 0.78rem;
     line-height: 1.6;
     color: var(--text-dim);
     display: none;
   }
-  .faq-answer.open { display: block; }
+  .faq-a.open { display: block; }
 
   /* ─── FOOTER ─── */
   .footer {
-    max-width: 1400px;
-    margin: 2rem auto 2rem;
-    padding: 1.5rem 2rem;
+    max-width: 1200px;
+    margin: 1rem auto 2rem;
+    padding: 1.2rem 2rem;
     border-top: 1px solid var(--border);
-    font-size: 0.72rem;
+    font-size: 0.68rem;
     color: var(--text-dim);
+    text-align: center;
   }
   .footer a { color: var(--purple); text-decoration: none; }
   .footer a:hover { text-decoration: underline; }
-  .footer-meta { margin-top: 0.4rem; font-size: 0.65rem; }
 
-  /* ─── EMPTY STATE ─── */
+  /* ─── EXPLORE LINK ─── */
+  .explore-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--purple);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 0.8rem 1.8rem;
+    border: 1px solid rgba(102,82,255,0.3);
+    border-radius: 8px;
+    transition: all 0.25s ease;
+  }
+  .explore-link:hover {
+    background: rgba(102,82,255,0.08);
+    border-color: var(--purple);
+  }
+
   .empty-state {
     text-align: center;
     padding: 2rem;
     color: var(--text-dim);
-    font-size: 0.85rem;
+    font-size: 0.82rem;
   }
 
-  /* ─── RESPONSIVE ─── */
   @media (max-width: 768px) {
-    .header, .main, .footer { padding-left: 1rem; padding-right: 1rem; }
-    .header h1 { font-size: 1.6rem; }
-    .article-card { grid-template-columns: 1fr; }
-    .domain-tags { margin-top: 0.4rem; }
-    .cluster-grid { grid-template-columns: 1fr; }
-    .hot-topics-grid { grid-template-columns: 1fr; }
+    .header, .main, .footer, .pulse-section { padding-left: 1rem; padding-right: 1rem; }
+    .header h1 { font-size: 1.8rem; }
+    .feed-item { grid-template-columns: 1fr; }
+    .feed-tags { margin-top: 0.3rem; justify-content: flex-start; }
+    .collision-grid { grid-template-columns: 1fr; }
     .radar-grid { grid-template-columns: 1fr; }
   }
 </style>
@@ -514,517 +463,331 @@
 
 <div class="header">
   <h1>Signal Board</h1>
-  <p class="tagline">Surfacing the structural connections most coverage misses.</p>
+  <p class="tagline">The forces reshaping the world don't stay in lanes. This tool tracks where they collide.</p>
   <div class="meta" id="meta"></div>
 </div>
-<div class="header-divider"></div>
+
+<div class="pulse-section">
+  <div class="pulse-label" id="pulseLabel">Today's coverage</div>
+  <div class="pulse-bar" id="pulseBar"></div>
+</div>
 
 <div class="main">
-  <div class="heat-section">
-    <div class="section-label" id="heatLabel">Domain activity</div>
-    <div class="heat-bar" id="heatBar"></div>
-  </div>
+  <div class="explore-bar" id="exploreBar"></div>
 
-  <div class="filters" id="filters"></div>
-  <div class="tier-filters" id="tierFilters"></div>
-
-  <div id="hotTopicsContainer"></div>
+  <div id="collisionContainer"></div>
   <div id="radarContainer"></div>
 
-  <div class="cross-section" id="crossSection">
-    <div class="section-label">Where domains intersect</div>
-    <div class="cluster-grid" id="clusterGrid"></div>
+  <div class="section" id="feedSection">
+    <div class="section-header">
+      <div class="section-title">Full feed</div>
+      <div class="section-count" id="feedCount"></div>
+    </div>
+    <div class="feed-list" id="feedList"></div>
+    <button class="load-more" id="loadMore" style="display:none">Show more</button>
   </div>
 
-  <div>
-    <div class="articles-header">
-      <h2>All articles</h2>
-      <span class="articles-count" id="articlesCount"></span>
-    </div>
-    <div class="article-list" id="articleList"></div>
-    <button class="load-more" id="loadMore" style="display:none">Load more</button>
+  <div class="section" style="text-align:center;margin-bottom:2rem">
+    <a href="./explore/" class="explore-link">Explore the full dataset →</a>
   </div>
 
   <div class="faq-section" id="faqSection"></div>
 </div>
 
 <div class="footer">
-  Built by <a href="https://www.elisehasseltine.com/">Elise Hasseltine</a>.
-  <div class="footer-meta">59 sources · 10 domains · Updated daily</div>
+  Built by <a href="https://www.elisehasseltine.com/">Elise Hasseltine</a> · 59 sources · 10 domains · Updated daily
 </div>
 
 <script>
-const DOMAIN_COLORS = {
-  ai: '#6652FF',
-  labor: '#FF5400',
-  governance: '#FF0054',
-  information: '#9E0059',
-  economics: '#00C2A8',
-  climate: '#4CAF50',
-  security: '#D32F2F',
-  geopolitics: '#1976D2',
-  domestic_politics: '#7B1FA2',
-  legal: '#FF9800',
+const DC = {
+  ai: '#6652FF', labor: '#FF5400', governance: '#FF0054', information: '#9E0059',
+  economics: '#00C2A8', climate: '#4CAF50', security: '#D32F2F',
+  geopolitics: '#1976D2', domestic_politics: '#7B1FA2', legal: '#FF9800',
 };
-const DOMAIN_LABELS = {
-  ai: 'AI',
-  labor: 'Labor',
-  governance: 'Governance',
-  information: 'Information',
-  economics: 'Economics',
-  climate: 'Climate',
-  security: 'Security',
-  geopolitics: 'Geopolitics',
-  domestic_politics: 'Politics',
-  legal: 'Legal',
+const DL = {
+  ai: 'AI', labor: 'Labor', governance: 'Governance', information: 'Information',
+  economics: 'Economics', climate: 'Climate', security: 'Security',
+  geopolitics: 'Geopolitics', domestic_politics: 'Politics', legal: 'Legal',
 };
+const DG = {};
+for (const [k,c] of Object.entries(DC)) {
+  const r = parseInt(c.slice(1,3),16), g = parseInt(c.slice(3,5),16), b = parseInt(c.slice(5,7),16);
+  DG[k] = `linear-gradient(135deg, rgba(${r},${g},${b},0.22) 0%, rgba(${r},${g},${b},0.06) 100%)`;
+}
 
-// Gradient backgrounds for hot topic cards — keyed by first domain
-const DOMAIN_GRADIENTS = {
-  ai: 'linear-gradient(135deg, rgba(102,82,255,0.25) 0%, rgba(102,82,255,0.08) 100%)',
-  labor: 'linear-gradient(135deg, rgba(255,84,0,0.25) 0%, rgba(255,84,0,0.08) 100%)',
-  governance: 'linear-gradient(135deg, rgba(255,0,84,0.25) 0%, rgba(255,0,84,0.08) 100%)',
-  information: 'linear-gradient(135deg, rgba(158,0,89,0.25) 0%, rgba(158,0,89,0.08) 100%)',
-  economics: 'linear-gradient(135deg, rgba(0,194,168,0.25) 0%, rgba(0,194,168,0.08) 100%)',
-  climate: 'linear-gradient(135deg, rgba(76,175,80,0.25) 0%, rgba(76,175,80,0.08) 100%)',
-  security: 'linear-gradient(135deg, rgba(211,47,47,0.25) 0%, rgba(211,47,47,0.08) 100%)',
-  geopolitics: 'linear-gradient(135deg, rgba(25,118,210,0.25) 0%, rgba(25,118,210,0.08) 100%)',
-  domestic_politics: 'linear-gradient(135deg, rgba(123,31,162,0.25) 0%, rgba(123,31,162,0.08) 100%)',
-  legal: 'linear-gradient(135deg, rgba(255,152,0,0.25) 0%, rgba(255,152,0,0.08) 100%)',
-};
-
-// Words that indicate consumer product/lifestyle junk
-const JUNK_PATTERNS = [
+const JUNK = [
   /\bsmart lock\b/i, /\bsmart home\b/i, /\bproduct review\b/i,
   /\bbest .{0,20}(buy|deal|price|sale)\b/i, /\bcoupon\b/i, /\bdiscount code\b/i,
-  /\bgadget\b/i, /\bunboxing\b/i, /\bvs\.\b/i, /\brating\b/i,
-  /\bhoroscope\b/i, /\bcelebrity\b/i, /\brecipe\b/i,
+  /\bgadget\b/i, /\bunboxing\b/i, /\bhoroscope\b/i, /\brecipe\b/i,
 ];
 
-let allArticles = [];
-let stats = {};
-let activeFilter = 'all';
-let activeTier = 'all';
-let displayCount = 50;
+let articles = [], stats = {}, filter = 'all', showing = 50;
 
 async function init() {
   try {
     const cb = '?v=' + Date.now();
-    let resp;
-    try {
-      resp = await fetch('./data/articles.json' + cb);
-      if (!resp.ok) throw new Error();
-    } catch {
-      resp = await fetch('../data/articles.json' + cb);
-    }
-    const data = await resp.json();
-    allArticles = data.articles || [];
-    stats = data.stats || {};
-
+    let r;
+    try { r = await fetch('./data/articles.json' + cb); if(!r.ok) throw 0; }
+    catch { r = await fetch('../data/articles.json' + cb); }
+    const d = await r.json();
+    articles = d.articles || [];
+    stats = d.stats || {};
     document.getElementById('meta').innerHTML = `
-      <span class="meta-pill"><strong>${stats.total_articles || 0}</strong>&nbsp;articles</span>
-      <span class="meta-pill"><strong>${stats.total_sources || 0}</strong>&nbsp;sources</span>
-      <span class="meta-pill"><strong>${stats.cross_domain_count || 0}</strong>&nbsp;cross-domain</span>
-      <span class="meta-pill">Updated ${formatDate(data.last_updated)}</span>
+      <span class="meta-pill"><strong>${stats.total_articles||0}</strong> articles today</span>
+      <span class="meta-pill"><strong>${stats.cross_domain_count||0}</strong> cross-domain connections</span>
+      <span class="meta-pill">Updated ${fmtDate(d.last_updated)}</span>
     `;
-
-    renderAll();
-  } catch (e) {
-    document.getElementById('articleList').innerHTML =
-      '<div class="empty-state">No data yet. Run the ingest to populate.</div>';
+    render();
+  } catch(e) {
+    document.getElementById('feedList').innerHTML = '<div class="empty-state">Loading data...</div>';
     console.error(e);
   }
 }
 
-function renderAll() {
-  renderHeatBar();
-  renderFilters();
-  renderTierFilters();
-  renderHotTopics();
+function render() {
+  renderPulse();
+  renderExplore();
+  renderCollisions();
   renderRadar();
-  renderClusters();
-  renderArticles();
+  renderFeed();
   renderFaq();
 }
 
-function renderHeatBar() {
-  const bar = document.getElementById('heatBar');
-  const label = document.getElementById('heatLabel');
+function renderPulse() {
+  const bar = document.getElementById('pulseBar');
+  const counts = {};
+  for (const a of articles) for (const d of (a.domains||[])) counts[d] = (counts[d]||0) + 1;
+  const total = Object.values(counts).reduce((s,c) => s+c, 0);
+  if (!total) { bar.innerHTML = ''; return; }
 
-  const filtered = getBaseFiltered();
-  const domainCounts = {};
-  for (const a of filtered) {
-    for (const d of (a.domains || [])) {
-      domainCounts[d] = (domainCounts[d] || 0) + 1;
-    }
-  }
-
-  const total = Object.values(domainCounts).reduce((s, c) => s + c, 0);
-  if (total === 0) {
-    bar.innerHTML = '<div class="empty-state" style="padding:0.5rem">No tagged articles match filters</div>';
-    return;
-  }
-
-  const tierLabel = activeTier === 'all' ? '' : ` — ${activeTier}`;
-  label.textContent = `Domain activity${tierLabel}`;
-
-  bar.innerHTML = Object.entries(domainCounts)
-    .sort((a, b) => b[1] - a[1])
-    .map(([key, count]) => {
-      const pct = Math.max((count / total) * 100, 4);
-      const color = DOMAIN_COLORS[key] || '#666';
-      const name = DOMAIN_LABELS[key] || key;
-      return `<div class="heat-segment" style="width:${pct}%;background:${color}"
-                   onclick="setFilter('${key}')" title="${name}: ${count}">
-        <span class="seg-label">${name} ${count}</span>
+  bar.innerHTML = Object.entries(counts)
+    .sort((a,b) => b[1]-a[1])
+    .map(([k,c]) => {
+      const pct = Math.max((c/total)*100, 3);
+      return `<div class="pulse-seg" style="width:${pct}%;background:${DC[k]||'#666'}"
+                   onclick="setFilter('${k}')">
+        <div class="pulse-tooltip">${DL[k]||k}: ${c} articles</div>
       </div>`;
     }).join('');
 }
 
-function getBaseFiltered() {
-  let articles = allArticles;
-  if (activeTier !== 'all') {
-    articles = articles.filter(a => a.tier === activeTier);
+function renderExplore() {
+  const el = document.getElementById('exploreBar');
+  let html = `<button class="explore-btn ${filter==='all'?'active':''}" onclick="setFilter('all')"
+    style="${filter==='all'?'background:var(--purple);border-color:var(--purple)':''}">All</button>`;
+
+  html += `<button class="explore-btn ${filter==='cross'?'active':''}" onclick="setFilter('cross')"
+    style="${filter==='cross'?'background:#fff;border-color:#fff;color:#000':''}">Connections</button>`;
+
+  for (const [k,l] of Object.entries(DL)) {
+    const on = filter === k;
+    html += `<button class="explore-btn ${on?'active':''}" onclick="setFilter('${k}')"
+      style="${on?`background:${DC[k]};border-color:${DC[k]};color:rgba(0,0,0,0.85)`:''}">
+      <span class="explore-dot" style="background:${DC[k]}"></span>${l}
+    </button>`;
   }
-  return articles;
-}
-
-function renderFilters() {
-  const container = document.getElementById('filters');
-  let html = `<button class="filter-btn ${activeFilter === 'all' ? 'active' : ''}" onclick="setFilter('all')">All</button>`;
-  html += `<button class="filter-btn ${activeFilter === 'cross' ? 'active-cross' : ''}" onclick="setFilter('cross')">Cross-domain</button>`;
-
-  for (const [key, label] of Object.entries(DOMAIN_LABELS)) {
-    const isActive = activeFilter === key;
-    html += `<button class="filter-btn" onclick="setFilter('${key}')"
-      style="${isActive ? `background:${DOMAIN_COLORS[key]};border-color:${DOMAIN_COLORS[key]};color:rgba(0,0,0,0.85)` : ''}"
-    >${label}</button>`;
-  }
-  container.innerHTML = html;
-}
-
-function renderTierFilters() {
-  const container = document.getElementById('tierFilters');
-  const tiers = [
-    ['all', 'All sources'],
-    ['national', 'US National'],
-    ['international', 'International'],
-    ['domain', 'Domain-specific'],
-    ['explainer', 'Explainer'],
-    ['lived', 'Lived experience'],
-    ['analysis', 'Analysis'],
-  ];
-  container.innerHTML = tiers.map(([key, label]) =>
-    `<button class="tier-btn ${activeTier === key ? 'active' : ''}" onclick="setTier('${key}')">${label}</button>`
-  ).join('');
+  el.innerHTML = html;
 }
 
 function setFilter(f) {
-  activeFilter = f;
-  displayCount = 50;
-  renderFilters();
-  renderArticles();
-
-  const crossSection = document.getElementById('crossSection');
-  crossSection.style.display = f === 'all' || f === 'cross' ? 'block' : 'none';
-}
-
-function setTier(t) {
-  activeTier = t;
-  displayCount = 50;
-  renderAll();
+  filter = f; showing = 50;
+  renderExplore();
+  renderFeed();
+  // Show/hide structural sections based on filter
+  document.getElementById('collisionContainer').style.display = (f==='all'||f==='cross') ? 'block' : 'none';
+  document.getElementById('radarContainer').style.display = (f==='all') ? 'block' : 'none';
 }
 
 function getFiltered() {
-  let articles = getBaseFiltered();
-  if (activeFilter === 'cross') {
-    articles = articles.filter(a => a.cross_domain);
-  } else if (activeFilter !== 'all') {
-    articles = articles.filter(a => a.domains && a.domains.includes(activeFilter));
-  }
+  if (filter === 'cross') return articles.filter(a => a.cross_domain);
+  if (filter !== 'all') return articles.filter(a => a.domains && a.domains.includes(filter));
   return articles;
 }
 
-function isJunkArticle(a) {
-  const text = (a.title + ' ' + (a.summary || '')).toLowerCase();
-  return JUNK_PATTERNS.some(p => p.test(text));
+function isJunk(a) {
+  const t = (a.title + ' ' + (a.summary||'')).toLowerCase();
+  return JUNK.some(p => p.test(t));
 }
 
-function decodeEntities(str) {
-  if (!str) return '';
+function cleanText(s) {
+  if (!s) return '';
   const ta = document.createElement('textarea');
-  ta.innerHTML = str;
-  return ta.value;
+  ta.innerHTML = s;
+  let t = ta.value;
+  t = t.replace(/<[^>]+>/g,' ').replace(/\s+/g,' ').trim();
+  return t;
 }
 
-function cleanSummary(str) {
-  if (!str) return '';
-  let s = decodeEntities(str);
-  // Clean leftover HTML artifacts
-  s = s.replace(/<[^>]+>/g, ' ');
-  s = s.replace(/\s+/g, ' ').trim();
-  return s;
-}
-
-function renderHotTopics() {
-  const container = document.getElementById('hotTopicsContainer');
-  const base = getBaseFiltered();
-
+function renderCollisions() {
+  const el = document.getElementById('collisionContainer');
   const pairs = {};
-  for (const a of base) {
+  for (const a of articles) {
     if (a.cross_domain && a.domains && a.domains.length >= 2) {
-      const domains = [...a.domains].sort();
-      for (let i = 0; i < domains.length; i++) {
-        for (let j = i + 1; j < domains.length; j++) {
-          const key = domains[i] + '+' + domains[j];
-          if (!pairs[key]) pairs[key] = [];
-          pairs[key].push(a);
-        }
+      const ds = [...a.domains].sort();
+      for (let i=0;i<ds.length;i++) for (let j=i+1;j<ds.length;j++) {
+        const k = ds[i]+'+'+ds[j];
+        if(!pairs[k]) pairs[k]=[];
+        pairs[k].push(a);
       }
     }
   }
 
-  const topPairs = Object.entries(pairs)
-    .sort((a, b) => b[1].length - a[1].length)
-    .slice(0, 4);
+  const top = Object.entries(pairs).sort((a,b)=>b[1].length-a[1].length).slice(0,4);
+  if (!top.length) { el.innerHTML = ''; return; }
 
-  if (topPairs.length === 0) { container.innerHTML = ''; return; }
-
-  const html = `
-    <div class="hot-topics-section">
-      <div class="section-label">Hot topics</div>
-      <div class="hot-topics-grid">
-        ${topPairs.map(([pairKey, articles]) => {
-          const [d1, d2] = pairKey.split('+');
-          const label1 = DOMAIN_LABELS[d1] || d1;
-          const label2 = DOMAIN_LABELS[d2] || d2;
-          const color1 = DOMAIN_COLORS[d1] || '#666';
-          const color2 = DOMAIN_COLORS[d2] || '#666';
-          const gradient = DOMAIN_GRADIENTS[d1] || 'var(--surface)';
-
-          const shown = articles.slice(0, 3);
-          const articlesHtml = shown.map(a =>
-            `<div class="hot-topic-article">
-              <a href="${a.url}" target="_blank" rel="noopener">
-                <div class="hot-topic-article-title">${escHtml(a.title)}</div>
-                <div class="hot-topic-article-meta">${escHtml(a.source)} · ${a.date}</div>
-              </a>
-            </div>`
-          ).join('');
-
-          return `<div class="hot-topic-card" style="background:${gradient};border-color:${color1}30">
-            <div class="hot-topic-pair">
-              <span style="color:${color1}">${label1}</span>
-              <span class="pair-connector">×</span>
-              <span style="color:${color2}">${label2}</span>
+  el.innerHTML = `
+    <div class="section">
+      <div class="section-header"><div class="section-title">Where forces collide</div></div>
+      <div class="section-desc">These are the strongest structural overlaps right now. When domains converge, that convergence is the story.</div>
+      <div class="collision-grid">
+        ${top.map(([pk,arts]) => {
+          const [d1,d2] = pk.split('+');
+          const l1=DL[d1]||d1, l2=DL[d2]||d2;
+          const c1=DC[d1]||'#666', c2=DC[d2]||'#666';
+          const shown = arts.slice(0,3);
+          return `<div class="collision-card" style="background:${DG[d1]};border-color:${c1}25">
+            <div class="collision-pair">
+              <span class="domain-name" style="color:${c1}">${l1}</span>
+              <span class="x">×</span>
+              <span class="domain-name" style="color:${c2}">${l2}</span>
             </div>
-            <div class="hot-topic-count">${articles.length} overlapping articles</div>
-            <div class="hot-topic-articles">${articlesHtml}</div>
+            <div class="collision-count">${arts.length} overlapping stories</div>
+            <div class="collision-articles">
+              ${shown.map(a => `<a class="collision-article" href="${a.url}" target="_blank" rel="noopener">
+                <div class="collision-article-title">${esc(a.title)}</div>
+                <div class="collision-article-meta">${esc(a.source)}</div>
+              </a>`).join('')}
+            </div>
           </div>`;
         }).join('')}
       </div>
     </div>
   `;
-  container.innerHTML = html;
 }
 
 function renderRadar() {
-  const container = document.getElementById('radarContainer');
-  const base = getBaseFiltered();
+  const el = document.getElementById('radarContainer');
+  const srcCounts = {};
+  for (const a of articles) srcCounts[a.source] = (srcCounts[a.source]||0)+1;
+  const topSrc = Object.keys(srcCounts).sort((a,b)=>srcCounts[b]-srcCounts[a]).slice(0,5);
 
-  // Top 5 sources by volume
-  const sourceCounts = {};
-  for (const a of base) { sourceCounts[a.source] = (sourceCounts[a.source] || 0) + 1; }
-  const topSources = Object.keys(sourceCounts)
-    .sort((a, b) => sourceCounts[b] - sourceCounts[a])
-    .slice(0, 5);
-
-  // Cross-domain from non-mainstream tiers, excluding junk
-  const radar = base.filter(a =>
+  const radar = articles.filter(a =>
     a.cross_domain &&
-    !topSources.includes(a.source) &&
-    ['lived', 'analysis', 'explainer', 'domain'].includes(a.tier) &&
-    !isJunkArticle(a)
+    !topSrc.includes(a.source) &&
+    ['lived','analysis','explainer','domain'].includes(a.tier) &&
+    !isJunk(a)
   );
 
-  if (radar.length === 0) { container.innerHTML = ''; return; }
+  if (!radar.length) { el.innerHTML = ''; return; }
 
-  const shown = radar.slice(0, 6);
-  const html = `
-    <div class="radar-section">
-      <div class="section-label">Under the radar</div>
+  const shown = radar.slice(0,4);
+  el.innerHTML = `
+    <div class="section">
+      <div class="section-header"><div class="section-title">Under the radar</div></div>
+      <div class="section-desc">Stories from outside the mainstream that touch multiple domains. These are the ones worth reading closely.</div>
       <div class="radar-grid">
         ${shown.map(a => {
-          const tags = (a.domains || []).filter(d => DOMAIN_LABELS[d]).map(d =>
-            `<span class="radar-domain-tag" style="background:${DOMAIN_COLORS[d]}">${DOMAIN_LABELS[d]}</span>`
+          const tags = (a.domains||[]).filter(d=>DL[d]).map(d =>
+            `<span class="radar-tag" style="background:${DC[d]}">${DL[d]}</span>`
           ).join('');
-
-          const summary = cleanSummary(a.summary);
-          const trimmed = summary.length > 180 ? summary.substring(0, 180) + '...' : summary;
-
+          const summary = cleanText(a.summary);
+          const trimmed = summary.length > 160 ? summary.substring(0,160)+'...' : summary;
           return `<a class="radar-card" href="${a.url}" target="_blank" rel="noopener">
-            <div class="radar-card-tags">${tags}</div>
-            <div class="radar-card-title">${escHtml(a.title)}</div>
-            ${trimmed ? `<div class="radar-card-summary">${escHtml(trimmed)}</div>` : ''}
-            <div class="radar-card-meta">
-              <span class="radar-card-source">${escHtml(a.source)}</span>
-              <span>${a.date}</span>
-            </div>
+            <div class="radar-tags">${tags}</div>
+            <div class="radar-title">${esc(a.title)}</div>
+            ${trimmed ? `<div class="radar-summary">${esc(trimmed)}</div>` : ''}
+            <div class="radar-meta"><span class="radar-source">${esc(a.source)}</span> · ${a.date}</div>
           </a>`;
         }).join('')}
       </div>
     </div>
   `;
-  container.innerHTML = html;
 }
 
-function renderClusters() {
-  const grid = document.getElementById('clusterGrid');
-  const base = getBaseFiltered();
-  const cross = base.filter(a => a.cross_domain && a.domains && a.domains.length >= 2);
-
-  const pairs = {};
-  for (const a of cross) {
-    const domains = [...a.domains].sort();
-    for (let i = 0; i < domains.length; i++) {
-      for (let j = i + 1; j < domains.length; j++) {
-        const key = domains[i] + '+' + domains[j];
-        if (!pairs[key]) pairs[key] = [];
-        pairs[key].push(a);
-      }
-    }
-  }
-
-  const topPairs = Object.entries(pairs)
-    .sort((a, b) => b[1].length - a[1].length)
-    .slice(0, 6);
-
-  if (topPairs.length === 0) {
-    grid.innerHTML = '<div class="empty-state">No cross-domain signals found.</div>';
-    return;
-  }
-
-  grid.innerHTML = topPairs.map(([pairKey, articles]) => {
-    const [d1, d2] = pairKey.split('+');
-    const label1 = DOMAIN_LABELS[d1] || d1;
-    const label2 = DOMAIN_LABELS[d2] || d2;
-    const color1 = DOMAIN_COLORS[d1] || '#666';
-    const color2 = DOMAIN_COLORS[d2] || '#666';
-
-    const shown = articles.slice(0, 4);
-    const articleHtml = shown.map(a =>
-      `<a class="cluster-article" href="${a.url}" target="_blank" rel="noopener">
-        <div class="cluster-article-title">${escHtml(a.title)}</div>
-        <div class="cluster-article-meta">${escHtml(a.source)} &middot; ${a.date}</div>
-      </a>`
-    ).join('');
-
-    return `<div class="cluster-card">
-      <div class="cluster-header">
-        <span class="cluster-dot" style="background:${color1}"></span>
-        <span class="cluster-dot" style="background:${color2}"></span>
-        <span class="cluster-label">${label1} + ${label2}</span>
-        <span class="cluster-count">${articles.length}</span>
-      </div>
-      <div class="cluster-articles">${articleHtml}</div>
-    </div>`;
-  }).join('');
-}
-
-function renderArticles() {
-  const list = document.getElementById('articleList');
+function renderFeed() {
+  const list = document.getElementById('feedList');
   const filtered = getFiltered();
-  const showing = filtered.slice(0, displayCount);
+  const slice = filtered.slice(0, showing);
 
-  document.getElementById('articlesCount').textContent = `${filtered.length} articles`;
+  document.getElementById('feedCount').textContent = `${filtered.length} articles`;
 
-  if (showing.length === 0) {
+  if (!slice.length) {
     list.innerHTML = '<div class="empty-state">No articles match this filter.</div>';
     document.getElementById('loadMore').style.display = 'none';
     return;
   }
 
-  list.innerHTML = showing.map(a => articleCard(a)).join('');
-
-  const loadMore = document.getElementById('loadMore');
-  if (filtered.length > displayCount) {
-    loadMore.style.display = 'block';
-    loadMore.textContent = `Show more (${filtered.length - displayCount} remaining)`;
-    loadMore.onclick = () => { displayCount += 50; renderArticles(); };
-  } else {
-    loadMore.style.display = 'none';
-  }
-}
-
-function articleCard(a) {
-  const tags = (a.domains || []).filter(d => DOMAIN_LABELS[d]).map(d =>
-    `<span class="domain-tag" style="background:${DOMAIN_COLORS[d]}">${DOMAIN_LABELS[d]}</span>`
-  ).join('');
-
-  return `<a class="article-card" href="${a.url}" target="_blank" rel="noopener">
-    <div>
-      <div class="article-title">${escHtml(a.title)}</div>
-      <div class="article-meta">
-        <span class="article-source">${escHtml(a.source)}</span>
-        <span>${a.date}</span>
+  list.innerHTML = slice.map(a => {
+    const tags = (a.domains||[]).filter(d=>DL[d]).map(d =>
+      `<span class="feed-tag" style="background:${DC[d]}">${DL[d]}</span>`
+    ).join('');
+    return `<a class="feed-item" href="${a.url}" target="_blank" rel="noopener">
+      <div>
+        <div class="feed-title">${esc(a.title)}</div>
+        <div class="feed-meta"><span class="feed-source">${esc(a.source)}</span><span>${a.date}</span></div>
       </div>
-    </div>
-    <div class="domain-tags">${tags}</div>
-  </a>`;
+      <div class="feed-tags">${tags}</div>
+    </a>`;
+  }).join('');
+
+  const btn = document.getElementById('loadMore');
+  if (filtered.length > showing) {
+    btn.style.display = 'block';
+    btn.textContent = `Show more (${filtered.length - showing} remaining)`;
+    btn.onclick = () => { showing += 50; renderFeed(); };
+  } else { btn.style.display = 'none'; }
 }
 
 function renderFaq() {
-  const container = document.getElementById('faqSection');
-  const faqs = [
+  const el = document.getElementById('faqSection');
+  const qs = [
     {
-      q: 'What is Signal Board?',
-      a: 'A research tool that monitors 59 sources across 10 structural domains and surfaces the connections between them that single-beat reporting typically misses.'
+      q: 'What is this?',
+      a: 'Signal Board monitors 59 news sources across 10 structural domains and flags the stories that span multiple domains at once. Those overlaps are where the real story usually lives, and they\'re exactly what single-beat reporting tends to miss.'
+    },
+    {
+      q: 'What do the domains mean?',
+      a: 'Each domain represents a major structural force: AI, Labor, Governance, Information, Economics, Climate, Security, Geopolitics, Politics, and Legal. When an article touches more than one, it becomes a cross-domain signal. The more domains converge on a single story, the more structurally significant that story is.'
+    },
+    {
+      q: 'Why does this matter?',
+      a: 'Most news is organized by beat. A labor reporter covers labor, a climate reporter covers climate. But the forces reshaping the world don\'t stay in those lanes. When a story about federal workers not getting paid connects to an executive order that also affects military readiness, that convergence is invisible to anyone reading one beat at a time. This tool makes it visible.'
     },
     {
       q: 'How does it work?',
-      a: 'Each day, Signal Board pulls from RSS feeds spanning national news, international coverage, domain-specific outlets, explainer journalism, lived experience reporting, and policy analysis. Articles are auto-tagged across 10 domains. Those touching multiple domains are flagged as cross-domain signals.'
-    },
-    {
-      q: 'What are cross-domain signals?',
-      a: 'Most news is organized by beat. But the forces reshaping the world don\'t stay in lanes. When a story about federal workers (Labor) connects to an executive order (Legal, Governance) that also affects military readiness (Security), that convergence is a signal. This tool surfaces those overlaps.'
-    },
-    {
-      q: 'Can I use this data?',
-      a: 'Signal Board is a personal research project. The data comes from publicly available RSS feeds. If you\'re interested in the methodology, reach out via the link below.'
+      a: 'Every day, Signal Board pulls from RSS feeds spanning national outlets, international coverage, domain-specific publications, explainer journalism, lived experience reporting, and policy analysis. Each article is auto-tagged, and overlaps are flagged. No editorial filtering. The patterns surface on their own.'
     }
   ];
 
-  container.innerHTML = `
-    <div class="section-label">FAQ</div>
-    ${faqs.map((item, idx) => `
+  el.innerHTML = `
+    <div class="section-title" style="margin-bottom:0.8rem">Questions</div>
+    ${qs.map((item,i) => `
       <div class="faq-item">
-        <div class="faq-question" onclick="toggleFaq(${idx})">
-          <div class="faq-question-text">${escHtml(item.q)}</div>
-          <div class="faq-toggle" id="toggle-${idx}">+</div>
-        </div>
-        <div class="faq-answer" id="answer-${idx}">${escHtml(item.a)}</div>
+        <button class="faq-q" onclick="toggleFaq(${i})">
+          <span class="faq-q-text">${esc(item.q)}</span>
+          <span class="faq-toggle" id="tog-${i}">+</span>
+        </button>
+        <div class="faq-a" id="ans-${i}">${esc(item.a)}</div>
       </div>
     `).join('')}
   `;
 }
 
-function toggleFaq(idx) {
-  const answer = document.getElementById(`answer-${idx}`);
-  const toggle = document.getElementById(`toggle-${idx}`);
-  answer.classList.toggle('open');
-  toggle.classList.toggle('open');
+function toggleFaq(i) {
+  document.getElementById(`ans-${i}`).classList.toggle('open');
+  document.getElementById(`tog-${i}`).classList.toggle('open');
 }
 
-function formatDate(iso) {
-  if (!iso) return '';
+function fmtDate(iso) {
+  if(!iso) return '';
   const d = new Date(iso);
-  return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' });
+  return d.toLocaleDateString('en-US',{month:'short',day:'numeric',hour:'2-digit',minute:'2-digit'});
 }
 
-function escHtml(str) {
-  const div = document.createElement('div');
-  div.textContent = str || '';
-  return div.innerHTML;
+function esc(s) {
+  const d = document.createElement('div');
+  d.textContent = s||'';
+  return d.innerHTML;
 }
 
 init();
