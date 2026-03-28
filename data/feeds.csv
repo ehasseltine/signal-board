@@ -18,7 +18,10 @@ South China Morning Post,https://www.scmp.com/rss/91/feed,international,hong_kon
 The Hindu,https://www.thehindu.com/news/feeder/default.rss,international,india
 NHK World,https://www3.nhk.or.jp/rss/news/cat0.xml,international,japan
 ABC Australia,https://www.abc.net.au/news/feed/51120/rss.xml,international,australia
-Nikkei Asia,https://asia.nikkei.com/rss,international,japan
+African Arguments,https://africanarguments.org/feed/,international,africa
+Americas Quarterly,https://www.americasquarterly.org/feed/,international,latam
+The Diplomat,https://thediplomat.com/feed/,international,asia
+Foreign Policy,https://foreignpolicy.com/feed/,international,global
 MIT Technology Review,https://www.technologyreview.com/feed/,domain,ai
 The Markup,https://themarkup.org/feeds/rss.xml,domain,information
 EPI Blog,https://www.epi.org/blog/feed/,domain,labor
@@ -30,7 +33,28 @@ Lawfare,https://www.lawfaremedia.org/feed,domain,governance
 ProPublica,https://feeds.propublica.org/propublica/main,domain,governance
 Carbon Brief,https://www.carbonbrief.org/feed,domain,climate
 Grist,https://grist.org/feed/,domain,climate
-Yale E360,https://e360.yale.edu/feed.rss,domain,climate
 Press Gazette,https://pressgazette.co.uk/feed/,domain,information
 Naked Capitalism,https://www.nakedcapitalism.com/feed,domain,economics
 OnLabor,https://onlabor.org/feed/,domain,labor
+The Conversation US,https://theconversation.com/us/articles.atom,explainer,us
+Vox,https://www.vox.com/rss/index.xml,explainer,us
+Pew Research Center,https://www.pewresearch.org/feed/,explainer,us
+404 Media,https://www.404media.co/rss/,explainer,us
+Rest of World,https://restofworld.org/feed/,explainer,global
+The Verge,https://www.theverge.com/rss/index.xml,explainer,us
+Wired,https://www.wired.com/feed/rss,explainer,us
+Ars Technica,https://feeds.arstechnica.com/arstechnica/index,explainer,us
+Platformer,https://www.platformer.news/rss/,explainer,us
+The 19th News,https://19thnews.org/feed/,lived,us
+The Marshall Project,https://www.themarshallproject.org/rss/all,lived,us
+CalMatters,https://calmatters.org/feed/,lived,us
+Stateline,https://stateline.org/feed/,lived,us
+High Country News,https://www.hcn.org/feed/,lived,us
+Civil Eats,https://civileats.com/feed/,lived,us
+Documented,https://documentedny.com/feed/,lived,us
+RAND,https://www.rand.org/blog.xml,analysis,us
+Roosevelt Institute,https://rooseveltinstitute.org/feed/,analysis,us
+Carnegie Endowment,https://carnegieendowment.org/rss/solr-feed,analysis,us
+Foreign Affairs,https://www.foreignaffairs.com/rss.xml,analysis,us
+Center for American Progress,https://www.americanprogress.org/feed/,analysis,us
+Chatham House,https://www.chathamhouse.org/rss/publication,analysis,uk

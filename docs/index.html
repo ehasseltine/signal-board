@@ -431,6 +431,9 @@ function renderTierFilters() {
     ['national', 'US National'],
     ['international', 'International'],
     ['domain', 'Domain-specific'],
+    ['explainer', 'Explainer'],
+    ['lived', 'Lived experience'],
+    ['analysis', 'Analysis'],
   ];
   container.innerHTML = tiers.map(([key, label]) =>
     `<button class="tier-btn ${activeTier === key ? 'active' : ''}" onclick="setTier('${key}')">${label}</button>`
@@ -514,7 +517,8 @@ function articleCard(a) {
     `<span class="domain-tag" style="background:${DOMAIN_COLORS[d]}">${DOMAIN_LABELS[d]}</span>`
   ).join('');
 
-  const tierLabel = a.tier === 'national' ? 'US' : a.tier === 'international' ? a.region?.toUpperCase() || 'INTL' : '';
+  const tierMap = {national:'US', international: a.region?.toUpperCase()||'INTL', domain:'DOMAIN', explainer:'EXPLAINER', lived:'LIVED', analysis:'ANALYSIS'};
+  const tierLabel = tierMap[a.tier] || '';
 
   return `<a class="article-card" href="${a.url}" target="_blank" rel="noopener">
     <div>

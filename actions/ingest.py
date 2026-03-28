@@ -162,6 +162,9 @@ def compute_stats(articles: list[dict]) -> dict:
             "national": sum(1 for a in articles if a["tier"] == "national"),
             "international": sum(1 for a in articles if a["tier"] == "international"),
             "domain": sum(1 for a in articles if a["tier"] == "domain"),
+            "explainer": sum(1 for a in articles if a["tier"] == "explainer"),
+            "lived": sum(1 for a in articles if a["tier"] == "lived"),
+            "analysis": sum(1 for a in articles if a["tier"] == "analysis"),
         },
     }
 
@@ -190,6 +193,9 @@ def print_stats(articles: list[dict]):
     print(f"  National (US):   {stats['by_tier']['national']}")
     print(f"  International:   {stats['by_tier']['international']}")
     print(f"  Domain-specific: {stats['by_tier']['domain']}")
+    print(f"  Explainer:       {stats['by_tier']['explainer']}")
+    print(f"  Lived experience:{stats['by_tier']['lived']}")
+    print(f"  Analysis:        {stats['by_tier']['analysis']}")
     print(f"\nBy domain:")
     for key in sorted(stats["domains"], key=lambda k: stats["domains"][k]["count"], reverse=True):
         d = stats["domains"][key]
