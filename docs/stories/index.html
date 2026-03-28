@@ -21,10 +21,13 @@
 
   .wrap{position:relative;z-index:1;max-width:900px;margin:0 auto;padding:0 1.5rem;}
 
-  /* NAV BACK */
-  .nav-back{margin-bottom:2rem;margin-top:2rem;}
-  .nav-back a{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.95rem;color:rgba(235,230,245,0.7);transition:color 0.2s;padding:0.5rem 0;}
-  .nav-back a:hover{color:#fff;}
+  /* SITE NAV */
+  .site-nav{display:flex;align-items:center;justify-content:space-between;padding:1.5rem 0;margin-bottom:1rem;border-bottom:1px solid rgba(255,255,255,0.06);}
+  .nav-logo{font-family:'Space Grotesk',sans-serif;font-size:1.1rem;font-weight:800;color:#fff;letter-spacing:-0.03em;}
+  .nav-links{display:flex;gap:1.5rem;align-items:center;}
+  .nav-links a{font-size:0.85rem;color:rgba(235,230,245,0.5);font-weight:500;transition:color 0.15s;}
+  .nav-links a:hover{color:#fff;}
+  .nav-links a.active{color:#fff;font-weight:700;}
 
   /* HERO */
   .hero{padding:2rem 0 3rem;}
@@ -79,6 +82,8 @@
   @media(max-width:700px){
     .wrap{padding:0 1rem;}
     .hero{padding:1.5rem 0 2rem;}
+    .site-nav{flex-direction:column;gap:0.8rem;align-items:flex-start;}
+    .nav-links{gap:1rem;flex-wrap:wrap;}
     .filter-pill{padding:0.85rem 1.2rem;min-height:44px;font-size:0.8rem;}
     .article-item{padding:1rem;}
     .article-title{font-size:1rem;}
@@ -106,9 +111,15 @@
 
 <div class="wrap">
 
-<div class="nav-back">
-  <a href="../">← Back to Signal Board</a>
-</div>
+<nav class="site-nav">
+  <a href="../" class="nav-logo">Signal Board</a>
+  <div class="nav-links">
+    <a href="../today/">Today</a>
+    <a href="./" class="active">Stories</a>
+    <a href="../sources/">Sources</a>
+    <a href="../how-it-works/">How It Works</a>
+  </div>
+</nav>
 
 <div class="hero">
   <h1>All Stories</h1>

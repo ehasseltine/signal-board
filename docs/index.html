@@ -71,12 +71,22 @@
   .bottom{padding:2.5rem 0;font-size:0.88rem;color:rgba(235,230,245,0.5);line-height:1.75;max-width:600px;margin-bottom:1rem;}
   .footer{border-top:1px solid rgba(255,255,255,0.06);padding:1.5rem 0 3rem;font-size:0.72rem;color:rgba(235,230,245,0.3);display:flex;gap:1.5rem;flex-wrap:wrap;}
 
+  /* SITE NAV */
+  .site-nav{display:flex;align-items:center;justify-content:space-between;padding:1.5rem 0;margin-bottom:1rem;border-bottom:1px solid rgba(255,255,255,0.06);}
+  .nav-logo{font-family:'Space Grotesk',sans-serif;font-size:1.1rem;font-weight:800;color:#fff;letter-spacing:-0.03em;}
+  .nav-links{display:flex;gap:1.5rem;align-items:center;}
+  .nav-links a{font-size:0.85rem;color:rgba(235,230,245,0.5);font-weight:500;transition:color 0.15s;}
+  .nav-links a:hover{color:#fff;}
+  .nav-links a.active{color:#fff;font-weight:700;}
+
   @media(max-width:700px){
     .wrap{padding:0 1rem;}
     .hero{padding:5vh 0 2rem;}
     .stat-row{grid-template-columns:repeat(2,1fr);}
     .nav-grid{grid-template-columns:1fr;}
     .nav-full{flex-direction:column;align-items:flex-start;}
+    .site-nav{flex-direction:column;gap:0.8rem;align-items:flex-start;}
+    .nav-links{gap:1rem;flex-wrap:wrap;}
   }
 </style>
 </head>
@@ -97,6 +107,16 @@
 </svg>
 
 <div class="wrap">
+
+<nav class="site-nav">
+  <a href="./" class="nav-logo">Signal Board</a>
+  <div class="nav-links">
+    <a href="./today/">Today</a>
+    <a href="./stories/">Stories</a>
+    <a href="./sources/">Sources</a>
+    <a href="./how-it-works/">How It Works</a>
+  </div>
+</nav>
 
 <div class="hero">
   <h1>The news<br>makes more<br>sense <span class="w1">when</span><br><span class="w2">you</span> see what<br><span class="w3">connects.</span></h1>

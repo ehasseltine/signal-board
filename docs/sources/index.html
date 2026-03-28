@@ -26,9 +26,13 @@
   .hero h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(3.5rem,9vw,6rem);font-weight:800;letter-spacing:-0.06em;color:#fff;line-height:0.98;margin-bottom:2rem;}
   .hero .tagline{font-size:clamp(1.05rem,2.2vw,1.25rem);color:rgba(235,230,245,0.6);line-height:1.75;max-width:680px;margin-bottom:2.5rem;}
 
-  /* BACK LINK */
-  .back{display:inline-block;font-family:'Space Grotesk',sans-serif;font-size:0.85rem;font-weight:600;color:rgba(235,230,245,0.5);margin-bottom:3rem;transition:color 0.2s;}
-  .back:hover{color:#e8e8e8;}
+  /* SITE NAV */
+  .site-nav{display:flex;align-items:center;justify-content:space-between;padding:1.5rem 0;margin-bottom:1rem;border-bottom:1px solid rgba(255,255,255,0.06);}
+  .nav-logo{font-family:'Space Grotesk',sans-serif;font-size:1.1rem;font-weight:800;color:#fff;letter-spacing:-0.03em;}
+  .nav-links{display:flex;gap:1.5rem;align-items:center;}
+  .nav-links a{font-size:0.85rem;color:rgba(235,230,245,0.5);font-weight:500;transition:color 0.15s;}
+  .nav-links a:hover{color:#fff;}
+  .nav-links a.active{color:#fff;font-weight:700;}
 
   /* SECTION HEADER */
   .tier-section{margin-bottom:4rem;}
@@ -54,6 +58,8 @@
     .hero{padding:5vh 0 2rem;}
     .tier-header{font-size:1.6rem;padding:1.2rem;}
     .source-card{padding:1.3rem;}
+    .site-nav{flex-direction:column;gap:0.8rem;align-items:flex-start;}
+    .nav-links{gap:1rem;flex-wrap:wrap;}
   }
 </style>
 </head>
@@ -75,7 +81,15 @@
 
 <div class="wrap">
 
-<a href="../" class="back">← Back to Signal Board</a>
+<nav class="site-nav">
+  <a href="../" class="nav-logo">Signal Board</a>
+  <div class="nav-links">
+    <a href="../today/">Today</a>
+    <a href="../stories/">Stories</a>
+    <a href="./" class="active">Sources</a>
+    <a href="../how-it-works/">How It Works</a>
+  </div>
+</nav>
 
 <div class="hero">
   <h1>Where this comes from.</h1>
