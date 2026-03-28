@@ -15,6 +15,14 @@ ABC News,https://feeds.abcnews.com/abcnews/topstories,national,us
 The Hill,https://thehill.com/feed/,national,us
 CNBC,https://www.cnbc.com/id/100003114/device/rss/rss.html,national,us
 Business Insider,https://www.businessinsider.com/rss,national,us
+National Review,https://www.nationalreview.com/feed/,national,us
+Washington Examiner,https://www.washingtonexaminer.com/feed,national,us
+Washington Times,https://www.washingtontimes.com/rss/headlines/news/,national,us
+Daily Wire,https://www.dailywire.com/feeds/rss.xml,national,us
+The Dispatch,https://thedispatch.com/feed/,national,us
+Reason,https://reason.com/feed/,national,us
+RealClearPolitics,https://feeds.feedburner.com/realclearpolitics/qlMj,national,us
+The Federalist,https://thefederalist.com/feed/,national,us
 BBC World,https://feeds.bbci.co.uk/news/world/rss.xml,international,uk
 The Guardian World,https://www.theguardian.com/world/rss,international,uk
 Al Jazeera,https://www.aljazeera.com/xml/rss/all.xml,international,qatar
@@ -28,28 +36,18 @@ African Arguments,https://africanarguments.org/feed/,international,africa
 Americas Quarterly,https://www.americasquarterly.org/feed/,international,latam
 The Diplomat,https://thediplomat.com/feed/,international,asia
 Foreign Policy,https://foreignpolicy.com/feed/,international,global
-National Review,https://www.nationalreview.com/feed/,conservative,us
-The Federalist,https://thefederalist.com/feed/,conservative,us
-Washington Examiner,https://www.washingtonexaminer.com/feed,conservative,us
-Washington Times,https://www.washingtontimes.com/rss/headlines/news/,conservative,us
-Daily Wire,https://www.dailywire.com/feeds/rss.xml,conservative,us
-The Dispatch,https://thedispatch.com/feed/,conservative,us
-Reason,https://reason.com/feed/,conservative,us
-RealClearPolitics,https://feeds.feedburner.com/realclearpolitics/qlMj,conservative,us
-MIT Technology Review,https://www.technologyreview.com/feed/,domain,ai
-The Markup,https://themarkup.org/feeds/rss.xml,domain,information
-EPI Blog,https://www.epi.org/blog/feed/,domain,labor
-American Prospect,https://prospect.org/feed/,domain,labor
-Columbia Journalism Review,https://www.cjr.org/feed,domain,information
-Nieman Lab,https://www.niemanlab.org/feed/,domain,information
-Brookings,https://news.google.com/rss/search?q=when:7d+site:brookings.edu&hl=en-US,domain,governance
-Lawfare,https://news.google.com/rss/search?q=when:7d+site:lawfaremedia.org&hl=en-US,domain,governance
-ProPublica,https://feeds.propublica.org/propublica/main,domain,governance
-Carbon Brief,https://www.carbonbrief.org/feed,domain,climate
-Grist,https://grist.org/feed/,domain,climate
-Press Gazette,https://pressgazette.co.uk/feed/,domain,information
-Naked Capitalism,https://www.nakedcapitalism.com/feed,domain,economics
-OnLabor,https://onlabor.org/feed/,domain,labor
+MIT Technology Review,https://www.technologyreview.com/feed/,specialist,ai
+The Markup,https://themarkup.org/feeds/rss.xml,specialist,information
+EPI Blog,https://www.epi.org/blog/feed/,specialist,labor
+American Prospect,https://prospect.org/feed/,specialist,labor
+Columbia Journalism Review,https://www.cjr.org/feed,specialist,information
+Nieman Lab,https://www.niemanlab.org/feed/,specialist,information
+Lawfare,https://news.google.com/rss/search?q=when:7d+site:lawfaremedia.org&hl=en-US,specialist,governance
+ProPublica,https://feeds.propublica.org/propublica/main,specialist,governance
+Carbon Brief,https://www.carbonbrief.org/feed,specialist,climate
+Grist,https://grist.org/feed/,specialist,climate
+Naked Capitalism,https://www.nakedcapitalism.com/feed,specialist,economics
+OnLabor,https://onlabor.org/feed/,specialist,labor
 The Conversation US,https://theconversation.com/us/articles.atom,explainer,us
 Vox,https://www.vox.com/rss/index.xml,explainer,us
 Pew Research Center,https://www.pewresearch.org/feed/,explainer,us
@@ -59,20 +57,20 @@ The Verge,https://www.theverge.com/rss/index.xml,explainer,us
 Wired,https://www.wired.com/feed/rss,explainer,us
 Ars Technica,https://feeds.arstechnica.com/arstechnica/index,explainer,us
 Platformer,https://www.platformer.news/rss/,explainer,us
-The 19th News,https://19thnews.org/feed/,lived,us
-The Marshall Project,https://news.google.com/rss/search?q=when:7d+site:themarshallproject.org&hl=en-US,lived,us
-CalMatters,https://calmatters.org/feed/,lived,us
-Stateline,https://stateline.org/feed/,lived,us
-High Country News,https://www.hcn.org/feed/,lived,us
-Civil Eats,https://civileats.com/feed/,lived,us
-Documented,https://documentedny.com/feed/,lived,us
-The Root,https://www.theroot.com/rss,lived,us
-Latino USA,https://www.latinousa.org/feed/,lived,us
-Indian Country Today,https://indiancountrytoday.com/feed,lived,us
-Hechinger Report,https://hechingerreport.org/feed/,lived,us
-Christianity Today,https://www.christianitytoday.com/feed/,lived,us
-Religion News Service,https://religionnews.com/feed/,lived,us
-Texas Tribune,https://www.texastribune.org/feed/,lived,us
+The 19th News,https://19thnews.org/feed/,community,us
+The Marshall Project,https://news.google.com/rss/search?q=when:7d+site:themarshallproject.org&hl=en-US,community,us
+CalMatters,https://calmatters.org/feed/,community,us
+Stateline,https://stateline.org/feed/,community,us
+High Country News,https://www.hcn.org/feed/,community,us
+Civil Eats,https://civileats.com/feed/,community,us
+Documented,https://documentedny.com/feed/,community,us
+The Root,https://www.theroot.com/rss,community,us
+Latino USA,https://www.latinousa.org/feed/,community,us
+Indian Country Today,https://indiancountrytoday.com/feed,community,us
+Hechinger Report,https://hechingerreport.org/feed/,community,us
+Christianity Today,https://www.christianitytoday.com/feed/,community,us
+Religion News Service,https://religionnews.com/feed/,community,us
+Texas Tribune,https://www.texastribune.org/feed/,community,us
 RAND,https://www.rand.org/blog.xml,analysis,us
 Roosevelt Institute,https://rooseveltinstitute.org/feed/,analysis,us
 Carnegie Endowment,https://news.google.com/rss/search?q=when:7d+site:carnegieendowment.org&hl=en-US,analysis,us
@@ -80,3 +78,4 @@ Foreign Affairs,https://www.foreignaffairs.com/rss.xml,analysis,us
 Center for American Progress,https://news.google.com/rss/search?q=when:7d+site:americanprogress.org&hl=en-US,analysis,us
 Chatham House,https://news.google.com/rss/search?q=when:7d+site:chathamhouse.org&hl=en-US,analysis,uk
 Heritage Foundation,https://news.google.com/rss/search?q=when:7d+site:heritage.org&hl=en-US,analysis,us
+Brookings,https://news.google.com/rss/search?q=when:7d+site:brookings.edu&hl=en-US,analysis,us
