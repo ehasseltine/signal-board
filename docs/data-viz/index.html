@@ -8,7 +8,7 @@
   <meta property="og:description" content="Where the coverage gaps hide. See source patterns, coverage distribution, and how different outlets frame the same story.">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary">
-  <link rel="canonical" href="https://signal-board.org/data">
+  <!-- canonical removed - using relative paths -->
   <title>Data Visualizations — Signal Board</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -631,6 +631,8 @@
         <a href="../today/">Today</a>
         <a href="../sources/">Sources</a>
         <a href="./" class="active">Data</a>
+        <a href="../archive/">Archive</a>
+        <a href="./" class="active">Data</a>
         <a href="../stories/">Archive</a>
       </div>
     </div>
@@ -729,7 +731,7 @@
     // Load data
     async function loadData() {
       try {
-        const response = await fetch('../../data/daily/latest.json');
+        const response = await fetch('../data/daily/latest.json');
         appData = await response.json();
         renderAll();
       } catch (error) {
