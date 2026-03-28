@@ -13,7 +13,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="The 239 sources that feed Signal Board: U.S. newsrooms, global press, community voices, expert journalists, and more.">
   <meta property="og:title" content="Sources — Signal Board">
-  <meta property="og:description" content="239 sources across 8 tiers: everything from AP and Reuters to local newsrooms and independent newsletters.">
+  <meta property="og:description" content="239 sources across 8 categories: everything from AP and Reuters to local newsrooms and independent newsletters.">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
   <title>Sources — Signal Board</title>
@@ -308,6 +308,15 @@
       border: 1px solid rgba(102, 82, 255, 0.3);
     }
 
+    .tier-description {
+      font-size: 0.92rem;
+      color: rgba(235, 230, 245, 0.65);
+      line-height: 1.7;
+      max-width: 720px;
+      margin-top: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
     /* SOURCE CARDS */
     .sources-grid {
       display: grid;
@@ -353,6 +362,62 @@
       padding-top: 0.8rem;
       border-top: 1px solid rgba(255, 255, 255, 0.06);
       font-style: italic;
+    }
+
+    /* CATEGORIZATION SECTION */
+    .categorization-section {
+      margin: 3rem 0 2rem 0;
+      padding: 2rem 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .categorization-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.8rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      user-select: none;
+    }
+
+    .categorization-title::before {
+      content: '▶';
+      display: inline-block;
+      transition: transform 0.2s;
+      font-size: 0.8rem;
+    }
+
+    .categorization-content {
+      display: none;
+      margin-top: 1.2rem;
+      padding: 1.5rem;
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 12px;
+      border-left: 3px solid #6652FF;
+    }
+
+    .categorization-content.open {
+      display: block;
+    }
+
+    .categorization-title.open::before {
+      transform: rotate(90deg);
+    }
+
+    .categorization-text {
+      font-size: 0.95rem;
+      color: rgba(235, 230, 245, 0.8);
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+
+    .categorization-text:last-child {
+      margin-bottom: 0;
     }
 
     /* FOOTER SECTION */
@@ -509,7 +574,7 @@
       <header class="header">
         <h1>The Sources Behind Signal Board</h1>
         <p class="header-context">
-          We curate news from 239 sources across 8 different tiers—from major U.S. newsrooms and global press to independent newsletters and community voices. This diverse mix helps us see stories that others miss and understand how the same events are covered from different perspectives.
+          People have good reason to be skeptical of news curation. In a media landscape saturated with bias and financial incentives, asking someone to trust your source list requires transparency about what you're actually doing. Signal Board doesn't claim to show you the "truth" or pick the outlets we think are right. Instead, we pull from 239 sources organized into eight functional categories, each chosen because it brings a distinct perspective to how stories develop and spread. You can see exactly which outlets we read, why they matter, and what different vantage points they represent. The goal is to help you understand not just what happened, but how the conversation around it is shaped.
         </p>
       </header>
 
@@ -521,9 +586,25 @@
         </div>
         <div class="stat-block">
           <div class="stat-number">8</div>
-          <div class="stat-text">Tiers of journalism</div>
+          <div class="stat-text">Source categories</div>
         </div>
       </div>
+
+      <!-- How We Categorize -->
+      <section class="categorization-section">
+        <h2 class="categorization-title" id="categorizationToggle">How we categorize sources</h2>
+        <div class="categorization-content" id="categorizationContent">
+          <p class="categorization-text">
+            Signal Board's eight categories organize sources by function, not by quality or reliability. Each category captures a distinct role that sources play in the news ecosystem, from setting the national agenda to reporting stories that never reach major outlets.
+          </p>
+          <p class="categorization-text">
+            Our taxonomy operates along three primary dimensions. Geographic position describes where sources report from: some focus exclusively on the United States, while others cover the world from outside American perspectives. Topic focus describes what they cover: some outlets cover everything, while others concentrate deeply on specific domains like labor or climate. Format describes how they deliver: we include daily wire services, weekly newsletters, daily podcasts, and real-time government records all in one system.
+          </p>
+          <p class="categorization-text">
+            This taxonomy is Signal Board's own framework, not an industry standard. We built it this way because existing journalism hierarchies often imply that some sources are inherently more credible than others, which obscures the real question: what perspective does this source bring, and is that perspective useful right now? A government primary document might be more authoritative on what Congress passed, while a community newsroom might be more authoritative on how that law affects a specific neighborhood. Both matter. Both belong in the same conversation.
+          </p>
+        </div>
+      </section>
 
       <!-- TIER 1: U.S. Newsrooms -->
       <section class="tier-section">
@@ -531,6 +612,7 @@
           <h2 class="tier-name">U.S. Newsrooms</h2>
           <span class="tier-count">28 sources</span>
         </div>
+        <p class="tier-description">Major American news organizations that shape the mainstream narrative and reach the largest audiences. These outlets set the agenda that most Americans encounter first, which makes understanding their framing essential to understanding how stories travel.</p>
         <div class="sources-grid" id="tier-national"></div>
       </section>
 
@@ -540,6 +622,7 @@
           <h2 class="tier-name">Global Press</h2>
           <span class="tier-count">40 sources</span>
         </div>
+        <p class="tier-description">International news organizations reporting from outside the United States. These outlets cover events that American media underreports and frame shared events through different cultural, political, and economic lenses.</p>
         <div class="sources-grid" id="tier-international"></div>
       </section>
 
@@ -549,6 +632,7 @@
           <h2 class="tier-name">Community Voices</h2>
           <span class="tier-count">79 sources</span>
         </div>
+        <p class="tier-description">Local newsrooms, outlets serving specific communities, and regional accountability journalism. These sources report stories that never reach national headlines: school board decisions, infrastructure failures, immigration enforcement, and the lived experience of policy changes.</p>
         <div class="sources-grid" id="tier-community"></div>
       </section>
 
@@ -558,6 +642,7 @@
           <h2 class="tier-name">Deep Expertise</h2>
           <span class="tier-count">38 sources</span>
         </div>
+        <p class="tier-description">Specialist outlets focused on single domains like technology, labor, climate, defense, or health. These sources provide the technical depth and historical context that generalist newsrooms often lack.</p>
         <div class="sources-grid" id="tier-specialist"></div>
       </section>
 
@@ -567,6 +652,7 @@
           <h2 class="tier-name">Explainers</h2>
           <span class="tier-count">9 sources</span>
         </div>
+        <p class="tier-description">Outlets whose primary function is translating complex policy, science, and institutional processes into language anyone can follow without sacrificing accuracy.</p>
         <div class="sources-grid" id="tier-explainer"></div>
       </section>
 
@@ -576,6 +662,7 @@
           <h2 class="tier-name">Research and Analysis</h2>
           <span class="tier-count">25 sources</span>
         </div>
+        <p class="tier-description">Think tanks, research institutes, and academic publications producing data-driven analysis of policy and global affairs. Signal Board treats these as context sources, not news sources.</p>
         <div class="sources-grid" id="tier-analysis-research"></div>
       </section>
 
@@ -585,6 +672,7 @@
           <h2 class="tier-name">Newsletters and Podcasts</h2>
           <span class="tier-count">19 sources</span>
         </div>
+        <p class="tier-description">Independent writers and audio producers who go deeper on fewer stories, often bringing subject expertise or original reporting that institutional outlets don't prioritize.</p>
         <div class="sources-grid" id="tier-newsletter-podcast"></div>
       </section>
 
@@ -594,6 +682,7 @@
           <h2 class="tier-name">Government Sources</h2>
           <span class="tier-count">5 sources</span>
         </div>
+        <p class="tier-description">Primary documents from Congress, federal agencies, and the courts. These are the record of what government is actually doing, before any outlet interprets it.</p>
         <div class="sources-grid" id="tier-government"></div>
       </section>
 
@@ -602,26 +691,19 @@
         <h2 class="methodology-title" id="methodologyToggle">How we selected these sources</h2>
         <div class="methodology-content" id="methodologyContent">
           <p class="methodology-text">
-            Signal Board's source list balances reach, expertise, and perspective. We include major news outlets because they set the mainstream narrative. We include regional outlets because crucial stories happen outside national headlines. We include independent journalists and community voices because they report on stories that mainstream media overlooks. And we include experts and analysts because good journalism needs context.
+            Our selection process prioritizes functional diversity over perceived objectivity. We ask what role each source plays in the information ecosystem, not whether we personally agree with its editorial stance. This means Signal Board includes outlets with clear ideological positions: Fox News and Mother Jones both appear because they both shape how millions of Americans understand the world, and understanding their coverage is essential to understanding the broader news cycle.
           </p>
           <p class="methodology-text">
-            The goal is not to be comprehensive or neutral. The goal is to see clearly. We actively look for sources that offer viewpoints and coverage that complement each other. Someone reading Signal Board should come away with a richer understanding of what's happening in the world—not because we've picked the "right" outlets, but because we've picked outlets that talk to each other and challenge each other.
+            A source makes it into Signal Board if it meets one of three criteria. First, it reaches a significant audience and shapes how stories are framed and distributed. Second, it reports on a geographic region or topic with expertise and depth that few other outlets match. Third, it covers communities or stories that national media systematically ignores. We don't include sources because they're objective, because no source is. We include them because they're functionally important.
           </p>
           <p class="methodology-text">
-            <strong>The eight tiers:</strong>
+            This source list has real limitations worth understanding. Coverage is weighted toward English-language outlets and outlets with digital presence, which skews toward wealthy countries and away from rural areas. Within the United States, we have stronger coverage of certain cities and weaker coverage of others. Some categories like Explainers are small because few outlets make that their primary function. And some domains get covered intensively while others, despite their importance, have sparse specialist coverage. These gaps exist. They matter. We try to name them.
           </p>
-          <ul class="methodology-list">
-            <li><strong>U.S. Newsrooms:</strong> Major newspapers and broadcast networks that set the American news agenda and reach millions of people.</li>
-            <li><strong>Global Press:</strong> International news organizations that cover the world from outside the U.S. perspective, including regional leaders in Asia, Africa, Europe, and Latin America.</li>
-            <li><strong>Community Voices:</strong> Regional newsrooms, outlets serving specific communities (LGBTQ+, immigrant, Black, rural, etc.), and local accountability journalism.</li>
-            <li><strong>Deep Expertise:</strong> Specialist outlets focused on specific domains: technology, labor, climate, health, defense, investigative journalism, and more.</li>
-            <li><strong>Explainers:</strong> Outlets that translate complex stories into language anyone can understand, without sacrificing accuracy.</li>
-            <li><strong>Research and Analysis:</strong> Think tanks, research institutes, and journals publishing expert analysis on policy and global affairs.</li>
-            <li><strong>Newsletters and Podcasts:</strong> Long-form audio and written analysis that goes deeper into a smaller number of stories.</li>
-            <li><strong>Government Sources:</strong> Primary documents from Congress, the courts, and federal agencies—the record of what government is actually doing.</li>
-          </ul>
           <p class="methodology-text">
-            All sources are updated daily. Some are active only once a week or on major news breaks; others publish multiple times per day. Signal Board weighs all sources equally regardless of publication frequency, treating each as a voice in the conversation about what's happening.
+            Including a source in Signal Board does not mean endorsing its coverage, defending its editorial choices, or claiming it's reliable on every topic. It means recognizing that this outlet's voice contributes something to the broader conversation. The New York Times breaks investigative stories others miss, and it also frames some stories in ways shaped by its institutional interests. ProPublica does deep accountability work and has its own editorial judgment about what stories matter. Fox News reaches more conservative audiences than any other outlet and its coverage reflects conservative editorial priorities. These facts are all true simultaneously. Signal Board's job is to show you multiple voices talking about the same events, not to declare some voices acceptable and others illegitimate.
+          </p>
+          <p class="methodology-text">
+            All 239 sources are monitored for new content daily. Some publish continuously; others update once a week or publish only on major news events. Signal Board treats all sources as equal participants in the conversation about what's happening, regardless of how frequently they publish. The focus is not on which outlet published first, but on which outlets published at all and what different outlets chose to cover.
           </p>
         </div>
       </section>
@@ -890,6 +972,12 @@
     renderSources(sourcesByTier.government, "tier-government");
 
     // Toggle methodology
+    document.getElementById('categorizationToggle').addEventListener('click', function() {
+      const content = document.getElementById('categorizationContent');
+      content.classList.toggle('open');
+      this.classList.toggle('open');
+    });
+
     document.getElementById('methodologyToggle').addEventListener('click', function() {
       const content = document.getElementById('methodologyContent');
       content.classList.toggle('open');
