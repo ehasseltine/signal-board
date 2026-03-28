@@ -243,7 +243,7 @@ def score_force_cluster(cluster):
     Factors:
     - Source diversity (more unique sources = more significant)
     - Domain breadth (touches more domains = more structurally important)
-    - Tier diversity (covered by national + community + intl = broader relevance)
+    - Tier diversity (covered by national + local-regional + intl = broader relevance)
     - AI connection quality (articles with connection insights are richer)
     """
     sources = set(a["source"] for a in cluster)
@@ -255,8 +255,8 @@ def score_force_cluster(cluster):
         for d in a.get("domains", []):
             domains.add(d)
         tier = a.get("tier", "")
-        if tier in ("community", "lived"):
-            tiers.add("community")
+        if tier in ("local-regional", "lived"):
+            tiers.add("local-regional")
         elif tier in ("specialist", "domain"):
             tiers.add("specialist")
         else:
@@ -300,7 +300,7 @@ def analyze_top_stories(articles):
     for cluster in clusters[:10]:  # Top 10 structural forces
         sources = list(set(a["source"] for a in cluster))
         tiers = list(set(
-            ("community" if a.get("tier") in ("community", "lived") else
+            ("local-regional" if a.get("tier") in ("local-regional", "lived") else
              "specialist" if a.get("tier") in ("specialist", "domain") else
              a.get("tier", "unknown"))
             for a in cluster
@@ -321,7 +321,7 @@ def analyze_top_stories(articles):
         all_forces = [tag for tag, _ in force_tags.most_common(5) if tag]
 
         # Sort articles: prefer those with connection insights, then by tier
-        tier_order = {"national": 0, "international": 1, "community": 2,
+        tier_order = {"national": 0, "international": 1, "local-regional": 2,
                       "specialist": 3, "explainer": 4, "analysis": 5}
         sorted_arts = sorted(cluster,
                              key=lambda a: (0 if a.get("connection") else 1,
@@ -352,10 +352,10 @@ def analyze_top_stories(articles):
 
         # How different tiers frame it
         tier_framing = {}
-        for tier_name in ["national", "international", "community", "specialist", "analysis"]:
+        for tier_name in ["national", "international", "local-regional", "specialist", "analysis"]:
             tier_arts = [a for a in cluster
                          if a.get("tier") == tier_name or
-                         (tier_name == "community" and a.get("tier") in ("community", "lived")) or
+                         (tier_name == "local-regional" and a.get("tier") in ("local-regional", "lived")) or
                          (tier_name == "specialist" and a.get("tier") in ("specialist", "domain"))]
             if not tier_arts:
                 continue
@@ -435,16 +435,16 @@ def analyze_what_connects(articles):
     bridging = []
 
     for cluster in clusters:
-        left = set(); right = set(); intl = set(); community = set()
+        left = set(); right = set(); intl = set(); local_regional = set()
         for a in cluster:
             src = a["source"]
             if src in LEFT: left.add(src)
             elif src in RIGHT: right.add(src)
             elif src in INTL: intl.add(src)
-            elif a.get("tier") in ("community", "lived"): community.add(src)
+            elif a.get("tier") in ("local-regional", "lived"): local_regional.add(src)
 
-        segments = sum(1 for g in [left, right, intl, community] if g)
-        if segments >= 2 and len(left | right | intl | community) >= 4:
+        segments = sum(1 for g in [left, right, intl, local_regional] if g)
+        if segments >= 2 and len(left | right | intl | local_regional) >= 4:
             # Get the structural force
             force_tags = Counter(normalize_force_tag(a.get("force_tag", ""))
                                for a in cluster if a.get("force_tag"))
@@ -459,7 +459,7 @@ def analyze_what_connects(articles):
                 "left_sources": list(left)[:3],
                 "right_sources": list(right)[:3],
                 "international_sources": list(intl)[:3],
-                "community_sources": list(community)[:3],
+                "local_regional_sources": list(local_regional)[:3],
                 "article_count": len(cluster),
                 "domains": [d for d, _ in Counter(
                     d for a in cluster for d in a.get("domains", [])
@@ -530,9 +530,9 @@ def analyze_structural_forces_map(articles):
     return families[:25]
 
 
-def analyze_community_exclusive(articles):
+def analyze_local_regional_exclusive(articles):
     """
-    Find stories that community/specialist sources cover but national
+    Find stories that local-regional/specialist sources cover but national
     outlets do not. These are the gaps in mainstream coverage.
     """
     national_keywords = set()
@@ -541,9 +541,9 @@ def analyze_community_exclusive(articles):
             for w in re.findall(r'[a-z]{6,}', a.get("title", "").lower()):
                 national_keywords.add(w)
 
-    community_stories = []
+    local_regional_stories = []
     for a in articles:
-        if a.get("tier") not in ("community", "lived", "specialist", "domain"):
+        if a.get("tier") not in ("local-regional", "lived", "specialist", "domain"):
             continue
         title_words = set(re.findall(r'[a-z]{6,}', a.get("title", "").lower()))
         if not title_words:
@@ -551,7 +551,7 @@ def analyze_community_exclusive(articles):
         overlap = len(title_words & national_keywords) / len(title_words)
         if overlap < 0.35:
             text = a.get("text", "") or a.get("summary", "")
-            community_stories.append({
+            local_regional_stories.append({
                 "title": a["title"][:120],
                 "source": a["source"],
                 "url": a.get("url", ""),
@@ -565,7 +565,7 @@ def analyze_community_exclusive(articles):
 
     seen = set()
     unique = []
-    for s in community_stories:
+    for s in local_regional_stories:
         if s["source"] not in seen:
             seen.add(s["source"])
             unique.append(s)
@@ -688,7 +688,7 @@ def analyze_source_spectrum(articles):
     if "domain" in tier_counts:
         tier_counts["specialist"] += tier_counts.pop("domain")
     if "lived" in tier_counts:
-        tier_counts["community"] += tier_counts.pop("lived")
+        tier_counts["local-regional"] += tier_counts.pop("lived")
     # Drop unknowns
     tier_counts.pop("unknown", None)
     tier_counts.pop("", None)
@@ -740,7 +740,7 @@ def generate_questions_people_are_asking(articles):
             source_tiers = defaultdict(list)
             for a in relevant[:10]:
                 tier = a.get("tier", "")
-                if tier in ("community", "lived"): tier = "community"
+                if tier in ("local-regional", "lived"): tier = "local-regional"
                 if tier in ("specialist", "domain"): tier = "specialist"
                 if a["source"] not in [s["source"] for s in source_tiers[tier]]:
                     source_tiers[tier].append({
@@ -948,7 +948,7 @@ def generate_daily_analysis(articles, analysis_date, history):
     top_stories = analyze_top_stories(articles)
     structural_forces = analyze_structural_forces_map(articles)
     what_connects = analyze_what_connects(articles)
-    community_exclusive = analyze_community_exclusive(articles)
+    local_regional_exclusive = analyze_local_regional_exclusive(articles)
     active_threads = analyze_domain_collisions(articles, history)
     source_spectrum = analyze_source_spectrum(articles)
     questions = generate_questions_people_are_asking(articles)
@@ -977,7 +977,7 @@ def generate_daily_analysis(articles, analysis_date, history):
         "top_stories": top_stories,
         "structural_forces": structural_forces,
         "what_connects": what_connects,
-        "community_exclusive": community_exclusive,
+        "local_regional_exclusive": local_regional_exclusive,
         "active_threads": active_threads,
         "source_spectrum": source_spectrum,
         "questions": questions,

@@ -290,7 +290,7 @@
       "tier_count": 3,
       "tiers": [
         "international",
-        "community",
+        "local-regional",
         "national"
       ],
       "domains": [
@@ -386,7 +386,7 @@
             "context": ""
           }
         },
-        "community": {
+        "local-regional": {
           "count": 1,
           "keywords": [
             "israel",
@@ -656,7 +656,7 @@
       "tier_count": 4,
       "tiers": [
         "international",
-        "community",
+        "local-regional",
         "analysis",
         "national"
       ],
@@ -755,7 +755,7 @@
             "context": "Funded by the government of Qatar. Major international news network. Significant coverage of Middle East and Global South."
           }
         },
-        "community": {
+        "local-regional": {
           "count": 3,
           "keywords": [
             "military",
@@ -843,7 +843,7 @@
           "title": "Backlash grows after Pete Hegseth alters military general promotions list",
           "source": "The Advocate",
           "url": "https://www.advocate.com/politics/national/hegseth-general-promotions-bree-fram",
-          "tier": "community",
+          "tier": "local-regional",
           "paywall": false,
           "context": "LGBTQ+ news magazine. One of the oldest in the US.",
           "connection": "Executive branch intervention in military promotion processes raises constitutional and institutional concerns about civilian control of defense.",
@@ -865,7 +865,7 @@
       "tier_count": 3,
       "tiers": [
         "international",
-        "community",
+        "local-regional",
         "specialist"
       ],
       "domains": [
@@ -946,7 +946,7 @@
             "context": ""
           }
         },
-        "community": {
+        "local-regional": {
           "count": 1,
           "keywords": [
             "executive",
@@ -1014,7 +1014,7 @@
           "title": "VA executive accused of demanding gifts in the form of cash, casino chips from contractors",
           "source": "Task and Purpose",
           "url": "https://taskandpurpose.com/news/va-executive-gifts-windom/",
-          "tier": "community",
+          "tier": "local-regional",
           "paywall": false,
           "context": "",
           "connection": "Government official's alleged bribery scheme creates conflict of interest in public contract oversight.",
@@ -1046,7 +1046,7 @@
       "tier_count": 3,
       "tiers": [
         "international",
-        "community",
+        "local-regional",
         "national"
       ],
       "domains": [
@@ -1140,7 +1140,7 @@
             "context": ""
           }
         },
-        "community": {
+        "local-regional": {
           "count": 1,
           "keywords": [
             "sheriff",
@@ -1212,7 +1212,7 @@
           "title": "Sheriff, son and 3 other Costilla County officers indicted for mishandling human remains, using excessive force",
           "source": "Colorado Sun",
           "url": "https://coloradosun.com/2026/03/27/costilla-county-sheriff-officers-indicted-grand-jury/",
-          "tier": "community",
+          "tier": "local-regional",
           "paywall": false,
           "context": "",
           "connection": "Criminal indictments target local law enforcement officials for systematic failures in legal custody and conduct standards.",
@@ -1232,7 +1232,7 @@
       "tier_count": 3,
       "tiers": [
         "international",
-        "community",
+        "local-regional",
         "national"
       ],
       "domains": [
@@ -1312,7 +1312,7 @@
             "context": ""
           }
         },
-        "community": {
+        "local-regional": {
           "count": 1,
           "keywords": [
             "mundial",
@@ -1354,7 +1354,7 @@
           "title": "Mundial 2026: alertan a turistas por alquileres ilegales cerca del MetLife Stadium en Nueva Jersey",
           "source": "El Diario NY",
           "url": "https://eldiariony.com/2026/03/27/mundial-2026-alertan-a-turistas-por-alquileres-ilegales-cerca-del-metlife-stadium-en-nueva-jersey/",
-          "tier": "community",
+          "tier": "local-regional",
           "paywall": false,
           "context": "Spanish-language daily serving Latino communities in New York metro area.",
           "connection": "New Jersey housing regulations create enforcement gaps where tourists unknowingly use illegal rentals, exposing tension between regulatory compliance and market demand.",
@@ -1373,7 +1373,7 @@
       "tier_count": 4,
       "tiers": [
         "international",
-        "community",
+        "local-regional",
         "national",
         "explainer"
       ],
@@ -1469,7 +1469,7 @@
             "context": "Funded by the UK license fee. British public broadcaster. Generally regarded as centrist by international standards."
           }
         },
-        "community": {
+        "local-regional": {
           "count": 1,
           "keywords": [
             "iranian",
@@ -1531,7 +1531,7 @@
           "title": "Iranian hackers publish emails allegedly stolen from Kash Patel - NBC News",
           "source": "NBC News Latino",
           "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOdmtjaEdRMDIzVDB0UGR6dUo0a0dWejlOcXRIZ2U3OEJnYVJDYlhFNXBKbGVmX1NUYWZxSnl4My1sWEc1aGx6Wi1EVzNPdzJ6ZTV2bndTWkZYdmRtRGtWMmlPZl96VC0xQThsaWNlWi1pb0NNX0g4TC0zZXBIcUlCVjcwaFJJZERxdFRBb2RLaW5iY2RNbkF0OUNNRmxvSl9CdzhOcHE2bXVlRjA?oc=5",
-          "tier": "community",
+          "tier": "local-regional",
           "paywall": false,
           "context": "",
           "connection": "Iranian state-sponsored cyber theft and disclosure of U.S. official's communications constitutes information warfare.",
@@ -1561,7 +1561,7 @@
       "source_count": 4,
       "tier_count": 3,
       "tiers": [
-        "community",
+        "local-regional",
         "national",
         "government"
       ],
@@ -1631,7 +1631,7 @@
             "context": ""
           }
         },
-        "community": {
+        "local-regional": {
           "count": 1,
           "keywords": [
             "tyler",
@@ -1673,7 +1673,7 @@
           "title": "Tyler Perry blocked from giving cash to unpaid TSA agents at Atlanta\u2019s airport",
           "source": "The Grio",
           "url": "https://thegrio.com/2026/03/27/tyler-perry-unpaid-tsa-agents-donation-blocked/",
-          "tier": "community",
+          "tier": "local-regional",
           "paywall": false,
           "context": "",
           "connection": "Federal employee compensation gaps create situations where private citizens attempt to supplement inadequate government wages.",
@@ -1704,7 +1704,7 @@
       "tier_count": 3,
       "tiers": [
         "international",
-        "community",
+        "local-regional",
         "national"
       ],
       "domains": [
@@ -1790,7 +1790,7 @@
             "context": ""
           }
         },
-        "community": {
+        "local-regional": {
           "count": 1,
           "keywords": [
             "sign",
@@ -1842,7 +1842,7 @@
           "title": "Trump to sign emergency order to pay TSA agents with no deal in Congress on shutdown",
           "source": "Iowa Capital Dispatch",
           "url": "https://iowacapitaldispatch.com/2026/03/27/repub/trump-to-sign-emergency-order-to-pay-tsa-agents-with-no-deal-in-congress-on-shutdown/",
-          "tier": "community",
+          "tier": "local-regional",
           "paywall": false,
           "context": "",
           "connection": "Executive order bypasses Congress to authorize worker payment, circumventing legislative funding process during shutdown.",
@@ -1861,7 +1861,7 @@
       "source_count": 3,
       "tier_count": 3,
       "tiers": [
-        "community",
+        "local-regional",
         "national",
         "analysis"
       ],
@@ -1925,7 +1925,7 @@
             "context": "Right-wing news website. Represents nationalist and populist conservative perspectives."
           }
         },
-        "community": {
+        "local-regional": {
           "count": 1,
           "keywords": [
             "tariff",
@@ -1973,7 +1973,7 @@
           "title": "Q&A: Tariff uncertainty far from over for Michigan businesses",
           "source": "Bridge Michigan",
           "url": "https://bridgemi.com/michigan-government/qa-tariff-uncertainty-far-from-over-for-michigan-businesses/",
-          "tier": "community",
+          "tier": "local-regional",
           "paywall": false,
           "context": "",
           "connection": "Tariff policy creates business uncertainty as trade barriers reshape supply chains and operational costs for Michigan manufacturers.",
@@ -2575,7 +2575,7 @@
         "Straits Times",
         "The Globe and Mail"
       ],
-      "community_sources": [
+      "local_regional_sources": [
         "El Diario NY",
         "Arab American News",
         "Military Times"
@@ -2607,7 +2607,7 @@
         "Dawn",
         "The Hindu"
       ],
-      "community_sources": [
+      "local_regional_sources": [
         "The Root",
         "National Catholic Reporter",
         "Atlanta Black Star"
@@ -2637,7 +2637,7 @@
         "Dawn",
         "BBC World"
       ],
-      "community_sources": [
+      "local_regional_sources": [
         "The Root",
         "The Grio",
         "Atlanta Black Star"
@@ -2666,7 +2666,7 @@
         "Rappler",
         "The Hindu"
       ],
-      "community_sources": [
+      "local_regional_sources": [
         "Task and Purpose",
         "The Grio",
         "Canopy Forum"
@@ -2696,7 +2696,7 @@
         "The Guardian World",
         "Rappler"
       ],
-      "community_sources": [
+      "local_regional_sources": [
         "Atlanta Black Star",
         "AsAmNews"
       ],
@@ -2725,7 +2725,7 @@
         "ABC Australia",
         "The Hindu"
       ],
-      "community_sources": [
+      "local_regional_sources": [
         "Colorado Sun"
       ],
       "article_count": 14,
@@ -2751,7 +2751,7 @@
       "international_sources": [
         "Al Jazeera"
       ],
-      "community_sources": [
+      "local_regional_sources": [
         "Kansas Reflector",
         "Military Times",
         "The Advocate"
@@ -2780,7 +2780,7 @@
       "international_sources": [
         "Straits Times"
       ],
-      "community_sources": [
+      "local_regional_sources": [
         "Mississippi Free Press",
         "El Diario NY"
       ],
@@ -2791,7 +2791,7 @@
       "sample_connection": ""
     }
   ],
-  "community_exclusive": [
+  "local_regional_exclusive": [
     {
       "title": "The Situation: Dominance Play - lawfaremedia.org",
       "source": "Lawfare",
@@ -2825,7 +2825,7 @@
       "title": "Estuardo Mazariegos - The Marshall Project",
       "source": "The Marshall Project",
       "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9SQWN6bl9uRllHaVFhZWoyMi16MUpLQXRoVXk2M21aN1NobW9XVjZDckc1ZlBXN3cySW9yTUlEUGwyaWJwc2FWMWxtVWFNTk1BWW8wbUdodTQwUEZNaURfdGlGSEh2ZFJ3cURCdnlaMVdFakt6SlJJ?oc=5",
-      "tier": "community",
+      "tier": "local-regional",
       "text_preview": "Estuardo Mazariegos &nbsp;&nbsp; The Marshall Project",
       "domains": [],
       "connection": "",
@@ -2836,7 +2836,7 @@
       "title": "Looksmaxxing, Catholicism and the new discipline of the body",
       "source": "Religion News Service",
       "url": "https://religionnews.com/2026/03/27/christians-respond-to-looksmaxxing-influencer-clavicular-and-the-pursuit-of-the-perfect-body/",
-      "tier": "community",
+      "tier": "local-regional",
       "text_preview": "(RNS) &#8212; Braden Peters, a streamer who goes by Clavicular, posted a recent video last week announcing he would broadcast his life 24 hours a day for a month on Kick, where he has about 250,000 followers. &#8220;I live in a luxury condominium in ",
       "domains": [
         "governance",
@@ -2853,7 +2853,7 @@
       "title": "Voting rights groups sue Texas over removal of potential noncitizens from the voter roll",
       "source": "Texas Tribune",
       "url": "https://feeds.texastribune.org/link/16799/17307937/texas-save-database-voter-rolls-removal-dps-secretary-of-state",
-      "tier": "community",
+      "tier": "local-regional",
       "text_preview": "The voter registration office is seen at the Nueces County Courthouse in Corpus Christi on Sept. 11, 2024",
       "domains": [
         "domestic_politics",
@@ -2867,7 +2867,7 @@
       "title": "Indian Health Service is digging out of decades-old construction backlog for medical buildings",
       "source": "Indian Country Today",
       "url": "https://ictnews.org/news/indian-health-service-is-digging-out-of-decades-old-construction-backlog-for-medical-buildings/",
-      "tier": "community",
+      "tier": "local-regional",
       "text_preview": "Savannah Peters Associated Press SANTA ANA PUEBLO, N.M. , An empty lot between a fire station and a soccer field just outside Albuquerque soon will be the home of a federal medical center first promised to Native American patients more than 30 years ",
       "domains": [
         "governance",
@@ -2881,7 +2881,7 @@
       "title": "After Floods, Otake Camp Cleans Up",
       "source": "Honolulu Civil Beat",
       "url": "https://www.civilbeat.org/2026/03/after-floods-otake-camp-cleans-up/",
-      "tier": "community",
+      "tier": "local-regional",
       "text_preview": "Otake Camp, situated on the bank of Kaukonahua Stream, was among O\u02bbahu's hardest hit areas after a recent storm devastated the island's North Shore.",
       "domains": [
         "climate",
@@ -2895,7 +2895,7 @@
       "title": "Cities in Texas and Florida install new rainbow walkways as Republicans crack down on Pride crosswalks",
       "source": "The Advocate",
       "url": "https://www.advocate.com/politics/states/rainbow-crosswalk-texas-florida",
-      "tier": "community",
+      "tier": "local-regional",
       "text_preview": "City leaders in San Antonio plans will unveil new rainbow sidewalks as part of a Pride celebration this week. The act comes even as Texas cracks down on other decorated walkways across the Lone Star State. Keep up with the latest in LGBTQ + news and ",
       "domains": [
         "domestic_politics",
@@ -2909,7 +2909,7 @@
       "title": "NYC Council members host Mahmoud Khalil at Islamophobia briefing, sparking backlash from colleagues",
       "source": "Jewish Telegraphic Agency",
       "url": "https://www.jta.org/2026/03/27/ny/nyc-council-members-host-mahmoud-khalil-at-islamophobia-briefing-sparking-backlash-from-colleagues",
-      "tier": "community",
+      "tier": "local-regional",
       "text_preview": "A version of this piece first ran as part of the New York Jewish Week&#8217;s daily newsletter, rounding up the latest on politics, culture, food and what\u2019s new with Jews in the city. Sign up here to get it in your inbox . NYC passes \u2018buffer zone\u2019 le",
       "domains": [
         "domestic_politics",
@@ -2923,7 +2923,7 @@
       "title": "US Space Command provides update on phased headquarters relocation to Alabama",
       "source": "Military Times",
       "url": "https://www.militarytimes.com/news/your-military/2026/03/27/us-space-command-provides-update-on-phased-headquarters-relocation-to-alabama/",
-      "tier": "community",
+      "tier": "local-regional",
       "text_preview": "U.S. Space Command is operating a small Program Management Office with about 20 personnel at Redstone Arsenal in Huntsville, Alabama, as part of the phased relocation of its headquarters, Gen. Stephen N. Whiting told the Senate Armed Services Committ",
       "domains": [
         "governance",
@@ -2937,7 +2937,7 @@
       "title": "L.A. County\u2019s New Office of Transition Age Youth Aims to Provide \u2018Holistic Wellness\u2019",
       "source": "The Imprint",
       "url": "https://imprintnews.org/child-welfare-2/l-a-countys-new-office-of-transition-age-youth-aims-to-provide-holistic-wellness/273374",
-      "tier": "community",
+      "tier": "local-regional",
       "text_preview": "Los Angeles County has launched a new effort to address high rates of homelessness and mental health issues among young people, particularly those&#160; who have grown up in its foster care and juvenile justice systems.&#160;&#160; By Jeremy Loudenba",
       "domains": [
         "governance",
@@ -2951,7 +2951,7 @@
       "title": "Denver's new archbishop receives his mission and sends faithful on their mission: Know Jesus",
       "source": "National Catholic Reporter",
       "url": "https://www.ncronline.org/news/denvers-new-archbishop-receives-his-mission-and-sends-faithful-their-mission-know-jesus",
-      "tier": "community",
+      "tier": "local-regional",
       "text_preview": "On March 25 the Archdiocese of Denver welcomed its ninth bishop and sixth archbishop, Archbishop James R. Golka, amid the devoted prayers and ecstatic applause of thousands gathered at the CoBank Arena at the National Western Complex in Denver.",
       "domains": [
         "governance",
@@ -3428,7 +3428,7 @@
   "source_spectrum": {
     "international": 335,
     "national": 333,
-    "community": 224,
+    "local-regional": 224,
     "specialist": 55,
     "analysis": 32,
     "explainer": 27,
@@ -3878,7 +3878,7 @@
           "title": "Backlash grows after Pete Hegseth alters military general promotions list",
           "source": "The Advocate",
           "url": "https://www.advocate.com/politics/national/hegseth-general-promotions-bree-fram",
-          "tier": "community",
+          "tier": "local-regional",
           "paywall": false,
           "context": "LGBTQ+ news magazine. One of the oldest in the US.",
           "connection": "Executive branch intervention in military promotion processes raises constitutional and institutional concerns about civilian control of defense.",
@@ -3969,7 +3969,7 @@
         "international": 108,
         "explainer": 3,
         "analysis": 9,
-        "community": 25,
+        "local-regional": 25,
         "specialist": 10,
         "newsletter": 1
       },
@@ -4058,7 +4058,7 @@
         "national": 52,
         "international": 8,
         "explainer": 2,
-        "community": 21,
+        "local-regional": 21,
         "specialist": 3,
         "analysis": 2,
         "government": 1
@@ -4151,7 +4151,7 @@
         "international": 30,
         "explainer": 1,
         "analysis": 5,
-        "community": 16,
+        "local-regional": 16,
         "specialist": 11,
         "podcast": 1
       },
@@ -4242,7 +4242,7 @@
         "national": 20,
         "international": 14,
         "explainer": 1,
-        "community": 19,
+        "local-regional": 19,
         "specialist": 1
       },
       "yesterday_count": 84,
@@ -4318,7 +4318,7 @@
       ],
       "source_tiers": {
         "international": 3,
-        "community": 4,
+        "local-regional": 4,
         "national": 1,
         "analysis": 1
       },
@@ -4330,8 +4330,8 @@
       "why_this_matters": "Extreme weather is already raising food prices and breaking infrastructure in specific communities. If you live in a flood zone, farm region, or coastal area, this is not a future problem."
     }
   ],
-  "community_synthesis": "Community and specialist outlets are doing something national coverage consistently fails to do: they are naming the specific people, places, and mechanisms involved. Where national outlets report that voter data is being shared between agencies, the Texas Tribune reports that voting rights groups are suing Texas over the actual removal process. Where national outlets mention federal infrastructure spending, Indian Country Today reports that the Indian Health Service is digging out of a construction backlog for medical buildings on reservations that goes back decades. The specificity is the point. It is what lets you understand whether a policy is working or failing, and it is almost entirely absent from the outlets most Americans read.",
-  "community_examples": [
+  "local_regional_synthesis": "Community and specialist outlets are doing something national coverage consistently fails to do: they are naming the specific people, places, and mechanisms involved. Where national outlets report that voter data is being shared between agencies, the Texas Tribune reports that voting rights groups are suing Texas over the actual removal process. Where national outlets mention federal infrastructure spending, Indian Country Today reports that the Indian Health Service is digging out of a construction backlog for medical buildings on reservations that goes back decades. The specificity is the point. It is what lets you understand whether a policy is working or failing, and it is almost entirely absent from the outlets most Americans read.",
+  "local_regional_examples": [
     "Voting rights groups in Texas are suing the state over its removal of potential noncitizens from voter rolls, a process the Texas Tribune reports lacks meaningful oversight and affects tens of thousands of registered voters who may be citizens. The case tests whether states can use citizenship-screening databases to cancel registrations without giving individuals a real chance to prove their eligibility before they lose their right to vote.",
     "Indian Country Today reports that the Indian Health Service is working through a decades-old construction backlog for medical buildings on reservations, a backlog that exists because these communities were systematically underfunded in every previous federal infrastructure cycle. The same week, the Supreme Court denied the Chinook Nation's petition for federal recognition, which means a community that has existed for centuries still lacks the legal standing to access the health and education services that recognition provides.",
     "Cities in Texas and Florida are installing new rainbow crosswalks even as Republican state legislatures crack down on Pride visibility, according to The Advocate. Idaho's legislature sent a bill to the governor that would make it a felony for transgender people to use bathrooms matching their gender identity in private businesses. Tennessee's House passed what amounts to a transgender registry. Three states, three different mechanisms, all moving in the same direction during the same week."

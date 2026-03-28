@@ -11,11 +11,15 @@
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="The 239 sources that feed Signal Board: U.S. newsrooms, global press, community voices, expert journalists, and more.">
+  <meta name="description" content="The 239 sources that feed Signal Board: U.S. newsrooms, global press, Local & Regional Press, expert journalists, and more.">
   <meta property="og:title" content="Sources — Signal Board">
   <meta property="og:description" content="239 sources across 8 categories: everything from AP and Reuters to local newsrooms and independent newsletters.">
   <meta property="og:type" content="website">
+  <meta property="og:image" content="https://www.elisehasseltine.com/signal-board/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="/signal-board/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/signal-board/favicon.png">
+  <link rel="canonical" href="https://www.elisehasseltine.com/signal-board/sources/">
   <title>Sources — Signal Board</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -643,6 +647,7 @@
         <a href="./" class="active">Sources</a>
         <a href="../data-viz/">Data</a>
         <a href="../archive/">Archive</a>
+        <a href="../about/">About</a>
       </div>
     </nav>
 
@@ -682,7 +687,7 @@
             Our taxonomy operates along three primary dimensions. Geographic position describes where sources report from: some focus exclusively on the United States, while others cover the world from outside American perspectives. Topic focus describes what they cover: some outlets cover everything, while others concentrate deeply on specific domains like labor or climate. Format describes how they deliver: we include daily wire services, weekly newsletters, daily podcasts, and real-time government records all in one system.
           </p>
           <p class="categorization-text">
-            This taxonomy is Signal Board's own framework, not an industry standard. We built it this way because existing journalism hierarchies often imply that some sources are inherently more credible than others, which obscures the real question: what perspective does this source bring, and is that perspective useful right now? A government primary document might be more authoritative on what Congress passed, while a community newsroom might be more authoritative on how that law affects a specific neighborhood. Both matter. Both belong in the same conversation.
+            This taxonomy is Signal Board's own framework, not an industry standard. We built it this way because existing journalism hierarchies often imply that some sources are inherently more credible than others, which obscures the real question: what perspective does this source bring, and is that perspective useful right now? A government primary document might be more authoritative on what Congress passed, while a local and regional newsroom might be more authoritative on how that law affects a specific neighborhood. Both matter. Both belong in the same conversation.
           </p>
         </div>
       </section>
@@ -707,14 +712,14 @@
         <div class="sources-grid" id="tier-international"></div>
       </section>
 
-      <!-- TIER 3: Community Voices -->
+      <!-- TIER 3: Local & Regional Press -->
       <section class="tier-section">
         <div class="tier-header">
-          <h2 class="tier-name">Community Voices</h2>
+          <h2 class="tier-name">Local & Regional Press</h2>
           <span class="tier-count">79 sources</span>
         </div>
         <p class="tier-description">Local newsrooms, outlets serving specific communities, and regional accountability journalism. These sources report stories that never reach national headlines: school board decisions, infrastructure failures, immigration enforcement, and the lived experience of policy changes.</p>
-        <div class="sources-grid" id="tier-community"></div>
+        <div class="sources-grid" id="tier-local-regional"></div>
       </section>
 
       <!-- TIER 4: Deep Expertise -->
@@ -869,62 +874,62 @@
       {tier: "international", name: "Press Gazette", description: "Publication covering global media industry and press freedom", why: "Media industry specialist; covers global press freedom and journalism trends"},
       {tier: "international", name: "The Globe Post", description: "International news outlet covering global affairs from multiple perspectives", why: "Multicultural global news; represents diverse international viewpoints"},
       {tier: "international", name: "Caribbean National Weekly", description: "Caribbean news outlet covering diaspora and island communities", why: "Caribbean diaspora perspective; represents Caribbean American communities"},
-      {tier: "community", name: "The 19th News", description: "Nonprofit newsroom covering women and gender in politics and policy", why: "Specialist coverage of women in politics; represents feminist perspective on news"},
-      {tier: "community", name: "The Marshall Project", description: "Nonprofit newsroom covering the criminal justice system", why: "Specialist criminal justice coverage; represents perspective on incarceration and police accountability"},
-      {tier: "community", name: "CalMatters", description: "Nonprofit newsroom covering California state government and policy", why: "California-focused reporting; represents state-level accountability journalism"},
-      {tier: "community", name: "Stateline", description: "Nonprofit covering state government and policy trends across United States", why: "National state policy coverage; provides perspective on state-level governance"},
-      {tier: "community", name: "High Country News", description: "Regional newsroom covering the American West", why: "Western region specialist; represents perspective on rural and public lands issues"},
-      {tier: "community", name: "Civil Eats", description: "Publication covering food policy, agriculture, and food systems", why: "Specialist food and agriculture coverage; represents sustainable food systems perspective"},
-      {tier: "community", name: "Documented", description: "Nonprofit newsroom covering immigrant communities in New York City", why: "Specialist immigrant reporting; represents undocumented immigrant perspective"},
-      {tier: "community", name: "The Root", description: "Publication covering African American culture, politics, and news", why: "Publication serving African American audience; represents Black perspective on news"},
-      {tier: "community", name: "Latino USA", description: "Public radio show covering Latino communities and issues", why: "Latino-focused reporting; represents Latino community perspective"},
-      {tier: "community", name: "Indian Country Today", description: "Nonprofit newsroom covering Native American communities and Indian Country", why: "Essential Native news outlet; represents Indigenous perspective on news"},
-      {tier: "community", name: "Hechinger Report", description: "Nonprofit newsroom covering education policy and K-12 schools", why: "Specialist education coverage; focuses on accountability and equity in schools"},
-      {tier: "community", name: "Christianity Today", description: "Magazine covering evangelical Christianity, faith, and culture", why: "Major evangelical Christian publication; represents religious conservative perspective"},
-      {tier: "community", name: "Religion News Service", description: "Nonprofit newsroom covering religion and faith communities", why: "Religion specialist journalism; represents diverse faith perspectives"},
-      {tier: "community", name: "Texas Tribune", description: "Nonprofit newsroom covering Texas government and policy", why: "Texas-focused reporting; represents state-level accountability journalism"},
-      {tier: "community", name: "The Advocate", description: "Magazine covering LGBTQ news and culture", why: "LGBTQ-focused publication; represents LGBTQ community perspective"},
-      {tier: "community", name: "Jewish Telegraphic Agency", description: "News organization covering Jewish communities and Israel-related issues", why: "Jewish community news; represents Jewish perspective on news"},
-      {tier: "community", name: "Arab American News", description: "Newspaper serving Arab American communities in Michigan and nationally", why: "Arab American perspective; represents Middle Eastern American communities"},
-      {tier: "community", name: "Disability Scoop", description: "News organization covering disability policy and disability community issues", why: "Disability community journalism; represents disability rights perspective"},
-      {tier: "community", name: "Military Times", description: "Newspaper serving military and veteran communities", why: "Military and veteran community perspective; covers defense policy and military issues"},
-      {tier: "community", name: "Daily Yonder", description: "Publication covering rural America and small-town communities", why: "Rural America specialist; represents rural and small-town perspective"},
-      {tier: "community", name: "Scalawag", description: "Magazine covering the American South and Southern issues", why: "Southern regional specialist; represents Southern perspective on news"},
-      {tier: "community", name: "Honolulu Civil Beat", description: "Nonprofit newsroom covering Hawaii and Pacific issues", why: "Hawaii and Pacific regional coverage"},
-      {tier: "community", name: "Teen Vogue", description: "Publication covering politics and culture for young adults", why: "Youth and young adult perspective; reaches Gen Z audience"},
-      {tier: "community", name: "AsAmNews", description: "News organization covering Asian American communities and issues", why: "Asian American community journalism; represents Asian American perspective"},
-      {tier: "community", name: "The Forward", description: "Jewish American newspaper covering culture, politics, and community", why: "Jewish American perspective; covers Jewish community and Jewish American issues"},
-      {tier: "community", name: "National Catholic Reporter", description: "Independent Catholic news organization covering church and faith issues", why: "Catholic perspective; represents independent Catholic journalism"},
-      {tier: "community", name: "The Imprint", description: "Nonprofit newsroom covering child welfare and youth issues", why: "Specialist child welfare coverage; represents children and youth perspective"},
-      {tier: "community", name: "Mississippi Free Press", description: "Nonprofit newsroom covering Mississippi government and communities", why: "State-focused reporting; provides accountability journalism for Mississippi"},
-      {tier: "community", name: "Bolts Magazine", description: "Publication covering Black workers and labor issues", why: "Black labor perspective; covers intersection of race and labor"},
-      {tier: "community", name: "Capital B News", description: "Nonprofit covering Black entrepreneurs and business communities", why: "Black business and economic perspective"},
-      {tier: "community", name: "Canopy Forum", description: "Community journalism platform covering local issues and solutions", why: "Community-focused journalism; represents local perspective"},
-      {tier: "community", name: "Mountain State Spotlight", description: "Nonprofit newsroom covering West Virginia and Appalachia", why: "Appalachian region specialist; covers underreported regional stories"},
-      {tier: "community", name: "100 Days in Appalachia", description: "Publication covering Appalachian culture, history, and issues", why: "Appalachian culture and community specialist; represents regional perspective"},
-      {tier: "community", name: "Crosscut", description: "Nonprofit newsroom covering Pacific Northwest politics and culture", why: "Pacific Northwest regional coverage; represents regional perspective"},
-      {tier: "community", name: "Oregon Public Broadcasting", description: "Public media organization covering Oregon and Pacific Northwest", why: "Oregon and regional public media; represents Pacific Northwest perspective"},
-      {tier: "community", name: "VTDigger", description: "Nonprofit newsroom covering Vermont state government and issues", why: "Vermont regional reporting; provides New England state accountability journalism"},
-      {tier: "community", name: "The Maine Monitor", description: "Nonprofit newsroom covering Maine government and policy", why: "Maine regional reporting; provides New England state accountability journalism"},
-      {tier: "community", name: "Sojourners", description: "Progressive Christian magazine covering faith and social justice", why: "Progressive Christian perspective; represents faith-based social justice advocacy"},
-      {tier: "community", name: "Muslim Matters", description: "Muslim American online magazine covering faith and community issues", why: "Muslim American perspective; represents Muslim community voice"},
-      {tier: "community", name: "Nevada Independent", description: "Nonprofit newsroom covering Nevada state government and policy", why: "Nevada regional reporting; covers gaming state politics and Western issues"},
-      {tier: "community", name: "Colorado Sun", description: "Nonprofit newsroom covering Colorado government and communities", why: "Colorado regional reporting; covers Western state issues"},
-      {tier: "community", name: "The Lens", description: "Nonprofit newsroom covering New Orleans and Louisiana", why: "Gulf Coast regional coverage; represents post-Katrina recovery and Southern justice"},
-      {tier: "community", name: "Source NM", description: "Nonprofit newsroom covering New Mexico state government", why: "New Mexico regional reporting; covers Southwest and border state issues"},
-      {tier: "community", name: "Montana Free Press", description: "Nonprofit newsroom covering Montana state government and public lands", why: "Montana regional reporting; covers rural Western issues and public lands"},
-      {tier: "community", name: "Idaho Capital Sun", description: "Nonprofit newsroom covering Idaho state government and policy", why: "Idaho regional reporting; covers Western state governance"},
-      {tier: "community", name: "Kansas Reflector", description: "Nonprofit newsroom covering Kansas state government and policy", why: "Kansas regional reporting; covers Great Plains state issues"},
-      {tier: "community", name: "Arizona Mirror", description: "Nonprofit newsroom covering Arizona state government and policy", why: "Arizona regional reporting; covers Southwest border state issues"},
-      {tier: "community", name: "NC Health News", description: "Nonprofit newsroom covering North Carolina health policy", why: "North Carolina health coverage; covers Southern state health access issues"},
-      {tier: "community", name: "Alaska Public Media", description: "Public media organization covering Alaska and Arctic issues", why: "Alaska and Arctic coverage; represents remote and Indigenous Alaska perspective"},
-      {tier: "community", name: "City Limits", description: "Nonprofit newsroom covering New York City housing and policy", why: "NYC urban policy specialist; covers housing, poverty, and city governance"},
-      {tier: "community", name: "Voice of San Diego", description: "Nonprofit newsroom covering San Diego government and border issues", why: "San Diego and border region coverage; covers US-Mexico border communities"},
-      {tier: "community", name: "Baltimore Banner", description: "Nonprofit newsroom covering Baltimore and Maryland", why: "Baltimore regional reporting; covers urban Black community issues and governance"},
-      {tier: "community", name: "Haitian Times", description: "Publication covering Haitian American and Haitian diaspora communities", why: "Haitian diaspora perspective; represents Haitian American community"},
-      {tier: "community", name: "Navajo Times", description: "Newspaper serving the Navajo Nation and tribal communities", why: "Navajo and tribal perspective; represents Indigenous governance and community"},
-      {tier: "community", name: "Futuro Media", description: "Multimedia organization producing journalism for and about communities of color", why: "Communities of color perspective; produces Latino and immigrant community journalism"},
-      {tier: "community", name: "Colorlines", description: "Publication covering race and social justice", why: "Racial justice journalism; covers intersection of race and policy"},
+      {tier: "local-regional", name: "The 19th News", description: "Nonprofit newsroom covering women and gender in politics and policy", why: "Specialist coverage of women in politics; represents feminist perspective on news"},
+      {tier: "local-regional", name: "The Marshall Project", description: "Nonprofit newsroom covering the criminal justice system", why: "Specialist criminal justice coverage; represents perspective on incarceration and police accountability"},
+      {tier: "local-regional", name: "CalMatters", description: "Nonprofit newsroom covering California state government and policy", why: "California-focused reporting; represents state-level accountability journalism"},
+      {tier: "local-regional", name: "Stateline", description: "Nonprofit covering state government and policy trends across United States", why: "National state policy coverage; provides perspective on state-level governance"},
+      {tier: "local-regional", name: "High Country News", description: "Regional newsroom covering the American West", why: "Western region specialist; represents perspective on rural and public lands issues"},
+      {tier: "local-regional", name: "Civil Eats", description: "Publication covering food policy, agriculture, and food systems", why: "Specialist food and agriculture coverage; represents sustainable food systems perspective"},
+      {tier: "local-regional", name: "Documented", description: "Nonprofit newsroom covering immigrant communities in New York City", why: "Specialist immigrant reporting; represents undocumented immigrant perspective"},
+      {tier: "local-regional", name: "The Root", description: "Publication covering African American culture, politics, and news", why: "Publication serving African American audience; represents Black perspective on news"},
+      {tier: "local-regional", name: "Latino USA", description: "Public radio show covering Latino communities and issues", why: "Latino-focused reporting; represents Latino local and regional perspective"},
+      {tier: "local-regional", name: "Indian Country Today", description: "Nonprofit newsroom covering Native American communities and Indian Country", why: "Essential Native news outlet; represents Indigenous perspective on news"},
+      {tier: "local-regional", name: "Hechinger Report", description: "Nonprofit newsroom covering education policy and K-12 schools", why: "Specialist education coverage; focuses on accountability and equity in schools"},
+      {tier: "local-regional", name: "Christianity Today", description: "Magazine covering evangelical Christianity, faith, and culture", why: "Major evangelical Christian publication; represents religious conservative perspective"},
+      {tier: "local-regional", name: "Religion News Service", description: "Nonprofit newsroom covering religion and faith communities", why: "Religion specialist journalism; represents diverse faith perspectives"},
+      {tier: "local-regional", name: "Texas Tribune", description: "Nonprofit newsroom covering Texas government and policy", why: "Texas-focused reporting; represents state-level accountability journalism"},
+      {tier: "local-regional", name: "The Advocate", description: "Magazine covering LGBTQ news and culture", why: "LGBTQ-focused publication; represents LGBTQ local and regional perspective"},
+      {tier: "local-regional", name: "Jewish Telegraphic Agency", description: "News organization covering Jewish communities and Israel-related issues", why: "Jewish local and regional news; represents Jewish perspective on news"},
+      {tier: "local-regional", name: "Arab American News", description: "Newspaper serving Arab American communities in Michigan and nationally", why: "Arab American perspective; represents Middle Eastern American communities"},
+      {tier: "local-regional", name: "Disability Scoop", description: "News organization covering disability policy and disability community issues", why: "Disability local and regional journalism; represents disability rights perspective"},
+      {tier: "local-regional", name: "Military Times", description: "Newspaper serving military and veteran communities", why: "Military and veteran local and regional perspective; covers defense policy and military issues"},
+      {tier: "local-regional", name: "Daily Yonder", description: "Publication covering rural America and small-town communities", why: "Rural America specialist; represents rural and small-town perspective"},
+      {tier: "local-regional", name: "Scalawag", description: "Magazine covering the American South and Southern issues", why: "Southern regional specialist; represents Southern perspective on news"},
+      {tier: "local-regional", name: "Honolulu Civil Beat", description: "Nonprofit newsroom covering Hawaii and Pacific issues", why: "Hawaii and Pacific regional coverage"},
+      {tier: "local-regional", name: "Teen Vogue", description: "Publication covering politics and culture for young adults", why: "Youth and young adult perspective; reaches Gen Z audience"},
+      {tier: "local-regional", name: "AsAmNews", description: "News organization covering Asian American communities and issues", why: "Asian American local and regional journalism; represents Asian American perspective"},
+      {tier: "local-regional", name: "The Forward", description: "Jewish American newspaper covering culture, politics, and community", why: "Jewish American perspective; covers Jewish community and Jewish American issues"},
+      {tier: "local-regional", name: "National Catholic Reporter", description: "Independent Catholic news organization covering church and faith issues", why: "Catholic perspective; represents independent Catholic journalism"},
+      {tier: "local-regional", name: "The Imprint", description: "Nonprofit newsroom covering child welfare and youth issues", why: "Specialist child welfare coverage; represents children and youth perspective"},
+      {tier: "local-regional", name: "Mississippi Free Press", description: "Nonprofit newsroom covering Mississippi government and communities", why: "State-focused reporting; provides accountability journalism for Mississippi"},
+      {tier: "local-regional", name: "Bolts Magazine", description: "Publication covering Black workers and labor issues", why: "Black labor perspective; covers intersection of race and labor"},
+      {tier: "local-regional", name: "Capital B News", description: "Nonprofit covering Black entrepreneurs and business communities", why: "Black business and economic perspective"},
+      {tier: "local-regional", name: "Canopy Forum", description: "local and regional journalism platform covering local issues and solutions", why: "Community-focused journalism; represents local perspective"},
+      {tier: "local-regional", name: "Mountain State Spotlight", description: "Nonprofit newsroom covering West Virginia and Appalachia", why: "Appalachian region specialist; covers underreported regional stories"},
+      {tier: "local-regional", name: "100 Days in Appalachia", description: "Publication covering Appalachian culture, history, and issues", why: "Appalachian culture and community specialist; represents regional perspective"},
+      {tier: "local-regional", name: "Crosscut", description: "Nonprofit newsroom covering Pacific Northwest politics and culture", why: "Pacific Northwest regional coverage; represents regional perspective"},
+      {tier: "local-regional", name: "Oregon Public Broadcasting", description: "Public media organization covering Oregon and Pacific Northwest", why: "Oregon and regional public media; represents Pacific Northwest perspective"},
+      {tier: "local-regional", name: "VTDigger", description: "Nonprofit newsroom covering Vermont state government and issues", why: "Vermont regional reporting; provides New England state accountability journalism"},
+      {tier: "local-regional", name: "The Maine Monitor", description: "Nonprofit newsroom covering Maine government and policy", why: "Maine regional reporting; provides New England state accountability journalism"},
+      {tier: "local-regional", name: "Sojourners", description: "Progressive Christian magazine covering faith and social justice", why: "Progressive Christian perspective; represents faith-based social justice advocacy"},
+      {tier: "local-regional", name: "Muslim Matters", description: "Muslim American online magazine covering faith and community issues", why: "Muslim American perspective; represents Muslim community voice"},
+      {tier: "local-regional", name: "Nevada Independent", description: "Nonprofit newsroom covering Nevada state government and policy", why: "Nevada regional reporting; covers gaming state politics and Western issues"},
+      {tier: "local-regional", name: "Colorado Sun", description: "Nonprofit newsroom covering Colorado government and communities", why: "Colorado regional reporting; covers Western state issues"},
+      {tier: "local-regional", name: "The Lens", description: "Nonprofit newsroom covering New Orleans and Louisiana", why: "Gulf Coast regional coverage; represents post-Katrina recovery and Southern justice"},
+      {tier: "local-regional", name: "Source NM", description: "Nonprofit newsroom covering New Mexico state government", why: "New Mexico regional reporting; covers Southwest and border state issues"},
+      {tier: "local-regional", name: "Montana Free Press", description: "Nonprofit newsroom covering Montana state government and public lands", why: "Montana regional reporting; covers rural Western issues and public lands"},
+      {tier: "local-regional", name: "Idaho Capital Sun", description: "Nonprofit newsroom covering Idaho state government and policy", why: "Idaho regional reporting; covers Western state governance"},
+      {tier: "local-regional", name: "Kansas Reflector", description: "Nonprofit newsroom covering Kansas state government and policy", why: "Kansas regional reporting; covers Great Plains state issues"},
+      {tier: "local-regional", name: "Arizona Mirror", description: "Nonprofit newsroom covering Arizona state government and policy", why: "Arizona regional reporting; covers Southwest border state issues"},
+      {tier: "local-regional", name: "NC Health News", description: "Nonprofit newsroom covering North Carolina health policy", why: "North Carolina health coverage; covers Southern state health access issues"},
+      {tier: "local-regional", name: "Alaska Public Media", description: "Public media organization covering Alaska and Arctic issues", why: "Alaska and Arctic coverage; represents remote and Indigenous Alaska perspective"},
+      {tier: "local-regional", name: "City Limits", description: "Nonprofit newsroom covering New York City housing and policy", why: "NYC urban policy specialist; covers housing, poverty, and city governance"},
+      {tier: "local-regional", name: "Voice of San Diego", description: "Nonprofit newsroom covering San Diego government and border issues", why: "San Diego and border region coverage; covers US-Mexico border communities"},
+      {tier: "local-regional", name: "Baltimore Banner", description: "Nonprofit newsroom covering Baltimore and Maryland", why: "Baltimore regional reporting; covers urban Black community issues and governance"},
+      {tier: "local-regional", name: "Haitian Times", description: "Publication covering Haitian American and Haitian diaspora communities", why: "Haitian diaspora perspective; represents Haitian American community"},
+      {tier: "local-regional", name: "Navajo Times", description: "Newspaper serving the Navajo Nation and tribal communities", why: "Navajo and tribal perspective; represents Indigenous governance and community"},
+      {tier: "local-regional", name: "Futuro Media", description: "Multimedia organization producing journalism for and about communities of color", why: "Communities of color perspective; produces Latino and immigrant local and regional journalism"},
+      {tier: "local-regional", name: "Colorlines", description: "Publication covering race and social justice", why: "Racial justice journalism; covers intersection of race and policy"},
       {tier: "specialist", name: "MIT Technology Review", description: "Magazine covering artificial intelligence and technology developments", why: "Specialist coverage of AI and emerging technology; influential with technologists and researchers"},
       {tier: "specialist", name: "The Markup", description: "Nonprofit newsroom covering technology accountability and data privacy", why: "Specialist investigative journalism on digital technology and privacy issues"},
       {tier: "specialist", name: "EPI Blog", description: "Economic Policy Institute blog covering labor and economic policy", why: "Left-leaning economic analysis; represents labor and progressive economic perspective"},
@@ -1009,7 +1014,7 @@
     const tierMapping = {
       national: "tier-national",
       international: "tier-international",
-      community: "tier-community",
+      local_regional: "tier-local-regional",
       specialist: "tier-specialist",
       explainer: "tier-explainer",
       analysis: "tier-analysis",
@@ -1086,7 +1091,7 @@
     const renderAllTiers = () => {
       renderSources(sourcesByTier.national, "tier-national");
       renderSources(sourcesByTier.international, "tier-international");
-      renderSources(sourcesByTier.community, "tier-community");
+      renderSources(sourcesByTier.local_regional, "tier-community");
       renderSources(sourcesByTier.specialist, "tier-specialist");
       renderSources(sourcesByTier.explainer, "tier-explainer");
       renderSources(analysisResearchSources, "tier-analysis-research");

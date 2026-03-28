@@ -1,14 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-03SKXNX53F"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-03SKXNX53F');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="How Signal Board reads 239 sources, classifies stories across domains, and synthesizes the connections using AI.">
+  <meta name="description" content="About Signal Board: who built it, what the thesis is, the philosophy behind it, and how the methodology works.">
+  <meta property="og:title" content="About Signal Board">
+  <meta property="og:description" content="Signal Board is built to illuminate the goodness amid the darkness by making global connections visible.">
+  <meta property="og:type" content="website">
   <meta property="og:image" content="https://www.elisehasseltine.com/signal-board/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" type="image/svg+xml" href="/signal-board/favicon.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="/signal-board/favicon.png">
-  <link rel="canonical" href="https://www.elisehasseltine.com/signal-board/how-it-works/">
-  <title>How It Works | Signal Board</title>
+  <link rel="canonical" href="https://www.elisehasseltine.com/signal-board/about/">
+  <title>About Signal Board</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -20,7 +32,7 @@
     }
 
     html, body {
-      background-color: #0a0a0a;
+      background-color: #0f0f14;
       color: #ebe6f5;
       font-family: 'Inter', sans-serif;
       line-height: 1.6;
@@ -109,7 +121,13 @@
       line-height: 1.2;
       color: #fff;
       letter-spacing: -0.02em;
-      max-width: 800px;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      color: rgba(235, 230, 245, 0.7);
+      font-weight: 500;
     }
 
     @media (max-width: 600px) {
@@ -118,96 +136,12 @@
       }
     }
 
-    /* Section Cards */
-    .methodology-section {
+    /* Content Sections */
+    .content-section {
       margin-bottom: 3.5rem;
-      display: flex;
-      gap: 2rem;
-      align-items: flex-start;
     }
 
-    .section-number {
-      flex-shrink: 0;
-      width: 120px;
-      height: 120px;
-      border-radius: 24px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 3.5rem;
-      font-weight: 800;
-      color: #fff;
-      position: relative;
-    }
-
-    .section-number.purple {
-      background: linear-gradient(135deg, #6652FF, #5540e0);
-      box-shadow: 0 8px 32px rgba(102, 82, 255, 0.25);
-    }
-
-    .section-number.orange {
-      background: linear-gradient(135deg, #FF5400, #e63d00);
-      box-shadow: 0 8px 32px rgba(255, 84, 0, 0.25);
-    }
-
-    .section-number.teal {
-      background: linear-gradient(135deg, #00C2A8, #00a892);
-      box-shadow: 0 8px 32px rgba(0, 194, 168, 0.25);
-    }
-
-    .section-number.pink {
-      background: linear-gradient(135deg, #FF0054, #e60042);
-      box-shadow: 0 8px 32px rgba(255, 0, 84, 0.25);
-    }
-
-    .section-content h2 {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.8rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-      color: #fff;
-      letter-spacing: -0.01em;
-    }
-
-    .section-content p {
-      font-size: 1rem;
-      line-height: 1.7;
-      color: rgba(235, 230, 245, 0.85);
-      margin-bottom: 1rem;
-    }
-
-    .section-content p:last-child {
-      margin-bottom: 0;
-    }
-
-    @media (max-width: 700px) {
-      .methodology-section {
-        flex-direction: column;
-        gap: 1.5rem;
-      }
-
-      .section-number {
-        width: 100px;
-        height: 100px;
-        font-size: 2.5rem;
-      }
-
-      .section-content h2 {
-        font-size: 1.5rem;
-      }
-    }
-
-    /* What This Doesn't Do Section */
-    .doesnt-do {
-      background: rgba(102, 82, 255, 0.06);
-      border: 1px solid rgba(102, 82, 255, 0.15);
-      border-radius: 24px;
-      padding: 2.5rem;
-      margin: 4rem 0;
-    }
-
-    .doesnt-do h2 {
+    .content-section h2 {
       font-family: 'Space Grotesk', sans-serif;
       font-size: 1.8rem;
       font-weight: 700;
@@ -216,24 +150,84 @@
       letter-spacing: -0.01em;
     }
 
-    .doesnt-do p {
+    .content-section p {
       font-size: 1rem;
-      line-height: 1.7;
+      line-height: 1.8;
+      color: rgba(235, 230, 245, 0.85);
+      margin-bottom: 1.5rem;
+    }
+
+    .content-section p:last-child {
+      margin-bottom: 0;
+    }
+
+    .content-section ul {
+      list-style: none;
+      margin-bottom: 1.5rem;
+    }
+
+    .content-section li {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: rgba(235, 230, 245, 0.85);
+      margin-bottom: 1rem;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+
+    .content-section li:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.6em;
+      width: 6px;
+      height: 6px;
+      background-color: #6652FF;
+      border-radius: 50%;
+    }
+
+    @media (max-width: 700px) {
+      .content-section h2 {
+        font-size: 1.5rem;
+      }
+    }
+
+    /* Highlight Box */
+    .highlight-box {
+      background: rgba(102, 82, 255, 0.06);
+      border: 1px solid rgba(102, 82, 255, 0.15);
+      border-radius: 24px;
+      padding: 2.5rem;
+      margin: 3rem 0;
+    }
+
+    .highlight-box h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      color: #fff;
+      letter-spacing: -0.01em;
+    }
+
+    .highlight-box p {
+      font-size: 1rem;
+      line-height: 1.8;
       color: rgba(235, 230, 245, 0.85);
       margin-bottom: 1rem;
     }
 
-    .doesnt-do p:last-child {
+    .highlight-box p:last-child {
       margin-bottom: 0;
     }
 
     @media (max-width: 600px) {
-      .doesnt-do {
+      .highlight-box {
         padding: 1.5rem;
       }
 
-      .doesnt-do h2 {
-        font-size: 1.4rem;
+      .highlight-box h3 {
+        font-size: 1.1rem;
       }
     }
 
@@ -379,62 +373,62 @@
       <a href="../" class="nav-logo">Signal Board</a>
       <div class="nav-links">
         <a href="../today/">Today</a>
-        <a href="../stories/">Stories</a>
         <a href="../sources/">Sources</a>
-        <a href="./" class="active">How It Works</a>
-        <a href="../transparency/">Transparency</a>
-        <a href="../about/">About</a>
+        <a href="../data-viz/">Data</a>
+        <a href="../archive/">Archive</a>
+        <a href="./" class="active">About</a>
       </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero">
-      <h1>Everything here is open. Here's exactly how it works.</h1>
+      <h1>About Signal Board</h1>
+      <p class="hero-subtitle">Built by Elise Hasseltine</p>
     </section>
 
-    <!-- Methodology Sections -->
-    <section class="methodology-section">
-      <div class="section-number purple">1</div>
-      <div class="section-content">
-        <h2>Sources</h2>
-        <p>Every day, Signal Board reads RSS feeds from 213 news sources across 30+ countries. These sources span the full American spectrum and reach into global coverage: national outlets across the political range from the New York Times to Fox News to Mother Jones; international press from every major region including the BBC, Al Jazeera, Haaretz, Dawn, the Japan Times, Daily Maverick, and Taipei Times; local and regional outlets serving specific populations including Indian Country Today, Arab American News, the Haitian Times, Navajo Times, and the Daily Yonder; specialist publications covering climate, security, labor, health, and technology; explainer outlets like Vox, The Conversation, and 404 Media; and research organizations from the Heritage Foundation to Brookings to the Cato Institute.</p>
-        <p>Every source is listed on the Sources page with a description of what it is and why it's included.</p>
-      </div>
+    <!-- The Thesis Section -->
+    <section class="content-section">
+      <h2>The Thesis</h2>
+      <p>The thing humans do that matters most is think well together, and the current information architecture is degrading that capacity. All the forces reshaping the world, whether AI, economic transformation, climate, democratic erosion, or global power shifts, are deeply interconnected. The information systems through which most people encounter them make it nearly impossible to see the connections. Signal Board exists to change that.</p>
     </section>
 
-    <section class="methodology-section">
-      <div class="section-number orange">2</div>
-      <div class="section-content">
-        <h2>Classification</h2>
-        <p>Each article is tagged into one or more of 10 domains: AI, Labor, Governance, Information, Economics, Climate, Security, Geopolitics, Politics, and Legal. Classification uses AI (Claude by Anthropic) with keyword verification as a fallback.</p>
-        <p>Articles that touch multiple domains are tagged as cross-domain. Those intersections are where the most important patterns tend to emerge. When you see labor and AI tagged together, or governance and information overlapping, you're looking at stories that reveal structural shifts across domains.</p>
-      </div>
+    <!-- The Philosophy Section -->
+    <section class="content-section">
+      <h2>The Philosophy</h2>
+      <p>Signal Board starts from a conviction that people are not inherently selfish, as we have been told to believe, but inherently good, and that they do their best to make the world a better place. The evidence for this is extensive, from evolutionary biology's concept of "survival of the friendliest" to over 700 field studies on disaster response showing that when catastrophe hits, the typical human response is spontaneous mutual aid, not panic. The information architecture we rely on is structurally incapable of conveying this, because decency does not sell ads and cooperation is not newsworthy under the current definition of what news is supposed to be.</p>
+      <p>Signal Board exists to illuminate the goodness amid the darkness. Not by ignoring the darkness, which is real, but by building an information architecture that can see the full picture.</p>
     </section>
 
-    <section class="methodology-section">
-      <div class="section-number teal">3</div>
-      <div class="section-content">
-        <h2>Analysis</h2>
-        <p>Every day, the system runs a narrative analysis that looks for where sources from different tiers and perspectives converge on the same story. It tracks which domain intersections are gaining or losing momentum over time. It identifies which stories are only being covered by local and regional or specialist sources, revealing what mainstream outlets are missing. And it shows how coverage emphasis shifts depending on whether a source is national, international, local and regional, or domain-specific.</p>
-        <p>This reveals the shape of the information landscape in ways that reading individual outlets never could.</p>
-      </div>
+    <!-- The Method Section -->
+    <section class="content-section">
+      <h2>The Method</h2>
+      <p>Signal Board reads 239 news sources every day, from the New York Times to local newsrooms in Mississippi, from the Financial Times to community journalists in South Africa, and synthesizes them into connected mega-stories that show how the biggest forces shaping the world are linked.</p>
+      <p>Every source, every day, gets read through seven questions:</p>
+      <ul>
+        <li>Who is thinking well together here, and who has been cut out?</li>
+        <li>What is the information architecture underneath this, and is it carrying knowledge to the people who need it?</li>
+        <li>Where does this connect to something I have read in a different domain?</li>
+        <li>What does this look like for someone living inside it?</li>
+        <li>What would the honest version of this conversation sound like?</li>
+        <li>If I could only tell someone one thing from this source, what would change how they see the world?</li>
+        <li>Where in this story are people being decent, and why is that not the headline?</li>
+      </ul>
+      <p>The methodology is detailed on the <a href="../how-it-works/">How It Works</a> page.</p>
     </section>
 
-    <section class="methodology-section">
-      <div class="section-number pink">4</div>
-      <div class="section-content">
-        <h2>What You See</h2>
-        <p>The Today page shows the daily analysis in plain language: the stories that matter, why they're connected, what the source variety reveals, and which threads are building over time.</p>
-        <p>The Stories page has every article, filterable by domain. The Sources page holds every outlet accountable by showing what it is, what tier it belongs to, and why it's included.</p>
-      </div>
+    <!-- Who Built This Section -->
+    <section class="highlight-box">
+      <h3>Who Built This</h3>
+      <p>My name is Elise Hasseltine. I'm based in La Jolla, California. I work full-time as Legal Media Operations Lead at Sanford Heisler Sharp McKnight, and I build Signal Board on my own time because I believe the work of understanding what is happening to us, and explaining it clearly so that other people can understand it too, is among the most important things a person can do right now.</p>
+      <p>I grew up on college campuses in a home built around openness and connection. Our Thanksgiving table regularly included refugees, international students, first-generation scholars, and friends from every corner of life. I learned early that curiosity about other people's experiences is how you actually begin to understand the world.</p>
+      <p>Signal Board is a learning project built in public. The framework will change as the source base grows, as the automation evolves, and as I learn things that complicate or deepen the argument. That is the point.</p>
     </section>
 
-    <!-- What This Doesn't Do Section -->
-    <section class="doesnt-do">
-      <h2>What This Doesn't Do</h2>
-      <p>Signal Board does not tell readers what to think, assign ideological scores to sources, or claim to be neutral. Neutrality is a pretense. What it does instead is show the broadest possible range of reporting on the same set of events and let the data reveal what the coverage patterns look like.</p>
-      <p>The goal is to help people see connections that fragmented media makes invisible. Signal Board surfaces structural patterns in coverage across ideological and geographic divides. It shows you which outlets are talking about the same events and which are talking past each other. It reveals which stories are being amplified across the spectrum and which are only reaching specific communities. And it does this without claiming that any single interpretation is correct.</p>
-      <p>You're the one who makes sense of the patterns. That's the whole point.</p>
+    <!-- Transparency Section -->
+    <section class="content-section">
+      <h2>Transparency</h2>
+      <p>Signal Board uses AI (Claude by Anthropic) to classify articles by domain and generate initial synthesis drafts. The AI classification is not perfect, and misclassification rates are still being measured and improved. All synthesis is reviewed and the methodology is described in detail on the <a href="../how-it-works/">How It Works</a> page.</p>
+      <p>Source bias ratings are provided by AllSides (CC BY-NC 4.0) and supplemented with manual research. Signal Board is not affiliated with any political organization, media company, or think tank. It is funded entirely by me.</p>
     </section>
 
     <!-- Footer -->
@@ -443,20 +437,20 @@
         <div class="footer-section">
           <h3>Navigate</h3>
           <a href="../today/">Today</a>
-          <a href="../stories/">Stories</a>
           <a href="../sources/">Sources</a>
-          <a href="../about/">About</a>
+          <a href="../data-viz/">Data</a>
+          <a href="../archive/">Archive</a>
         </div>
         <div class="footer-section">
           <h3>Learn</h3>
-          <a href="./">How It Works</a>
-          <a href="../about/">About Signal Board</a>
-          <a href="https://www.elisehasseltine.com">Made by Elise Hasselstine</a>
+          <a href="../how-it-works/">How It Works</a>
+          <a href="./">About Signal Board</a>
+          <a href="https://www.elisehasseltine.com">Made by Elise Hasseltine</a>
         </div>
         <div class="footer-section">
           <h3>Data</h3>
           <a href="../sources/">All Sources</a>
-          <a href="../stories/">Article Archive</a>
+          <a href="../archive/">Article Archive</a>
         </div>
       </div>
       <div class="footer-bottom">

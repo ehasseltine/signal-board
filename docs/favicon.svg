@@ -1,0 +1,19 @@
+<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <!-- Dark background -->
+  <rect width="32" height="32" fill="#0f0f14"/>
+
+  <!-- Three connected dots forming a constellation signal -->
+  <!-- Top dot -->
+  <circle cx="16" cy="8" r="2.5" fill="#6652FF"/>
+
+  <!-- Bottom left dot -->
+  <circle cx="10" cy="20" r="2.5" fill="#6652FF"/>
+
+  <!-- Bottom right dot -->
+  <circle cx="22" cy="20" r="2.5" fill="#6652FF"/>
+
+  <!-- Connecting lines with subtle glow effect -->
+  <line x1="16" y1="8" x2="10" y2="20" stroke="#6652FF" stroke-width="1.5" stroke-linecap="round" opacity="0.8"/>
+  <line x1="16" y1="8" x2="22" y2="20" stroke="#6652FF" stroke-width="1.5" stroke-linecap="round" opacity="0.8"/>
+  <line x1="10" y1="20" x2="22" y2="20" stroke="#6652FF" stroke-width="1.5" stroke-linecap="round" opacity="0.8"/>
+</svg>

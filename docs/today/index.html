@@ -15,7 +15,11 @@
   <meta property="og:title" content="Today at Signal Board">
   <meta property="og:description" content="239 sources, one clear picture. See what connects the biggest stories shaping your world today.">
   <meta property="og:type" content="website">
+  <meta property="og:image" content="https://www.elisehasseltine.com/signal-board/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="/signal-board/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/signal-board/favicon.png">
+  <link rel="canonical" href="https://www.elisehasseltine.com/signal-board/today/">
   <title>Today at Signal Board</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -632,7 +636,7 @@
 
     .tier-national { background: #6652FF; }
     .tier-international { background: #1976D2; }
-    .tier-community { background: #FF5400; }
+    .tier-local-regional { background: #FF5400; }
     .tier-specialist { background: #00C2A8; }
     .tier-analysis { background: #4CAF50; }
     .tier-explainer { background: #FF9800; }
@@ -718,8 +722,8 @@
       margin-top: 0.6rem;
     }
 
-    /* COMMUNITY STORIES */
-    .community-stories {
+    /* LOCAL & REGIONAL STORIES */
+    .local-regional-stories {
       background: linear-gradient(135deg, rgba(102, 82, 255, 0.1) 0%, rgba(255, 84, 0, 0.08) 100%);
       border: 1px solid rgba(255, 255, 255, 0.12);
       border-radius: 20px;
@@ -727,7 +731,7 @@
       margin-bottom: 3.5rem;
     }
 
-    .community-intro {
+    .local-regional-intro {
       font-size: 0.95rem;
       color: rgba(235, 230, 245, 0.85);
       line-height: 1.7;
@@ -735,13 +739,13 @@
       max-width: 720px;
     }
 
-    .community-cards {
+    .local-regional-cards {
       display: grid;
       grid-template-columns: 1fr;
       gap: 1.2rem;
     }
 
-    .community-card {
+    .local-regional-card {
       background: rgba(0, 0, 0, 0.3);
       border-radius: 16px;
       padding: 1.5rem;
@@ -749,13 +753,13 @@
       transition: all 0.2s;
     }
 
-    .community-card:hover {
+    .local-regional-card:hover {
       background: rgba(0, 0, 0, 0.4);
       border-color: rgba(255, 255, 255, 0.12);
       transform: translateY(-2px);
     }
 
-    .community-source {
+    .local-regional-source {
       display: flex;
       align-items: center;
       gap: 0.6rem;
@@ -775,7 +779,7 @@
       background: rgba(255, 255, 255, 0.4);
     }
 
-    .community-title {
+    .local-regional-title {
       font-size: 0.95rem;
       color: #fff;
       line-height: 1.5;
@@ -783,7 +787,7 @@
       margin-bottom: 0.8rem;
     }
 
-    .community-excerpt {
+    .local-regional-excerpt {
       font-size: 0.85rem;
       color: rgba(235, 230, 245, 0.6);
       line-height: 1.5;
@@ -880,7 +884,7 @@
     .dot-left { background: #7B1FA2; }
     .dot-right { background: #D32F2F; }
     .dot-intl { background: #1976D2; }
-    .dot-community { background: #FF5400; }
+    .dot-local-regional { background: #FF5400; }
 
     .force-articles {
       margin-top: 1.2rem;
@@ -923,7 +927,7 @@
 
     .tier-national { background: rgba(102,82,255,0.3); }
     .tier-international { background: rgba(25,118,210,0.3); }
-    .tier-community { background: rgba(255,84,0,0.3); }
+    .tier-local-regional { background: rgba(255,84,0,0.3); }
     .tier-specialist { background: rgba(0,194,168,0.3); }
     .tier-analysis { background: rgba(76,175,80,0.3); }
     .tier-explainer { background: rgba(255,152,0,0.3); }
@@ -1079,6 +1083,36 @@
       }
     }
   </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "name": "Signal Board",
+      "url": "https://www.elisehasseltine.com/signal-board/",
+      "description": "Signal Board reads 239 news sources every day and synthesizes them into connected mega-stories that show how the biggest forces shaping the world are linked.",
+      "author": {
+        "@type": "Person",
+        "name": "Elise Hasseltine",
+        "url": "https://www.elisehasseltine.com/"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "name": "Today at Signal Board",
+      "url": "https://www.elisehasseltine.com/signal-board/today/",
+      "description": "What's happening today across 239 news sources, and how the biggest stories connect.",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Signal Board",
+        "url": "https://www.elisehasseltine.com/signal-board/"
+      },
+      "dateModified": "2026-03-28"
+    }
+  ]
+}
+  </script>
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -1093,6 +1127,7 @@
         <a href="../sources/">Sources</a>
         <a href="../data-viz/">Data</a>
         <a href="../archive/">Archive</a>
+        <a href="../about/">About</a>
       </div>
     </div>
   </nav>
@@ -1115,7 +1150,7 @@
     </section>
 
     <!-- WHAT'S BEING MISSED -->
-    <section class="community-stories" id="communitySection"></section>
+    <section class="local-regional-stories" id="localRegionalSection"></section>
 
     <!-- SAME FORCE, DIFFERENT HEADLINES -->
     <!-- Connecting stories section removed — redundant with mega-stories -->
@@ -1126,7 +1161,7 @@
       <p style="margin-bottom:1.2rem;color:rgba(235,230,245,0.7);">239 sources read every day, covering everything from global security to your local school board. <a href="../sources/" style="color:rgba(235,230,245,0.8);text-decoration:underline;">How we choose our sources</a></p>
       <details style="font-size:0.85rem;color:rgba(235,230,245,0.62);max-width:680px;margin:0 auto;text-align:left;">
         <summary style="cursor:pointer;color:rgba(235,230,245,0.72);font-weight:600;margin-bottom:0.6rem;">How we did this</summary>
-        <p style="line-height:1.75;margin-bottom:0.7rem;">Signal Board pulls articles from 239 RSS feeds every morning, covering U.S. newsrooms, international press, community outlets, think tanks, specialist journals, and explainer sites. Each article is classified by an AI model (Claude Haiku) that identifies which topics it covers and how it connects to other stories. About 70% of articles receive a full analysis. The stories you see above are grouped by keyword clustering and then synthesized by AI into coherent paragraphs. A human editor reviews the output for accuracy, tone, and writing quality.</p>
+        <p style="line-height:1.75;margin-bottom:0.7rem;">Signal Board pulls articles from 239 RSS feeds every morning, covering U.S. newsrooms, international press, local and regional outlets, think tanks, specialist journals, and explainer sites. Each article is classified by an AI model (Claude Haiku) that identifies which topics it covers and how it connects to other stories. About 70% of articles receive a full analysis. The stories you see above are grouped by keyword clustering and then synthesized by AI into coherent paragraphs. A human editor reviews the output for accuracy, tone, and writing quality.</p>
         <p style="line-height:1.75;margin-bottom:0.7rem;">Source selection is editorial: we chose outlets that represent different perspectives, geographies, and communities, with a deliberate emphasis on sources that are underrepresented in algorithmic news feeds. The full source list is available on the <a href="../sources/" style="color:rgba(235,230,245,0.72);text-decoration:underline;">Sources page</a>.</p>
         <p style="line-height:1.75;">This is a working prototype. It has blind spots, particularly in non-English language coverage and in communities without strong digital news infrastructure. If you notice something missing, that is useful information. <a href="mailto:elise.hasseltine@gmail.com" style="color:rgba(235,230,245,0.72);text-decoration:underline;">Tell us</a>.</p>
       </details>
@@ -1159,7 +1194,7 @@
     const SOURCE_TYPE_LABELS = {
       national: 'Major outlets',
       international: 'International press',
-      community: 'Community sources',
+      local_regional: 'Local & Regional sources',
       specialist: 'Deep-expertise sources',
       analysis: 'Analysis & think tanks',
       explainer: 'Explainer outlets',
@@ -1170,7 +1205,7 @@
     const SOURCE_TYPE_COLORS = {
       national: '#6652FF',
       international: '#1976D2',
-      community: '#FF5400',
+      local_regional: '#FF5400',
       specialist: '#00C2A8',
       analysis: '#4CAF50',
       explainer: '#FF9800',
@@ -1192,7 +1227,7 @@
       renderHeader();
       renderThroughLines();
       renderQuestions();
-      renderCommunityStories();
+      renderLocalRegionalStories();
       updateFAQSchema();
     }
 
@@ -1227,7 +1262,7 @@
           <p style="margin:0;font-size:0.9rem;color:rgba(235,230,245,0.65);">Today's coverage clusters around ${ms.length} stories: ${storyList}.</p>
         </div>
         <div style="font-size:0.78rem;color:rgba(235,230,245,0.5);border-top:1px solid rgba(255,255,255,0.08);padding-top:0.8rem;line-height:1.6;">
-          Every day, Signal Board reads every new article from ${s.sources_reporting} sources, covering everything from international security to local community reporting. Today that was ${s.total_stories.toLocaleString()} articles. ${s.ai_classified.toLocaleString()} were analyzed by AI to surface the patterns you see below. These numbers change daily because the news does.
+          Every day, Signal Board reads every new article from ${s.sources_reporting} sources, covering everything from international security to local local and regional reporting. Today that was ${s.total_stories.toLocaleString()} articles. ${s.ai_classified.toLocaleString()} were analyzed by AI to surface the patterns you see below. These numbers change daily because the news does.
         </div>
       `;
     }
@@ -1259,12 +1294,12 @@
         const tiers = story.source_tiers || {};
         const totalArticles = story.article_count || 1;
         const tierColors = {
-          national: '#6652FF', international: '#1976D2', community: '#FF5400',
+          national: '#6652FF', international: '#1976D2', local_regional: '#FF5400',
           specialist: '#00C2A8', analysis: '#4CAF50', explainer: '#FF9800',
           podcast: '#9E0059', newsletter: '#7B1FA2', research: '#D32F2F', government: '#FF0054'
         };
         const tierLabels = {
-          national: 'U.S. newsrooms', international: 'Global press', community: 'Local outlets',
+          national: 'U.S. newsrooms', international: 'Global press', local_regional: 'Local & Regional outlets',
           specialist: 'Expert sources', analysis: 'Think tanks', explainer: 'Explainers',
           podcast: 'Podcasts', newsletter: 'Newsletters', research: 'Research', government: 'Government'
         };
@@ -1614,7 +1649,7 @@
       const LABELS = {
         national: 'U.S. newsrooms',
         international: 'Global press',
-        community: 'Local & cultural outlets',
+        local_regional: 'Local & Regional outlets',
         specialist: 'Expert journals',
         analysis: 'Think tanks',
         explainer: 'Explainers',
@@ -1624,7 +1659,7 @@
         government: 'Government sources'
       };
       const COLORS = {
-        national: '#6652FF', international: '#1976D2', community: '#FF5400',
+        national: '#6652FF', international: '#1976D2', local_regional: '#FF5400',
         specialist: '#00C2A8', analysis: '#4CAF50', explainer: '#FF9800',
         podcast: '#9E0059', newsletter: '#7B1FA2', research: '#D32F2F',
         government: '#FF0054', other: 'rgba(255,255,255,0.15)'
@@ -1685,12 +1720,12 @@
       `;
     }
 
-    /* ─── COMMUNITY STORIES — insight extraction, not title listing ─── */
-    function renderCommunityStories() {
-      const section = document.getElementById('communitySection');
-      const synthesis = appData.community_synthesis;
-      const examples = appData.community_examples || [];
-      const stories = appData.community_exclusive || [];
+    /* ─── LOCAL & REGIONAL STORIES — insight extraction, not title listing ─── */
+    function renderLocalRegionalStories() {
+      const section = document.getElementById('localRegionalSection');
+      const synthesis = appData.local_regional_synthesis;
+      const examples = appData.local_regional_examples || [];
+      const stories = appData.local_regional_exclusive || [];
 
       if (!synthesis && stories.length === 0) { section.style.display = 'none'; return; }
 
