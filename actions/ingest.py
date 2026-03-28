@@ -24,6 +24,7 @@ from time import mktime
 import feedparser
 
 from domains import tag_article, get_domain_labels
+from ai_classify import classify_batch, get_client
 
 # Paths
 ROOT = Path(__file__).resolve().parent.parent
@@ -224,25 +225,25 @@ def main():
     print(f"Loaded {len(feeds)} feeds, {len(existing)} existing articles\n")
 
     # Fetch all feeds
-    new_count = 0
-    updated_count = 0
+    new_articles = []
 
     for feed in feeds:
         articles = fetch_feed(feed)
         for article in articles:
             if article["id"] not in existing:
-                existing[article["id"]] = article
-                new_count += 1
-            else:
-                # Update domains if re-tagged (keywords may have changed)
-                old = existing[article["id"]]
-                if old.get("domains") != article["domains"]:
-                    old["domains"] = article["domains"]
-                    old["cross_domain"] = article["cross_domain"]
-                    updated_count += 1
+                new_articles.append(article)
 
-    print(f"\nNew articles: {new_count}")
-    print(f"Re-tagged:    {updated_count}")
+    print(f"\nNew articles found: {len(new_articles)}")
+
+    # AI classification for new articles (falls back to keywords if no API key)
+    if new_articles:
+        print("\nClassifying new articles...")
+        classify_batch(new_articles)
+        for article in new_articles:
+            existing[article["id"]] = article
+
+    new_count = len(new_articles)
+    print(f"Articles added: {new_count}")
 
     # Sort by date (newest first)
     all_articles = sorted(existing.values(), key=lambda a: a["date"], reverse=True)

@@ -250,6 +250,13 @@
     line-height: 1.35;
     font-weight: 500;
   }
+  .collision-article-why {
+    font-size: 0.65rem;
+    color: rgba(255,255,255,0.45);
+    margin-top: 0.1rem;
+    font-style: italic;
+    line-height: 1.35;
+  }
   .collision-article-meta {
     font-size: 0.62rem;
     color: rgba(255,255,255,0.3);
@@ -721,6 +728,7 @@ function renderCollisions() {
             <div class="collision-articles">
               ${shown.map(a => `<a class="collision-article" href="${a.url}" target="_blank" rel="noopener">
                 <div class="collision-article-title">${esc(a.title)}</div>
+                ${a.connection ? `<div class="collision-article-why">${esc(a.connection)}</div>` : ''}
                 <div class="collision-article-meta">${esc(a.source)}</div>
               </a>`).join('')}
             </div>
@@ -765,7 +773,7 @@ function renderRadar() {
           ).join('');
           const summary = cleanText(a.summary);
           const trimmed = summary.length > 140 ? summary.substring(0,140)+'...' : summary;
-          const why = getWhyItMatters(a);
+          const why = a.connection || getWhyItMatters(a);
           return `<a class="radar-card" href="${a.url}" target="_blank" rel="noopener">
             <div class="radar-tags">${tags}</div>
             <div class="radar-title">${esc(a.title)}</div>
