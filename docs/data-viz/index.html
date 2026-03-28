@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Visualizations of how 239 sources cover today's biggest stories—showing where coverage comes from, what gets missed, and how different outlets frame the same story.">
+  <meta property="og:title" content="Data Visualizations — Signal Board">
+  <meta property="og:description" content="Where the coverage gaps hide. See source patterns, coverage distribution, and how different outlets frame the same story.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://signal-board.org/data">
+  <title>Data Visualizations — Signal Board</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Skip link for keyboard navigation */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: #6652FF;
+      color: #fff;
+      padding: 0.5rem 1rem;
+      z-index: 200;
+      font-size: 0.9rem;
+      font-weight: 600;
+      border-radius: 0 0 8px 0;
+      transition: top 0.2s;
+    }
+    .skip-link:focus {
+      top: 3px;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0f0f14;
+      color: #ede9f5;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      position: relative;
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    /* Animated gradient orbs background */
+    body::before,
+    body::after {
+      content: '';
+      position: fixed;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    body::before {
+      background: radial-gradient(circle at center, rgba(102, 82, 255, 0.08) 0%, rgba(102, 82, 255, 0.02) 70%, transparent 100%);
+      top: -150px;
+      left: -150px;
+      animation: float 25s ease-in-out infinite;
+    }
+
+    body::after {
+      background: radial-gradient(circle at center, rgba(0, 194, 168, 0.08) 0%, rgba(0, 194, 168, 0.02) 70%, transparent 100%);
+      bottom: -200px;
+      right: -200px;
+      animation: float 30s ease-in-out infinite reverse;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translate(0, 0);
+      }
+      50% {
+        transform: translate(40px, -40px);
+      }
+    }
+
+    /* Additional animated orb */
+    .orb-3 {
+      position: fixed;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle at center, rgba(255, 84, 0, 0.1) 0%, rgba(255, 84, 0, 0.02) 70%, transparent 100%);
+      border-radius: 50%;
+      top: 40%;
+      right: 10%;
+      z-index: 0;
+      pointer-events: none;
+      animation: float 28s ease-in-out infinite;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    a:hover {
+      color: #fff;
+    }
+
+    /* Gradient accent bar at top */
+    .gradient-bar {
+      height: 3px;
+      background: linear-gradient(
+        to right,
+        #6652FF 0%,
+        #FF5400 11.1%,
+        #FF0054 22.2%,
+        #9E0059 33.3%,
+        #00C2A8 44.4%,
+        #4CAF50 55.5%,
+        #D32F2F 66.6%,
+        #1976D2 77.7%,
+        #7B1FA2 88.8%,
+        #FF9800 100%
+      );
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 101;
+    }
+
+    body {
+      padding-top: 3px;
+    }
+
+    .wrap {
+      position: relative;
+      z-index: 1;
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* NAVIGATION */
+    .site-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.5rem 0;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      position: sticky;
+      top: 3px;
+      background: rgba(15, 15, 20, 0.95);
+      backdrop-filter: blur(20px);
+      z-index: 100;
+    }
+
+    .nav-logo {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.03em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-size: 0.85rem;
+      color: rgba(235, 230, 245, 0.65);
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+
+    .nav-links a:hover {
+      color: #fff;
+    }
+
+    .nav-links a.active {
+      color: #fff;
+      font-weight: 700;
+    }
+
+    /* HEADER SECTION */
+    .header {
+      padding: 3rem 0 2rem;
+    }
+
+    .header h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2.8rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+    }
+
+    .header p {
+      font-size: 1.1rem;
+      color: rgba(235, 230, 245, 0.8);
+      max-width: 720px;
+      margin-bottom: 0.5rem;
+    }
+
+    .date-stamp {
+      font-size: 0.85rem;
+      color: rgba(235, 230, 245, 0.5);
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 500;
+      margin-top: 1rem;
+    }
+
+    /* VISUALIZATION GRID */
+    .viz-section {
+      margin: 3rem 0;
+      padding: 2rem;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(102, 82, 255, 0.03) 0%, rgba(0, 194, 168, 0.02) 100%);
+      backdrop-filter: blur(10px);
+    }
+
+    .viz-section h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: #fff;
+    }
+
+    .viz-section .subtitle {
+      font-size: 0.9rem;
+      color: rgba(235, 230, 245, 0.65);
+      margin-bottom: 2rem;
+    }
+
+    /* VIZ 1: STORY VOLUME */
+    .volume-chart {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .volume-bar-group {
+      display: flex;
+      align-items: flex-end;
+      gap: 0.8rem;
+    }
+
+    .volume-label {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      width: 180px;
+      color: #fff;
+      flex-shrink: 0;
+    }
+
+    .volume-bars {
+      display: flex;
+      align-items: flex-end;
+      gap: 0.3rem;
+      flex: 1;
+      height: 40px;
+    }
+
+    .volume-bar-today {
+      border-radius: 4px 4px 0 0;
+      transition: opacity 0.2s;
+    }
+
+    .volume-bar-yesterday {
+      opacity: 0.25;
+      border-radius: 4px 4px 0 0;
+    }
+
+    .volume-stats {
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+      margin-left: 180px;
+      font-size: 0.85rem;
+    }
+
+    .volume-today {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .volume-change {
+      color: rgba(235, 230, 245, 0.65);
+    }
+
+    .volume-change.positive {
+      color: #4CAF50;
+    }
+
+    .volume-change.negative {
+      color: #FF5400;
+    }
+
+    /* VIZ 2: SOURCE TIERS */
+    .source-tier-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .source-tier-label {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 0.6rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .source-tier-count {
+      font-size: 0.8rem;
+      color: rgba(235, 230, 245, 0.65);
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+    }
+
+    .source-tier-bar {
+      height: 24px;
+      border-radius: 4px;
+      display: flex;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .source-tier-segment {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: 600;
+      transition: opacity 0.2s;
+    }
+
+    .source-tier-segment:hover {
+      opacity: 0.8;
+    }
+
+    .source-tier-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.8rem;
+    }
+
+    .legend-color {
+      width: 12px;
+      height: 12px;
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+
+    /* VIZ 3: COVERAGE GAPS */
+    .gaps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.2rem;
+      margin-top: 1.5rem;
+    }
+
+    .gap-card {
+      padding: 1.2rem;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .gap-label {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 0.8rem;
+    }
+
+    .gap-badge {
+      display: inline-block;
+      padding: 0.4rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin-bottom: 0.8rem;
+    }
+
+    .gap-badge.community-leads {
+      background: rgba(255, 84, 0, 0.2);
+      color: #FF5400;
+      border: 1px solid rgba(255, 84, 0, 0.3);
+    }
+
+    .gap-badge.national-dominates {
+      background: rgba(102, 82, 255, 0.2);
+      color: #6652FF;
+      border: 1px solid rgba(102, 82, 255, 0.3);
+    }
+
+    .gap-badge.balanced {
+      background: rgba(76, 175, 80, 0.2);
+      color: #4CAF50;
+      border: 1px solid rgba(76, 175, 80, 0.3);
+    }
+
+    .gap-explanation {
+      font-size: 0.85rem;
+      color: rgba(235, 230, 245, 0.75);
+      line-height: 1.6;
+    }
+
+    .gap-ratio {
+      font-size: 0.75rem;
+      color: rgba(235, 230, 245, 0.5);
+      margin-top: 0.6rem;
+      font-family: 'Space Grotesk', sans-serif;
+    }
+
+    /* VIZ 4: CROSS SPECTRUM */
+    .spectrum-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .spectrum-card {
+      padding: 1.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .spectrum-story {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+
+    .spectrum-analysis {
+      font-size: 0.85rem;
+      color: rgba(235, 230, 245, 0.8);
+      line-height: 1.6;
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .spectrum-sources {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1rem;
+    }
+
+    .source-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .source-group-label {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: rgba(235, 230, 245, 0.65);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .source-count-badge {
+      display: inline-block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #fff;
+      padding: 0.3rem 0.6rem;
+      border-radius: 12px;
+      margin-bottom: 0.4rem;
+    }
+
+    .source-names {
+      font-size: 0.75rem;
+      color: rgba(235, 230, 245, 0.7);
+      line-height: 1.5;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 3rem 0;
+      margin-top: 3.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      font-size: 0.85rem;
+      color: rgba(235, 230, 245, 0.65);
+      text-align: center;
+    }
+
+    footer a {
+      color: inherit;
+      text-decoration: underline;
+    }
+
+    footer a:hover {
+      color: #fff;
+    }
+
+    /* LOADING STATE */
+    .loading {
+      padding: 3rem;
+      text-align: center;
+      color: rgba(235, 230, 245, 0.6);
+    }
+
+    .loader {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      border: 3px solid rgba(235, 230, 245, 0.2);
+      border-top-color: #6652FF;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .wrap {
+        padding: 0 1rem;
+      }
+
+      .header h1 {
+        font-size: 1.8rem;
+      }
+
+      .nav-links {
+        gap: 1rem;
+      }
+
+      .nav-links a {
+        font-size: 0.75rem;
+      }
+
+      .volume-bar-group {
+        flex-direction: column;
+        gap: 0.4rem;
+      }
+
+      .volume-label {
+        width: 100%;
+      }
+
+      .volume-bars {
+        width: 100%;
+      }
+
+      .volume-stats {
+        margin-left: 0;
+        font-size: 0.75rem;
+      }
+
+      .gap-card {
+        padding: 1rem;
+      }
+
+      .spectrum-card {
+        padding: 1rem;
+      }
+
+      .spectrum-sources {
+        grid-template-columns: 1fr;
+      }
+
+      .viz-section {
+        padding: 1.5rem;
+        margin: 2rem 0;
+      }
+
+      .viz-section h2 {
+        font-size: 1.2rem;
+      }
+
+      .site-nav {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        width: 100%;
+        justify-content: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <div class="gradient-bar"></div>
+  <div class="orb-3"></div>
+
+  <nav class="site-nav" role="navigation" aria-label="Main navigation">
+    <div class="wrap" style="display: flex; align-items: center; justify-content: space-between; width: 100%; padding: 0;">
+      <a href="../" class="nav-logo">Signal Board</a>
+      <div class="nav-links">
+        <a href="../today/">Today</a>
+        <a href="../sources/">Sources</a>
+        <a href="./" class="active">Data</a>
+        <a href="../stories/">Archive</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main" class="wrap">
+    <div class="header">
+      <h1>Where the Coverage Hides</h1>
+      <p>These visualizations show patterns in how 239 sources cover today's biggest stories. The gaps and overlaps are where the most important insights hide.</p>
+      <div class="date-stamp" id="dateStamp"></div>
+    </div>
+
+    <!-- VIZ 1: STORY VOLUME -->
+    <section class="viz-section" aria-labelledby="volume-heading">
+      <h2 id="volume-heading">Story Volume</h2>
+      <p class="subtitle">Article count for each mega-story, with yesterday's coverage shown as a lighter bar for comparison.</p>
+      <div class="volume-chart" id="volumeChart">
+        <div class="loading"><div class="loader"></div></div>
+      </div>
+    </section>
+
+    <!-- VIZ 2: SOURCE TIERS -->
+    <section class="viz-section" aria-labelledby="sources-heading">
+      <h2 id="sources-heading">Where the Coverage Comes From</h2>
+      <p class="subtitle">Each mega-story broken down by source type. See at a glance which stories get more international vs. community vs. national coverage.</p>
+      <div id="sourceTiers">
+        <div class="loading"><div class="loader"></div></div>
+      </div>
+    </section>
+
+    <!-- VIZ 3: COVERAGE GAPS -->
+    <section class="viz-section" aria-labelledby="gaps-heading">
+      <h2 id="gaps-heading">Coverage Gaps</h2>
+      <p class="subtitle">When community outlets cover a story more than national outlets, it often means the local impact is bigger than the national narrative suggests.</p>
+      <div class="gaps-grid" id="gapsGrid">
+        <div class="loading"><div class="loader"></div></div>
+      </div>
+    </section>
+
+    <!-- VIZ 4: CROSS SPECTRUM -->
+    <section class="viz-section" aria-labelledby="spectrum-heading">
+      <h2 id="spectrum-heading">How Sources Frame the Same Story</h2>
+      <p class="subtitle">For each mega-story, see how national, international, and community outlets approach it differently. The gaps in coverage reveal different audiences and concerns.</p>
+      <div class="spectrum-grid" id="spectrumGrid">
+        <div class="loading"><div class="loader"></div></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p style="margin-bottom:1rem;">239 sources read every day, covering everything from global security to your local school board. <a href="../sources/">How we choose our sources</a></p>
+      <details style="font-size:0.8rem;color:rgba(235,230,245,0.55);max-width:680px;margin:0 auto;text-align:left;">
+        <summary style="cursor:pointer;color:rgba(235,230,245,0.65);font-weight:600;margin-bottom:0.5rem;">How we did this</summary>
+        <p style="line-height:1.7;margin-bottom:0.6rem;">Signal Board pulls articles from 239 RSS feeds every morning, covering U.S. newsrooms, international press, community outlets, think tanks, specialist journals, and explainer sites. Each article is classified by an AI model (Claude Haiku) that identifies which topics it covers and how it connects to other stories. About 70% of articles receive a full analysis. The stories you see above are grouped by keyword clustering and then synthesized by AI into coherent paragraphs. A human editor reviews the output for accuracy, tone, and writing quality.</p>
+        <p style="line-height:1.7;margin-bottom:0.6rem;">Source selection is editorial: we chose outlets that represent different perspectives, geographies, and communities, with a deliberate emphasis on sources that are underrepresented in algorithmic news feeds. The full source list is available on the <a href="../sources/" style="color:rgba(235,230,245,0.65);text-decoration:underline;">Sources page</a>.</p>
+        <p style="line-height:1.7;">This is a working prototype. It has blind spots, particularly in non-English language coverage and in communities without strong digital news infrastructure. If you notice something missing, that is useful information. <a href="mailto:elise.hasseltine@gmail.com" style="color:rgba(235,230,245,0.65);text-decoration:underline;">Tell us</a>.</p>
+      </details>
+    </div>
+  </footer>
+
+  <script>
+    // Story colors matching Today page
+    const STORY_COLORS = ['#FF0054', '#6652FF', '#00C2A8', '#FF5400', '#4CAF50'];
+
+    // Source tier colors
+    const TIER_COLORS = {
+      national: '#6652FF',
+      international: '#1976D2',
+      community: '#FF5400',
+      specialist: '#00C2A8',
+      analysis: '#4CAF50',
+      explainer: '#FF9800',
+      government: '#FF0054',
+      newsletter: '#7B1FA2',
+      podcast: '#9E0059',
+      research: '#D32F2F'
+    };
+
+    // Tier labels
+    const TIER_LABELS = {
+      national: 'National',
+      international: 'International',
+      community: 'Community',
+      specialist: 'Specialist',
+      analysis: 'Analysis',
+      explainer: 'Explainer',
+      government: 'Government',
+      newsletter: 'Newsletter',
+      podcast: 'Podcast',
+      research: 'Research'
+    };
+
+    let appData = null;
+
+    // Load data
+    async function loadData() {
+      try {
+        const response = await fetch('../../data/daily/latest.json');
+        appData = await response.json();
+        renderAll();
+      } catch (error) {
+        console.error('Failed to load data:', error);
+        document.getElementById('volumeChart').innerHTML = '<p style="color: rgba(235,230,245,0.6);">Failed to load data. Please check the data file path.</p>';
+      }
+    }
+
+    function formatDate(dateStr) {
+      const date = new Date(dateStr + 'T00:00:00Z');
+      return date.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
+    }
+
+    function renderAll() {
+      if (!appData || !appData.mega_stories) return;
+
+      // Set date
+      document.getElementById('dateStamp').textContent = 'Data from ' + formatDate(appData.date);
+
+      renderVolumeChart();
+      renderSourceTiers();
+      renderCoverageGaps();
+      renderCrossSpectrum();
+    }
+
+    /* ─────────────────────────────────────────────────── */
+    /* VIZ 1: STORY VOLUME */
+    /* ─────────────────────────────────────────────────── */
+    function renderVolumeChart() {
+      const container = document.getElementById('volumeChart');
+      const megaStories = appData.mega_stories;
+
+      // Find max count for scaling
+      const maxCount = Math.max(...megaStories.map(s => s.article_count));
+
+      let html = '';
+      megaStories.forEach((story, idx) => {
+        const color = STORY_COLORS[idx % STORY_COLORS.length];
+        const todayWidth = (story.article_count / maxCount) * 100;
+        const yesterdayWidth = story.yesterday_count ? (story.yesterday_count / maxCount) * 100 : 0;
+        const change = story.article_count - (story.yesterday_count || 0);
+        const changePct = story.yesterday_count ? ((change / story.yesterday_count) * 100).toFixed(0) : 0;
+        const changeStr = change >= 0 ? `+${change}` : `${change}`;
+        const changeClass = change >= 0 ? 'positive' : 'negative';
+
+        html += `
+          <div class="volume-bar-group">
+            <div class="volume-label">${story.name}</div>
+            <div class="volume-bars">
+              <div class="volume-bar-yesterday" style="background: ${color}; width: ${yesterdayWidth}%; min-width: 4px;" title="Yesterday: ${story.yesterday_count} articles" aria-label="Yesterday: ${story.yesterday_count}"></div>
+              <div class="volume-bar-today" style="background: ${color}; width: ${todayWidth}%; min-width: 4px;" title="Today: ${story.article_count} articles" aria-label="Today: ${story.article_count}"></div>
+            </div>
+            <div class="volume-stats">
+              <span class="volume-today" aria-label="Today count">${story.article_count}</span>
+              <span class="volume-change ${changeClass}" aria-label="Change from yesterday">${changeStr} (${changePct}%)</span>
+            </div>
+          </div>
+        `;
+      });
+
+      container.innerHTML = html;
+    }
+
+    /* ─────────────────────────────────────────────────── */
+    /* VIZ 2: SOURCE TIERS */
+    /* ─────────────────────────────────────────────────── */
+    function renderSourceTiers() {
+      const container = document.getElementById('sourceTiers');
+      const megaStories = appData.mega_stories;
+
+      let html = '';
+      megaStories.forEach((story) => {
+        const tiers = story.source_tiers;
+        const tierEntries = Object.entries(tiers).filter(([, count]) => count > 0).sort((a, b) => b[1] - a[1]);
+        const totalTier = tierEntries.reduce((sum, [, count]) => sum + count, 0);
+
+        let barHtml = '<div class="source-tier-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">';
+        tierEntries.forEach(([tier, count]) => {
+          const pct = (count / totalTier) * 100;
+          const color = TIER_COLORS[tier] || '#666';
+          const label = TIER_LABELS[tier] || tier;
+          barHtml += `<div class="source-tier-segment" style="background: ${color}; width: ${pct}%;" title="${label}: ${count}" aria-label="${label}: ${count}"></div>`;
+        });
+        barHtml += '</div>';
+
+        let legendHtml = '<div class="source-tier-legend">';
+        tierEntries.forEach(([tier, count]) => {
+          const color = TIER_COLORS[tier] || '#666';
+          const label = TIER_LABELS[tier] || tier;
+          legendHtml += `
+            <div class="legend-item">
+              <div class="legend-color" style="background: ${color};"></div>
+              <span>${label}: ${count}</span>
+            </div>
+          `;
+        });
+        legendHtml += '</div>';
+
+        html += `
+          <div class="source-tier-group">
+            <div class="source-tier-label">
+              <span>${story.name}</span>
+              <span class="source-tier-count">${totalTier} articles</span>
+            </div>
+            ${barHtml}
+            ${legendHtml}
+          </div>
+        `;
+      });
+
+      container.innerHTML = html;
+    }
+
+    /* ─────────────────────────────────────────────────── */
+    /* VIZ 3: COVERAGE GAPS */
+    /* ─────────────────────────────────────────────────── */
+    function renderCoverageGaps() {
+      const container = document.getElementById('gapsGrid');
+      const megaStories = appData.mega_stories;
+
+      let html = '';
+      megaStories.forEach((story) => {
+        const tiers = story.source_tiers;
+        const national = tiers.national || 0;
+        const community = tiers.community || 0;
+
+        let badgeClass = 'balanced';
+        let badgeLabel = 'Balanced';
+        if (community > national * 1.5) {
+          badgeClass = 'community-leads';
+          badgeLabel = 'Community Leads';
+        } else if (national > community * 2) {
+          badgeClass = 'national-dominates';
+          badgeLabel = 'National Dominates';
+        }
+
+        const ratio = community > 0 ? (community / national).toFixed(2) : '0.00';
+
+        html += `
+          <div class="gap-card">
+            <div class="gap-label">${story.name}</div>
+            <div class="gap-badge ${badgeClass}">${badgeLabel}</div>
+            <p class="gap-explanation">When community outlets cover a story more than national outlets, it often means the local impact is bigger than the national narrative suggests.</p>
+            <div class="gap-ratio">Community : National ratio = ${ratio}</div>
+          </div>
+        `;
+      });
+
+      container.innerHTML = html;
+    }
+
+    /* ─────────────────────────────────────────────────── */
+    /* VIZ 4: CROSS SPECTRUM */
+    /* ─────────────────────────────────────────────────── */
+    function renderCrossSpectrum() {
+      const container = document.getElementById('spectrumGrid');
+      const megaStories = appData.mega_stories;
+
+      let html = '';
+      megaStories.forEach((story) => {
+        const analysis = story.cross_spectrum || 'Analysis pending.';
+
+        // Group sources by tier
+        const tiers = story.source_tiers;
+        const samples = story.sources_sample || [];
+
+        // Distribute samples across tiers (simplified)
+        const nationalCount = tiers.national || 0;
+        const internationalCount = tiers.international || 0;
+        const communityCount = tiers.community || 0;
+
+        // Take first few samples for display (2-3 per group)
+        const displaySamples = samples.slice(0, 8);
+
+        let sourceGroupsHtml = '';
+
+        // National group
+        if (nationalCount > 0) {
+          const nationalSamples = displaySamples.slice(0, 2).join(', ');
+          sourceGroupsHtml += `
+            <div class="source-group">
+              <div class="source-group-label">National</div>
+              <div class="source-count-badge" style="background: rgba(102, 82, 255, 0.2); color: #6652FF;">${nationalCount}</div>
+              <div class="source-names">${nationalSamples || 'National outlets'}</div>
+            </div>
+          `;
+        }
+
+        // International group
+        if (internationalCount > 0) {
+          const intlSamples = displaySamples.slice(2, 4).join(', ');
+          sourceGroupsHtml += `
+            <div class="source-group">
+              <div class="source-group-label">International</div>
+              <div class="source-count-badge" style="background: rgba(25, 118, 210, 0.2); color: #1976D2;">${internationalCount}</div>
+              <div class="source-names">${intlSamples || 'International outlets'}</div>
+            </div>
+          `;
+        }
+
+        // Community group
+        if (communityCount > 0) {
+          const communitySamples = displaySamples.slice(4, 6).join(', ');
+          sourceGroupsHtml += `
+            <div class="source-group">
+              <div class="source-group-label">Community</div>
+              <div class="source-count-badge" style="background: rgba(255, 84, 0, 0.2); color: #FF5400;">${communityCount}</div>
+              <div class="source-names">${communitySamples || 'Community outlets'}</div>
+            </div>
+          `;
+        }
+
+        html += `
+          <div class="spectrum-card">
+            <div class="spectrum-story">${story.name}</div>
+            <div class="spectrum-analysis">${analysis}</div>
+            <div class="spectrum-sources">
+              ${sourceGroupsHtml}
+            </div>
+          </div>
+        `;
+      });
+
+      container.innerHTML = html;
+    }
+
+    // Initialize on load
+    window.addEventListener('DOMContentLoaded', loadData);
+  </script>
+</body>
+</html>

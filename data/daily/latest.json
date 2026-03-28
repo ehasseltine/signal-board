@@ -516,7 +516,7 @@
           ]
         },
         {
-          "text": "Government leverages strategic purchasing power to manage supply chain vulnerability during geopolitical disruption.",
+          "text": "Government uses strategic purchasing power to manage supply chain vulnerability during geopolitical disruption.",
           "source": "The Guardian World",
           "title": "Labor to use new fuel security powers to underwrite extra shipments to Australia",
           "domains": [
@@ -637,7 +637,7 @@
           "tier": "international",
           "paywall": false,
           "context": "Owned by the Scott Trust, a nonprofit. British newspaper. Generally regarded as left-leaning. No paywall.",
-          "connection": "Government leverages strategic purchasing power to manage supply chain vulnerability during geopolitical disruption.",
+          "connection": "Government uses strategic purchasing power to manage supply chain vulnerability during geopolitical disruption.",
           "force_tag": "supply chain weaponization"
         }
       ]
@@ -3203,8 +3203,8 @@
         }
       ],
       "ai_connections": [
-        "Federal agencies weaponize voter data through citizenship verification tool, raising privacy and civil rights concerns.",
-        "Media outlet weaponizes citizen surveillance to pressure lawmakers during government shutdown, blurring accountability and privacy."
+        "Federal agencies use voter data through citizenship verification tool, raising privacy and civil rights concerns.",
+        "Media outlet uses citizen surveillance to pressure lawmakers during government shutdown, blurring accountability and privacy."
       ]
     },
     {
@@ -3327,7 +3327,7 @@
         }
       ],
       "ai_connections": [
-        "Federal agencies weaponize voter data through citizenship verification tool, raising privacy and civil rights concerns.",
+        "Federal agencies use voter data through citizenship verification tool, raising privacy and civil rights concerns.",
         "AI systems amplified privacy violations by automatically generating and exposing sensitive personal data that should have remained protected."
       ]
     },
@@ -3488,7 +3488,7 @@
             "title": "The Justice Department plans to share sensitive voter data with Homeland Security",
             "url": "https://www.npr.org/2026/03/27/nx-s1-5764266/voter-data-trump-doj-dhs",
             "context": "Nonprofit public media funded by member stations, sponsors, and foundations. Generally regarded as center-left.",
-            "connection": "Federal agencies weaponize voter data through citizenship verification tool, raising privacy and civil rights concerns."
+            "connection": "Federal agencies use voter data through citizenship verification tool, raising privacy and civil rights concerns."
           },
           {
             "source": "Washington Times",
@@ -3612,14 +3612,14 @@
             "title": "The Justice Department plans to share sensitive voter data with Homeland Security",
             "url": "https://www.npr.org/2026/03/27/nx-s1-5764266/voter-data-trump-doj-dhs",
             "context": "Nonprofit public media funded by member stations, sponsors, and foundations. Generally regarded as center-left.",
-            "connection": "Federal agencies weaponize voter data through citizenship verification tool, raising privacy and civil rights concerns."
+            "connection": "Federal agencies use voter data through citizenship verification tool, raising privacy and civil rights concerns."
           },
           {
             "source": "The Hill",
             "title": "TMZ wants photos of lawmakers vacationing \u2018at your expense\u2019 amid TSA shutdown",
             "url": "https://thehill.com/media/5804806-tmz-asks-travelers-to-snap-lawmakers/",
             "context": "",
-            "connection": "Media outlet weaponizes citizen surveillance to pressure lawmakers during government shutdown, blurring accountability and privacy."
+            "connection": "Media outlet uses citizen surveillance to pressure lawmakers during government shutdown, blurring accountability and privacy."
           }
         ],
         "international": [
@@ -3813,7 +3813,7 @@
           "tier": "international",
           "paywall": false,
           "context": "Owned by the Scott Trust, a nonprofit. British newspaper. Generally regarded as left-leaning. No paywall.",
-          "connection": "Government leverages strategic purchasing power to manage supply chain vulnerability during geopolitical disruption.",
+          "connection": "Government uses strategic purchasing power to manage supply chain vulnerability during geopolitical disruption.",
           "force_tag": "supply chain weaponization"
         }
       ]
@@ -3976,7 +3976,7 @@
       "yesterday_count": 166,
       "change_description": "Up from 166 yesterday",
       "synthesis": "Coverage of Iran jumped from 166 articles yesterday to 247 today, which means this story crossed a threshold overnight from regional tension into something that touches American households directly. Oil markets are seizing up because traders cannot predict prices when military conflict remains undefined, and gas prices and heating costs are becoming hostages to a diplomatic process that has not produced results. Executive decisions about military leadership, cyber operations, and technology sector layoffs are all being driven by the same uncertainty, and the economic pressure is already spreading into American paychecks and job security before any shots are fired.",
-      "watch_for": "Watch whether gas prices at your local station move in the next few days. Oil futures are already responding to the escalation, and the speed at which pump prices follow is the clearest signal of whether markets believe this conflict will be contained or sustained. If prices jump more than 10 cents in a week, it means traders are betting on a longer disruption than the headlines suggest.",
+      "watch_for": "Watch gas prices at your local station this week. When oil futures rise because of military tension, gas stations adjust their prices based on what they expect to pay for their next shipment, not what they paid for the fuel already in their tanks. A jump of more than 10 cents in a week means the stations are pricing in uncertainty, which tells you that the people whose job it is to predict commodity prices believe this conflict is going to last. That kind of market signal often shows up at the pump days before it shows up in the news. If prices stay flat, it means traders think diplomacy is happening behind the scenes even if reporters have not confirmed it yet.",
       "cross_spectrum": "International outlets (108 articles) are covering supply chain and cyber dimensions that domestic outlets buried. Community sources (25 articles) are the only ones regularly reporting how specific neighborhoods and worker populations feel economic pressure from the uncertainty. American national news is still treating this as a foreign policy question while people experiencing it know it is already a pocketbook issue.",
       "why_this_matters": "This affects gas prices, shipping costs, and job security in defense-connected industries. If you commute, heat your home, or work in a supply chain, you are already inside this story."
     },
@@ -4066,7 +4066,7 @@
       "yesterday_count": 87,
       "change_description": "Up from 87 yesterday",
       "synthesis": "Eighty-nine articles paint a picture of a budget standoff that has become a deliberate strategy: control of the budget process is being used to force concessions on unrelated issues, and when Congress deadlocks, the executive branch steps in with workarounds that technically keep the government running but bypass Congress entirely. Federal workers are going unpaid, which means real people facing food insecurity and unpaid rent while the political theater continues. Coverage held steady from 87 articles yesterday, suggesting this has reached a point where the human cost is becoming undeniable and forcing new angles on a story that has been running long enough to feel routine even though the consequences keep compounding.",
-      "watch_for": "Watch whether federal services you rely on, from tax refund processing to passport applications to veterans' benefits, start showing longer wait times or processing delays over the next week. Each executive workaround keeps the system running, but every workaround has a shelf life, and the practical effects hit specific people before they become national news.",
+      "watch_for": "Watch whether the federal services you use start taking longer. Tax refund processing, passport applications, veterans' benefits, national park staffing, food safety inspections: all of these run on the labor of federal workers, and when those workers are not being paid, the system does not stop all at once. It degrades. Wait times get longer, then backlogs build, and by the time the shutdown ends the backlog can take months to clear. The gap between the political story (who is winning the negotiation) and the service story (what is actually happening to people who need the government to function) is one of the most consistent blind spots in American news coverage.",
       "cross_spectrum": "Community outlets are emphasizing direct impact on workers and families in specific regions. National outlets focus on the constitutional question of executive power. International sources frame this as a sign of American institutional dysfunction rather than a routine political disagreement, which suggests it looks more serious from outside than domestic coverage conveys.",
       "why_this_matters": "Federal workers are not getting paid. Tax refunds are delayed. Passport processing is backed up. If you depend on any federal service, this is hitting you right now."
     },
@@ -4158,7 +4158,7 @@
       "yesterday_count": 99,
       "change_description": "Down from 99 yesterday",
       "synthesis": "Eighty-four articles describe an economy absorbing multiple shocks at once, each one reinforcing the others. Middle East tensions are pushing oil prices higher, which ripples into tech company valuations and investment fund performance. Extreme weather is disrupting the supply of goods that move through markets. Government agencies trying to modernize payment systems are delaying refunds to people who need them most. Coverage dropped from 99 articles yesterday to 84, suggesting reporting is consolidating around the core problem: several moving parts that amplify each other, which is harder to report cleanly and easier for readers to miss.",
-      "watch_for": "Watch your grocery receipt. The combination of higher energy costs, disrupted fertilizer supply chains, and agricultural uncertainty tends to show up in food prices within two to three weeks of the triggering events. If you are noticing price increases on staples, you are already seeing the downstream effects of the geopolitical and climate stories on this page.",
+      "watch_for": "Watch your grocery receipt this week and compare it to a month ago. The combination of higher energy costs from Middle East tensions, disrupted fertilizer supply chains from conflict zones, and weather-driven crop losses tends to show up in food prices within two to three weeks of the triggering events. The reason food prices are such a useful signal is that they sit at the end of a long chain: oil prices affect transportation, fertilizer prices affect farming costs, weather affects yields, and all three are being pushed in the same direction right now. When economists talk about 'compounding shocks,' this is what it looks like in your kitchen.",
       "cross_spectrum": "International outlets (30 articles) are giving more weight to how geopolitical risk reshapes investment flows globally. Domestic sources split between national financial reporting (20 articles) focused on U.S. market impact and community reporting (16 articles) that captures lived experience of payment delays and affordability pressures in specific towns. The connection between global shocks and local harm stays invisible to readers who do not read across all three.",
       "why_this_matters": "Food prices, energy costs, and interest rates are all being pushed by forces that are usually reported as separate stories. If your grocery bill or rent has gone up, the connections on this page help explain why."
     },
@@ -4229,7 +4229,7 @@
         }
       ],
       "insights": [
-        "Federal agencies weaponize voter data through citizenship verification tool, raising privacy and civil rights concerns.",
+        "Federal agencies use voter data through citizenship verification tool, raising privacy and civil rights concerns.",
         "Federal prosecution of a government agent requires overcoming the evidentiary barriers of body camera concealment and institutional protection.",
         "Federal courts are arbitrating whether state tuition policy for undocumented residents overrides federal immigration law.",
         "Artist's lawsuit dismissal request raises questions about institutional autonomy versus political pressure on cultural institutions' content decisions.",
@@ -4248,7 +4248,7 @@
       "yesterday_count": 84,
       "change_description": "Down from 84 yesterday",
       "synthesis": "Fifty-five articles describe courts becoming the place where the fundamental rules of who gets to do what are being rewritten. Federal agencies are using citizenship data to screen voters. Prosecutors are pursuing government agents through evidentiary fog. States are trying to override federal immigration policy through tuition rules. State attorneys general are treating corporate diversity programs as violations of state law. What connects these cases is that institutions with once-settled authority are all being challenged simultaneously, each challenge framed as a question of rights rather than policy disagreement. Coverage dropped from 84 articles yesterday, suggesting reporting is consolidating around specific flashpoint cases rather than treating these as isolated incidents.",
-      "watch_for": "Watch for whether the courts hearing these cases issue rulings on the actual legal questions or dismiss them on procedural grounds. The difference matters because procedural dismissals leave the underlying power questions unresolved, which means the same conflicts will come back in different forms, and the legal uncertainty continues to affect the people whose rights are at stake.",
+      "watch_for": "Watch for whether the courts hearing these cases issue rulings on the substance of the legal questions or dismiss them on procedural grounds. The difference matters more than most people realize: a substantive ruling sets a precedent that applies to everyone, while a procedural dismissal leaves the underlying question unanswered, which means the same conflict will come back in a different form. When courts avoid ruling on the merits, it often means judges are uncomfortable with the political implications of either outcome, and the legal uncertainty continues to affect the people whose rights are at stake while the system waits for a case it is willing to decide.",
       "cross_spectrum": "Community and national outlets are covering this roughly equally (19 vs 20 articles), which is unusual and suggests local impacts are being treated as nationally significant. International outlets are present at 14 articles, likely because several of these conflicts echo patterns they are tracking in their own democracies.",
       "why_this_matters": "The cases in the news right now are deciding who has authority over voting, immigration, free speech, and workplace discrimination. The outcomes will set rules that apply to everyone, not just the people in the headlines."
     },
@@ -4325,7 +4325,7 @@
       "yesterday_count": 34,
       "change_description": "Down from 34 yesterday",
       "synthesis": "Nine articles is a small number compared to the other stories today, but what they reveal is disproportionately important: climate change is working as a cascading pressure on systems that most people interact with daily without thinking about them as climate-connected. Agricultural pest spread is being accelerated by warmer temperatures in ways that directly threaten food production. Infrastructure in coastal and flood-prone areas is failing during weather events that used to be considered unusual but are now recurring. Energy policy debates are accelerating as the cost calculus shifts. The reason this matters even at low article volume is that climate pressure shows up inside every other story on this page, from food prices in the economy section to disaster response in the government section, and treating it as a separate beat is part of what makes it so easy to underreport.",
-      "watch_for": "Pay attention to whether food prices in your area tick up over the next two weeks, because agricultural disruptions driven by pest spread and extreme weather take about that long to reach grocery shelves, and the connection between what is happening in farming regions and what you pay at the store is one of the most consistently underreported links in American news.",
+      "watch_for": "Watch whether food prices in your area tick up over the next two weeks. Agricultural disruptions driven by pest spread and extreme weather take about that long to reach grocery shelves, and the connection between what is happening in farming regions and what you pay at the store is one of the most consistently underreported links in American news. The reason this story matters at 9 articles when other stories have hundreds is that climate pressure does not announce itself as a climate story. It shows up as a food price story, an insurance cost story, an infrastructure failure story. The low article count is itself evidence of the reporting gap.",
       "cross_spectrum": "Community outlets like City Limits and Honolulu Civil Beat report the infrastructure failures and neighborhood-level disaster response that national outlets mention only as statistics. International sources like France 24 treat energy transitions as geopolitical necessity rather than environmental preference. That framing gap shapes what policy responses seem reasonable to different audiences.",
       "why_this_matters": "Extreme weather is already raising food prices and breaking infrastructure in specific communities. If you live in a flood zone, farm region, or coastal area, this is not a future problem."
     }
