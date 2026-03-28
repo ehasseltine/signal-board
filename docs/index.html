@@ -62,6 +62,7 @@
   .card-at{font-size:0.78rem;color:rgba(255,255,255,0.86);line-height:1.38;font-weight:500;}
   .card-ac{font-size:0.65rem;color:rgba(255,255,255,0.38);margin-top:0.08rem;font-style:italic;}
   .card-as{font-size:0.58rem;color:rgba(255,255,255,0.25);margin-top:0.06rem;}
+  .pw{font-size:0.5rem;color:rgba(255,255,255,0.3);background:rgba(255,255,255,0.06);padding:0.06rem 0.3rem;border-radius:100px;margin-left:0.3rem;font-weight:600;letter-spacing:0.02em;vertical-align:middle;}
 
   /* RADAR */
   .ri{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:0.9rem 1.1rem;margin-bottom:0.5rem;text-decoration:none;color:inherit;display:block;transition:transform 0.15s,border-color 0.15s;}
@@ -233,7 +234,7 @@ function renderCollisions(){
         ${arts.slice(0,3).map(a=>`<a class="card-a" href="${a.url}" target="_blank" rel="noopener">
           <div class="card-at">${esc(a.title)}</div>
           ${a.connection?`<div class="card-ac">${esc(a.connection)}</div>`:''}
-          <div class="card-as">${esc(a.source)} · ${a.date}</div>
+          <div class="card-as">${esc(a.source)}${a.paywall?'<span class="pw">paywall</span>':''} · ${a.date}</div>
         </a>`).join('')}
       </div>`;
     }).join('')}
@@ -261,7 +262,7 @@ function renderRadar(){
         <div class="ri-tags">${tags}</div>
         <div class="ri-t">${esc(a.title)}</div>
         ${a.connection?`<div class="ri-c">${esc(a.connection)}</div>`:''}
-        <div class="ri-s">${esc(a.source)} · ${a.date}</div>
+        <div class="ri-s">${esc(a.source)}${a.paywall?'<span class="pw">paywall</span>':''} · ${a.date}</div>
       </a>`;
     }).join('')}
   `;
@@ -284,7 +285,7 @@ function renderFeed(){
       `<span class="fi-tag" style="background:${DC[d]}">${DL[d]}</span>`
     ).join('');
     return `<a class="fi" href="${a.url}" target="_blank" rel="noopener">
-      <div><div class="fi-t">${esc(a.title)}</div><div class="fi-m"><span class="fi-src">${esc(a.source)}</span> · ${a.date}</div></div>
+      <div><div class="fi-t">${esc(a.title)}</div><div class="fi-m"><span class="fi-src">${esc(a.source)}</span>${a.paywall?'<span class="pw">paywall</span>':''} · ${a.date}</div></div>
       <div class="fi-tags">${tags}</div>
     </a>`;
   }).join('');

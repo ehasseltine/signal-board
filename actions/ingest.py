@@ -26,6 +26,16 @@ import feedparser
 from domains import tag_article, get_domain_labels
 from ai_classify import classify_batch, get_client
 
+# Sources known to have paywalls (partial or full)
+PAYWALLED_SOURCES = {
+    "New York Times", "Washington Post", "Wall Street Journal", "Bloomberg",
+    "The Atlantic", "Politico", "Business Insider", "CNBC",
+    "Foreign Policy", "Foreign Affairs", "The Economist",
+    "South China Morning Post", "The Dispatch", "Platformer",
+    "Wired", "Ars Technica", "The Information",
+    "Financial Times", "Barron's", "The New Yorker",
+}
+
 # Paths
 ROOT = Path(__file__).resolve().parent.parent
 FEEDS_FILE = ROOT / "data" / "feeds.csv"
@@ -136,6 +146,7 @@ def fetch_feed(feed: dict) -> list[dict]:
                 "region": feed["region"],
                 "domains": domains,
                 "cross_domain": len(domains) > 1,
+                "paywall": feed["name"] in PAYWALLED_SOURCES,
                 "date": pub_date,
                 "ingested": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
             })
