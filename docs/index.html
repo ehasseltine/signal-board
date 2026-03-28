@@ -3,25 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Signal Board tracks how interconnected forces appear in the news and surfaces structural connections most coverage misses. 59 sources, 10 domains, updated daily.">
-<meta property="og:title" content="Signal Board — See the Connections the News Misses">
-<meta property="og:description" content="The forces reshaping the world don't stay in lanes. Signal Board tracks 59 sources across 10 domains and surfaces the structural connections most coverage misses.">
+<meta name="description" content="Signal Board shows how today's biggest news stories are connected to each other in ways most coverage misses. 59 sources, 10 topics, updated daily.">
+<meta property="og:title" content="Signal Board — See How the News Connects">
+<meta property="og:description" content="The biggest stories in the news don't happen in isolation. Signal Board shows you the connections between them that most coverage misses.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://elisehasseltine.com/signal-board/">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Signal Board — See the Connections the News Misses">
-<meta name="twitter:description" content="The forces reshaping the world don't stay in lanes. Signal Board surfaces structural connections across 59 sources and 10 domains.">
+<meta name="twitter:title" content="Signal Board — See How the News Connects">
+<meta name="twitter:description" content="The biggest stories in the news don't happen in isolation. Signal Board shows you the connections.">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebSite",
   "name": "Signal Board",
-  "description": "A research tool that tracks how interconnected forces appear in the news and surfaces the structural connections between them that most coverage misses.",
+  "description": "A tool that shows how today's biggest news stories connect to each other in ways most coverage misses.",
   "url": "https://elisehasseltine.com/signal-board/",
   "creator": { "@type": "Person", "name": "Elise Hasseltine", "url": "https://www.elisehasseltine.com/" }
 }
 </script>
-<title>Signal Board — See the Connections the News Misses</title>
+<title>Signal Board — See How the News Connects</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -43,29 +43,36 @@
     background: var(--bg);
     color: var(--text);
     min-height: 100vh;
-    line-height: 1.55;
+    line-height: 1.6;
     -webkit-font-smoothing: antialiased;
   }
 
   /* ─── HEADER ─── */
   .header {
     padding: 3.5rem 2rem 0;
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
     text-align: center;
   }
   .header h1 {
     font-family: 'Space Grotesk', sans-serif;
-    font-size: clamp(2rem, 5vw, 3rem);
+    font-size: clamp(2rem, 5vw, 2.8rem);
     font-weight: 700;
     letter-spacing: -0.03em;
-    margin-bottom: 0.6rem;
+    margin-bottom: 0.7rem;
     color: #fff;
   }
   .header .tagline {
+    color: var(--text-mid);
+    font-size: 1rem;
+    max-width: 520px;
+    margin: 0 auto 0.5rem;
+    line-height: 1.6;
+  }
+  .header .sub-tagline {
     color: var(--text-dim);
-    font-size: 0.95rem;
-    max-width: 500px;
+    font-size: 0.82rem;
+    max-width: 480px;
     margin: 0 auto 1.5rem;
     line-height: 1.55;
   }
@@ -88,22 +95,20 @@
 
   /* ─── PULSE BAR ─── */
   .pulse-section {
-    max-width: 1200px;
-    margin: 0 auto 2rem;
+    max-width: 1100px;
+    margin: 0 auto 1rem;
     padding: 0 2rem;
   }
-  .pulse-label {
-    font-size: 0.68rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
+  .pulse-intro {
+    font-size: 0.75rem;
     color: var(--text-dim);
-    margin-bottom: 0.6rem;
     text-align: center;
+    margin-bottom: 0.5rem;
   }
   .pulse-bar {
     display: flex;
-    height: 8px;
-    border-radius: 4px;
+    height: 10px;
+    border-radius: 5px;
     overflow: hidden;
     gap: 2px;
   }
@@ -114,13 +119,13 @@
   }
   .pulse-seg:hover {
     filter: brightness(1.2);
-    transform: scaleY(2.5);
+    transform: scaleY(2);
     border-radius: 2px;
   }
   .pulse-tooltip {
     display: none;
     position: absolute;
-    bottom: 120%;
+    bottom: 140%;
     left: 50%;
     transform: translateX(-50%);
     background: #1a1a1f;
@@ -137,9 +142,9 @@
 
   /* ─── MAIN ─── */
   .main {
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
-    padding: 0 2rem 2rem;
+    padding: 1rem 2rem 2rem;
   }
 
   /* ─── EXPLORE BAR ─── */
@@ -167,17 +172,10 @@
   }
   .explore-btn:hover { border-color: rgba(255,255,255,0.15); color: var(--text); }
   .explore-btn.active { color: #fff; }
-  .explore-dot {
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    flex-shrink: 0;
-  }
+  .explore-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
 
   /* ─── SECTION STYLING ─── */
-  .section {
-    margin-bottom: 3rem;
-  }
+  .section { margin-bottom: 3rem; }
   .section-header {
     display: flex;
     align-items: baseline;
@@ -190,19 +188,16 @@
     font-weight: 700;
     color: #fff;
   }
-  .section-count {
-    font-size: 0.7rem;
-    color: var(--text-dim);
-  }
+  .section-count { font-size: 0.7rem; color: var(--text-dim); }
   .section-desc {
-    font-size: 0.82rem;
+    font-size: 0.85rem;
     color: var(--text-dim);
     margin-bottom: 1.2rem;
     max-width: 600px;
-    line-height: 1.5;
+    line-height: 1.6;
   }
 
-  /* ─── COLLISION CARDS (Hot Topics) ─── */
+  /* ─── COLLISION CARDS ─── */
   .collision-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -232,10 +227,11 @@
     font-weight: 700;
   }
   .collision-pair .x { font-size: 0.7rem; color: rgba(255,255,255,0.3); }
-  .collision-count {
-    font-size: 0.65rem;
-    color: rgba(255,255,255,0.35);
+  .collision-explain {
+    font-size: 0.76rem;
+    color: rgba(255,255,255,0.5);
     margin-bottom: 0.8rem;
+    line-height: 1.45;
   }
   .collision-articles { display: flex; flex-direction: column; gap: 0.4rem; }
   .collision-article {
@@ -263,7 +259,7 @@
   /* ─── RADAR CARDS ─── */
   .radar-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 0.7rem;
   }
   .radar-card {
@@ -284,7 +280,7 @@
     display: flex;
     gap: 0.3rem;
     flex-wrap: wrap;
-    margin-bottom: 0.6rem;
+    margin-bottom: 0.5rem;
   }
   .radar-tag {
     padding: 0.12rem 0.5rem;
@@ -299,8 +295,15 @@
     font-size: 0.85rem;
     font-weight: 600;
     color: var(--text);
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.35rem;
     line-height: 1.35;
+  }
+  .radar-why {
+    font-size: 0.76rem;
+    color: var(--purple);
+    margin-bottom: 0.4rem;
+    line-height: 1.45;
+    font-weight: 500;
   }
   .radar-summary {
     font-size: 0.76rem;
@@ -318,7 +321,7 @@
   }
   .radar-source { font-weight: 600; color: var(--text-mid); }
 
-  /* ─── FEED (All Articles) ─── */
+  /* ─── FEED ─── */
   .feed-list { display: flex; flex-direction: column; gap: 1px; }
   .feed-item {
     display: grid;
@@ -375,6 +378,25 @@
   }
   .load-more:hover { border-color: rgba(255,255,255,0.15); color: var(--text); }
 
+  /* ─── EXPLORE LINK ─── */
+  .explore-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--purple);
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 0.7rem 1.5rem;
+    border: 1px solid rgba(102,82,255,0.3);
+    border-radius: 8px;
+    transition: all 0.25s ease;
+  }
+  .explore-link:hover {
+    background: rgba(102,82,255,0.08);
+    border-color: var(--purple);
+  }
+
   /* ─── FAQ ─── */
   .faq-section { max-width: 680px; margin-bottom: 2rem; }
   .faq-item { margin-bottom: 0.5rem; }
@@ -404,7 +426,7 @@
     border-radius: 0 0 8px 8px;
     padding: 0.8rem 1rem;
     font-size: 0.78rem;
-    line-height: 1.6;
+    line-height: 1.65;
     color: var(--text-dim);
     display: none;
   }
@@ -412,7 +434,7 @@
 
   /* ─── FOOTER ─── */
   .footer {
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 1rem auto 2rem;
     padding: 1.2rem 2rem;
     border-top: 1px solid var(--border);
@@ -423,31 +445,7 @@
   .footer a { color: var(--purple); text-decoration: none; }
   .footer a:hover { text-decoration: underline; }
 
-  /* ─── EXPLORE LINK ─── */
-  .explore-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    color: var(--purple);
-    text-decoration: none;
-    font-size: 0.85rem;
-    font-weight: 600;
-    padding: 0.8rem 1.8rem;
-    border: 1px solid rgba(102,82,255,0.3);
-    border-radius: 8px;
-    transition: all 0.25s ease;
-  }
-  .explore-link:hover {
-    background: rgba(102,82,255,0.08);
-    border-color: var(--purple);
-  }
-
-  .empty-state {
-    text-align: center;
-    padding: 2rem;
-    color: var(--text-dim);
-    font-size: 0.82rem;
-  }
+  .empty-state { text-align: center; padding: 2rem; color: var(--text-dim); font-size: 0.82rem; }
 
   @media (max-width: 768px) {
     .header, .main, .footer, .pulse-section { padding-left: 1rem; padding-right: 1rem; }
@@ -463,12 +461,13 @@
 
 <div class="header">
   <h1>Signal Board</h1>
-  <p class="tagline">The forces reshaping the world don't stay in lanes. This tool tracks where they collide.</p>
+  <p class="tagline">See how today's biggest stories connect to each other.</p>
+  <p class="sub-tagline">The news covers things one topic at a time. But the forces changing the world overlap constantly. This tool shows you where.</p>
   <div class="meta" id="meta"></div>
 </div>
 
 <div class="pulse-section">
-  <div class="pulse-label" id="pulseLabel">Today's coverage</div>
+  <div class="pulse-intro">What the news is covering right now, by topic. Tap any color to filter.</div>
   <div class="pulse-bar" id="pulseBar"></div>
 </div>
 
@@ -495,7 +494,7 @@
 </div>
 
 <div class="footer">
-  Built by <a href="https://www.elisehasseltine.com/">Elise Hasseltine</a> · 59 sources · 10 domains · Updated daily
+  Built by <a href="https://www.elisehasseltine.com/">Elise Hasseltine</a> · 59 sources · 10 topics · Updated daily
 </div>
 
 <script>
@@ -509,6 +508,66 @@ const DL = {
   economics: 'Economics', climate: 'Climate', security: 'Security',
   geopolitics: 'Geopolitics', domestic_politics: 'Politics', legal: 'Legal',
 };
+// Plain-language domain descriptions for tooltips
+const DD = {
+  ai: 'Artificial intelligence and automation',
+  labor: 'Jobs, workers, pay, and working conditions',
+  governance: 'Government agencies, executive actions, and public services',
+  information: 'Media, data, tech platforms, and how information spreads',
+  economics: 'Markets, prices, trade, and the economy',
+  climate: 'Environment, energy, and the effects of climate change',
+  security: 'Military, defense, policing, and threats to safety',
+  geopolitics: 'Relationships and tensions between countries',
+  domestic_politics: 'U.S. political parties, elections, and policy fights',
+  legal: 'Courts, laws, enforcement, and legal rights',
+};
+
+// What it means when two topics collide — in plain language
+const PAIR_EXPLAIN = {
+  'governance+legal': 'Government actions running into the courts. Laws being written, challenged, or struck down.',
+  'geopolitics+security': 'Tensions between countries that affect military action and safety around the world.',
+  'domestic_politics+security': 'Political decisions that directly affect defense, policing, or public safety.',
+  'economics+security': 'When conflict and military spending hit markets, prices, and people\'s wallets.',
+  'climate+security': 'How environmental change and resource scarcity create security threats.',
+  'climate+economics': 'Environmental shifts that affect energy costs, food prices, markets, and jobs.',
+  'ai+labor': 'How automation and AI are changing the jobs people do and how they\'re paid.',
+  'ai+governance': 'How governments are trying to regulate AI, and what that means for everyone.',
+  'ai+economics': 'AI\'s effect on markets, investment, and who profits from the next wave of technology.',
+  'ai+information': 'How AI is changing what information people see, trust, and share.',
+  'ai+security': 'AI being used in military, surveillance, and cybersecurity, and the risks that creates.',
+  'governance+domestic_politics': 'Political battles over how government agencies are run and what they do.',
+  'governance+economics': 'Government spending, regulation, and economic policy shaping everyday costs.',
+  'governance+information': 'How government controls or shapes what information the public gets.',
+  'governance+climate': 'Government environmental policy, agency actions, and climate regulation.',
+  'governance+labor': 'Government policy on workers\' rights, benefits, pay, and workplace rules.',
+  'governance+geopolitics': 'Foreign policy decisions made by government agencies and their global impact.',
+  'domestic_politics+legal': 'Political battles playing out in the courts or through new laws.',
+  'domestic_politics+economics': 'How political decisions directly affect the economy, jobs, and prices.',
+  'domestic_politics+governance': 'Political battles over how government agencies are run and what they do.',
+  'domestic_politics+information': 'How politics shapes media coverage and what information people trust.',
+  'economics+legal': 'Business regulation, antitrust, trade law, and how the legal system shapes markets.',
+  'economics+labor': 'How economic conditions affect wages, jobs, and whether people can afford to live.',
+  'economics+geopolitics': 'How international relationships affect trade, prices, and the global economy.',
+  'economics+information': 'How tech platforms, data, and media shape markets and economic decisions.',
+  'information+security': 'Surveillance, data privacy, hacking, and digital threats to safety.',
+  'information+legal': 'Tech regulation, free speech law, and who controls what you see online.',
+  'information+domestic_politics': 'How media, social platforms, and misinformation shape political outcomes.',
+  'labor+legal': 'Workers\' rights, pay disputes, unions, and employment law.',
+  'labor+economics': 'How economic conditions affect wages, jobs, and whether people can afford to live.',
+  'labor+security': 'Workers in defense, law enforcement, and how labor disputes affect safety.',
+  'labor+domestic_politics': 'Political battles over workers\' rights, minimum wage, and labor protections.',
+  'climate+geopolitics': 'How climate change and energy competition shape relationships between countries.',
+  'climate+legal': 'Environmental lawsuits, pollution regulations, and climate-related court battles.',
+  'climate+information': 'How climate science is communicated, denied, or distorted in media.',
+  'climate+labor': 'How environmental shifts affect jobs in energy, agriculture, and industry.',
+  'legal+security': 'Law enforcement, civil rights, surveillance law, and the justice system.',
+  'legal+geopolitics': 'International law, war crimes, treaties, and cross-border legal disputes.',
+  'geopolitics+domestic_politics': 'How foreign policy and international tensions play out in U.S. politics.',
+  'geopolitics+economics': 'How international relationships affect trade, prices, and the global economy.',
+  'geopolitics+information': 'Propaganda, foreign influence, and how countries fight through information.',
+  'security+legal': 'Law enforcement, civil rights, surveillance law, and the justice system.',
+};
+
 const DG = {};
 for (const [k,c] of Object.entries(DC)) {
   const r = parseInt(c.slice(1,3),16), g = parseInt(c.slice(3,5),16), b = parseInt(c.slice(5,7),16);
@@ -533,13 +592,13 @@ async function init() {
     articles = d.articles || [];
     stats = d.stats || {};
     document.getElementById('meta').innerHTML = `
-      <span class="meta-pill"><strong>${stats.total_articles||0}</strong> articles today</span>
-      <span class="meta-pill"><strong>${stats.cross_domain_count||0}</strong> cross-domain connections</span>
+      <span class="meta-pill"><strong>${stats.total_articles||0}</strong> stories today</span>
+      <span class="meta-pill"><strong>${stats.cross_domain_count||0}</strong> connections found</span>
       <span class="meta-pill">Updated ${fmtDate(d.last_updated)}</span>
     `;
     render();
   } catch(e) {
-    document.getElementById('feedList').innerHTML = '<div class="empty-state">Loading data...</div>';
+    document.getElementById('feedList').innerHTML = '<div class="empty-state">Loading...</div>';
     console.error(e);
   }
 }
@@ -564,9 +623,10 @@ function renderPulse() {
     .sort((a,b) => b[1]-a[1])
     .map(([k,c]) => {
       const pct = Math.max((c/total)*100, 3);
+      const desc = DD[k] || '';
       return `<div class="pulse-seg" style="width:${pct}%;background:${DC[k]||'#666'}"
                    onclick="setFilter('${k}')">
-        <div class="pulse-tooltip">${DL[k]||k}: ${c} articles</div>
+        <div class="pulse-tooltip"><strong>${DL[k]||k}</strong>: ${desc}<br>${c} stories</div>
       </div>`;
     }).join('');
 }
@@ -574,10 +634,10 @@ function renderPulse() {
 function renderExplore() {
   const el = document.getElementById('exploreBar');
   let html = `<button class="explore-btn ${filter==='all'?'active':''}" onclick="setFilter('all')"
-    style="${filter==='all'?'background:var(--purple);border-color:var(--purple)':''}">All</button>`;
+    style="${filter==='all'?'background:var(--purple);border-color:var(--purple)':''}">All stories</button>`;
 
   html += `<button class="explore-btn ${filter==='cross'?'active':''}" onclick="setFilter('cross')"
-    style="${filter==='cross'?'background:#fff;border-color:#fff;color:#000':''}">Connections</button>`;
+    style="${filter==='cross'?'background:#fff;border-color:#fff;color:#000':''}">Connected stories</button>`;
 
   for (const [k,l] of Object.entries(DL)) {
     const on = filter === k;
@@ -593,7 +653,6 @@ function setFilter(f) {
   filter = f; showing = 50;
   renderExplore();
   renderFeed();
-  // Show/hide structural sections based on filter
   document.getElementById('collisionContainer').style.display = (f==='all'||f==='cross') ? 'block' : 'none';
   document.getElementById('radarContainer').style.display = (f==='all') ? 'block' : 'none';
 }
@@ -618,6 +677,12 @@ function cleanText(s) {
   return t;
 }
 
+function getPairExplain(d1, d2) {
+  const k1 = d1 + '+' + d2;
+  const k2 = d2 + '+' + d1;
+  return PAIR_EXPLAIN[k1] || PAIR_EXPLAIN[k2] || `Stories where ${DL[d1]||d1} and ${DL[d2]||d2} overlap.`;
+}
+
 function renderCollisions() {
   const el = document.getElementById('collisionContainer');
   const pairs = {};
@@ -637,21 +702,22 @@ function renderCollisions() {
 
   el.innerHTML = `
     <div class="section">
-      <div class="section-header"><div class="section-title">Where forces collide</div></div>
-      <div class="section-desc">These are the strongest structural overlaps right now. When domains converge, that convergence is the story.</div>
+      <div class="section-header"><div class="section-title">Right now, these topics are colliding</div></div>
+      <div class="section-desc">When a story touches more than one topic at once, that overlap is usually where the most important thing is happening. These are the biggest overlaps in today's news.</div>
       <div class="collision-grid">
         ${top.map(([pk,arts]) => {
           const [d1,d2] = pk.split('+');
           const l1=DL[d1]||d1, l2=DL[d2]||d2;
           const c1=DC[d1]||'#666', c2=DC[d2]||'#666';
+          const explain = getPairExplain(d1,d2);
           const shown = arts.slice(0,3);
           return `<div class="collision-card" style="background:${DG[d1]};border-color:${c1}25">
             <div class="collision-pair">
               <span class="domain-name" style="color:${c1}">${l1}</span>
-              <span class="x">×</span>
+              <span class="x">+</span>
               <span class="domain-name" style="color:${c2}">${l2}</span>
             </div>
-            <div class="collision-count">${arts.length} overlapping stories</div>
+            <div class="collision-explain">${explain}</div>
             <div class="collision-articles">
               ${shown.map(a => `<a class="collision-article" href="${a.url}" target="_blank" rel="noopener">
                 <div class="collision-article-title">${esc(a.title)}</div>
@@ -663,6 +729,13 @@ function renderCollisions() {
       </div>
     </div>
   `;
+}
+
+function getWhyItMatters(a) {
+  const ds = (a.domains||[]).filter(d=>DL[d]);
+  if (ds.length < 2) return '';
+  const labels = ds.map(d=>DL[d]);
+  return `Touches ${labels.join(', ')} at once`;
 }
 
 function renderRadar() {
@@ -683,18 +756,20 @@ function renderRadar() {
   const shown = radar.slice(0,4);
   el.innerHTML = `
     <div class="section">
-      <div class="section-header"><div class="section-title">Under the radar</div></div>
-      <div class="section-desc">Stories from outside the mainstream that touch multiple domains. These are the ones worth reading closely.</div>
+      <div class="section-header"><div class="section-title">Stories you probably haven't seen</div></div>
+      <div class="section-desc">Important stories from smaller outlets that connect multiple topics. These don't get the same attention, but they're worth knowing about.</div>
       <div class="radar-grid">
         ${shown.map(a => {
           const tags = (a.domains||[]).filter(d=>DL[d]).map(d =>
             `<span class="radar-tag" style="background:${DC[d]}">${DL[d]}</span>`
           ).join('');
           const summary = cleanText(a.summary);
-          const trimmed = summary.length > 160 ? summary.substring(0,160)+'...' : summary;
+          const trimmed = summary.length > 140 ? summary.substring(0,140)+'...' : summary;
+          const why = getWhyItMatters(a);
           return `<a class="radar-card" href="${a.url}" target="_blank" rel="noopener">
             <div class="radar-tags">${tags}</div>
             <div class="radar-title">${esc(a.title)}</div>
+            ${why ? `<div class="radar-why">${esc(why)}</div>` : ''}
             ${trimmed ? `<div class="radar-summary">${esc(trimmed)}</div>` : ''}
             <div class="radar-meta"><span class="radar-source">${esc(a.source)}</span> · ${a.date}</div>
           </a>`;
@@ -709,10 +784,10 @@ function renderFeed() {
   const filtered = getFiltered();
   const slice = filtered.slice(0, showing);
 
-  document.getElementById('feedCount').textContent = `${filtered.length} articles`;
+  document.getElementById('feedCount').textContent = `${filtered.length} stories`;
 
   if (!slice.length) {
-    list.innerHTML = '<div class="empty-state">No articles match this filter.</div>';
+    list.innerHTML = '<div class="empty-state">No stories match this filter.</div>';
     document.getElementById('loadMore').style.display = 'none';
     return;
   }
@@ -743,19 +818,19 @@ function renderFaq() {
   const qs = [
     {
       q: 'What is this?',
-      a: 'Signal Board monitors 59 news sources across 10 structural domains and flags the stories that span multiple domains at once. Those overlaps are where the real story usually lives, and they\'re exactly what single-beat reporting tends to miss.'
+      a: 'Signal Board reads 59 news sources every day and sorts each story by topic: AI, jobs, government, the economy, climate, security, and more. When a story touches more than one topic at the same time, this tool flags it. Those overlaps are usually where the most important things are happening, and they\'re exactly what normal news coverage tends to miss.'
     },
     {
-      q: 'What do the domains mean?',
-      a: 'Each domain represents a major structural force: AI, Labor, Governance, Information, Economics, Climate, Security, Geopolitics, Politics, and Legal. When an article touches more than one, it becomes a cross-domain signal. The more domains converge on a single story, the more structurally significant that story is.'
+      q: 'Why should I care about "connected" stories?',
+      a: 'Most news covers one thing at a time. A jobs reporter writes about jobs. A climate reporter writes about climate. But in real life, these things affect each other constantly. When gas prices go up because of a war overseas, that\'s economics and security and geopolitics all at once. When an AI company lays people off, that\'s technology and labor and the economy colliding. Seeing those connections helps you understand what\'s actually going on, not just what one reporter is covering.'
     },
     {
-      q: 'Why does this matter?',
-      a: 'Most news is organized by beat. A labor reporter covers labor, a climate reporter covers climate. But the forces reshaping the world don\'t stay in those lanes. When a story about federal workers not getting paid connects to an executive order that also affects military readiness, that convergence is invisible to anyone reading one beat at a time. This tool makes it visible.'
+      q: 'What do the colored labels mean?',
+      a: 'Each color represents a topic area. Purple is AI. Orange is Labor (jobs and workers). Pink is Governance (government actions). Teal is Economics. Green is Climate. Red is Security. Blue is Geopolitics (relations between countries). And so on. When you see multiple colors on a story, it means that story lives at the intersection of those topics.'
     },
     {
-      q: 'How does it work?',
-      a: 'Every day, Signal Board pulls from RSS feeds spanning national outlets, international coverage, domain-specific publications, explainer journalism, lived experience reporting, and policy analysis. Each article is auto-tagged, and overlaps are flagged. No editorial filtering. The patterns surface on their own.'
+      q: 'How does it decide which topics a story belongs to?',
+      a: 'Every day, the tool reads the headline and summary of each article and looks for words and phrases that signal which topics it touches. No human is picking and choosing. The patterns surface on their own. That means sometimes the tagging isn\'t perfect, but it gives you an honest, unfiltered picture of what\'s happening across the news.'
     }
   ];
 
