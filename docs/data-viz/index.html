@@ -11,12 +11,12 @@
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Where the news comes from: visualizations showing 239 sources across 40 countries, their coverage gaps, and how different outlets frame the same story.">
-  <meta property="og:title" content="Where the News Comes From — Signal Board">
-  <meta property="og:description" content="See where Signal Board's 239 sources are headquartered, which communities are underreported, and how different outlets frame the same story.">
+  <meta name="description" content="The Constellation: See today's mega-stories connected by their shared structural forces. Interactive data visualization of Signal Board's analysis.">
+  <meta property="og:title" content="The Constellation | Signal Board">
+  <meta property="og:description" content="Five stories. 239 sources. The connections between them.">
   <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary">
-  <title>Where the News Comes From — Signal Board</title>
+  <meta name="twitter:card" content="summary_large_image">
+  <title>The Constellation | Signal Board</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
@@ -46,544 +46,640 @@
     body {
       font-family: 'Inter', sans-serif;
       background: #0f0f14;
-      color: rgba(235, 230, 245, 0.92);
+      color: #ede9f5;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
+      position: relative;
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    /* Animated gradient orbs */
+    body::before,
+    body::after {
+      content: '';
+      position: fixed;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    body::before {
+      background: radial-gradient(circle at center, rgba(102, 82, 255, 0.08) 0%, rgba(102, 82, 255, 0.02) 70%, transparent 100%);
+      top: -150px;
+      left: -150px;
+      animation: float 25s ease-in-out infinite;
+    }
+
+    body::after {
+      background: radial-gradient(circle at center, rgba(0, 194, 168, 0.08) 0%, rgba(0, 194, 168, 0.02) 70%, transparent 100%);
+      bottom: -200px;
+      right: -200px;
+      animation: float 30s ease-in-out infinite reverse;
+    }
+
+    .orb-3 {
+      position: fixed;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle at center, rgba(255, 84, 0, 0.1) 0%, rgba(255, 84, 0, 0.02) 70%, transparent 100%);
+      border-radius: 50%;
+      top: 40%;
+      right: 10%;
+      z-index: 0;
+      pointer-events: none;
+      animation: float 28s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translate(0, 0);
+      }
+      50% {
+        transform: translate(40px, -40px);
+      }
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    a:hover {
+      color: #fff;
     }
 
     .gradient-bar {
+      height: 3px;
+      background: linear-gradient(90deg, #6652FF, #00C2A8, #FF5400, #1976D2);
       position: fixed;
       top: 0;
       left: 0;
       right: 0;
-      height: 3px;
-      background: linear-gradient(
-        90deg,
-        #6652FF 0%,
-        #FF5400 14%,
-        #FF0054 28%,
-        #9E0059 42%,
-        #00C2A8 56%,
-        #4CAF50 70%,
-        #D32F2F 84%,
-        #1976D2 100%
-      );
-      background-size: 200% 100%;
-      animation: gradient-shift 6s ease infinite;
-      z-index: 1000;
+      z-index: 101;
     }
 
-    @keyframes gradient-shift {
-      0%, 100% { background-position: 0% 0%; }
-      50% { background-position: 100% 0%; }
+    body {
+      padding-top: 3px;
     }
 
-    .orb {
-      position: fixed;
-      border-radius: 50%;
-      filter: blur(80px);
-      opacity: 0.08;
-      pointer-events: none;
-      z-index: 0;
+    .wrap {
+      position: relative;
+      z-index: 1;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
     }
 
-    .orb-1 {
-      width: 400px;
-      height: 400px;
-      background: #6652FF;
-      top: -200px;
-      left: -200px;
-      animation: float 15s ease-in-out infinite;
-    }
-
-    .orb-2 {
-      width: 500px;
-      height: 500px;
-      background: #00C2A8;
-      bottom: -250px;
-      right: -250px;
-      animation: float 18s ease-in-out infinite reverse;
-    }
-
-    .orb-3 {
-      width: 350px;
-      height: 350px;
-      background: #FF5400;
-      top: 50%;
-      right: -175px;
-      animation: float 20s ease-in-out infinite;
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translate(0, 0); }
-      50% { transform: translate(30px, 30px); }
-    }
-
-    nav {
-      position: sticky;
-      top: 3px;
-      backdrop-filter: blur(20px);
-      background: rgba(15, 15, 20, 0.8);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-      z-index: 500;
-      padding: 1rem 2rem;
+    .site-nav {
       display: flex;
       align-items: center;
       justify-content: space-between;
+      padding: 1.5rem 0;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      position: sticky;
+      top: 3px;
+      background: rgba(15, 15, 20, 0.95);
+      backdrop-filter: blur(20px);
+      z-index: 100;
     }
 
-    nav .logo {
+    .nav-logo {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.3rem;
+      font-size: 1.1rem;
       font-weight: 800;
       color: #fff;
-      text-decoration: none;
-      margin-right: 3rem;
-      transition: color 0.2s;
+      letter-spacing: -0.03em;
     }
 
-    nav .logo:hover {
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.7);
+      transition: color 0.2s;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: #fff;
+    }
+
+    .nav-links a.active {
       color: #6652FF;
     }
 
-    nav .nav-items {
-      display: flex;
-      gap: 2rem;
-      align-items: center;
-      list-style: none;
-    }
-
-    nav a {
-      color: rgba(235, 230, 245, 0.75);
-      text-decoration: none;
-      font-size: 0.95rem;
-      font-weight: 500;
-      transition: color 0.2s;
-    }
-
-    nav a:hover {
-      color: #fff;
-    }
-
-    nav a.active {
-      color: #fff;
-      font-weight: 600;
-    }
-
-    main {
-      position: relative;
-      z-index: 1;
-      padding-top: 1rem;
-    }
-
-    .container {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-
-    .hero {
+    .header-section {
+      margin-bottom: 4rem;
       text-align: center;
-      padding: 4rem 0;
-      margin-bottom: 3rem;
     }
 
-    .hero h1 {
+    h1 {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: 3.5rem;
+      font-size: 3rem;
       font-weight: 800;
       margin-bottom: 1rem;
-      line-height: 1.1;
-      color: #fff;
+      letter-spacing: -0.03em;
+      background: linear-gradient(135deg, #fff, rgba(255, 255, 255, 0.8));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
-    .hero p {
-      font-size: 1.2rem;
-      color: rgba(235, 230, 245, 0.85);
-      max-width: 800px;
-      margin: 0 auto 0.5rem;
-    }
-
-    .data-date {
-      color: rgba(235, 230, 245, 0.65);
-      font-size: 0.95rem;
-      margin-top: 0.5rem;
-    }
-
-    section {
-      margin-bottom: 5rem;
-    }
-
-    section h2 {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 2rem;
-      font-weight: 800;
-      margin-bottom: 1.5rem;
-      color: #fff;
-    }
-
-    section p {
-      color: rgba(235, 230, 245, 0.85);
-      margin-bottom: 2rem;
+    .subtitle {
+      font-size: 1.1rem;
+      color: rgba(255, 255, 255, 0.7);
+      max-width: 600px;
+      margin: 0 auto 1.5rem;
       line-height: 1.6;
-      font-size: 1rem;
     }
 
-    .map-container {
-      background: rgba(255, 255, 255, 0.035);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: 20px;
-      padding: 2rem;
-      margin-bottom: 2rem;
-      overflow: hidden;
-    }
-
-    svg {
-      max-width: 100%;
-      height: auto;
-      display: block;
-      margin: 0 auto;
-    }
-
-    .tooltip {
-      position: absolute;
-      background: rgba(15, 15, 20, 0.95);
-      color: #fff;
-      padding: 0.75rem 1rem;
-      border-radius: 8px;
-      font-size: 0.9rem;
-      pointer-events: none;
-      z-index: 1000;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      max-width: 250px;
-      word-wrap: break-word;
-    }
-
-    .tooltip-title {
-      font-weight: 600;
-      margin-bottom: 0.25rem;
-    }
-
-    .tooltip-count {
-      color: rgba(235, 230, 245, 0.85);
-      font-size: 0.85rem;
-      margin-bottom: 0.25rem;
-    }
-
-    .tooltip-sources {
-      font-size: 0.8rem;
-      color: rgba(235, 230, 245, 0.7);
-      margin-top: 0.5rem;
-      max-height: 100px;
-      overflow-y: auto;
-    }
-
-    .perspective-grid {
-      display: grid;
-      grid-template-columns: 1fr;
+    .meta-info {
+      display: flex;
+      justify-content: center;
       gap: 2rem;
-      margin-bottom: 3rem;
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.6);
+      margin-top: 1.5rem;
     }
 
-    .story-card {
-      background: rgba(255, 255, 255, 0.035);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: 20px;
-      padding: 2.5rem;
-      overflow: hidden;
-    }
-
-    .story-card-title {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.4rem;
-      font-weight: 800;
-      margin-bottom: 2rem;
-      color: #fff;
-    }
-
-    .perspective-row {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      margin-bottom: 2rem;
-    }
-
-    .perspective-column {
-      padding: 1.5rem;
-      border-radius: 12px;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .perspective-header {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 1rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
+    .meta-item {
       display: flex;
       align-items: center;
       gap: 0.5rem;
     }
 
-    .perspective-header.national { color: #6652FF; }
-    .perspective-header.international { color: #1976D2; }
-    .perspective-header.community { color: #FF5400; }
-
-    .perspective-dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      display: inline-block;
-    }
-
-    .perspective-dot.national { background: #6652FF; }
-    .perspective-dot.international { background: #1976D2; }
-    .perspective-dot.community { background: #FF5400; }
-
-    .perspective-text {
-      color: rgba(235, 230, 245, 0.85);
-      font-size: 0.95rem;
-      line-height: 1.5;
-      margin-bottom: 1rem;
-    }
-
-    .perspective-count {
-      color: rgba(235, 230, 245, 0.65);
-      font-size: 0.85rem;
-      font-family: 'Space Grotesk', sans-serif;
-    }
-
-    .story-insight {
-      color: rgba(235, 230, 245, 0.85);
-      font-size: 1rem;
-      line-height: 1.6;
-      padding-top: 1.5rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-      font-style: italic;
-    }
-
-    .balance-container {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 2rem;
-    }
-
-    .balance-card {
-      background: rgba(255, 255, 255, 0.035);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: 20px;
-      padding: 2.5rem;
-    }
-
-    .balance-title {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.3rem;
-      font-weight: 700;
-      margin-bottom: 1.5rem;
-      color: #fff;
-    }
-
-    .bar-wrapper {
-      margin-bottom: 1.5rem;
-    }
-
-    .bar-label {
-      font-size: 0.95rem;
+    .meta-value {
+      color: #6652FF;
       font-weight: 600;
-      margin-bottom: 0.75rem;
-      color: rgba(235, 230, 245, 0.92);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
     }
 
-    .bar-ratio {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 0.85rem;
-      color: rgba(235, 230, 245, 0.65);
-    }
-
-    .bar {
-      height: 32px;
-      border-radius: 8px;
-      overflow: hidden;
-      display: flex;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .bar-community {
-      background: linear-gradient(90deg, #FF5400, #FF6B1F);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      font-weight: 600;
-      font-size: 0.85rem;
-      transition: all 0.3s ease;
-    }
-
-    .bar-national {
-      background: linear-gradient(90deg, #6652FF, #8B6FFF);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      font-weight: 600;
-      font-size: 0.85rem;
-      transition: all 0.3s ease;
-    }
-
-    .bar-insight {
-      color: rgba(235, 230, 245, 0.85);
-      font-size: 0.95rem;
-      line-height: 1.6;
-      margin-top: 1rem;
-      padding-top: 1rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    footer {
-      background: rgba(255, 255, 255, 0.02);
-      border-top: 1px solid rgba(255, 255, 255, 0.12);
-      padding: 3rem 2rem;
-      margin-top: 5rem;
-      color: rgba(235, 230, 245, 0.75);
-    }
-
-    .footer-content {
-      max-width: 1400px;
-      margin: 0 auto;
-    }
-
-    .footer-text {
-      line-height: 1.6;
-      margin-bottom: 1.5rem;
-    }
-
-    .methodology-toggle {
-      background: none;
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      color: rgba(235, 230, 245, 0.85);
-      padding: 0.75rem 1rem;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 0.95rem;
-      transition: all 0.2s;
-    }
-
-    .methodology-toggle:hover {
-      background: rgba(255, 255, 255, 0.05);
-      border-color: rgba(255, 255, 255, 0.4);
-    }
-
-    .methodology-content {
-      display: none;
-      margin-top: 1rem;
-      padding: 1.5rem;
-      background: rgba(255, 255, 255, 0.035);
-      border: 1px solid rgba(255, 255, 255, 0.12);
+    /* Constellation SVG container */
+    .constellation-container {
+      background: rgba(15, 15, 20, 0.5);
+      border: 1px solid rgba(102, 82, 255, 0.2);
       border-radius: 12px;
-      font-size: 0.9rem;
-      line-height: 1.6;
+      padding: 2rem;
+      margin-bottom: 3rem;
+      position: relative;
+      min-height: 600px;
+      overflow: hidden;
     }
 
-    .methodology-content.active {
+    .constellation-container svg {
+      width: 100%;
+      height: auto;
       display: block;
     }
 
-    .methodology-content ul {
-      margin-left: 1.5rem;
-      margin-top: 0.5rem;
+    .constellation-label {
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.8);
+      text-anchor: middle;
+      pointer-events: none;
+      font-weight: 500;
+      font-family: 'Space Grotesk', sans-serif;
     }
 
-    .methodology-content li {
-      margin-bottom: 0.5rem;
+    .constellation-count {
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.6);
+      text-anchor: middle;
+      pointer-events: none;
     }
 
-    .footer-contact {
-      margin-top: 2rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.12);
+    /* Story panel */
+    .story-panel {
+      position: fixed;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 420px;
+      background: rgba(15, 15, 20, 0.98);
+      border-left: 1px solid rgba(102, 82, 255, 0.3);
+      backdrop-filter: blur(10px);
+      z-index: 90;
+      overflow-y: auto;
+      padding: 2rem;
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
     }
 
-    .footer-contact a {
-      color: #6652FF;
-      text-decoration: none;
+    .story-panel.active {
+      transform: translateX(0);
+    }
+
+    .story-panel-close {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      background: none;
+      border: none;
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 1.5rem;
+      cursor: pointer;
       transition: color 0.2s;
     }
 
-    .footer-contact a:hover {
-      color: #8B6FFF;
+    .story-panel-close:hover {
+      color: #fff;
     }
 
+    .story-panel h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.8rem;
+      margin-top: 0;
+      margin-bottom: 1rem;
+      line-height: 1.3;
+    }
+
+    .story-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      padding: 1rem;
+      background: rgba(102, 82, 255, 0.05);
+      border-radius: 8px;
+      border: 1px solid rgba(102, 82, 255, 0.1);
+    }
+
+    .stat {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.6);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.3rem;
+    }
+
+    .stat-value {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #6652FF;
+    }
+
+    .panel-section {
+      margin-bottom: 2rem;
+    }
+
+    .panel-section h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: rgba(255, 255, 255, 0.6);
+      margin-bottom: 0.8rem;
+      font-weight: 700;
+    }
+
+    .tier-breakdown {
+      display: flex;
+      height: 8px;
+      border-radius: 4px;
+      overflow: hidden;
+      gap: 2px;
+      background: rgba(255, 255, 255, 0.05);
+      margin-bottom: 1rem;
+    }
+
+    .tier-segment {
+      flex: 0 1 auto;
+      height: 100%;
+      border-radius: 4px;
+      transition: flex 0.2s ease;
+      cursor: help;
+      position: relative;
+    }
+
+    .tier-segment:hover {
+      flex: 1 !important;
+    }
+
+    .tier-national { background: #6652FF; }
+    .tier-international { background: #1976D2; }
+    .tier-specialist { background: #00C2A8; }
+    .tier-local { background: #FF5400; }
+
+    .tier-legend {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.8rem;
+      font-size: 0.85rem;
+    }
+
+    .tier-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .tier-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .bias-breakdown {
+      display: flex;
+      height: 12px;
+      border-radius: 6px;
+      overflow: hidden;
+      gap: 0;
+      margin: 1rem 0;
+    }
+
+    .bias-segment {
+      height: 100%;
+      transition: flex 0.2s ease;
+      cursor: help;
+    }
+
+    .bias-left { background: #D32F2F; }
+    .bias-left-center { background: #FF9800; }
+    .bias-center { background: #00C2A8; }
+    .bias-right-center { background: #1976D2; }
+    .bias-right { background: #7B1FA2; }
+
+    .bias-legend {
+      display: flex;
+      gap: 0.8rem;
+      font-size: 0.75rem;
+      margin-top: 0.8rem;
+      flex-wrap: wrap;
+    }
+
+    .bias-item {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .bias-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .synthesis-text {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 1.5rem;
+    }
+
+    .framing-item {
+      background: rgba(102, 82, 255, 0.05);
+      border-left: 3px solid #6652FF;
+      padding: 0.8rem;
+      margin-bottom: 0.8rem;
+      border-radius: 4px;
+      font-size: 0.9rem;
+    }
+
+    .framing-tier {
+      font-weight: 600;
+      color: #6652FF;
+      font-size: 0.8rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .framing-keywords {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    /* Domain pulse */
+    .domain-pulse {
+      margin: 4rem 0;
+    }
+
+    .domain-pulse h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.8rem;
+      margin-bottom: 2rem;
+    }
+
+    .pulse-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .pulse-item {
+      background: rgba(102, 82, 255, 0.05);
+      border: 1px solid rgba(102, 82, 255, 0.1);
+      border-radius: 8px;
+      padding: 1.2rem;
+      text-align: center;
+      transition: all 0.2s;
+    }
+
+    .pulse-item:hover {
+      background: rgba(102, 82, 255, 0.1);
+      border-color: rgba(102, 82, 255, 0.3);
+    }
+
+    .pulse-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+      color: #fff;
+    }
+
+    .pulse-sparkline {
+      height: 40px;
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-around;
+      gap: 2px;
+    }
+
+    .pulse-bar {
+      flex: 1;
+      background: #6652FF;
+      border-radius: 2px;
+      opacity: 0.8;
+      transition: opacity 0.2s;
+    }
+
+    .pulse-bar.surge {
+      background: #00C2A8;
+      opacity: 1;
+    }
+
+    .pulse-bar.drop {
+      background: #FF5400;
+      opacity: 1;
+    }
+
+    .pulse-stats {
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .pulse-value {
+      color: #6652FF;
+      font-weight: 600;
+    }
+
+    .pulse-change {
+      font-size: 0.75rem;
+      margin-top: 0.3rem;
+    }
+
+    .pulse-change.positive {
+      color: #00C2A8;
+    }
+
+    .pulse-change.negative {
+      color: #FF5400;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 3rem 0;
+      margin-top: 4rem;
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.6);
+      text-align: center;
+    }
+
+    .attribution {
+      margin-bottom: 1rem;
+      font-size: 0.85rem;
+    }
+
+    .attribution a {
+      color: #6652FF;
+      text-decoration: underline;
+    }
+
+    .update-time {
+      margin-top: 1rem;
+    }
+
+    /* Loading state */
+    .loading {
+      text-align: center;
+      padding: 3rem;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .spinner {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      border: 3px solid rgba(102, 82, 255, 0.2);
+      border-top-color: #6652FF;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      margin-bottom: 1rem;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* SVG styling */
+    .story-node {
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .story-node:hover circle {
+      filter: drop-shadow(0 0 12px rgba(102, 82, 255, 0.5));
+    }
+
+    .story-link {
+      stroke-opacity: 0.3;
+      stroke-linecap: round;
+    }
+
+    /* Responsive */
     @media (max-width: 1024px) {
-      .hero h1 {
-        font-size: 2.5rem;
+      .constellation-container {
+        min-height: 500px;
       }
 
-      section h2 {
-        font-size: 1.6rem;
+      h1 {
+        font-size: 2.2rem;
       }
 
-      .perspective-row {
-        grid-template-columns: 1fr;
+      .story-panel {
+        width: 100%;
+      }
+
+      .pulse-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
       }
     }
 
     @media (max-width: 768px) {
-      nav {
-        padding: 0.75rem 1rem;
-        flex-wrap: wrap;
-      }
-
-      nav .logo {
-        margin-right: auto;
-        font-size: 1.1rem;
-      }
-
-      nav .nav-items {
-        gap: 1rem;
-        font-size: 0.85rem;
-      }
-
-      .container {
+      .wrap {
         padding: 0 1rem;
       }
 
-      .hero {
-        padding: 2rem 0;
+      h1 {
+        font-size: 1.8rem;
       }
 
-      .hero h1 {
-        font-size: 2rem;
-      }
-
-      .hero p {
+      .subtitle {
         font-size: 1rem;
       }
 
-      section h2 {
-        font-size: 1.4rem;
-        margin-bottom: 1rem;
-      }
-
-      .map-container {
-        padding: 1rem;
-      }
-
-      .story-card {
-        padding: 1.5rem;
-      }
-
-      .perspective-row {
-        grid-template-columns: 1fr;
+      .meta-info {
+        flex-direction: column;
         gap: 1rem;
       }
 
-      .perspective-column {
+      .constellation-container {
+        min-height: 400px;
         padding: 1rem;
+      }
+
+      .header-section {
+        margin-bottom: 2rem;
+      }
+
+      .nav-links {
+        gap: 1rem;
+      }
+
+      .nav-links a {
+        font-size: 0.85rem;
+      }
+
+      .pulse-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      }
+
+      .story-panel {
+        width: 100%;
+        padding: 1.5rem;
+      }
+
+      .story-panel h2 {
+        font-size: 1.4rem;
       }
     }
   </style>
@@ -591,432 +687,404 @@
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
   <div class="gradient-bar"></div>
-  <div class="orb orb-1"></div>
-  <div class="orb orb-2"></div>
-  <div class="orb orb-3"></div>
+  <div class="orb-3"></div>
 
-  <nav>
-    <a href="../" class="logo">Signal Board</a>
-    <ul class="nav-items">
-      <li><a href="../today/">Today</a></li>
-      <li><a href="../sources/">Sources</a></li>
-      <li><a href="./" class="active">Data</a></li>
-      <li><a href="../archive/">Archive</a></li>
-    </ul>
-  </nav>
-
-  <main id="main-content">
-    <div class="container">
-      <div class="hero">
-        <h1>Where the News Comes From</h1>
-        <p>239 sources read every day. Here's where they are, what they cover, and how they see the same stories differently.</p>
-        <div class="data-date" id="dataDate"></div>
+  <div class="wrap">
+    <nav class="site-nav">
+      <div class="nav-logo">
+        <a href="../">SIGNAL BOARD</a>
       </div>
+      <div class="nav-links">
+        <a href="../today/">Today</a>
+        <a href="../sources/">Sources</a>
+        <a href="#" class="active">Data</a>
+        <a href="../archive/">Archive</a>
+      </div>
+    </nav>
 
-      <section id="world-section">
-        <h2>The World Is Watching</h2>
-        <p>Signal Board monitors news sources across more than 40 countries. Hover over the map to see source distribution by country.</p>
-        <div class="map-container">
-          <svg id="worldMap" width="100%" height="600" viewBox="0 0 960 600"></svg>
-          <div id="tooltip" class="tooltip" style="display: none;"></div>
+    <div id="main-content">
+      <section class="header-section">
+        <h1>The Constellation</h1>
+        <p class="subtitle">Five stories. 239 sources. The connections between them.</p>
+        <div class="meta-info">
+          <div class="meta-item">
+            <span>Today:</span>
+            <span class="meta-value" id="today-date">Loading...</span>
+          </div>
+          <div class="meta-item">
+            <span>Articles analyzed:</span>
+            <span class="meta-value" id="article-count">Loading...</span>
+          </div>
+          <div class="meta-item">
+            <span>Sources reporting:</span>
+            <span class="meta-value" id="source-count">Loading...</span>
+          </div>
         </div>
       </section>
 
-      <section id="us-section">
-        <h2>Where Americans Hear Different Stories</h2>
-        <p>Community news sources are concentrated in some states while others have coverage gaps. States in teal have dedicated local outlets; gray states rely on national news alone.</p>
-        <div class="map-container">
-          <svg id="usMap" width="100%" height="600" viewBox="0 0 975 610"></svg>
+      <section class="constellation-container">
+        <svg viewBox="0 0 1000 600" preserveAspectRatio="xMidYMid meet">
+          <defs>
+            <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+              <feMerge>
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+            <filter id="glow-hover" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
+              <feMerge>
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+          </defs>
+          <g class="constellation-wrapper" id="constellation">
+          </g>
+        </svg>
+      </section>
+
+      <section class="domain-pulse">
+        <h2>Domain Pulse</h2>
+        <p style="color: rgba(255, 255, 255, 0.6); margin-bottom: 1.5rem;">How today's coverage compares to yesterday across all domains.</p>
+        <div class="pulse-grid" id="pulse-grid">
         </div>
-      </section>
-
-      <section id="perspective-section">
-        <h2>Same Story, Different Lens</h2>
-        <p>Each of the five mega-stories is told differently depending on which sources you read. Here's how national, international, and community outlets frame the same news.</p>
-        <div class="perspective-grid" id="perspectiveGrid"></div>
-      </section>
-
-      <section id="balance-section">
-        <h2>Coverage Balance</h2>
-        <p>Which perspective dominates the reporting on each mega-story? The bar shows the ratio between community outlets and national outlets.</p>
-        <div class="balance-container" id="balanceContainer"></div>
       </section>
     </div>
 
     <footer>
-      <div class="footer-content">
-        <div class="footer-text">
-          <strong>239 sources read every day.</strong> Signal Board synthesizes news coverage across national, international, and community outlets to help you see how different parts of the world and different parts of America are experiencing the same events differently.
-        </div>
-        <button class="methodology-toggle" onclick="toggleMethodology(event)">How we did this</button>
-        <div class="methodology-content" id="methodology">
-          <p><strong>Our process:</strong></p>
-          <ul>
-            <li>We monitor 239 news sources daily, including national bureaus, international outlets, and community news organizations</li>
-            <li>We classify articles into 10 domains: Governance, Security, Geopolitics, Economics, Politics, Legal, Information, Climate, Labor, and AI</li>
-            <li>We identify recurring patterns and connections across these domains</li>
-            <li>We synthesize the day's reporting into five "mega-stories" — connections that span multiple domains and outlet types</li>
-            <li>We extract how different outlet types (national, international, community) frame each story differently</li>
-            <li>This synthesis is updated daily at 4 PM ET</li>
-          </ul>
-          <p style="margin-top: 1rem;"><strong>Why this matters:</strong> Most news apps show you one perspective. Signal Board shows you three, so you can see which details national outlets skip, which international angles American news misses, and which local impacts are invisible to national coverage.</p>
-        </div>
-        <div class="footer-contact">
-          Questions? Email <a href="mailto:hello@signalboard.today">hello@signalboard.today</a>
-        </div>
+      <div class="attribution">
+        <a href="https://www.allsides.com/media-bias/ratings" target="_blank">Media bias ratings from AllSides.com</a>
       </div>
+      <div class="update-time">Data updates daily at 7 AM UTC</div>
     </footer>
-  </main>
+  </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"></script>
+  <div class="story-panel" id="storyPanel">
+    <button class="story-panel-close" id="closePanelBtn">&times;</button>
+    <div id="panelContent"></div>
+  </div>
+
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 
   <script>
-    const sourceLocations = {
-      "United States": { count: 28, sources: ["ABC News", "AP News", "Bloomberg", "CNBC", "CNN", "Fox News", "New York Times", "Wall Street Journal", "Washington Post", "NPR", "ProPublica", "Texas Tribune", "Arizona Mirror", "Bridge Michigan", "Atlanta Black Star", "Arab American News", "Breitbart", "Business Insider", "The Hill", "Ars Technica", "American Enterprise Institute", "Center for Strategic and International Studies", "Brookings", "TMZ", "Balkan Insight", "Deutsche Welle", "Reuters", "NBC News"], lat: 38, lon: -98 },
-      "United Kingdom": { count: 4, sources: ["BBC World", "The Guardian", "Financial Times", "The Economist"], lat: 54, lon: -2 },
-      "India": { count: 3, sources: ["The Hindu", "Scroll.in", "The Wire"], lat: 20, lon: 78 },
-      "Qatar": { count: 1, sources: ["Al Jazeera"], lat: 25.3, lon: 51.2 },
-      "Germany": { count: 1, sources: ["Deutsche Welle"], lat: 51.1, lon: 10.4 },
-      "France": { count: 1, sources: ["France 24"], lat: 46.6, lon: 2.2 },
-      "Japan": { count: 2, sources: ["NHK", "Asahi Shimbun"], lat: 36.2, lon: 138.2 },
-      "Singapore": { count: 2, sources: ["Reuters Asia", "CNA"], lat: 1.3, lon: 103.8 },
-      "Australia": { count: 1, sources: ["ABC Australia"], lat: -25.2, lon: 133.8 },
-      "Canada": { count: 1, sources: ["CBC"], lat: 56.1, lon: -106.3 },
-      "Thailand": { count: 1, sources: ["Bangkok Post"], lat: 15.9, lon: 100.9 },
-      "Taiwan": { count: 1, sources: ["Focus Taiwan"], lat: 23.7, lon: 120.9 },
-      "South Korea": { count: 1, sources: ["Yonhapnews"], lat: 36.5, lon: 127.5 },
-      "Spain": { count: 1, sources: ["El País"], lat: 40.5, lon: -3.7 },
-      "Turkey": { count: 1, sources: ["Anadolu Agency"], lat: 38.9, lon: 35.2 },
-      "Hong Kong": { count: 1, sources: ["Asia Times"], lat: 22.4, lon: 114.1 },
-      "South Africa": { count: 1, sources: ["Business Tech"], lat: -30.6, lon: 22.9 },
-      "Russia": { count: 1, sources: ["RIA Novosti"], lat: 61.5, lon: 105.3 },
-      "Philippines": { count: 1, sources: ["Rappler"], lat: 12.9, lon: 121.8 },
-      "Pakistan": { count: 1, sources: ["Dawn"], lat: 30.2, lon: 71.5 },
-      "Israel": { count: 1, sources: ["Haaretz"], lat: 31.9, lon: 35.2 },
-      "Kenya": { count: 1, sources: ["Africa Is a Country"], lat: -0.0236, lon: 37.9 },
-      "Nigeria": { count: 1, sources: ["Pulse Nigeria"], lat: 9.1, lon: 8.7 },
-      "Ghana": { count: 1, sources: ["Citinewsroom"], lat: 5.6, lon: -0.2 }
+    const storyColors = [
+      '#6652FF',
+      '#00C2A8',
+      '#FF5400',
+      '#1976D2',
+      '#FF00A0'
+    ];
+
+    const tierColors = {
+      'national': '#6652FF',
+      'international': '#1976D2',
+      'specialist': '#00C2A8',
+      'community': '#FF5400'
     };
 
-    let megaStoriesData = [];
+    const biasColors = {
+      'left': '#D32F2F',
+      'left-center': '#FF9800',
+      'center': '#00C2A8',
+      'right-center': '#1976D2',
+      'right': '#7B1FA2'
+    };
+
+    let latestData = null;
+    let biasData = null;
 
     async function loadData() {
       try {
-        const response = await fetch('../data/daily/latest.json');
-        const data = await response.json();
-        megaStoriesData = data.mega_stories;
-
-        const dateStr = data.date;
-        const dateObj = new Date(dateStr + 'T00:00:00');
-        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-        document.getElementById('dataDate').textContent = `Data from ${dateObj.toLocaleDateString('en-US', options)}`;
-
-        buildPerspectiveComparison();
-        buildCoverageBalance();
-      } catch (error) {
-        console.error('Error loading data:', error);
-      }
-    }
-
-    // Structured perspective data — extracted from cross_spectrum analysis
-    // and properly attributed to the correct outlet type.
-    const perspectiveOverrides = {
-      'The Iran War and Its Ripple Effects': {
-        national: 'are focused on military strategy, strike counts, and Washington policy debates, while largely setting aside the supply chain and energy market disruptions that international outlets are tracking closely.',
-        international: 'are covering supply chain disruptions and the Strait of Hormuz blockade risk that domestic outlets have largely set aside. Reuters reports the U.S. can only confirm about a third of Iran\u2019s missile arsenal destroyed, a detail largely absent from American cable news.',
-        community: 'are the only ones regularly reporting on things like the FBI disrupting a plot to firebomb a Palestinian activist\u2019s home in New York, connecting domestic hate crimes to the overseas conflict in ways national outlets rarely make explicit.'
-      },
-      'The Government Shutdown and Who Pays for It': {
-        national: 'are focused on the political theater: which party is winning, who blinked first, and how the shutdown plays into broader legislative strategy.',
-        international: 'like BBC World and Deutsche Welle are framing this as a sign of American institutional failure rather than routine politics, which suggests the shutdown looks more serious from outside than domestic coverage conveys.',
-        community: 'are reporting the direct impact on TSA workers and their families in specific airports and regions, covering food bank lines and missed rent payments that national outlets mention only in passing.'
-      },
-      'What the Economy Is Doing': {
-        national: 'are reporting on Fed policy, GDP numbers, and market indicators while largely treating price increases as abstract statistics rather than lived experiences.',
-        international: 'are reporting on how the EU and CPTPP are pushing through a digital trade deal as a hedge against U.S. instability, while Bloomberg\u2019s global coverage tracks fertilizer disruptions and supply problems that show how war ripples into unexpected corners of the economy.',
-        community: 'are reporting the lived experience of price increases in specific towns and the gap between market statistics and what people pay at the register.'
-      },
-      'The Courts and Your Rights': {
-        national: 'are covering Idaho\u2019s bathroom law, Texas\u2019s voter purge, and Louisville\u2019s Breonna Taylor ruling with unusual volume, suggesting these local cases are being treated as nationally significant legal precedents.',
-        international: 'are present because trans rights legislation, voter data sharing, and government blacklisting of AI companies echo patterns they are tracking in their own democracies.',
-        community: 'are covering the same cases in roughly equal numbers to national outlets, which is unusual and reflects how directly these rulings affect specific neighborhoods and populations.'
-      },
-      'Climate and Extreme Weather': {
-        national: 'are covering climate mostly through the lens of federal policy and broad statistics, with limited attention to the infrastructure failures and disaster response gaps that communities are experiencing.',
-        international: 'like France 24 treat energy transitions as geopolitical necessity rather than environmental preference, a framing gap that shapes what policy responses seem reasonable to different audiences.',
-        community: 'like City Limits and Honolulu Civil Beat report the infrastructure failures and neighborhood-level disaster response that national outlets mention only as statistics.'
-      }
-    };
-
-    function extractPerspectives(story) {
-      const override = perspectiveOverrides[story.name];
-      if (override) return override;
-      // Fallback for unknown stories
-      return {
-        national: 'National outlets focus on policy and politics at the federal level.',
-        international: 'International outlets provide global context and comparative coverage.',
-        community: 'Community outlets report on local impacts and neighborhood-level effects.'
-      };
-    }
-
-    function buildPerspectiveComparison() {
-      const container = document.getElementById('perspectiveGrid');
-      container.innerHTML = '';
-
-      megaStoriesData.forEach((story, idx) => {
-        const perspectives = extractPerspectives(story);
-        const colors = ['#FF0054', '#6652FF', '#00C2A8', '#FF5400', '#4CAF50'];
-
-        const card = document.createElement('div');
-        card.className = 'story-card';
-
-        const title = document.createElement('div');
-        title.className = 'story-card-title';
-        title.innerHTML = `<span style="color: ${colors[idx]};">●</span> ${story.name}`;
-        card.appendChild(title);
-
-        const row = document.createElement('div');
-        row.className = 'perspective-row';
-
-        const natCol = document.createElement('div');
-        natCol.className = 'perspective-column';
-        natCol.innerHTML = `
-          <div class="perspective-header national">
-            <span class="perspective-dot national"></span>
-            National
-          </div>
-          <div class="perspective-text">${perspectives.national}</div>
-          <div class="perspective-count">${story.source_tiers.national || 0} article${(story.source_tiers.national || 0) === 1 ? '' : 's'}</div>
-        `;
-        row.appendChild(natCol);
-
-        const intlCol = document.createElement('div');
-        intlCol.className = 'perspective-column';
-        intlCol.innerHTML = `
-          <div class="perspective-header international">
-            <span class="perspective-dot international"></span>
-            International
-          </div>
-          <div class="perspective-text">${perspectives.international}</div>
-          <div class="perspective-count">${story.source_tiers.international || 0} article${(story.source_tiers.international || 0) === 1 ? '' : 's'}</div>
-        `;
-        row.appendChild(intlCol);
-
-        const commCol = document.createElement('div');
-        commCol.className = 'perspective-column';
-        commCol.innerHTML = `
-          <div class="perspective-header community">
-            <span class="perspective-dot community"></span>
-            Community
-          </div>
-          <div class="perspective-text">${perspectives.community}</div>
-          <div class="perspective-count">${story.source_tiers.community || 0} article${(story.source_tiers.community || 0) === 1 ? '' : 's'}</div>
-        `;
-        row.appendChild(commCol);
-
-        card.appendChild(row);
-
-        const insight = document.createElement('div');
-        insight.className = 'story-insight';
-        insight.textContent = story.why_this_matters;
-        card.appendChild(insight);
-
-        container.appendChild(card);
-      });
-    }
-
-    function buildCoverageBalance() {
-      const container = document.getElementById('balanceContainer');
-      container.innerHTML = '';
-
-      const insights = [
-        "National outlets focus on policy; community outlets report how military families and defense workers feel the economic pressure",
-        "Community outlets are reporting from food banks where TSA workers are lining up; national outlets track the political negotiation",
-        "Market reporting and grocery-aisle reporting are covering the same inflation from opposite ends",
-        "Legal cases look abstract in national coverage but community outlets show which neighborhoods and populations are directly affected",
-        "With a 4:1 community-to-national ratio, local outlets are the primary reporters of infrastructure failures and weather impacts that national news treats as footnotes"
-      ];
-
-      megaStoriesData.forEach((story, idx) => {
-        const communityCount = story.source_tiers.community || 1;
-        const nationalCount = story.source_tiers.national || 1;
-        const total = communityCount + nationalCount;
-        const communityPercent = Math.round((communityCount / total) * 100);
-        const nationalPercent = 100 - communityPercent;
-
-        const card = document.createElement('div');
-        card.className = 'balance-card';
-
-        const title = document.createElement('div');
-        title.className = 'balance-title';
-        const colors = ['#FF0054', '#6652FF', '#00C2A8', '#FF5400', '#4CAF50'];
-        title.innerHTML = `<span style="color: ${colors[idx]};">●</span> ${story.name}`;
-        card.appendChild(title);
-
-        const barWrapper = document.createElement('div');
-        barWrapper.className = 'bar-wrapper';
-
-        const label = document.createElement('div');
-        label.className = 'bar-label';
-        label.innerHTML = `<span>Coverage Ratio</span><span class="bar-ratio">${communityCount} community : ${nationalCount} national</span>`;
-        barWrapper.appendChild(label);
-
-        const bar = document.createElement('div');
-        bar.className = 'bar';
-        bar.innerHTML = `
-          <div class="bar-community" style="width: ${communityPercent}%;">${communityPercent}%</div>
-          <div class="bar-national" style="width: ${nationalPercent}%;">${nationalPercent}%</div>
-        `;
-        barWrapper.appendChild(bar);
-
-        card.appendChild(barWrapper);
-
-        const insightDiv = document.createElement('div');
-        insightDiv.className = 'bar-insight';
-        insightDiv.textContent = insights[idx];
-        card.appendChild(insightDiv);
-
-        container.appendChild(card);
-      });
-    }
-
-    function toggleMethodology(e) {
-      const content = document.getElementById('methodology');
-      content.classList.toggle('active');
-      e.target.textContent = content.classList.contains('active') ? 'Hide methodology' : 'How we did this';
-    }
-
-    async function loadWorldMap() {
-      try {
-        const world = await d3.json('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json');
-        const countries = topojson.feature(world, world.objects.countries);
-
-        const svg = d3.select('#worldMap');
-        const width = svg.node().clientWidth || 960;
-        const height = svg.node().clientHeight || 600;
-
-        const projection = d3.geoNaturalEarth1()
-          .fitSize([width, height], countries);
-
-        const path = d3.geoPath().projection(projection);
-
-        svg.append('g')
-          .selectAll('path')
-          .data(countries.features)
-          .join('path')
-          .attr('d', path)
-          .attr('fill', 'rgba(255, 255, 255, 0.06)')
-          .attr('stroke', 'rgba(255, 255, 255, 0.12)')
-          .attr('stroke-width', 0.5)
-          .style('cursor', 'pointer');
-
-        Object.entries(sourceLocations).forEach(([country, data]) => {
-          const [x, y] = projection([data.lon, data.lat]);
-          if (x !== undefined && y !== undefined) {
-            const scale = Math.sqrt(data.count) * 2;
-
-            svg.append('circle')
-              .attr('cx', x)
-              .attr('cy', y)
-              .attr('r', scale)
-              .attr('fill', '#6652FF')
-              .attr('opacity', 0.8)
-              .attr('filter', 'drop-shadow(0 0 8px rgba(102, 82, 255, 0.5))')
-              .style('cursor', 'pointer')
-              .on('mouseenter', function() {
-                const tooltip = document.getElementById('tooltip');
-                tooltip.innerHTML = `
-                  <div class="tooltip-title">${country}</div>
-                  <div class="tooltip-count">${data.count} sources</div>
-                  <div class="tooltip-sources">${data.sources.slice(0, 8).join(', ')}${data.sources.length > 8 ? '...' : ''}</div>
-                `;
-                tooltip.style.display = 'block';
-                tooltip.style.left = (event.pageX + 10) + 'px';
-                tooltip.style.top = (event.pageY + 10) + 'px';
-              })
-              .on('mousemove', function() {
-                const tooltip = document.getElementById('tooltip');
-                tooltip.style.left = (event.pageX + 10) + 'px';
-                tooltip.style.top = (event.pageY + 10) + 'px';
-              })
-              .on('mouseleave', function() {
-                document.getElementById('tooltip').style.display = 'none';
-              });
-          }
-        });
-      } catch (error) {
-        console.error('Error loading world map:', error);
-      }
-    }
-
-    async function loadUSMap() {
-      try {
-        const us = await d3.json('https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json');
-        const states = topojson.feature(us, us.objects.states);
-
-        const svg = d3.select('#usMap');
-        const width = svg.node().clientWidth || 975;
-        const height = svg.node().clientHeight || 610;
-
-        const projection = d3.geoAlbersUsa().fitSize([width, height], states);
-        const path = d3.geoPath().projection(projection);
-
-        const statesWithSources = new Set([
-          'Washington', 'Montana', 'Oregon', 'Idaho', 'Nevada', 'California',
-          'Arizona', 'New Mexico', 'Colorado', 'Kansas', 'Texas', 'Iowa',
-          'Minnesota', 'Wisconsin', 'Michigan', 'Ohio', 'West Virginia',
-          'Louisiana', 'North Carolina', 'Maryland', 'New York', 'Vermont',
-          'Maine', 'Hawaii', 'Alaska', 'South Dakota'
+        const [latest, bias] = await Promise.all([
+          fetch('../data/daily/latest.json').then(r => r.json()),
+          fetch('../data/bias_ratings.json').then(r => r.json())
         ]);
 
-        svg.append('g')
-          .selectAll('path')
-          .data(states.features)
-          .join('path')
-          .attr('d', path)
-          .attr('fill', d => {
-            const stateName = d.properties?.name;
-            return statesWithSources.has(stateName)
-              ? 'rgba(0, 194, 168, 0.3)'
-              : 'rgba(255, 255, 255, 0.04)';
-          })
-          .attr('stroke', d => {
-            const stateName = d.properties?.name;
-            return statesWithSources.has(stateName)
-              ? 'rgba(0, 194, 168, 0.5)'
-              : 'rgba(255, 255, 255, 0.08)';
-          })
-          .attr('stroke-width', 0.5)
-          .style('cursor', 'pointer')
-          .on('mouseenter', function(event, d) {
-            const tooltip = document.getElementById('tooltip');
-            const stateName = d.properties?.name || 'Unknown';
-            const hasSources = statesWithSources.has(stateName);
-            tooltip.innerHTML = `
-              <div class="tooltip-title">${stateName}</div>
-              <div class="tooltip-count">${hasSources ? 'Has community sources' : 'Coverage gap'}</div>
-            `;
-            tooltip.style.display = 'block';
-            tooltip.style.left = (event.pageX + 10) + 'px';
-            tooltip.style.top = (event.pageY + 10) + 'px';
-          })
-          .on('mousemove', function(event) {
-            const tooltip = document.getElementById('tooltip');
-            tooltip.style.left = (event.pageX + 10) + 'px';
-            tooltip.style.top = (event.pageY + 10) + 'px';
-          })
-          .on('mouseleave', function() {
-            document.getElementById('tooltip').style.display = 'none';
-          });
-      } catch (error) {
-        console.error('Error loading US map:', error);
+        latestData = latest;
+        biasData = bias;
+
+        updateHeader();
+        renderConstellation();
+        renderDomainPulse();
+      } catch (err) {
+        console.error('Error loading data:', err);
+        document.querySelector('.constellation-container').innerHTML = '<div class="loading">Error loading data. Please refresh the page.</div>';
       }
     }
 
+    function updateHeader() {
+      document.getElementById('today-date').textContent = latestData.date;
+      document.getElementById('article-count').textContent = latestData.summary.total_stories.toLocaleString();
+      document.getElementById('source-count').textContent = latestData.summary.sources_reporting;
+    }
+
+    function renderConstellation() {
+      const stories = latestData.mega_stories.slice(0, 5);
+      const width = 1000;
+      const height = 600;
+
+      function countSharedDomains(story1, story2) {
+        const set1 = new Set(story1.domains);
+        return story2.domains.filter(d => set1.has(d)).length;
+      }
+
+      const links = [];
+      for (let i = 0; i < stories.length; i++) {
+        for (let j = i + 1; j < stories.length; j++) {
+          const shared = countSharedDomains(stories[i], stories[j]);
+          if (shared > 0) {
+            links.push({
+              source: i,
+              target: j,
+              strength: shared
+            });
+          }
+        }
+      }
+
+      const nodes = stories.map((story, i) => ({
+        id: i,
+        name: story.name,
+        articleCount: story.article_count,
+        sourceCount: story.source_count,
+        story: story
+      }));
+
+      const simulation = d3.forceSimulation(nodes)
+        .force('link', d3.forceLink(links).id(d => d.id).distance(180))
+        .force('charge', d3.forceManyBody().strength(-800))
+        .force('center', d3.forceCenter(width / 2, height / 2).strength(0.3))
+        .force('collision', d3.forceCollide().radius(d => 40 + Math.sqrt(d.articleCount) / 3));
+
+      const svg = d3.select('#constellation');
+
+      const linkElements = svg.selectAll('.story-link')
+        .data(links)
+        .enter()
+        .append('line')
+        .attr('class', 'story-link')
+        .attr('stroke', '#6652FF')
+        .attr('stroke-width', d => Math.sqrt(d.strength) * 1.5);
+
+      const nodeGroups = svg.selectAll('.story-node')
+        .data(nodes)
+        .enter()
+        .append('g')
+        .attr('class', 'story-node')
+        .attr('data-id', d => d.id);
+
+      nodeGroups.append('circle')
+        .attr('r', d => 30 + Math.sqrt(d.articleCount) / 2)
+        .attr('fill', (d, i) => storyColors[i])
+        .attr('filter', 'url(#glow)')
+        .attr('opacity', 0.9)
+        .style('cursor', 'pointer');
+
+      nodeGroups.append('text')
+        .attr('class', 'constellation-label')
+        .attr('dy', '-0.5rem')
+        .text(d => {
+          const parts = d.name.split(' ');
+          return parts.slice(0, Math.min(3, parts.length)).join(' ');
+        })
+        .style('font-size', d => Math.max(10, Math.min(14, Math.sqrt(d.articleCount) / 2)) + 'px');
+
+      nodeGroups.append('text')
+        .attr('class', 'constellation-count')
+        .attr('dy', '1rem')
+        .text(d => d.articleCount + ' articles');
+
+      nodeGroups.on('click', (event, d) => showStoryPanel(d.story, d.id));
+      nodeGroups.on('mouseenter', function() {
+        d3.select(this).select('circle').attr('filter', 'url(#glow-hover)');
+      });
+      nodeGroups.on('mouseleave', function() {
+        d3.select(this).select('circle').attr('filter', 'url(#glow)');
+      });
+
+      simulation.on('tick', () => {
+        linkElements
+          .attr('x1', d => nodes[d.source].x)
+          .attr('y1', d => nodes[d.source].y)
+          .attr('x2', d => nodes[d.target].x)
+          .attr('y2', d => nodes[d.target].y);
+
+        nodeGroups
+          .attr('transform', d => `translate(${d.x},${d.y})`);
+      });
+
+      setTimeout(() => {
+        simulation.alpha(0.1).restart();
+      }, 3000);
+    }
+
+    function renderDomainPulse() {
+      const domains = latestData.temporal_context.domain_shifts;
+      const container = document.getElementById('pulse-grid');
+
+      container.innerHTML = domains.map(domain => {
+        const yesterday = domain.yesterday;
+        const today = domain.today;
+        const change = today - yesterday;
+        const changePercent = domain.change_pct;
+        const isSurge = change > 0;
+        const maxVal = Math.max(yesterday, today);
+
+        const bars = [];
+        for (let i = 0; i < 5; i++) {
+          const val = i < 3 ? yesterday : today;
+          const height = (val / maxVal) * 100;
+          bars.push(`<div style="flex: 1; background: ${isSurge ? '#00C2A8' : '#FF5400'}; height: ${height}%; border-radius: 2px; opacity: ${i < 3 ? 0.7 : 1}"></div>`);
+        }
+
+        return `
+          <div class="pulse-item">
+            <div class="pulse-name">${domain.label}</div>
+            <div class="pulse-sparkline">${bars.join('')}</div>
+            <div class="pulse-stats">
+              <div><span class="pulse-value">${today}</span> today</div>
+              <div class="pulse-change ${isSurge ? 'positive' : 'negative'}">
+                ${isSurge ? '+' : ''}${changePercent}%
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function showStoryPanel(story, storyIndex) {
+      const panel = document.getElementById('storyPanel');
+      const content = document.getElementById('panelContent');
+
+      const totalSources = story.source_count;
+      const tiers = {
+        'national': story.source_tiers?.national || 0,
+        'international': story.source_tiers?.international || 0,
+        'specialist': story.source_tiers?.specialist || 0,
+        'community': story.source_tiers?.community || 0
+      };
+
+      let biasBreakdown = { left: 0, 'left-center': 0, center: 0, 'right-center': 0, right: 0 };
+      const sourceSample = story.sources_sample || [];
+      sourceSample.forEach(source => {
+        const rating = biasData.ratings[source];
+        if (rating) {
+          biasBreakdown[rating.rating]++;
+        }
+      });
+
+      const tierSegments = Object.entries(tiers)
+        .filter(([, count]) => count > 0)
+        .map(([tier, count]) => {
+          const percentage = (count / totalSources) * 100;
+          const tierKey = tier === 'community' ? 'local' : tier;
+          return `<div class="tier-segment tier-${tierKey}"
+                   style="flex: ${percentage};"
+                   title="${tier === 'community' ? 'Local and Regional' : tier.charAt(0).toUpperCase() + tier.slice(1)}: ${count} sources"></div>`;
+        }).join('');
+
+      const tierLegend = Object.entries(tiers)
+        .filter(([, count]) => count > 0)
+        .map(([tier, count]) => {
+          const displayName = tier === 'community' ? 'Local and Regional' : tier.charAt(0).toUpperCase() + tier.slice(1);
+          const tierKey = tier === 'community' ? 'local' : tier;
+          return `
+            <div class="tier-item">
+              <div class="tier-dot" style="background: ${tierColors[tierKey]}"></div>
+              <span>${displayName}: ${count}</span>
+            </div>
+          `;
+        }).join('');
+
+      const biasTotal = Object.values(biasBreakdown).reduce((a, b) => a + b, 0);
+      const biasSegments = biasTotal > 0 ? Object.entries(biasBreakdown)
+        .filter(([, count]) => count > 0)
+        .map(([bias, count]) => {
+          const percentage = (count / biasTotal) * 100;
+          const biasKey = bias.replace('_', '-');
+          return `<div class="bias-segment bias-${biasKey}"
+                   style="flex: ${percentage};"
+                   title="${bias}: ${count} sources"></div>`;
+        }).join('') : '';
+
+      const biasLegend = biasTotal > 0 ? Object.entries(biasBreakdown)
+        .filter(([, count]) => count > 0)
+        .map(([bias, count]) => {
+          const biasKey = bias.replace('_', '-');
+          return `
+            <div class="bias-item">
+              <div class="bias-dot" style="background: ${biasColors[biasKey]}"></div>
+              <span>${bias}</span>
+            </div>
+          `;
+        }).join('') : '';
+
+      content.innerHTML = `
+        <h2>${story.name}</h2>
+
+        <div class="story-stats">
+          <div class="stat">
+            <div class="stat-label">Articles</div>
+            <div class="stat-value">${story.article_count}</div>
+          </div>
+          <div class="stat">
+            <div class="stat-label">Sources</div>
+            <div class="stat-value">${story.source_count}</div>
+          </div>
+        </div>
+
+        <div class="panel-section">
+          <h3>Coverage by Tier</h3>
+          <div class="tier-breakdown">${tierSegments}</div>
+          <div class="tier-legend">${tierLegend}</div>
+        </div>
+
+        ${biasTotal > 0 ? `
+          <div class="panel-section">
+            <h3>Bias Spectrum</h3>
+            <div class="bias-breakdown">${biasSegments}</div>
+            <div class="bias-legend">${biasLegend}</div>
+          </div>
+        ` : ''}
+
+        <div class="panel-section">
+          <h3>The Story</h3>
+          <p class="synthesis-text">${story.synthesis}</p>
+        </div>
+
+        <div class="panel-section">
+          <h3>What to Watch</h3>
+          <p style="font-size: 0.95rem; color: rgba(255,255,255,0.8); line-height: 1.8;">
+            ${story.watch_for || story.what_to_watch?.[0] || 'Monitor coverage for new developments.'}
+          </p>
+        </div>
+
+        ${story.cross_spectrum ? `
+          <div class="panel-section">
+            <h3>Across the Spectrum</h3>
+            <p style="font-size: 0.95rem; color: rgba(255,255,255,0.8); line-height: 1.8;">
+              ${story.cross_spectrum}
+            </p>
+          </div>
+        ` : ''}
+      `;
+
+      panel.classList.add('active');
+    }
+
+    function closePanelBtn() {
+      document.getElementById('storyPanel').classList.remove('active');
+    }
+
+    document.getElementById('closePanelBtn').addEventListener('click', closePanelBtn);
+    document.getElementById('storyPanel').addEventListener('click', (e) => {
+      if (e.target.id === 'storyPanel') closePanelBtn();
+    });
+
     loadData();
-    loadWorldMap();
-    loadUSMap();
   </script>
 </body>
 </html>
