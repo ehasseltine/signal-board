@@ -625,7 +625,7 @@ function renderArticles() {
 }
 
 function articleCard(a) {
-  const tags = (a.domains || []).map(d =>
+  const tags = (a.domains || []).filter(d => DOMAIN_LABELS[d]).map(d =>
     `<span class="domain-tag" style="background:${DOMAIN_COLORS[d]}">${DOMAIN_LABELS[d]}</span>`
   ).join('');
 
