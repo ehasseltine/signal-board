@@ -1,10 +1,10 @@
 {
   "date": "2026-03-28",
-  "generated": "2026-03-28T02:17:27Z",
+  "generated": "2026-03-28T02:43:05Z",
   "summary": {
-    "total_stories": 615,
+    "total_stories": 633,
     "sources_reporting": 71,
-    "cross_domain": 253,
+    "cross_domain": 257,
     "top_domain": "Security"
   },
   "narrative_divergence": [
@@ -347,7 +347,7 @@
     {
       "topic": "Legal + Security",
       "theme": "legal and security intersection",
-      "source_count": 14,
+      "source_count": 15,
       "articles": [
         {
           "title": "After Being Struck by Air Canada Plane, Last Firefighter Is Released From Hospital",
@@ -465,8 +465,8 @@
       ],
       "label": "Governance + Legal",
       "explanation": "Government actions running into the courts",
-      "count": 130,
-      "today_count": 47,
+      "count": 131,
+      "today_count": 48,
       "trend": "rising",
       "sample_articles": [
         {
@@ -549,8 +549,8 @@
       ],
       "label": "Politics + Legal",
       "explanation": "Courts and judges in political battles",
-      "count": 69,
-      "today_count": 31,
+      "count": 70,
+      "today_count": 32,
       "trend": "rising",
       "sample_articles": [
         {
@@ -773,8 +773,8 @@
       ],
       "label": "Legal + Security",
       "explanation": "legal and security intersection",
-      "count": 57,
-      "today_count": 15,
+      "count": 58,
+      "today_count": 16,
       "trend": "rising",
       "sample_articles": [
         {
@@ -801,9 +801,9 @@
       ],
       "label": "Politics + Information",
       "explanation": "Media coverage of political campaigns and conflict",
-      "count": 28,
-      "today_count": 12,
-      "trend": "new",
+      "count": 29,
+      "today_count": 13,
+      "trend": "rising",
       "sample_articles": [
         {
           "title": "How Trump's approval has slid on key issues - Reuters",
@@ -831,7 +831,7 @@
       "explanation": "domestic_politics and labor intersection",
       "count": 27,
       "today_count": 12,
-      "trend": "new",
+      "trend": "rising",
       "sample_articles": [
         {
           "title": "Hegseth Strikes Two Black and Two Female Officers From Promotion List",
@@ -852,8 +852,8 @@
     }
   ],
   "source_spectrum": {
-    "national": 277,
-    "international": 222,
+    "national": 281,
+    "international": 236,
     "specialist": 9,
     "explainer": 23,
     "community": 78,
@@ -869,7 +869,7 @@
       ]
     },
     {
-      "description": "Governance + Legal collision intensity elevated (47 articles today)",
+      "description": "Governance + Legal collision intensity elevated (48 articles today)",
       "type": "trend",
       "pair": [
         "governance",
@@ -893,7 +893,7 @@
       ]
     },
     {
-      "description": "Politics + Legal collision intensity elevated (31 articles today)",
+      "description": "Politics + Legal collision intensity elevated (32 articles today)",
       "type": "trend",
       "pair": [
         "domestic_politics",

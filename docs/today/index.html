@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Daily narrative analysis: what's happening across 71 news sources, and how the stories connect.">
+<meta property="og:title" content="Today at Signal Board">
+<meta property="og:description" content="Daily narrative analysis from 71 sources. See what connects.">
+<title>Today at Signal Board</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'Inter',sans-serif;background:#0a0a0a;color:#e8e8e8;min-height:100vh;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  a{color:inherit;text-decoration:none;}
+
+  .shapes{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:0.08;}
+  .wrap{position:relative;z-index:1;max-width:920px;margin:0 auto;padding:0 1.5rem;}
+
+  /* BACK LINK */
+  .back-link{display:inline-flex;align-items:center;gap:0.4rem;font-size:0.85rem;color:rgba(235,230,245,0.6);margin-bottom:2rem;padding:0.5rem 0;transition:color 0.15s;cursor:pointer;}
+  .back-link:hover{color:rgba(235,230,245,0.9);}
+
+  /* HEADER */
+  .header{padding:6vh 0 1.5rem;}
+  .date-line{font-family:'Space Grotesk',sans-serif;font-size:0.85rem;font-weight:700;color:rgba(235,230,245,0.5);text-transform:uppercase;letter-spacing:0.12em;margin-bottom:0.8rem;}
+  .header h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(2.2rem,5vw,3.2rem);font-weight:800;letter-spacing:-0.04em;color:#fff;line-height:1.1;margin-bottom:1.5rem;}
+  .big-picture{font-size:clamp(1rem,2.2vw,1.15rem);color:rgba(235,230,245,0.75);line-height:1.8;max-width:720px;margin-bottom:2.5rem;}
+
+  /* STAT BLOCKS */
+  .stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:0.8rem;margin-bottom:3.5rem;}
+  .stat-block{border-radius:24px;padding:1.8rem 1.5rem;display:flex;flex-direction:column;justify-content:flex-end;min-height:140px;transition:transform 0.2s;}
+  .stat-block:hover{transform:scale(1.02);}
+  .stat-block .num{font-family:'Space Grotesk',sans-serif;font-size:clamp(2rem,5vw,2.8rem);font-weight:800;color:#fff;letter-spacing:-0.04em;line-height:1;}
+  .stat-block .label{font-size:0.78rem;color:rgba(255,255,255,0.65);margin-top:0.4rem;font-weight:500;}
+
+  /* SECTION TITLE */
+  .section-title{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.8rem,4vw,2.4rem);font-weight:800;letter-spacing:-0.03em;color:#fff;margin-bottom:1.8rem;margin-top:3rem;}
+
+  /* CONSTELLATION SVG */
+  .constellation{background:rgba(255,255,255,0.02);border-radius:24px;padding:2.5rem;margin-bottom:3rem;border:1px solid rgba(255,255,255,0.08);}
+  .constellation svg{width:100%;height:auto;max-height:500px;}
+  .constellation-info{font-size:0.85rem;color:rgba(235,230,245,0.5);margin-top:1.2rem;text-align:center;}
+
+  /* NARRATIVE PAIRS */
+  .pair-section{margin-bottom:3rem;}
+  .pair-cards{display:grid;grid-template-columns:1fr;gap:1.5rem;margin-bottom:2.5rem;}
+
+  .pair-card{border-radius:24px;padding:2.2rem;border:1px solid rgba(255,255,255,0.1);transition:transform 0.2s,filter 0.15s;position:relative;overflow:hidden;}
+  .pair-card:hover{transform:translateY(-3px);filter:brightness(1.05);}
+  .pair-card::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;pointer-events:none;border-radius:24px;}
+
+  .pair-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1.5rem;position:relative;z-index:1;}
+  .pair-title{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.3rem,3vw,1.6rem);font-weight:800;letter-spacing:-0.03em;color:#fff;}
+  .pair-count{font-family:'Space Grotesk',sans-serif;font-size:0.9rem;font-weight:700;background:rgba(255,255,255,0.1);padding:0.4rem 0.8rem;border-radius:100px;color:rgba(255,255,255,0.8);}
+
+  .pair-desc{font-size:0.95rem;color:rgba(235,230,245,0.75);margin-bottom:1.8rem;line-height:1.6;position:relative;z-index:1;}
+
+  .article-grid{display:grid;grid-template-columns:1fr;gap:0.9rem;position:relative;z-index:1;}
+  .article-card{background:rgba(0,0,0,0.3);border-radius:16px;padding:1.3rem;display:flex;gap:1.2rem;align-items:flex-start;border:1px solid rgba(255,255,255,0.05);transition:background 0.15s;cursor:pointer;}
+  .article-card:hover{background:rgba(0,0,0,0.4);}
+
+  .article-source{font-family:'Space Grotesk',sans-serif;font-size:0.72rem;font-weight:700;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.08em;min-width:80px;flex-shrink:0;}
+  .article-title{flex:1;font-size:0.95rem;color:#fff;line-height:1.5;font-weight:500;}
+  .article-card:hover .article-title{color:rgba(255,255,255,0.95);}
+
+  /* PAYWALL BADGE */
+  .paywall{display:inline-block;margin-left:auto;flex-shrink:0;font-size:0.65rem;background:rgba(255,152,0,0.2);color:#FF9800;padding:0.35rem 0.65rem;border-radius:8px;border:1px solid rgba(255,152,0,0.3);}
+
+  /* ACTIVE THREADS */
+  .thread-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem;margin-bottom:3rem;}
+  .thread-block{border-radius:20px;padding:1.8rem;display:flex;flex-direction:column;transition:transform 0.2s,filter 0.15s;}
+  .thread-block:hover{transform:translateY(-2px);filter:brightness(1.06);}
+
+  .thread-pair{font-family:'Space Grotesk',sans-serif;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:rgba(0,0,0,0.7);margin-bottom:0.8rem;}
+  .thread-count{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.8rem,4vw,2.4rem);font-weight:800;letter-spacing:-0.03em;color:#fff;margin-bottom:0.6rem;}
+  .thread-label{font-size:0.85rem;color:rgba(255,255,255,0.75);line-height:1.5;}
+  .trend-badge{display:inline-block;margin-top:0.8rem;font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;padding:0.4rem 0.9rem;border-radius:100px;background:rgba(0,0,0,0.2);color:rgba(255,255,255,0.8);}
+
+  /* SOURCE SPECTRUM */
+  .spectrum-container{background:rgba(255,255,255,0.02);border-radius:24px;padding:2.5rem;border:1px solid rgba(255,255,255,0.08);margin-bottom:3rem;}
+  .spectrum-label{font-size:0.8rem;color:rgba(235,230,245,0.5);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:1.5rem;font-weight:600;}
+  .spectrum-bars{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1rem;margin-bottom:2rem;}
+  .spectrum-bar{display:flex;flex-direction:column;}
+  .bar-label{font-family:'Space Grotesk',sans-serif;font-size:0.8rem;font-weight:700;color:rgba(255,255,255,0.8);margin-bottom:0.6rem;text-transform:capitalize;}
+  .bar-fill{height:60px;border-radius:12px;transition:filter 0.2s;}
+  .bar-fill:hover{filter:brightness(1.15);}
+  .bar-count{font-family:'Space Grotesk',sans-serif;font-size:0.85rem;font-weight:700;color:#fff;margin-top:0.5rem;}
+
+  /* MISSED STORIES */
+  .missed-stories{background:linear-gradient(135deg, rgba(102,82,255,0.1) 0%, rgba(255,84,0,0.08) 100%);border-radius:24px;padding:2.5rem;border:1px solid rgba(255,255,255,0.1);margin-bottom:3rem;}
+  .missed-intro{font-size:1rem;color:rgba(235,230,245,0.85);line-height:1.7;margin-bottom:1.8rem;max-width:680px;}
+
+  .community-cards{display:grid;grid-template-columns:1fr;gap:1rem;}
+  .community-card{background:rgba(0,0,0,0.3);border-radius:16px;padding:1.4rem;border:1px solid rgba(255,255,255,0.08);transition:background 0.15s;}
+  .community-card:hover{background:rgba(0,0,0,0.4);}
+
+  .community-source{display:flex;align-items:center;gap:0.6rem;font-size:0.8rem;color:rgba(255,255,255,0.6);margin-bottom:0.6rem;font-weight:600;}
+  .source-badge{display:inline-block;width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.4);}
+  .community-title{font-size:0.95rem;color:#fff;line-height:1.5;font-weight:500;margin-bottom:0.8rem;}
+  .community-excerpt{font-size:0.85rem;color:rgba(235,230,245,0.6);line-height:1.5;}
+
+  /* FOOTER */
+  .footer{border-top:1px solid rgba(255,255,255,0.06);padding:2.5rem 0 3rem;font-size:0.8rem;color:rgba(235,230,245,0.4);display:flex;gap:1.5rem;flex-wrap:wrap;margin-top:2rem;}
+
+  /* DOMAIN COLORS */
+  .color-ai{background:#6652FF;color:#000;}
+  .color-labor{background:#FF5400;color:#000;}
+  .color-governance{background:#FF0054;color:#fff;}
+  .color-information{background:#9E0059;color:#fff;}
+  .color-economics{background:#00C2A8;color:#000;}
+  .color-climate{background:#4CAF50;color:#000;}
+  .color-security{background:#D32F2F;color:#fff;}
+  .color-geopolitics{background:#1976D2;color:#fff;}
+  .color-domestic_politics{background:#7B1FA2;color:#fff;}
+  .color-legal{background:#FF9800;color:#000;}
+
+  /* LOADING STATE */
+  .loading{text-align:center;padding:4rem 2rem;color:rgba(235,230,245,0.5);}
+  .spinner{display:inline-block;width:24px;height:24px;border:2px solid rgba(235,230,245,0.2);border-top-color:rgba(235,230,245,0.8);border-radius:50%;animation:spin 0.8s linear infinite;}
+  @keyframes spin{to{transform:rotate(360deg);}}
+
+  /* RESPONSIVE */
+  @media(max-width:768px){
+    .wrap{padding:0 1rem;}
+    .stat-row{grid-template-columns:repeat(2,1fr);}
+    .thread-grid{grid-template-columns:1fr;}
+    .spectrum-bars{grid-template-columns:repeat(2,1fr);}
+    .pair-header{flex-direction:column;gap:0.8rem;}
+    .article-grid{grid-template-columns:1fr;}
+    .article-card{flex-direction:column;}
+    .article-source{min-width:auto;}
+  }
+
+  @media(max-width:480px){
+    .header{padding:4vh 0 1rem;}
+    .header h1{font-size:1.8rem;}
+    .stat-row{grid-template-columns:1fr;}
+    .spectrum-bars{grid-template-columns:1fr;}
+    .thread-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<!-- Decorative shapes -->
+<svg class="shapes" viewBox="0 0 1400 900" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="120" cy="80" r="60" fill="#6652FF"/>
+  <circle cx="1300" cy="150" r="90" fill="#FF5400"/>
+  <rect x="200" y="700" width="80" height="80" rx="15" fill="#00C2A8" transform="rotate(15,240,740)"/>
+  <circle cx="1100" cy="800" r="70" fill="#FF0054"/>
+  <rect x="600" y="50" width="60" height="120" rx="12" fill="#4CAF50" transform="rotate(-20,630,110)"/>
+  <circle cx="80" cy="500" r="40" fill="#FF9800"/>
+</svg>
+
+<div class="wrap">
+  <a href="/" class="back-link">← Back to Signal Board</a>
+
+  <div class="header">
+    <div class="date-line" id="dateLine"></div>
+    <h1 id="headline"></h1>
+    <p class="big-picture" id="bigPicture"></p>
+  </div>
+
+  <div class="stat-row">
+    <div class="stat-block color-security">
+      <div class="num" id="totalStories">0</div>
+      <div class="label">Stories Today</div>
+    </div>
+    <div class="stat-block color-information">
+      <div class="num" id="totalSources">0</div>
+      <div class="label">Sources</div>
+    </div>
+    <div class="stat-block color-economics">
+      <div class="num" id="crossDomain">0</div>
+      <div class="label">Cross-Domain</div>
+    </div>
+  </div>
+
+  <h2 class="section-title">Domain Constellation</h2>
+  <div class="constellation">
+    <svg id="constellationViz" width="100%" height="500" viewBox="0 0 600 500" style="background:rgba(0,0,0,0.2);border-radius:20px;"></svg>
+    <div class="constellation-info">Hover over domains to see their connections. Size shows article volume today.</div>
+  </div>
+
+  <h2 class="section-title">Where Coverage Converges</h2>
+  <div class="pair-section" id="pairSection">
+    <div class="loading"><div class="spinner"></div> Loading narrative clusters...</div>
+  </div>
+
+  <h2 class="section-title">Active Threads</h2>
+  <div class="thread-grid" id="threadsGrid">
+    <div class="loading"><div class="spinner"></div> Loading trends...</div>
+  </div>
+
+  <h2 class="section-title">Source Spectrum</h2>
+  <div class="spectrum-container" id="spectrumContainer">
+    <div class="spectrum-label">How many articles from each source tier</div>
+    <div class="spectrum-bars" id="spectrumBars">
+      <div class="loading"><div class="spinner"></div> Loading...</div>
+    </div>
+  </div>
+
+  <h2 class="section-title">Stories You Won't Find Everywhere</h2>
+  <div class="missed-stories">
+    <p class="missed-intro">Community sources, local outlets, and specialist publications are covering stories that national news outlets haven't picked up. These perspectives matter. Here's what's being reported outside the mainstream coverage today.</p>
+    <div class="community-cards" id="communityCards">
+      <div class="loading"><div class="spinner"></div> Loading stories...</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Updated daily at 2 AM ET</span>
+    <span>Based on analysis from 71 sources across 10 domains</span>
+  </div>
+</div>
+
+<script>
+const DOMAIN_COLORS = {
+  ai: '#6652FF',
+  labor: '#FF5400',
+  governance: '#FF0054',
+  information: '#9E0059',
+  economics: '#00C2A8',
+  climate: '#4CAF50',
+  security: '#D32F2F',
+  geopolitics: '#1976D2',
+  domestic_politics: '#7B1FA2',
+  legal: '#FF9800'
+};
+
+const DOMAIN_LABELS = {
+  ai: 'AI',
+  labor: 'Labor',
+  governance: 'Governance',
+  information: 'Information',
+  economics: 'Economics',
+  climate: 'Climate',
+  security: 'Security',
+  geopolitics: 'Geopolitics',
+  domestic_politics: 'Politics',
+  legal: 'Legal'
+};
+
+const PAIR_EXPLANATIONS = {
+  'governance+legal': 'Government actions running into the courts',
+  'domestic_politics+security': 'Political decisions that directly affect defense or public safety',
+  'domestic_politics+governance': 'Political battles over how agencies are run',
+  'economics+security': 'When conflict and military spending hit markets and wallets',
+  'domestic_politics+legal': 'Political battles playing out in courts',
+  'climate+security': 'Environmental change creating security threats',
+  'climate+economics': 'Environmental shifts affecting energy costs, food prices, and jobs',
+  'ai+labor': 'Automation changing the jobs people do and how they\'re paid',
+  'ai+economics': 'AI reshaping markets and business models',
+  'security+geopolitics': 'Military conflict and international tensions',
+  'economics+labor': 'Jobs, wages, and economic inequality',
+  'information+politics': 'Media coverage of political campaigns and conflict',
+  'security+information': 'Coverage of conflicts and defense policy',
+  'climate+labor': 'Job impacts of environmental change and energy transition'
+};
+
+let articlesData = null;
+let dailyData = null;
+
+async function loadData() {
+  try {
+    const [articlesRes, dailyRes] = await Promise.all([
+      fetch('../data/articles.json'),
+      fetch('../data/daily/latest.json')
+    ]);
+
+    articlesData = await articlesRes.json();
+    dailyData = await dailyRes.json();
+
+    render();
+  } catch (e) {
+    console.error('Failed to load data:', e);
+    document.body.innerHTML += '<p style="color:red;padding:2rem;">Failed to load data. Please refresh.</p>';
+  }
+}
+
+function formatDate(dateStr) {
+  const [year, month, day] = dateStr.split('-');
+  const date = new Date(year, month - 1, day);
+  return date.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+}
+
+function render() {
+  renderHeader();
+  renderStats();
+  renderConstellation();
+  renderNarrativePairs();
+  renderActiveThreads();
+  renderSourceSpectrum();
+  renderCommunityStories();
+}
+
+function renderHeader() {
+  document.getElementById('dateLine').textContent = formatDate(dailyData.date);
+  document.getElementById('headline').textContent = `${dailyData.summary.total_stories} stories. ${dailyData.summary.sources_reporting} sources. Here's what connects.`;
+
+  const topDomain = dailyData.summary.top_domain;
+  const summary = `Across our network today, stories are clustering around security, politics, and governance. ${topDomain} stories dominate the news cycle, but the real signal is in how these domains collide with each other. The intersection points reveal the tensions shaping this moment: military strategy affecting domestic politics, government actions reaching the courts, economic uncertainty amid geopolitical risk. Read through these clusters to see where the real momentum is building.`;
+
+  document.getElementById('bigPicture').textContent = summary;
+}
+
+function renderStats() {
+  document.getElementById('totalStories').textContent = dailyData.summary.total_stories.toLocaleString();
+  document.getElementById('totalSources').textContent = dailyData.summary.sources_reporting;
+  document.getElementById('crossDomain').textContent = dailyData.summary.cross_domain;
+}
+
+function renderConstellation() {
+  const svg = document.getElementById('constellationViz');
+  svg.innerHTML = '';
+
+  const width = 600;
+  const height = 500;
+  const centerX = width / 2;
+  const centerY = height / 2;
+  const radius = 140;
+
+  const domains = Object.keys(articlesData.stats.domains);
+  const nodePositions = {};
+
+  domains.forEach((domain, idx) => {
+    const angle = (idx / domains.length) * Math.PI * 2 - Math.PI / 2;
+    nodePositions[domain] = {
+      x: centerX + radius * Math.cos(angle),
+      y: centerY + radius * Math.sin(angle)
+    };
+  });
+
+  // Draw connections first
+  const connections = {};
+  dailyData.active_threads.forEach(thread => {
+    const pair = thread.pair.sort().join('+');
+    connections[pair] = thread.today_count || 1;
+  });
+
+  Object.entries(connections).forEach(([pair, count]) => {
+    const [d1, d2] = pair.split('+');
+    const pos1 = nodePositions[d1];
+    const pos2 = nodePositions[d2];
+
+    if (!pos1 || !pos2) return;
+
+    const thickness = Math.max(1, Math.min(4, count / 15));
+    const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+    line.setAttribute('x1', pos1.x);
+    line.setAttribute('y1', pos1.y);
+    line.setAttribute('x2', pos2.x);
+    line.setAttribute('y2', pos2.y);
+    line.setAttribute('stroke', 'rgba(235,230,245,0.2)');
+    line.setAttribute('stroke-width', thickness);
+    line.setAttribute('opacity', 0.6);
+    svg.appendChild(line);
+  });
+
+  // Draw nodes
+  domains.forEach(domain => {
+    const pos = nodePositions[domain];
+    const count = articlesData.stats.domains[domain].today;
+    const size = Math.max(20, Math.min(60, count / 2));
+
+    const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+    g.style.cursor = 'pointer';
+
+    const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+    circle.setAttribute('cx', pos.x);
+    circle.setAttribute('cy', pos.y);
+    circle.setAttribute('r', size);
+    circle.setAttribute('fill', DOMAIN_COLORS[domain]);
+    circle.setAttribute('opacity', 0.9);
+
+    const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+    text.setAttribute('x', pos.x);
+    text.setAttribute('y', pos.y);
+    text.setAttribute('text-anchor', 'middle');
+    text.setAttribute('dominant-baseline', 'middle');
+    text.setAttribute('font-family', 'Space Grotesk, sans-serif');
+    text.setAttribute('font-size', '11');
+    text.setAttribute('font-weight', '700');
+    text.setAttribute('fill', count > 50 ? '#000' : '#fff');
+    text.setAttribute('pointer-events', 'none');
+    text.textContent = DOMAIN_LABELS[domain];
+
+    g.appendChild(circle);
+    g.appendChild(text);
+
+    g.addEventListener('mouseenter', () => {
+      highlightDomain(svg, domain);
+    });
+    g.addEventListener('mouseleave', () => {
+      clearHighlight(svg);
+    });
+
+    svg.appendChild(g);
+  });
+}
+
+function highlightDomain(svg, domain) {
+  const lines = svg.querySelectorAll('line');
+  const pairs = [];
+
+  dailyData.active_threads.forEach(thread => {
+    if (thread.pair.includes(domain)) {
+      pairs.push(thread.pair.sort().join('+'));
+    }
+  });
+
+  lines.forEach(line => {
+    line.setAttribute('opacity', 0.15);
+  });
+
+  const domainLines = Array.from(lines).filter(line => {
+    const x1 = line.getAttribute('x1');
+    const x2 = line.getAttribute('x2');
+    // Match by proximity to find connected lines
+    return true; // Simplified for now
+  });
+
+  domainLines.forEach(line => line.setAttribute('opacity', 0.8));
+}
+
+function clearHighlight(svg) {
+  svg.querySelectorAll('line').forEach(line => {
+    line.setAttribute('opacity', 0.6);
+  });
+}
+
+function renderNarrativePairs() {
+  const container = document.getElementById('pairSection');
+  container.innerHTML = '';
+
+  dailyData.narrative_divergence.slice(0, 3).forEach((item, idx) => {
+    const [d1, d2] = item.topic.split(' + ').map(t => {
+      const mapped = {
+        'Politics': 'domestic_politics',
+        'Governance': 'governance',
+        'Legal': 'legal',
+        'Security': 'security',
+        'Economics': 'economics',
+        'Information': 'information',
+        'AI': 'ai',
+        'Climate': 'climate',
+        'Labor': 'labor',
+        'Geopolitics': 'geopolitics'
+      };
+      return mapped[t] || t.toLowerCase();
+    });
+
+    const color1 = DOMAIN_COLORS[d1];
+    const color2 = DOMAIN_COLORS[d2];
+
+    const card = document.createElement('div');
+    card.className = 'pair-card';
+    card.style.borderLeftWidth = '6px';
+    card.style.borderLeftColor = color1;
+    card.style.background = `linear-gradient(135deg, rgba(${hexToRgb(color1).join(',')},0.08) 0%, rgba(${hexToRgb(color2).join(',')},0.08) 100%)`;
+
+    const header = document.createElement('div');
+    header.className = 'pair-header';
+    header.innerHTML = `
+      <div class="pair-title">${item.topic}</div>
+      <div class="pair-count">${item.source_count} sources</div>
+    `;
+
+    const desc = document.createElement('div');
+    desc.className = 'pair-desc';
+    desc.textContent = item.theme;
+
+    const grid = document.createElement('div');
+    grid.className = 'article-grid';
+
+    item.articles.slice(0, 5).forEach(article => {
+      const articleEl = document.createElement('a');
+      articleEl.className = 'article-card';
+      articleEl.href = article.url;
+      articleEl.target = '_blank';
+      articleEl.rel = 'noopener';
+
+      const paywallBadge = article.paywall ? '<div class="paywall">Paywall</div>' : '';
+
+      articleEl.innerHTML = `
+        <div class="article-source">${article.source}</div>
+        <div class="article-title">${article.title}</div>
+        ${paywallBadge}
+      `;
+
+      grid.appendChild(articleEl);
+    });
+
+    card.appendChild(header);
+    card.appendChild(desc);
+    card.appendChild(grid);
+
+    container.appendChild(card);
+  });
+}
+
+function renderActiveThreads() {
+  const container = document.getElementById('threadsGrid');
+  container.innerHTML = '';
+
+  const topThreads = dailyData.active_threads.slice(0, 4);
+
+  topThreads.forEach(thread => {
+    const [d1, d2] = thread.pair;
+    const color1 = DOMAIN_COLORS[d1];
+    const color2 = DOMAIN_COLORS[d2];
+
+    const block = document.createElement('div');
+    block.className = 'thread-block';
+    block.style.background = `linear-gradient(135deg, ${color1}cc 0%, ${color2}cc 100%)`;
+
+    const pairKey = [d1, d2].sort().join('+');
+    const explanation = PAIR_EXPLANATIONS[pairKey] || `${DOMAIN_LABELS[d1]} and ${DOMAIN_LABELS[d2]} intersection`;
+
+    const trend = thread.trend === 'rising' ? '↑ Rising' : thread.trend === 'falling' ? '↓ Falling' : 'Stable';
+
+    block.innerHTML = `
+      <div class="thread-pair">${DOMAIN_LABELS[d1]} + ${DOMAIN_LABELS[d2]}</div>
+      <div class="thread-count">${thread.today_count}</div>
+      <div class="thread-label">${explanation}</div>
+      <div class="trend-badge">${trend}</div>
+    `;
+
+    container.appendChild(block);
+  });
+}
+
+function renderSourceSpectrum() {
+  const container = document.getElementById('spectrumBars');
+  container.innerHTML = '';
+
+  const spectrum = dailyData.source_spectrum;
+  const maxCount = Math.max(...Object.values(spectrum));
+
+  const sourceTypes = [
+    { key: 'national', label: 'National' },
+    { key: 'international', label: 'International' },
+    { key: 'community', label: 'Community' },
+    { key: 'specialist', label: 'Specialist' },
+    { key: 'explainer', label: 'Explainer' },
+    { key: 'analysis', label: 'Analysis' }
+  ];
+
+  sourceTypes.forEach(type => {
+    const count = spectrum[type.key] || 0;
+    const height = (count / maxCount) * 200;
+
+    const bar = document.createElement('div');
+    bar.className = 'spectrum-bar';
+
+    const barLabel = document.createElement('div');
+    barLabel.className = 'bar-label';
+    barLabel.textContent = type.label;
+
+    const barFill = document.createElement('div');
+    barFill.className = 'bar-fill';
+    barFill.style.height = height + 'px';
+    barFill.style.background = getSpectrumColor(type.key);
+
+    const barCount = document.createElement('div');
+    barCount.className = 'bar-count';
+    barCount.textContent = count;
+
+    bar.appendChild(barLabel);
+    bar.appendChild(barFill);
+    bar.appendChild(barCount);
+
+    container.appendChild(bar);
+  });
+}
+
+function getSpectrumColor(type) {
+  const colors = {
+    national: '#6652FF',
+    international: '#1976D2',
+    community: '#FF5400',
+    specialist: '#00C2A8',
+    explainer: '#FF9800',
+    analysis: '#4CAF50'
+  };
+  return colors[type] || '#9E0059';
+}
+
+function renderCommunityStories() {
+  const container = document.getElementById('communityCards');
+  container.innerHTML = '';
+
+  // Get community articles from narrative divergence
+  const communityArticles = [];
+  dailyData.narrative_divergence.forEach(item => {
+    item.articles.forEach(article => {
+      if (article.source && !['New York Times', 'AP News', 'Reuters', 'NPR', 'Bloomberg', 'BBC', 'CNN', 'Fox News', 'NBC', 'CBS', 'Washington Post', 'Wall Street Journal', 'Financial Times', 'The Guardian', 'The New York Times'].includes(article.source)) {
+        if (!communityArticles.find(a => a.url === article.url)) {
+          communityArticles.push(article);
+        }
+      }
+    });
+  });
+
+  communityArticles.slice(0, 6).forEach(article => {
+    const card = document.createElement('a');
+    card.className = 'community-card';
+    card.href = article.url;
+    card.target = '_blank';
+    card.rel = 'noopener';
+
+    card.innerHTML = `
+      <div class="community-source">
+        <span class="source-badge"></span>
+        ${article.source}
+      </div>
+      <div class="community-title">${article.title}</div>
+      <div class="community-excerpt">${article.connection || 'Covering stories beyond mainstream coverage'}</div>
+    `;
+
+    container.appendChild(card);
+  });
+}
+
+function hexToRgb(hex) {
+  const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  return result ? [
+    parseInt(result[1], 16),
+    parseInt(result[2], 16),
+    parseInt(result[3], 16)
+  ] : [0, 0, 0];
+}
+
+// Load data and render
+loadData();
+</script>
+
+</body>
+</html>

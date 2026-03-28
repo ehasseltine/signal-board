@@ -1,10 +1,10 @@
 {
-  "last_updated": "2026-03-28T02:17:18Z",
+  "last_updated": "2026-03-28T02:42:59Z",
   "stats": {
-    "total_articles": 2073,
+    "total_articles": 2092,
     "total_sources": 113,
-    "cross_domain_count": 769,
-    "today_count": 615,
+    "cross_domain_count": 773,
+    "today_count": 633,
     "domains": {
       "ai": {
         "label": "AI",
@@ -13,18 +13,18 @@
       },
       "labor": {
         "label": "Labor",
-        "count": 103,
-        "today": 27
+        "count": 104,
+        "today": 28
       },
       "governance": {
         "label": "Governance",
-        "count": 334,
-        "today": 112
+        "count": 335,
+        "today": 113
       },
       "information": {
         "label": "Information",
-        "count": 205,
-        "today": 48
+        "count": 207,
+        "today": 50
       },
       "economics": {
         "label": "Economics",
@@ -33,37 +33,37 @@
       },
       "climate": {
         "label": "Climate",
-        "count": 273,
-        "today": 67
+        "count": 274,
+        "today": 68
       },
       "security": {
         "label": "Security",
-        "count": 527,
-        "today": 178
+        "count": 531,
+        "today": 181
       },
       "geopolitics": {
         "label": "Geopolitics",
-        "count": 200,
-        "today": 38
+        "count": 201,
+        "today": 39
       },
       "domestic_politics": {
         "label": "Politics",
-        "count": 376,
-        "today": 144
+        "count": 379,
+        "today": 147
       },
       "legal": {
         "label": "Legal",
-        "count": 300,
-        "today": 112
+        "count": 303,
+        "today": 115
       }
     },
     "by_tier": {
-      "national": 511,
-      "international": 413,
+      "national": 515,
+      "international": 427,
       "domain": 215,
       "explainer": 157,
       "lived": 120,
-      "analysis": 152
+      "analysis": 153
     }
   },
   "articles": [
@@ -10051,6 +10051,302 @@
       "paywall": false,
       "date": "2026-03-28",
       "ingested": "2026-03-28T02:17:15Z",
+      "connection": ""
+    },
+    {
+      "id": "6255ccb12167",
+      "title": "Australia Resumes Some Operations at Cyclone-Hit Key Port",
+      "url": "https://www.bloomberg.com/news/articles/2026-03-28/australia-resumes-some-operations-at-cyclone-hit-key-port",
+      "summary": "A major export port on Australia’s west coast handling iron ore, liquefied natural gas and other bulk commodities has reopened after cyclone damage forced a shutdown.",
+      "source": "Bloomberg",
+      "tier": "national",
+      "region": "us",
+      "domains": [],
+      "cross_domain": false,
+      "paywall": true,
+      "date": "2026-03-28",
+      "ingested": "2026-03-28T02:42:10Z",
+      "connection": ""
+    },
+    {
+      "id": "e879664d76a4",
+      "title": "Tiger Woods' mugshot released; eyes appear bloodshot after DUI arrest",
+      "url": "https://www.foxnews.com/sports/tiger-woods-mugshot-released-eyes-appear-bloodshot-after-dui-arrest",
+      "summary": "Tiger Woods&apos; mugshot was released several hours after he was arrested for driving under the influence following a car crash near his Florida home.",
+      "source": "Fox News",
+      "tier": "national",
+      "region": "us",
+      "domains": [
+        "information"
+      ],
+      "cross_domain": false,
+      "paywall": false,
+      "date": "2026-03-28",
+      "ingested": "2026-03-28T02:42:11Z",
+      "connection": ""
+    },
+    {
+      "id": "46cd3e4e24c5",
+      "title": "Fulton County makes case for return of 2020 ballots seized by FBI",
+      "url": "https://www.washingtonexaminer.com/news/justice/4507058/fulton-county-makes-case-2020-ballots-seized-fbi/",
+      "summary": "A federal judge heard arguments Friday in a closely watched dispute between Georgia’s Fulton County and the Trump administration over whether the FBI must return thousands of 2020 election ballots seized during a January search warrant execution, as both sides sharply clashed over the scope of an ongoing federal investigation. The hearing before U.S. District [&#8230;]",
+      "source": "Washington Examiner",
+      "tier": "national",
+      "region": "us",
+      "domains": [
+        "domestic_politics",
+        "legal"
+      ],
+      "cross_domain": true,
+      "paywall": false,
+      "date": "2026-03-28",
+      "ingested": "2026-03-28T02:42:15Z",
+      "connection": ""
+    },
+    {
+      "id": "8910127777a9",
+      "title": "JD Vance suggests aliens are actually demons during podcast interview",
+      "url": "https://www.washingtonexaminer.com/news/white-house/4507618/jd-vance-aliens-demons-podcast-interview/",
+      "summary": "Vice President JD Vance cast doubt on the nature of extraterrestrial life in a wide-ranging podcast interview, suggesting that so-called “aliens” may instead be demons. Appearing on The Benny Show, hosted by right-wing podcaster Benny Johnson, Vance talked about extraterrestrials and offered an unexpected take. “I don’t think they’re aliens. I think they’re demons anyway, [&#8230;]",
+      "source": "Washington Examiner",
+      "tier": "national",
+      "region": "us",
+      "domains": [
+        "information",
+        "domestic_politics"
+      ],
+      "cross_domain": true,
+      "paywall": false,
+      "date": "2026-03-28",
+      "ingested": "2026-03-28T02:42:15Z",
+      "connection": ""
+    },
+    {
+      "id": "74e8448ee276",
+      "title": "Intense bombing in Tehran, Isfahan",
+      "url": "https://www.aljazeera.com/video/newsfeed/2026/3/28/intense-bombing-in-tehran-isfahan?traffic_source=rss",
+      "summary": "Black smoke is rising over Tehran and Isfahan after early morning US-Israeli airstrikes on the cities.",
+      "source": "Al Jazeera",
+      "tier": "international",
+      "region": "qatar",
+      "domains": [
+        "security"
+      ],
+      "cross_domain": false,
+      "paywall": false,
+      "date": "2026-03-28",
+      "ingested": "2026-03-28T02:42:18Z",
+      "connection": ""
+    },
+    {
+      "id": "bcbae0889ad1",
+      "title": "First Hong Kong Sevens rugby tourney held in 1976 – SCMP archive",
+      "url": "https://www.scmp.com/sport/rugby/hk-sevens/article/3348128/first-hong-kong-sevens-rugby-tourney-held-1976-scmp-archive?utm_source=rss_feed",
+      "summary": "This article was first published on March 29, 1976. By Jack Beattie World ‘sevens’ for HK? A seven-a-side rugby union world cup competition – and possibly staged in Hongkong! That’s the exciting prospect that emerged after yesterday’s first International “Sevens” Championships held at the Hongkong Football Club. Last night Rothmans and Cathay Pacific, the joint-sponsors of this unique event, which had 12 countries competing, were playing it a bit coy – but both agreed that a similar promotion...",
+      "source": "South China Morning Post",
+      "tier": "international",
+      "region": "hong_kong",
+      "domains": [
+        "climate"
+      ],
+      "cross_domain": false,
+      "paywall": true,
+      "date": "2026-03-28",
+      "ingested": "2026-03-28T02:42:19Z",
+      "connection": ""
+    },
+    {
+      "id": "43941231ad6c",
+      "title": "US special envoy Witkoff predicts Iran talks as war enters second month",
+      "url": "https://www.scmp.com/news/world/united-states-canada/article/3348223/us-special-envoy-witkoff-predicts-iran-talks-war-enters-second-month?utm_source=rss_feed",
+      "summary": "US President Donald Trump’s special envoy Steve Witkoff said on Friday he believed Iran would hold talks with Washington “this week” as the US-Israeli war against Tehran entered its second month. The war began on February 28 when the United States and Israel launched air strikes across Iran, killing supreme leader Ayatollah Ali Khamenei and sending shock waves across the globe. A month later the conflict showed no sign of ending, with US-Israeli strikes hitting two Iranian nuclear facilities on.",
+      "source": "South China Morning Post",
+      "tier": "international",
+      "region": "hong_kong",
+      "domains": [
+        "security",
+        "legal"
+      ],
+      "cross_domain": true,
+      "paywall": true,
+      "date": "2026-03-28",
+      "ingested": "2026-03-28T02:42:19Z",
+      "connection": ""
+    },
+    {
+      "id": "756173bccf78",
+      "title": "Iran-Israel war LIVE: Israel military says striking 'regime targets' in Tehran; One killed in Tel Aviv amid Iranian missile attack",
+      "url": "https://www.thehindu.com/news/international/iran-israel-us-war-west-asia-conflict-strait-of-hormuz-attacks-march-28-2026/article70795241.ece",
+      "summary": "An Iranian missile attack wounded several U.S. service members and damaged several planes at a base in Saudi Arabia",
+      "source": "The Hindu",
+      "tier": "international",
+      "region": "india",
+      "domains": [
+        "security"
+      ],
+      "cross_domain": false,
+      "paywall": false,
+      "date": "2026-03-28",
+      "ingested": "2026-03-28T02:42:20Z",
+      "connection": ""
+    },
+    {
+      "id": "cb2448848ba1",
+      "title": "Nepal's former PM Oli arrested over deaths during Gen Z protests",
+      "url": "https://www.thehindu.com/news/international/nepals-former-pm-oli-arrested-over-deaths-during-gen-z-protests/article70795245.ece",
+      "summary": "Police spokesperson Om ‌Adhikari confirmed the detainment of ​K.P. ​Sharma Oli and his Home Minister, Ramesh Lekhak; a panel ⁠which investigated violence ⁠during the anti-corruption protests recommended that Mr. Oli be prosecuted for ​failing to ‌prevent the crackdown on the protests",
+      "source": "The Hindu",
+      "tier": "international",
+      "region": "india",
+      "domains": [
+        "governance",
+        "legal"
+      ],
+      "cross_domain": true,
+      "paywall": false,
+      "date": "2026-03-28",
+      "ingested": "2026-03-28T02:42:20Z",
+      "connection": ""
+    },
+    {
+      "id": "cf782203cda9",
+      "title": "全国の博物館収蔵庫 6割余が「満杯状態」 日本博物館協会調査",
+      "url": "http://www3.nhk.or.jp/news/html/20260328/k10015086121000.html",
+      "summary": "各地の博物館で、収蔵庫に入りきらない資料の扱いが問題となる中、「日本博物館協会」が全国の博物館を対象にしたアンケート調査を行ったところ、収蔵庫が「満杯状態」だと回答した博物館が全体の6割余りにのぼったことがわかりました。",
+      "source": "NHK World",
+      "tier": "international",
+      "region": "japan",
+      "domains": [],
+      "cross_domain": false,
+      "paywall": false,
+      "date": "2026-03-28",
+      "ingested": "2026-03-28T02:42:20Z",
+      "connection": ""
+    },
+    {
+      "id": "5ffef09271b1",
+      "title": "アメリカ元高官「エネルギー供給の史上最大の混乱だ」",
+      "url": "http://www3.nhk.or.jp/news/html/20260328/k10015086521000.html",
+      "summary": "イラン情勢をめぐり、アメリカ政府でエネルギー政策を担当した高官がNHKの取材に応じ「エネルギー供給の史上最大の混乱だ」と危機感を示した上で、事実上封鎖されているホルムズ海峡の一刻も早い開放がトランプ大統領にとって最も重要だという考えを示しました。",
+      "source": "NHK World",
+      "tier": "international",
+      "region": "japan",
+      "domains": [],
+      "cross_domain": false,
+      "paywall": false,
+      "date": "2026-03-28",
+      "ingested": "2026-03-28T02:42:20Z",
+      "connection": ""
+    },
+    {
+      "id": "6ee85deb6533",
+      "title": "'All the villages will be deserted’: The crisis emptying Greek islands and towns",
+      "url": "https://www.abc.net.au/news/2026-03-28/greece-population-decline-demographics/106446338",
+      "summary": "Greece's population could drop by as much as 20 per cent by 2050, with the government declaring the situation a \"national threat\".",
+      "source": "ABC Australia",
+      "tier": "international",
+      "region": "australia",
+      "domains": [],
+      "cross_domain": false,
+      "paywall": false,
+      "date": "2026-03-28",
+      "ingested": "2026-03-28T02:42:20Z",
+      "connection": ""
+    },
+    {
+      "id": "a560c513234d",
+      "title": "PM announces new powers to boost fuel supply amid Middle East tensions",
+      "url": "https://www.abc.net.au/news/2026-03-28/government-backs-delivery-of-extra-fuel-cargoes/106506536",
+      "summary": "The Albanese government will use public money to underwrite the delivery of extra cargoes of fuel in a bid to shore up supply during the Middle East conflict.",
+      "source": "ABC Australia",
+      "tier": "international",
+      "region": "australia",
+      "domains": [
+        "geopolitics"
+      ],
+      "cross_domain": false,
+      "paywall": false,
+      "date": "2026-03-28",
+      "ingested": "2026-03-28T02:42:20Z",
+      "connection": ""
+    },
+    {
+      "id": "7811070e6dd5",
+      "title": "Tiger Woods arrested after car crash: DUI charge, mug shot released",
+      "url": "https://timesofindia.indiatimes.com/sports/golf/top-stories/tiger-woods-arrested-after-car-crash-dui-charge-mug-shot-released/articleshow/129857677.cms",
+      "summary": "Golf legend Tiger Woods was arrested on a DUI charge after his Land Rover overturned near his Florida home. Woods showed signs of impairment but passed a breathalyzer test. He refused a urine analysis, leading to DUI charges, with experts suspecting medication or drug influence.",
+      "source": "Times of India",
+      "tier": "international",
+      "region": "india",
+      "domains": [],
+      "cross_domain": false,
+      "paywall": false,
+      "date": "2026-03-28",
+      "ingested": "2026-03-28T02:42:42Z",
+      "connection": ""
+    },
+    {
+      "id": "0252d41e1d68",
+      "title": "'Ladies of the house … ': Yograj Singh's shocking remark blames wives for player retirements",
+      "url": "https://timesofindia.indiatimes.com/sports/cricket/news/ladies-of-the-house-yograj-singhs-shocking-remark-blames-wives-for-player-retirements/articleshow/129846641.cms",
+      "summary": "Yograj Singh believes wives often influence players' retirement decisions, urging women to stay out of such matters. He also criticized Virat Kohli and Rohit Sharma for retiring from T20Is and Tests, while surprisingly praising MS Dhoni's continued fitness and dedication, stating no one should tell him to retire.",
+      "source": "Times of India",
+      "tier": "international",
+      "region": "india",
+      "domains": [
+        "labor"
+      ],
+      "cross_domain": false,
+      "paywall": false,
+      "date": "2026-03-28",
+      "ingested": "2026-03-28T02:42:42Z",
+      "connection": ""
+    },
+    {
+      "id": "4d64b3029eb7",
+      "title": "Interchange for EPE &amp; Delhi-Mumbai Expressway link for quick access to Noida airport",
+      "url": "https://timesofindia.indiatimes.com/city/noida/interchange-for-epe-del-mum-eway-link-for-quick-access-to-noida-airport/articleshow/129854413.cms",
+      "summary": "Noida International Airport opens March 28. The government is building new roads to connect the airport. These projects will make travel easier from Delhi and nearby districts. Some roads are complete, others are expected by 2027. A high-speed rail corridor is also proposed. Until then, the Yamuna Expressway will be the main route.",
+      "source": "Times of India",
+      "tier": "international",
+      "region": "india",
+      "domains": [],
+      "cross_domain": false,
+      "paywall": false,
+      "date": "2026-03-28",
+      "ingested": "2026-03-28T02:42:42Z",
+      "connection": ""
+    },
+    {
+      "id": "089f29c65d8e",
+      "title": "Canadian tourists list out ‘normal daily things’ that they found fascinating",
+      "url": "https://timesofindia.indiatimes.com/life-style/travel/destinations/things-in-india-that-just-makes-sensecanadian-tourists-lists-out-normal-daily-things-that-they-found-fascinating/articleshow/129840114.cms",
+      "summary": "Vancouver couple Nick and Raychel discovered India's simple yet logical daily practices. They observed fennel seeds ending meals, the extensive train network connecting the nation, and the balanced thali meals. Hand wash stations were readily available. Clay cups for chai offered a unique flavor and eco-friendly disposal. Leaf plates served street food.",
+      "source": "Times of India",
+      "tier": "international",
+      "region": "india",
+      "domains": [],
+      "cross_domain": false,
+      "paywall": false,
+      "date": "2026-03-28",
+      "ingested": "2026-03-28T02:42:43Z",
+      "connection": ""
+    },
+    {
+      "id": "6d075f7ecc3e",
+      "title": "US vice-president Vance says he’s obsessed with UFOs",
+      "url": "https://www.straitstimes.com/world/united-states/us-vice-president-vance-says-hes-obsessed-with-ufos",
+      "summary": "“I’ve still got three more years as vice-president. I will get to the bottom of the UFO files,” he said.",
+      "source": "Straits Times",
+      "tier": "international",
+      "region": "singapore",
+      "domains": [
+        "domestic_politics"
+      ],
+      "cross_domain": false,
+      "paywall": false,
+      "date": "2026-03-28",
+      "ingested": "2026-03-28T02:42:43Z",
       "connection": ""
     },
     {
@@ -23978,6 +24274,23 @@
       "paywall": false,
       "date": "2026-03-25",
       "ingested": "2026-03-28T02:17:15Z",
+      "connection": ""
+    },
+    {
+      "id": "5906a36761cf",
+      "title": "A Prophetic Warning: Orestes Augustus Brownson on the Rise of Socialism - The Heritage Foundation",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNUDA0czZ6SFlqS2NBaVdnb2g1bWZBVkpMVkhOQ1Y1Q1ltakR5R0JuV2swSl95RnY3UWt1bEFsdk92NVUyMUpMcHNMZ28xdWQ0bjRLZDlvdE52R2RkWERadHBWaGdIVUwwVEZxa2ZPZGhLcWtZMVZ5bEVzWk5mc2NtcTVHdHpHSExiZHN4VmZXd2k0YklYbXBra1I2Q01zenNReW9hYnJsS3FPbjBo?oc=5",
+      "summary": "A Prophetic Warning: Orestes Augustus Brownson on the Rise of Socialism &nbsp;&nbsp; The Heritage Foundation",
+      "source": "Heritage Foundation",
+      "tier": "analysis",
+      "region": "us",
+      "domains": [
+        "security"
+      ],
+      "cross_domain": false,
+      "paywall": false,
+      "date": "2026-03-25",
+      "ingested": "2026-03-28T02:42:42Z",
       "connection": ""
     },
     {

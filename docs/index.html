@@ -3,208 +3,169 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Signal Board tracks how today's biggest stories connect across topics and sources. 120+ outlets, every perspective, updated daily.">
+<meta name="description" content="112 news sources. Every perspective. The connections most coverage misses. Updated daily.">
+<meta property="og:title" content="Signal Board">
+<meta property="og:description" content="112 news sources. Every perspective. The connections most coverage misses.">
+<meta property="og:type" content="website">
 <title>Signal Board</title>
+<link rel="canonical" href="https://www.elisehasseltine.com/signal-board/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --bg:#0a0a0a; --surface:#111114; --surface-hover:#18181d;
-    --border:#1e1e24; --text:#e8e8e8; --text-dim:rgba(235,230,245,0.4);
-    --text-mid:rgba(235,230,245,0.65); --purple:#6652FF;
-    --ai:#6652FF; --labor:#FF5400; --governance:#FF0054; --information:#9E0059;
-    --economics:#00C2A8; --climate:#4CAF50; --security:#D32F2F;
-    --geopolitics:#1976D2; --domestic_politics:#7B1FA2; --legal:#FF9800;
-  }
   *{margin:0;padding:0;box-sizing:border-box;}
-  body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;line-height:1.6;-webkit-font-smoothing:antialiased;}
+  body{font-family:'Inter',sans-serif;background:#0a0a0a;color:#e8e8e8;min-height:100vh;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  a{color:inherit;text-decoration:none;}
 
-  .wrap{max-width:800px;margin:0 auto;padding:0 1.5rem;}
+  /* PLAYFUL FLOATING SHAPES — decorative SVG elements */
+  .shapes{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:0.08;}
 
-  /* HEADER — big, bold, purposeful */
-  .hdr{padding:3rem 0 1.5rem;text-align:center;}
-  .hdr h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(2.8rem,6vw,3.4rem);font-weight:700;letter-spacing:-0.05em;color:#fff;line-height:1.05;}
-  .hdr .sub{color:var(--text-mid);font-size:1rem;margin-top:0.6rem;max-width:520px;margin-left:auto;margin-right:auto;line-height:1.65;}
+  .wrap{position:relative;z-index:1;max-width:900px;margin:0 auto;padding:0 1.5rem;}
 
-  /* COLOR BAR — the heartbeat */
-  .bar-wrap{margin:1.5rem 0 0.5rem;}
-  .bar{display:flex;height:14px;border-radius:7px;overflow:hidden;gap:2px;}
-  .bar-s{border-radius:4px;cursor:pointer;transition:transform 0.2s,filter 0.2s;position:relative;}
-  .bar-s:hover{filter:brightness(1.3);transform:scaleY(1.8);z-index:2;}
-  .bar-tip{display:none;position:absolute;bottom:calc(100% + 10px);left:50%;transform:translateX(-50%);background:#1c1c22;border:1px solid rgba(255,255,255,0.08);padding:0.5rem 0.75rem;border-radius:8px;font-size:0.75rem;white-space:nowrap;color:#fff;z-index:100;pointer-events:none;box-shadow:0 8px 24px rgba(0,0,0,0.6);}
-  .bar-tip::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);border:5px solid transparent;border-top-color:#1c1c22;}
-  .bar-s:hover .bar-tip{display:block;}
+  /* HERO */
+  .hero{padding:8vh 0 3rem;position:relative;}
+  .hero h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(3.5rem,9vw,6rem);font-weight:800;letter-spacing:-0.06em;color:#fff;line-height:0.98;margin-bottom:2rem;}
+  .hero h1 .w1{color:#6652FF;}
+  .hero h1 .w2{color:#FF5400;}
+  .hero h1 .w3{color:#00C2A8;}
+  .hero .intro{font-size:clamp(1.05rem,2.2vw,1.25rem);color:rgba(235,230,245,0.6);line-height:1.75;max-width:580px;margin-bottom:2.5rem;}
 
-  .legend{display:flex;justify-content:center;gap:0.85rem;flex-wrap:wrap;padding:0.5rem 0 1.5rem;}
-  .leg{display:flex;align-items:center;gap:0.3rem;font-size:0.68rem;color:var(--text-dim);cursor:default;position:relative;transition:color 0.15s;}
-  .leg-d{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
-  .leg .tdef{display:none;position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);background:#1c1c22;border:1px solid rgba(255,255,255,0.08);padding:0.5rem 0.7rem;border-radius:8px;font-size:0.72rem;line-height:1.5;color:var(--text);width:max-content;max-width:240px;z-index:100;pointer-events:none;box-shadow:0 8px 24px rgba(0,0,0,0.6);white-space:normal;}
-  .tdef::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);border:5px solid transparent;border-top-color:#1c1c22;}
-  .leg:hover .tdef{display:block;}
-  .leg:hover{color:#fff;}
+  /* BIG COLORFUL STAT BLOCKS */
+  .stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:0.75rem;margin-bottom:3rem;}
+  .stat-block{border-radius:20px;padding:1.6rem 1.4rem;display:flex;flex-direction:column;justify-content:flex-end;min-height:130px;transition:transform 0.2s;}
+  .stat-block:hover{transform:scale(1.03);}
+  .stat-block .num{font-family:'Space Grotesk',sans-serif;font-size:clamp(2.2rem,5vw,3rem);font-weight:800;color:#fff;letter-spacing:-0.04em;line-height:1;}
+  .stat-block .label{font-size:0.78rem;color:rgba(255,255,255,0.7);margin-top:0.3rem;font-weight:500;}
 
-  /* TABS — oversized, easy, inviting */
-  .tabs{display:flex;gap:0;margin-bottom:0;border-bottom:2px solid var(--border);}
-  .tab{flex:1;padding:1.1rem 0.5rem;font-family:'Space Grotesk',sans-serif;font-size:1.05rem;font-weight:700;color:var(--text-dim);cursor:pointer;background:none;border:none;border-bottom:3px solid transparent;margin-bottom:-2px;transition:all 0.15s;letter-spacing:-0.02em;text-align:center;}
-  .tab:hover{color:var(--text);background:rgba(255,255,255,0.02);}
-  .tab.on{color:#fff;border-bottom-color:var(--purple);}
-  .tab .cnt{font-size:0.65rem;font-weight:500;color:var(--text-dim);margin-left:0.25rem;opacity:0.6;}
+  /* DOMAIN COLOR BAR — oversized, playful */
+  .color-section{margin-bottom:3rem;}
+  .color-bar{display:flex;height:32px;border-radius:16px;overflow:hidden;gap:3px;margin-bottom:0.8rem;}
+  .color-bar-s{border-radius:10px;position:relative;cursor:pointer;transition:transform 0.25s,filter 0.2s;}
+  .color-bar-s:hover{transform:scaleY(1.5);filter:brightness(1.2);z-index:2;}
+  .color-bar-tip{display:none;position:absolute;bottom:calc(100% + 12px);left:50%;transform:translateX(-50%);background:#1a1a20;border:1px solid rgba(255,255,255,0.1);padding:0.6rem 0.9rem;border-radius:12px;font-size:0.82rem;white-space:nowrap;color:#fff;z-index:100;pointer-events:none;box-shadow:0 10px 30px rgba(0,0,0,0.6);}
+  .color-bar-tip::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);border:6px solid transparent;border-top-color:#1a1a20;}
+  .color-bar-s:hover .color-bar-tip{display:block;}
 
-  .panel{display:none;padding-top:1.8rem;}
-  .panel.on{display:block;}
+  .domain-pills{display:flex;gap:0.5rem;flex-wrap:wrap;}
+  .pill{display:inline-flex;align-items:center;gap:0.4rem;padding:0.5rem 1rem;border-radius:100px;font-family:'Space Grotesk',sans-serif;font-size:0.78rem;font-weight:700;color:rgba(0,0,0,0.88);cursor:default;position:relative;transition:transform 0.15s;}
+  .pill:hover{transform:scale(1.08);}
+  .pill .pill-tip{display:none;position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);background:#1a1a20;border:1px solid rgba(255,255,255,0.1);padding:0.5rem 0.75rem;border-radius:10px;font-size:0.72rem;color:#e8e8e8;width:max-content;max-width:220px;z-index:100;pointer-events:none;box-shadow:0 8px 24px rgba(0,0,0,0.6);white-space:normal;font-weight:400;line-height:1.5;}
+  .pill-tip::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);border:5px solid transparent;border-top-color:#1a1a20;}
+  .pill:hover .pill-tip{display:block;}
 
-  /* SECTION INTROS */
-  .sec-intro{font-size:0.95rem;color:var(--text-mid);margin-bottom:1.5rem;line-height:1.7;max-width:600px;}
+  /* NAV CARDS — big colorful blocks */
+  .nav-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin-bottom:1rem;}
+  .nav-card{border-radius:24px;padding:2.5rem 2.2rem;display:flex;flex-direction:column;justify-content:space-between;min-height:220px;transition:transform 0.2s,filter 0.15s;overflow:hidden;position:relative;}
+  .nav-card:hover{transform:translateY(-4px);filter:brightness(1.05);}
+  .nav-card h2{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.8rem,4vw,2.4rem);font-weight:800;color:#fff;letter-spacing:-0.04em;line-height:1.05;margin-bottom:0.6rem;}
+  .nav-card p{font-size:0.88rem;color:rgba(255,255,255,0.7);line-height:1.6;max-width:320px;}
+  .nav-card .go{font-family:'Space Grotesk',sans-serif;font-size:0.85rem;font-weight:700;color:#fff;margin-top:auto;padding-top:1rem;opacity:0.8;}
+  .nav-card .shape{position:absolute;border-radius:50%;opacity:0.15;pointer-events:none;}
 
-  /* TODAY'S UPDATES - the daily blog panel */
-  .daily-date{font-family:'Space Grotesk',sans-serif;font-size:0.75rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.4rem;}
-  .daily-headline{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.4rem,3.5vw,1.8rem);font-weight:700;color:#fff;letter-spacing:-0.03em;line-height:1.2;margin-bottom:1.2rem;}
+  .nav-full{grid-column:1/-1;border-radius:24px;padding:2.2rem 2.5rem;min-height:140px;display:flex;align-items:center;justify-content:space-between;gap:2rem;transition:transform 0.2s,filter 0.15s;}
+  .nav-full:hover{transform:translateY(-3px);filter:brightness(1.05);}
+  .nav-full h2{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.4rem,3vw,1.8rem);font-weight:800;color:#fff;letter-spacing:-0.03em;}
+  .nav-full p{font-size:0.85rem;color:rgba(255,255,255,0.65);line-height:1.55;max-width:400px;}
+  .nav-full .go{font-family:'Space Grotesk',sans-serif;font-size:0.85rem;font-weight:700;color:#fff;white-space:nowrap;opacity:0.8;}
 
-  /* DIVERGENCE BLOCKS */
-  .diverge{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.4rem 1.5rem;margin-bottom:1rem;transition:border-color 0.15s;}
-  .diverge:hover{border-color:rgba(255,255,255,0.08);}
-  .diverge-label{font-family:'Space Grotesk',sans-serif;font-size:0.65rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--purple);font-weight:700;margin-bottom:0.6rem;}
-  .diverge-topic{font-family:'Space Grotesk',sans-serif;font-size:1.15rem;font-weight:700;color:#fff;letter-spacing:-0.02em;margin-bottom:0.5rem;}
-  .diverge-desc{font-size:0.85rem;color:var(--text-mid);line-height:1.65;margin-bottom:1rem;}
-  .diverge-sources{display:flex;flex-direction:column;gap:0.5rem;}
-  .dv-src{display:flex;align-items:flex-start;gap:0.75rem;padding:0.7rem 0.85rem;background:rgba(0,0,0,0.25);border-radius:10px;text-decoration:none;color:inherit;transition:background 0.12s,transform 0.12s;border:1px solid rgba(255,255,255,0.03);}
-  .dv-src:hover{background:rgba(0,0,0,0.45);transform:translateX(3px);}
-  .dv-src-name{font-size:0.72rem;font-weight:700;color:var(--text-mid);min-width:90px;flex-shrink:0;padding-top:0.05rem;}
-  .dv-src-title{font-size:0.82rem;color:rgba(255,255,255,0.85);line-height:1.4;font-weight:500;}
-  .dv-src-meta{font-size:0.62rem;color:var(--text-dim);margin-top:0.15rem;}
-  .pw{font-size:0.52rem;color:rgba(255,255,255,0.3);background:rgba(255,255,255,0.06);padding:0.08rem 0.35rem;border-radius:100px;margin-left:0.25rem;font-weight:600;letter-spacing:0.02em;vertical-align:middle;}
+  /* BOTTOM */
+  .bottom{padding:2.5rem 0;font-size:0.88rem;color:rgba(235,230,245,0.5);line-height:1.75;max-width:600px;margin-bottom:1rem;}
+  .footer{border-top:1px solid rgba(255,255,255,0.06);padding:1.5rem 0 3rem;font-size:0.72rem;color:rgba(235,230,245,0.3);display:flex;gap:1.5rem;flex-wrap:wrap;}
 
-  /* COLLISION CARDS — reimagined */
-  .collision{background:var(--surface);border-radius:14px;padding:1.3rem 1.4rem;margin-bottom:0.75rem;border:1px solid var(--border);transition:border-color 0.15s,transform 0.15s;}
-  .collision:hover{border-color:rgba(255,255,255,0.08);transform:translateY(-1px);}
-  .coll-pair{display:flex;align-items:center;gap:0.4rem;margin-bottom:0.2rem;}
-  .coll-pair .dn{font-family:'Space Grotesk',sans-serif;font-size:1rem;font-weight:700;}
-  .coll-pair .x{font-size:0.7rem;color:rgba(255,255,255,0.15);font-weight:700;}
-  .coll-pair .ct{margin-left:auto;font-family:'Space Grotesk',sans-serif;font-size:0.85rem;font-weight:700;color:rgba(255,255,255,0.2);}
-  .coll-why{font-size:0.82rem;color:var(--text-dim);margin-bottom:0.85rem;line-height:1.55;}
-  .coll-article{display:block;text-decoration:none;color:inherit;padding:0.6rem 0.75rem;background:rgba(0,0,0,0.2);border-radius:9px;border:1px solid rgba(255,255,255,0.03);margin-bottom:0.35rem;transition:background 0.12s,transform 0.12s;}
-  .coll-article:hover{background:rgba(0,0,0,0.4);transform:translateX(3px);}
-  .coll-article-t{font-size:0.82rem;color:rgba(255,255,255,0.85);line-height:1.4;font-weight:500;}
-  .coll-article-c{font-size:0.72rem;color:var(--purple);margin-top:0.1rem;line-height:1.4;font-weight:500;}
-  .coll-article-s{font-size:0.62rem;color:var(--text-dim);margin-top:0.1rem;}
-
-  /* THREAD TRACKER */
-  .thread{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.3rem 1.4rem;margin-bottom:0.75rem;}
-  .thread-label{font-family:'Space Grotesk',sans-serif;font-size:0.65rem;text-transform:uppercase;letter-spacing:0.1em;font-weight:700;margin-bottom:0.5rem;}
-  .thread-title{font-family:'Space Grotesk',sans-serif;font-size:1.05rem;font-weight:700;color:#fff;letter-spacing:-0.02em;margin-bottom:0.3rem;}
-  .thread-count{font-size:0.8rem;color:var(--text-dim);margin-bottom:0.65rem;}
-  .thread-bar{height:8px;border-radius:4px;overflow:hidden;display:flex;gap:1px;margin-bottom:0.6rem;}
-  .thread-bar-s{border-radius:3px;transition:filter 0.15s;min-width:4px;}
-  .thread-articles{display:flex;flex-direction:column;gap:0.25rem;}
-  .thread-a{display:block;text-decoration:none;padding:0.45rem 0.65rem;background:rgba(0,0,0,0.2);border-radius:8px;border:1px solid rgba(255,255,255,0.03);transition:background 0.12s;}
-  .thread-a:hover{background:rgba(0,0,0,0.4);}
-  .thread-a-t{font-size:0.78rem;color:rgba(255,255,255,0.85);font-weight:500;line-height:1.35;}
-  .thread-a-s{font-size:0.6rem;color:var(--text-dim);margin-top:0.06rem;}
-
-  /* ALL STORIES FEED */
-  .chips{display:flex;gap:0.4rem;flex-wrap:wrap;margin-bottom:1.2rem;}
-  .chip{padding:0.5rem 1rem;border-radius:100px;border:1px solid var(--border);background:none;color:var(--text-dim);font-family:'Space Grotesk',sans-serif;font-size:0.78rem;font-weight:600;cursor:pointer;transition:all 0.15s;display:flex;align-items:center;gap:0.35rem;}
-  .chip:hover{border-color:rgba(255,255,255,0.15);color:var(--text);}
-  .chip.on{color:#fff;}
-  .chip-d{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
-
-  .fi{display:grid;grid-template-columns:1fr auto;gap:0.8rem;align-items:center;padding:0.85rem 1rem;background:var(--surface);border-radius:8px;text-decoration:none;color:var(--text);transition:background 0.12s;margin-bottom:2px;}
-  .fi:hover{background:var(--surface-hover);}
-  .fi-t{font-size:0.88rem;font-weight:500;line-height:1.4;}
-  .fi-m{font-size:0.68rem;color:var(--text-dim);margin-top:0.15rem;}
-  .fi-src{font-weight:600;color:var(--text-mid);}
-  .fi-tags{display:flex;gap:0.25rem;flex-shrink:0;flex-wrap:wrap;justify-content:flex-end;}
-  .fi-tag{padding:0.12rem 0.45rem;border-radius:100px;font-size:0.58rem;font-weight:700;color:rgba(0,0,0,0.9);white-space:nowrap;}
-  .more{display:block;width:100%;padding:0.9rem;margin-top:0.6rem;border:1px solid var(--border);background:none;color:var(--text-dim);font-family:'Space Grotesk',sans-serif;font-size:0.82rem;font-weight:600;cursor:pointer;border-radius:8px;transition:all 0.15s;}
-  .more:hover{border-color:rgba(255,255,255,0.15);color:var(--text);}
-
-  /* ABOUT */
-  .about-text{font-size:0.95rem;color:var(--text-mid);line-height:1.75;margin-bottom:1.5rem;max-width:580px;}
-  .about-text strong{color:#fff;font-weight:600;}
-  .about-stat{display:inline-flex;align-items:center;gap:0.4rem;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:0.6rem 1rem;margin:0 0.3rem 0.5rem 0;font-family:'Space Grotesk',sans-serif;}
-  .about-stat-n{font-size:1.3rem;font-weight:700;color:#fff;}
-  .about-stat-l{font-size:0.72rem;color:var(--text-dim);}
-
-  .faq-i{margin-bottom:0.4rem;}
-  .faq-q{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:0.85rem 1.1rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;width:100%;text-align:left;font-family:inherit;color:var(--text);transition:background 0.15s;}
-  .faq-q:hover{background:var(--surface-hover);}
-  .faq-qt{font-size:0.88rem;font-weight:500;}
-  .faq-tog{font-size:1rem;color:var(--text-dim);transition:transform 0.2s;}
-  .faq-tog.open{transform:rotate(45deg);}
-  .faq-a{background:rgba(17,17,20,0.9);border:1px solid var(--border);border-top:none;border-radius:0 0 10px 10px;padding:0.85rem 1.1rem;font-size:0.82rem;line-height:1.7;color:var(--text-dim);display:none;}
-  .faq-a.open{display:block;}
-
-  .footer{padding:1.5rem 0 2.5rem;border-top:1px solid var(--border);margin-top:2.5rem;font-size:0.7rem;color:var(--text-dim);text-align:center;line-height:1.8;}
-  .footer a{color:var(--purple);text-decoration:none;}
-
-  /* ARCHIVE LINK */
-  .archive-link{display:inline-flex;align-items:center;gap:0.4rem;color:var(--purple);text-decoration:none;font-family:'Space Grotesk',sans-serif;font-size:0.82rem;font-weight:600;margin-top:0.5rem;transition:opacity 0.15s;}
-  .archive-link:hover{opacity:0.7;}
-  .archive-link svg{width:14px;height:14px;}
-
-  /* CONSTELLATION VISUAL — big, interactive, beautiful */
-  .constellation{margin:1rem auto 2.5rem;position:relative;min-height:420px;}
-  .constellation svg{display:block;margin:0 auto;overflow:visible;}
-  .cst-label{font-family:'Space Grotesk',sans-serif;font-weight:700;fill:rgba(255,255,255,0.6);text-anchor:middle;pointer-events:none;transition:fill 0.3s,font-size 0.3s;}
-  .cst-count{font-family:'Space Grotesk',sans-serif;font-weight:700;fill:#fff;text-anchor:middle;pointer-events:none;}
-  .cst-desc{font-family:'Inter',sans-serif;font-weight:400;fill:rgba(255,255,255,0.35);text-anchor:middle;pointer-events:none;font-size:8px;}
-  .cst-line{stroke-linecap:round;transition:stroke-opacity 0.4s,stroke-width 0.3s;}
-  .cst-node{transition:filter 0.3s;cursor:pointer;}
-  .cst-node:hover{filter:brightness(1.4) drop-shadow(0 0 12px currentColor);}
-  .constellation.highlight .cst-line{stroke-opacity:0.02!important;}
-  .constellation.highlight .cst-line.active{stroke-opacity:0.6!important;stroke-width:4px!important;}
-  .constellation.highlight .cst-label{fill:rgba(255,255,255,0.15);}
-  .constellation.highlight .cst-label.active{fill:#fff;}
-  .cst-tooltip{position:absolute;background:#1c1c22;border:1px solid rgba(255,255,255,0.1);padding:0.65rem 0.85rem;border-radius:10px;font-size:0.78rem;color:#fff;z-index:100;pointer-events:none;box-shadow:0 10px 30px rgba(0,0,0,0.7);max-width:240px;line-height:1.5;opacity:0;transition:opacity 0.2s;}
-  .cst-tooltip.show{opacity:1;}
-
-  /* SPECTRUM ARC */
-  .spectrum-visual{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;margin:1rem 0 1.5rem;}
-  .spec-ring{position:relative;width:100px;height:100px;}
-  .spec-ring svg{transform:rotate(-90deg);}
-  .spec-ring-label{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;}
-  .spec-ring-n{font-family:'Space Grotesk',sans-serif;font-size:1.4rem;font-weight:700;color:#fff;line-height:1;}
-  .spec-ring-t{font-size:0.6rem;color:var(--text-dim);margin-top:0.15rem;}
-
-  @media(max-width:600px){
+  @media(max-width:700px){
     .wrap{padding:0 1rem;}
-    .hdr{padding:2rem 0 1rem;}
-    .tab{font-size:0.88rem;padding:0.9rem 0.3rem;}
-    .fi{grid-template-columns:1fr;}
-    .fi-tags{margin-top:0.2rem;justify-content:flex-start;}
-    .dv-src{flex-direction:column;gap:0.3rem;}
-    .dv-src-name{min-width:auto;}
+    .hero{padding:5vh 0 2rem;}
+    .stat-row{grid-template-columns:repeat(2,1fr);}
+    .nav-grid{grid-template-columns:1fr;}
+    .nav-full{flex-direction:column;align-items:flex-start;}
   }
 </style>
 </head>
 <body>
+
+<!-- Floating decorative shapes -->
+<svg class="shapes" viewBox="0 0 1400 900" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="120" cy="80" r="60" fill="#6652FF"/>
+  <circle cx="1300" cy="150" r="90" fill="#FF5400"/>
+  <rect x="200" y="700" width="80" height="80" rx="15" fill="#00C2A8" transform="rotate(15,240,740)"/>
+  <circle cx="1100" cy="800" r="70" fill="#FF0054"/>
+  <rect x="600" y="50" width="60" height="120" rx="12" fill="#4CAF50" transform="rotate(-20,630,110)"/>
+  <circle cx="80" cy="500" r="40" fill="#FF9800"/>
+  <rect x="1200" cy="450" width="100" height="50" rx="25" fill="#9E0059"/>
+  <circle cx="700" cy="850" r="50" fill="#1976D2"/>
+  <rect x="900" y="100" width="70" height="70" rx="35" fill="#7B1FA2"/>
+  <circle cx="400" cy="300" r="35" fill="#D32F2F"/>
+</svg>
+
 <div class="wrap">
 
-<div class="hdr">
-  <h1>Signal Board</h1>
-  <div class="sub">The news makes more sense when you can see the connections. 120+ sources, every perspective, updated daily.</div>
+<div class="hero">
+  <h1>The news<br>makes more<br>sense <span class="w1">when</span><br><span class="w2">you</span> see what<br><span class="w3">connects.</span></h1>
+  <p class="intro">Every day, this tool reads 112 sources from across the American spectrum and finds where today's stories overlap. Those overlaps are where the most important things are happening.</p>
 </div>
 
-<div class="bar-wrap">
-  <div class="bar" id="bar"></div>
+<div class="stat-row">
+  <div class="stat-block" style="background:#6652FF;">
+    <div class="num" id="s-sources">112</div>
+    <div class="label">sources tracked</div>
+  </div>
+  <div class="stat-block" style="background:#FF5400;">
+    <div class="num" id="s-today">--</div>
+    <div class="label">stories today</div>
+  </div>
+  <div class="stat-block" style="background:#00C2A8;">
+    <div class="num" id="s-cross">--</div>
+    <div class="label">connections</div>
+  </div>
+  <div class="stat-block" style="background:#FF0054;">
+    <div class="num" id="s-src">--</div>
+    <div class="label">sources reporting</div>
+  </div>
 </div>
-<div class="legend" id="legend"></div>
 
-<div class="tabs" id="tabs">
-  <button class="tab on" data-t="today">Today</button>
-  <button class="tab" data-t="collisions">Collisions</button>
-  <button class="tab" data-t="feed">All Stories</button>
-  <button class="tab" data-t="about">About</button>
+<div class="color-section">
+  <div class="color-bar" id="bar"></div>
+  <div class="domain-pills" id="pills"></div>
 </div>
 
-<div class="panel on" id="p-today"></div>
-<div class="panel" id="p-collisions"></div>
-<div class="panel" id="p-feed"></div>
-<div class="panel" id="p-about"></div>
+<div class="nav-grid">
+  <a class="nav-card" href="./today/" style="background:#7B1FA2;">
+    <div class="shape" style="width:180px;height:180px;top:-40px;right:-30px;background:#fff;"></div>
+    <div class="shape" style="width:100px;height:100px;bottom:-20px;left:30px;background:#9E0059;border-radius:20px;"></div>
+    <div>
+      <h2>Today</h2>
+      <p>What the data shows right now. The patterns, the connections, the stories sitting at the intersections.</p>
+    </div>
+    <span class="go">Read today's analysis &rarr;</span>
+  </a>
+  <a class="nav-card" href="./sources/" style="background:#1976D2;">
+    <div class="shape" style="width:150px;height:150px;top:20px;right:-30px;background:#00C2A8;"></div>
+    <div class="shape" style="width:70px;height:70px;bottom:30px;right:60px;background:#4CAF50;border-radius:15px;"></div>
+    <div>
+      <h2>Sources</h2>
+      <p>Every source listed, described, and justified. Where it comes from and why it's here.</p>
+    </div>
+    <span class="go">See all 112 sources &rarr;</span>
+  </a>
+</div>
+<div class="nav-grid" style="margin-bottom:3rem;">
+  <a class="nav-full" href="./stories/" style="background:#111114;border:1px solid rgba(255,255,255,0.08);">
+    <div>
+      <h2>All Stories</h2>
+      <p>Every article from every source, tagged by domain. Filter, explore, find connections.</p>
+    </div>
+    <span class="go">Browse &rarr;</span>
+  </a>
+</div>
+
+<div class="bottom">
+  This tool exists because the information systems most people use make it nearly impossible to see how the biggest forces reshaping the world are connected. The goal is not to tell you what to think. It's to show you what's connected, so you can think better. Sources span the full political spectrum, including outlets from the left, right, center, and every community that makes up this country.
+</div>
 
 <div class="footer">
-  <span id="srcCount"></span> sources · <span id="artCount"></span> articles tracked · Updated daily<br>
-  Built by <a href="https://www.elisehasseltine.com/">Elise Hasseltine</a>
+  <span>112 sources</span>
+  <span>10 domains</span>
+  <span>Updated daily</span>
+  <span>Open methodology</span>
 </div>
 
 </div>
@@ -213,473 +174,41 @@
 const DC={ai:'#6652FF',labor:'#FF5400',governance:'#FF0054',information:'#9E0059',economics:'#00C2A8',climate:'#4CAF50',security:'#D32F2F',geopolitics:'#1976D2',domestic_politics:'#7B1FA2',legal:'#FF9800'};
 const DL={ai:'AI',labor:'Labor',governance:'Governance',information:'Information',economics:'Economics',climate:'Climate',security:'Security',geopolitics:'Geopolitics',domestic_politics:'Politics',legal:'Legal'};
 const DD={ai:'Artificial intelligence and automation',labor:'Jobs, workers, pay, and working conditions',governance:'Government agencies, executive actions, and public services',information:'Media, data, tech platforms, and how information spreads',economics:'Markets, prices, trade, and the economy',climate:'Environment, energy, and the effects of climate change',security:'Military, defense, policing, and threats to safety',geopolitics:'Relationships and tensions between countries',domestic_politics:'U.S. political parties, elections, and policy fights',legal:'Courts, laws, enforcement, and legal rights'};
-const PE={'governance+legal':'Government actions running into the courts','geopolitics+security':'Tensions between countries that affect military action and safety','domestic_politics+security':'Political decisions that directly affect defense or public safety','economics+security':'When conflict and military spending hit markets and wallets','climate+security':'Environmental change creating security threats','climate+economics':'Environmental shifts affecting energy costs, food prices, and jobs','ai+labor':'Automation changing the jobs people do and how they\'re paid','ai+governance':'Governments trying to regulate AI','ai+economics':'AI\'s effect on markets, investment, and who profits','ai+information':'AI changing what people see, trust, and share','ai+security':'AI in military, surveillance, and cybersecurity','governance+domestic_politics':'Political battles over how agencies are run','governance+economics':'Government spending and regulation shaping costs','governance+information':'Government shaping what information the public gets','governance+climate':'Government climate and environmental policy','governance+labor':'Policy on workers\' rights and workplace rules','governance+geopolitics':'Foreign policy decisions and global impact','domestic_politics+legal':'Political battles playing out in courts','domestic_politics+economics':'Political decisions affecting economy and prices','domestic_politics+information':'Politics shaping media and what people trust','economics+legal':'Business regulation and how law shapes markets','economics+labor':'Economic conditions affecting wages and cost of living','economics+geopolitics':'International relationships affecting trade and prices','economics+information':'Tech platforms and media shaping markets','information+security':'Surveillance, data privacy, and digital threats','information+legal':'Tech regulation and who controls what you see online','information+domestic_politics':'Media and misinformation shaping political outcomes','labor+legal':'Workers\' rights, unions, and employment law','labor+economics':'Economic conditions affecting wages and affordability','labor+domestic_politics':'Political battles over labor protections','climate+geopolitics':'Climate and energy competition between countries','climate+legal':'Environmental lawsuits and climate court battles','climate+information':'Climate science communication and distortion','climate+labor':'Environmental shifts affecting jobs','legal+security':'Law enforcement, civil rights, and justice','legal+geopolitics':'International law and cross-border disputes','geopolitics+domestic_politics':'Foreign policy tensions in U.S. politics','geopolitics+information':'Propaganda and information warfare between countries','security+legal':'Surveillance law and the justice system'};
-
-let articles=[],stats={},daily=null,feedFilter='all',showing=50;
-const today=new Date().toISOString().slice(0,10);
-
-// TABS
-document.getElementById('tabs').addEventListener('click',e=>{
-  const btn=e.target.closest('.tab');
-  if(!btn)return;
-  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('on'));
-  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('on'));
-  btn.classList.add('on');
-  document.getElementById('p-'+btn.dataset.t).classList.add('on');
-});
 
 async function init(){
   try{
     const cb='?v='+Date.now();
-    // Load articles
-    let r;
-    try{r=await fetch('./data/articles.json'+cb);if(!r.ok)throw 0;}
-    catch{r=await fetch('../data/articles.json'+cb);}
+    let r=await fetch('./data/articles.json'+cb);
+    if(!r.ok) r=await fetch('../data/articles.json'+cb);
     const d=await r.json();
-    articles=d.articles||[];stats=d.stats||{};
-
-    // Load daily analysis
-    try{
-      let dr;
-      try{dr=await fetch('./data/daily/latest.json'+cb);if(!dr.ok)throw 0;}
-      catch{dr=await fetch('../data/daily/latest.json'+cb);}
-      daily=await dr.json();
-    }catch(e){daily=null;}
-
-    document.getElementById('srcCount').textContent=stats.total_sources||'120+';
-    document.getElementById('artCount').textContent=articles.length.toLocaleString();
+    const articles=d.articles||[];
+    const today=new Date().toISOString().slice(0,10);
     const todayArts=articles.filter(a=>a.date===today);
-    document.querySelector('[data-t="today"]').innerHTML=`Today <span class="cnt">${todayArts.length||daily?.summary?.total_stories||''}</span>`;
-    document.querySelector('[data-t="collisions"]').innerHTML=`Collisions <span class="cnt">${articles.filter(a=>a.cross_domain).length}</span>`;
-    document.querySelector('[data-t="feed"]').innerHTML=`All Stories <span class="cnt">${articles.length.toLocaleString()}</span>`;
-    render();
+    const use=todayArts.length?todayArts:articles;
+
+    document.getElementById('s-sources').textContent=d.stats?.total_sources||112;
+    document.getElementById('s-today').textContent=use.length;
+    document.getElementById('s-cross').textContent=use.filter(a=>a.cross_domain).length;
+    document.getElementById('s-src').textContent=new Set(use.map(a=>a.source)).size;
+
+    // Color bar
+    const counts={};
+    for(const a of use)for(const dom of(a.domains||[]))counts[dom]=(counts[dom]||0)+1;
+    const total=Object.values(counts).reduce((s,c)=>s+c,0);
+    if(total){
+      document.getElementById('bar').innerHTML=Object.entries(counts).sort((a,b)=>b[1]-a[1]).map(([k,c])=>{
+        const pct=Math.max((c/total)*100,3);
+        return '<div class="color-bar-s" style="width:'+pct+'%;background:'+DC[k]+'"><div class="color-bar-tip"><strong>'+DL[k]+'</strong> &middot; '+c+' stories</div></div>';
+      }).join('');
+    }
+
+    // Domain pills
+    document.getElementById('pills').innerHTML=Object.entries(DL).map(([k,l])=>{
+      const c=counts[k]||0;
+      return '<div class="pill" style="background:'+DC[k]+'">'+l+' <span style="opacity:0.5;font-weight:500;">'+c+'</span><div class="pill-tip">'+DD[k]+'</div></div>';
+    }).join('');
   }catch(e){console.error(e);}
 }
-
-function render(){
-  renderBar();renderLegend();renderToday();renderConstellation();renderCollisions();renderFeed();renderAbout();
-}
-
-function renderBar(){
-  const bar=document.getElementById('bar');
-  const counts={};
-  for(const a of articles)for(const d of(a.domains||[]))counts[d]=(counts[d]||0)+1;
-  const total=Object.values(counts).reduce((s,c)=>s+c,0);
-  if(!total)return;
-  bar.innerHTML=Object.entries(counts).sort((a,b)=>b[1]-a[1]).map(([k,c])=>{
-    const pct=Math.max((c/total)*100,3);
-    return `<div class="bar-s" style="width:${pct}%;background:${DC[k]||'#666'}"><div class="bar-tip"><strong>${DL[k]||k}</strong> · ${c} stories</div></div>`;
-  }).join('');
-}
-
-function renderLegend(){
-  document.getElementById('legend').innerHTML=Object.entries(DL).map(([k,l])=>
-    `<div class="leg"><span class="leg-d" style="background:${DC[k]}"></span>${l}<div class="tdef">${DD[k]}</div></div>`
-  ).join('');
-}
-
-function pk(d1,d2){return PE[d1+'+'+d2]||PE[d2+'+'+d1]||`Where ${DL[d1]} and ${DL[d2]} overlap`;}
-
-// TODAY'S UPDATES — the daily visual narrative
-function renderToday(){
-  const el=document.getElementById('p-today');
-  const todayArts=articles.filter(a=>a.date===today);
-  const crossToday=todayArts.filter(a=>a.cross_domain);
-
-  // Use daily analysis if available, otherwise compute from articles
-  const ds=daily?.summary||{};
-  const storyCount=ds.total_stories||todayArts.length;
-  const srcCount=ds.sources_reporting||new Set(todayArts.map(a=>a.source)).size;
-  const crossCount=ds.cross_domain||crossToday.length;
-
-  if(!storyCount){
-    el.innerHTML='<div style="padding:3rem;text-align:center;color:var(--text-dim);font-size:1rem;">Today\'s analysis is generating. Check back soon.</div>';
-    return;
-  }
-
-  // Build narrative divergence from daily analysis or compute from articles
-  const divergences=daily?.narrative_divergence||findTopicClusters(todayArts);
-  const threads=daily?.collision_threads||[];
-  const spectrum=daily?.source_spectrum||computeSpectrum(todayArts);
-  const signals=daily?.emerging_signals||[];
-
-  // Format date
-  const dateStr=new Date(today+'T12:00:00Z').toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'});
-
-  el.innerHTML=`
-    <div class="daily-date">${dateStr}</div>
-    <div class="daily-headline">${storyCount} stories. ${srcCount} sources. ${crossCount} connections.</div>
-
-    <div style="font-size:0.88rem;color:var(--text-mid);line-height:1.7;max-width:580px;margin-bottom:0.5rem;">The world is more connected than any single story can show. Here's what ${srcCount} outlets are revealing today.</div>
-
-    <div class="constellation" id="constellation"></div>
-
-    <div style="margin-bottom:2.2rem;">
-      <div style="font-family:'Space Grotesk',sans-serif;font-size:1.05rem;font-weight:700;color:#fff;margin-bottom:0.5rem;">Source Spectrum</div>
-      <div style="font-size:0.82rem;color:var(--text-dim);margin-bottom:0.8rem;line-height:1.6;">The wider the spread, the more complete your picture.</div>
-      <div class="spectrum-visual" id="spectrum-visual">
-        ${Object.entries({national:'National',international:'International',specialist:'Specialist',explainer:'Explainer',community:'Community',analysis:'Analysis'}).map(([k,l])=>{
-          const v=spectrum[k]||0;
-          const max=Math.max(...Object.values(spectrum),1);
-          const pct=Math.round((v/max)*100);
-          const colors={national:'#6652FF',international:'#1976D2',specialist:'#FF5400',explainer:'#00C2A8',community:'#4CAF50',analysis:'#9E0059'};
-          const c=colors[k]||'#666';
-          return `<div class="spec-ring">
-            <svg width="100" height="100" viewBox="0 0 100 100">
-              <circle cx="50" cy="50" r="42" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="6"/>
-              <circle cx="50" cy="50" r="42" fill="none" stroke="${c}" stroke-width="6" stroke-dasharray="${pct*2.64} ${264-pct*2.64}" stroke-linecap="round" opacity="0.85"/>
-            </svg>
-            <div class="spec-ring-label"><span class="spec-ring-n">${v}</span><span class="spec-ring-t">${l}</span></div>
-          </div>`;
-        }).join('')}
-      </div>
-    </div>
-
-    ${divergences.length?`
-    <div style="margin-bottom:2.2rem;">
-      <div style="font-family:'Space Grotesk',sans-serif;font-size:1.05rem;font-weight:700;color:#fff;margin-bottom:0.5rem;">Where Coverage Converges</div>
-      <div style="font-size:0.85rem;color:var(--text-mid);margin-bottom:1.2rem;line-height:1.65;">When many different sources cover the same intersection of topics, something important is happening. These are the stories drawing attention from across the spectrum.</div>
-      ${(Array.isArray(divergences[0]?.articles)?divergences:divergences.map(d=>({...d,articles:d.articles||[]}))).slice(0,3).map(cluster=>{
-        const label=cluster.topic||cluster.domains?.map(d=>DL[d]).join(' + ')||'';
-        const theme=cluster.theme||'';
-        const arts=cluster.articles||[];
-        const srcN=cluster.source_count||cluster.sourceCount||arts.length;
-        return `<div class="diverge">
-          <div class="diverge-label">${esc(label)}</div>
-          <div class="diverge-topic">${esc(theme)}</div>
-          <div class="diverge-desc">${srcN} sources covering this intersection today</div>
-          <div class="diverge-sources">
-            ${arts.slice(0,4).map(a=>`
-              <a class="dv-src" href="${a.url}" target="_blank" rel="noopener">
-                <div class="dv-src-name">${esc(a.source)}${a.paywall?'<span class="pw">paywall</span>':''}</div>
-                <div>
-                  <div class="dv-src-title">${esc(a.title)}</div>
-                  ${a.connection?`<div class="dv-src-meta" style="color:var(--purple);margin-top:0.15rem;">${esc(a.connection)}</div>`:''}
-                </div>
-              </a>
-            `).join('')}
-          </div>
-        </div>`;
-      }).join('')}
-    </div>`:''}
-
-    ${threads.length?`
-    <div style="margin-bottom:2.2rem;">
-      <div style="font-family:'Space Grotesk',sans-serif;font-size:1.05rem;font-weight:700;color:#fff;margin-bottom:0.5rem;">Active Threads</div>
-      <div style="font-size:0.85rem;color:var(--text-mid);margin-bottom:1.2rem;line-height:1.65;">Domain pairs generating the most overlap right now. Over time, these threads reveal which structural connections are intensifying and which are fading.</div>
-      ${threads.filter(t=>t.today_count>0).slice(0,4).map(t=>{
-        const pair=t.pair||[];
-        const d1=pair[0],d2=pair[1];
-        const c1=DC[d1]||'#666',c2=DC[d2]||'#666';
-        const trend=t.trend==='rising'?'<span style="color:#4CAF50;font-size:0.7rem;margin-left:0.4rem;">&#x25B2; Rising</span>':t.trend==='falling'?'<span style="color:#D32F2F;font-size:0.7rem;margin-left:0.4rem;">&#x25BC; Falling</span>':'';
-        return `<div class="thread">
-          <div class="thread-label" style="color:${c1}">${DL[d1]||d1} + ${DL[d2]||d2}${trend}</div>
-          <div class="thread-title">${esc(t.explanation||pk(d1,d2))}</div>
-          <div class="thread-count">${t.today_count} stories today · ${t.count} total tracked</div>
-          <div class="thread-bar">
-            <div class="thread-bar-s" style="background:${c1};flex:1"></div>
-            <div class="thread-bar-s" style="background:${c2};flex:1"></div>
-          </div>
-          ${t.sample_articles?.length?`<div class="thread-articles">
-            ${t.sample_articles.slice(0,2).map(a=>`
-              <a class="thread-a" href="${a.url}" target="_blank" rel="noopener">
-                <div class="thread-a-t">${esc(a.title)}</div>
-                <div class="thread-a-s">${esc(a.source)} · ${daily?.date||today}</div>
-              </a>
-            `).join('')}
-          </div>`:''}
-        </div>`;
-      }).join('')}
-    </div>`:''}
-
-    ${signals.length?`
-    <div style="margin-bottom:1.5rem;">
-      <div style="font-family:'Space Grotesk',sans-serif;font-size:1.05rem;font-weight:700;color:#fff;margin-bottom:0.5rem;">Emerging Signals</div>
-      <div style="font-size:0.85rem;color:var(--text-mid);margin-bottom:1rem;line-height:1.65;">Patterns that stand out from the baseline. These are collision pairs or domains where today's activity is notably higher than usual.</div>
-      ${signals.slice(0,3).map(s=>`
-        <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:0.85rem 1.1rem;margin-bottom:0.4rem;font-size:0.85rem;color:var(--text-mid);line-height:1.5;">
-          <span style="color:var(--purple);font-weight:600;margin-right:0.3rem;">${s.type==='trend'?'&#x2197;':'&#x26A1;'}</span>
-          ${esc(s.description)}
-        </div>
-      `).join('')}
-    </div>`:''}
-  `;
-}
-
-// CONSTELLATION — oversized interactive network of domain connections
-function renderConstellation(){
-  const el=document.getElementById('constellation');
-  if(!el)return;
-  const todayArts=articles.filter(a=>a.date===today);
-  const useArts=todayArts.length?todayArts:articles;
-  if(!useArts.length)return;
-
-  // Count domain frequencies and pair frequencies
-  const domCounts={};
-  const pairCounts={};
-  for(const a of useArts){
-    for(const d of(a.domains||[]))domCounts[d]=(domCounts[d]||0)+1;
-    if(a.cross_domain&&a.domains?.length>=2){
-      const ds=[...a.domains].sort();
-      for(let i=0;i<ds.length;i++)for(let j=i+1;j<ds.length;j++){
-        const k=ds[i]+'|'+ds[j];pairCounts[k]=(pairCounts[k]||0)+1;
-      }
-    }
-  }
-
-  const keys=Object.keys(DL);
-  const n=keys.length;
-  const w=Math.min(el.parentElement?.offsetWidth||800,800);
-  const h=Math.max(420,w*0.65);
-  const cx=w/2,cy=h/2,radius=Math.min(cx,cy)*0.62;
-
-  // Position domains in a circle
-  const pos={};
-  keys.forEach((k,i)=>{
-    const angle=(i/n)*Math.PI*2-Math.PI/2;
-    pos[k]={x:cx+Math.cos(angle)*radius,y:cy+Math.sin(angle)*radius,angle};
-  });
-
-  // Draw connections
-  const maxPair=Math.max(...Object.values(pairCounts),1);
-  let lines='';
-  for(const[pk,count]of Object.entries(pairCounts)){
-    const[d1,d2]=pk.split('|');
-    if(!pos[d1]||!pos[d2])continue;
-    const thick=Math.max(1.5,Math.min(8,(count/maxPair)*8));
-    const opacity=Math.max(0.06,Math.min(0.4,(count/maxPair)*0.4));
-    const c1=DC[d1]||'#666';
-    lines+=`<line class="cst-line" data-d1="${d1}" data-d2="${d2}" x1="${pos[d1].x}" y1="${pos[d1].y}" x2="${pos[d2].x}" y2="${pos[d2].y}" stroke="${c1}" stroke-width="${thick}" stroke-opacity="${opacity}"/>`;
-  }
-
-  // Draw domain nodes — oversized, with labels and counts
-  const maxDom=Math.max(...Object.values(domCounts),1);
-  let nodes='';
-  keys.forEach(k=>{
-    const p=pos[k];
-    const count=domCounts[k]||0;
-    const sz=Math.max(22,Math.min(42,(count/maxDom)*42));
-    const c=DC[k]||'#666';
-
-    // Outer glow ring
-    nodes+=`<circle cx="${p.x}" cy="${p.y}" r="${sz+10}" fill="${c}" opacity="0.04"/>`;
-    nodes+=`<circle cx="${p.x}" cy="${p.y}" r="${sz+5}" fill="${c}" opacity="0.08"/>`;
-    // Main node
-    nodes+=`<circle class="cst-node" data-domain="${k}" cx="${p.x}" cy="${p.y}" r="${sz}" fill="${c}" opacity="0.9" style="color:${c}"
-      onmouseenter="cstHover('${k}')" onmouseleave="cstLeave()"/>`;
-    // Count inside node
-    nodes+=`<text class="cst-count" x="${p.x}" y="${p.y+1}" style="font-size:${Math.max(13,sz*0.55)}px">${count}</text>`;
-
-    // Label outside — bigger, bolder
-    const labelR=radius+sz+18;
-    const angle=Math.atan2(p.y-cy,p.x-cx);
-    const lx=cx+Math.cos(angle)*labelR;
-    const ly=cy+Math.sin(angle)*labelR;
-    nodes+=`<text class="cst-label" data-domain="${k}" x="${lx}" y="${ly}" style="font-size:12px">${DL[k]}</text>`;
-    // Short description below label
-    nodes+=`<text class="cst-desc" data-domain="${k}" x="${lx}" y="${ly+14}">${DD[k].split(' and ')[0]}</text>`;
-  });
-
-  // Center text
-  const centerText=`<text x="${cx}" y="${cy-8}" text-anchor="middle" style="font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:700;fill:rgba(255,255,255,0.12);">${useArts.filter(a=>a.cross_domain).length}</text>`;
-  const centerLabel=`<text x="${cx}" y="${cy+14}" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:10px;fill:rgba(255,255,255,0.15);">connections</text>`;
-
-  el.innerHTML=`
-    <svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg">
-      ${centerText}${centerLabel}${lines}${nodes}
-    </svg>
-    <div class="cst-tooltip" id="cst-tip"></div>
-  `;
-}
-
-// Constellation interactivity
-function cstHover(domain){
-  const el=document.getElementById('constellation');
-  if(!el)return;
-  el.classList.add('highlight');
-  // Highlight lines connected to this domain
-  el.querySelectorAll('.cst-line').forEach(line=>{
-    if(line.dataset.d1===domain||line.dataset.d2===domain){
-      line.classList.add('active');
-    }
-  });
-  // Highlight labels
-  el.querySelectorAll('.cst-label, .cst-desc').forEach(t=>{
-    if(t.dataset.domain===domain)t.classList.add('active');
-  });
-  // Connected domains
-  const connected=new Set();
-  el.querySelectorAll('.cst-line.active').forEach(l=>{
-    connected.add(l.dataset.d1);connected.add(l.dataset.d2);
-  });
-  connected.forEach(d=>{
-    el.querySelectorAll(`.cst-label[data-domain="${d}"]`).forEach(t=>t.classList.add('active'));
-  });
-  // Tooltip
-  const tip=document.getElementById('cst-tip');
-  if(tip){
-    const node=el.querySelector(`.cst-node[data-domain="${domain}"]`);
-    if(node){
-      const rect=el.getBoundingClientRect();
-      const nx=parseFloat(node.getAttribute('cx'));
-      const ny=parseFloat(node.getAttribute('cy'));
-      const svgRect=el.querySelector('svg').getBoundingClientRect();
-      const scale=svgRect.width/parseFloat(el.querySelector('svg').getAttribute('width'));
-      tip.innerHTML=`<strong style="color:${DC[domain]}">${DL[domain]}</strong><br><span style="color:var(--text-dim)">${DD[domain]}</span>`;
-      tip.style.left=(nx*scale-60)+'px';
-      tip.style.top=(ny*scale-tip.offsetHeight-20)+'px';
-      tip.classList.add('show');
-    }
-  }
-}
-function cstLeave(){
-  const el=document.getElementById('constellation');
-  if(!el)return;
-  el.classList.remove('highlight');
-  el.querySelectorAll('.active').forEach(e=>e.classList.remove('active'));
-  const tip=document.getElementById('cst-tip');
-  if(tip)tip.classList.remove('show');
-}
-
-function computeSpectrum(arts){
-  const s={national:0,international:0,specialist:0,explainer:0,community:0,analysis:0};
-  for(const a of arts){const t=a.tier;if(t==='domain')s.specialist++;else if(t==='lived')s.community++;else if(s[t]!==undefined)s[t]++;}
-  return s;
-}
-
-function findTopicClusters(todayArts){
-  const pairMap={};
-  for(const a of todayArts){
-    if(!a.cross_domain||!a.domains||a.domains.length<2)continue;
-    const ds=[...a.domains].sort();
-    for(let i=0;i<ds.length;i++)for(let j=i+1;j<ds.length;j++){
-      const key=ds[i]+'+'+ds[j];if(!pairMap[key])pairMap[key]=[];pairMap[key].push(a);
-    }
-  }
-  const clusters=[];
-  for(const[key,arts]of Object.entries(pairMap)){
-    const sources=new Set(arts.map(a=>a.source));
-    if(sources.size>=3&&arts.length>=4){
-      const[d1,d2]=key.split('+');
-      clusters.push({topic:`${DL[d1]} + ${DL[d2]}`,theme:pk(d1,d2),articles:arts,source_count:sources.size});
-    }
-  }
-  clusters.sort((a,b)=>b.source_count-a.source_count);
-  return clusters.slice(0,3);
-}
-
-// COLLISIONS
-function renderCollisions(){
-  const el=document.getElementById('p-collisions');
-  const pairs={};
-  for(const a of articles){
-    if(a.cross_domain&&a.domains&&a.domains.length>=2){
-      const ds=[...a.domains].sort();
-      for(let i=0;i<ds.length;i++)for(let j=i+1;j<ds.length;j++){
-        const k=ds[i]+'+'+ds[j];if(!pairs[k])pairs[k]=[];pairs[k].push(a);
-      }
-    }
-  }
-  const top=Object.entries(pairs).sort((a,b)=>b[1].length-a[1].length).slice(0,6);
-  if(!top.length){el.innerHTML='<div style="padding:3rem;text-align:center;color:var(--text-dim)">Loading...</div>';return;}
-
-  el.innerHTML=`
-    <div class="sec-intro">When a story touches two domains at once, that overlap is usually where the most important structural shift is happening. These are the highest-volume collisions across all tracked data.</div>
-    ${top.map(([ppk,arts])=>{
-      const[d1,d2]=ppk.split('+');
-      const c1=DC[d1]||'#666',c2=DC[d2]||'#666';
-      return `<div class="collision">
-        <div class="coll-pair">
-          <span class="dn" style="color:${c1}">${DL[d1]}</span>
-          <span class="x">+</span>
-          <span class="dn" style="color:${c2}">${DL[d2]}</span>
-          <span class="ct">${arts.length}</span>
-        </div>
-        <div class="coll-why">${pk(d1,d2)}</div>
-        ${arts.slice(0,3).map(a=>`<a class="coll-article" href="${a.url}" target="_blank" rel="noopener">
-          <div class="coll-article-t">${esc(a.title)}</div>
-          ${a.connection?`<div class="coll-article-c">${esc(a.connection)}</div>`:''}
-          <div class="coll-article-s">${esc(a.source)}${a.paywall?'<span class="pw">paywall</span>':''} · ${a.date}</div>
-        </a>`).join('')}
-      </div>`;
-    }).join('')}
-  `;
-}
-
-// ALL STORIES FEED
-function renderFeed(){
-  const el=document.getElementById('p-feed');
-  const filtered=feedFilter==='cross'?articles.filter(a=>a.cross_domain):feedFilter!=='all'?articles.filter(a=>a.domains&&a.domains.includes(feedFilter)):articles;
-  const slice=filtered.slice(0,showing);
-
-  let chips=`<button class="chip ${feedFilter==='all'?'on':''}" onclick="setFeed('all')" style="${feedFilter==='all'?'background:var(--purple);border-color:var(--purple)':''}">All</button>`;
-  chips+=`<button class="chip ${feedFilter==='cross'?'on':''}" onclick="setFeed('cross')" style="${feedFilter==='cross'?'background:#fff;border-color:#fff;color:#000':''}">Cross-domain</button>`;
-  for(const[k,l]of Object.entries(DL)){
-    const on=feedFilter===k;
-    chips+=`<button class="chip ${on?'on':''}" onclick="setFeed('${k}')" style="${on?`background:${DC[k]};border-color:${DC[k]};color:rgba(0,0,0,0.9)`:''}"><span class="chip-d" style="background:${DC[k]}"></span>${l}</button>`;
-  }
-
-  let feed=slice.map(a=>{
-    const tags=(a.domains||[]).filter(d=>DL[d]).map(d=>
-      `<span class="fi-tag" style="background:${DC[d]}">${DL[d]}</span>`
-    ).join('');
-    return `<a class="fi" href="${a.url}" target="_blank" rel="noopener">
-      <div><div class="fi-t">${esc(a.title)}</div><div class="fi-m"><span class="fi-src">${esc(a.source)}</span>${a.paywall?'<span class="pw">paywall</span>':''} · ${a.date}</div></div>
-      <div class="fi-tags">${tags}</div>
-    </a>`;
-  }).join('');
-
-  const moreBtn=filtered.length>showing?`<button class="more" onclick="showMore()">Show more (${filtered.length-showing} remaining)</button>`:'';
-
-  el.innerHTML=`
-    <div class="sec-intro">Every article from every source, tagged by domain. Filter to see what each domain is producing, or show only cross-domain stories.</div>
-    <div class="chips">${chips}</div><div>${feed}</div>${moreBtn}`;
-}
-
-function setFeed(f){feedFilter=f;showing=50;renderFeed();}
-function showMore(){showing+=50;renderFeed();}
-
-// ABOUT
-function renderAbout(){
-  const el=document.getElementById('p-about');
-  const srcList=[...new Set(articles.map(a=>a.source))].sort();
-  el.innerHTML=`
-    <div class="about-text">
-      Signal Board reads <strong>${srcList.length} news sources</strong> every day, spanning the full American political and demographic spectrum plus major international outlets. Each story is classified by topic. When a story touches more than one topic at the same time, this tool flags it as a connection. Those connections are where you start to see the larger picture that siloed coverage misses.
-    </div>
-    <div class="about-text">
-      This is not about left or right. Sources include outlets from every political perspective, plus international, community, specialist, and analysis publications. Indigenous, Latino, Black, faith-based, and regional voices sit alongside national broadsheets and cable news. The tool exists so you can see connections, not to tell you what to think.
-    </div>
-    <div style="margin-bottom:1.5rem;">
-      <div class="about-stat"><span class="about-stat-n">${srcList.length}</span><span class="about-stat-l">sources</span></div>
-      <div class="about-stat"><span class="about-stat-n">${articles.length.toLocaleString()}</span><span class="about-stat-l">articles</span></div>
-      <div class="about-stat"><span class="about-stat-n">${articles.filter(a=>a.cross_domain).length}</span><span class="about-stat-l">collisions</span></div>
-      <div class="about-stat"><span class="about-stat-n">10</span><span class="about-stat-l">domains</span></div>
-    </div>
-
-    <div style="font-family:'Space Grotesk',sans-serif;font-size:0.95rem;font-weight:700;color:#fff;margin-bottom:0.8rem;">Frequently Asked</div>
-    <div class="faq-i">
-      <button class="faq-q" onclick="togFaq(0)"><span class="faq-qt">Why do the overlaps matter?</span><span class="faq-tog" id="ft0">+</span></button>
-      <div class="faq-a" id="fa0">Most news covers one thing at a time. A jobs reporter writes about jobs. A climate reporter writes about climate. But in real life, these things affect each other constantly. When gas prices go up because of a conflict overseas, that's economics and security and geopolitics all at once. Seeing those connections helps you understand what's actually going on, not just what each beat reporter was assigned to cover.</div>
-    </div>
-    <div class="faq-i">
-      <button class="faq-q" onclick="togFaq(1)"><span class="faq-qt">What do the colors mean?</span><span class="faq-tog" id="ft1">+</span></button>
-      <div class="faq-a" id="fa1">Each color is a domain — a broad area of life that the news touches. Hover over any domain name in the color legend to see what it covers. When you see multiple colors on one story, that story sits at the intersection of those worlds. The color bar at the top shows the overall distribution of coverage across all sources right now.</div>
-    </div>
-    <div class="faq-i">
-      <button class="faq-q" onclick="togFaq(2)"><span class="faq-qt">Where do the stories come from?</span><span class="faq-tog" id="ft2">+</span></button>
-      <div class="faq-a" id="fa2">${srcList.length} sources spanning the full American political and demographic spectrum: national outlets across the ideological range (NYT, Fox News, NPR, Daily Wire, WSJ, National Review, Washington Post), international (BBC, Al Jazeera, Guardian, Deutsche Welle, Nikkei Asia, Kyiv Independent), community voices (Indian Country Today, The Root, Latino USA, Christianity Today, The Forward, The Advocate, AsAmNews, Military Times, Daily Yonder, Capital B News), specialist publications, explainers, and think tanks from multiple perspectives. No editorial filtering. The patterns surface on their own.</div>
-    </div>
-    <div class="faq-i">
-      <button class="faq-q" onclick="togFaq(3)"><span class="faq-qt">What builds over time?</span><span class="faq-tog" id="ft3">+</span></button>
-      <div class="faq-a" id="fa3">Every day the system adds new articles to a growing dataset. Over weeks and months, patterns emerge that a single day's snapshot can't show: which collision pairs are intensifying, which topics are rising or fading, how different sources frame the same events over time. The longer it runs, the more it reveals about the structural forces shaping the information Americans receive.</div>
-    </div>
-  `;
-}
-
-function togFaq(i){document.getElementById('fa'+i).classList.toggle('open');document.getElementById('ft'+i).classList.toggle('open');}
-function esc(s){const d=document.createElement('div');d.textContent=s||'';return d.innerHTML;}
-
 init();
 </script>
 </body>

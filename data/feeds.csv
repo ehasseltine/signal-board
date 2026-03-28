@@ -1,123 +1,112 @@
-name,url,tier,region
-New York Times,https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml,national,us
-Washington Post,https://feeds.washingtonpost.com/rss/national,national,us
-AP News,https://feedx.net/rss/ap.xml,national,us
-Reuters,https://news.google.com/rss/search?q=when:24h+allinurl:reuters.com&hl=en-US&gl=US&ceid=US:en,national,us
-NPR,https://feeds.npr.org/1001/rss.xml,national,us
-CNN,http://rss.cnn.com/rss/cnn_latest.rss,national,us
-Wall Street Journal,https://feeds.a.dj.com/rss/RSSWorldNews.xml,national,us
-Bloomberg,https://feeds.bloomberg.com/markets/news.rss,national,us
-Politico,https://rss.politico.com/politics-news.xml,national,us
-The Atlantic,https://www.theatlantic.com/feed/all/,national,us
-Fox News,https://feeds.foxnews.com/foxnews/latest,national,us
-NBC News,https://feeds.nbcnews.com/nbcnews/public/news,national,us
-ABC News,https://feeds.abcnews.com/abcnews/topstories,national,us
-The Hill,https://thehill.com/feed/,national,us
-CNBC,https://www.cnbc.com/id/100003114/device/rss/rss.html,national,us
-Business Insider,https://www.businessinsider.com/rss,national,us
-National Review,https://www.nationalreview.com/feed/,national,us
-Washington Examiner,https://www.washingtonexaminer.com/feed,national,us
-Washington Times,https://www.washingtontimes.com/rss/headlines/news/,national,us
-Daily Wire,https://www.dailywire.com/feeds/rss.xml,national,us
-The Dispatch,https://thedispatch.com/feed/,national,us
-Reason,https://reason.com/feed/,national,us
-RealClearPolitics,https://feeds.feedburner.com/realclearpolitics/qlMj,national,us
-The Federalist,https://thefederalist.com/feed/,national,us
-BBC World,https://feeds.bbci.co.uk/news/world/rss.xml,international,uk
-The Guardian World,https://www.theguardian.com/world/rss,international,uk
-Al Jazeera,https://www.aljazeera.com/xml/rss/all.xml,international,qatar
-Deutsche Welle,https://rss.dw.com/rdf/rss-en-all,international,germany
-France 24,https://www.france24.com/en/rss,international,france
-South China Morning Post,https://www.scmp.com/rss/91/feed,international,hong_kong
-The Hindu,https://www.thehindu.com/news/feeder/default.rss,international,india
-NHK World,https://www3.nhk.or.jp/rss/news/cat0.xml,international,japan
-ABC Australia,https://www.abc.net.au/news/feed/51120/rss.xml,international,australia
-African Arguments,https://africanarguments.org/feed/,international,africa
-Americas Quarterly,https://www.americasquarterly.org/feed/,international,latam
-The Diplomat,https://thediplomat.com/feed/,international,asia
-Foreign Policy,https://foreignpolicy.com/feed/,international,global
-MIT Technology Review,https://www.technologyreview.com/feed/,specialist,ai
-The Markup,https://themarkup.org/feeds/rss.xml,specialist,information
-EPI Blog,https://www.epi.org/blog/feed/,specialist,labor
-American Prospect,https://prospect.org/feed/,specialist,labor
-Columbia Journalism Review,https://www.cjr.org/feed,specialist,information
-Nieman Lab,https://www.niemanlab.org/feed/,specialist,information
-Lawfare,https://news.google.com/rss/search?q=when:7d+site:lawfaremedia.org&hl=en-US,specialist,governance
-ProPublica,https://feeds.propublica.org/propublica/main,specialist,governance
-Carbon Brief,https://www.carbonbrief.org/feed,specialist,climate
-Grist,https://grist.org/feed/,specialist,climate
-Naked Capitalism,https://www.nakedcapitalism.com/feed,specialist,economics
-OnLabor,https://onlabor.org/feed/,specialist,labor
-The Conversation US,https://theconversation.com/us/articles.atom,explainer,us
-Vox,https://www.vox.com/rss/index.xml,explainer,us
-Pew Research Center,https://www.pewresearch.org/feed/,explainer,us
-404 Media,https://www.404media.co/rss/,explainer,us
-Rest of World,https://restofworld.org/feed/,explainer,global
-The Verge,https://www.theverge.com/rss/index.xml,explainer,us
-Wired,https://www.wired.com/feed/rss,explainer,us
-Ars Technica,https://feeds.arstechnica.com/arstechnica/index,explainer,us
-Platformer,https://www.platformer.news/rss/,explainer,us
-The 19th News,https://19thnews.org/feed/,community,us
-The Marshall Project,https://news.google.com/rss/search?q=when:7d+site:themarshallproject.org&hl=en-US,community,us
-CalMatters,https://calmatters.org/feed/,community,us
-Stateline,https://stateline.org/feed/,community,us
-High Country News,https://www.hcn.org/feed/,community,us
-Civil Eats,https://civileats.com/feed/,community,us
-Documented,https://documentedny.com/feed/,community,us
-The Root,https://www.theroot.com/rss,community,us
-Latino USA,https://www.latinousa.org/feed/,community,us
-Indian Country Today,https://indiancountrytoday.com/feed,community,us
-Hechinger Report,https://hechingerreport.org/feed/,community,us
-Christianity Today,https://www.christianitytoday.com/feed/,community,us
-Religion News Service,https://religionnews.com/feed/,community,us
-Texas Tribune,https://www.texastribune.org/feed/,community,us
-RAND,https://www.rand.org/blog.xml,analysis,us
-Roosevelt Institute,https://rooseveltinstitute.org/feed/,analysis,us
-Carnegie Endowment,https://news.google.com/rss/search?q=when:7d+site:carnegieendowment.org&hl=en-US,analysis,us
-Foreign Affairs,https://www.foreignaffairs.com/rss.xml,analysis,us
-Center for American Progress,https://news.google.com/rss/search?q=when:7d+site:americanprogress.org&hl=en-US,analysis,us
-Chatham House,https://news.google.com/rss/search?q=when:7d+site:chathamhouse.org&hl=en-US,analysis,uk
-Heritage Foundation,https://news.google.com/rss/search?q=when:7d+site:heritage.org&hl=en-US,analysis,us
-Brookings,https://news.google.com/rss/search?q=when:7d+site:brookings.edu&hl=en-US,analysis,us
-Nikkei Asia,https://asia.nikkei.com/rss,international,japan
-Times of India,https://timesofindia.indiatimes.com/rssfeedstopstories.cms,international,india
-Kyiv Independent,https://kyivindependent.com/feed/,international,ukraine
-Haaretz,https://www.haaretz.com/srv/haaretz-latest-rss,international,israel
-The East African,https://www.theeastafrican.co.ke/tea/rss,international,africa
-Straits Times,https://www.straitstimes.com/news/world/rss.xml,international,singapore
-The Advocate,https://www.advocate.com/feed,community,us
-Jewish Telegraphic Agency,https://www.jta.org/feed,community,us
-Arab American News,https://www.arabamericannews.com/feed/,community,us
-Disability Scoop,https://www.disabilityscoop.com/feed/,community,us
-Military Times,https://www.militarytimes.com/arc/outboundfeeds/rss/?outputType=xml,community,us
-Daily Yonder,https://dailyyonder.com/feed/,community,us
-Scalawag,https://scalawagmagazine.org/feed/,community,us
-Honolulu Civil Beat,https://www.civilbeat.org/feed/,community,us
-Teen Vogue,https://www.teenvogue.com/feed/rss,community,us
-AsAmNews,https://asamnews.com/feed/,community,us
-The Forward,https://forward.com/feed/,community,us
-Sojourners,https://sojo.net/feed/articles/rss.xml,community,us
-National Catholic Reporter,https://www.ncronline.org/rss.xml,community,us
-The Imprint,https://imprintnews.org/feed,community,us
-Mississippi Free Press,https://www.mississippifreepress.org/feed,community,us
-Bolts Magazine,https://boltsmag.org/feed/,community,us
-Capital B News,https://capitalbnews.org/feed/,community,us
-Canopy Forum,https://canopyforum.org/feed/,community,us
-ICT News,https://news.google.com/rss/search?q=when:7d+site:ictnews.org&hl=en-US,community,us
-The Trace,https://www.thetrace.org/feed/,community,us
-Next City,https://nextcity.org/feed,community,us
-Prism,https://prismreports.org/feed/,community,us
-Borderland Beat,https://www.borderlandbeat.com/feeds/posts/default?alt=rss,community,us
-The Plug,https://tpinsights.com/feed/,community,us
-Inside Climate News,https://insideclimatenews.org/feed/,specialist,climate
-War on the Rocks,https://warontherocks.com/feed/,specialist,security
-Just Security,https://www.justsecurity.org/feed/,specialist,governance
-Inequality.org,https://inequality.org/feed/,specialist,economics
-The Intercept,https://theintercept.com/feed/?rss,specialist,governance
-Protocol Africa,https://news.google.com/rss/search?q=when:7d+site:africanews.com&hl=en-US,international,africa
-Rappler,https://www.rappler.com/feed/,international,philippines
-Meduza,https://meduza.io/rss/en/all,international,russia
-The Wire India,https://thewire.in/feed,international,india
-Cato Institute,https://www.cato.org/rss/recent-opeds.xml,analysis,us
-Manhattan Institute,https://www.manhattan-institute.org/feed,analysis,us
-Third Way,https://www.thirdway.org/feed,analysis,us
+name,url,tier,region,description,why
+New York Times,https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml,national,us,Major nonprofit newspaper covering national and international news with investigative reporting,Largest circulation US newspaper; shapes mainstream narrative across political spectrum
+Washington Post,https://feeds.washingtonpost.com/rss/national,national,us,Major national newspaper covering politics, government, and national affairs,Second-largest circulation US newspaper; significant influence on American news agenda
+AP News,https://feedx.net/rss/ap.xml,national,us,Cooperative of American newspapers and broadcasters providing wire service reporting,Most widely distributed news source in US; supplies content to majority of local newsrooms
+Reuters,https://news.google.com/rss/search?q=when:24h+allinurl:reuters.com&hl=en-US&gl=US&ceid=US:en,national,us,International news organization with factual reporting on global and US events,Major wire service trusted by institutional investors and news organizations worldwide
+NPR,https://feeds.npr.org/1001/rss.xml,national,us,Public radio news organization providing reporting on national and international stories,Reaches millions of Americans; represents public media perspective on news
+CNN,http://rss.cnn.com/rss/cnn_latest.rss,national,us,Cable television network providing national and international news coverage,Largest cable news network by viewership; significant influence on news cycle
+Wall Street Journal,https://feeds.a.dj.com/rss/RSSWorldNews.xml,national,us,National newspaper with focus on business, politics, and financial markets,Second-largest US newspaper circulation; represents business and investor perspective
+Bloomberg,https://feeds.bloomberg.com/markets/news.rss,national,us,Financial and business news organization covering markets, companies, and economic policy,Dominant source for financial professionals and business decision-makers
+Politico,https://rss.politico.com/politics-news.xml,national,us,Political news outlet covering Congress, campaigns, and policy,Primary outlet for political insiders and policymakers; shapes conversation about politics
+The Atlantic,https://www.theatlantic.com/feed/all/,national,us,Longform magazine covering politics, culture, science, and ideas,Influential voice in national conversation; known for deep analysis and cultural commentary
+Fox News,https://feeds.foxnews.com/foxnews/latest,national,us,Conservative cable television network providing news and opinion programming,Largest cable news network by viewership; represents significant portion of American news consumption
+NBC News,https://feeds.nbcnews.com/nbcnews/public/news,national,us,Major broadcast television network providing national and international news,Large audience reach through broadcast television; major national newsgathering organization
+ABC News,https://feeds.abcnews.com/abcnews/topstories,national,us,Major broadcast television network providing national news coverage,Large audience reach through broadcast television; major national newsgathering organization
+The Hill,https://thehill.com/feed/,national,us,Political news outlet covering Congress and policy developments,Widely read by political professionals and Capitol Hill staff
+CNBC,https://www.cnbc.com/id/100003114/device/rss/rss.html,national,us,Business television network covering financial markets and business news,Primary source for business professionals and market participants
+Business Insider,https://www.businessinsider.com/rss,national,us,Business and technology news outlet serving corporate and startup audiences,Widely read by business professionals and entrepreneurs
+National Review,https://www.nationalreview.com/feed/,national,us,Conservative magazine publishing news and opinion,Leading conservative opinion publication; represents right-of-center intellectual tradition
+Washington Examiner,https://www.washingtonexaminer.com/feed,national,us,Conservative daily news and opinion outlet covering politics and policy,Major conservative news outlet; represents right-of-center political perspective
+Washington Times,https://www.washingtontimes.com/rss/headlines/news/,national,us,Conservative daily newspaper covering national and international news,Conservative daily newspaper; alternative perspective to mainstream outlets
+Daily Wire,https://www.dailywire.com/feeds/rss.xml,national,us,Conservative media company producing news and opinion content,Influential in conservative media ecosystem; represents populist conservative perspective
+The Dispatch,https://thedispatch.com/feed/,national,us,Conservative publication founded by National Review alumni focusing on news and analysis,Represents traditional conservative intellectual perspective
+Reason,https://reason.com/feed/,national,us,Libertarian magazine publishing news and opinion,Leading libertarian publication; represents free-market conservative perspective
+RealClearPolitics,https://feeds.feedburner.com/realclearpolitics/qlMj,national,us,Political news aggregation site curating multiple sources,Influential in political community for compiling diverse political perspectives
+The Federalist,https://thefederalist.com/feed/,national,us,Conservative opinion and news publication,Influential in conservative media; represents populist and traditionalist conservative views
+BBC World,https://feeds.bbci.co.uk/news/world/rss.xml,international,uk,Public broadcaster providing international news coverage,Major international news organization; represents perspective outside US media
+The Guardian World,https://www.theguardian.com/world/rss,international,uk,British newspaper with international news coverage and investigative reporting,Major international newspaper with global influence; represents British progressive perspective
+Al Jazeera,https://www.aljazeera.com/xml/rss/all.xml,international,qatar,International news network covering Middle East and global stories,Significant coverage of global events underreported in US; represents perspective outside Western media
+Deutsche Welle,https://rss.dw.com/rdf/rss-en-all,international,germany,German public broadcaster providing international news,German state media perspective on global events
+France 24,https://www.france24.com/en/rss,international,france,French public broadcaster providing international news,French state media perspective on global events
+South China Morning Post,https://www.scmp.com/rss/91/feed,international,hong_kong,English-language newspaper covering Asia-Pacific region,Major source for Asia-Pacific news; represents Hong Kong and Chinese regional perspective
+The Hindu,https://www.thehindu.com/news/feeder/default.rss,international,india,Indian newspaper covering national and international news,Major Indian newspaper; represents South Asian perspective on news
+NHK World,https://www3.nhk.or.jp/rss/news/cat0.xml,international,japan,Japanese public broadcaster providing international news,Japanese state media perspective on global events
+ABC Australia,https://www.abc.net.au/news/feed/51120/rss.xml,international,australia,Australian public broadcaster providing news coverage,Australian state media perspective; represents coverage from Global South
+African Arguments,https://africanarguments.org/feed/,international,africa,Research organization publishing analysis and reporting on African affairs,Specialist coverage of Africa; represents African perspectives on continental issues
+Americas Quarterly,https://www.americasquarterly.org/feed/,international,latam,Publication covering politics and economics of Latin America,Specialist coverage of Latin America; essential for Americas regional perspective
+The Diplomat,https://thediplomat.com/feed/,international,asia,Publication covering Asia-Pacific politics and diplomacy,Specialist coverage of Asia-Pacific; represents regional perspective on geopolitics
+Foreign Policy,https://foreignpolicy.com/feed/,international,global,Magazine covering international relations and global affairs,Leading publication on international relations; shapes US foreign policy thinking
+MIT Technology Review,https://www.technologyreview.com/feed/,specialist,ai,Magazine covering artificial intelligence and technology developments,Specialist coverage of AI and emerging technology; influential with technologists and researchers
+The Markup,https://themarkup.org/feeds/rss.xml,specialist,information,Nonprofit newsroom covering technology accountability and data privacy,Specialist investigative journalism on digital technology and privacy issues
+EPI Blog,https://www.epi.org/blog/feed/,specialist,labor,Economic Policy Institute blog covering labor and economic policy,Left-leaning economic analysis; represents labor and progressive economic perspective
+American Prospect,https://prospect.org/feed/,specialist,labor,Progressive magazine covering politics and policy,Progressive opinion and analysis; represents left-of-center political perspective
+Columbia Journalism Review,https://www.cjr.org/feed,specialist,information,Publication covering media criticism and journalism trends,Expert analysis of journalism industry and media trends
+Nieman Lab,https://www.niemanlab.org/feed/,specialist,information,Harvard lab covering future of journalism and media,Expert analysis of journalism innovation and media transformation
+Lawfare,https://news.google.com/rss/search?q=when:7d+site:lawfaremedia.org&hl=en-US,specialist,governance,Publication covering law, policy, and national security,Legal and policy expertise on national security and constitutional issues
+ProPublica,https://feeds.propublica.org/propublica/main,specialist,governance,Nonprofit newsroom producing investigative journalism on government and accountability,Leading investigative journalism organization; holds government and institutions accountable
+Carbon Brief,https://www.carbonbrief.org/feed,specialist,climate,Publication providing accurate information on climate science and policy,Specialist climate coverage; makes climate science accessible to general audience
+Grist,https://grist.org/feed/,specialist,climate,Nonprofit newsroom covering climate change and environmental issues,Environmental nonprofit reporting; covers intersection of climate and justice
+Naked Capitalism,https://www.nakedcapitalism.com/feed,specialist,economics,Independent blog covering finance, economics, and markets,Heterodox economic analysis; represents alternative perspective on markets and finance
+OnLabor,https://onlabor.org/feed/,specialist,labor,Academic and activist platform covering labor issues and organizing,Specialist labor coverage; represents worker and labor movement perspective
+The Conversation US,https://theconversation.com/us/articles.atom,explainer,us,Academics writing explanation of news topics and research for general audience,Accessible academic expertise; helps general audience understand complex topics
+Vox,https://www.vox.com/rss/index.xml,explainer,us,Publication explaining news and policy issues for general audience,Popular explainer outlet reaching younger audiences; makes complex policy accessible
+Pew Research Center,https://www.pewresearch.org/feed/,explainer,us,Research organization conducting public opinion polling and social research,Authoritative source on polling and social trends; shapes understanding of public opinion
+404 Media,https://www.404media.co/rss/,explainer,us,Journalist-run publication covering internet culture and technology,Independent technology journalism; covers emerging internet culture and digital issues
+Rest of World,https://restofworld.org/feed/,explainer,global,Publication covering how global people use technology,Specialist coverage of technology use outside wealthy nations; represents Global South perspective
+The Verge,https://www.theverge.com/rss/index.xml,explainer,us,Technology news outlet covering gadgets, internet culture, and tech policy,Popular technology news source; covers intersection of tech and culture
+Wired,https://www.wired.com/feed/rss,explainer,us,Magazine covering technology, business, and culture,Influential technology magazine; shapes tech culture and covers emerging trends
+Ars Technica,https://feeds.arstechnica.com/arstechnica/index,explainer,us,Technology publication covering science, technology, and internet culture,Detailed technology reporting for knowledgeable audience; covers emerging technology trends
+Platformer,https://www.platformer.news/rss/,explainer,us,Newsletter covering social media platforms and internet governance,Specialist coverage of major tech platforms and internet policy
+The 19th News,https://19thnews.org/feed/,community,us,Nonprofit newsroom covering women and gender in politics and policy,Specialist coverage of women in politics; represents feminist perspective on news
+The Marshall Project,https://news.google.com/rss/search?q=when:7d+site:themarshallproject.org&hl=en-US,community,us,Nonprofit newsroom covering the criminal justice system,Specialist criminal justice coverage; represents perspective on incarceration and police accountability
+CalMatters,https://calmatters.org/feed/,community,us,Nonprofit newsroom covering California state government and policy,California-focused reporting; represents state-level accountability journalism
+Stateline,https://stateline.org/feed/,community,us,Nonprofit covering state government and policy trends across United States,National state policy coverage; provides perspective on state-level governance
+High Country News,https://www.hcn.org/feed/,community,us,Regional newsroom covering the American West,Western region specialist; represents perspective on rural and public lands issues
+Civil Eats,https://civileats.com/feed/,community,us,Publication covering food policy, agriculture, and food systems,Specialist food and agriculture coverage; represents sustainable food systems perspective
+Documented,https://documentedny.com/feed/,community,us,Nonprofit newsroom covering immigrant communities in New York City,Specialist immigrant reporting; represents undocumented immigrant perspective
+The Root,https://www.theroot.com/rss,community,us,Publication covering African American culture, politics, and news,Publication serving African American audience; represents Black perspective on news
+Latino USA,https://www.latinousa.org/feed/,community,us,Public radio show covering Latino communities and issues,Latino-focused reporting; represents Latino community perspective
+Indian Country Today,https://indiancountrytoday.com/feed,community,us,Nonprofit newsroom covering Native American communities and Indian Country,Essential Native news outlet; represents Indigenous perspective on news
+Hechinger Report,https://hechingerreport.org/feed/,community,us,Nonprofit newsroom covering education policy and K-12 schools,Specialist education coverage; focuses on accountability and equity in schools
+Christianity Today,https://www.christianitytoday.com/feed/,community,us,Magazine covering evangelical Christianity, faith, and culture,Major evangelical Christian publication; represents religious conservative perspective
+Religion News Service,https://religionnews.com/feed/,community,us,Nonprofit newsroom covering religion and faith communities,Religion specialist journalism; represents diverse faith perspectives
+Texas Tribune,https://www.texastribune.org/feed/,community,us,Nonprofit newsroom covering Texas government and policy,Texas-focused reporting; represents state-level accountability journalism
+RAND,https://www.rand.org/blog.xml,analysis,us,Research and policy institute conducting analysis on defense and social policy,Think tank with strong defense and security expertise
+Roosevelt Institute,https://rooseveltinstitute.org/feed/,analysis,us,Progressive think tank conducting economic policy research,Progressive economic research and analysis
+Carnegie Endowment,https://news.google.com/rss/search?q=when:7d+site:carnegieendowment.org&hl=en-US,analysis,us,International research institution publishing analysis on global affairs and policy,International affairs expertise; represents establishment foreign policy perspective
+Foreign Affairs,https://www.foreignaffairs.com/rss.xml,analysis,us,Magazine publishing expert analysis on international relations and foreign policy,Premier foreign policy journal; shapes US global strategy thinking
+Center for American Progress,https://news.google.com/rss/search?q=when:7d+site:americanprogress.org&hl=en-US,analysis,us,Progressive think tank conducting policy research and analysis,Progressive policy research and analysis
+Chatham House,https://news.google.com/rss/search?q=when:7d+site:chathamhouse.org&hl=en-US,analysis,uk,International affairs research institute based in United Kingdom,British international affairs expertise; represents UK perspective on global issues
+Heritage Foundation,https://news.google.com/rss/search?q=when:7d+site:heritage.org&hl=en-US,analysis,us,Conservative think tank conducting policy research and analysis,Conservative policy research; represents right-of-center policy perspective
+Brookings,https://news.google.com/rss/search?q=when:7d+site:brookings.edu&hl=en-US,analysis,us,Research institute publishing analysis on domestic and international policy,Leading centrist think tank; major influence on policy and public opinion
+Times of India,https://timesofindia.indiatimes.com/rssfeedstopstories.cms,international,india,Major Indian newspaper covering national and international news,Largest circulation Indian newspaper; represents Indian mainstream perspective
+Straits Times,https://www.straitstimes.com/news/world/rss.xml,international,singapore,Singapore newspaper covering Asia-Pacific and global news,Major Southeast Asian newspaper; represents regional perspective
+The Advocate,https://www.advocate.com/feed,community,us,Magazine covering LGBTQ news and culture,LGBTQ-focused publication; represents LGBTQ community perspective
+Jewish Telegraphic Agency,https://www.jta.org/feed,community,us,News organization covering Jewish communities and Israel-related issues,Jewish community news; represents Jewish perspective on news
+Arab American News,https://www.arabamericannews.com/feed/,community,us,Newspaper serving Arab American communities in Michigan and nationally,Arab American perspective; represents Middle Eastern American communities
+Disability Scoop,https://www.disabilityscoop.com/feed/,community,us,News organization covering disability policy and disability community issues,Disability community journalism; represents disability rights perspective
+Military Times,https://www.militarytimes.com/arc/outboundfeeds/rss/?outputType=xml,community,us,Newspaper serving military and veteran communities,Military and veteran community perspective; covers defense policy and military issues
+Daily Yonder,https://dailyyonder.com/feed/,community,us,Publication covering rural America and small-town communities,Rural America specialist; represents rural and small-town perspective
+Scalawag,https://scalawagmagazine.org/feed/,community,us,Magazine covering the American South and Southern issues,Southern regional specialist; represents Southern perspective on news
+Honolulu Civil Beat,https://www.civilbeat.org/feed/,community,us,Nonprofit newsroom covering Hawaii and Pacific issues,Hawaii and Pacific regional coverage
+Teen Vogue,https://www.teenvogue.com/feed/rss,community,us,Publication covering politics and culture for young adults,Youth and young adult perspective; reaches Gen Z audience
+AsAmNews,https://asamnews.com/feed/,community,us,News organization covering Asian American communities and issues,Asian American community journalism; represents Asian American perspective
+The Forward,https://forward.com/feed/,community,us,Jewish American newspaper covering culture, politics, and community,Jewish American perspective; covers Jewish community and Jewish American issues
+National Catholic Reporter,https://www.ncronline.org/rss.xml,community,us,Independent Catholic news organization covering church and faith issues,Catholic perspective; represents independent Catholic journalism
+The Imprint,https://imprintnews.org/feed,community,us,Nonprofit newsroom covering child welfare and youth issues,Specialist child welfare coverage; represents children and youth perspective
+Mississippi Free Press,https://www.mississippifreepress.org/feed,community,us,Nonprofit newsroom covering Mississippi government and communities,State-focused reporting; provides accountability journalism for Mississippi
+Bolts Magazine,https://boltsmag.org/feed/,community,us,Publication covering Black workers and labor issues,Black labor perspective; covers intersection of race and labor
+Capital B News,https://capitalbnews.org/feed/,community,us,Nonprofit covering Black entrepreneurs and business communities,Black business and economic perspective
+Canopy Forum,https://canopyforum.org/feed/,community,us,Community journalism platform covering local issues and solutions,Community-focused journalism; represents local perspective
+The Trace,https://www.thetrace.org/feed/,community,us,Nonprofit newsroom covering gun violence and gun policy,Gun violence specialist journalism; represents public health perspective on guns
+Prism,https://prismreports.org/feed/,community,us,Nonprofit newsroom covering how government policies affect communities of color,Racial justice coverage; represents communities of color perspective
+Borderland Beat,https://www.borderlandbeat.com/feeds/posts/default?alt=rss,community,us,Blog covering Mexico-US border issues and drug trade,Border coverage specialist; provides perspective on border region
+The Plug,https://tpinsights.com/feed/,community,us,Publication covering Black venture capital and entrepreneurship,Black venture capital perspective; covers race and entrepreneurship
+Inside Climate News,https://insideclimatenews.org/feed/,specialist,climate,Nonprofit newsroom covering climate change and clean energy,Pulitzer-winning climate journalism; represents climate action perspective
+War on the Rocks,https://warontherocks.com/feed/,specialist,security,Publication covering military affairs and national security,Defense and security expertise; represents military strategy perspective
+Just Security,https://www.justsecurity.org/feed/,specialist,governance,Law and security experts providing analysis on national security and justice issues,Legal expertise on security issues; represents civil liberties and constitutional perspective
+Inequality.org,https://inequality.org/feed/,specialist,economics,Institute for Policy Studies publication covering wealth inequality and economic justice,Economic inequality specialist; represents progressive economic justice perspective
+The Intercept,https://theintercept.com/feed/?rss,specialist,governance,Nonprofit newsroom covering national security and government surveillance,Surveillance and secrecy specialist; represents transparency and civil liberties perspective
+Protocol Africa,https://news.google.com/rss/search?q=when:7d+site:africanews.com&hl=en-US,international,africa,Technology and business publication covering African innovation,African technology and business specialist; represents African perspective on tech
+Rappler,https://www.rappler.com/feed/,international,philippines,Philippine news organization covering Southeast Asia and Asia-Pacific,Southeast Asian journalist outlet; represents regional perspective
+Meduza,https://meduza.io/rss/en/all,international,russia,Russian-founded independent news outlet covering Russian and global events,Independent Russian journalism; represents perspective from Russian exile community
