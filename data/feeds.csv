@@ -9,6 +9,12 @@ Wall Street Journal,https://feeds.a.dj.com/rss/RSSWorldNews.xml,national,us
 Bloomberg,https://feeds.bloomberg.com/markets/news.rss,national,us
 Politico,https://rss.politico.com/politics-news.xml,national,us
 The Atlantic,https://www.theatlantic.com/feed/all/,national,us
+Fox News,https://feeds.foxnews.com/foxnews/latest,national,us
+NBC News,https://feeds.nbcnews.com/nbcnews/public/news,national,us
+ABC News,https://feeds.abcnews.com/abcnews/topstories,national,us
+The Hill,https://thehill.com/feed/,national,us
+CNBC,https://www.cnbc.com/id/100003114/device/rss/rss.html,national,us
+Business Insider,https://www.businessinsider.com/rss,national,us
 BBC World,https://feeds.bbci.co.uk/news/world/rss.xml,international,uk
 The Guardian World,https://www.theguardian.com/world/rss,international,uk
 Al Jazeera,https://www.aljazeera.com/xml/rss/all.xml,international,qatar
@@ -22,6 +28,14 @@ African Arguments,https://africanarguments.org/feed/,international,africa
 Americas Quarterly,https://www.americasquarterly.org/feed/,international,latam
 The Diplomat,https://thediplomat.com/feed/,international,asia
 Foreign Policy,https://foreignpolicy.com/feed/,international,global
+National Review,https://www.nationalreview.com/feed/,conservative,us
+The Federalist,https://thefederalist.com/feed/,conservative,us
+Washington Examiner,https://www.washingtonexaminer.com/feed,conservative,us
+Washington Times,https://www.washingtontimes.com/rss/headlines/news/,conservative,us
+Daily Wire,https://www.dailywire.com/feeds/rss.xml,conservative,us
+The Dispatch,https://thedispatch.com/feed/,conservative,us
+Reason,https://reason.com/feed/,conservative,us
+RealClearPolitics,https://feeds.feedburner.com/realclearpolitics/qlMj,conservative,us
 MIT Technology Review,https://www.technologyreview.com/feed/,domain,ai
 The Markup,https://themarkup.org/feeds/rss.xml,domain,information
 EPI Blog,https://www.epi.org/blog/feed/,domain,labor
@@ -52,9 +66,17 @@ Stateline,https://stateline.org/feed/,lived,us
 High Country News,https://www.hcn.org/feed/,lived,us
 Civil Eats,https://civileats.com/feed/,lived,us
 Documented,https://documentedny.com/feed/,lived,us
+The Root,https://www.theroot.com/rss,lived,us
+Latino USA,https://www.latinousa.org/feed/,lived,us
+Indian Country Today,https://indiancountrytoday.com/feed,lived,us
+Hechinger Report,https://hechingerreport.org/feed/,lived,us
+Christianity Today,https://www.christianitytoday.com/feed/,lived,us
+Religion News Service,https://religionnews.com/feed/,lived,us
+Texas Tribune,https://www.texastribune.org/feed/,lived,us
 RAND,https://www.rand.org/blog.xml,analysis,us
 Roosevelt Institute,https://rooseveltinstitute.org/feed/,analysis,us
 Carnegie Endowment,https://news.google.com/rss/search?q=when:7d+site:carnegieendowment.org&hl=en-US,analysis,us
 Foreign Affairs,https://www.foreignaffairs.com/rss.xml,analysis,us
 Center for American Progress,https://news.google.com/rss/search?q=when:7d+site:americanprogress.org&hl=en-US,analysis,us
 Chatham House,https://news.google.com/rss/search?q=when:7d+site:chathamhouse.org&hl=en-US,analysis,uk
+Heritage Foundation,https://news.google.com/rss/search?q=when:7d+site:heritage.org&hl=en-US,analysis,us
