@@ -142,14 +142,21 @@
   .archive-link:hover{opacity:0.7;}
   .archive-link svg{width:14px;height:14px;}
 
-  /* CONSTELLATION VISUAL */
-  .constellation{margin:1.5rem auto 2rem;position:relative;}
-  .constellation svg{display:block;margin:0 auto;}
-  .constellation .cst-label{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:0.7rem;fill:rgba(255,255,255,0.6);text-anchor:middle;pointer-events:none;}
-  .constellation .cst-count{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.1rem;fill:#fff;text-anchor:middle;pointer-events:none;}
-  .constellation line{stroke-linecap:round;transition:stroke-opacity 0.3s;}
-  .constellation circle{transition:r 0.3s,filter 0.3s;cursor:pointer;}
-  .constellation circle:hover{filter:brightness(1.4) drop-shadow(0 0 8px currentColor);}
+  /* CONSTELLATION VISUAL — big, interactive, beautiful */
+  .constellation{margin:1rem auto 2.5rem;position:relative;min-height:420px;}
+  .constellation svg{display:block;margin:0 auto;overflow:visible;}
+  .cst-label{font-family:'Space Grotesk',sans-serif;font-weight:700;fill:rgba(255,255,255,0.6);text-anchor:middle;pointer-events:none;transition:fill 0.3s,font-size 0.3s;}
+  .cst-count{font-family:'Space Grotesk',sans-serif;font-weight:700;fill:#fff;text-anchor:middle;pointer-events:none;}
+  .cst-desc{font-family:'Inter',sans-serif;font-weight:400;fill:rgba(255,255,255,0.35);text-anchor:middle;pointer-events:none;font-size:8px;}
+  .cst-line{stroke-linecap:round;transition:stroke-opacity 0.4s,stroke-width 0.3s;}
+  .cst-node{transition:filter 0.3s;cursor:pointer;}
+  .cst-node:hover{filter:brightness(1.4) drop-shadow(0 0 12px currentColor);}
+  .constellation.highlight .cst-line{stroke-opacity:0.02!important;}
+  .constellation.highlight .cst-line.active{stroke-opacity:0.6!important;stroke-width:4px!important;}
+  .constellation.highlight .cst-label{fill:rgba(255,255,255,0.15);}
+  .constellation.highlight .cst-label.active{fill:#fff;}
+  .cst-tooltip{position:absolute;background:#1c1c22;border:1px solid rgba(255,255,255,0.1);padding:0.65rem 0.85rem;border-radius:10px;font-size:0.78rem;color:#fff;z-index:100;pointer-events:none;box-shadow:0 10px 30px rgba(0,0,0,0.7);max-width:240px;line-height:1.5;opacity:0;transition:opacity 0.2s;}
+  .cst-tooltip.show{opacity:1;}
 
   /* SPECTRUM ARC */
   .spectrum-visual{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;margin:1rem 0 1.5rem;}
@@ -399,17 +406,18 @@ function renderToday(){
   `;
 }
 
-// CONSTELLATION — visual network of domain connections
+// CONSTELLATION — oversized interactive network of domain connections
 function renderConstellation(){
   const el=document.getElementById('constellation');
   if(!el)return;
   const todayArts=articles.filter(a=>a.date===today);
-  if(!todayArts.length)return;
+  const useArts=todayArts.length?todayArts:articles;
+  if(!useArts.length)return;
 
   // Count domain frequencies and pair frequencies
   const domCounts={};
   const pairCounts={};
-  for(const a of todayArts){
+  for(const a of useArts){
     for(const d of(a.domains||[]))domCounts[d]=(domCounts[d]||0)+1;
     if(a.cross_domain&&a.domains?.length>=2){
       const ds=[...a.domains].sort();
@@ -421,52 +429,116 @@ function renderConstellation(){
 
   const keys=Object.keys(DL);
   const n=keys.length;
-  const w=Math.min(el.parentElement?.offsetWidth||700,700);
-  const h=w*0.62;
-  const cx=w/2,cy=h/2,r=Math.min(cx,cy)*0.68;
+  const w=Math.min(el.parentElement?.offsetWidth||800,800);
+  const h=Math.max(420,w*0.65);
+  const cx=w/2,cy=h/2,radius=Math.min(cx,cy)*0.62;
 
   // Position domains in a circle
   const pos={};
   keys.forEach((k,i)=>{
     const angle=(i/n)*Math.PI*2-Math.PI/2;
-    pos[k]={x:cx+Math.cos(angle)*r,y:cy+Math.sin(angle)*r};
+    pos[k]={x:cx+Math.cos(angle)*radius,y:cy+Math.sin(angle)*radius,angle};
   });
 
-  // Draw connections (lines between pairs)
+  // Draw connections
   const maxPair=Math.max(...Object.values(pairCounts),1);
   let lines='';
   for(const[pk,count]of Object.entries(pairCounts)){
     const[d1,d2]=pk.split('|');
     if(!pos[d1]||!pos[d2])continue;
-    const thick=Math.max(1,Math.min(6,(count/maxPair)*6));
-    const opacity=Math.max(0.08,Math.min(0.5,(count/maxPair)*0.5));
-    // Gradient midpoint color
-    const c1=DC[d1]||'#666',c2=DC[d2]||'#666';
-    lines+=`<line x1="${pos[d1].x}" y1="${pos[d1].y}" x2="${pos[d2].x}" y2="${pos[d2].y}" stroke="${c1}" stroke-width="${thick}" stroke-opacity="${opacity}"/>`;
+    const thick=Math.max(1.5,Math.min(8,(count/maxPair)*8));
+    const opacity=Math.max(0.06,Math.min(0.4,(count/maxPair)*0.4));
+    const c1=DC[d1]||'#666';
+    lines+=`<line class="cst-line" data-d1="${d1}" data-d2="${d2}" x1="${pos[d1].x}" y1="${pos[d1].y}" x2="${pos[d2].x}" y2="${pos[d2].y}" stroke="${c1}" stroke-width="${thick}" stroke-opacity="${opacity}"/>`;
   }
 
-  // Draw domain nodes
+  // Draw domain nodes — oversized, with labels and counts
   const maxDom=Math.max(...Object.values(domCounts),1);
   let nodes='';
   keys.forEach(k=>{
     const p=pos[k];
     const count=domCounts[k]||0;
-    const sz=Math.max(12,Math.min(30,(count/maxDom)*30));
+    const sz=Math.max(22,Math.min(42,(count/maxDom)*42));
     const c=DC[k]||'#666';
-    // Glow
-    nodes+=`<circle cx="${p.x}" cy="${p.y}" r="${sz+4}" fill="${c}" opacity="0.08"/>`;
-    nodes+=`<circle cx="${p.x}" cy="${p.y}" r="${sz}" fill="${c}" opacity="0.85" style="color:${c}"/>`;
-    // Count inside
-    if(sz>=16)nodes+=`<text class="cst-count" x="${p.x}" y="${p.y+0.35*14}" style="font-size:${Math.max(10,sz*0.65)}px">${count}</text>`;
-    // Label outside
-    const labelR=r+28;
+
+    // Outer glow ring
+    nodes+=`<circle cx="${p.x}" cy="${p.y}" r="${sz+10}" fill="${c}" opacity="0.04"/>`;
+    nodes+=`<circle cx="${p.x}" cy="${p.y}" r="${sz+5}" fill="${c}" opacity="0.08"/>`;
+    // Main node
+    nodes+=`<circle class="cst-node" data-domain="${k}" cx="${p.x}" cy="${p.y}" r="${sz}" fill="${c}" opacity="0.9" style="color:${c}"
+      onmouseenter="cstHover('${k}')" onmouseleave="cstLeave()"/>`;
+    // Count inside node
+    nodes+=`<text class="cst-count" x="${p.x}" y="${p.y+1}" style="font-size:${Math.max(13,sz*0.55)}px">${count}</text>`;
+
+    // Label outside — bigger, bolder
+    const labelR=radius+sz+18;
     const angle=Math.atan2(p.y-cy,p.x-cx);
     const lx=cx+Math.cos(angle)*labelR;
     const ly=cy+Math.sin(angle)*labelR;
-    nodes+=`<text class="cst-label" x="${lx}" y="${ly+4}">${DL[k]}</text>`;
+    nodes+=`<text class="cst-label" data-domain="${k}" x="${lx}" y="${ly}" style="font-size:12px">${DL[k]}</text>`;
+    // Short description below label
+    nodes+=`<text class="cst-desc" data-domain="${k}" x="${lx}" y="${ly+14}">${DD[k].split(' and ')[0]}</text>`;
   });
 
-  el.innerHTML=`<svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg">${lines}${nodes}</svg>`;
+  // Center text
+  const centerText=`<text x="${cx}" y="${cy-8}" text-anchor="middle" style="font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:700;fill:rgba(255,255,255,0.12);">${useArts.filter(a=>a.cross_domain).length}</text>`;
+  const centerLabel=`<text x="${cx}" y="${cy+14}" text-anchor="middle" style="font-family:'Inter',sans-serif;font-size:10px;fill:rgba(255,255,255,0.15);">connections</text>`;
+
+  el.innerHTML=`
+    <svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg">
+      ${centerText}${centerLabel}${lines}${nodes}
+    </svg>
+    <div class="cst-tooltip" id="cst-tip"></div>
+  `;
+}
+
+// Constellation interactivity
+function cstHover(domain){
+  const el=document.getElementById('constellation');
+  if(!el)return;
+  el.classList.add('highlight');
+  // Highlight lines connected to this domain
+  el.querySelectorAll('.cst-line').forEach(line=>{
+    if(line.dataset.d1===domain||line.dataset.d2===domain){
+      line.classList.add('active');
+    }
+  });
+  // Highlight labels
+  el.querySelectorAll('.cst-label, .cst-desc').forEach(t=>{
+    if(t.dataset.domain===domain)t.classList.add('active');
+  });
+  // Connected domains
+  const connected=new Set();
+  el.querySelectorAll('.cst-line.active').forEach(l=>{
+    connected.add(l.dataset.d1);connected.add(l.dataset.d2);
+  });
+  connected.forEach(d=>{
+    el.querySelectorAll(`.cst-label[data-domain="${d}"]`).forEach(t=>t.classList.add('active'));
+  });
+  // Tooltip
+  const tip=document.getElementById('cst-tip');
+  if(tip){
+    const node=el.querySelector(`.cst-node[data-domain="${domain}"]`);
+    if(node){
+      const rect=el.getBoundingClientRect();
+      const nx=parseFloat(node.getAttribute('cx'));
+      const ny=parseFloat(node.getAttribute('cy'));
+      const svgRect=el.querySelector('svg').getBoundingClientRect();
+      const scale=svgRect.width/parseFloat(el.querySelector('svg').getAttribute('width'));
+      tip.innerHTML=`<strong style="color:${DC[domain]}">${DL[domain]}</strong><br><span style="color:var(--text-dim)">${DD[domain]}</span>`;
+      tip.style.left=(nx*scale-60)+'px';
+      tip.style.top=(ny*scale-tip.offsetHeight-20)+'px';
+      tip.classList.add('show');
+    }
+  }
+}
+function cstLeave(){
+  const el=document.getElementById('constellation');
+  if(!el)return;
+  el.classList.remove('highlight');
+  el.querySelectorAll('.active').forEach(e=>e.classList.remove('active'));
+  const tip=document.getElementById('cst-tip');
+  if(tip)tip.classList.remove('show');
 }
 
 function computeSpectrum(arts){
