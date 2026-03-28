@@ -1,0 +1,577 @@
+{
+  "generated": "2026-03-28T20:21:26.271817Z",
+  "total_sources": 239,
+  "matched_sources": 70,
+  "match_rate_pct": 29.3,
+  "attribution": "Media bias ratings from AllSides.com, licensed under CC BY-NC 4.0",
+  "attribution_url": "https://www.allsides.com/media-bias/ratings",
+  "distribution": {
+    "left": 7,
+    "left-center": 18,
+    "center": 31,
+    "right-center": 6,
+    "right": 8
+  },
+  "ratings": {
+    "New York Times": {
+      "rating": "left-center",
+      "rating_num": 2,
+      "confidence": "High",
+      "allsides_name": "New York Times - News",
+      "allsides_url": "https://www.allsides.com/news-source/new-york-times",
+      "type": "News Media"
+    },
+    "Washington Post": {
+      "rating": "left-center",
+      "rating_num": 2,
+      "confidence": "High",
+      "allsides_name": "Washington Post",
+      "allsides_url": "https://www.allsides.com/news-source/washington-post-media-bias",
+      "type": "News Media"
+    },
+    "AP News": {
+      "rating": "center",
+      "rating_num": 3,
+      "confidence": "Low or Initial Rating",
+      "allsides_name": "AP",
+      "allsides_url": "https://www.allsides.com/news-source/ap",
+      "type": "Author"
+    },
+    "Reuters": {
+      "rating": "center",
+      "rating_num": 3,
+      "confidence": "Low or Initial Rating",
+      "allsides_name": "Reuters",
+      "allsides_url": "https://www.allsides.com/news-source/reuters",
+      "type": "News Media"
+    },
+    "NPR": {
+      "rating": "left-center",
+      "rating_num": 2,
+      "confidence": "Low or Initial Rating",
+      "allsides_name": "NPR Editorial",
+      "allsides_url": "https://www.allsides.com/news-source/npr-editorial",
+      "type": "News Media"
+    },
+    "CNN": {
+      "rating": "left-center",
+      "rating_num": 2,
+      "confidence": "High",
+      "allsides_name": "CNN (Web News)",
+      "allsides_url": "https://www.allsides.com/news-source/cnn-media-bias",
+      "type": "News Media"
+    },
+    "Wall Street Journal": {
+      "rating": "right",
+      "rating_num": 5,
+      "confidence": "NA",
+      "allsides_name": "Allysia Finley (Wall Street Journal)",
+      "allsides_url": "https://www.allsides.com/news-source/allysia-finley",
+      "type": "Author"
+    },
+    "Bloomberg": {
+      "rating": "center",
+      "rating_num": 3,
+      "confidence": "Medium",
+      "allsides_name": "Bloomberg",
+      "allsides_url": "https://www.allsides.com/news-source/bloomberg-media-bias",
+      "type": "News Media"
+    },
+    "Politico": {
+      "rating": "left-center",
+      "rating_num": 2,
+      "confidence": "Medium",
+      "allsides_name": "Politico",
+      "allsides_url": "https://www.allsides.com/news-source/politico-media-bias",
+      "type": "News Media"
+    },
+    "The Atlantic": {
+      "rating": "left-center",
+      "rating_num": 2,
+      "confidence": "NA",
+      "allsides_name": "The Atlantic",
+      "allsides_url": "https://www.allsides.com/news-source/atlantic",
+      "type": "News Media"
+    },
+    "Fox News": {
+      "rating": "right",
+      "rating_num": 5,
+      "confidence": "Low or Initial Rating",
+      "allsides_name": "Fox News Latino",
+      "allsides_url": "https://www.allsides.com/news-source/fox-news-latino",
+      "type": "News Media"
+    },
+    "ABC News": {
+      "rating": "left-center",
+      "rating_num": 2,
+      "confidence": "High",
+      "allsides_name": "ABC News",
+      "allsides_url": "https://www.allsides.com/news-source/abc-news-media-bias",
+      "type": "News Media"
+    },
+    "The Hill": {
+      "rating": "center",
+      "rating_num": 3,
+      "confidence": "Low or Initial Rating",
+      "allsides_name": "The Hill",
+      "allsides_url": "https://www.allsides.com/news-source/hill-media-bias",
+      "type": "News Media"
+    },
+    "CNBC": {
+      "rating": "center",
+      "rating_num": 3,
+      "confidence": "Low or Initial Rating",
+      "allsides_name": "CNBC",
+      "allsides_url": "https://www.allsides.com/news-source/cnbc",
+      "type": "News Media"
+    },
+    "Business Insider": {
+      "rating": "center",
+      "rating_num": 3,
+      "confidence": "NA",
+      "allsides_name": "Business Insider",
+      "allsides_url": "https://www.allsides.com/news-source/business-insider",
+      "type": "News Media"
+    },
+    "National Review": {
+      "rating": "right",
+      "rating_num": 5,
+      "confidence": "Medium",
+      "allsides_name": "National Review",
+      "allsides_url": "https://www.allsides.com/news-source/national-review",
+      "type": "News Media"
+    },
+    "Washington Examiner": {
+      "rating": "right-center",
+      "rating_num": 4,
+      "confidence": "Medium",
+      "allsides_name": "Washington Examiner",
+      "allsides_url": "https://www.allsides.com/news-source/washington-examiner",
+      "type": "News Media"
+    },
+    "Washington Times": {
+      "rating": "right-center",
+      "rating_num": 4,
+      "confidence": "Medium",
+      "allsides_name": "Washington Times",
+      "allsides_url": "https://www.allsides.com/news-source/washington-times-bias",
+      "type": "News Media"
+    },
+    "Daily Wire": {
+      "rating": "right",
+      "rating_num": 5,
+      "confidence": "Medium",
+      "allsides_name": "The Daily Wire",
+      "allsides_url": "https://www.allsides.com/news-source/daily-wire",
+      "type": "News Media"
+    },
+    "Reason": {
+      "rating": "right-center",
+      "rating_num": 4,
+      "confidence": "Low or Initial Rating",
+      "allsides_name": "Reason",
+      "allsides_url": "https://www.allsides.com/news-source/reason",
+      "type": "News Media"
+    },
+    "RealClearPolitics": {
+      "rating": "center",
+      "rating_num": 3,
+      "confidence": "NA",
+      "allsides_name": "RealClearPolitics",
+      "allsides_url": "https://www.allsides.com/news-source/real-clear-politics",
+      "type": "News Media"
+    },
+    "The Federalist": {
+      "rating": "right",
+      "rating_num": 5,
+      "confidence": "Low or Initial Rating",
+      "allsides_name": "The Federalist",
+      "allsides_url": "https://www.allsides.com/news-source/federalist",
+      "type": "News Media"
+    },
+    "BBC World": {
+      "rating": "center",
+      "rating_num": 3,
+      "confidence": "Medium",
+      "allsides_name": "BBC News",
+      "allsides_url": "https://www.allsides.com/news-source/bbc-news-media-bias",
+      "type": "News Media"
+    },
+    "The Guardian World": {
+      "rating": "left-center",
+      "rating_num": 2,
+      "confidence": "Medium",
+      "allsides_name": "The Guardian",
+      "allsides_url": "https://www.allsides.com/news-source/guardian",
+      "type": "News Media"
+    },
+    "Al Jazeera": {
+      "rating": "left-center",
+      "rating_num": 2,
+      "confidence": "Low or Initial Rating",
+      "allsides_name": "Al Jazeera",
+      "allsides_url": "https://www.allsides.com/news-source/al-jazeera-america",
+      "type": "News Media"
+    },
+    "Columbia Journalism Review": {
+      "rating": "center",
+      "rating_num": 3,
+      "confidence": "Low or Initial Rating",
+      "allsides_name": "Columbia Journalism Review",
+      "allsides_url": "https://www.allsides.com/news-source/columbia-journalism-review",
+      "type": "News Media"
+    },
+    "ProPublica": {
+      "rating": "center",
+      "rating_num": 3,
+      "confidence": "NA",
+      "allsides_name": "ProPublica",
+      "allsides_url": "https://www.allsides.com/news-source/propublica",
+      "type": "News Media"
+    },
+    "Grist": {
+      "rating": "left-center",
+      "rating_num": 2,
+      "confidence": "NA",
+      "allsides_name": "Grist",
+      "allsides_url": "https://www.allsides.com/news-source/grist",
+      "type": "News Media"
+    },
+    "Naked Capitalism": {
+      "rating": "center",
+      "rating_num": 3,
+      "confidence": "Low or Initial Rating",
+      "allsides_name": "AP",
+      "allsides_url": "https://www.allsides.com/news-source/ap",
+      "type": "Author"
+    },
+    "Vox": {
+      "rating": "left",
+      "rating_num": 1,
+      "confidence": "High",
+      "allsides_name": "Vox",
+      "allsides_url": "https://www.allsides.com/news-source/vox-news-media-bias",
+      "type": "News Media"
+    },
+    "The Verge": {
+      "rating": "left-center",
+      "rating_num": 2,
+      "confidence": "Low or Initial Rating",
+      "allsides_name": "The Verge",
+      "allsides_url": "https://www.allsides.com/news-source/verge",
+      "type": "News Media"
+    },
+    "CalMatters": {
+      "rating": "center",
+      "rating_num": 3,
+      "confidence": "Low or Initial Rating",
+      "allsides_name": "CalMatters",
+      "allsides_url": "https://www.allsides.com/news-source/calmatters",
+      "type": "News Media"
+    },
+    "The Root": {
+      "rating": "left-center",
+      "rating_num": 2,
+      "confidence": "Low or Initial Rating",
+      "allsides_name": "The Root",
+      "allsides_url": "https://www.allsides.com/news-source/root",
+      "type": "News Media"
+    },
+    "Religion News Service": {
+      "rating": "left",
+      "rating_num": 1,
+      "confidence": "Low or Initial Rating",
+      "allsides_name": "Vice",
+      "allsides_url": "https://www.allsides.com/news-source/vice-media-bias",
+      "type": "News Media"
+    },
+    "RAND": {
+      "rating": "left-center",
+      "rating_num": 2,
+      "confidence": "NA",
+      "allsides_name": "RAND Corporation",
+      "allsides_url": "https://www.allsides.com/news-source/rand-corporation",
+      "type": "Think Tank / Policy Group"
+    },
+    "Carnegie Endowment": {
+      "rating": "center",
+      "rating_num": 3,
+      "confidence": "NA",
+      "allsides_name": "Carnegie Endowment for International Peace",
+      "allsides_url": "https://www.allsides.com/news-source/carnegie-endowment-international-peace",
+      "type": "Think Tank / Policy Group"
+    },
+    "Foreign Affairs": {
+      "rating": "center",
+      "rating_num": 3,
+      "confidence": "Low or Initial Rating",
+      "allsides_name": "Foreign Affairs",
+      "allsides_url": "https://www.allsides.com/news-source/foreign-affairs",
+      "type": "News Media"
+    },
+    "Center for American Progress": {
+      "rating": "left-center",
+      "rating_num": 2,
+      "confidence": "NA",
+      "allsides_name": "Center For American Progress",
+      "allsides_url": "https://www.allsides.com/news-source/center-american-progress",
+      "type": "Think Tank / Policy Group"
+    },
+    "Heritage Foundation": {
+      "rating": "right-center",
+      "rating_num": 4,
+      "confidence": "NA",
+      "allsides_name": "The Heritage Foundation",
+      "allsides_url": "https://www.allsides.com/news-source/heritage-foundation",
+      "type": "Think Tank / Policy Group"
+    },
+    "Brookings": {
+      "rating": "center",
+      "rating_num": 3,
+      "confidence": "NA",
+      "allsides_name": "Brookings Institution",
+      "allsides_url": "https://www.allsides.com/news-source/brookings-institute",
+      "type": "Think Tank / Policy Group"
+    },
+    "The Advocate": {
+      "rating": "left-center",
+      "rating_num": 2,
+      "confidence": "Low or Initial Rating",
+      "allsides_name": "The Advocate-Messenger",
+      "allsides_url": "https://www.allsides.com/news-source/advocate-messenger",
+      "type": "News Media"
+    },
+    "Jewish Telegraphic Agency": {
+      "rating": "center",
+      "rating_num": 3,
+      "confidence": "Low or Initial Rating",
+      "allsides_name": "AP",
+      "allsides_url": "https://www.allsides.com/news-source/ap",
+      "type": "Author"
+    },
+    "Honolulu Civil Beat": {
+      "rating": "center",
+      "rating_num": 3,
+      "confidence": "Low or Initial Rating",
+      "allsides_name": "Honolulu Civil Beat",
+      "allsides_url": "https://www.allsides.com/news-source/honolulu-civil-beat",
+      "type": "News Media"
+    },
+    "Teen Vogue": {
+      "rating": "left-center",
+      "rating_num": 2,
+      "confidence": "Low or Initial Rating",
+      "allsides_name": "Teen Vogue",
+      "allsides_url": "https://www.allsides.com/news-source/teen-vogue",
+      "type": "News Media"
+    },
+    "Capital B News": {
+      "rating": "center",
+      "rating_num": 3,
+      "confidence": "Low or Initial Rating",
+      "allsides_name": "AP",
+      "allsides_url": "https://www.allsides.com/news-source/ap",
+      "type": "Author"
+    },
+    "The Intercept": {
+      "rating": "left",
+      "rating_num": 1,
+      "confidence": "Low or Initial Rating",
+      "allsides_name": "The Intercept",
+      "allsides_url": "https://www.allsides.com/news-source/intercept",
+      "type": "News Media"
+    },
+    "Rappler": {
+      "rating": "center",
+      "rating_num": 3,
+      "confidence": "Low or Initial Rating",
+      "allsides_name": "AP",
+      "allsides_url": "https://www.allsides.com/news-source/ap",
+      "type": "Author"
+    },
+    "Texas Observer": {
+      "rating": "left-center",
+      "rating_num": 2,
+      "confidence": "NA",
+      "allsides_name": "The Texas Observer",
+      "allsides_url": "https://www.allsides.com/news-source/texas-observer-media-bias",
+      "type": "News Media"
+    },
+    "AARP": {
+      "rating": "center",
+      "rating_num": 3,
+      "confidence": "NA",
+      "allsides_name": "AARP",
+      "allsides_url": "https://www.allsides.com/news-source/aarp-media-bias",
+      "type": "Think Tank / Policy Group"
+    },
+    "Iowa Capital Dispatch": {
+      "rating": "center",
+      "rating_num": 3,
+      "confidence": "Low or Initial Rating",
+      "allsides_name": "AP",
+      "allsides_url": "https://www.allsides.com/news-source/ap",
+      "type": "Author"
+    },
+    "Ohio Capital Journal": {
+      "rating": "center",
+      "rating_num": 3,
+      "confidence": "Low or Initial Rating",
+      "allsides_name": "AP",
+      "allsides_url": "https://www.allsides.com/news-source/ap",
+      "type": "Author"
+    },
+    "100 Days in Appalachia": {
+      "rating": "center",
+      "rating_num": 3,
+      "confidence": "Low or Initial Rating",
+      "allsides_name": "AP",
+      "allsides_url": "https://www.allsides.com/news-source/ap",
+      "type": "Author"
+    },
+    "American Enterprise Institute": {
+      "rating": "right-center",
+      "rating_num": 4,
+      "confidence": "Low or Initial Rating",
+      "allsides_name": "American Enterprise Institute",
+      "allsides_url": "https://www.allsides.com/news-source/american-enterprise-institute",
+      "type": "Think Tank / Policy Group"
+    },
+    "Newsmax": {
+      "rating": "right",
+      "rating_num": 5,
+      "confidence": "Medium",
+      "allsides_name": "Newsmax",
+      "allsides_url": "https://www.allsides.com/news-source/newsmax",
+      "type": "News Media"
+    },
+    "Breitbart": {
+      "rating": "right",
+      "rating_num": 5,
+      "confidence": "High",
+      "allsides_name": "Breitbart News",
+      "allsides_url": "https://www.allsides.com/news-source/breitbart",
+      "type": "News Media"
+    },
+    "Center on Budget and Policy Priorities": {
+      "rating": "left",
+      "rating_num": 1,
+      "confidence": "NA",
+      "allsides_name": "Center on Budget and Policy Priorities",
+      "allsides_url": "https://www.allsides.com/news-source/center-budget-and-policy-priorities-0",
+      "type": "Think Tank / Policy Group"
+    },
+    "The Korea Herald": {
+      "rating": "center",
+      "rating_num": 3,
+      "confidence": "Low or Initial Rating",
+      "allsides_name": "The Korea Herald",
+      "allsides_url": "https://www.allsides.com/news-source/korea-herald",
+      "type": "News Media"
+    },
+    "The Japan Times": {
+      "rating": "center",
+      "rating_num": 3,
+      "confidence": "Low or Initial Rating",
+      "allsides_name": "AP",
+      "allsides_url": "https://www.allsides.com/news-source/ap",
+      "type": "Author"
+    },
+    "Idaho Capital Sun": {
+      "rating": "center",
+      "rating_num": 3,
+      "confidence": "Low or Initial Rating",
+      "allsides_name": "AP",
+      "allsides_url": "https://www.allsides.com/news-source/ap",
+      "type": "Author"
+    },
+    "Mother Jones": {
+      "rating": "left",
+      "rating_num": 1,
+      "confidence": "NA",
+      "allsides_name": "Mother Jones",
+      "allsides_url": "https://www.allsides.com/news-source/mother-jones-bias",
+      "type": "News Media"
+    },
+    "Defense One": {
+      "rating": "center",
+      "rating_num": 3,
+      "confidence": "Low or Initial Rating",
+      "allsides_name": "Defense One",
+      "allsides_url": "https://www.allsides.com/news-source/defense-one-media-bias",
+      "type": "News Media"
+    },
+    "TechCrunch": {
+      "rating": "center",
+      "rating_num": 3,
+      "confidence": "Low or Initial Rating",
+      "allsides_name": "TechCrunch",
+      "allsides_url": "https://www.allsides.com/news-source/techcrunch-media-bias",
+      "type": "News Media"
+    },
+    "Health Affairs": {
+      "rating": "left-center",
+      "rating_num": 2,
+      "confidence": "NA",
+      "allsides_name": "FAIR",
+      "allsides_url": "https://www.allsides.com/news-source/fairness-and-accuracy-reporting",
+      "type": "Think Tank / Policy Group"
+    },
+    "Council on Foreign Relations": {
+      "rating": "left",
+      "rating_num": 1,
+      "confidence": "Low or Initial Rating",
+      "allsides_name": "Council on Foreign Relations",
+      "allsides_url": "https://www.allsides.com/news-source/council-foreign-relations-0",
+      "type": "Think Tank / Policy Group"
+    },
+    "Cato Institute": {
+      "rating": "right-center",
+      "rating_num": 4,
+      "confidence": "NA",
+      "allsides_name": "Cato Institute (blog)",
+      "allsides_url": "https://www.allsides.com/news-source/cato-institute",
+      "type": "Think Tank / Policy Group"
+    },
+    "The Daily": {
+      "rating": "right",
+      "rating_num": 5,
+      "confidence": "Medium",
+      "allsides_name": "The Daily Caller",
+      "allsides_url": "https://www.allsides.com/news-source/daily-caller",
+      "type": "News Media"
+    },
+    "Ben Shapiro Show": {
+      "rating": "center",
+      "rating_num": 3,
+      "confidence": "Low or Initial Rating",
+      "allsides_name": "AP",
+      "allsides_url": "https://www.allsides.com/news-source/ap",
+      "type": "Author"
+    },
+    "Ezra Klein Show": {
+      "rating": "left",
+      "rating_num": 1,
+      "confidence": "Low or Initial Rating",
+      "allsides_name": "Ezra Klein",
+      "allsides_url": "https://www.allsides.com/news-source/ezra-klein",
+      "type": "Author"
+    },
+    "Marketplace (APM)": {
+      "rating": "center",
+      "rating_num": 3,
+      "confidence": "Low or Initial Rating",
+      "allsides_name": "AP",
+      "allsides_url": "https://www.allsides.com/news-source/ap",
+      "type": "Author"
+    },
+    "Freakonomics Radio": {
+      "rating": "center",
+      "rating_num": 3,
+      "confidence": "NA",
+      "allsides_name": "Freakonomics",
+      "allsides_url": "https://www.allsides.com/news-source/freakonomics",
+      "type": "Think Tank / Policy Group"
+    }
+  }
+}

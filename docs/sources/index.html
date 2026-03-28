@@ -364,6 +364,84 @@
       font-style: italic;
     }
 
+    .source-name-row {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 0.6rem;
+    }
+    .source-name-row .source-name {
+      margin-bottom: 0;
+    }
+    .bias-badge {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .bias-badge[data-rating="left"] {
+      background: rgba(59, 130, 246, 0.15);
+      color: #93bbfd;
+      border: 1px solid rgba(59, 130, 246, 0.25);
+    }
+    .bias-badge[data-rating="left-center"] {
+      background: rgba(99, 179, 237, 0.12);
+      color: #a8d4f0;
+      border: 1px solid rgba(99, 179, 237, 0.2);
+    }
+    .bias-badge[data-rating="center"] {
+      background: rgba(167, 139, 250, 0.12);
+      color: #c4b5fd;
+      border: 1px solid rgba(167, 139, 250, 0.2);
+    }
+    .bias-badge[data-rating="right-center"] {
+      background: rgba(251, 146, 60, 0.12);
+      color: #fdb882;
+      border: 1px solid rgba(251, 146, 60, 0.2);
+    }
+    .bias-badge[data-rating="right"] {
+      background: rgba(239, 68, 68, 0.12);
+      color: #fca5a5;
+      border: 1px solid rgba(239, 68, 68, 0.2);
+    }
+    .bias-attribution {
+      font-size: 0.75rem;
+      color: rgba(235, 230, 245, 0.4);
+      margin-top: 2rem;
+      text-align: center;
+    }
+    .bias-attribution a {
+      color: rgba(102, 82, 255, 0.7);
+      text-decoration: none;
+    }
+    .bias-attribution a:hover {
+      color: #6652FF;
+    }
+    .bias-spectrum {
+      display: flex;
+      gap: 0.3rem;
+      align-items: center;
+      justify-content: center;
+      margin: 2rem auto;
+      flex-wrap: wrap;
+    }
+    .bias-spectrum-item {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-size: 0.7rem;
+      color: rgba(235, 230, 245, 0.5);
+    }
+    .bias-spectrum-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+
     /* CATEGORIZATION SECTION */
     .categorization-section {
       margin: 3rem 0 2rem 0;
@@ -589,6 +667,9 @@
           <div class="stat-text">Source categories</div>
         </div>
       </div>
+
+      <!-- Bias Spectrum Legend -->
+      <div id="biasLegend"></div>
 
       <!-- How We Categorize -->
       <section class="categorization-section">
@@ -948,28 +1029,70 @@
     const analysisResearchSources = [...sourcesByTier.analysis, ...sourcesByTier.research];
     const newsletterPodcastSources = [...sourcesByTier.newsletter, ...sourcesByTier.podcast];
 
-    // Render sources for regular tiers
+    // Fetch bias ratings then render
+    let biasData = {};
+    fetch('../data/bias_ratings.json')
+      .then(r => r.json())
+      .then(data => {
+        biasData = data.ratings || {};
+        renderAllTiers();
+        renderBiasLegend(data);
+      })
+      .catch(() => {
+        renderAllTiers();
+      });
+
+    const biasLabel = r => {
+      const labels = { 'left': 'Left', 'left-center': 'Lean Left', 'center': 'Center', 'right-center': 'Lean Right', 'right': 'Right' };
+      return labels[r] || r;
+    };
+
     const renderSources = (sources, containerId) => {
       const container = document.getElementById(containerId);
       if (!container) return;
-      container.innerHTML = sources.map(source => `
+      container.innerHTML = sources.map(source => {
+        const bias = biasData[source.name];
+        const badge = bias ? `<span class="bias-badge" data-rating="${bias.rating}" title="AllSides rating: ${biasLabel(bias.rating)} (${bias.confidence} confidence)">${biasLabel(bias.rating)}</span>` : '';
+        return `
         <article class="source-card">
-          <h3 class="source-name">${source.name}</h3>
+          <div class="source-name-row">
+            <h3 class="source-name">${source.name}</h3>
+            ${badge}
+          </div>
           <p class="source-description">${source.description}</p>
           <p class="source-why">Why we included it: ${source.why}</p>
-        </article>
-      `).join('');
+        </article>`;
+      }).join('');
     };
 
-    // Render each tier
-    renderSources(sourcesByTier.national, "tier-national");
-    renderSources(sourcesByTier.international, "tier-international");
-    renderSources(sourcesByTier.community, "tier-community");
-    renderSources(sourcesByTier.specialist, "tier-specialist");
-    renderSources(sourcesByTier.explainer, "tier-explainer");
-    renderSources(analysisResearchSources, "tier-analysis-research");
-    renderSources(newsletterPodcastSources, "tier-newsletter-podcast");
-    renderSources(sourcesByTier.government, "tier-government");
+    const renderBiasLegend = (data) => {
+      const legend = document.getElementById('biasLegend');
+      if (!legend || !data.distribution) return;
+      const colors = { 'left': '#3b82f6', 'left-center': '#63b3ed', 'center': '#a78bfa', 'right-center': '#fb923c', 'right': '#ef4444' };
+      const total = data.matched_sources;
+      legend.innerHTML = `
+        <div class="bias-spectrum">
+          ${Object.entries(data.distribution).map(([rating, count]) => `
+            <span class="bias-spectrum-item">
+              <span class="bias-spectrum-dot" style="background:${colors[rating]}"></span>
+              ${biasLabel(rating)} (${count})
+            </span>
+          `).join('')}
+        </div>
+        <p class="bias-attribution">${total} of ${data.total_sources} sources matched. Bias ratings from <a href="${data.attribution_url}" target="_blank" rel="noopener">AllSides.com</a> under CC BY-NC 4.0. Unmatched sources are not rated, not assumed neutral.</p>
+      `;
+    };
+
+    const renderAllTiers = () => {
+      renderSources(sourcesByTier.national, "tier-national");
+      renderSources(sourcesByTier.international, "tier-international");
+      renderSources(sourcesByTier.community, "tier-community");
+      renderSources(sourcesByTier.specialist, "tier-specialist");
+      renderSources(sourcesByTier.explainer, "tier-explainer");
+      renderSources(analysisResearchSources, "tier-analysis-research");
+      renderSources(newsletterPodcastSources, "tier-newsletter-podcast");
+      renderSources(sourcesByTier.government, "tier-government");
+    };
 
     // Toggle methodology
     document.getElementById('categorizationToggle').addEventListener('click', function() {
