@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="112 news sources. Every perspective. The connections most coverage misses. Updated daily.">
+<meta name="description" content="213 news sources. Every perspective. The connections most coverage misses. Updated daily.">
 <meta property="og:title" content="Sources - Signal Board">
 <meta property="og:description" content="Every source listed, described, and justified. Where it comes from and why it's here.">
 <meta property="og:type" content="website">
@@ -37,17 +37,18 @@
   /* SECTION HEADER */
   .tier-section{margin-bottom:4rem;}
   .tier-header{font-family:'Space Grotesk',sans-serif;font-size:clamp(2rem,5vw,2.6rem);font-weight:800;letter-spacing:-0.04em;color:#fff;margin-bottom:0.5rem;padding:1.5rem;border-radius:24px;display:inline-block;}
+  .tier-count{font-family:'Space Grotesk',sans-serif;font-size:0.85rem;font-weight:600;color:rgba(235,230,245,0.6);margin-left:0.5rem;}
   .tier-desc{font-size:0.95rem;color:rgba(235,230,245,0.65);margin-bottom:2rem;max-width:700px;line-height:1.7;}
 
   /* SOURCE CARDS */
   .sources-grid{display:grid;grid-template-columns:1fr;gap:1rem;margin-bottom:0.5rem;}
-  .source-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:16px;padding:1.8rem;transition:all 0.2s;cursor:default;}
+  .source-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-left:4px solid;border-radius:16px;padding:1.8rem;transition:all 0.2s;cursor:default;}
   .source-card:hover{background:rgba(255,255,255,0.06);border-color:rgba(255,255,255,0.12);transform:translateX(4px);}
 
   .source-name{font-family:'Space Grotesk',sans-serif;font-size:1.05rem;font-weight:700;color:#fff;margin-bottom:0.3rem;}
   .source-url{font-size:0.75rem;color:rgba(235,230,245,0.4);margin-bottom:0.8rem;word-break:break-all;}
   .source-desc{font-size:0.9rem;color:rgba(235,230,245,0.75);line-height:1.65;margin-bottom:0.8rem;}
-  .source-why{font-size:0.85rem;color:rgba(235,230,245,0.55);line-height:1.6;border-left:3px solid rgba(255,255,255,0.15);padding-left:1rem;margin-top:0.8rem;font-style:italic;}
+  .source-why{font-size:0.85rem;color:rgba(235,230,245,0.55);line-height:1.6;padding-left:0;margin-top:0.8rem;font-style:italic;}
 
   /* BOTTOM */
   .bottom{padding:2.5rem 0 1.5rem;font-size:0.88rem;color:rgba(235,230,245,0.5);line-height:1.75;max-width:700px;margin-bottom:1rem;}
@@ -96,438 +97,1202 @@
   <p class="tagline">Every source here is included for a specific reason, and every reason is listed below. This isn't a random collection. Each outlet was added because it fills a gap in the broader information ecosystem.</p>
 </div>
 
-<!-- NATIONAL TIER -->
+<!-- NATIONAL NEWS TIER -->
 <div class="tier-section">
-  <div class="tier-header" style="background:#FF5400;color:#000;">National Reach</div>
-  <p class="tier-desc">The major outlets that shape the mainstream news agenda. Newspapers, wire services, and broadcast networks with the largest circulation and widest influence across America.</p>
+  <div class="tier-header" style="background:#6652FF;color:#fff;">National News<span class="tier-count">28</span></div>
+  <p class="tier-desc">Large newspapers, wire services, and broadcast networks that shape the American news agenda. These outlets provide the baseline coverage most Americans see.</p>
   <div class="sources-grid">
-    <div class="source-card">
+    <div class="source-card" style="border-left-color:#6652FF;">
       <div class="source-name">New York Times</div>
       <div class="source-url">rss.nytimes.com</div>
       <div class="source-desc">Major nonprofit newspaper covering national and international news with investigative reporting</div>
       <div class="source-why">Largest circulation US newspaper; shapes mainstream narrative across political spectrum</div>
     </div>
-    <div class="source-card">
+    <div class="source-card" style="border-left-color:#6652FF;">
       <div class="source-name">Washington Post</div>
-      <div class="source-url">washingtonpost.com</div>
+      <div class="source-url">feeds.washingtonpost.com</div>
       <div class="source-desc">Major national newspaper covering politics, government, and national affairs</div>
-      <div class="source-why">Second largest circulation US newspaper; significant influence on American news agenda</div>
+      <div class="source-why">Second-largest circulation US newspaper; significant influence on American news agenda</div>
     </div>
-    <div class="source-card">
+    <div class="source-card" style="border-left-color:#6652FF;">
       <div class="source-name">AP News</div>
-      <div class="source-url">apnews.com</div>
+      <div class="source-url">feedx.net</div>
       <div class="source-desc">Cooperative of American newspapers and broadcasters providing wire service reporting</div>
       <div class="source-why">Most widely distributed news source in US; supplies content to majority of local newsrooms</div>
     </div>
-    <div class="source-card">
+    <div class="source-card" style="border-left-color:#6652FF;">
       <div class="source-name">Reuters</div>
-      <div class="source-url">reuters.com</div>
+      <div class="source-url">news.google.com</div>
       <div class="source-desc">International news organization with factual reporting on global and US events</div>
       <div class="source-why">Major wire service trusted by institutional investors and news organizations worldwide</div>
     </div>
-    <div class="source-card">
+    <div class="source-card" style="border-left-color:#6652FF;">
       <div class="source-name">NPR</div>
-      <div class="source-url">npr.org</div>
+      <div class="source-url">feeds.npr.org</div>
       <div class="source-desc">Public radio news organization providing reporting on national and international stories</div>
       <div class="source-why">Reaches millions of Americans; represents public media perspective on news</div>
     </div>
-    <div class="source-card">
+    <div class="source-card" style="border-left-color:#6652FF;">
       <div class="source-name">CNN</div>
-      <div class="source-url">cnn.com</div>
+      <div class="source-url">rss.cnn.com</div>
       <div class="source-desc">Cable television network providing national and international news coverage</div>
       <div class="source-why">Largest cable news network by viewership; significant influence on news cycle</div>
     </div>
-    <div class="source-card">
+    <div class="source-card" style="border-left-color:#6652FF;">
       <div class="source-name">Wall Street Journal</div>
-      <div class="source-url">wsj.com</div>
+      <div class="source-url">feeds.a.dj.com</div>
       <div class="source-desc">National newspaper with focus on business, politics, and financial markets</div>
-      <div class="source-why">Second largest US newspaper circulation; represents business and investor perspective</div>
+      <div class="source-why">Second-largest US newspaper circulation; represents business and investor perspective</div>
     </div>
-    <div class="source-card">
+    <div class="source-card" style="border-left-color:#6652FF;">
       <div class="source-name">Bloomberg</div>
-      <div class="source-url">bloomberg.com</div>
+      <div class="source-url">feeds.bloomberg.com</div>
       <div class="source-desc">Financial and business news organization covering markets, companies, and economic policy</div>
-      <div class="source-why">Dominant source for financial professionals and business decision makers</div>
+      <div class="source-why">Dominant source for financial professionals and business decision-makers</div>
     </div>
-    <div class="source-card">
+    <div class="source-card" style="border-left-color:#6652FF;">
       <div class="source-name">Politico</div>
-      <div class="source-url">politico.com</div>
+      <div class="source-url">rss.politico.com</div>
       <div class="source-desc">Political news outlet covering Congress, campaigns, and policy</div>
       <div class="source-why">Primary outlet for political insiders and policymakers; shapes conversation about politics</div>
     </div>
-    <div class="source-card">
+    <div class="source-card" style="border-left-color:#6652FF;">
       <div class="source-name">The Atlantic</div>
       <div class="source-url">theatlantic.com</div>
       <div class="source-desc">Longform magazine covering politics, culture, science, and ideas</div>
       <div class="source-why">Influential voice in national conversation; known for deep analysis and cultural commentary</div>
     </div>
-    <div class="source-card">
+    <div class="source-card" style="border-left-color:#6652FF;">
       <div class="source-name">Fox News</div>
-      <div class="source-url">foxnews.com</div>
+      <div class="source-url">feeds.foxnews.com</div>
       <div class="source-desc">Conservative cable television network providing news and opinion programming</div>
       <div class="source-why">Largest cable news network by viewership; represents significant portion of American news consumption</div>
     </div>
-    <div class="source-card">
+    <div class="source-card" style="border-left-color:#6652FF;">
       <div class="source-name">NBC News</div>
-      <div class="source-url">nbcnews.com</div>
+      <div class="source-url">feeds.nbcnews.com</div>
       <div class="source-desc">Major broadcast television network providing national and international news</div>
       <div class="source-why">Large audience reach through broadcast television; major national newsgathering organization</div>
     </div>
-    <div class="source-card">
+    <div class="source-card" style="border-left-color:#6652FF;">
       <div class="source-name">ABC News</div>
-      <div class="source-url">abcnews.com</div>
+      <div class="source-url">feeds.abcnews.com</div>
       <div class="source-desc">Major broadcast television network providing national news coverage</div>
       <div class="source-why">Large audience reach through broadcast television; major national newsgathering organization</div>
     </div>
-    <div class="source-card">
+    <div class="source-card" style="border-left-color:#6652FF;">
       <div class="source-name">The Hill</div>
       <div class="source-url">thehill.com</div>
       <div class="source-desc">Political news outlet covering Congress and policy developments</div>
       <div class="source-why">Widely read by political professionals and Capitol Hill staff</div>
     </div>
-    <div class="source-card">
+    <div class="source-card" style="border-left-color:#6652FF;">
       <div class="source-name">CNBC</div>
       <div class="source-url">cnbc.com</div>
       <div class="source-desc">Business television network covering financial markets and business news</div>
       <div class="source-why">Primary source for business professionals and market participants</div>
     </div>
-    <div class="source-card">
+    <div class="source-card" style="border-left-color:#6652FF;">
       <div class="source-name">Business Insider</div>
       <div class="source-url">businessinsider.com</div>
       <div class="source-desc">Business and technology news outlet serving corporate and startup audiences</div>
       <div class="source-why">Widely read by business professionals and entrepreneurs</div>
     </div>
-    <div class="source-card">
+    <div class="source-card" style="border-left-color:#6652FF;">
       <div class="source-name">National Review</div>
       <div class="source-url">nationalreview.com</div>
       <div class="source-desc">Conservative magazine publishing news and opinion</div>
-      <div class="source-why">Leading conservative opinion publication; represents right of center intellectual tradition</div>
+      <div class="source-why">Leading conservative opinion publication; represents right-of-center intellectual tradition</div>
     </div>
-    <div class="source-card">
+    <div class="source-card" style="border-left-color:#6652FF;">
       <div class="source-name">Washington Examiner</div>
       <div class="source-url">washingtonexaminer.com</div>
       <div class="source-desc">Conservative daily news and opinion outlet covering politics and policy</div>
-      <div class="source-why">Major conservative news outlet; represents right of center political perspective</div>
+      <div class="source-why">Major conservative news outlet; represents right-of-center political perspective</div>
     </div>
-    <div class="source-card">
+    <div class="source-card" style="border-left-color:#6652FF;">
       <div class="source-name">Washington Times</div>
       <div class="source-url">washingtontimes.com</div>
       <div class="source-desc">Conservative daily newspaper covering national and international news</div>
       <div class="source-why">Conservative daily newspaper; alternative perspective to mainstream outlets</div>
     </div>
-    <div class="source-card">
+    <div class="source-card" style="border-left-color:#6652FF;">
       <div class="source-name">Daily Wire</div>
       <div class="source-url">dailywire.com</div>
       <div class="source-desc">Conservative media company producing news and opinion content</div>
       <div class="source-why">Influential in conservative media ecosystem; represents populist conservative perspective</div>
     </div>
-    <div class="source-card">
+    <div class="source-card" style="border-left-color:#6652FF;">
       <div class="source-name">The Dispatch</div>
       <div class="source-url">thedispatch.com</div>
       <div class="source-desc">Conservative publication founded by National Review alumni focusing on news and analysis</div>
       <div class="source-why">Represents traditional conservative intellectual perspective</div>
     </div>
-    <div class="source-card">
+    <div class="source-card" style="border-left-color:#6652FF;">
       <div class="source-name">Reason</div>
       <div class="source-url">reason.com</div>
       <div class="source-desc">Libertarian magazine publishing news and opinion</div>
-      <div class="source-why">Leading libertarian publication; represents free market conservative perspective</div>
+      <div class="source-why">Leading libertarian publication; represents free-market conservative perspective</div>
     </div>
-    <div class="source-card">
+    <div class="source-card" style="border-left-color:#6652FF;">
       <div class="source-name">RealClearPolitics</div>
-      <div class="source-url">realclearpolitics.com</div>
+      <div class="source-url">feeds.feedburner.com</div>
       <div class="source-desc">Political news aggregation site curating multiple sources</div>
       <div class="source-why">Influential in political community for compiling diverse political perspectives</div>
     </div>
-    <div class="source-card">
+    <div class="source-card" style="border-left-color:#6652FF;">
       <div class="source-name">The Federalist</div>
       <div class="source-url">thefederalist.com</div>
       <div class="source-desc">Conservative opinion and news publication</div>
       <div class="source-why">Influential in conservative media; represents populist and traditionalist conservative views</div>
+    </div>
+    <div class="source-card" style="border-left-color:#6652FF;">
+      <div class="source-name">Newsmax</div>
+      <div class="source-url">newsmax.com</div>
+      <div class="source-desc">Conservative news outlet with opinion and reporting</div>
+      <div class="source-why">Conservative media perspective; reaches right-leaning audience</div>
+    </div>
+    <div class="source-card" style="border-left-color:#6652FF;">
+      <div class="source-name">The Blaze</div>
+      <div class="source-url">news.google.com</div>
+      <div class="source-desc">Conservative media company producing news and opinion</div>
+      <div class="source-why">Conservative media perspective; represents populist conservative viewpoint</div>
+    </div>
+    <div class="source-card" style="border-left-color:#6652FF;">
+      <div class="source-name">Breitbart</div>
+      <div class="source-url">feeds.feedburner.com</div>
+      <div class="source-desc">Right-wing news and opinion website</div>
+      <div class="source-why">Right-wing media perspective; covers conservative cultural and political issues</div>
+    </div>
+    <div class="source-card" style="border-left-color:#6652FF;">
+      <div class="source-name">Mother Jones</div>
+      <div class="source-url">motherjones.com</div>
+      <div class="source-desc">Progressive magazine covering politics and investigative reporting</div>
+      <div class="source-why">Major progressive publication; represents left-wing investigative journalism</div>
     </div>
   </div>
 </div>
 
 <!-- INTERNATIONAL TIER -->
 <div class="tier-section">
-  <div class="tier-header" style="background:#1976D2;color:#fff;">International Perspective</div>
-  <p class="tier-desc">News organizations from outside the United States, including public broadcasters and regional specialists. These outlets cover global events and provide perspectives that often differ from American mainstream media.</p>
+  <div class="tier-header" style="background:#1976D2;color:#fff;">International<span class="tier-count">40</span></div>
+  <p class="tier-desc">News organizations covering global events from outside the United States. Essential for understanding how the world sees major international stories.</p>
   <div class="sources-grid">
-    <div class="source-card">
+    <div class="source-card" style="border-left-color:#1976D2;">
       <div class="source-name">BBC World</div>
-      <div class="source-url">bbc.com</div>
+      <div class="source-url">feeds.bbci.co.uk</div>
       <div class="source-desc">Public broadcaster providing international news coverage</div>
       <div class="source-why">Major international news organization; represents perspective outside US media</div>
     </div>
-    <div class="source-card">
+    <div class="source-card" style="border-left-color:#1976D2;">
       <div class="source-name">The Guardian World</div>
       <div class="source-url">theguardian.com</div>
       <div class="source-desc">British newspaper with international news coverage and investigative reporting</div>
       <div class="source-why">Major international newspaper with global influence; represents British progressive perspective</div>
     </div>
-    <div class="source-card">
+    <div class="source-card" style="border-left-color:#1976D2;">
       <div class="source-name">Al Jazeera</div>
       <div class="source-url">aljazeera.com</div>
       <div class="source-desc">International news network covering Middle East and global stories</div>
       <div class="source-why">Significant coverage of global events underreported in US; represents perspective outside Western media</div>
     </div>
-    <div class="source-card">
+    <div class="source-card" style="border-left-color:#1976D2;">
       <div class="source-name">Deutsche Welle</div>
-      <div class="source-url">dw.com</div>
+      <div class="source-url">rss.dw.com</div>
       <div class="source-desc">German public broadcaster providing international news</div>
       <div class="source-why">German state media perspective on global events</div>
     </div>
-    <div class="source-card">
+    <div class="source-card" style="border-left-color:#1976D2;">
       <div class="source-name">France 24</div>
       <div class="source-url">france24.com</div>
       <div class="source-desc">French public broadcaster providing international news</div>
       <div class="source-why">French state media perspective on global events</div>
     </div>
-    <div class="source-card">
+    <div class="source-card" style="border-left-color:#1976D2;">
       <div class="source-name">South China Morning Post</div>
       <div class="source-url">scmp.com</div>
-      <div class="source-desc">English language newspaper covering Asia Pacific region</div>
-      <div class="source-why">Major source for Asia Pacific news; represents Hong Kong and Chinese regional perspective</div>
+      <div class="source-desc">English-language newspaper covering Asia-Pacific region</div>
+      <div class="source-why">Major source for Asia-Pacific news; represents Hong Kong and Chinese regional perspective</div>
     </div>
-    <div class="source-card">
+    <div class="source-card" style="border-left-color:#1976D2;">
       <div class="source-name">The Hindu</div>
       <div class="source-url">thehindu.com</div>
       <div class="source-desc">Indian newspaper covering national and international news</div>
       <div class="source-why">Major Indian newspaper; represents South Asian perspective on news</div>
     </div>
-    <div class="source-card">
-      <div class="source-name">Times of India</div>
-      <div class="source-url">timesofindia.com</div>
-      <div class="source-desc">Major Indian newspaper covering national and international news</div>
-      <div class="source-why">Largest circulation Indian newspaper; represents Indian mainstream perspective</div>
-    </div>
-    <div class="source-card">
+    <div class="source-card" style="border-left-color:#1976D2;">
       <div class="source-name">NHK World</div>
-      <div class="source-url">nhk.or.jp</div>
+      <div class="source-url">www3.nhk.or.jp</div>
       <div class="source-desc">Japanese public broadcaster providing international news</div>
       <div class="source-why">Japanese state media perspective on global events</div>
     </div>
-    <div class="source-card">
+    <div class="source-card" style="border-left-color:#1976D2;">
       <div class="source-name">ABC Australia</div>
       <div class="source-url">abc.net.au</div>
       <div class="source-desc">Australian public broadcaster providing news coverage</div>
       <div class="source-why">Australian state media perspective; represents coverage from Global South</div>
     </div>
-    <div class="source-card">
-      <div class="source-name">Straits Times</div>
-      <div class="source-url">straitstimes.com</div>
-      <div class="source-desc">Singapore newspaper covering Asia Pacific and global news</div>
-      <div class="source-why">Major Southeast Asian newspaper; represents regional perspective</div>
-    </div>
-    <div class="source-card">
+    <div class="source-card" style="border-left-color:#1976D2;">
       <div class="source-name">African Arguments</div>
       <div class="source-url">africanarguments.org</div>
       <div class="source-desc">Research organization publishing analysis and reporting on African affairs</div>
       <div class="source-why">Specialist coverage of Africa; represents African perspectives on continental issues</div>
     </div>
-    <div class="source-card">
+    <div class="source-card" style="border-left-color:#1976D2;">
       <div class="source-name">Americas Quarterly</div>
       <div class="source-url">americasquarterly.org</div>
       <div class="source-desc">Publication covering politics and economics of Latin America</div>
       <div class="source-why">Specialist coverage of Latin America; essential for Americas regional perspective</div>
     </div>
-    <div class="source-card">
+    <div class="source-card" style="border-left-color:#1976D2;">
       <div class="source-name">The Diplomat</div>
       <div class="source-url">thediplomat.com</div>
-      <div class="source-desc">Publication covering Asia Pacific politics and diplomacy</div>
-      <div class="source-why">Specialist coverage of Asia Pacific; represents regional perspective on geopolitics</div>
+      <div class="source-desc">Publication covering Asia-Pacific politics and diplomacy</div>
+      <div class="source-why">Specialist coverage of Asia-Pacific; represents regional perspective on geopolitics</div>
     </div>
-    <div class="source-card">
+    <div class="source-card" style="border-left-color:#1976D2;">
       <div class="source-name">Foreign Policy</div>
       <div class="source-url">foreignpolicy.com</div>
       <div class="source-desc">Magazine covering international relations and global affairs</div>
       <div class="source-why">Leading publication on international relations; shapes US foreign policy thinking</div>
     </div>
-    <div class="source-card">
-      <div class="source-name">Meduza</div>
-      <div class="source-url">meduza.io</div>
-      <div class="source-desc">Russian founded independent news outlet covering Russian and global events</div>
-      <div class="source-why">Independent Russian journalism; represents perspective from Russian exile community</div>
+    <div class="source-card" style="border-left-color:#1976D2;">
+      <div class="source-name">Times of India</div>
+      <div class="source-url">timesofindia.indiatimes.com</div>
+      <div class="source-desc">Major Indian newspaper covering national and international news</div>
+      <div class="source-why">Largest circulation Indian newspaper; represents Indian mainstream perspective</div>
     </div>
-    <div class="source-card">
-      <div class="source-name">Rappler</div>
-      <div class="source-url">rappler.com</div>
-      <div class="source-desc">Philippine news organization covering Southeast Asia and Asia Pacific</div>
-      <div class="source-why">Southeast Asian journalist outlet; represents regional perspective</div>
+    <div class="source-card" style="border-left-color:#1976D2;">
+      <div class="source-name">Straits Times</div>
+      <div class="source-url">straitstimes.com</div>
+      <div class="source-desc">Singapore newspaper covering Asia-Pacific and global news</div>
+      <div class="source-why">Major Southeast Asian newspaper; represents regional perspective</div>
     </div>
-    <div class="source-card">
+    <div class="source-card" style="border-left-color:#1976D2;">
       <div class="source-name">Protocol Africa</div>
-      <div class="source-url">africanews.com</div>
+      <div class="source-url">news.google.com</div>
       <div class="source-desc">Technology and business publication covering African innovation</div>
       <div class="source-why">African technology and business specialist; represents African perspective on tech</div>
+    </div>
+    <div class="source-card" style="border-left-color:#1976D2;">
+      <div class="source-name">Rappler</div>
+      <div class="source-url">rappler.com</div>
+      <div class="source-desc">Philippine news organization covering Southeast Asia and Asia-Pacific</div>
+      <div class="source-why">Southeast Asian journalist outlet; represents regional perspective</div>
+    </div>
+    <div class="source-card" style="border-left-color:#1976D2;">
+      <div class="source-name">Meduza</div>
+      <div class="source-url">meduza.io</div>
+      <div class="source-desc">Russian-founded independent news outlet covering Russian and global events</div>
+      <div class="source-why">Independent Russian journalism; represents perspective from Russian exile community</div>
+    </div>
+    <div class="source-card" style="border-left-color:#1976D2;">
+      <div class="source-name">The Globe and Mail</div>
+      <div class="source-url">theglobeandmail.com</div>
+      <div class="source-desc">Canadian newspaper covering national and international news</div>
+      <div class="source-why">Canadian major newspaper; represents North American perspective outside US</div>
+    </div>
+    <div class="source-card" style="border-left-color:#1976D2;">
+      <div class="source-name">Nikkei Asia</div>
+      <div class="source-url">asia.nikkei.com</div>
+      <div class="source-desc">Japanese business and news outlet covering Asia-Pacific</div>
+      <div class="source-why">Asia business and economic specialist; covers Asian markets and development</div>
+    </div>
+    <div class="source-card" style="border-left-color:#1976D2;">
+      <div class="source-name">The East African</div>
+      <div class="source-url">news.google.com</div>
+      <div class="source-desc">East African newspaper covering regional news and politics</div>
+      <div class="source-why">East African regional coverage; represents regional African perspective</div>
+    </div>
+    <div class="source-card" style="border-left-color:#1976D2;">
+      <div class="source-name">El País English</div>
+      <div class="source-url">english.elpais.com</div>
+      <div class="source-desc">Spanish newspaper with English edition covering global news</div>
+      <div class="source-why">Major Spanish newspaper; represents Western European perspective</div>
+    </div>
+    <div class="source-card" style="border-left-color:#1976D2;">
+      <div class="source-name">Haaretz</div>
+      <div class="source-url">haaretz.com</div>
+      <div class="source-desc">Israeli newspaper covering Israeli politics and Middle Eastern affairs</div>
+      <div class="source-why">Major Israeli newspaper; provides Israeli perspective on Middle East conflict and politics</div>
+    </div>
+    <div class="source-card" style="border-left-color:#1976D2;">
+      <div class="source-name">Dawn</div>
+      <div class="source-url">dawn.com</div>
+      <div class="source-desc">Pakistani English-language newspaper covering South Asian news</div>
+      <div class="source-why">Major Pakistani newspaper; represents Pakistani perspective on South Asian affairs</div>
+    </div>
+    <div class="source-card" style="border-left-color:#1976D2;">
+      <div class="source-name">The Korea Herald</div>
+      <div class="source-url">koreaherald.com</div>
+      <div class="source-desc">South Korean English-language newspaper covering Korean and Asia-Pacific news</div>
+      <div class="source-why">Major Korean newspaper; represents South Korean perspective on regional affairs</div>
+    </div>
+    <div class="source-card" style="border-left-color:#1976D2;">
+      <div class="source-name">Bangkok Post</div>
+      <div class="source-url">bangkokpost.com</div>
+      <div class="source-desc">Thai English-language newspaper covering Southeast Asian news</div>
+      <div class="source-why">Major Thai newspaper; represents Southeast Asian perspective</div>
+    </div>
+    <div class="source-card" style="border-left-color:#1976D2;">
+      <div class="source-name">Taipei Times</div>
+      <div class="source-url">taipeitimes.com</div>
+      <div class="source-desc">Taiwanese English-language newspaper covering Taiwan and Asia-Pacific</div>
+      <div class="source-why">Taiwanese perspective; covers cross-strait relations and Pacific issues</div>
+    </div>
+    <div class="source-card" style="border-left-color:#1976D2;">
+      <div class="source-name">Channel News Asia</div>
+      <div class="source-url">channelnewsasia.com</div>
+      <div class="source-desc">Singaporean news network covering Asia-Pacific region</div>
+      <div class="source-why">Major Asian news network; represents Southeast Asian perspective on global events</div>
+    </div>
+    <div class="source-card" style="border-left-color:#1976D2;">
+      <div class="source-name">Daily Maverick</div>
+      <div class="source-url">dailymaverick.co.za</div>
+      <div class="source-desc">South African investigative publication covering African and global affairs</div>
+      <div class="source-why">Leading South African independent journalism; represents African perspective on democracy and governance</div>
+    </div>
+    <div class="source-card" style="border-left-color:#1976D2;">
+      <div class="source-name">Jamaica Observer</div>
+      <div class="source-url">jamaicaobserver.com</div>
+      <div class="source-desc">Jamaican newspaper covering Caribbean news and politics</div>
+      <div class="source-why">Caribbean regional perspective; represents island and developing nation viewpoint</div>
+    </div>
+    <div class="source-card" style="border-left-color:#1976D2;">
+      <div class="source-name">The Japan Times</div>
+      <div class="source-url">japantimes.co.jp</div>
+      <div class="source-desc">Japanese English-language newspaper covering Japan and Asia-Pacific</div>
+      <div class="source-why">Major Japanese English newspaper; represents Japanese perspective on global affairs</div>
+    </div>
+    <div class="source-card" style="border-left-color:#1976D2;">
+      <div class="source-name">Anadolu Agency</div>
+      <div class="source-url">aa.com.tr</div>
+      <div class="source-desc">Turkish state news agency providing international coverage</div>
+      <div class="source-why">Turkish state media perspective; represents Middle Eastern NATO member viewpoint</div>
+    </div>
+    <div class="source-card" style="border-left-color:#1976D2;">
+      <div class="source-name">Global Voices</div>
+      <div class="source-url">globalvoices.org</div>
+      <div class="source-desc">International citizen media platform amplifying underrepresented voices worldwide</div>
+      <div class="source-why">Citizen journalism from 100+ countries; represents grassroots global perspective</div>
+    </div>
+    <div class="source-card" style="border-left-color:#1976D2;">
+      <div class="source-name">The New Humanitarian</div>
+      <div class="source-url">thenewhumanitarian.org</div>
+      <div class="source-desc">Independent nonprofit newsroom covering humanitarian crises and conflict</div>
+      <div class="source-why">Humanitarian crisis specialist; covers refugee and displacement issues worldwide</div>
+    </div>
+    <div class="source-card" style="border-left-color:#1976D2;">
+      <div class="source-name">Scroll.in</div>
+      <div class="source-url">scroll.in</div>
+      <div class="source-desc">Indian digital news publication covering politics and culture</div>
+      <div class="source-why">Independent Indian journalism; represents Indian progressive perspective</div>
+    </div>
+    <div class="source-card" style="border-left-color:#1976D2;">
+      <div class="source-name">Latin America Reports</div>
+      <div class="source-url">news.google.com</div>
+      <div class="source-desc">Publication covering Latin American politics and economy</div>
+      <div class="source-why">Latin American regional coverage; covers Western Hemisphere affairs</div>
+    </div>
+    <div class="source-card" style="border-left-color:#1976D2;">
+      <div class="source-name">Balkan Insight</div>
+      <div class="source-url">balkaninsight.com</div>
+      <div class="source-desc">Publication covering Southeast Europe and the Balkans</div>
+      <div class="source-why">Balkan regional specialist; covers post-conflict democracy and European integration</div>
+    </div>
+    <div class="source-card" style="border-left-color:#1976D2;">
+      <div class="source-name">Press Gazette</div>
+      <div class="source-url">pressgazette.co.uk</div>
+      <div class="source-desc">Publication covering global media industry and press freedom</div>
+      <div class="source-why">Media industry specialist; covers global press freedom and journalism trends</div>
+    </div>
+    <div class="source-card" style="border-left-color:#1976D2;">
+      <div class="source-name">The Globe Post</div>
+      <div class="source-url">theglobepost.com</div>
+      <div class="source-desc">International news outlet covering global affairs from multiple perspectives</div>
+      <div class="source-why">Multicultural global news; represents diverse international viewpoints</div>
+    </div>
+    <div class="source-card" style="border-left-color:#1976D2;">
+      <div class="source-name">Caribbean National Weekly</div>
+      <div class="source-url">news.google.com</div>
+      <div class="source-desc">Caribbean news outlet covering diaspora and island communities</div>
+      <div class="source-why">Caribbean diaspora perspective; represents Caribbean American communities</div>
     </div>
   </div>
 </div>
 
-<!-- SPECIALIST TIER -->
+<!-- COMMUNITY VOICES TIER -->
 <div class="tier-section">
-  <div class="tier-header" style="background:#6652FF;color:#fff;">Specialist Coverage</div>
-  <p class="tier-desc">Deep expertise in specific domains. These outlets are read by experts, policymakers, and people who need to understand complex topics in depth. They fill gaps that mainstream outlets don't have the expertise to cover.</p>
+  <div class="tier-header" style="background:#FF5400;color:#fff;">Community Voices<span class="tier-count">79</span></div>
+  <p class="tier-desc">Journalism for, by, and about communities that mainstream outlets often overlook. These outlets represent the perspectives and concerns of specific groups, regions, and subcultures in America.</p>
   <div class="sources-grid">
-    <div class="source-card">
+    <div class="source-card" style="border-left-color:#FF5400;">
+      <div class="source-name">The 19th News</div>
+      <div class="source-url">19thnews.org</div>
+      <div class="source-desc">Nonprofit newsroom covering women and gender in politics and policy</div>
+      <div class="source-why">Specialist coverage of women in politics; represents feminist perspective on news</div>
+    </div>
+    <div class="source-card" style="border-left-color:#FF5400;">
+      <div class="source-name">The Marshall Project</div>
+      <div class="source-url">news.google.com</div>
+      <div class="source-desc">Nonprofit newsroom covering the criminal justice system</div>
+      <div class="source-why">Specialist criminal justice coverage; represents perspective on incarceration and police accountability</div>
+    </div>
+    <div class="source-card" style="border-left-color:#FF5400;">
+      <div class="source-name">CalMatters</div>
+      <div class="source-url">calmatters.org</div>
+      <div class="source-desc">Nonprofit newsroom covering California state government and policy</div>
+      <div class="source-why">California-focused reporting; represents state-level accountability journalism</div>
+    </div>
+    <div class="source-card" style="border-left-color:#FF5400;">
+      <div class="source-name">Stateline</div>
+      <div class="source-url">stateline.org</div>
+      <div class="source-desc">Nonprofit covering state government and policy trends across United States</div>
+      <div class="source-why">National state policy coverage; provides perspective on state-level governance</div>
+    </div>
+    <div class="source-card" style="border-left-color:#FF5400;">
+      <div class="source-name">High Country News</div>
+      <div class="source-url">hcn.org</div>
+      <div class="source-desc">Regional newsroom covering the American West</div>
+      <div class="source-why">Western region specialist; represents perspective on rural and public lands issues</div>
+    </div>
+    <div class="source-card" style="border-left-color:#FF5400;">
+      <div class="source-name">Civil Eats</div>
+      <div class="source-url">civileats.com</div>
+      <div class="source-desc">Publication covering food policy, agriculture, and food systems</div>
+      <div class="source-why">Specialist food and agriculture coverage; represents sustainable food systems perspective</div>
+    </div>
+    <div class="source-card" style="border-left-color:#FF5400;">
+      <div class="source-name">Documented</div>
+      <div class="source-url">documentedny.com</div>
+      <div class="source-desc">Nonprofit newsroom covering immigrant communities in New York City</div>
+      <div class="source-why">Specialist immigrant reporting; represents undocumented immigrant perspective</div>
+    </div>
+    <div class="source-card" style="border-left-color:#FF5400;">
+      <div class="source-name">The Root</div>
+      <div class="source-url">theroot.com</div>
+      <div class="source-desc">Publication covering African American culture, politics, and news</div>
+      <div class="source-why">Publication serving African American audience; represents Black perspective on news</div>
+    </div>
+    <div class="source-card" style="border-left-color:#FF5400;">
+      <div class="source-name">Latino USA</div>
+      <div class="source-url">latinousa.org</div>
+      <div class="source-desc">Public radio show covering Latino communities and issues</div>
+      <div class="source-why">Latino-focused reporting; represents Latino community perspective</div>
+    </div>
+    <div class="source-card" style="border-left-color:#FF5400;">
+      <div class="source-name">Indian Country Today</div>
+      <div class="source-url">indiancountrytoday.com</div>
+      <div class="source-desc">Nonprofit newsroom covering Native American communities and Indian Country</div>
+      <div class="source-why">Essential Native news outlet; represents Indigenous perspective on news</div>
+    </div>
+    <div class="source-card" style="border-left-color:#FF5400;">
+      <div class="source-name">Hechinger Report</div>
+      <div class="source-url">hechingerreport.org</div>
+      <div class="source-desc">Nonprofit newsroom covering education policy and K-12 schools</div>
+      <div class="source-why">Specialist education coverage; focuses on accountability and equity in schools</div>
+    </div>
+    <div class="source-card" style="border-left-color:#FF5400;">
+      <div class="source-name">Christianity Today</div>
+      <div class="source-url">christianitytoday.com</div>
+      <div class="source-desc">Magazine covering evangelical Christianity, faith, and culture</div>
+      <div class="source-why">Major evangelical Christian publication; represents religious conservative perspective</div>
+    </div>
+    <div class="source-card" style="border-left-color:#FF5400;">
+      <div class="source-name">Religion News Service</div>
+      <div class="source-url">religionnews.com</div>
+      <div class="source-desc">Nonprofit newsroom covering religion and faith communities</div>
+      <div class="source-why">Religion specialist journalism; represents diverse faith perspectives</div>
+    </div>
+    <div class="source-card" style="border-left-color:#FF5400;">
+      <div class="source-name">Texas Tribune</div>
+      <div class="source-url">texastribune.org</div>
+      <div class="source-desc">Nonprofit newsroom covering Texas government and policy</div>
+      <div class="source-why">Texas-focused reporting; represents state-level accountability journalism</div>
+    </div>
+    <div class="source-card" style="border-left-color:#FF5400;">
+      <div class="source-name">The Advocate</div>
+      <div class="source-url">advocate.com</div>
+      <div class="source-desc">Magazine covering LGBTQ news and culture</div>
+      <div class="source-why">LGBTQ-focused publication; represents LGBTQ community perspective</div>
+    </div>
+    <div class="source-card" style="border-left-color:#FF5400;">
+      <div class="source-name">Jewish Telegraphic Agency</div>
+      <div class="source-url">jta.org</div>
+      <div class="source-desc">News organization covering Jewish communities and Israel-related issues</div>
+      <div class="source-why">Jewish community news; represents Jewish perspective on news</div>
+    </div>
+    <div class="source-card" style="border-left-color:#FF5400;">
+      <div class="source-name">Arab American News</div>
+      <div class="source-url">arabamericannews.com</div>
+      <div class="source-desc">Newspaper serving Arab American communities in Michigan and nationally</div>
+      <div class="source-why">Arab American perspective; represents Middle Eastern American communities</div>
+    </div>
+    <div class="source-card" style="border-left-color:#FF5400;">
+      <div class="source-name">Disability Scoop</div>
+      <div class="source-url">disabilityscoop.com</div>
+      <div class="source-desc">News organization covering disability policy and disability community issues</div>
+      <div class="source-why">Disability community journalism; represents disability rights perspective</div>
+    </div>
+    <div class="source-card" style="border-left-color:#FF5400;">
+      <div class="source-name">Military Times</div>
+      <div class="source-url">militarytimes.com</div>
+      <div class="source-desc">Newspaper serving military and veteran communities</div>
+      <div class="source-why">Military and veteran community perspective; covers defense policy and military issues</div>
+    </div>
+    <div class="source-card" style="border-left-color:#FF5400;">
+      <div class="source-name">Daily Yonder</div>
+      <div class="source-url">dailyyonder.com</div>
+      <div class="source-desc">Publication covering rural America and small-town communities</div>
+      <div class="source-why">Rural America specialist; represents rural and small-town perspective</div>
+    </div>
+    <div class="source-card" style="border-left-color:#FF5400;">
+      <div class="source-name">Scalawag</div>
+      <div class="source-url">scalawagmagazine.org</div>
+      <div class="source-desc">Magazine covering the American South and Southern issues</div>
+      <div class="source-why">Southern regional specialist; represents Southern perspective on news</div>
+    </div>
+    <div class="source-card" style="border-left-color:#FF5400;">
+      <div class="source-name">Honolulu Civil Beat</div>
+      <div class="source-url">civilbeat.org</div>
+      <div class="source-desc">Nonprofit newsroom covering Hawaii and Pacific issues</div>
+      <div class="source-why">Hawaii and Pacific regional coverage</div>
+    </div>
+    <div class="source-card" style="border-left-color:#FF5400;">
+      <div class="source-name">Teen Vogue</div>
+      <div class="source-url">teenvogue.com</div>
+      <div class="source-desc">Publication covering politics and culture for young adults</div>
+      <div class="source-why">Youth and young adult perspective; reaches Gen Z audience</div>
+    </div>
+    <div class="source-card" style="border-left-color:#FF5400;">
+      <div class="source-name">AsAmNews</div>
+      <div class="source-url">asamnews.com</div>
+      <div class="source-desc">News organization covering Asian American communities and issues</div>
+      <div class="source-why">Asian American community journalism; represents Asian American perspective</div>
+    </div>
+    <div class="source-card" style="border-left-color:#FF5400;">
+      <div class="source-name">The Forward</div>
+      <div class="source-url">forward.com</div>
+      <div class="source-desc">Jewish American newspaper covering culture, politics, and community</div>
+      <div class="source-why">Jewish American perspective; covers Jewish community and Jewish American issues</div>
+    </div>
+    <div class="source-card" style="border-left-color:#FF5400;">
+      <div class="source-name">National Catholic Reporter</div>
+      <div class="source-url">ncronline.org</div>
+      <div class="source-desc">Independent Catholic news organization covering church and faith issues</div>
+      <div class="source-why">Catholic perspective; represents independent Catholic journalism</div>
+    </div>
+    <div class="source-card" style="border-left-color:#FF5400;">
+      <div class="source-name">The Imprint</div>
+      <div class="source-url">imprintnews.org</div>
+      <div class="source-desc">Nonprofit newsroom covering child welfare and youth issues</div>
+      <div class="source-why">Specialist child welfare coverage; represents children and youth perspective</div>
+    </div>
+    <div class="source-card" style="border-left-color:#FF5400;">
+      <div class="source-name">Mississippi Free Press</div>
+      <div class="source-url">mississippifreepress.org</div>
+      <div class="source-desc">Nonprofit newsroom covering Mississippi government and communities</div>
+      <div class="source-why">State-focused reporting; provides accountability journalism for Mississippi</div>
+    </div>
+    <div class="source-card" style="border-left-color:#FF5400;">
+      <div class="source-name">Bolts Magazine</div>
+      <div class="source-url">boltsmag.org</div>
+      <div class="source-desc">Publication covering Black workers and labor issues</div>
+      <div class="source-why">Black labor perspective; covers intersection of race and labor</div>
+    </div>
+    <div class="source-card" style="border-left-color:#FF5400;">
+      <div class="source-name">Capital B News</div>
+      <div class="source-url">capitalbnews.org</div>
+      <div class="source-desc">Nonprofit covering Black entrepreneurs and business communities</div>
+      <div class="source-why">Black business and economic perspective</div>
+    </div>
+    <div class="source-card" style="border-left-color:#FF5400;">
+      <div class="source-name">Canopy Forum</div>
+      <div class="source-url">canopyforum.org</div>
+      <div class="source-desc">Community journalism platform covering local issues and solutions</div>
+      <div class="source-why">Community-focused journalism; represents local perspective</div>
+    </div>
+    <div class="source-card" style="border-left-color:#FF5400;">
+      <div class="source-name">The Trace</div>
+      <div class="source-url">thetrace.org</div>
+      <div class="source-desc">Nonprofit newsroom covering gun violence and gun policy</div>
+      <div class="source-why">Gun violence specialist journalism; represents public health perspective on guns</div>
+    </div>
+    <div class="source-card" style="border-left-color:#FF5400;">
+      <div class="source-name">Prism</div>
+      <div class="source-url">prismreports.org</div>
+      <div class="source-desc">Nonprofit newsroom covering how government policies affect communities of color</div>
+      <div class="source-why">Racial justice coverage; represents communities of color perspective</div>
+    </div>
+    <div class="source-card" style="border-left-color:#FF5400;">
+      <div class="source-name">Borderland Beat</div>
+      <div class="source-url">borderlandbeat.com</div>
+      <div class="source-desc">Blog covering Mexico-US border issues and drug trade</div>
+      <div class="source-why">Border coverage specialist; provides perspective on border region</div>
+    </div>
+    <div class="source-card" style="border-left-color:#FF5400;">
+      <div class="source-name">The Plug</div>
+      <div class="source-url">tpinsights.com</div>
+      <div class="source-desc">Publication covering Black venture capital and entrepreneurship</div>
+      <div class="source-why">Black venture capital perspective; covers race and entrepreneurship</div>
+    </div>
+    <div class="source-card" style="border-left-color:#FF5400;">
+      <div class="source-name">El Diario NY</div>
+      <div class="source-url">eldiariony.com</div>
+      <div class="source-desc">Spanish-language and English-language newspaper covering Latino communities in New York</div>
+      <div class="source-why">Bilingual Latino coverage; represents New York Latino perspective</div>
+    </div>
+    <div class="source-card" style="border-left-color:#FF5400;">
+      <div class="source-name">Latino Rebels</div>
+      <div class="source-url">latinorebels.com</div>
+      <div class="source-desc">Publication covering Latino politics, culture, and social issues</div>
+      <div class="source-why">Latino cultural and political perspective; covers Latino-focused reporting</div>
+    </div>
+    <div class="source-card" style="border-left-color:#FF5400;">
+      <div class="source-name">Remezcla</div>
+      <div class="source-url">remezcla.com</div>
+      <div class="source-desc">Digital publication covering Latino culture, music, and lifestyle</div>
+      <div class="source-why">Latino culture and entertainment specialist; represents Latino millennial perspective</div>
+    </div>
+    <div class="source-card" style="border-left-color:#FF5400;">
+      <div class="source-name">Texas Observer</div>
+      <div class="source-url">texasobserver.org</div>
+      <div class="source-desc">Independent magazine covering Texas politics and border issues</div>
+      <div class="source-why">Texas and border region coverage; represents progressive Texas journalism</div>
+    </div>
+    <div class="source-card" style="border-left-color:#FF5400;">
+      <div class="source-name">NBC News Latino</div>
+      <div class="source-url">news.google.com</div>
+      <div class="source-desc">NBC News coverage of Latino and Hispanic communities and issues</div>
+      <div class="source-why">Major broadcast coverage of Latino communities; reaches broad Latino audience</div>
+    </div>
+    <div class="source-card" style="border-left-color:#FF5400;">
+      <div class="source-name">NextShark</div>
+      <div class="source-url">nextshark.com</div>
+      <div class="source-desc">Digital publication covering Asian American news and culture</div>
+      <div class="source-why">Asian American news and culture specialist; represents Asian American millennial perspective</div>
+    </div>
+    <div class="source-card" style="border-left-color:#FF5400;">
+      <div class="source-name">Brown Girl Magazine</div>
+      <div class="source-url">news.google.com</div>
+      <div class="source-desc">Publication covering South Asian women and diaspora culture</div>
+      <div class="source-why">South Asian diaspora perspective; represents South Asian women's voice</div>
+    </div>
+    <div class="source-card" style="border-left-color:#FF5400;">
+      <div class="source-name">The Grio</div>
+      <div class="source-url">thegrio.com</div>
+      <div class="source-desc">NBC News and MSNBC platform covering Black news and culture</div>
+      <div class="source-why">Major broadcast coverage of Black communities; represents Black cultural perspective</div>
+    </div>
+    <div class="source-card" style="border-left-color:#FF5400;">
+      <div class="source-name">Atlanta Black Star</div>
+      <div class="source-url">atlantablackstar.com</div>
+      <div class="source-desc">Digital publication covering Black news and culture</div>
+      <div class="source-why">Black news and culture specialist; provides Black community perspective</div>
+    </div>
+    <div class="source-card" style="border-left-color:#FF5400;">
+      <div class="source-name">Blavity</div>
+      <div class="source-url">blavity.com</div>
+      <div class="source-desc">Digital media company covering Black entertainment and culture</div>
+      <div class="source-why">Black entertainment and lifestyle specialist; represents Black millennial perspective</div>
+    </div>
+    <div class="source-card" style="border-left-color:#FF5400;">
+      <div class="source-name">Next Avenue</div>
+      <div class="source-url">nextavenue.org</div>
+      <div class="source-desc">PBS publication covering aging, retirement, and older adults</div>
+      <div class="source-why">Senior and aging specialist; represents older adult perspective</div>
+    </div>
+    <div class="source-card" style="border-left-color:#FF5400;">
+      <div class="source-name">AARP</div>
+      <div class="source-url">news.google.com</div>
+      <div class="source-desc">Magazine and news platform covering aging and senior issues</div>
+      <div class="source-why">Major senior advocacy organization; represents older adult interests and perspective</div>
+    </div>
+    <div class="source-card" style="border-left-color:#FF5400;">
+      <div class="source-name">Task and Purpose</div>
+      <div class="source-url">taskandpurpose.com</div>
+      <div class="source-desc">Digital publication covering military and veteran issues</div>
+      <div class="source-why">Military and veteran coverage; represents veteran community perspective</div>
+    </div>
+    <div class="source-card" style="border-left-color:#FF5400;">
+      <div class="source-name">Stars and Stripes</div>
+      <div class="source-url">stripes.com</div>
+      <div class="source-desc">Department of Defense newspaper serving military and veteran communities</div>
+      <div class="source-why">Official military publication; represents military service member perspective</div>
+    </div>
+    <div class="source-card" style="border-left-color:#FF5400;">
+      <div class="source-name">Bridge Michigan</div>
+      <div class="source-url">bridgemi.com</div>
+      <div class="source-desc">Nonprofit newsroom covering Michigan government and policy</div>
+      <div class="source-why">Michigan regional reporting; provides Midwest state accountability journalism</div>
+    </div>
+    <div class="source-card" style="border-left-color:#FF5400;">
+      <div class="source-name">MinnPost</div>
+      <div class="source-url">minnpost.com</div>
+      <div class="source-desc">Nonprofit newsroom covering Minnesota government and politics</div>
+      <div class="source-why">Minnesota regional reporting; provides Midwest state coverage and analysis</div>
+    </div>
+    <div class="source-card" style="border-left-color:#FF5400;">
+      <div class="source-name">Iowa Capital Dispatch</div>
+      <div class="source-url">iowacapitaldispatch.com</div>
+      <div class="source-desc">Nonprofit newsroom covering Iowa state government and policy</div>
+      <div class="source-why">Iowa regional reporting; provides Midwest state accountability journalism</div>
+    </div>
+    <div class="source-card" style="border-left-color:#FF5400;">
+      <div class="source-name">Wisconsin Examiner</div>
+      <div class="source-url">wisconsinexaminer.com</div>
+      <div class="source-desc">Nonprofit newsroom covering Wisconsin state government</div>
+      <div class="source-why">Wisconsin regional reporting; provides Midwest state accountability journalism</div>
+    </div>
+    <div class="source-card" style="border-left-color:#FF5400;">
+      <div class="source-name">Ohio Capital Journal</div>
+      <div class="source-url">ohiocapitaljournal.com</div>
+      <div class="source-desc">Nonprofit newsroom covering Ohio state government and policy</div>
+      <div class="source-why">Ohio regional reporting; provides Midwest state accountability journalism</div>
+    </div>
+    <div class="source-card" style="border-left-color:#FF5400;">
+      <div class="source-name">Mountain State Spotlight</div>
+      <div class="source-url">mountainstatespotlight.org</div>
+      <div class="source-desc">Nonprofit newsroom covering West Virginia and Appalachia</div>
+      <div class="source-why">Appalachian region specialist; covers underreported regional stories</div>
+    </div>
+    <div class="source-card" style="border-left-color:#FF5400;">
+      <div class="source-name">100 Days in Appalachia</div>
+      <div class="source-url">100daysinappalachia.com</div>
+      <div class="source-desc">Publication covering Appalachian culture, history, and issues</div>
+      <div class="source-why">Appalachian culture and community specialist; represents regional perspective</div>
+    </div>
+    <div class="source-card" style="border-left-color:#FF5400;">
+      <div class="source-name">Crosscut</div>
+      <div class="source-url">crosscut.com</div>
+      <div class="source-desc">Nonprofit newsroom covering Pacific Northwest politics and culture</div>
+      <div class="source-why">Pacific Northwest regional coverage; represents regional perspective</div>
+    </div>
+    <div class="source-card" style="border-left-color:#FF5400;">
+      <div class="source-name">Oregon Public Broadcasting</div>
+      <div class="source-url">news.google.com</div>
+      <div class="source-desc">Public media organization covering Oregon and Pacific Northwest</div>
+      <div class="source-why">Oregon and regional public media; represents Pacific Northwest perspective</div>
+    </div>
+    <div class="source-card" style="border-left-color:#FF5400;">
+      <div class="source-name">VTDigger</div>
+      <div class="source-url">vtdigger.org</div>
+      <div class="source-desc">Nonprofit newsroom covering Vermont state government and issues</div>
+      <div class="source-why">Vermont regional reporting; provides New England state accountability journalism</div>
+    </div>
+    <div class="source-card" style="border-left-color:#FF5400;">
+      <div class="source-name">The Maine Monitor</div>
+      <div class="source-url">news.google.com</div>
+      <div class="source-desc">Nonprofit newsroom covering Maine government and policy</div>
+      <div class="source-why">Maine regional reporting; provides New England state accountability journalism</div>
+    </div>
+    <div class="source-card" style="border-left-color:#FF5400;">
+      <div class="source-name">Sojourners</div>
+      <div class="source-url">sojo.net</div>
+      <div class="source-desc">Progressive Christian magazine covering faith and social justice</div>
+      <div class="source-why">Progressive Christian perspective; represents faith-based social justice advocacy</div>
+    </div>
+    <div class="source-card" style="border-left-color:#FF5400;">
+      <div class="source-name">Muslim Matters</div>
+      <div class="source-url">muslimmatters.org</div>
+      <div class="source-desc">Muslim American online magazine covering faith and community issues</div>
+      <div class="source-why">Muslim American perspective; represents Muslim community voice</div>
+    </div>
+    <div class="source-card" style="border-left-color:#FF5400;">
+      <div class="source-name">Nevada Independent</div>
+      <div class="source-url">thenevadaindependent.com</div>
+      <div class="source-desc">Nonprofit newsroom covering Nevada state government and policy</div>
+      <div class="source-why">Nevada regional reporting; covers gaming state politics and Western issues</div>
+    </div>
+    <div class="source-card" style="border-left-color:#FF5400;">
+      <div class="source-name">Colorado Sun</div>
+      <div class="source-url">coloradosun.com</div>
+      <div class="source-desc">Nonprofit newsroom covering Colorado government and communities</div>
+      <div class="source-why">Colorado regional reporting; covers Western state issues</div>
+    </div>
+    <div class="source-card" style="border-left-color:#FF5400;">
+      <div class="source-name">The Lens</div>
+      <div class="source-url">thelensnola.org</div>
+      <div class="source-desc">Nonprofit newsroom covering New Orleans and Louisiana</div>
+      <div class="source-why">Gulf Coast regional coverage; represents post-Katrina recovery and Southern justice</div>
+    </div>
+    <div class="source-card" style="border-left-color:#FF5400;">
+      <div class="source-name">Source NM</div>
+      <div class="source-url">sourcenm.com</div>
+      <div class="source-desc">Nonprofit newsroom covering New Mexico state government</div>
+      <div class="source-why">New Mexico regional reporting; covers Southwest and border state issues</div>
+    </div>
+    <div class="source-card" style="border-left-color:#FF5400;">
+      <div class="source-name">Montana Free Press</div>
+      <div class="source-url">montanafreepress.org</div>
+      <div class="source-desc">Nonprofit newsroom covering Montana state government and public lands</div>
+      <div class="source-why">Montana regional reporting; covers rural Western issues and public lands</div>
+    </div>
+    <div class="source-card" style="border-left-color:#FF5400;">
+      <div class="source-name">Idaho Capital Sun</div>
+      <div class="source-url">idahocapitalsun.com</div>
+      <div class="source-desc">Nonprofit newsroom covering Idaho state government and policy</div>
+      <div class="source-why">Idaho regional reporting; covers Western state governance</div>
+    </div>
+    <div class="source-card" style="border-left-color:#FF5400;">
+      <div class="source-name">Kansas Reflector</div>
+      <div class="source-url">kansasreflector.com</div>
+      <div class="source-desc">Nonprofit newsroom covering Kansas state government and policy</div>
+      <div class="source-why">Kansas regional reporting; covers Great Plains state issues</div>
+    </div>
+    <div class="source-card" style="border-left-color:#FF5400;">
+      <div class="source-name">Arizona Mirror</div>
+      <div class="source-url">azmirror.com</div>
+      <div class="source-desc">Nonprofit newsroom covering Arizona state government and policy</div>
+      <div class="source-why">Arizona regional reporting; covers Southwest border state issues</div>
+    </div>
+    <div class="source-card" style="border-left-color:#FF5400;">
+      <div class="source-name">NC Health News</div>
+      <div class="source-url">northcarolinahealthnews.org</div>
+      <div class="source-desc">Nonprofit newsroom covering North Carolina health policy</div>
+      <div class="source-why">North Carolina health coverage; covers Southern state health access issues</div>
+    </div>
+    <div class="source-card" style="border-left-color:#FF5400;">
+      <div class="source-name">Alaska Public Media</div>
+      <div class="source-url">alaskapublic.org</div>
+      <div class="source-desc">Public media organization covering Alaska and Arctic issues</div>
+      <div class="source-why">Alaska and Arctic coverage; represents remote and Indigenous Alaska perspective</div>
+    </div>
+    <div class="source-card" style="border-left-color:#FF5400;">
+      <div class="source-name">City Limits</div>
+      <div class="source-url">citylimits.org</div>
+      <div class="source-desc">Nonprofit newsroom covering New York City housing and policy,NYC urban policy specialist; covers housing, poverty</div>
+      <div class="source-why">and city governance</div>
+    </div>
+    <div class="source-card" style="border-left-color:#FF5400;">
+      <div class="source-name">Voice of San Diego</div>
+      <div class="source-url">voiceofsandiego.org</div>
+      <div class="source-desc">Nonprofit newsroom covering San Diego government and border issues</div>
+      <div class="source-why">San Diego and border region coverage; covers US-Mexico border communities</div>
+    </div>
+    <div class="source-card" style="border-left-color:#FF5400;">
+      <div class="source-name">Baltimore Banner</div>
+      <div class="source-url">news.google.com</div>
+      <div class="source-desc">Nonprofit newsroom covering Baltimore and Maryland</div>
+      <div class="source-why">Baltimore regional reporting; covers urban Black community issues and governance</div>
+    </div>
+    <div class="source-card" style="border-left-color:#FF5400;">
+      <div class="source-name">Haitian Times</div>
+      <div class="source-url">haitiantimes.com</div>
+      <div class="source-desc">Publication covering Haitian American and Haitian diaspora communities</div>
+      <div class="source-why">Haitian diaspora perspective; represents Haitian American community</div>
+    </div>
+    <div class="source-card" style="border-left-color:#FF5400;">
+      <div class="source-name">Navajo Times</div>
+      <div class="source-url">news.google.com</div>
+      <div class="source-desc">Newspaper serving the Navajo Nation and tribal communities</div>
+      <div class="source-why">Navajo and tribal perspective; represents Indigenous governance and community</div>
+    </div>
+    <div class="source-card" style="border-left-color:#FF5400;">
+      <div class="source-name">Futuro Media</div>
+      <div class="source-url">news.google.com</div>
+      <div class="source-desc">Multimedia organization producing journalism for and about communities of color</div>
+      <div class="source-why">Communities of color perspective; produces Latino and immigrant community journalism</div>
+    </div>
+    <div class="source-card" style="border-left-color:#FF5400;">
+      <div class="source-name">Colorlines</div>
+      <div class="source-url">news.google.com</div>
+      <div class="source-desc">Publication covering race and social justice</div>
+      <div class="source-why">Racial justice journalism; covers intersection of race and policy</div>
+    </div>
+  </div>
+</div>
+
+<!-- SPECIALIST OUTLETS TIER -->
+<div class="tier-section">
+  <div class="tier-header" style="background:#00C2A8;color:#fff;">Specialist Outlets<span class="tier-count">38</span></div>
+  <p class="tier-desc">Outlets focused on specific topics—climate, tech, labor, health—where deep subject expertise matters more than general news judgment.</p>
+  <div class="sources-grid">
+    <div class="source-card" style="border-left-color:#00C2A8;">
       <div class="source-name">MIT Technology Review</div>
       <div class="source-url">technologyreview.com</div>
       <div class="source-desc">Magazine covering artificial intelligence and technology developments</div>
       <div class="source-why">Specialist coverage of AI and emerging technology; influential with technologists and researchers</div>
     </div>
-    <div class="source-card">
+    <div class="source-card" style="border-left-color:#00C2A8;">
       <div class="source-name">The Markup</div>
       <div class="source-url">themarkup.org</div>
       <div class="source-desc">Nonprofit newsroom covering technology accountability and data privacy</div>
       <div class="source-why">Specialist investigative journalism on digital technology and privacy issues</div>
     </div>
-    <div class="source-card">
+    <div class="source-card" style="border-left-color:#00C2A8;">
       <div class="source-name">EPI Blog</div>
       <div class="source-url">epi.org</div>
       <div class="source-desc">Economic Policy Institute blog covering labor and economic policy</div>
-      <div class="source-why">Left leaning economic analysis; represents labor and progressive economic perspective</div>
+      <div class="source-why">Left-leaning economic analysis; represents labor and progressive economic perspective</div>
     </div>
-    <div class="source-card">
+    <div class="source-card" style="border-left-color:#00C2A8;">
       <div class="source-name">American Prospect</div>
       <div class="source-url">prospect.org</div>
       <div class="source-desc">Progressive magazine covering politics and policy</div>
-      <div class="source-why">Progressive opinion and analysis; represents left of center political perspective</div>
+      <div class="source-why">Progressive opinion and analysis; represents left-of-center political perspective</div>
     </div>
-    <div class="source-card">
+    <div class="source-card" style="border-left-color:#00C2A8;">
       <div class="source-name">Columbia Journalism Review</div>
       <div class="source-url">cjr.org</div>
       <div class="source-desc">Publication covering media criticism and journalism trends</div>
       <div class="source-why">Expert analysis of journalism industry and media trends</div>
     </div>
-    <div class="source-card">
+    <div class="source-card" style="border-left-color:#00C2A8;">
       <div class="source-name">Nieman Lab</div>
       <div class="source-url">niemanlab.org</div>
       <div class="source-desc">Harvard lab covering future of journalism and media</div>
       <div class="source-why">Expert analysis of journalism innovation and media transformation</div>
     </div>
-    <div class="source-card">
+    <div class="source-card" style="border-left-color:#00C2A8;">
       <div class="source-name">Lawfare</div>
-      <div class="source-url">lawfaremedia.org</div>
+      <div class="source-url">news.google.com</div>
       <div class="source-desc">Publication covering law, policy, and national security</div>
       <div class="source-why">Legal and policy expertise on national security and constitutional issues</div>
     </div>
-    <div class="source-card">
+    <div class="source-card" style="border-left-color:#00C2A8;">
       <div class="source-name">ProPublica</div>
-      <div class="source-url">propublica.org</div>
+      <div class="source-url">feeds.propublica.org</div>
       <div class="source-desc">Nonprofit newsroom producing investigative journalism on government and accountability</div>
       <div class="source-why">Leading investigative journalism organization; holds government and institutions accountable</div>
     </div>
-    <div class="source-card">
+    <div class="source-card" style="border-left-color:#00C2A8;">
       <div class="source-name">Carbon Brief</div>
       <div class="source-url">carbonbrief.org</div>
       <div class="source-desc">Publication providing accurate information on climate science and policy</div>
       <div class="source-why">Specialist climate coverage; makes climate science accessible to general audience</div>
     </div>
-    <div class="source-card">
+    <div class="source-card" style="border-left-color:#00C2A8;">
       <div class="source-name">Grist</div>
       <div class="source-url">grist.org</div>
       <div class="source-desc">Nonprofit newsroom covering climate change and environmental issues</div>
       <div class="source-why">Environmental nonprofit reporting; covers intersection of climate and justice</div>
     </div>
-    <div class="source-card">
-      <div class="source-name">Inside Climate News</div>
-      <div class="source-url">insideclimatenews.org</div>
-      <div class="source-desc">Nonprofit newsroom covering climate change and clean energy</div>
-      <div class="source-why">Pulitzer winning climate journalism; represents climate action perspective</div>
-    </div>
-    <div class="source-card">
+    <div class="source-card" style="border-left-color:#00C2A8;">
       <div class="source-name">Naked Capitalism</div>
       <div class="source-url">nakedcapitalism.com</div>
       <div class="source-desc">Independent blog covering finance, economics, and markets</div>
       <div class="source-why">Heterodox economic analysis; represents alternative perspective on markets and finance</div>
     </div>
-    <div class="source-card">
+    <div class="source-card" style="border-left-color:#00C2A8;">
       <div class="source-name">OnLabor</div>
       <div class="source-url">onlabor.org</div>
       <div class="source-desc">Academic and activist platform covering labor issues and organizing</div>
       <div class="source-why">Specialist labor coverage; represents worker and labor movement perspective</div>
     </div>
-    <div class="source-card">
+    <div class="source-card" style="border-left-color:#00C2A8;">
+      <div class="source-name">Inside Climate News</div>
+      <div class="source-url">insideclimatenews.org</div>
+      <div class="source-desc">Nonprofit newsroom covering climate change and clean energy</div>
+      <div class="source-why">Pulitzer-winning climate journalism; represents climate action perspective</div>
+    </div>
+    <div class="source-card" style="border-left-color:#00C2A8;">
       <div class="source-name">War on the Rocks</div>
       <div class="source-url">warontherocks.com</div>
       <div class="source-desc">Publication covering military affairs and national security</div>
       <div class="source-why">Defense and security expertise; represents military strategy perspective</div>
     </div>
-    <div class="source-card">
+    <div class="source-card" style="border-left-color:#00C2A8;">
       <div class="source-name">Just Security</div>
       <div class="source-url">justsecurity.org</div>
       <div class="source-desc">Law and security experts providing analysis on national security and justice issues</div>
       <div class="source-why">Legal expertise on security issues; represents civil liberties and constitutional perspective</div>
     </div>
-    <div class="source-card">
+    <div class="source-card" style="border-left-color:#00C2A8;">
       <div class="source-name">Inequality.org</div>
       <div class="source-url">inequality.org</div>
       <div class="source-desc">Institute for Policy Studies publication covering wealth inequality and economic justice</div>
       <div class="source-why">Economic inequality specialist; represents progressive economic justice perspective</div>
     </div>
-    <div class="source-card">
+    <div class="source-card" style="border-left-color:#00C2A8;">
       <div class="source-name">The Intercept</div>
       <div class="source-url">theintercept.com</div>
       <div class="source-desc">Nonprofit newsroom covering national security and government surveillance</div>
       <div class="source-why">Surveillance and secrecy specialist; represents transparency and civil liberties perspective</div>
     </div>
+    <div class="source-card" style="border-left-color:#00C2A8;">
+      <div class="source-name">KFF Health News</div>
+      <div class="source-url">kffhealthnews.org</div>
+      <div class="source-desc">Independent nonprofit newsroom covering health policy and healthcare reporting</div>
+      <div class="source-why">Leading health policy journalism; covers intersection of health and policy</div>
+    </div>
+    <div class="source-card" style="border-left-color:#00C2A8;">
+      <div class="source-name">STAT News</div>
+      <div class="source-url">statnews.com</div>
+      <div class="source-desc">Publication covering biotech, pharma, and life sciences news</div>
+      <div class="source-why">Biotech and healthcare specialist; covers emerging health and science developments</div>
+    </div>
+    <div class="source-card" style="border-left-color:#00C2A8;">
+      <div class="source-name">Science News</div>
+      <div class="source-url">sciencenews.org</div>
+      <div class="source-desc">Magazine covering science and research developments</div>
+      <div class="source-why">Science journalism for general audience; makes scientific research accessible</div>
+    </div>
+    <div class="source-card" style="border-left-color:#00C2A8;">
+      <div class="source-name">Labor Notes</div>
+      <div class="source-url">labornotes.org</div>
+      <div class="source-desc">Magazine and website covering labor organizing and union issues</div>
+      <div class="source-why">Labor movement specialist; represents worker organizing perspective</div>
+    </div>
+    <div class="source-card" style="border-left-color:#00C2A8;">
+      <div class="source-name">Payday Report</div>
+      <div class="source-url">paydayreport.com</div>
+      <div class="source-desc">Independent news outlet covering labor and workers rights</div>
+      <div class="source-why">Labor rights journalism; covers worker struggles and organizing</div>
+    </div>
+    <div class="source-card" style="border-left-color:#00C2A8;">
+      <div class="source-name">In These Times</div>
+      <div class="source-url">inthesetimes.com</div>
+      <div class="source-desc">Biweekly magazine covering labor, politics, and activism</div>
+      <div class="source-why">Progressive labor and activism coverage; represents left-wing labor perspective</div>
+    </div>
+    <div class="source-card" style="border-left-color:#00C2A8;">
+      <div class="source-name">Inside Higher Ed</div>
+      <div class="source-url">insidehighered.com</div>
+      <div class="source-desc">Daily publication covering higher education news and policy</div>
+      <div class="source-why">Higher education specialist; covers college and university governance and policy</div>
+    </div>
+    <div class="source-card" style="border-left-color:#00C2A8;">
+      <div class="source-name">The Chronicle of Higher Education</div>
+      <div class="source-url">news.google.com</div>
+      <div class="source-desc">Weekly publication covering higher education issues</div>
+      <div class="source-why">Higher education coverage; represents academic and administrative perspective</div>
+    </div>
+    <div class="source-card" style="border-left-color:#00C2A8;">
+      <div class="source-name">Education Week</div>
+      <div class="source-url">news.google.com</div>
+      <div class="source-desc">Publication covering K-12 education policy and practice</div>
+      <div class="source-why">K-12 education specialist; covers school reform and education policy</div>
+    </div>
+    <div class="source-card" style="border-left-color:#00C2A8;">
+      <div class="source-name">Brennan Center</div>
+      <div class="source-url">news.google.com</div>
+      <div class="source-desc">Nonpartisan law and policy institute focusing on democracy and voting rights</div>
+      <div class="source-why">Democracy and voting rights specialist; represents civil rights perspective</div>
+    </div>
+    <div class="source-card" style="border-left-color:#00C2A8;">
+      <div class="source-name">Marshall Fund</div>
+      <div class="source-url">news.google.com</div>
+      <div class="source-desc">Think tank covering transatlantic relations and international policy</div>
+      <div class="source-why">Transatlantic relations specialist; covers US-Europe policy coordination</div>
+    </div>
+    <div class="source-card" style="border-left-color:#00C2A8;">
+      <div class="source-name">Center on Budget and Policy Priorities</div>
+      <div class="source-url">news.google.com</div>
+      <div class="source-desc">Policy institute analyzing tax and budget issues affecting lower-income Americans</div>
+      <div class="source-why">Budget and poverty policy specialist; represents progressive economic perspective</div>
+    </div>
+    <div class="source-card" style="border-left-color:#00C2A8;">
+      <div class="source-name">Defense One</div>
+      <div class="source-url">defenseone.com</div>
+      <div class="source-desc">Publication covering defense policy and military technology</div>
+      <div class="source-why">Defense policy specialist; covers military modernization and strategy</div>
+    </div>
+    <div class="source-card" style="border-left-color:#00C2A8;">
+      <div class="source-name">E&E News</div>
+      <div class="source-url">news.google.com</div>
+      <div class="source-desc">Publication covering energy and environmental policy</div>
+      <div class="source-why">Energy and environment policy specialist; covers climate regulation and industry</div>
+    </div>
+    <div class="source-card" style="border-left-color:#00C2A8;">
+      <div class="source-name">TechCrunch</div>
+      <div class="source-url">techcrunch.com</div>
+      <div class="source-desc">Publication covering technology startups and venture capital</div>
+      <div class="source-why">Tech industry specialist; covers AI and tech company developments</div>
+    </div>
+    <div class="source-card" style="border-left-color:#00C2A8;">
+      <div class="source-name">Bellingcat</div>
+      <div class="source-url">bellingcat.com</div>
+      <div class="source-desc">Open-source intelligence and investigative journalism organization</div>
+      <div class="source-why">Open-source investigation specialist; covers disinformation and conflict verification</div>
+    </div>
+    <div class="source-card" style="border-left-color:#00C2A8;">
+      <div class="source-name">Health Affairs</div>
+      <div class="source-url">healthaffairs.org</div>
+      <div class="source-desc">Peer-reviewed journal covering health policy research</div>
+      <div class="source-why">Leading health policy journal; covers healthcare system and public health</div>
+    </div>
+    <div class="source-card" style="border-left-color:#00C2A8;">
+      <div class="source-name">Nature News</div>
+      <div class="source-url">nature.com</div>
+      <div class="source-desc">International science journal covering research across all scientific disciplines</div>
+      <div class="source-why">Premier science journal; represents cutting-edge scientific research</div>
+    </div>
+    <div class="source-card" style="border-left-color:#00C2A8;">
+      <div class="source-name">The War Zone</div>
+      <div class="source-url">thedrive.com</div>
+      <div class="source-desc">Publication covering military technology and defense developments</div>
+      <div class="source-why">Military technology specialist; covers weapons systems and defense innovation</div>
+    </div>
+    <div class="source-card" style="border-left-color:#00C2A8;">
+      <div class="source-name">CityLab</div>
+      <div class="source-url">news.google.com</div>
+      <div class="source-desc">Publication covering urban policy and city governance,Urban policy specialist; covers housing, transportation</div>
+      <div class="source-why">and city planning</div>
+    </div>
+    <div class="source-card" style="border-left-color:#00C2A8;">
+      <div class="source-name">Press Freedom Tracker</div>
+      <div class="source-url">news.google.com</div>
+      <div class="source-desc">Database tracking press freedom incidents in the United States</div>
+      <div class="source-why">Press freedom monitoring; documents threats to journalism in America</div>
+    </div>
   </div>
 </div>
 
-<!-- EXPLAINER TIER -->
+<!-- EXPLAINERS TIER -->
 <div class="tier-section">
-  <div class="tier-header" style="background:#00C2A8;color:#000;">Explainers</div>
-  <p class="tier-desc">Making sense of complexity. These outlets explain how systems work, what policy actually means, and why things matter. They help people understand the bigger picture when individual stories can feel confusing.</p>
+  <div class="tier-header" style="background:#FF9800;color:#000;">Explainers<span class="tier-count">9</span></div>
+  <p class="tier-desc">Media organizations focused on explaining complex topics in accessible ways. These outlets help connect dots that other coverage leaves separate.</p>
   <div class="sources-grid">
-    <div class="source-card">
+    <div class="source-card" style="border-left-color:#FF9800;">
       <div class="source-name">The Conversation US</div>
       <div class="source-url">theconversation.com</div>
       <div class="source-desc">Academics writing explanation of news topics and research for general audience</div>
       <div class="source-why">Accessible academic expertise; helps general audience understand complex topics</div>
     </div>
-    <div class="source-card">
+    <div class="source-card" style="border-left-color:#FF9800;">
       <div class="source-name">Vox</div>
       <div class="source-url">vox.com</div>
       <div class="source-desc">Publication explaining news and policy issues for general audience</div>
       <div class="source-why">Popular explainer outlet reaching younger audiences; makes complex policy accessible</div>
     </div>
-    <div class="source-card">
+    <div class="source-card" style="border-left-color:#FF9800;">
       <div class="source-name">Pew Research Center</div>
       <div class="source-url">pewresearch.org</div>
       <div class="source-desc">Research organization conducting public opinion polling and social research</div>
       <div class="source-why">Authoritative source on polling and social trends; shapes understanding of public opinion</div>
     </div>
-    <div class="source-card">
+    <div class="source-card" style="border-left-color:#FF9800;">
       <div class="source-name">404 Media</div>
       <div class="source-url">404media.co</div>
-      <div class="source-desc">Journalist run publication covering internet culture and technology</div>
+      <div class="source-desc">Journalist-run publication covering internet culture and technology</div>
       <div class="source-why">Independent technology journalism; covers emerging internet culture and digital issues</div>
     </div>
-    <div class="source-card">
+    <div class="source-card" style="border-left-color:#FF9800;">
       <div class="source-name">Rest of World</div>
       <div class="source-url">restofworld.org</div>
       <div class="source-desc">Publication covering how global people use technology</div>
       <div class="source-why">Specialist coverage of technology use outside wealthy nations; represents Global South perspective</div>
     </div>
-    <div class="source-card">
+    <div class="source-card" style="border-left-color:#FF9800;">
       <div class="source-name">The Verge</div>
       <div class="source-url">theverge.com</div>
       <div class="source-desc">Technology news outlet covering gadgets, internet culture, and tech policy</div>
       <div class="source-why">Popular technology news source; covers intersection of tech and culture</div>
     </div>
-    <div class="source-card">
+    <div class="source-card" style="border-left-color:#FF9800;">
       <div class="source-name">Wired</div>
       <div class="source-url">wired.com</div>
       <div class="source-desc">Magazine covering technology, business, and culture</div>
       <div class="source-why">Influential technology magazine; shapes tech culture and covers emerging trends</div>
     </div>
-    <div class="source-card">
+    <div class="source-card" style="border-left-color:#FF9800;">
       <div class="source-name">Ars Technica</div>
-      <div class="source-url">arstechnica.com</div>
+      <div class="source-url">feeds.arstechnica.com</div>
       <div class="source-desc">Technology publication covering science, technology, and internet culture</div>
       <div class="source-why">Detailed technology reporting for knowledgeable audience; covers emerging technology trends</div>
     </div>
-    <div class="source-card">
+    <div class="source-card" style="border-left-color:#FF9800;">
       <div class="source-name">Platformer</div>
       <div class="source-url">platformer.news</div>
       <div class="source-desc">Newsletter covering social media platforms and internet governance</div>
@@ -536,288 +1301,136 @@
   </div>
 </div>
 
-<!-- COMMUNITY TIER -->
+<!-- THINK TANK ANALYSIS TIER -->
 <div class="tier-section">
-  <div class="tier-header" style="background:#FF0054;color:#fff;">Community Voices</div>
-  <p class="tier-desc">Journalism for, by, and about communities that mainstream outlets often overlook. These outlets represent the perspectives and concerns of specific groups, regions, and subcultures in America.</p>
-  <div class="sources-grid">
-    <div class="source-card">
-      <div class="source-name">The 19th News</div>
-      <div class="source-url">19thnews.org</div>
-      <div class="source-desc">Nonprofit newsroom covering women and gender in politics and policy</div>
-      <div class="source-why">Specialist coverage of women in politics; represents feminist perspective on news</div>
-    </div>
-    <div class="source-card">
-      <div class="source-name">The Marshall Project</div>
-      <div class="source-url">themarshallproject.org</div>
-      <div class="source-desc">Nonprofit newsroom covering the criminal justice system</div>
-      <div class="source-why">Specialist criminal justice coverage; represents perspective on incarceration and police accountability</div>
-    </div>
-    <div class="source-card">
-      <div class="source-name">CalMatters</div>
-      <div class="source-url">calmatters.org</div>
-      <div class="source-desc">Nonprofit newsroom covering California state government and policy</div>
-      <div class="source-why">California focused reporting; represents state level accountability journalism</div>
-    </div>
-    <div class="source-card">
-      <div class="source-name">Stateline</div>
-      <div class="source-url">stateline.org</div>
-      <div class="source-desc">Nonprofit covering state government and policy trends across United States</div>
-      <div class="source-why">National state policy coverage; provides perspective on state level governance</div>
-    </div>
-    <div class="source-card">
-      <div class="source-name">High Country News</div>
-      <div class="source-url">hcn.org</div>
-      <div class="source-desc">Regional newsroom covering the American West</div>
-      <div class="source-why">Western region specialist; represents perspective on rural and public lands issues</div>
-    </div>
-    <div class="source-card">
-      <div class="source-name">Civil Eats</div>
-      <div class="source-url">civileats.com</div>
-      <div class="source-desc">Publication covering food policy, agriculture, and food systems</div>
-      <div class="source-why">Specialist food and agriculture coverage; represents sustainable food systems perspective</div>
-    </div>
-    <div class="source-card">
-      <div class="source-name">Documented</div>
-      <div class="source-url">documentedny.com</div>
-      <div class="source-desc">Nonprofit newsroom covering immigrant communities in New York City</div>
-      <div class="source-why">Specialist immigrant reporting; represents undocumented immigrant perspective</div>
-    </div>
-    <div class="source-card">
-      <div class="source-name">The Root</div>
-      <div class="source-url">theroot.com</div>
-      <div class="source-desc">Publication covering African American culture, politics, and news</div>
-      <div class="source-why">Publication serving African American audience; represents Black perspective on news</div>
-    </div>
-    <div class="source-card">
-      <div class="source-name">Latino USA</div>
-      <div class="source-url">latinousa.org</div>
-      <div class="source-desc">Public radio show covering Latino communities and issues</div>
-      <div class="source-why">Latino focused reporting; represents Latino community perspective</div>
-    </div>
-    <div class="source-card">
-      <div class="source-name">Indian Country Today</div>
-      <div class="source-url">indiancountrytoday.com</div>
-      <div class="source-desc">Nonprofit newsroom covering Native American communities and Indian Country</div>
-      <div class="source-why">Essential Native news outlet; represents Indigenous perspective on news</div>
-    </div>
-    <div class="source-card">
-      <div class="source-name">Hechinger Report</div>
-      <div class="source-url">hechingerreport.org</div>
-      <div class="source-desc">Nonprofit newsroom covering education policy and K 12 schools</div>
-      <div class="source-why">Specialist education coverage; focuses on accountability and equity in schools</div>
-    </div>
-    <div class="source-card">
-      <div class="source-name">Christianity Today</div>
-      <div class="source-url">christianitytoday.com</div>
-      <div class="source-desc">Magazine covering evangelical Christianity, faith, and culture</div>
-      <div class="source-why">Major evangelical Christian publication; represents religious conservative perspective</div>
-    </div>
-    <div class="source-card">
-      <div class="source-name">Religion News Service</div>
-      <div class="source-url">religionnews.com</div>
-      <div class="source-desc">Nonprofit newsroom covering religion and faith communities</div>
-      <div class="source-why">Religion specialist journalism; represents diverse faith perspectives</div>
-    </div>
-    <div class="source-card">
-      <div class="source-name">Texas Tribune</div>
-      <div class="source-url">texastribune.org</div>
-      <div class="source-desc">Nonprofit newsroom covering Texas government and policy</div>
-      <div class="source-why">Texas focused reporting; represents state level accountability journalism</div>
-    </div>
-    <div class="source-card">
-      <div class="source-name">The Advocate</div>
-      <div class="source-url">advocate.com</div>
-      <div class="source-desc">Magazine covering LGBTQ news and culture</div>
-      <div class="source-why">LGBTQ focused publication; represents LGBTQ community perspective</div>
-    </div>
-    <div class="source-card">
-      <div class="source-name">Jewish Telegraphic Agency</div>
-      <div class="source-url">jta.org</div>
-      <div class="source-desc">News organization covering Jewish communities and Israel related issues</div>
-      <div class="source-why">Jewish community news; represents Jewish perspective on news</div>
-    </div>
-    <div class="source-card">
-      <div class="source-name">Arab American News</div>
-      <div class="source-url">arabamericannews.com</div>
-      <div class="source-desc">Newspaper serving Arab American communities in Michigan and nationally</div>
-      <div class="source-why">Arab American perspective; represents Middle Eastern American communities</div>
-    </div>
-    <div class="source-card">
-      <div class="source-name">Disability Scoop</div>
-      <div class="source-url">disabilityscoop.com</div>
-      <div class="source-desc">News organization covering disability policy and disability community issues</div>
-      <div class="source-why">Disability community journalism; represents disability rights perspective</div>
-    </div>
-    <div class="source-card">
-      <div class="source-name">Military Times</div>
-      <div class="source-url">militarytimes.com</div>
-      <div class="source-desc">Newspaper serving military and veteran communities</div>
-      <div class="source-why">Military and veteran community perspective; covers defense policy and military issues</div>
-    </div>
-    <div class="source-card">
-      <div class="source-name">Daily Yonder</div>
-      <div class="source-url">dailyyonder.com</div>
-      <div class="source-desc">Publication covering rural America and small town communities</div>
-      <div class="source-why">Rural America specialist; represents rural and small town perspective</div>
-    </div>
-    <div class="source-card">
-      <div class="source-name">Scalawag</div>
-      <div class="source-url">scalawagmagazine.org</div>
-      <div class="source-desc">Magazine covering the American South and Southern issues</div>
-      <div class="source-why">Southern regional specialist; represents Southern perspective on news</div>
-    </div>
-    <div class="source-card">
-      <div class="source-name">Honolulu Civil Beat</div>
-      <div class="source-url">civilbeat.org</div>
-      <div class="source-desc">Nonprofit newsroom covering Hawaii and Pacific issues</div>
-      <div class="source-why">Hawaii and Pacific regional coverage</div>
-    </div>
-    <div class="source-card">
-      <div class="source-name">Teen Vogue</div>
-      <div class="source-url">teenvogue.com</div>
-      <div class="source-desc">Publication covering politics and culture for young adults</div>
-      <div class="source-why">Youth and young adult perspective; reaches Gen Z audience</div>
-    </div>
-    <div class="source-card">
-      <div class="source-name">AsAmNews</div>
-      <div class="source-url">asamnews.com</div>
-      <div class="source-desc">News organization covering Asian American communities and issues</div>
-      <div class="source-why">Asian American community journalism; represents Asian American perspective</div>
-    </div>
-    <div class="source-card">
-      <div class="source-name">The Forward</div>
-      <div class="source-url">forward.com</div>
-      <div class="source-desc">Jewish American newspaper covering culture, politics, and community</div>
-      <div class="source-why">Jewish American perspective; covers Jewish community and Jewish American issues</div>
-    </div>
-    <div class="source-card">
-      <div class="source-name">National Catholic Reporter</div>
-      <div class="source-url">ncronline.org</div>
-      <div class="source-desc">Independent Catholic news organization covering church and faith issues</div>
-      <div class="source-why">Catholic perspective; represents independent Catholic journalism</div>
-    </div>
-    <div class="source-card">
-      <div class="source-name">The Imprint</div>
-      <div class="source-url">imprintnews.org</div>
-      <div class="source-desc">Nonprofit newsroom covering child welfare and youth issues</div>
-      <div class="source-why">Specialist child welfare coverage; represents children and youth perspective</div>
-    </div>
-    <div class="source-card">
-      <div class="source-name">Mississippi Free Press</div>
-      <div class="source-url">mississippifreepress.org</div>
-      <div class="source-desc">Nonprofit newsroom covering Mississippi government and communities</div>
-      <div class="source-why">State focused reporting; provides accountability journalism for Mississippi</div>
-    </div>
-    <div class="source-card">
-      <div class="source-name">Bolts Magazine</div>
-      <div class="source-url">boltsmag.org</div>
-      <div class="source-desc">Publication covering Black workers and labor issues</div>
-      <div class="source-why">Black labor perspective; covers intersection of race and labor</div>
-    </div>
-    <div class="source-card">
-      <div class="source-name">Capital B News</div>
-      <div class="source-url">capitalbnews.org</div>
-      <div class="source-desc">Nonprofit covering Black entrepreneurs and business communities</div>
-      <div class="source-why">Black business and economic perspective</div>
-    </div>
-    <div class="source-card">
-      <div class="source-name">Canopy Forum</div>
-      <div class="source-url">canopyforum.org</div>
-      <div class="source-desc">Community journalism platform covering local issues and solutions</div>
-      <div class="source-why">Community focused journalism; represents local perspective</div>
-    </div>
-    <div class="source-card">
-      <div class="source-name">The Trace</div>
-      <div class="source-url">thetrace.org</div>
-      <div class="source-desc">Nonprofit newsroom covering gun violence and gun policy</div>
-      <div class="source-why">Gun violence specialist journalism; represents public health perspective on guns</div>
-    </div>
-    <div class="source-card">
-      <div class="source-name">Prism</div>
-      <div class="source-url">prismreports.org</div>
-      <div class="source-desc">Nonprofit newsroom covering how government policies affect communities of color</div>
-      <div class="source-why">Racial justice coverage; represents communities of color perspective</div>
-    </div>
-    <div class="source-card">
-      <div class="source-name">Borderland Beat</div>
-      <div class="source-url">borderlandbeat.com</div>
-      <div class="source-desc">Blog covering Mexico US border issues and drug trade</div>
-      <div class="source-why">Border coverage specialist; provides perspective on border region</div>
-    </div>
-    <div class="source-card">
-      <div class="source-name">The Plug</div>
-      <div class="source-url">tpinsights.com</div>
-      <div class="source-desc">Publication covering Black venture capital and entrepreneurship</div>
-      <div class="source-why">Black venture capital perspective; covers race and entrepreneurship</div>
-    </div>
-  </div>
-</div>
-
-<!-- ANALYSIS TIER -->
-<div class="tier-section">
-  <div class="tier-header" style="background:#FF9800;color:#000;">Think Tank Analysis</div>
+  <div class="tier-header" style="background:#4CAF50;color:#000;">Think Tank Analysis<span class="tier-count">19</span></div>
   <p class="tier-desc">Research institutions and policy experts. These organizations conduct deep research and publish analysis that shapes how policymakers and opinion leaders think about major issues.</p>
   <div class="sources-grid">
-    <div class="source-card">
+    <div class="source-card" style="border-left-color:#4CAF50;">
       <div class="source-name">RAND</div>
       <div class="source-url">rand.org</div>
       <div class="source-desc">Research and policy institute conducting analysis on defense and social policy</div>
       <div class="source-why">Think tank with strong defense and security expertise</div>
     </div>
-    <div class="source-card">
+    <div class="source-card" style="border-left-color:#4CAF50;">
       <div class="source-name">Roosevelt Institute</div>
       <div class="source-url">rooseveltinstitute.org</div>
       <div class="source-desc">Progressive think tank conducting economic policy research</div>
       <div class="source-why">Progressive economic research and analysis</div>
     </div>
-    <div class="source-card">
+    <div class="source-card" style="border-left-color:#4CAF50;">
       <div class="source-name">Carnegie Endowment</div>
-      <div class="source-url">carnegieendowment.org</div>
+      <div class="source-url">news.google.com</div>
       <div class="source-desc">International research institution publishing analysis on global affairs and policy</div>
       <div class="source-why">International affairs expertise; represents establishment foreign policy perspective</div>
     </div>
-    <div class="source-card">
+    <div class="source-card" style="border-left-color:#4CAF50;">
       <div class="source-name">Foreign Affairs</div>
       <div class="source-url">foreignaffairs.com</div>
       <div class="source-desc">Magazine publishing expert analysis on international relations and foreign policy</div>
       <div class="source-why">Premier foreign policy journal; shapes US global strategy thinking</div>
     </div>
-    <div class="source-card">
+    <div class="source-card" style="border-left-color:#4CAF50;">
       <div class="source-name">Center for American Progress</div>
-      <div class="source-url">americanprogress.org</div>
+      <div class="source-url">news.google.com</div>
       <div class="source-desc">Progressive think tank conducting policy research and analysis</div>
       <div class="source-why">Progressive policy research and analysis</div>
     </div>
-    <div class="source-card">
+    <div class="source-card" style="border-left-color:#4CAF50;">
       <div class="source-name">Chatham House</div>
-      <div class="source-url">chathamhouse.org</div>
+      <div class="source-url">news.google.com</div>
       <div class="source-desc">International affairs research institute based in United Kingdom</div>
       <div class="source-why">British international affairs expertise; represents UK perspective on global issues</div>
     </div>
-    <div class="source-card">
+    <div class="source-card" style="border-left-color:#4CAF50;">
       <div class="source-name">Heritage Foundation</div>
-      <div class="source-url">heritage.org</div>
+      <div class="source-url">news.google.com</div>
       <div class="source-desc">Conservative think tank conducting policy research and analysis</div>
-      <div class="source-why">Conservative policy research; represents right of center policy perspective</div>
+      <div class="source-why">Conservative policy research; represents right-of-center policy perspective</div>
     </div>
-    <div class="source-card">
+    <div class="source-card" style="border-left-color:#4CAF50;">
       <div class="source-name">Brookings</div>
-      <div class="source-url">brookings.edu</div>
+      <div class="source-url">news.google.com</div>
       <div class="source-desc">Research institute publishing analysis on domestic and international policy</div>
       <div class="source-why">Leading centrist think tank; major influence on policy and public opinion</div>
+    </div>
+    <div class="source-card" style="border-left-color:#4CAF50;">
+      <div class="source-name">American Enterprise Institute</div>
+      <div class="source-url">news.google.com</div>
+      <div class="source-desc">Conservative think tank conducting policy research and analysis</div>
+      <div class="source-why">Conservative think tank expertise; represents right-wing intellectual perspective</div>
+    </div>
+    <div class="source-card" style="border-left-color:#4CAF50;">
+      <div class="source-name">Hoover Institution</div>
+      <div class="source-url">news.google.com</div>
+      <div class="source-desc">Conservative research institute publishing policy analysis</div>
+      <div class="source-why">Conservative policy research; represents conservative institutional perspective</div>
+    </div>
+    <div class="source-card" style="border-left-color:#4CAF50;">
+      <div class="source-name">Hudson Institute</div>
+      <div class="source-url">news.google.com</div>
+      <div class="source-desc">Conservative think tank covering foreign policy and national security</div>
+      <div class="source-why">Conservative national security perspective; covers defense policy</div>
+    </div>
+    <div class="source-card" style="border-left-color:#4CAF50;">
+      <div class="source-name">Council on Foreign Relations</div>
+      <div class="source-url">news.google.com</div>
+      <div class="source-desc">Nonpartisan foreign policy think tank and publisher</div>
+      <div class="source-why">Leading foreign policy institution; represents establishment international relations thinking</div>
+    </div>
+    <div class="source-card" style="border-left-color:#4CAF50;">
+      <div class="source-name">Center for Strategic and International Studies</div>
+      <div class="source-url">news.google.com</div>
+      <div class="source-desc">Bipartisan policy research organization covering security and international issues</div>
+      <div class="source-why">Major bipartisan think tank; covers defense and international security</div>
+    </div>
+    <div class="source-card" style="border-left-color:#4CAF50;">
+      <div class="source-name">New America</div>
+      <div class="source-url">news.google.com</div>
+      <div class="source-desc">Policy institute covering technology, security, and social policy</div>
+      <div class="source-why">Progressive-centrist think tank; covers technology policy and workforce</div>
+    </div>
+    <div class="source-card" style="border-left-color:#4CAF50;">
+      <div class="source-name">Cato Institute</div>
+      <div class="source-url">news.google.com</div>
+      <div class="source-desc">Libertarian think tank covering civil liberties, free markets, and foreign policy</div>
+      <div class="source-why">Libertarian policy research; represents limited-government conservative perspective</div>
+    </div>
+    <div class="source-card" style="border-left-color:#4CAF50;">
+      <div class="source-name">Urban Institute</div>
+      <div class="source-url">news.google.com</div>
+      <div class="source-desc">Nonpartisan research organization studying social and economic policy,Urban and social policy research; covers poverty, housing</div>
+      <div class="source-why">and inequality</div>
+    </div>
+    <div class="source-card" style="border-left-color:#4CAF50;">
+      <div class="source-name">Migration Policy Institute</div>
+      <div class="source-url">news.google.com</div>
+      <div class="source-desc">Nonpartisan research organization studying immigration and refugee policy</div>
+      <div class="source-why">Immigration policy research; provides data-driven analysis of migration</div>
+    </div>
+    <div class="source-card" style="border-left-color:#4CAF50;">
+      <div class="source-name">Bipartisan Policy Center</div>
+      <div class="source-url">news.google.com</div>
+      <div class="source-desc">Policy organization promoting bipartisan solutions to domestic policy challenges</div>
+      <div class="source-why">Centrist bipartisan research; represents cross-party policy solutions</div>
+    </div>
+    <div class="source-card" style="border-left-color:#4CAF50;">
+      <div class="source-name">Aspen Institute</div>
+      <div class="source-url">news.google.com</div>
+      <div class="source-desc">Policy forum covering leadership, ideas, and global challenges</div>
+      <div class="source-why">Ideas and leadership forum; covers global challenges from multiple perspectives</div>
     </div>
   </div>
 </div>
 
 <div class="bottom">
-Every source on this list fills a specific gap in the information ecosystem. The national outlets shape the agenda but miss local nuance. The international outlets catch stories America ignores. The specialists provide expertise mainstream outlets lack. The community voices center perspectives that get sidelined. The think tanks offer long term research when news cycles demand quick takes.
+Every source on this list fills a specific gap in the information ecosystem. The national outlets shape the agenda but miss local nuance. The international outlets catch stories America ignores. The specialists provide expertise mainstream outlets lack. The community voices center perspectives that get sidelined. The explainers make sense of complex topics. The think tanks offer long term research when news cycles demand quick takes.
 
-Together, these 112 sources create a more complete picture of what's actually happening in the world.
+Together, these 213 sources create a more complete picture of what's actually happening in the world.
 </div>
 
 <div class="footer">
-  <span>112 sources</span>
+  <span>213 sources</span>
   <span>6 tiers</span>
   <span>10 domains</span>
   <span>Updated daily</span>

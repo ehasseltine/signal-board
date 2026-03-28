@@ -59,6 +59,8 @@ def load_feeds() -> list[dict]:
                 "url": row["url"].strip(),
                 "tier": row["tier"].strip(),
                 "region": row["region"].strip(),
+                "description": row.get("description", "").strip(),
+                "why": row.get("why", "").strip(),
             })
     return feeds
 
@@ -110,6 +112,40 @@ def get_summary(entry) -> str:
     return ""
 
 
+def get_full_text(entry) -> str:
+    """Extract the fullest available text from a feed entry (up to 3000 chars)."""
+    import re
+
+    text = ""
+
+    # Try content:encoded first (often has full article)
+    if hasattr(entry, "content") and entry.content:
+        for content_obj in entry.content:
+            if hasattr(content_obj, "value") and content_obj.value:
+                candidate = re.sub(r"<[^>]+>", " ", content_obj.value)
+                candidate = re.sub(r"\s+", " ", candidate).strip()
+                if len(candidate) > len(text):
+                    text = candidate
+
+    # Try summary
+    if not text or len(text) < 100:
+        if hasattr(entry, "summary") and entry.summary:
+            candidate = re.sub(r"<[^>]+>", " ", entry.summary)
+            candidate = re.sub(r"\s+", " ", candidate).strip()
+            if len(candidate) > len(text):
+                text = candidate
+
+    # Try description
+    if not text or len(text) < 100:
+        if hasattr(entry, "description") and entry.description:
+            candidate = re.sub(r"<[^>]+>", " ", entry.description)
+            candidate = re.sub(r"\s+", " ", candidate).strip()
+            if len(candidate) > len(text):
+                text = candidate
+
+    return text[:3000]
+
+
 def fetch_feed(feed: dict) -> list[dict]:
     """Fetch and parse a single RSS feed. Returns list of article dicts."""
     articles = []
@@ -133,6 +169,7 @@ def fetch_feed(feed: dict) -> list[dict]:
 
             article_id = make_article_id(url)
             summary = get_summary(entry)
+            full_text = get_full_text(entry)
             domains = tag_article(title, summary)
             pub_date = parse_date(entry)
 
@@ -141,6 +178,7 @@ def fetch_feed(feed: dict) -> list[dict]:
                 "title": title.strip(),
                 "url": url.strip(),
                 "summary": summary,
+                "text": full_text,
                 "source": feed["name"],
                 "tier": feed["tier"],
                 "region": feed["region"],

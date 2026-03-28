@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Daily narrative analysis: what's happening across 71 news sources, and how the stories connect.">
+<meta name="description" content="Daily narrative analysis: what's happening across 213 news sources, and how the stories connect.">
 <meta property="og:title" content="Today at Signal Board">
-<meta property="og:description" content="Daily narrative analysis from 71 sources. See what connects.">
+<meta property="og:description" content="Daily narrative analysis from 213 sources. See what connects.">
 <title>Today at Signal Board</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -41,6 +41,32 @@
   /* SECTION TITLE */
   .section-title{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.8rem,4vw,2.4rem);font-weight:800;letter-spacing:-0.03em;color:#fff;margin-bottom:1.8rem;margin-top:3rem;}
 
+  /* TOP STORIES */
+  .story-grid{display:grid;grid-template-columns:1fr;gap:1.2rem;margin-bottom:3rem;}
+  .story-card{border-radius:20px;padding:2rem;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.08);transition:transform 0.15s;}
+  .story-card:hover{transform:translateY(-2px);}
+
+  .story-headline{font-family:'Space Grotesk',sans-serif;font-size:1.25rem;font-weight:800;color:#fff;letter-spacing:-0.02em;margin-bottom:1rem;line-height:1.4;}
+  .story-meta{display:flex;gap:1rem;align-items:center;flex-wrap:wrap;margin-bottom:1.2rem;font-size:0.85rem;color:rgba(235,230,245,0.6);}
+  .meta-item{display:flex;gap:0.3rem;align-items:center;}
+
+  .story-domains{display:flex;gap:0.6rem;flex-wrap:wrap;margin-bottom:1.5rem;}
+  .domain-pill{display:inline-block;padding:0.4rem 0.8rem;border-radius:100px;font-size:0.75rem;font-weight:600;text-transform:capitalize;}
+
+  .tier-framing{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,0.06);}
+  .tier-frame{background:rgba(0,0,0,0.3);border-radius:12px;padding:1rem;font-size:0.85rem;}
+  .tier-frame-label{font-family:'Space Grotesk',sans-serif;font-weight:700;text-transform:capitalize;color:rgba(235,230,245,0.8);margin-bottom:0.6rem;font-size:0.75rem;}
+  .tier-frame-count{color:rgba(235,230,245,0.5);font-size:0.7rem;margin-bottom:0.5rem;}
+  .tier-frame-sample{color:#fff;line-height:1.4;font-size:0.8rem;}
+
+  .story-articles{display:grid;grid-template-columns:1fr;gap:0.7rem;margin-top:1rem;}
+  .article-row{background:rgba(0,0,0,0.2);border-radius:12px;padding:0.8rem;font-size:0.85rem;display:flex;gap:0.8rem;align-items:flex-start;transition:background 0.15s;cursor:pointer;}
+  .article-row:hover{background:rgba(0,0,0,0.3);}
+  .article-source{font-family:'Space Grotesk',sans-serif;font-size:0.7rem;font-weight:700;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.08em;min-width:70px;flex-shrink:0;position:relative;}
+  .source-tooltip{display:none;position:absolute;bottom:100%;left:0;background:rgba(0,0,0,0.95);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:0.6rem;width:200px;font-size:0.7rem;color:rgba(235,230,245,0.7);line-height:1.4;z-index:10;white-space:normal;margin-bottom:0.5rem;}
+  .article-row:hover .source-tooltip{display:block;}
+  .article-title{flex:1;color:#fff;line-height:1.4;}
+
   /* CONSTELLATION SVG */
   .constellation{background:rgba(255,255,255,0.02);border-radius:24px;padding:2.5rem;margin-bottom:3rem;border:1px solid rgba(255,255,255,0.08);}
   .constellation svg{width:100%;height:auto;max-height:500px;}
@@ -57,6 +83,9 @@
   .shared-story:hover{transform:translateY(-2px);}
   .shared-story-topic{font-family:'Space Grotesk',sans-serif;font-size:1.3rem;font-weight:800;color:#fff;letter-spacing:-0.02em;margin-bottom:0.3rem;}
   .shared-story-sub{font-size:0.9rem;color:rgba(235,230,245,0.55);margin-bottom:1.2rem;line-height:1.5;}
+  .spectrum-dots{display:flex;gap:0.4rem;align-items:center;margin-top:0.8rem;}
+  .spectrum-dot{display:inline-block;width:8px;height:8px;border-radius:50%;}
+
   .headline-strip{display:flex;flex-direction:column;gap:0.5rem;}
   .headline-row{display:flex;gap:0.8rem;align-items:flex-start;padding:0.6rem 0;border-top:1px solid rgba(255,255,255,0.04);}
   .headline-row:first-child{border-top:none;padding-top:0;}
@@ -71,30 +100,19 @@
   .tier-dot.explainer{background:#FF9800;}
   .tier-dot.analysis{background:#4CAF50;}
 
-  /* NARRATIVE PAIRS */
-  .pair-section{margin-bottom:3rem;}
-  .pair-cards{display:grid;grid-template-columns:1fr;gap:1.5rem;margin-bottom:2.5rem;}
-
-  .pair-card{border-radius:24px;padding:2.2rem;border:1px solid rgba(255,255,255,0.1);transition:transform 0.2s,filter 0.15s;position:relative;overflow:hidden;}
-  .pair-card:hover{transform:translateY(-3px);filter:brightness(1.05);}
-  .pair-card::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;pointer-events:none;border-radius:24px;}
-
-  .pair-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1.5rem;position:relative;z-index:1;}
-  .pair-title{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.3rem,3vw,1.6rem);font-weight:800;letter-spacing:-0.03em;color:#fff;}
-  .pair-count{font-family:'Space Grotesk',sans-serif;font-size:0.9rem;font-weight:700;background:rgba(255,255,255,0.1);padding:0.4rem 0.8rem;border-radius:100px;color:rgba(255,255,255,0.8);}
-
-  .pair-desc{font-size:0.95rem;color:rgba(235,230,245,0.75);margin-bottom:1.8rem;line-height:1.6;position:relative;z-index:1;}
-
-  .article-grid{display:grid;grid-template-columns:1fr;gap:0.9rem;position:relative;z-index:1;}
-  .article-card{background:rgba(0,0,0,0.3);border-radius:16px;padding:1.3rem;display:flex;gap:1.2rem;align-items:flex-start;border:1px solid rgba(255,255,255,0.05);transition:background 0.15s;cursor:pointer;}
-  .article-card:hover{background:rgba(0,0,0,0.4);}
-
-  .article-source{font-family:'Space Grotesk',sans-serif;font-size:0.72rem;font-weight:700;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.08em;min-width:80px;flex-shrink:0;}
-  .article-title{flex:1;font-size:0.95rem;color:#fff;line-height:1.5;font-weight:500;}
-  .article-card:hover .article-title{color:rgba(255,255,255,0.95);}
-
-  /* PAYWALL BADGE */
-  .paywall{display:inline-block;margin-left:auto;flex-shrink:0;font-size:0.65rem;background:rgba(255,152,0,0.2);color:#FF9800;padding:0.35rem 0.65rem;border-radius:8px;border:1px solid rgba(255,152,0,0.3);}
+  /* QUESTIONS SECTION */
+  .questions-grid{display:grid;grid-template-columns:1fr;gap:1.2rem;margin-bottom:3rem;}
+  .question-card{border-radius:20px;padding:2rem;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.08);transition:transform 0.15s;}
+  .question-card:hover{transform:translateY(-2px);}
+  .question-text{font-family:'Space Grotesk',sans-serif;font-size:1.15rem;font-weight:800;color:#fff;letter-spacing:-0.02em;margin-bottom:1rem;line-height:1.4;}
+  .question-stats{display:flex;gap:1.5rem;margin-bottom:1.2rem;flex-wrap:wrap;}
+  .question-stat{font-size:0.85rem;}
+  .question-stat-value{font-family:'Space Grotesk',sans-serif;font-weight:800;color:#fff;margin-right:0.3rem;}
+  .question-domains{display:flex;gap:0.6rem;flex-wrap:wrap;margin-bottom:1rem;}
+  .question-sources{display:grid;grid-template-columns:1fr;gap:0.6rem;}
+  .question-source{background:rgba(0,0,0,0.2);border-radius:12px;padding:0.7rem;font-size:0.8rem;display:flex;gap:0.6rem;align-items:flex-start;}
+  .question-source-name{font-family:'Space Grotesk',sans-serif;font-weight:700;color:rgba(255,255,255,0.7);min-width:60px;text-transform:uppercase;font-size:0.7rem;}
+  .question-source-title{flex:1;color:#fff;}
 
   /* ACTIVE THREADS */
   .thread-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem;margin-bottom:3rem;}
@@ -103,7 +121,8 @@
 
   .thread-pair{font-family:'Space Grotesk',sans-serif;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:rgba(0,0,0,0.7);margin-bottom:0.8rem;}
   .thread-count{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.8rem,4vw,2.4rem);font-weight:800;letter-spacing:-0.03em;color:#fff;margin-bottom:0.6rem;}
-  .thread-label{font-size:0.85rem;color:rgba(255,255,255,0.75);line-height:1.5;}
+  .thread-label{font-size:0.85rem;color:rgba(255,255,255,0.75);line-height:1.5;margin-bottom:0.6rem;}
+  .thread-explanation{font-size:0.8rem;color:rgba(255,255,255,0.65);line-height:1.5;}
   .trend-badge{display:inline-block;margin-top:0.8rem;font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;padding:0.4rem 0.9rem;border-radius:100px;background:rgba(0,0,0,0.2);color:rgba(255,255,255,0.8);}
 
   /* SOURCE SPECTRUM */
@@ -128,6 +147,8 @@
   .source-badge{display:inline-block;width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.4);}
   .community-title{font-size:0.95rem;color:#fff;line-height:1.5;font-weight:500;margin-bottom:0.8rem;}
   .community-excerpt{font-size:0.85rem;color:rgba(235,230,245,0.6);line-height:1.5;}
+  .community-domains{display:flex;gap:0.4rem;flex-wrap:wrap;margin-top:0.6rem;}
+  .community-domain-tag{display:inline-block;padding:0.3rem 0.6rem;border-radius:6px;font-size:0.7rem;font-weight:600;text-transform:capitalize;}
 
   /* FOOTER */
   .footer{border-top:1px solid rgba(255,255,255,0.06);padding:2.5rem 0 3rem;font-size:0.8rem;color:rgba(235,230,245,0.4);display:flex;gap:1.5rem;flex-wrap:wrap;margin-top:2rem;}
@@ -157,10 +178,7 @@
     .stat-row{grid-template-columns:repeat(2,1fr);}
     .thread-grid{grid-template-columns:1fr;}
     .spectrum-bars{grid-template-columns:repeat(2,1fr);}
-    .pair-header{flex-direction:column;gap:0.8rem;}
-    .article-grid{grid-template-columns:1fr;}
-    .article-card{flex-direction:column;}
-    .article-source{min-width:auto;}
+    .tier-framing{grid-template-columns:1fr;}
   }
 
   @media(max-width:480px){
@@ -211,9 +229,19 @@
       <div class="label">Sources</div>
     </div>
     <div class="stat-block color-economics">
-      <div class="num" id="crossDomain">0</div>
+      <div class="num" id="crossDomainPct">0%</div>
       <div class="label">Cross-Domain</div>
     </div>
+  </div>
+
+  <h2 class="section-title">Top Stories Today</h2>
+  <div class="story-grid" id="topStoriesSection">
+    <div class="loading"><div class="spinner"></div> Loading top stories...</div>
+  </div>
+
+  <h2 class="section-title">Questions People Are Asking</h2>
+  <div class="questions-grid" id="questionsSection">
+    <div class="loading"><div class="spinner"></div> Loading questions...</div>
   </div>
 
   <h2 class="section-title">What Connects Us</h2>
@@ -225,11 +253,6 @@
   <div class="constellation">
     <svg id="constellationViz" width="100%" height="500" viewBox="0 0 600 500" style="background:rgba(0,0,0,0.2);border-radius:20px;"></svg>
     <div class="constellation-info">Hover over domains to see their connections. Size shows article volume today.</div>
-  </div>
-
-  <h2 class="section-title">Where Coverage Converges</h2>
-  <div class="pair-section" id="pairSection">
-    <div class="loading"><div class="spinner"></div> Loading narrative clusters...</div>
   </div>
 
   <h2 class="section-title">Active Threads</h2>
@@ -256,7 +279,7 @@
 
   <div class="footer">
     <span>Updated daily at 2 AM ET</span>
-    <span>Based on analysis from 71 sources across 10 domains</span>
+    <span id="footerSources">Based on analysis from 213 sources across 10 domains</span>
   </div>
 </div>
 
@@ -285,29 +308,6 @@ const DOMAIN_LABELS = {
   geopolitics: 'Geopolitics',
   domestic_politics: 'Politics',
   legal: 'Legal'
-};
-
-const PAIR_EXPLANATIONS = {
-  'governance+legal': {short:'Government actions running into the courts', people:'This shapes which laws get enforced, which rights hold up, and whether government agencies can do what they were created to do.'},
-  'domestic_politics+security': {short:'Political decisions affecting defense and public safety', people:'Military funding, veterans\u2019 services, policing policy, and border security all live at this intersection, and changes here affect communities directly.'},
-  'domestic_politics+governance': {short:'Political battles over how agencies are run', people:'This is about the government services people rely on: whether agencies are funded, staffed, and allowed to function.'},
-  'economics+security': {short:'Conflict and military spending hitting markets', people:'Defense budgets, trade disruptions, and geopolitical instability affect gas prices, supply chains, and retirement accounts.'},
-  'domestic_politics+legal': {short:'Political battles playing out in courts', people:'When legislation gets challenged or blocked, the outcome determines what rights and protections actually reach people.'},
-  'climate+security': {short:'Environmental change creating security threats', people:'Extreme weather straining military resources, water scarcity fueling conflict, and disaster preparedness all affect where and how safely people can live.'},
-  'climate+economics': {short:'Environmental shifts affecting costs and jobs', people:'Energy prices, food costs, insurance rates, and the job market in fossil fuel and renewable energy communities are all shaped here.'},
-  'ai+labor': {short:'Automation changing jobs and pay', people:'Which jobs are being automated, which new ones are emerging, and what retraining looks like for workers going through the transition.'},
-  'ai+economics': {short:'AI reshaping markets and business', people:'Stock market concentration in tech, startup disruption, and whether productivity gains translate to higher wages or just higher profits.'},
-  'security+geopolitics': {short:'Military conflict and international tensions', people:'Wars, alliances, and arms deals that determine where tax money goes and whether families have members deployed abroad.'},
-  'economics+labor': {short:'Jobs, wages, and economic inequality', people:'Hiring trends, wage growth (or stagnation), cost of living, and whether economic expansion is reaching working people.'},
-  'domestic_politics+information': {short:'How political information reaches people', people:'Media ownership, algorithm-driven news feeds, and political advertising shape what voters know and what they never hear about.'},
-  'information+security': {short:'Coverage of conflicts and defense', people:'How wars and security threats are framed in the media affects public opinion on military spending and foreign policy.'},
-  'climate+labor': {short:'Energy transition and workers', people:'Coal miners, oil workers, solar installers, and everyone whose livelihood depends on how fast and how fairly the energy economy shifts.'},
-  'governance+economics': {short:'Government policy shaping the economy', people:'Tax policy, trade agreements, regulation, and spending decisions that determine whether the economy works for most people or just a few.'},
-  'governance+security': {short:'Government agencies and national security', people:'Intelligence oversight, military leadership, and the balance between security and civil liberties in everyday life.'},
-  'ai+information': {short:'AI changing how information spreads', people:'Deepfakes, AI-generated content, algorithmic curation, and the growing difficulty of knowing what\u2019s real online.'},
-  'ai+governance': {short:'Government trying to keep up with AI', people:'Regulation, procurement, and whether AI gets deployed in ways that are accountable to the public or not.'},
-  'legal+labor': {short:'Workers\u2019 rights in the courts', people:'Wage theft cases, union rights, workplace safety enforcement, and gig worker classification directly affect paychecks and protections.'},
-  'economics+geopolitics': {short:'Global power shifts affecting the economy', people:'Trade wars, sanctions, currency fluctuations, and supply chain disruptions that show up in the prices people pay.'}
 };
 
 let articlesData = null;
@@ -339,12 +339,14 @@ function formatDate(dateStr) {
 function render() {
   renderHeader();
   renderStats();
+  renderTopStories();
+  renderQuestions();
   renderWhatConnects();
   renderConstellation();
-  renderNarrativePairs();
   renderActiveThreads();
   renderSourceSpectrum();
   renderCommunityStories();
+  updateFooter();
 }
 
 function renderHeader() {
@@ -352,7 +354,7 @@ function renderHeader() {
   document.getElementById('headline').textContent = `${dailyData.summary.total_stories} stories. ${dailyData.summary.sources_reporting} sources. Here's what connects.`;
 
   const topDomain = dailyData.summary.top_domain;
-  const summary = `Across our network today, stories are clustering around security, politics, and governance. ${topDomain} stories dominate the news cycle, but the real signal is in how these domains collide with each other. The intersection points reveal the tensions shaping this moment: military strategy affecting domestic politics, government actions reaching the courts, economic uncertainty amid geopolitical risk. Read through these clusters to see where the real momentum is building.`;
+  const summary = `Across our network today, stories are clustering around ${topDomain}, intersecting with governance, politics, and economics. The real signal is in how these domains collide with each other. The intersection points reveal the tensions shaping this moment: where decisions get challenged in courts, where policy affects people's lives, where economic uncertainty meets security risk. Read through these clusters to see where the real momentum is building.`;
 
   document.getElementById('bigPicture').textContent = summary;
 }
@@ -360,96 +362,147 @@ function renderHeader() {
 function renderStats() {
   document.getElementById('totalStories').textContent = dailyData.summary.total_stories.toLocaleString();
   document.getElementById('totalSources').textContent = dailyData.summary.sources_reporting;
-  document.getElementById('crossDomain').textContent = dailyData.summary.cross_domain;
+  document.getElementById('crossDomainPct').textContent = dailyData.summary.cross_domain_pct + '%';
+}
+
+function renderTopStories() {
+  const container = document.getElementById('topStoriesSection');
+  container.innerHTML = '';
+
+  dailyData.top_stories.slice(0, 5).forEach(story => {
+    const card = document.createElement('div');
+    card.className = 'story-card';
+
+    const domainPills = story.domains.map((d, idx) => {
+      const domKey = story.domain_keys[idx] || d.toLowerCase();
+      const color = DOMAIN_COLORS[domKey] || '#666';
+      return `<div class="domain-pill" style="background:${color};color:${getTextColor(color)};}">${d}</div>`;
+    }).join('');
+
+    const tierFramingHtml = Object.entries(story.tier_framing).map(([tierName, tierData]) => {
+      const tierColor = getTierColor(tierName);
+      const sample = tierData.sample;
+      return `
+        <div class="tier-frame">
+          <div class="tier-frame-label"><span class="tier-dot ${tierName}"></span>${tierName === 'specialist' ? 'Specialist' : tierName.charAt(0).toUpperCase() + tierName.slice(1)}</div>
+          <div class="tier-frame-count">${tierData.count} articles</div>
+          <div class="tier-frame-sample">${sample.title}</div>
+        </div>
+      `;
+    }).join('');
+
+    const articleRows = story.articles.slice(0, 3).map(article => {
+      const tierColor = getTierColor(article.tier);
+      return `
+        <a href="${article.url || '#'}" target="_blank" rel="noopener" class="article-row" style="text-decoration:none;">
+          <div class="article-source">
+            <span class="tier-dot ${article.tier}"></span>
+            ${article.source}
+            <div class="source-tooltip">${article.context || 'Source information'}</div>
+          </div>
+          <div class="article-title">${article.title}</div>
+        </a>
+      `;
+    }).join('');
+
+    card.innerHTML = `
+      <div class="story-headline">${story.headline}</div>
+      <div class="story-meta">
+        <div class="meta-item"><span class="story-meta">${story.source_count} sources</span></div>
+        <div class="meta-item"><span class="story-meta">${story.tier_count} tiers</span></div>
+      </div>
+      <div class="story-domains">${domainPills}</div>
+      <div class="tier-framing">${tierFramingHtml}</div>
+      <div class="story-articles">${articleRows}</div>
+    `;
+
+    container.appendChild(card);
+  });
+}
+
+function renderQuestions() {
+  const container = document.getElementById('questionsSection');
+  container.innerHTML = '';
+
+  dailyData.questions.slice(0, 3).forEach(q => {
+    const card = document.createElement('div');
+    card.className = 'question-card';
+
+    const domainPills = q.domains.map(d => {
+      const domKey = d.toLowerCase();
+      const color = DOMAIN_COLORS[domKey] || '#666';
+      return `<div class="domain-pill" style="background:${color};color:${getTextColor(color)};margin-bottom:0.5rem;">${d}</div>`;
+    }).join('');
+
+    const sourcesByTier = q.sources_by_tier || {};
+    const sourcesHtml = Object.entries(sourcesByTier).map(([tierName, sources]) => {
+      return sources.slice(0, 2).map(src => {
+        return `
+          <div class="question-source">
+            <div class="question-source-name"><span class="tier-dot ${tierName}"></span>${tierName}</div>
+            <div class="question-source-title">${src.title}</div>
+          </div>
+        `;
+      }).join('');
+    }).join('');
+
+    card.innerHTML = `
+      <div class="question-text">${q.question}</div>
+      <div class="question-stats">
+        <div class="question-stat"><span class="question-stat-value">${q.article_count}</span> articles</div>
+      </div>
+      <div class="question-domains">${domainPills}</div>
+      <div style="font-size:0.8rem;color:rgba(235,230,245,0.5);margin-bottom:1rem;">Covered across multiple sources:</div>
+      <div class="question-sources">${sourcesHtml || '<div style="color:rgba(235,230,245,0.4);">Loading sources...</div>'}</div>
+    `;
+
+    container.appendChild(card);
+  });
 }
 
 function renderWhatConnects() {
   const container = document.getElementById('connectsSection');
   container.innerHTML = '';
 
-  // Get today's articles
-  const articles = articlesData.articles || [];
-  const today = dailyData.date;
-  const todayArts = articles.filter(a => a.date === today);
-  const use = todayArts.length > 20 ? todayArts : articles;
-
-  // Build source tier lookup from articles
-  const srcTier = {};
-  use.forEach(a => { if(a.source && a.tier) srcTier[a.source] = a.tier; });
-
-  // Cross-domain articles = shared attention
-  const crossArts = use.filter(a => a.cross_domain);
-  const crossPct = use.length ? Math.round(crossArts.length / use.length * 100) : 0;
-
-  // Group articles by their domain combinations to find convergence clusters
-  const clusters = {};
-  crossArts.forEach(a => {
-    const doms = (a.domains || []).sort().join('+');
-    if(!clusters[doms]) clusters[doms] = [];
-    clusters[doms].push(a);
-  });
-
-  // Find clusters where diverse sources cover the same intersection
-  const richClusters = Object.entries(clusters)
-    .map(([doms, arts]) => {
-      const sources = [...new Set(arts.map(a => a.source))];
-      const tiers = [...new Set(arts.map(a => {
-        const t = a.tier === 'lived' ? 'community' : a.tier === 'domain' ? 'specialist' : a.tier;
-        return t;
-      }).filter(Boolean))];
-      return { doms, arts, sources, tiers, tierDiversity: tiers.length };
-    })
-    .filter(c => c.sources.length >= 3)
-    .sort((a, b) => b.tierDiversity - a.tierDiversity || b.sources.length - a.sources.length)
-    .slice(0, 3);
-
-  // Big stat
   const statDiv = document.createElement('div');
   statDiv.innerHTML = `
     <div class="connects-intro">Today's news looks fragmented until you see the overlaps. When you look at what ${dailyData.summary.sources_reporting} sources from across the political, geographic, and demographic spectrum are actually covering, something comes through clearly: the same forces are showing up everywhere. The stories that matter cross every boundary we use to divide ourselves.</div>
     <div class="connects-stat">
-      <div class="big">${crossPct}%</div>
+      <div class="big">${dailyData.summary.cross_domain_pct}%</div>
       <div class="context">of today's stories touch more than one domain, meaning the issues people care about are deeply interconnected regardless of where they get their news.</div>
     </div>
   `;
   container.appendChild(statDiv);
 
-  // Render convergence clusters
-  if(richClusters.length) {
-    richClusters.forEach(cluster => {
-      const domLabels = cluster.doms.split('+').map(d => DOMAIN_LABELS[d] || d).join(' + ');
-      const domColors = cluster.doms.split('+').map(d => DOMAIN_COLORS[d] || '#666');
-
+  if (dailyData.what_connects && dailyData.what_connects.length > 0) {
+    dailyData.what_connects.slice(0, 3).forEach(item => {
       const card = document.createElement('div');
       card.className = 'shared-story';
-      card.style.borderLeft = '5px solid ' + domColors[0];
 
-      const tierDesc = cluster.tiers.map(t => {
-        const labels = {national:'National', international:'International', community:'Community', specialist:'Specialist', explainer:'Explainer', analysis:'Think Tank'};
-        return labels[t] || t;
-      }).join(', ');
-
-      card.innerHTML = `
-        <div class="shared-story-topic">${domLabels}</div>
-        <div class="shared-story-sub">${cluster.sources.length} sources across ${cluster.tierDiversity} tiers (${tierDesc}) are covering this intersection right now.</div>
-        <div class="headline-strip">
-          ${cluster.arts.slice(0, 5).map(a => {
-            const tier = a.tier === 'lived' ? 'community' : a.tier === 'domain' ? 'specialist' : (a.tier || 'national');
-            return `<a class="headline-row" href="${a.url || '#'}" target="_blank" rel="noopener" style="text-decoration:none;">
-              <div class="headline-src"><span class="tier-dot ${tier}"></span>${a.source || 'Unknown'}</div>
-              <div class="headline-text">${a.title}</div>
-            </a>`;
-          }).join('')}
+      const spectrumDots = `
+        <div class="spectrum-dots">
+          ${item.left_sources && item.left_sources.length > 0 ? `<span class="spectrum-dot" style="background:#6652FF;" title="Left-leaning sources"></span>` : ''}
+          ${item.right_sources && item.right_sources.length > 0 ? `<span class="spectrum-dot" style="background:#7B1FA2;" title="Right-leaning sources"></span>` : ''}
+          ${item.international_sources && item.international_sources.length > 0 ? `<span class="spectrum-dot" style="background:#1976D2;" title="International sources"></span>` : ''}
+          ${item.community_sources && item.community_sources.length > 0 ? `<span class="spectrum-dot" style="background:#FF5400;" title="Community sources"></span>` : ''}
         </div>
       `;
+
+      const domainLabels = (item.domains || []).map(d => DOMAIN_LABELS[d] || d).join(' + ');
+
+      card.innerHTML = `
+        <div class="shared-story-topic">${item.headline}</div>
+        <div class="shared-story-sub">${item.total_sources} sources across ${item.spectrum_segments} segments covering this story</div>
+        ${spectrumDots}
+      `;
+
       container.appendChild(card);
     });
   }
 
-  // Add the thesis line
   const thesis = document.createElement('div');
   thesis.style.cssText = 'font-size:1.05rem;color:rgba(235,230,245,0.55);line-height:1.8;margin-top:1.5rem;max-width:680px;';
-  thesis.textContent = 'The colored dots show where each source comes from: national outlets, international press, community voices, and specialist publications all covering the same ground. That shared attention is the signal. It means these issues belong to everyone.';
+  thesis.textContent = 'When left-leaning, right-leaning, international, and community sources all cover the same story, it signals an issue that cuts across all our divides. That shared attention is the signal. It means these issues belong to everyone.';
   container.appendChild(thesis);
 }
 
@@ -556,89 +609,13 @@ function highlightDomain(svg, domain) {
     line.setAttribute('opacity', 0.15);
   });
 
-  const domainLines = Array.from(lines).filter(line => {
-    const x1 = line.getAttribute('x1');
-    const x2 = line.getAttribute('x2');
-    // Match by proximity to find connected lines
-    return true; // Simplified for now
-  });
-
+  const domainLines = Array.from(lines).filter(line => true);
   domainLines.forEach(line => line.setAttribute('opacity', 0.8));
 }
 
 function clearHighlight(svg) {
   svg.querySelectorAll('line').forEach(line => {
     line.setAttribute('opacity', 0.6);
-  });
-}
-
-function renderNarrativePairs() {
-  const container = document.getElementById('pairSection');
-  container.innerHTML = '';
-
-  dailyData.narrative_divergence.slice(0, 3).forEach((item, idx) => {
-    const [d1, d2] = item.topic.split(' + ').map(t => {
-      const mapped = {
-        'Politics': 'domestic_politics',
-        'Governance': 'governance',
-        'Legal': 'legal',
-        'Security': 'security',
-        'Economics': 'economics',
-        'Information': 'information',
-        'AI': 'ai',
-        'Climate': 'climate',
-        'Labor': 'labor',
-        'Geopolitics': 'geopolitics'
-      };
-      return mapped[t] || t.toLowerCase();
-    });
-
-    const color1 = DOMAIN_COLORS[d1];
-    const color2 = DOMAIN_COLORS[d2];
-
-    const card = document.createElement('div');
-    card.className = 'pair-card';
-    card.style.borderLeftWidth = '6px';
-    card.style.borderLeftColor = color1;
-    card.style.background = `linear-gradient(135deg, rgba(${hexToRgb(color1).join(',')},0.08) 0%, rgba(${hexToRgb(color2).join(',')},0.08) 100%)`;
-
-    const header = document.createElement('div');
-    header.className = 'pair-header';
-    header.innerHTML = `
-      <div class="pair-title">${item.topic}</div>
-      <div class="pair-count">${item.source_count} sources</div>
-    `;
-
-    const desc = document.createElement('div');
-    desc.className = 'pair-desc';
-    desc.textContent = item.theme;
-
-    const grid = document.createElement('div');
-    grid.className = 'article-grid';
-
-    item.articles.slice(0, 5).forEach(article => {
-      const articleEl = document.createElement('a');
-      articleEl.className = 'article-card';
-      articleEl.href = article.url;
-      articleEl.target = '_blank';
-      articleEl.rel = 'noopener';
-
-      const paywallBadge = article.paywall ? '<div class="paywall">Paywall</div>' : '';
-
-      articleEl.innerHTML = `
-        <div class="article-source">${article.source}</div>
-        <div class="article-title">${article.title}</div>
-        ${paywallBadge}
-      `;
-
-      grid.appendChild(articleEl);
-    });
-
-    card.appendChild(header);
-    card.appendChild(desc);
-    card.appendChild(grid);
-
-    container.appendChild(card);
   });
 }
 
@@ -657,18 +634,13 @@ function renderActiveThreads() {
     block.className = 'thread-block';
     block.style.background = `linear-gradient(135deg, ${color1}cc 0%, ${color2}cc 100%)`;
 
-    const pairKey = [d1, d2].sort().join('+');
-    const pairInfo = PAIR_EXPLANATIONS[pairKey];
-    const shortLabel = pairInfo ? pairInfo.short : `${DOMAIN_LABELS[d1]} and ${DOMAIN_LABELS[d2]} intersection`;
-    const peopleContext = pairInfo ? pairInfo.people : '';
-
-    const trend = thread.trend === 'rising' ? '↑ Rising' : thread.trend === 'falling' ? '↓ Falling' : 'Stable';
+    const trend = thread.trend === 'rising' ? '↑ Rising' : thread.trend === 'falling' ? '↓ Falling' : thread.trend === 'new' ? '• New' : 'Stable';
 
     block.innerHTML = `
       <div class="thread-pair">${DOMAIN_LABELS[d1]} + ${DOMAIN_LABELS[d2]}</div>
       <div class="thread-count">${thread.today_count}</div>
-      <div class="thread-label">${shortLabel}</div>
-      ${peopleContext ? `<div style="font-size:0.8rem;color:rgba(255,255,255,0.6);line-height:1.55;margin-top:0.6rem;">${peopleContext}</div>` : ''}
+      <div class="thread-label">${thread.label || `${DOMAIN_LABELS[d1]} and ${DOMAIN_LABELS[d2]} intersection`}</div>
+      <div class="thread-explanation">${thread.explanation || ''}</div>
       <div class="trend-badge">${trend}</div>
     `;
 
@@ -681,69 +653,35 @@ function renderSourceSpectrum() {
   container.innerHTML = '';
 
   const spectrum = dailyData.source_spectrum || {};
-  const total = Object.values(spectrum).reduce((s,c)=>s+c,0) || 1;
-
-  // Count unique sources per tier from articles
-  const tierSources = {};
-  const tierDomains = {};
-  const allArticles = articlesData.articles || [];
-  const today = dailyData.date;
-  const todayArticles = allArticles.filter(a => a.date === today);
-  const useArticles = todayArticles.length > 10 ? todayArticles : allArticles;
-  useArticles.forEach(a => {
-    const t = a.tier === 'lived' ? 'community' : a.tier === 'domain' ? 'specialist' : a.tier;
-    if(!tierSources[t]) tierSources[t] = new Set();
-    if(!tierDomains[t]) tierDomains[t] = {};
-    tierSources[t].add(a.source);
-    (a.domains||[]).forEach(d => {tierDomains[t][d] = (tierDomains[t][d]||0)+1;});
-  });
-
-  // Calculate what each tier emphasizes compared to overall average
-  const overallDoms = {};
-  useArticles.forEach(a => (a.domains||[]).forEach(d => overallDoms[d]=(overallDoms[d]||0)+1));
-  const overallTotal = Object.values(overallDoms).reduce((s,c)=>s+c,0) || 1;
+  const total = Object.values(spectrum).reduce((s, c) => s + c, 0) || 1;
 
   const tiers = [
-    { key:'national', label:'National Outlets', color:'#6652FF',
-      what:'Major US news organizations across the political spectrum, from NYT to Fox News to NPR.',
-      insight:'Set the mainstream narrative. Frame stories through politics and economics.' },
-    { key:'international', label:'International Sources', color:'#1976D2',
-      what:'Outlets from outside the US: BBC, Al Jazeera, Deutsche Welle, Guardian, and more.',
-      insight:'See the security and geopolitical picture that American outlets often underplay.' },
-    { key:'community', label:'Community Voices', color:'#FF5400',
-      what:'Outlets serving specific communities: Indigenous, Black, Latino, LGBTQ+, faith, rural, and regional.',
-      insight:'Cover how policy actually lands on people. Stories that national outlets miss entirely.' },
-    { key:'specialist', label:'Specialist Publications', color:'#00C2A8',
-      what:'Deep-domain expertise: climate science, labor law, technology, security.',
-      insight:'Go deeper on a single topic than any generalist outlet can.' },
-    { key:'explainer', label:'Explainers', color:'#FF9800',
-      what:'Sources that make complex topics accessible: Vox, The Conversation, 404 Media.',
-      insight:'Help connect what happened to why it matters.' },
-    { key:'analysis', label:'Think Tanks', color:'#4CAF50',
-      what:'Research organizations from multiple ideological perspectives.',
-      insight:'Provide the data and policy analysis behind the headlines.' }
+    { key: 'national', label: 'National Outlets', color: '#6652FF',
+      what: 'Major US news organizations across the political spectrum, from NYT to Fox News to NPR.',
+      insight: 'Set the mainstream narrative. Frame stories through politics and economics.' },
+    { key: 'international', label: 'International Sources', color: '#1976D2',
+      what: 'Outlets from outside the US: BBC, Al Jazeera, Deutsche Welle, Guardian, and more.',
+      insight: 'See the security and geopolitical picture that American outlets often underplay.' },
+    { key: 'community', label: 'Community Voices', color: '#FF5400',
+      what: 'Outlets serving specific communities: Indigenous, Black, Latino, LGBTQ+, faith, rural, and regional.',
+      insight: 'Cover how policy actually lands on people. Stories that national outlets miss entirely.' },
+    { key: 'specialist', label: 'Specialist Publications', color: '#00C2A8',
+      what: 'Deep-domain expertise: climate science, labor law, technology, security.',
+      insight: 'Go deeper on a single topic than any generalist outlet can.' },
+    { key: 'explainer', label: 'Explainers', color: '#FF9800',
+      what: 'Sources that make complex topics accessible: Vox, The Conversation, 404 Media.',
+      insight: 'Help connect what happened to why it matters.' },
+    { key: 'analysis', label: 'Think Tanks', color: '#4CAF50',
+      what: 'Research organizations from multiple ideological perspectives.',
+      insight: 'Provide the data and policy analysis behind the headlines.' }
   ];
 
   tiers.forEach(tier => {
     const count = spectrum[tier.key] || 0;
-    const pct = Math.round(count/total*100);
-    const srcCount = tierSources[tier.key]?.size || 0;
-    const doms = tierDomains[tier.key] || {};
-    const domTotal = Object.values(doms).reduce((s,c)=>s+c,0) || 1;
-
-    // Find what this tier emphasizes differently
-    let emphasis = '';
-    const diffs = [];
-    Object.entries(doms).forEach(([d,c]) => {
-      const tierPct = c/domTotal*100;
-      const avgPct = (overallDoms[d]||0)/overallTotal*100;
-      if(tierPct - avgPct > 4) diffs.push({domain: DOMAIN_LABELS[d]||d, diff: tierPct-avgPct});
-    });
-    diffs.sort((a,b)=>b.diff-a.diff);
-    if(diffs.length) emphasis = 'Emphasizes ' + diffs.slice(0,2).map(d=>d.domain).join(' and ') + ' more than the average.';
+    const pct = Math.round(count / total * 100);
 
     const card = document.createElement('div');
-    card.style.cssText = 'background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:20px;padding:1.8rem 2rem;margin-bottom:0.8rem;border-left:5px solid '+tier.color+';';
+    card.style.cssText = 'background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:20px;padding:1.8rem 2rem;margin-bottom:0.8rem;border-left:5px solid ' + tier.color + ';';
     card.innerHTML = `
       <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:0.5rem;">
         <div style="font-family:'Space Grotesk',sans-serif;font-size:1.2rem;font-weight:800;color:${tier.color};">${tier.label}</div>
@@ -751,8 +689,7 @@ function renderSourceSpectrum() {
       </div>
       <div style="font-size:0.85rem;color:rgba(235,230,245,0.55);line-height:1.6;margin-bottom:0.4rem;">${tier.what}</div>
       <div style="font-size:0.85rem;color:rgba(235,230,245,0.75);line-height:1.6;font-weight:500;">${tier.insight}</div>
-      ${emphasis ? `<div style="font-size:0.78rem;color:${tier.color};margin-top:0.5rem;font-weight:600;">${emphasis}</div>` : ''}
-      <div style="font-size:0.72rem;color:rgba(235,230,245,0.3);margin-top:0.4rem;">${srcCount} sources contributing &middot; ${pct}% of today's coverage</div>
+      <div style="font-size:0.72rem;color:rgba(235,230,245,0.3);margin-top:0.4rem;">${pct}% of today's coverage</div>
     `;
     container.appendChild(card);
   });
@@ -762,36 +699,52 @@ function renderCommunityStories() {
   const container = document.getElementById('communityCards');
   container.innerHTML = '';
 
-  // Get community articles from narrative divergence
-  const communityArticles = [];
-  dailyData.narrative_divergence.forEach(item => {
-    item.articles.forEach(article => {
-      if (article.source && !['New York Times', 'AP News', 'Reuters', 'NPR', 'Bloomberg', 'BBC', 'CNN', 'Fox News', 'NBC', 'CBS', 'Washington Post', 'Wall Street Journal', 'Financial Times', 'The Guardian', 'The New York Times'].includes(article.source)) {
-        if (!communityArticles.find(a => a.url === article.url)) {
-          communityArticles.push(article);
-        }
-      }
+  if (dailyData.community_exclusive && dailyData.community_exclusive.length > 0) {
+    dailyData.community_exclusive.slice(0, 6).forEach(story => {
+      const card = document.createElement('a');
+      card.className = 'community-card';
+      card.href = story.url;
+      card.target = '_blank';
+      card.rel = 'noopener';
+      card.style.textDecoration = 'none';
+
+      const domainTags = (story.domains || []).map(d => {
+        const domKey = d.toLowerCase();
+        const color = DOMAIN_COLORS[domKey] || '#666';
+        return `<div class="community-domain-tag" style="background:${color};color:${getTextColor(color)};">${d}</div>`;
+      }).join('');
+
+      card.innerHTML = `
+        <div class="community-source">
+          <span class="source-badge"></span>
+          ${story.source}
+        </div>
+        <div class="community-title">${story.title}</div>
+        <div class="community-excerpt">${story.text_preview || story.context || 'Specialist coverage'}</div>
+        <div class="community-domains">${domainTags}</div>
+      `;
+
+      container.appendChild(card);
     });
-  });
+  }
+}
 
-  communityArticles.slice(0, 6).forEach(article => {
-    const card = document.createElement('a');
-    card.className = 'community-card';
-    card.href = article.url;
-    card.target = '_blank';
-    card.rel = 'noopener';
+function getTierColor(tierName) {
+  const tierColors = {
+    national: '#6652FF',
+    international: '#1976D2',
+    community: '#FF5400',
+    specialist: '#00C2A8',
+    explainer: '#FF9800',
+    analysis: '#4CAF50'
+  };
+  return tierColors[tierName] || '#666';
+}
 
-    card.innerHTML = `
-      <div class="community-source">
-        <span class="source-badge"></span>
-        ${article.source}
-      </div>
-      <div class="community-title">${article.title}</div>
-      <div class="community-excerpt">${article.connection || 'Covering stories beyond mainstream coverage'}</div>
-    `;
-
-    container.appendChild(card);
-  });
+function getTextColor(hexColor) {
+  const rgb = hexToRgb(hexColor);
+  const brightness = (rgb[0] * 299 + rgb[1] * 587 + rgb[2] * 114) / 1000;
+  return brightness > 155 ? '#000' : '#fff';
 }
 
 function hexToRgb(hex) {
@@ -801,6 +754,11 @@ function hexToRgb(hex) {
     parseInt(result[2], 16),
     parseInt(result[3], 16)
   ] : [0, 0, 0];
+}
+
+function updateFooter() {
+  const footerEl = document.getElementById('footerSources');
+  footerEl.textContent = `Based on analysis from ${dailyData.summary.sources_reporting}+ sources across 10 domains`;
 }
 
 // Load data and render
