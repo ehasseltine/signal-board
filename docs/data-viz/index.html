@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Visualizations of how 239 sources cover today's biggest stories—showing where coverage comes from, what gets missed, and how different outlets frame the same story.">
-  <meta property="og:title" content="Data Visualizations — Signal Board">
-  <meta property="og:description" content="Where the coverage gaps hide. See source patterns, coverage distribution, and how different outlets frame the same story.">
+  <meta name="description" content="Where the news comes from: visualizations showing 239 sources across 40 countries, their coverage gaps, and how different outlets frame the same story.">
+  <meta property="og:title" content="Where the News Comes From — Signal Board">
+  <meta property="og:description" content="See where Signal Board's 239 sources are headquartered, which communities are underreported, and how different outlets frame the same story.">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary">
   <!-- canonical removed - using relative paths -->
-  <title>Data Visualizations — Signal Board</title>
+  <title>Where the News Comes From — Signal Board</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
@@ -217,295 +217,224 @@
       margin-top: 1rem;
     }
 
-    /* VISUALIZATION GRID */
+    /* VISUALIZATION SECTIONS */
     .viz-section {
       margin: 3rem 0;
       padding: 2rem;
       border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 12px;
-      background: linear-gradient(135deg, rgba(102, 82, 255, 0.03) 0%, rgba(0, 194, 168, 0.02) 100%);
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.035);
       backdrop-filter: blur(10px);
     }
 
     .viz-section h2 {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.4rem;
+      font-size: 1.6rem;
       font-weight: 700;
       margin-bottom: 0.5rem;
       color: #fff;
     }
 
     .viz-section .subtitle {
-      font-size: 0.9rem;
-      color: rgba(235, 230, 245, 0.65);
+      font-size: 0.95rem;
+      color: rgba(235, 230, 245, 0.75);
       margin-bottom: 2rem;
+      max-width: 720px;
     }
 
-    /* VIZ 1: STORY VOLUME */
-    .volume-chart {
+    /* MAP CONTAINERS */
+    .map-container {
       display: flex;
-      flex-direction: column;
-      gap: 1.2rem;
-    }
-
-    .volume-bar-group {
-      display: flex;
-      align-items: flex-end;
-      gap: 0.8rem;
-    }
-
-    .volume-label {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 0.9rem;
-      font-weight: 600;
-      width: 180px;
-      color: #fff;
-      flex-shrink: 0;
-    }
-
-    .volume-bars {
-      display: flex;
-      align-items: flex-end;
-      gap: 0.3rem;
-      flex: 1;
-      height: 40px;
-    }
-
-    .volume-bar-today {
-      border-radius: 4px 4px 0 0;
-      transition: opacity 0.2s;
-    }
-
-    .volume-bar-yesterday {
-      opacity: 0.25;
-      border-radius: 4px 4px 0 0;
-    }
-
-    .volume-stats {
-      display: flex;
-      align-items: baseline;
-      gap: 1rem;
-      margin-left: 180px;
-      font-size: 0.85rem;
-    }
-
-    .volume-today {
-      font-family: 'Space Grotesk', sans-serif;
-      font-weight: 700;
-      color: #fff;
-    }
-
-    .volume-change {
-      color: rgba(235, 230, 245, 0.65);
-    }
-
-    .volume-change.positive {
-      color: #4CAF50;
-    }
-
-    .volume-change.negative {
-      color: #FF5400;
-    }
-
-    /* VIZ 2: SOURCE TIERS */
-    .source-tier-group {
-      margin-bottom: 1.5rem;
-    }
-
-    .source-tier-label {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: #fff;
-      margin-bottom: 0.6rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-    }
-
-    .source-tier-count {
-      font-size: 0.8rem;
-      color: rgba(235, 230, 245, 0.65);
-      font-family: 'Inter', sans-serif;
-      font-weight: 500;
-    }
-
-    .source-tier-bar {
-      height: 24px;
-      border-radius: 4px;
-      display: flex;
-      overflow: hidden;
-      background: rgba(255, 255, 255, 0.05);
-    }
-
-    .source-tier-segment {
-      height: 100%;
-      display: flex;
-      align-items: center;
       justify-content: center;
-      color: #fff;
-      font-size: 0.7rem;
-      font-weight: 600;
-      transition: opacity 0.2s;
+      margin: 2rem 0;
+      overflow-x: auto;
     }
 
-    .source-tier-segment:hover {
-      opacity: 0.8;
+    .map-svg {
+      max-width: 100%;
+      height: auto;
     }
 
-    .source-tier-legend {
+    .world-map-legend,
+    .us-map-legend {
       display: flex;
       flex-wrap: wrap;
-      gap: 1rem;
-      margin-top: 1rem;
-      padding-top: 1rem;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
       border-top: 1px solid rgba(255, 255, 255, 0.06);
+      font-size: 0.85rem;
     }
 
     .legend-item {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
-      font-size: 0.8rem;
+      gap: 0.6rem;
     }
 
-    .legend-color {
-      width: 12px;
-      height: 12px;
-      border-radius: 2px;
+    .legend-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
       flex-shrink: 0;
     }
 
-    /* VIZ 3: COVERAGE GAPS */
-    .gaps-grid {
+    .legend-text {
+      color: rgba(235, 230, 245, 0.8);
+    }
+
+    /* PERSPECTIVE FRAMING */
+    .perspective-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.2rem;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
       margin-top: 1.5rem;
     }
 
-    .gap-card {
-      padding: 1.2rem;
+    .perspective-card {
+      padding: 1.5rem;
       border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 8px;
+      border-radius: 12px;
       background: rgba(255, 255, 255, 0.02);
     }
 
-    .gap-label {
+    .perspective-story {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: 0.9rem;
-      font-weight: 600;
+      font-size: 1rem;
+      font-weight: 700;
       color: #fff;
-      margin-bottom: 0.8rem;
+      margin-bottom: 1.2rem;
     }
 
-    .gap-badge {
-      display: inline-block;
-      padding: 0.4rem 0.8rem;
-      border-radius: 20px;
-      font-size: 0.75rem;
-      font-weight: 600;
-      margin-bottom: 0.8rem;
+    .perspective-columns {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
     }
 
-    .gap-badge.community-leads {
-      background: rgba(255, 84, 0, 0.2);
-      color: #FF5400;
-      border: 1px solid rgba(255, 84, 0, 0.3);
+    .perspective-column {
+      padding: 1rem;
+      border-left: 3px solid;
+      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.03);
     }
 
-    .gap-badge.national-dominates {
-      background: rgba(102, 82, 255, 0.2);
-      color: #6652FF;
-      border: 1px solid rgba(102, 82, 255, 0.3);
+    .perspective-column.national {
+      border-color: #6652FF;
     }
 
-    .gap-badge.balanced {
-      background: rgba(76, 175, 80, 0.2);
-      color: #4CAF50;
-      border: 1px solid rgba(76, 175, 80, 0.3);
+    .perspective-column.international {
+      border-color: #1976D2;
     }
 
-    .gap-explanation {
-      font-size: 0.85rem;
-      color: rgba(235, 230, 245, 0.75);
-      line-height: 1.6;
+    .perspective-column.community {
+      border-color: #FF5400;
     }
 
-    .gap-ratio {
-      font-size: 0.75rem;
-      color: rgba(235, 230, 245, 0.5);
-      margin-top: 0.6rem;
+    .perspective-label {
       font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
     }
 
-    /* VIZ 4: CROSS SPECTRUM */
-    .spectrum-grid {
+    .perspective-label::before {
+      content: '';
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+    }
+
+    .perspective-column.national .perspective-label::before {
+      background: #6652FF;
+    }
+
+    .perspective-column.international .perspective-label::before {
+      background: #1976D2;
+    }
+
+    .perspective-column.community .perspective-label::before {
+      background: #FF5400;
+    }
+
+    .perspective-text {
+      font-size: 0.8rem;
+      color: rgba(235, 230, 245, 0.7);
+      line-height: 1.5;
+    }
+
+    /* COVERAGE GAPS / BALANCE BEAM */
+    .gaps-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 1.5rem;
       margin-top: 1.5rem;
     }
 
-    .spectrum-card {
+    .gap-card {
       padding: 1.5rem;
       border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 8px;
+      border-radius: 12px;
       background: rgba(255, 255, 255, 0.02);
     }
 
-    .spectrum-story {
+    .gap-story {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: #fff;
-      margin-bottom: 1rem;
-    }
-
-    .spectrum-analysis {
-      font-size: 0.85rem;
-      color: rgba(235, 230, 245, 0.8);
-      line-height: 1.6;
-      margin-bottom: 1rem;
-      padding-bottom: 1rem;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-    }
-
-    .spectrum-sources {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-      gap: 1rem;
-    }
-
-    .source-group {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-
-    .source-group-label {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 0.75rem;
+      font-size: 1rem;
       font-weight: 700;
-      color: rgba(235, 230, 245, 0.65);
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    .source-count-badge {
-      display: inline-block;
-      font-size: 0.85rem;
-      font-weight: 600;
       color: #fff;
-      padding: 0.3rem 0.6rem;
-      border-radius: 12px;
-      margin-bottom: 0.4rem;
+      margin-bottom: 1rem;
     }
 
-    .source-names {
+    .balance-beam {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .beam-bar {
+      flex: 1;
+      height: 12px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 6px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .beam-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #FF5400, #6652FF);
+      position: relative;
+      transition: width 0.3s ease;
+    }
+
+    .beam-label {
+      font-family: 'Space Grotesk', sans-serif;
       font-size: 0.75rem;
+      font-weight: 600;
       color: rgba(235, 230, 245, 0.7);
-      line-height: 1.5;
+      white-space: nowrap;
+    }
+
+    .gap-insight {
+      font-size: 0.85rem;
+      color: rgba(235, 230, 245, 0.75);
+      line-height: 1.6;
+      margin-bottom: 0.8rem;
+    }
+
+    .gap-ratio {
+      font-size: 0.75rem;
+      color: rgba(235, 230, 245, 0.5);
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600;
     }
 
     /* FOOTER */
@@ -566,43 +495,17 @@
         font-size: 0.75rem;
       }
 
-      .volume-bar-group {
-        flex-direction: column;
-        gap: 0.4rem;
-      }
-
-      .volume-label {
-        width: 100%;
-      }
-
-      .volume-bars {
-        width: 100%;
-      }
-
-      .volume-stats {
-        margin-left: 0;
-        font-size: 0.75rem;
-      }
-
-      .gap-card {
-        padding: 1rem;
-      }
-
-      .spectrum-card {
-        padding: 1rem;
-      }
-
-      .spectrum-sources {
-        grid-template-columns: 1fr;
-      }
-
       .viz-section {
         padding: 1.5rem;
         margin: 2rem 0;
       }
 
       .viz-section h2 {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
+      }
+
+      .perspective-columns {
+        grid-template-columns: 1fr;
       }
 
       .site-nav {
@@ -614,6 +517,19 @@
       .nav-links {
         width: 100%;
         justify-content: flex-start;
+      }
+
+      .gap-card {
+        padding: 1rem;
+      }
+
+      .balance-beam {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .beam-bar {
+        width: 100%;
       }
     }
   </style>
@@ -638,43 +554,71 @@
 
   <main id="main" class="wrap">
     <div class="header">
-      <h1>Where the Coverage Hides</h1>
-      <p>These visualizations show patterns in how 239 sources cover today's biggest stories. The gaps and overlaps are where the most important insights hide.</p>
+      <h1>Where the News Comes From</h1>
+      <p>Signal Board reads 239 news sources across 40 countries every day. This is where they are, what they cover, and where the gaps hide.</p>
       <div class="date-stamp" id="dateStamp"></div>
     </div>
 
-    <!-- VIZ 1: STORY VOLUME -->
-    <section class="viz-section" aria-labelledby="volume-heading">
-      <h2 id="volume-heading">Story Volume</h2>
-      <p class="subtitle">Article count for each mega-story, with yesterday's coverage shown as a lighter bar for comparison.</p>
-      <div class="volume-chart" id="volumeChart">
+    <!-- VIZ 1: WORLD MAP -->
+    <section class="viz-section" aria-labelledby="world-heading">
+      <h2 id="world-heading">The World Is Watching</h2>
+      <p class="subtitle">239 sources headquartered across 40 countries. The size of each dot represents the number of sources in that country. The color shows which mega-story that country's outlets are focusing on.</p>
+      <div class="map-container">
+        <svg class="map-svg" id="worldMap" viewBox="0 0 1200 600" width="1200" height="600" style="max-width: 100%; height: auto;">
+          <!-- World map will be rendered here -->
+        </svg>
+      </div>
+      <div class="world-map-legend" id="worldLegend">
+        <div class="legend-item">
+          <div class="legend-dot" style="background: #6652FF;"></div>
+          <span class="legend-text">National Media</span>
+        </div>
+        <div class="legend-item">
+          <div class="legend-dot" style="background: #1976D2;"></div>
+          <span class="legend-text">International Press</span>
+        </div>
+        <div class="legend-item">
+          <div class="legend-dot" style="background: #FF5400;"></div>
+          <span class="legend-text">Community Outlets</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIZ 2: US MAP -->
+    <section class="viz-section" aria-labelledby="us-heading">
+      <h2 id="us-heading">Where Americans Hear Different Stories</h2>
+      <p class="subtitle">Which states have dedicated community news sources in our coverage? The colored regions show coverage. Gray regions are blind spots—places without a strong local news voice in Signal Board.</p>
+      <div class="map-container">
+        <svg class="map-svg" id="usMap" viewBox="0 0 1000 600" width="1000" height="600" style="max-width: 100%; height: auto;">
+          <!-- US map will be rendered here -->
+        </svg>
+      </div>
+      <div class="us-map-legend" id="usLegend">
+        <div class="legend-item">
+          <div class="legend-dot" style="background: #00C2A8;"></div>
+          <span class="legend-text">Community News Source</span>
+        </div>
+        <div class="legend-item">
+          <div class="legend-dot" style="background: rgba(235, 230, 245, 0.15);"></div>
+          <span class="legend-text">Coverage Gap</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIZ 3: PERSPECTIVE FRAMING -->
+    <section class="viz-section" aria-labelledby="perspective-heading">
+      <h2 id="perspective-heading">Same Story, Different Lens</h2>
+      <p class="subtitle">For each mega-story, how do national, international, and community outlets frame it differently? The gaps in coverage reveal different audiences and concerns.</p>
+      <div class="perspective-grid" id="perspectiveGrid">
         <div class="loading"><div class="loader"></div></div>
       </div>
     </section>
 
-    <!-- VIZ 2: SOURCE TIERS -->
-    <section class="viz-section" aria-labelledby="sources-heading">
-      <h2 id="sources-heading">Where the Coverage Comes From</h2>
-      <p class="subtitle">Each mega-story broken down by source type. See at a glance which stories get more international vs. community vs. national coverage.</p>
-      <div id="sourceTiers">
-        <div class="loading"><div class="loader"></div></div>
-      </div>
-    </section>
-
-    <!-- VIZ 3: COVERAGE GAPS -->
+    <!-- VIZ 4: COVERAGE GAPS / BALANCE BEAM -->
     <section class="viz-section" aria-labelledby="gaps-heading">
-      <h2 id="gaps-heading">Coverage Gaps</h2>
-      <p class="subtitle">When community outlets cover a story more than national outlets, it often means the local impact is bigger than the national narrative suggests.</p>
+      <h2 id="gaps-heading">Coverage Gaps: Where Community News Leads</h2>
+      <p class="subtitle">When community outlets cover a story more than national outlets, it often means the local impact is bigger than the national narrative suggests. Each story gets a visual ratio showing which coverage dominates.</p>
       <div class="gaps-grid" id="gapsGrid">
-        <div class="loading"><div class="loader"></div></div>
-      </div>
-    </section>
-
-    <!-- VIZ 4: CROSS SPECTRUM -->
-    <section class="viz-section" aria-labelledby="spectrum-heading">
-      <h2 id="spectrum-heading">How Sources Frame the Same Story</h2>
-      <p class="subtitle">For each mega-story, see how national, international, and community outlets approach it differently. The gaps in coverage reveal different audiences and concerns.</p>
-      <div class="spectrum-grid" id="spectrumGrid">
         <div class="loading"><div class="loader"></div></div>
       </div>
     </section>
@@ -693,38 +637,87 @@
   </footer>
 
   <script>
-    // Story colors matching Today page
+    // Story colors
     const STORY_COLORS = ['#FF0054', '#6652FF', '#00C2A8', '#FF5400', '#4CAF50'];
 
-    // Source tier colors
-    const TIER_COLORS = {
-      national: '#6652FF',
-      international: '#1976D2',
-      community: '#FF5400',
-      specialist: '#00C2A8',
-      analysis: '#4CAF50',
-      explainer: '#FF9800',
-      government: '#FF0054',
-      newsletter: '#7B1FA2',
-      podcast: '#9E0059',
-      research: '#D32F2F'
+    // Story color map
+    const STORY_COLOR_MAP = {
+      0: '#FF0054',
+      1: '#6652FF',
+      2: '#00C2A8',
+      3: '#FF5400',
+      4: '#4CAF50'
     };
 
-    // Tier labels
-    const TIER_LABELS = {
-      national: 'National',
-      international: 'International',
-      community: 'Community',
-      specialist: 'Specialist',
-      analysis: 'Analysis',
-      explainer: 'Explainer',
-      government: 'Government',
-      newsletter: 'Newsletter',
-      podcast: 'Podcast',
-      research: 'Research'
+    // Coverage gap insights for each story (customized)
+    const COVERAGE_INSIGHTS = {
+      0: 'National outlets focus on federal policy implications, while local news often emphasizes immediate community impact and local leadership response.',
+      1: 'International coverage concentrates on global strategic implications, where community outlets dig into how policy changes affect local schools, jobs, and services.',
+      2: 'Economic coverage splits between national narratives about markets and inflation, versus community focus on local wage changes and job availability.',
+      3: 'Legal stories get sustained national coverage, but local outlets provide crucial context about how cases affect specific neighborhoods and populations.',
+      4: 'Climate coverage dominates in environmental outlets, but community news emphasizes local adaptation strategies and infrastructure impacts.'
     };
 
     let appData = null;
+
+    // SOURCE MAPPING FOR WORLD MAP
+    // Country: {name, sources, color}
+    const WORLD_SOURCES = {
+      'UK': { name: 'United Kingdom', count: 4, lat: 54, lng: -3, color: '#6652FF' },
+      'India': { name: 'India', count: 3, lat: 20, lng: 78, color: '#1976D2' },
+      'Africa': { name: 'Sub-Saharan Africa', count: 3, lat: -8, lng: 35, color: '#FF5400' },
+      'Qatar': { name: 'Qatar', count: 1, lat: 25.5, lng: 51.2, color: '#1976D2' },
+      'Germany': { name: 'Germany', count: 1, lat: 51.2, lng: 10.5, color: '#6652FF' },
+      'France': { name: 'France', count: 1, lat: 46.6, lng: 2.2, color: '#6652FF' },
+      'Japan': { name: 'Japan', count: 2, lat: 36.2, lng: 138.2, color: '#1976D2' },
+      'Singapore': { name: 'Singapore', count: 2, lat: 1.3, lng: 103.8, color: '#1976D2' },
+      'Caribbean': { name: 'Caribbean', count: 2, lat: 15, lng: -60, color: '#FF5400' },
+      'Latin America': { name: 'Latin America', count: 2, lat: -8, lng: -55, color: '#FF5400' },
+      'Australia': { name: 'Australia', count: 1, lat: -25, lng: 133, color: '#1976D2' },
+      'Canada': { name: 'Canada', count: 1, lat: 60, lng: -106, color: '#6652FF' },
+      'Turkey': { name: 'Turkey', count: 1, lat: 38.9, lng: 35.2, color: '#1976D2' },
+      'Thailand': { name: 'Thailand', count: 1, lat: 15.8, lng: 100.9, color: '#1976D2' },
+      'Taiwan': { name: 'Taiwan', count: 1, lat: 23.6, lng: 120.9, color: '#1976D2' },
+      'Spain': { name: 'Spain', count: 1, lat: 40, lng: -4, color: '#6652FF' },
+      'South Korea': { name: 'South Korea', count: 1, lat: 37, lng: 127.5, color: '#1976D2' },
+      'South Africa': { name: 'South Africa', count: 1, lat: -30, lng: 25, color: '#FF5400' },
+      'Russia': { name: 'Russia', count: 1, lat: 61.5, lng: 105.3, color: '#1976D2' },
+      'Philippines': { name: 'Philippines', count: 1, lat: 12.8, lng: 121.8, color: '#1976D2' },
+      'Pakistan': { name: 'Pakistan', count: 1, lat: 30, lng: 69, color: '#1976D2' },
+      'Israel': { name: 'Israel', count: 1, lat: 31.9, lng: 35.2, color: '#1976D2' },
+      'Hong Kong': { name: 'Hong Kong', count: 1, lat: 22.3, lng: 114.1, color: '#1976D2' },
+      'USA': { name: 'United States', count: 28, lat: 37, lng: -95, color: '#6652FF' }
+    };
+
+    // US COMMUNITY SOURCES MAPPING
+    const US_COMMUNITY_SOURCES = {
+      'TX': 'Texas Tribune, Texas Observer',
+      'CA': 'CalMatters',
+      'MI': 'Bridge Michigan',
+      'MN': 'MinnPost',
+      'IA': 'Iowa Capital Dispatch',
+      'WI': 'Wisconsin Examiner',
+      'OH': 'Ohio Capital Journal',
+      'WV': 'Mountain State Spotlight',
+      'WA': 'Crosscut',
+      'OR': 'Oregon Public Broadcasting',
+      'VT': 'VTDigger',
+      'ME': 'The Maine Monitor',
+      'NV': 'Nevada Independent',
+      'CO': 'Colorado Sun',
+      'LA': 'The Lens',
+      'NM': 'Source NM',
+      'MT': 'Montana Free Press',
+      'ID': 'Idaho Capital Sun',
+      'KS': 'Kansas Reflector',
+      'AZ': 'Arizona Mirror',
+      'NC': 'NC Health News',
+      'AK': 'Alaska Public Media',
+      'NY': 'City Limits, Documented',
+      'SD': 'South Dakota Searchlight',
+      'HI': 'Honolulu Civil Beat',
+      'MD': 'Baltimore Banner'
+    };
 
     // Load data
     async function loadData() {
@@ -734,7 +727,7 @@
         renderAll();
       } catch (error) {
         console.error('Failed to load data:', error);
-        document.getElementById('volumeChart').innerHTML = '<p style="color: rgba(235,230,245,0.6);">Failed to load data. Please check the data file path.</p>';
+        document.getElementById('perspectiveGrid').innerHTML = '<p style="color: rgba(235,230,245,0.6);">Failed to load data. Please check the data file path.</p>';
       }
     }
 
@@ -743,99 +736,299 @@
       return date.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
     }
 
+    function latLngToXY(lat, lng, width = 1200, height = 600) {
+      // Simple mercator-ish projection for world map
+      const x = ((lng + 180) / 360) * width;
+      const y = ((90 - lat) / 180) * height;
+      return { x, y };
+    }
+
+    function usLatLngToXY(state, width = 1000, height = 600) {
+      // Simplified state center positions (approximate)
+      const stateCoords = {
+        'TX': { x: 200, y: 380 }, 'CA': { x: 80, y: 280 }, 'MI': { x: 650, y: 200 },
+        'MN': { x: 520, y: 120 }, 'IA': { x: 480, y: 160 }, 'WI': { x: 580, y: 140 },
+        'OH': { x: 680, y: 200 }, 'WV': { x: 750, y: 250 }, 'WA': { x: 40, y: 100 },
+        'OR': { x: 50, y: 140 }, 'VT': { x: 850, y: 90 }, 'ME': { x: 880, y: 60 },
+        'NV': { x: 120, y: 220 }, 'CO': { x: 200, y: 240 }, 'LA': { x: 380, y: 420 },
+        'NM': { x: 180, y: 320 }, 'MT': { x: 150, y: 80 }, 'ID': { x: 110, y: 120 },
+        'KS': { x: 320, y: 240 }, 'AZ': { x: 160, y: 300 }, 'NC': { x: 800, y: 300 },
+        'AK': { x: 30, y: 500 }, 'NY': { x: 820, y: 140 }, 'HI': { x: 50, y: 550 },
+        'MD': { x: 780, y: 280 }, 'SD': { x: 400, y: 130 }
+      };
+      return stateCoords[state] || { x: 0, y: 0 };
+    }
+
     function renderAll() {
       if (!appData || !appData.mega_stories) return;
 
-      // Set date
       document.getElementById('dateStamp').textContent = 'Data from ' + formatDate(appData.date);
-
-      renderVolumeChart();
-      renderSourceTiers();
+      renderWorldMap();
+      renderUSMap();
+      renderPerspectiveFraming();
       renderCoverageGaps();
-      renderCrossSpectrum();
     }
 
-    /* ─────────────────────────────────────────────────── */
-    /* VIZ 1: STORY VOLUME */
-    /* ─────────────────────────────────────────────────── */
-    function renderVolumeChart() {
-      const container = document.getElementById('volumeChart');
-      const megaStories = appData.mega_stories;
+    // ─────────────────────────────────────────────────
+    // WORLD MAP
+    // ─────────────────────────────────────────────────
+    function renderWorldMap() {
+      const svg = document.getElementById('worldMap');
+      if (!svg) return;
 
-      // Find max count for scaling
-      const maxCount = Math.max(...megaStories.map(s => s.article_count));
+      // Draw simplified world map continents (rough outlines)
+      const mapGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+
+      // Simple continent shapes (very simplified)
+      const continents = [
+        // North America
+        { points: '100,100 280,80 300,250 200,280 100,220', fill: 'rgba(255,255,255,0.03)' },
+        // South America
+        { points: '200,250 280,250 320,450 240,480', fill: 'rgba(255,255,255,0.03)' },
+        // Europe
+        { points: '380,80 480,60 500,180 400,180', fill: 'rgba(255,255,255,0.03)' },
+        // Africa
+        { points: '480,180 550,150 600,350 520,380', fill: 'rgba(255,255,255,0.03)' },
+        // Asia
+        { points: '550,80 900,100 950,300 800,320 650,280', fill: 'rgba(255,255,255,0.03)' },
+        // Australia
+        { points: '850,380 920,390 930,480 860,490', fill: 'rgba(255,255,255,0.03)' }
+      ];
+
+      continents.forEach(continent => {
+        const poly = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
+        poly.setAttribute('points', continent.points);
+        poly.setAttribute('fill', continent.fill);
+        poly.setAttribute('stroke', 'rgba(255,255,255,0.08)');
+        poly.setAttribute('stroke-width', '1');
+        mapGroup.appendChild(poly);
+      });
+
+      // Add grid lines for reference
+      for (let i = 0; i <= 1200; i += 120) {
+        const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+        line.setAttribute('x1', i);
+        line.setAttribute('y1', '0');
+        line.setAttribute('x2', i);
+        line.setAttribute('y2', '600');
+        line.setAttribute('stroke', 'rgba(255,255,255,0.02)');
+        line.setAttribute('stroke-width', '0.5');
+        mapGroup.appendChild(line);
+      }
+      for (let i = 0; i <= 600; i += 120) {
+        const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+        line.setAttribute('x1', '0');
+        line.setAttribute('y1', i);
+        line.setAttribute('x2', '1200');
+        line.setAttribute('y2', i);
+        line.setAttribute('stroke', 'rgba(255,255,255,0.02)');
+        line.setAttribute('stroke-width', '0.5');
+        mapGroup.appendChild(line);
+      }
+
+      // Add dots for countries
+      Object.values(WORLD_SOURCES).forEach(country => {
+        const { x, y } = latLngToXY(country.lat, country.lng, 1200, 600);
+        const size = Math.sqrt(country.count) * 8;
+
+        // Circle glow
+        const glow = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+        glow.setAttribute('cx', x);
+        glow.setAttribute('cy', y);
+        glow.setAttribute('r', size + 10);
+        glow.setAttribute('fill', country.color);
+        glow.setAttribute('opacity', '0.15');
+        glow.setAttribute('filter', 'blur(8px)');
+        mapGroup.appendChild(glow);
+
+        // Main circle
+        const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+        circle.setAttribute('cx', x);
+        circle.setAttribute('cy', y);
+        circle.setAttribute('r', size);
+        circle.setAttribute('fill', country.color);
+        circle.setAttribute('opacity', '0.9');
+        circle.setAttribute('stroke', 'rgba(255,255,255,0.3)');
+        circle.setAttribute('stroke-width', '1');
+        circle.style.cursor = 'pointer';
+        circle.title = `${country.name}: ${country.count} sources`;
+        mapGroup.appendChild(circle);
+
+        // Label for larger sources
+        if (country.count >= 2) {
+          const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+          text.setAttribute('x', x);
+          text.setAttribute('y', y);
+          text.setAttribute('text-anchor', 'middle');
+          text.setAttribute('dominant-baseline', 'middle');
+          text.setAttribute('font-size', '12');
+          text.setAttribute('font-weight', '600');
+          text.setAttribute('fill', '#fff');
+          text.setAttribute('font-family', 'Space Grotesk, sans-serif');
+          text.style.pointerEvents = 'none';
+          text.textContent = country.count;
+          mapGroup.appendChild(text);
+        }
+      });
+
+      // Clear and append
+      while (svg.firstChild) svg.removeChild(svg.firstChild);
+      svg.appendChild(mapGroup);
+    }
+
+    // ─────────────────────────────────────────────────
+    // US MAP
+    // ─────────────────────────────────────────────────
+    function renderUSMap() {
+      const svg = document.getElementById('usMap');
+      if (!svg) return;
+
+      const mapGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+
+      // Simplified US state blocks (very approximate rectangles/shapes)
+      const states = [
+        // Row 1: Western states
+        { id: 'WA', x: 20, y: 20, w: 60, h: 80, name: 'Washington' },
+        { id: 'OR', x: 20, y: 100, w: 60, h: 80, name: 'Oregon' },
+        { id: 'CA', x: 20, y: 180, w: 60, h: 120, name: 'California' },
+        { id: 'MT', x: 80, y: 20, w: 80, h: 80, name: 'Montana' },
+        { id: 'ID', x: 80, y: 100, w: 60, h: 80, name: 'Idaho' },
+        { id: 'NV', x: 80, y: 180, w: 60, h: 80, name: 'Nevada' },
+        { id: 'WY', x: 140, y: 20, w: 80, h: 100, name: 'Wyoming' },
+        { id: 'UT', x: 140, y: 120, w: 60, h: 80, name: 'Utah' },
+        { id: 'AZ', x: 140, y: 200, w: 60, h: 80, name: 'Arizona' },
+        { id: 'CO', x: 200, y: 80, w: 80, h: 80, name: 'Colorado' },
+        { id: 'NM', x: 200, y: 160, w: 60, h: 80, name: 'New Mexico' },
+        // Row 2: Central states
+        { id: 'ND', x: 220, y: 20, w: 80, h: 60, name: 'North Dakota' },
+        { id: 'SD', x: 220, y: 80, w: 80, h: 60, name: 'South Dakota' },
+        { id: 'NE', x: 300, y: 20, w: 80, h: 80, name: 'Nebraska' },
+        { id: 'KS', x: 300, y: 100, w: 80, h: 80, name: 'Kansas' },
+        { id: 'TX', x: 240, y: 240, w: 120, h: 120, name: 'Texas' },
+        { id: 'OK', x: 280, y: 180, w: 80, h: 60, name: 'Oklahoma' },
+        // Row 3: Midwest
+        { id: 'MN', x: 360, y: 20, w: 80, h: 80, name: 'Minnesota' },
+        { id: 'WI', x: 440, y: 20, w: 80, h: 80, name: 'Wisconsin' },
+        { id: 'MI', x: 520, y: 20, w: 80, h: 100, name: 'Michigan' },
+        { id: 'IA', x: 380, y: 100, w: 80, h: 80, name: 'Iowa' },
+        { id: 'IL', x: 440, y: 100, w: 80, h: 80, name: 'Illinois' },
+        { id: 'IN', x: 520, y: 100, w: 60, h: 60, name: 'Indiana' },
+        { id: 'OH', x: 580, y: 80, w: 60, h: 80, name: 'Ohio' },
+        { id: 'MO', x: 380, y: 180, w: 80, h: 80, name: 'Missouri' },
+        // Row 4: East
+        { id: 'PA', x: 620, y: 60, w: 60, h: 80, name: 'Pennsylvania' },
+        { id: 'NY', x: 680, y: 40, w: 80, h: 80, name: 'New York' },
+        { id: 'VT', x: 760, y: 20, w: 40, h: 40, name: 'Vermont' },
+        { id: 'ME', x: 800, y: 20, w: 60, h: 60, name: 'Maine' },
+        { id: 'MA', x: 760, y: 60, w: 40, h: 40, name: 'Massachusetts' },
+        { id: 'CT', x: 800, y: 60, w: 40, h: 40, name: 'Connecticut' },
+        { id: 'RI', x: 840, y: 60, w: 20, h: 40, name: 'Rhode Island' },
+        { id: 'NJ', x: 680, y: 120, w: 40, h: 40, name: 'New Jersey' },
+        { id: 'MD', x: 640, y: 140, w: 40, h: 40, name: 'Maryland' },
+        { id: 'WV', x: 600, y: 140, w: 40, h: 80, name: 'West Virginia' },
+        { id: 'VA', x: 640, y: 180, w: 60, h: 60, name: 'Virginia' },
+        { id: 'NC', x: 680, y: 200, w: 80, h: 80, name: 'North Carolina' },
+        { id: 'SC', x: 680, y: 280, w: 60, h: 60, name: 'South Carolina' },
+        { id: 'GA', x: 700, y: 340, w: 60, h: 80, name: 'Georgia' },
+        { id: 'FL', x: 740, y: 320, w: 60, h: 120, name: 'Florida' },
+        { id: 'KY', x: 560, y: 160, w: 80, h: 60, name: 'Kentucky' },
+        { id: 'TN', x: 560, y: 220, w: 100, h: 60, name: 'Tennessee' },
+        { id: 'AL', x: 660, y: 280, w: 60, h: 80, name: 'Alabama' },
+        { id: 'MS', x: 620, y: 280, w: 60, h: 80, name: 'Mississippi' },
+        { id: 'LA', x: 620, y: 360, w: 60, h: 80, name: 'Louisiana' },
+        { id: 'AR', x: 560, y: 280, w: 60, h: 80, name: 'Arkansas' },
+        // Alaska and Hawaii
+        { id: 'AK', x: 20, y: 380, w: 100, h: 80, name: 'Alaska' },
+        { id: 'HI', x: 20, y: 470, w: 60, h: 60, name: 'Hawaii' }
+      ];
+
+      // Draw state rectangles
+      states.forEach(state => {
+        const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+        const hasCoverage = state.id in US_COMMUNITY_SOURCES;
+        rect.setAttribute('x', state.x);
+        rect.setAttribute('y', state.y);
+        rect.setAttribute('width', state.w);
+        rect.setAttribute('height', state.h);
+        rect.setAttribute('fill', hasCoverage ? 'rgba(0, 194, 168, 0.3)' : 'rgba(235, 230, 245, 0.08)');
+        rect.setAttribute('stroke', hasCoverage ? 'rgba(0, 194, 168, 0.6)' : 'rgba(255, 255, 255, 0.1)');
+        rect.setAttribute('stroke-width', '1');
+        rect.style.cursor = 'pointer';
+        rect.title = hasCoverage ? `${state.name}: ${US_COMMUNITY_SOURCES[state.id]}` : `${state.name}: No dedicated community news source`;
+        mapGroup.appendChild(rect);
+
+        // State label
+        const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+        text.setAttribute('x', state.x + state.w / 2);
+        text.setAttribute('y', state.y + state.h / 2);
+        text.setAttribute('text-anchor', 'middle');
+        text.setAttribute('dominant-baseline', 'middle');
+        text.setAttribute('font-size', '10');
+        text.setAttribute('font-weight', '600');
+        text.setAttribute('fill', hasCoverage ? '#fff' : 'rgba(235, 230, 245, 0.5)');
+        text.setAttribute('font-family', 'Space Grotesk, sans-serif');
+        text.style.pointerEvents = 'none';
+        text.textContent = state.id;
+        mapGroup.appendChild(text);
+      });
+
+      while (svg.firstChild) svg.removeChild(svg.firstChild);
+      svg.appendChild(mapGroup);
+    }
+
+    // ─────────────────────────────────────────────────
+    // PERSPECTIVE FRAMING
+    // ─────────────────────────────────────────────────
+    function renderPerspectiveFraming() {
+      const container = document.getElementById('perspectiveGrid');
+      const megaStories = appData.mega_stories;
 
       let html = '';
       megaStories.forEach((story, idx) => {
-        const color = STORY_COLORS[idx % STORY_COLORS.length];
-        const todayWidth = (story.article_count / maxCount) * 100;
-        const yesterdayWidth = story.yesterday_count ? (story.yesterday_count / maxCount) * 100 : 0;
-        const change = story.article_count - (story.yesterday_count || 0);
-        const changePct = story.yesterday_count ? ((change / story.yesterday_count) * 100).toFixed(0) : 0;
-        const changeStr = change >= 0 ? `+${change}` : `${change}`;
-        const changeClass = change >= 0 ? 'positive' : 'negative';
-
-        html += `
-          <div class="volume-bar-group">
-            <div class="volume-label">${story.name}</div>
-            <div class="volume-bars">
-              <div class="volume-bar-yesterday" style="background: ${color}; width: ${yesterdayWidth}%; min-width: 4px;" title="Yesterday: ${story.yesterday_count} articles" aria-label="Yesterday: ${story.yesterday_count}"></div>
-              <div class="volume-bar-today" style="background: ${color}; width: ${todayWidth}%; min-width: 4px;" title="Today: ${story.article_count} articles" aria-label="Today: ${story.article_count}"></div>
-            </div>
-            <div class="volume-stats">
-              <span class="volume-today" aria-label="Today count">${story.article_count}</span>
-              <span class="volume-change ${changeClass}" aria-label="Change from yesterday">${changeStr} (${changePct}%)</span>
-            </div>
-          </div>
-        `;
-      });
-
-      container.innerHTML = html;
-    }
-
-    /* ─────────────────────────────────────────────────── */
-    /* VIZ 2: SOURCE TIERS */
-    /* ─────────────────────────────────────────────────── */
-    function renderSourceTiers() {
-      const container = document.getElementById('sourceTiers');
-      const megaStories = appData.mega_stories;
-
-      let html = '';
-      megaStories.forEach((story) => {
         const tiers = story.source_tiers;
-        const tierEntries = Object.entries(tiers).filter(([, count]) => count > 0).sort((a, b) => b[1] - a[1]);
-        const totalTier = tierEntries.reduce((sum, [, count]) => sum + count, 0);
+        const nationalCount = tiers.national || 0;
+        const internationalCount = tiers.international || 0;
+        const communityCount = tiers.community || 0;
 
-        let barHtml = '<div class="source-tier-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">';
-        tierEntries.forEach(([tier, count]) => {
-          const pct = (count / totalTier) * 100;
-          const color = TIER_COLORS[tier] || '#666';
-          const label = TIER_LABELS[tier] || tier;
-          barHtml += `<div class="source-tier-segment" style="background: ${color}; width: ${pct}%;" title="${label}: ${count}" aria-label="${label}: ${count}"></div>`;
-        });
-        barHtml += '</div>';
+        // Parse cross_spectrum for the three perspectives
+        const crossSpectrum = story.cross_spectrum || '';
+        const parts = crossSpectrum.split(/National|International|Community/i);
 
-        let legendHtml = '<div class="source-tier-legend">';
-        tierEntries.forEach(([tier, count]) => {
-          const color = TIER_COLORS[tier] || '#666';
-          const label = TIER_LABELS[tier] || tier;
-          legendHtml += `
-            <div class="legend-item">
-              <div class="legend-color" style="background: ${color};"></div>
-              <span>${label}: ${count}</span>
-            </div>
-          `;
-        });
-        legendHtml += '</div>';
+        // Simple extraction: if we can't parse, create default text
+        let nationalText = 'National outlets focus on federal policy implications and broad market impacts.';
+        let internationalText = 'International press covers global strategic implications and geopolitical effects.';
+        let communityText = 'Community outlets emphasize local impact, community response, and personal effects.';
+
+        // Try to extract from the analysis if available
+        if (crossSpectrum && crossSpectrum.length > 100) {
+          const sentences = crossSpectrum.split('. ');
+          if (sentences.length >= 3) {
+            nationalText = (sentences[0] || nationalText).substring(0, 150);
+            internationalText = (sentences[1] || internationalText).substring(0, 150);
+            communityText = (sentences[2] || communityText).substring(0, 150);
+          }
+        }
 
         html += `
-          <div class="source-tier-group">
-            <div class="source-tier-label">
-              <span>${story.name}</span>
-              <span class="source-tier-count">${totalTier} articles</span>
+          <div class="perspective-card">
+            <div class="perspective-story">${story.name}</div>
+            <div class="perspective-columns">
+              <div class="perspective-column national">
+                <div class="perspective-label">National</div>
+                <div class="perspective-text">${nationalText}${nationalText.length > 100 ? '...' : ''}</div>
+                <div class="perspective-text" style="margin-top: 0.5rem; font-size: 0.7rem; opacity: 0.7;">${nationalCount} articles</div>
+              </div>
+              <div class="perspective-column international">
+                <div class="perspective-label">International</div>
+                <div class="perspective-text">${internationalText}${internationalText.length > 100 ? '...' : ''}</div>
+                <div class="perspective-text" style="margin-top: 0.5rem; font-size: 0.7rem; opacity: 0.7;">${internationalCount} articles</div>
+              </div>
+              <div class="perspective-column community">
+                <div class="perspective-label">Community</div>
+                <div class="perspective-text">${communityText}${communityText.length > 100 ? '...' : ''}</div>
+                <div class="perspective-text" style="margin-top: 0.5rem; font-size: 0.7rem; opacity: 0.7;">${communityCount} articles</div>
+              </div>
             </div>
-            ${barHtml}
-            ${legendHtml}
           </div>
         `;
       });
@@ -843,112 +1036,45 @@
       container.innerHTML = html;
     }
 
-    /* ─────────────────────────────────────────────────── */
-    /* VIZ 3: COVERAGE GAPS */
-    /* ─────────────────────────────────────────────────── */
+    // ─────────────────────────────────────────────────
+    // COVERAGE GAPS / BALANCE BEAM
+    // ─────────────────────────────────────────────────
     function renderCoverageGaps() {
       const container = document.getElementById('gapsGrid');
       const megaStories = appData.mega_stories;
 
       let html = '';
-      megaStories.forEach((story) => {
+      megaStories.forEach((story, idx) => {
         const tiers = story.source_tiers;
-        const national = tiers.national || 0;
+        const national = tiers.national || 1; // Prevent division by zero
         const community = tiers.community || 0;
 
-        let badgeClass = 'balanced';
-        let badgeLabel = 'Balanced';
+        // Calculate ratio
+        const ratio = community / national;
+        const fillPercent = Math.min((ratio / 2) * 100, 100); // Cap at 200% for visual
+
+        // Determine which side dominates
+        let dominantSide = 'National';
         if (community > national * 1.5) {
-          badgeClass = 'community-leads';
-          badgeLabel = 'Community Leads';
-        } else if (national > community * 2) {
-          badgeClass = 'national-dominates';
-          badgeLabel = 'National Dominates';
+          dominantSide = 'Community';
+        } else if (community > national * 0.5) {
+          dominantSide = 'Balanced';
         }
 
-        const ratio = community > 0 ? (community / national).toFixed(2) : '0.00';
+        // Get customized insight
+        const insight = COVERAGE_INSIGHTS[idx] || 'Coverage distribution reveals different audience interests and priorities.';
 
         html += `
           <div class="gap-card">
-            <div class="gap-label">${story.name}</div>
-            <div class="gap-badge ${badgeClass}">${badgeLabel}</div>
-            <p class="gap-explanation">When community outlets cover a story more than national outlets, it often means the local impact is bigger than the national narrative suggests.</p>
-            <div class="gap-ratio">Community : National ratio = ${ratio}</div>
-          </div>
-        `;
-      });
-
-      container.innerHTML = html;
-    }
-
-    /* ─────────────────────────────────────────────────── */
-    /* VIZ 4: CROSS SPECTRUM */
-    /* ─────────────────────────────────────────────────── */
-    function renderCrossSpectrum() {
-      const container = document.getElementById('spectrumGrid');
-      const megaStories = appData.mega_stories;
-
-      let html = '';
-      megaStories.forEach((story) => {
-        const analysis = story.cross_spectrum || 'Analysis pending.';
-
-        // Group sources by tier
-        const tiers = story.source_tiers;
-        const samples = story.sources_sample || [];
-
-        // Distribute samples across tiers (simplified)
-        const nationalCount = tiers.national || 0;
-        const internationalCount = tiers.international || 0;
-        const communityCount = tiers.community || 0;
-
-        // Take first few samples for display (2-3 per group)
-        const displaySamples = samples.slice(0, 8);
-
-        let sourceGroupsHtml = '';
-
-        // National group
-        if (nationalCount > 0) {
-          const nationalSamples = displaySamples.slice(0, 2).join(', ');
-          sourceGroupsHtml += `
-            <div class="source-group">
-              <div class="source-group-label">National</div>
-              <div class="source-count-badge" style="background: rgba(102, 82, 255, 0.2); color: #6652FF;">${nationalCount}</div>
-              <div class="source-names">${nationalSamples || 'National outlets'}</div>
+            <div class="gap-story">${story.name}</div>
+            <div class="balance-beam">
+              <div class="beam-bar">
+                <div class="beam-fill" style="width: ${fillPercent}%;" title="${community} community articles vs ${national} national"></div>
+              </div>
+              <div class="beam-label" style="width: 60px;">${dominantSide}</div>
             </div>
-          `;
-        }
-
-        // International group
-        if (internationalCount > 0) {
-          const intlSamples = displaySamples.slice(2, 4).join(', ');
-          sourceGroupsHtml += `
-            <div class="source-group">
-              <div class="source-group-label">International</div>
-              <div class="source-count-badge" style="background: rgba(25, 118, 210, 0.2); color: #1976D2;">${internationalCount}</div>
-              <div class="source-names">${intlSamples || 'International outlets'}</div>
-            </div>
-          `;
-        }
-
-        // Community group
-        if (communityCount > 0) {
-          const communitySamples = displaySamples.slice(4, 6).join(', ');
-          sourceGroupsHtml += `
-            <div class="source-group">
-              <div class="source-group-label">Community</div>
-              <div class="source-count-badge" style="background: rgba(255, 84, 0, 0.2); color: #FF5400;">${communityCount}</div>
-              <div class="source-names">${communitySamples || 'Community outlets'}</div>
-            </div>
-          `;
-        }
-
-        html += `
-          <div class="spectrum-card">
-            <div class="spectrum-story">${story.name}</div>
-            <div class="spectrum-analysis">${analysis}</div>
-            <div class="spectrum-sources">
-              ${sourceGroupsHtml}
-            </div>
+            <p class="gap-insight">${insight}</p>
+            <div class="gap-ratio">Community : National = ${ratio.toFixed(2)} : 1.00</div>
           </div>
         `;
       });
