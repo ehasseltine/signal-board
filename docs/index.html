@@ -3,7 +3,29 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Signal Board</title>
+<meta name="description" content="Signal Board is a research tool that tracks how interconnected forces appear in the news and surfaces the structural connections between them that most coverage misses. Monitoring 59 sources across 10 domains — from national outlets to lived experience reporting to policy analysis.">
+<meta property="og:title" content="Signal Board — Tracking Structural Connections in the News">
+<meta property="og:description" content="Signal Board is a research tool that tracks how interconnected forces appear in the news and surfaces the structural connections between them that most coverage misses. Monitoring 59 sources across 10 domains.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://elisehasseltine.com/signal-board/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Signal Board — Tracking Structural Connections in the News">
+<meta name="twitter:description" content="Signal Board is a research tool that tracks how interconnected forces appear in the news and surfaces the structural connections between them that most coverage misses.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Signal Board",
+  "description": "A research tool that tracks how interconnected forces appear in the news and surfaces the structural connections between them that most coverage misses.",
+  "url": "https://elisehasseltine.com/signal-board/",
+  "creator": {
+    "@type": "Person",
+    "name": "Elise Hasseltine",
+    "url": "https://www.elisehasseltine.com/"
+  }
+}
+</script>
+<title>Signal Board — Tracking Structural Connections in the News</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -97,6 +119,132 @@
     overflow: hidden;
     text-overflow: ellipsis;
     padding: 0 0.4rem;
+  }
+
+  /* ─── HOT TOPICS SECTION ─── */
+  .hot-topics-section {
+    margin-bottom: 2.5rem;
+  }
+  .hot-topics-section h2 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text);
+    margin-bottom: 0.3rem;
+  }
+  .hot-topics-section .hot-topics-desc {
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    margin-bottom: 1.2rem;
+  }
+  .hot-topics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 1rem;
+  }
+  .hot-topic-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 4px solid;
+    border-radius: 6px;
+    padding: 1rem;
+  }
+  .hot-topic-header {
+    margin-bottom: 0.7rem;
+  }
+  .hot-topic-pair {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 0.3rem;
+  }
+  .hot-topic-count {
+    font-size: 0.75rem;
+    color: var(--text-dim);
+  }
+  .hot-topic-articles {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+  .hot-topic-article {
+    font-size: 0.8rem;
+    line-height: 1.3;
+  }
+  .hot-topic-article-title {
+    color: var(--text);
+    margin-bottom: 0.2rem;
+    font-weight: 500;
+  }
+  .hot-topic-article-meta {
+    font-size: 0.7rem;
+    color: var(--text-dim);
+  }
+
+  /* ─── UNDER THE RADAR SECTION ─── */
+  .radar-section {
+    margin-bottom: 2.5rem;
+  }
+  .radar-section h2 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text);
+    margin-bottom: 0.3rem;
+  }
+  .radar-section .radar-desc {
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    margin-bottom: 1.2rem;
+  }
+  .radar-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    gap: 1.2rem;
+  }
+  .radar-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.2rem;
+  }
+  .radar-card-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 0.6rem;
+    line-height: 1.4;
+  }
+  .radar-card-summary {
+    font-size: 0.8rem;
+    color: var(--text-mid);
+    margin-bottom: 0.8rem;
+    line-height: 1.5;
+  }
+  .radar-card-meta {
+    display: flex;
+    gap: 0.8rem;
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    margin-bottom: 0.7rem;
+  }
+  .radar-card-source {
+    font-weight: 600;
+    color: var(--text-mid);
+  }
+  .radar-card-tags {
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+  }
+  .radar-domain-tag {
+    padding: 0.2rem 0.6rem;
+    border-radius: 3px;
+    font-size: 0.65rem;
+    font-weight: 600;
+    color: rgba(0,0,0,0.8);
   }
 
   /* ─── FILTER TABS ─── */
@@ -262,6 +410,12 @@
     font-weight: 500;
     line-height: 1.4;
   }
+  .article-summary {
+    font-size: 0.78rem;
+    color: var(--text-dim);
+    margin-top: 0.4rem;
+    line-height: 1.4;
+  }
   .article-meta {
     display: flex;
     gap: 0.6rem;
@@ -308,6 +462,64 @@
   }
   .load-more:hover { border-color: var(--text-dim); color: var(--text); }
 
+  /* ─── FAQ SECTION ─── */
+  .faq-section {
+    margin-bottom: 3rem;
+    max-width: 800px;
+  }
+  .faq-section h2 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-dim);
+    margin-bottom: 1.2rem;
+  }
+  .faq-item {
+    margin-bottom: 0.8rem;
+  }
+  .faq-question {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.2s;
+  }
+  .faq-question:hover { background: var(--surface-hover); }
+  .faq-question-text {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text);
+  }
+  .faq-toggle {
+    font-size: 1.2rem;
+    color: var(--text-dim);
+    transition: transform 0.2s;
+    flex-shrink: 0;
+    margin-left: 0.5rem;
+  }
+  .faq-toggle.open {
+    transform: rotate(45deg);
+  }
+  .faq-answer {
+    background: rgba(20,20,20,0.6);
+    border: 1px solid var(--border);
+    border-top: none;
+    border-radius: 0 0 6px 6px;
+    padding: 1rem;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: var(--text-dim);
+    display: none;
+  }
+  .faq-answer.open {
+    display: block;
+  }
+
   /* ─── FOOTER ─── */
   .footer {
     max-width: 1400px;
@@ -319,6 +531,10 @@
   }
   .footer a { color: var(--purple); text-decoration: none; }
   .footer a:hover { text-decoration: underline; }
+  .footer-meta {
+    margin-top: 0.6rem;
+    font-size: 0.7rem;
+  }
 
   /* ─── EMPTY STATE ─── */
   .empty-state {
@@ -334,6 +550,8 @@
     .article-card { grid-template-columns: 1fr; }
     .domain-tags { margin-top: 0.4rem; }
     .cluster-grid { grid-template-columns: 1fr; }
+    .hot-topics-grid { grid-template-columns: 1fr; }
+    .radar-grid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -355,6 +573,10 @@
 
   <div class="tier-filters" id="tierFilters"></div>
 
+  <div id="hotTopicsContainer"></div>
+
+  <div id="radarContainer"></div>
+
   <div class="cross-section" id="crossSection">
     <h2>Where domains intersect</h2>
     <p class="cross-desc">The strongest structural connections right now, grouped by which domains are colliding. These overlaps are where the real story lives.</p>
@@ -369,10 +591,13 @@
     <div class="article-list" id="articleList"></div>
     <button class="load-more" id="loadMore" style="display:none">Load more</button>
   </div>
+
+  <div class="faq-section" id="faqSection"></div>
 </div>
 
 <div class="footer">
   Built by <a href="https://www.elisehasseltine.com/">Elise Hasseltine</a>.
+  <div class="footer-meta">59 sources · 10 domains · Updated daily</div>
 </div>
 
 <script>
@@ -440,8 +665,11 @@ function renderAll() {
   renderHeatBar();
   renderFilters();
   renderTierFilters();
+  renderHotTopics();
+  renderRadar();
   renderClusters();
   renderArticles();
+  renderFaq();
 }
 
 function renderHeatBar() {
@@ -544,6 +772,119 @@ function getFiltered() {
   return articles;
 }
 
+function renderHotTopics() {
+  const container = document.getElementById('hotTopicsContainer');
+  const base = getBaseFiltered();
+
+  // Find top domain pairs with most articles today
+  const pairs = {};
+  for (const a of base) {
+    if (a.cross_domain && a.domains && a.domains.length >= 2) {
+      const domains = a.domains.sort();
+      for (let i = 0; i < domains.length; i++) {
+        for (let j = i + 1; j < domains.length; j++) {
+          const key = domains[i] + '+' + domains[j];
+          if (!pairs[key]) pairs[key] = [];
+          pairs[key].push(a);
+        }
+      }
+    }
+  }
+
+  const topPairs = Object.entries(pairs)
+    .sort((a, b) => b[1].length - a[1].length)
+    .slice(0, 4);
+
+  if (topPairs.length === 0) {
+    container.innerHTML = '';
+    return;
+  }
+
+  const html = `
+    <div class="hot-topics-section">
+      <h2>Hot topics</h2>
+      <p class="hot-topics-desc">The structural connections driving today's coverage</p>
+      <div class="hot-topics-grid">
+        ${topPairs.map(([pairKey, articles]) => {
+          const [d1, d2] = pairKey.split('+');
+          const label1 = DOMAIN_LABELS[d1] || d1;
+          const label2 = DOMAIN_LABELS[d2] || d2;
+          const color1 = DOMAIN_COLORS[d1] || '#666';
+
+          const shown = articles.slice(0, 3);
+          const articlesHtml = shown.map(a =>
+            `<div class="hot-topic-article">
+              <div class="hot-topic-article-title">${escHtml(a.title)}</div>
+              <div class="hot-topic-article-meta">${escHtml(a.source)} · ${a.date}</div>
+            </div>`
+          ).join('');
+
+          return `<div class="hot-topic-card" style="border-left-color:${color1}">
+            <div class="hot-topic-header">
+              <div class="hot-topic-pair">${label1} + ${label2}</div>
+              <div class="hot-topic-count">${articles.length} articles</div>
+            </div>
+            <div class="hot-topic-articles">${articlesHtml}</div>
+          </div>`;
+        }).join('')}
+      </div>
+    </div>
+  `;
+  container.innerHTML = html;
+}
+
+function renderRadar() {
+  const container = document.getElementById('radarContainer');
+  const base = getBaseFiltered();
+
+  // Get top 5 sources by count
+  const sourceCounts = {};
+  for (const a of base) {
+    sourceCounts[a.source] = (sourceCounts[a.source] || 0) + 1;
+  }
+  const topSources = Object.keys(sourceCounts)
+    .sort((a, b) => sourceCounts[b] - sourceCounts[a])
+    .slice(0, 5);
+
+  // Find cross-domain articles from non-top sources in specific tiers
+  const radar = base.filter(a =>
+    a.cross_domain &&
+    !topSources.includes(a.source) &&
+    ['lived', 'analysis', 'explainer'].includes(a.tier)
+  );
+
+  if (radar.length === 0) {
+    container.innerHTML = '';
+    return;
+  }
+
+  const shown = radar.slice(0, 5);
+  const html = `
+    <div class="radar-section">
+      <h2>Under the radar</h2>
+      <p class="radar-desc">Significant stories the headlines are missing</p>
+      <div class="radar-grid">
+        ${shown.map(a => {
+          const tags = (a.domains || []).filter(d => DOMAIN_LABELS[d]).map(d =>
+            `<span class="radar-domain-tag" style="background:${DOMAIN_COLORS[d]}">${DOMAIN_LABELS[d]}</span>`
+          ).join('');
+
+          return `<div class="radar-card">
+            <div class="radar-card-title">${escHtml(a.title)}</div>
+            <div class="radar-card-summary">${escHtml(a.summary || '')}</div>
+            <div class="radar-card-meta">
+              <span class="radar-card-source">${escHtml(a.source)}</span>
+              <span>${a.date}</span>
+            </div>
+            <div class="radar-card-tags">${tags}</div>
+          </div>`;
+        }).join('')}
+      </div>
+    </div>
+  `;
+  container.innerHTML = html;
+}
+
 function renderClusters() {
   const grid = document.getElementById('clusterGrid');
   const base = getBaseFiltered();
@@ -632,9 +973,12 @@ function articleCard(a) {
   const tierMap = {national:'US', international: a.region?.toUpperCase()||'INTL', domain:'DOMAIN', explainer:'EXPLAINER', lived:'LIVED', analysis:'ANALYSIS'};
   const tierLabel = tierMap[a.tier] || '';
 
+  const summary = a.summary ? escHtml(a.summary).substring(0, 150) + (a.summary.length > 150 ? '...' : '') : '';
+
   return `<a class="article-card" href="${a.url}" target="_blank" rel="noopener">
     <div>
       <div class="article-title">${escHtml(a.title)}</div>
+      ${summary ? `<div class="article-summary">${summary}</div>` : ''}
       <div class="article-meta">
         <span class="article-source">${escHtml(a.source)}</span>
         <span>${a.date}</span>
@@ -643,6 +987,52 @@ function articleCard(a) {
     </div>
     <div class="domain-tags">${tags}</div>
   </a>`;
+}
+
+function renderFaq() {
+  const container = document.getElementById('faqSection');
+  const faqs = [
+    {
+      q: 'What is Signal Board?',
+      a: 'Signal Board is a research tool that tracks how interconnected forces appear in the news and surfaces the structural connections between them that most coverage misses. It monitors 59 sources across 10 domains — from national outlets to lived experience reporting to policy analysis — and identifies where stories overlap in ways that reveal deeper patterns.'
+    },
+    {
+      q: 'How does it work?',
+      a: 'Every day, Signal Board pulls articles from 59 RSS feeds spanning national news, international coverage, domain-specific outlets, explainer journalism, lived experience reporting, and policy analysis. Each article is automatically tagged across 10 structural domains: AI, Labor, Governance, Information, Economics, Climate, Security, Geopolitics, Politics, and Legal. Articles that touch multiple domains are flagged as cross-domain signals — these are the structural connections that single-beat reporting typically misses.'
+    },
+    {
+      q: 'What are cross-domain signals?',
+      a: 'Most news is organized by beat: a labor reporter covers labor, a climate reporter covers climate. But the forces reshaping the world don\'t stay in lanes. When a story about TSA workers not getting paid (Labor) connects to an executive order (Legal, Governance) that also affects military readiness (Security), that convergence is a signal. Signal Board surfaces these overlaps so you can see the architecture underneath the headlines.'
+    },
+    {
+      q: 'Who built this?',
+      a: 'Signal Board is built by Elise Hasseltine as independent research infrastructure for understanding how information systems carry knowledge to the people who need it.'
+    },
+    {
+      q: 'Can I use this data?',
+      a: 'Signal Board is a personal research project. The data is drawn from publicly available RSS feeds. If you\'re interested in the methodology or want to discuss the project, reach out via the link below.'
+    }
+  ];
+
+  container.innerHTML = `
+    <h2>Frequently asked questions</h2>
+    ${faqs.map((item, idx) => `
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(${idx})">
+          <div class="faq-question-text">${escHtml(item.q)}</div>
+          <div class="faq-toggle" id="toggle-${idx}">+</div>
+        </div>
+        <div class="faq-answer" id="answer-${idx}">${escHtml(item.a)}</div>
+      </div>
+    `).join('')}
+  `;
+}
+
+function toggleFaq(idx) {
+  const answer = document.getElementById(`answer-${idx}`);
+  const toggle = document.getElementById(`toggle-${idx}`);
+  answer.classList.toggle('open');
+  toggle.classList.toggle('open');
 }
 
 function formatDate(iso) {
