@@ -2,10 +2,15 @@
 """
 Signal Board — Daily narrative analysis generator.
 
-Reads today's articles (with full text where available), clusters them
-by shared story, analyzes how different source tiers frame each story,
-identifies what community sources cover that national outlets miss,
-and produces a structured JSON that the frontend renders.
+Reads today's articles (with AI classification, domain tags, structural
+force tags, and cross-domain connection insights), clusters them by
+STRUCTURAL FORCE (not keyword overlap), analyzes how different source
+tiers and perspectives frame each force, and produces a structured JSON
+that the frontend renders.
+
+The key insight: articles about tariffs, articles about AI job loss, and
+articles about immigration policy may all be driven by the same structural
+force — "labor market transformation." This engine finds those connections.
 
 Principles:
   - Simple, clear, factual language. No moral opinions.
@@ -39,94 +44,38 @@ ARTICLES_FILE = ROOT / "data" / "articles.json"
 DAILY_DIR = ROOT / "data" / "daily"
 
 # Source context: factual, non-partisan descriptions of ownership/funding
-# These help readers understand where information comes from.
 SOURCE_CONTEXT = {
-    "New York Times": "Publicly traded, headquartered in New York. Largest US newspaper by circulation. Generally regarded as center-left in editorial stance. Revenue from subscriptions and advertising.",
-    "Fox News": "Owned by Fox Corporation (Murdoch family). Largest cable news network by viewership. Generally regarded as right-leaning in editorial and opinion programming. Revenue from advertising and cable fees.",
-    "Wall Street Journal": "Owned by News Corp (Murdoch family). Second-largest US newspaper. News coverage is broadly centrist; editorial page leans conservative. Core audience is business and financial professionals.",
-    "Washington Post": "Owned by Jeff Bezos since 2013. Major national newspaper. Generally regarded as center-left in editorial stance. Significant political reporting operation.",
-    "CNN": "Owned by Warner Bros. Discovery. Major cable news network. Generally regarded as centrist to center-left. Revenue from advertising and cable fees.",
-    "NPR": "Nonprofit public media organization funded by member stations, corporate sponsors, and foundations. Generally regarded as center-left. Reaches approximately 30 million weekly listeners.",
-    "Bloomberg": "Founded and majority-owned by Michael Bloomberg. Dominant source for financial professionals. Coverage focused on markets and business. Bloomberg ran for president in 2020 as a Democrat.",
-    "AP News": "Nonprofit cooperative owned by member newspapers and broadcasters. Supplies content to the majority of US newsrooms. Generally regarded as centrist wire service.",
-    "Reuters": "Owned by Thomson Reuters. Major international wire service. Generally regarded as centrist. Core audience includes institutional investors and news organizations.",
-    "Al Jazeera": "Funded by the government of Qatar. Major international news network. Provides significant coverage of the Middle East and Global South that US outlets often underreport. Qatar's foreign policy interests can influence editorial priorities.",
-    "BBC World": "Funded by the UK license fee and UK government grants for international service. British public broadcaster. Generally regarded as centrist by international standards.",
-    "The Guardian World": "Owned by the Scott Trust, a nonprofit. British newspaper. Generally regarded as left-leaning. No paywall, funded by reader contributions.",
-    "National Review": "Conservative magazine founded by William F. Buckley Jr. in 1955. Represents the traditional conservative intellectual tradition.",
-    "The Federalist": "Conservative online magazine. Represents populist and social conservative perspectives. Funded by advertising and the nonprofit FDRLST Media.",
-    "Breitbart": "Right-wing news website founded in 2007. Represents nationalist and populist conservative perspectives. Previously led by Steve Bannon.",
-    "Newsmax": "Conservative cable news and digital media company. Grew significantly during and after the 2020 election. Competes with Fox News for conservative audience.",
-    "Heritage Foundation": "Conservative think tank founded in 1973. Produced Project 2025 policy document. Significant influence on Republican policy. Funded by conservative donors.",
-    "Brookings": "Centrist-to-center-left think tank. Largest think tank in the US by budget. Significant influence on Democratic policy. Funded by foundations, corporations, and foreign governments.",
-    "American Prospect": "Progressive magazine covering politics and policy. Explicitly left-of-center editorial stance.",
-    "Reason": "Libertarian magazine. Opposes government intervention in both economic and social policy. Funded by the Reason Foundation.",
-    "Arab American News": "Community newspaper serving Arab American communities, primarily based in Dearborn, Michigan. Provides perspective from approximately 3.7 million Arab Americans.",
-    "Indian Country Today": "Nonprofit newsroom covering Native American communities and tribal affairs. Represents the perspective of approximately 9.7 million people who identify as American Indian or Alaska Native.",
-    "El Diario NY": "Spanish-language daily newspaper serving Latino communities in the New York metro area. Part of ImpreMedia network. Reaches communities that may not consume English-language news.",
-    "The Root": "Digital magazine covering African American news and culture. Owned by G/O Media.",
-    "The Advocate": "LGBTQ+ news magazine, one of the oldest in the US. Covers issues affecting approximately 20 million LGBTQ+ Americans.",
-    "Military Times": "Independent news organization covering military and veteran communities. Not affiliated with the Department of Defense. Serves approximately 18 million US veterans.",
-    "Daily Yonder": "Nonprofit newsroom covering rural America. Approximately 46 million Americans live in rural areas.",
-    "Mother Jones": "Progressive nonprofit magazine. Known for investigative reporting. Founded in 1976, named after labor organizer Mary Harris Jones.",
-    "Haaretz": "Israeli liberal newspaper. Oldest daily newspaper in Israel. Generally regarded as left-leaning by Israeli standards. Provides English-language Israeli perspective on Middle East.",
-    "Dawn": "Pakistani English-language newspaper. Oldest in Pakistan. Generally regarded as liberal by Pakistani standards. Provides South Asian perspective.",
-    "Daily Maverick": "South African investigative publication. Independent nonprofit. Known for accountability journalism. Provides African perspective on democracy and governance.",
-    "Global Voices": "International citizen media platform. Nonprofit. Translates and curates stories from 100+ countries in 40+ languages. Represents grassroots global perspectives.",
-    "The New Humanitarian": "Independent nonprofit newsroom formerly part of the UN. Covers humanitarian crises and displacement. Provides perspective from conflict zones.",
-    "TechCrunch": "Technology industry publication. Owned by Yahoo (Apollo Global Management). Covers startups, venture capital, and AI developments.",
-    "Bellingcat": "Netherlands-based investigative journalism group. Uses open-source intelligence methods. Specializes in conflict verification and disinformation tracking.",
-    "Defense One": "Publication owned by Government Executive Media Group. Covers defense policy, military technology, and national security.",
-    "Cato Institute": "Libertarian think tank founded in 1977. Advocates limited government, free markets, and civil liberties. Funded by individual donors and foundations.",
-    "Council on Foreign Relations": "Nonpartisan foreign policy think tank founded in 1921. Publishes Foreign Affairs journal. Major influence on US foreign policy establishment.",
-    "CSIS": "Center for Strategic and International Studies. Bipartisan think tank. Major influence on defense and international security policy.",
-    "New America": "Policy institute founded in 1999. Centrist to progressive. Covers technology policy, education, and national security.",
-    "Urban Institute": "Nonpartisan research organization. Studies social and economic policy including housing, poverty, and healthcare.",
-    "Migration Policy Institute": "Nonpartisan research organization. Studies immigration and refugee policy worldwide. Provides data-driven analysis.",
+    "New York Times": "Publicly traded, headquartered in New York. Largest US newspaper by circulation. Generally regarded as center-left in editorial stance.",
+    "Fox News": "Owned by Fox Corporation (Murdoch family). Largest cable news network by viewership. Generally regarded as right-leaning.",
+    "Wall Street Journal": "Owned by News Corp (Murdoch family). News coverage broadly centrist; editorial page leans conservative.",
+    "Washington Post": "Owned by Jeff Bezos since 2013. Major national newspaper. Generally regarded as center-left.",
+    "CNN": "Owned by Warner Bros. Discovery. Major cable news network. Generally regarded as centrist to center-left.",
+    "NPR": "Nonprofit public media funded by member stations, sponsors, and foundations. Generally regarded as center-left.",
+    "Bloomberg": "Founded and majority-owned by Michael Bloomberg. Dominant source for financial professionals.",
+    "AP News": "Nonprofit cooperative owned by member newspapers and broadcasters. Generally regarded as centrist wire service.",
+    "Reuters": "Owned by Thomson Reuters. Major international wire service. Generally regarded as centrist.",
+    "Al Jazeera": "Funded by the government of Qatar. Major international news network. Significant coverage of Middle East and Global South.",
+    "BBC World": "Funded by the UK license fee. British public broadcaster. Generally regarded as centrist by international standards.",
+    "The Guardian World": "Owned by the Scott Trust, a nonprofit. British newspaper. Generally regarded as left-leaning. No paywall.",
+    "National Review": "Conservative magazine founded by William F. Buckley Jr. Represents traditional conservative intellectual tradition.",
+    "The Federalist": "Conservative online magazine. Represents populist and social conservative perspectives.",
+    "Breitbart": "Right-wing news website. Represents nationalist and populist conservative perspectives.",
+    "Heritage Foundation": "Conservative think tank. Produced Project 2025. Significant influence on Republican policy.",
+    "Brookings": "Centrist-to-center-left think tank. Largest think tank in the US by budget.",
+    "Mother Jones": "Progressive nonprofit magazine. Known for investigative reporting.",
+    "Haaretz": "Israeli liberal newspaper. Oldest daily in Israel. Generally left-leaning by Israeli standards.",
+    "Daily Maverick": "South African investigative publication. Independent nonprofit.",
+    "Global Voices": "International citizen media platform. Nonprofit. Stories from 100+ countries in 40+ languages.",
+    "The New Humanitarian": "Independent nonprofit newsroom formerly part of the UN. Covers humanitarian crises.",
+    "Bellingcat": "Netherlands-based investigative journalism group. Uses open-source intelligence methods.",
+    "Indian Country Today": "Nonprofit newsroom covering Native American communities and tribal affairs.",
+    "El Diario NY": "Spanish-language daily serving Latino communities in New York metro area.",
+    "The Root": "Digital magazine covering African American news and culture.",
+    "The Advocate": "LGBTQ+ news magazine. One of the oldest in the US.",
+    "Military Times": "Independent news covering military and veteran communities. Not affiliated with DoD.",
+    "Daily Yonder": "Nonprofit newsroom covering rural America.",
+    "Arab American News": "Community newspaper serving Arab American communities, primarily Dearborn, Michigan.",
 }
-
-# Domain pair explanations: what the intersection means in plain language
-PAIR_EXPLANATIONS = {
-    'ai+climate': 'AI development and its energy costs or climate applications',
-    'ai+economics': 'AI affecting markets, investment, and business models',
-    'ai+governance': 'Government efforts to regulate or deploy AI',
-    'ai+information': 'AI changing how information is produced and consumed',
-    'ai+labor': 'AI and automation changing jobs and wages',
-    'ai+legal': 'Courts and lawmakers addressing AI liability and rights',
-    'ai+security': 'AI as military tool or national security concern',
-    'climate+economics': 'Energy costs, food prices, and insurance rates linked to environmental change',
-    'climate+domestic_politics': 'Environmental policy as a political issue',
-    'climate+geopolitics': 'Climate diplomacy and international environmental agreements',
-    'climate+governance': 'Environmental regulation and climate policy implementation',
-    'climate+labor': 'Energy transition affecting workers and communities',
-    'climate+legal': 'Environmental lawsuits and climate litigation',
-    'climate+security': 'Environmental change creating security or military challenges',
-    'domestic_politics+economics': 'Economic conditions shaping political debate',
-    'domestic_politics+geopolitics': 'Foreign policy in domestic political debate',
-    'domestic_politics+governance': 'Political conflict over how government agencies operate',
-    'domestic_politics+information': 'How political information reaches voters',
-    'domestic_politics+legal': 'Political disputes reaching the courts',
-    'domestic_politics+security': 'Defense and public safety as political issues',
-    'economics+geopolitics': 'Trade, sanctions, and global economic competition',
-    'economics+governance': 'Tax policy, trade agreements, and government spending',
-    'economics+information': 'Tech industry economics and media business models',
-    'economics+labor': 'Jobs, wages, and whether economic growth reaches workers',
-    'economics+legal': 'Antitrust enforcement, financial regulation, and corporate law',
-    'economics+security': 'Military spending and conflict affecting markets',
-    'geopolitics+governance': 'International diplomacy and alliance management',
-    'geopolitics+legal': 'International law, treaties, and war crimes',
-    'geopolitics+security': 'Military tensions between nations',
-    'governance+information': 'Government regulation of media and information platforms',
-    'governance+labor': 'Workplace regulation and labor law enforcement',
-    'governance+legal': 'Government actions being challenged or upheld in courts',
-    'governance+security': 'Defense policy and military strategy',
-    'information+labor': 'Media coverage of labor issues and worker organizing',
-    'information+legal': 'Free speech, media law, and platform regulation',
-    'information+security': 'War coverage and information about military operations',
-    'labor+legal': 'Employment law, worker rights cases, and workplace litigation',
-    'labor+security': 'Military workforce and defense industry employment',
-}
-
 
 # ---------------------------------------------------------------------------
 # DATA LOADING
@@ -178,61 +127,149 @@ def extract_keywords(text, min_len=5, top_n=20):
             'years','state','states','house','report','officials',
             'according','tuesday','wednesday','thursday','friday',
             'saturday','sunday','monday','march','april','reuters',
-            'associated','update','watch'}
+            'associated','update','watch','people','trump','says',
+            'president','could','should','would'}
     words = re.findall(r'[a-z]{%d,}' % min_len, text.lower())
     filtered = [w for w in words if w not in stop]
     return [w for w, _ in Counter(filtered).most_common(top_n)]
 
 
-def cluster_articles_by_story(articles, threshold=0.3):
+def normalize_force_tag(tag: str) -> str:
+    """Normalize force tags for grouping (lowercase, strip whitespace)."""
+    return tag.lower().strip().rstrip(".")
+
+
+def compute_force_similarity(tag1: str, tag2: str) -> float:
     """
-    Group articles into story clusters based on shared title keywords.
-    Returns list of clusters, each with articles and a topic label.
+    Compute similarity between two force tags using word overlap.
+    Returns 0-1 score.
     """
-    # Build keyword index
-    article_keywords = {}
-    for a in articles:
-        title = a.get("title", "")
-        text = a.get("text", "") or a.get("summary", "")
-        combined = title + " " + title + " " + text[:500]  # weight title 2x
-        kw = set(extract_keywords(combined, min_len=5, top_n=15))
-        article_keywords[a["id"]] = kw
+    words1 = set(tag1.lower().split())
+    words2 = set(tag2.lower().split())
+    if not words1 or not words2:
+        return 0
+    # Jaccard similarity
+    intersection = len(words1 & words2)
+    union = len(words1 | words2)
+    return intersection / union if union > 0 else 0
 
-    # Find clusters by shared keywords (greedy)
-    used = set()
-    clusters = []
 
-    # Sort articles by number of keywords (richest first)
-    sorted_ids = sorted(article_keywords.keys(),
-                        key=lambda x: len(article_keywords[x]), reverse=True)
+# ---------------------------------------------------------------------------
+# STRUCTURAL FORCE CLUSTERING
+# ---------------------------------------------------------------------------
 
-    for anchor_id in sorted_ids:
-        if anchor_id in used:
+def cluster_by_structural_force(articles):
+    """
+    Cluster articles by structural force — the underlying pattern driving the story.
+
+    This is fundamentally different from keyword clustering. Two articles might
+    share zero keywords but be driven by the same force:
+    - "Tariffs on Chinese EVs" (economics + geopolitics)
+    - "Auto workers fear plant closures" (labor + economics)
+    Both are driven by "trade policy reshaping labor markets."
+
+    Strategy:
+    1. Group articles with identical or near-identical force_tags
+    2. Then merge groups whose force_tags are semantically similar
+    3. Fall back to domain-pair + keyword clustering for articles without force_tags
+    """
+    # Separate AI-tagged from keyword-only
+    ai_articles = [a for a in articles if a.get("force_tag") and a.get("domains")]
+    keyword_articles = [a for a in articles if not a.get("force_tag") and a.get("domains")]
+
+    # Step 1: Group by normalized force tag
+    force_groups = defaultdict(list)
+    for a in ai_articles:
+        tag = normalize_force_tag(a["force_tag"])
+        force_groups[tag].append(a)
+
+    # Step 2: Merge similar force tags (e.g., "military escalation" and "regional military escalation")
+    merged_groups = []
+    used_tags = set()
+    tag_list = sorted(force_groups.keys(), key=lambda t: len(force_groups[t]), reverse=True)
+
+    for tag in tag_list:
+        if tag in used_tags:
             continue
-        anchor_kw = article_keywords[anchor_id]
-        if not anchor_kw:
-            continue
+        group = list(force_groups[tag])
+        used_tags.add(tag)
 
-        cluster_ids = {anchor_id}
-        cluster_kw = set(anchor_kw)
-
-        for other_id in sorted_ids:
-            if other_id in used or other_id == anchor_id:
+        # Find similar tags to merge
+        for other_tag in tag_list:
+            if other_tag in used_tags:
                 continue
-            other_kw = article_keywords[other_id]
-            if not other_kw:
-                continue
-            overlap = len(anchor_kw & other_kw) / max(len(anchor_kw | other_kw), 1)
-            if overlap >= threshold:
-                cluster_ids.add(other_id)
-                cluster_kw |= other_kw
+            sim = compute_force_similarity(tag, other_tag)
+            if sim >= 0.4:  # 40% word overlap = same structural force
+                group.extend(force_groups[other_tag])
+                used_tags.add(other_tag)
 
-        if len(cluster_ids) >= 3:
-            cluster_articles = [a for a in articles if a["id"] in cluster_ids]
-            used |= cluster_ids
-            clusters.append(cluster_articles)
+        if len(group) >= 2:  # Need at least 2 articles to form a cluster
+            merged_groups.append(group)
 
-    return clusters
+    # Step 3: For keyword-only articles, try to assign them to existing force clusters
+    # based on domain overlap + keyword similarity
+    for a in keyword_articles:
+        best_group = None
+        best_score = 0
+        a_domains = set(a.get("domains", []))
+        a_keywords = set(extract_keywords(a.get("title", "") + " " + a.get("summary", "")[:200], min_len=4, top_n=10))
+
+        for group in merged_groups:
+            # Check domain overlap
+            group_domains = set()
+            group_keywords = set()
+            for ga in group[:5]:  # Sample first 5
+                group_domains.update(ga.get("domains", []))
+                group_keywords.update(extract_keywords(ga.get("title", ""), min_len=4, top_n=5))
+
+            domain_overlap = len(a_domains & group_domains) / max(len(a_domains | group_domains), 1)
+            keyword_overlap = len(a_keywords & group_keywords) / max(len(a_keywords | group_keywords), 1)
+            score = domain_overlap * 0.6 + keyword_overlap * 0.4
+
+            if score > best_score and score >= 0.3:
+                best_score = score
+                best_group = group
+
+        if best_group is not None:
+            best_group.append(a)
+
+    return merged_groups
+
+
+def score_force_cluster(cluster):
+    """
+    Score a structural force cluster for significance.
+
+    Factors:
+    - Source diversity (more unique sources = more significant)
+    - Domain breadth (touches more domains = more structurally important)
+    - Tier diversity (covered by national + community + intl = broader relevance)
+    - AI connection quality (articles with connection insights are richer)
+    """
+    sources = set(a["source"] for a in cluster)
+    domains = set()
+    tiers = set()
+    has_connection = 0
+
+    for a in cluster:
+        for d in a.get("domains", []):
+            domains.add(d)
+        tier = a.get("tier", "")
+        if tier in ("community", "lived"):
+            tiers.add("community")
+        elif tier in ("specialist", "domain"):
+            tiers.add("specialist")
+        else:
+            tiers.add(tier)
+        if a.get("connection"):
+            has_connection += 1
+
+    source_score = len(sources)
+    domain_score = len(domains) * 2  # domain breadth matters most
+    tier_score = len(tiers)
+    connection_bonus = min(has_connection, 5)  # cap the bonus
+
+    return source_score * domain_score + tier_score * 3 + connection_bonus
 
 
 # ---------------------------------------------------------------------------
@@ -241,50 +278,85 @@ def cluster_articles_by_story(articles, threshold=0.3):
 
 def analyze_top_stories(articles):
     """
-    Cluster articles into stories, then for each story produce:
-    - A factual headline
+    Cluster articles by structural force, then for each force produce:
+    - The structural force at work
+    - A factual headline from the most representative article
     - How many sources from how many tiers cover it
     - How framing differs across tiers
     - What domains it touches
-    - Source articles with source context
+    - AI-generated connection insights
     """
     domain_labels = get_domain_labels()
-    clusters = cluster_articles_by_story(articles, threshold=0.25)
 
-    # Sort by number of unique sources (broadest coverage first)
-    clusters.sort(key=lambda c: len(set(a["source"] for a in c)), reverse=True)
+    # Only cluster articles that have BOTH domain tags AND force_tags (AI-classified)
+    # This prevents unclassified articles from creating junk clusters
+    classified_articles = [a for a in articles if a.get("domains") and a.get("force_tag")]
+    clusters = cluster_by_structural_force(classified_articles)
+
+    # Score and sort
+    clusters.sort(key=score_force_cluster, reverse=True)
 
     stories = []
-    for cluster in clusters[:8]:  # Top 8 stories
+    for cluster in clusters[:10]:  # Top 10 structural forces
         sources = list(set(a["source"] for a in cluster))
         tiers = list(set(
-            ("community" if a.get("tier") in ("community","lived") else
-             "specialist" if a.get("tier") in ("specialist","domain") else
-             a.get("tier","unknown"))
+            ("community" if a.get("tier") in ("community", "lived") else
+             "specialist" if a.get("tier") in ("specialist", "domain") else
+             a.get("tier", "unknown"))
             for a in cluster
         ))
 
-        # Domains this story touches
+        # Domains this force touches
         all_domains = Counter()
         for a in cluster:
             for d in a.get("domains", []):
                 all_domains[d] += 1
-        top_domains = [domain_labels.get(d, d) for d, _ in all_domains.most_common(3)]
+        top_domains = [domain_labels.get(d, d) for d, _ in all_domains.most_common(4)]
 
-        # Extract the most representative title (from largest outlet)
+        # Extract the structural force label
+        force_tags = Counter(normalize_force_tag(a.get("force_tag", "")) for a in cluster if a.get("force_tag"))
+        primary_force = force_tags.most_common(1)[0][0] if force_tags else ""
+
+        # All force tags in this cluster (shows the breadth)
+        all_forces = [tag for tag, _ in force_tags.most_common(5) if tag]
+
+        # Sort articles: prefer those with connection insights, then by tier
         tier_order = {"national": 0, "international": 1, "community": 2,
                       "specialist": 3, "explainer": 4, "analysis": 5}
         sorted_arts = sorted(cluster,
-                             key=lambda a: tier_order.get(a.get("tier",""), 9))
-        lead_title = sorted_arts[0]["title"] if sorted_arts else ""
+                             key=lambda a: (0 if a.get("connection") else 1,
+                                           tier_order.get(a.get("tier", ""), 9)))
 
-        # How different tiers frame it (extract distinctive title words per tier)
+        # Headline = best connection insight (explanatory), NOT an article title
+        # If we have a connection insight, use it. Otherwise synthesize from force + domains.
+        best_conn = next((a.get("connection", "") for a in sorted_arts if a.get("connection")), "")
+        if best_conn:
+            lead_title = best_conn
+        else:
+            # Synthesize: "Force at the intersection of Domain1 and Domain2"
+            lead_title = f"{primary_force.title()} across {', '.join(top_domains[:3])}" if primary_force else sorted_arts[0]["title"] if sorted_arts else ""
+
+        # Collect connection insights (the gold)
+        connections = []
+        seen_connections = set()
+        for a in cluster:
+            conn = a.get("connection", "")
+            if conn and conn not in seen_connections:
+                connections.append({
+                    "text": conn,
+                    "source": a["source"],
+                    "title": a["title"][:80],
+                    "domains": a.get("domains", []),
+                })
+                seen_connections.add(conn)
+
+        # How different tiers frame it
         tier_framing = {}
         for tier_name in ["national", "international", "community", "specialist", "analysis"]:
             tier_arts = [a for a in cluster
                          if a.get("tier") == tier_name or
-                         (tier_name == "community" and a.get("tier") in ("community","lived")) or
-                         (tier_name == "specialist" and a.get("tier") in ("specialist","domain"))]
+                         (tier_name == "community" and a.get("tier") in ("community", "lived")) or
+                         (tier_name == "specialist" and a.get("tier") in ("specialist", "domain"))]
             if not tier_arts:
                 continue
             tier_titles = " ".join(a["title"] for a in tier_arts)
@@ -314,16 +386,21 @@ def analyze_top_stories(articles):
                     "tier": a.get("tier", ""),
                     "paywall": a.get("paywall", False),
                     "context": SOURCE_CONTEXT.get(a["source"], ""),
+                    "connection": a.get("connection", ""),
+                    "force_tag": a.get("force_tag", ""),
                 })
 
         stories.append({
             "headline": lead_title[:120],
+            "structural_force": primary_force,
+            "all_forces": all_forces,
             "source_count": len(sources),
             "tier_count": len(tiers),
             "tiers": tiers,
             "domains": top_domains,
-            "domain_keys": [d for d, _ in all_domains.most_common(3)],
+            "domain_keys": [d for d, _ in all_domains.most_common(4)],
             "article_count": len(cluster),
+            "connections": connections[:5],  # Top 5 connection insights
             "tier_framing": tier_framing,
             "articles": sample_articles,
         })
@@ -334,27 +411,27 @@ def analyze_top_stories(articles):
 def analyze_what_connects(articles):
     """
     Find stories where sources from across the political/demographic spectrum
-    converge on the same topic. This is the proof that shared attention exists.
+    converge on the same structural force.
     """
-    LEFT = {'New York Times','Washington Post','NPR','CNN','The Atlantic',
-            'NBC News','ABC News','Vox','American Prospect','The Intercept',
-            'Prism','Mother Jones','Center for American Progress',
-            'Roosevelt Institute','Brookings'}
-    RIGHT = {'Fox News','National Review','Washington Examiner','Washington Times',
-             'Daily Wire','The Dispatch','Reason','RealClearPolitics',
-             'The Federalist','Newsmax','The Blaze','Breitbart',
-             'Heritage Foundation','American Enterprise Institute',
-             'Hoover Institution','Hudson Institute','Cato Institute'}
-    INTL = {'BBC World','The Guardian World','Al Jazeera','Deutsche Welle',
-            'France 24','South China Morning Post','The Hindu','NHK World',
-            'ABC Australia','Rappler','Meduza','Times of India','Straits Times',
-            'Haaretz','Dawn','The Korea Herald','Bangkok Post','Taipei Times',
-            'Channel News Asia','Daily Maverick','Jamaica Observer',
-            'The Japan Times','Anadolu Agency','Global Voices',
-            'The New Humanitarian','Scroll.in','Balkan Insight','Nikkei Asia',
-            'The East African','The Globe and Mail','Press Gazette'}
+    LEFT = {'New York Times', 'Washington Post', 'NPR', 'CNN', 'The Atlantic',
+            'NBC News', 'ABC News', 'Vox', 'American Prospect', 'The Intercept',
+            'Prism', 'Mother Jones', 'Center for American Progress',
+            'Roosevelt Institute', 'Brookings'}
+    RIGHT = {'Fox News', 'National Review', 'Washington Examiner', 'Washington Times',
+             'Daily Wire', 'The Dispatch', 'Reason', 'RealClearPolitics',
+             'The Federalist', 'Newsmax', 'The Blaze', 'Breitbart',
+             'Heritage Foundation', 'American Enterprise Institute',
+             'Hoover Institution', 'Hudson Institute', 'Cato Institute'}
+    INTL = {'BBC World', 'The Guardian World', 'Al Jazeera', 'Deutsche Welle',
+            'France 24', 'South China Morning Post', 'The Hindu', 'NHK World',
+            'ABC Australia', 'Rappler', 'Meduza', 'Times of India', 'Straits Times',
+            'Haaretz', 'Dawn', 'The Korea Herald', 'Bangkok Post', 'Taipei Times',
+            'Channel News Asia', 'Daily Maverick', 'Jamaica Observer',
+            'The Japan Times', 'Anadolu Agency', 'Global Voices',
+            'The New Humanitarian', 'Scroll.in', 'Balkan Insight', 'Nikkei Asia',
+            'The East African', 'The Globe and Mail', 'Press Gazette'}
 
-    clusters = cluster_articles_by_story(articles, threshold=0.3)
+    clusters = cluster_by_structural_force(articles)
     bridging = []
 
     for cluster in clusters:
@@ -364,13 +441,19 @@ def analyze_what_connects(articles):
             if src in LEFT: left.add(src)
             elif src in RIGHT: right.add(src)
             elif src in INTL: intl.add(src)
-            elif a.get("tier") in ("community","lived"): community.add(src)
+            elif a.get("tier") in ("community", "lived"): community.add(src)
 
         segments = sum(1 for g in [left, right, intl, community] if g)
-        if segments >= 3 and len(left|right|intl|community) >= 5:
-            lead = cluster[0]
+        if segments >= 2 and len(left | right | intl | community) >= 4:
+            # Get the structural force
+            force_tags = Counter(normalize_force_tag(a.get("force_tag", ""))
+                               for a in cluster if a.get("force_tag"))
+            primary_force = force_tags.most_common(1)[0][0] if force_tags else ""
+
+            lead = sorted(cluster, key=lambda a: (0 if a.get("connection") else 1))[0]
             bridging.append({
                 "headline": lead["title"][:120],
+                "structural_force": primary_force,
                 "total_sources": len(set(a["source"] for a in cluster)),
                 "spectrum_segments": segments,
                 "left_sources": list(left)[:3],
@@ -381,11 +464,70 @@ def analyze_what_connects(articles):
                 "domains": [d for d, _ in Counter(
                     d for a in cluster for d in a.get("domains", [])
                 ).most_common(3)],
+                "sample_connection": lead.get("connection", ""),
             })
 
     bridging.sort(key=lambda x: (x["spectrum_segments"], x["total_sources"]),
                   reverse=True)
-    return bridging[:6]
+    return bridging[:8]
+
+
+def analyze_structural_forces_map(articles):
+    """
+    Build a map of ALL structural forces detected today and how they relate.
+    This is the high-level "what's actually happening" view.
+
+    Groups individual force_tags into force families, counts how many articles
+    and domains each force family touches, and identifies which forces are
+    connected (share articles or domains).
+    """
+    domain_labels = get_domain_labels()
+
+    # Collect all force tags with their articles
+    force_articles = defaultdict(list)
+    for a in articles:
+        tag = a.get("force_tag", "")
+        if tag and a.get("domains"):
+            force_articles[normalize_force_tag(tag)].append(a)
+
+    # Build force families by merging similar tags
+    families = []
+    used = set()
+    sorted_tags = sorted(force_articles.keys(), key=lambda t: len(force_articles[t]), reverse=True)
+
+    for tag in sorted_tags:
+        if tag in used:
+            continue
+        family_articles = list(force_articles[tag])
+        family_tags = [tag]
+        used.add(tag)
+
+        for other in sorted_tags:
+            if other in used:
+                continue
+            if compute_force_similarity(tag, other) >= 0.35:
+                family_articles.extend(force_articles[other])
+                family_tags.append(other)
+                used.add(other)
+
+        if len(family_articles) >= 2:
+            domains = set()
+            for a in family_articles:
+                for d in a.get("domains", []):
+                    domains.add(d)
+
+            families.append({
+                "force": tag,
+                "related_forces": family_tags[1:] if len(family_tags) > 1 else [],
+                "article_count": len(family_articles),
+                "source_count": len(set(a["source"] for a in family_articles)),
+                "domains": [domain_labels.get(d, d) for d in sorted(domains)],
+                "domain_keys": sorted(domains),
+                "sample_title": family_articles[0]["title"][:100],
+            })
+
+    families.sort(key=lambda f: f["article_count"] * len(f["domain_keys"]), reverse=True)
+    return families[:25]
 
 
 def analyze_community_exclusive(articles):
@@ -396,14 +538,14 @@ def analyze_community_exclusive(articles):
     national_keywords = set()
     for a in articles:
         if a.get("tier") == "national":
-            for w in re.findall(r'[a-z]{6,}', a.get("title","").lower()):
+            for w in re.findall(r'[a-z]{6,}', a.get("title", "").lower()):
                 national_keywords.add(w)
 
     community_stories = []
     for a in articles:
         if a.get("tier") not in ("community", "lived", "specialist", "domain"):
             continue
-        title_words = set(re.findall(r'[a-z]{6,}', a.get("title","").lower()))
+        title_words = set(re.findall(r'[a-z]{6,}', a.get("title", "").lower()))
         if not title_words:
             continue
         overlap = len(title_words & national_keywords) / len(title_words)
@@ -416,10 +558,11 @@ def analyze_community_exclusive(articles):
                 "tier": a.get("tier", ""),
                 "text_preview": text[:250] if text else "",
                 "domains": a.get("domains", []),
+                "connection": a.get("connection", ""),
+                "force_tag": a.get("force_tag", ""),
                 "context": SOURCE_CONTEXT.get(a["source"], ""),
             })
 
-    # Deduplicate by source (one per source)
     seen = set()
     unique = []
     for s in community_stories:
@@ -433,16 +576,19 @@ def analyze_community_exclusive(articles):
 def analyze_domain_collisions(articles, history):
     """
     Track which domain pairs are most active and whether they're
-    rising or falling vs. the 7-day average.
+    rising or falling vs. the 7-day average. Now enriched with
+    AI connection insights.
     """
     domain_labels = get_domain_labels()
 
     pair_today = defaultdict(int)
     pair_articles = defaultdict(list)
+    pair_connections = defaultdict(list)
+
     for a in articles:
         doms = sorted(a.get("domains", []))
         for i in range(len(doms)):
-            for j in range(i+1, len(doms)):
+            for j in range(i + 1, len(doms)):
                 pair = (doms[i], doms[j])
                 pair_today[pair] += 1
                 if len(pair_articles[pair]) < 3:
@@ -451,6 +597,9 @@ def analyze_domain_collisions(articles, history):
                         "source": a["source"],
                         "url": a.get("url", ""),
                     })
+                conn = a.get("connection", "")
+                if conn and len(pair_connections[pair]) < 2:
+                    pair_connections[pair].append(conn)
 
     # Rolling average from history
     pair_avg = defaultdict(float)
@@ -465,12 +614,48 @@ def analyze_domain_collisions(articles, history):
         for p in pair_avg:
             pair_avg[p] /= len(hist_dates)
 
+    # Domain pair explanations
+    PAIR_EXPLANATIONS = {
+        'ai+climate': 'AI development and its energy costs or climate applications',
+        'ai+economics': 'AI affecting markets, investment, and business models',
+        'ai+governance': 'Government efforts to regulate or deploy AI',
+        'ai+information': 'AI changing how information is produced and consumed',
+        'ai+labor': 'AI and automation changing jobs and wages',
+        'ai+legal': 'Courts and lawmakers addressing AI liability and rights',
+        'ai+security': 'AI as military tool or national security concern',
+        'climate+economics': 'Energy costs, food prices, and insurance rates linked to environmental change',
+        'climate+domestic_politics': 'Environmental policy as a political issue',
+        'climate+governance': 'Environmental regulation and climate policy implementation',
+        'climate+labor': 'Energy transition affecting workers and communities',
+        'climate+legal': 'Environmental lawsuits and climate litigation',
+        'climate+security': 'Environmental change creating security challenges',
+        'domestic_politics+economics': 'Economic conditions shaping political debate',
+        'domestic_politics+governance': 'Political conflict over how government agencies operate',
+        'domestic_politics+information': 'How political information reaches voters',
+        'domestic_politics+legal': 'Political disputes reaching the courts',
+        'domestic_politics+security': 'Defense and public safety as political issues',
+        'economics+geopolitics': 'Trade, sanctions, and global economic competition',
+        'economics+governance': 'Tax policy, trade agreements, and government spending',
+        'economics+labor': 'Jobs, wages, and whether economic growth reaches workers',
+        'economics+legal': 'Antitrust enforcement, financial regulation, and corporate law',
+        'economics+security': 'Military spending and conflict affecting markets',
+        'geopolitics+governance': 'International diplomacy and alliance management',
+        'geopolitics+legal': 'International law, treaties, and war crimes',
+        'geopolitics+security': 'Military tensions between nations',
+        'governance+information': 'Government regulation of media and information platforms',
+        'governance+labor': 'Workplace regulation and labor law enforcement',
+        'governance+legal': 'Government actions challenged or upheld in courts',
+        'governance+security': 'Defense policy and military strategy',
+        'information+legal': 'Free speech, media law, and platform regulation',
+        'labor+legal': 'Employment law, worker rights cases, and workplace litigation',
+    }
+
     threads = []
     for pair, count in sorted(pair_today.items(), key=lambda x: x[1], reverse=True):
         d1, d2 = pair
         pair_key = "+".join(sorted([d1, d2]))
         explanation = PAIR_EXPLANATIONS.get(pair_key,
-            f"{domain_labels.get(d1,d1)} and {domain_labels.get(d2,d2)}")
+            f"{domain_labels.get(d1, d1)} and {domain_labels.get(d2, d2)}")
 
         avg = pair_avg.get(pair, 0)
         if avg == 0:
@@ -484,47 +669,44 @@ def analyze_domain_collisions(articles, history):
 
         threads.append({
             "pair": list(pair),
-            "label": f"{domain_labels.get(d1,d1)} + {domain_labels.get(d2,d2)}",
+            "label": f"{domain_labels.get(d1, d1)} + {domain_labels.get(d2, d2)}",
             "explanation": explanation,
             "today_count": count,
             "trend": trend,
             "sample_articles": pair_articles[pair],
+            "ai_connections": pair_connections.get(pair, []),
         })
 
     return threads[:15]
 
 
 def analyze_source_spectrum(articles):
-    """Count articles by source tier."""
-    return {
-        "national": sum(1 for a in articles if a.get("tier") == "national"),
-        "international": sum(1 for a in articles if a.get("tier") == "international"),
-        "specialist": sum(1 for a in articles if a.get("tier") in ("specialist","domain")),
-        "explainer": sum(1 for a in articles if a.get("tier") == "explainer"),
-        "community": sum(1 for a in articles if a.get("tier") in ("community","lived")),
-        "analysis": sum(1 for a in articles if a.get("tier") == "analysis"),
-    }
+    """Count articles by source tier — all tiers, no gaps."""
+    from collections import Counter
+    tier_counts = Counter(a.get("tier", "unknown") for a in articles)
+    # Merge legacy aliases
+    if "domain" in tier_counts:
+        tier_counts["specialist"] += tier_counts.pop("domain")
+    if "lived" in tier_counts:
+        tier_counts["community"] += tier_counts.pop("lived")
+    # Drop unknowns
+    tier_counts.pop("unknown", None)
+    tier_counts.pop("", None)
+    return dict(tier_counts.most_common())
 
 
 def generate_questions_people_are_asking(articles):
     """
-    Based on the top stories, generate the questions regular people
-    would likely have, and point to which sources address them.
+    Based on the structural forces and domain collisions, generate
+    the questions regular people would likely have.
     """
     domain_labels = get_domain_labels()
 
-    # Count domains
-    dom_counts = Counter()
-    for a in articles:
-        for d in a.get("domains", []):
-            dom_counts[d] += 1
-
-    # Generate questions based on the most active domain pairs
     pair_counts = Counter()
     for a in articles:
         doms = sorted(a.get("domains", []))
         for i in range(len(doms)):
-            for j in range(i+1, len(doms)):
+            for j in range(i + 1, len(doms)):
                 pair_counts[(doms[i], doms[j])] += 1
 
     PAIR_QUESTIONS = {
@@ -542,47 +724,215 @@ def generate_questions_people_are_asking(articles):
         'governance+security': "What military and defense policy decisions are being made?",
         'ai+economics': "How is AI affecting markets and investment?",
         'economics+geopolitics': "How are trade and global power shifts affecting the US economy?",
+        'ai+information': "How is AI changing what information you see and trust?",
+        'governance+information': "How is the government shaping what information reaches you?",
+        'ai+governance': "How are governments trying to regulate AI, and is it working?",
+        'labor+economics': "Are workers benefiting from economic growth?",
     }
 
     questions = []
-    for (d1, d2), count in pair_counts.most_common(8):
+    for (d1, d2), count in pair_counts.most_common(12):
         pair_key = "+".join(sorted([d1, d2]))
         q = PAIR_QUESTIONS.get(pair_key)
-        if q and count >= 3:
-            # Find sources that address this question
+        if q and count >= 2:
             relevant = [a for a in articles
-                        if d1 in a.get("domains",[]) and d2 in a.get("domains",[])]
+                        if d1 in a.get("domains", []) and d2 in a.get("domains", [])]
             source_tiers = defaultdict(list)
             for a in relevant[:10]:
-                tier = a.get("tier","")
-                if tier in ("community","lived"): tier = "community"
-                if tier in ("specialist","domain"): tier = "specialist"
+                tier = a.get("tier", "")
+                if tier in ("community", "lived"): tier = "community"
+                if tier in ("specialist", "domain"): tier = "specialist"
                 if a["source"] not in [s["source"] for s in source_tiers[tier]]:
                     source_tiers[tier].append({
                         "source": a["source"],
                         "title": a["title"][:100],
-                        "url": a.get("url",""),
-                        "context": SOURCE_CONTEXT.get(a["source"],""),
+                        "url": a.get("url", ""),
+                        "context": SOURCE_CONTEXT.get(a["source"], ""),
+                        "connection": a.get("connection", ""),
                     })
+
+            # Get AI connection insights for this pair
+            pair_connections = [a.get("connection", "") for a in relevant if a.get("connection")]
 
             questions.append({
                 "question": q,
                 "article_count": count,
-                "domains": [domain_labels.get(d1,d1), domain_labels.get(d2,d2)],
+                "domains": [domain_labels.get(d1, d1), domain_labels.get(d2, d2)],
                 "sources_by_tier": {k: v[:2] for k, v in source_tiers.items()},
+                "ai_insights": pair_connections[:3],
             })
 
-    return questions[:6]
+    return questions[:8]
 
 
 # ---------------------------------------------------------------------------
 # MAIN ANALYSIS
 # ---------------------------------------------------------------------------
 
+def build_temporal_context(today_articles, analysis_date):
+    """
+    Compare today's data to yesterday's to surface what's shifting,
+    surging, or emerging. This gives readers temporal orientation —
+    'geopolitics coverage nearly tripled today' is more meaningful
+    than a raw number.
+    """
+    from datetime import timedelta
+    domain_labels = get_domain_labels()
+
+    # Load all articles to find yesterday
+    all_articles = load_articles()
+    try:
+        today_dt = datetime.strptime(analysis_date, "%Y-%m-%d")
+        yesterday_str = (today_dt - timedelta(days=1)).strftime("%Y-%m-%d")
+    except ValueError:
+        return {}
+
+    yesterday_articles = [a for a in all_articles if a.get("date") == yesterday_str]
+    if not yesterday_articles:
+        return {"has_yesterday": False}
+
+    # Domain comparison
+    y_domains = Counter()
+    t_domains = Counter()
+    for a in yesterday_articles:
+        for d in (a.get("domains") or []):
+            y_domains[d] += 1
+    for a in today_articles:
+        for d in (a.get("domains") or []):
+            t_domains[d] += 1
+
+    domain_shifts = []
+    for key in set(list(y_domains.keys()) + list(t_domains.keys())):
+        y_count = y_domains.get(key, 0)
+        t_count = t_domains.get(key, 0)
+        if y_count == 0:
+            change_pct = 100
+        else:
+            change_pct = round((t_count - y_count) / y_count * 100)
+        label = domain_labels.get(key, key)
+        domain_shifts.append({
+            "domain": key,
+            "label": label,
+            "yesterday": y_count,
+            "today": t_count,
+            "change_pct": change_pct,
+        })
+
+    # Sort by absolute change magnitude
+    domain_shifts.sort(key=lambda x: abs(x["change_pct"]), reverse=True)
+
+    # Volume change
+    y_total = len(yesterday_articles)
+    t_total = len(today_articles)
+    volume_change_pct = round((t_total - y_total) / max(y_total, 1) * 100)
+
+    # Biggest surges and drops (top 3 each)
+    surges = [d for d in domain_shifts if d["change_pct"] > 20][:3]
+    drops = [d for d in domain_shifts if d["change_pct"] < -20][:3]
+
+    # ── Force tag comparison (requires AI classification on both days) ──
+    y_forces = Counter(a.get("force_tag", "") for a in yesterday_articles if a.get("force_tag"))
+    t_forces = Counter(a.get("force_tag", "") for a in today_articles if a.get("force_tag"))
+
+    # Cluster similar force tags using same similarity as main analysis
+    y_force_clusters = cluster_by_structural_force(
+        [a for a in yesterday_articles if a.get("force_tag")]
+    )
+    t_force_clusters = cluster_by_structural_force(
+        [a for a in today_articles if a.get("force_tag")]
+    )
+
+    # cluster_by_structural_force returns list of lists — convert to dict
+    # keyed by the most common force_tag in each cluster
+    def clusters_to_dict(cluster_list):
+        result = {}
+        for group in cluster_list:
+            tags = Counter(a.get("force_tag", "") for a in group if a.get("force_tag"))
+            label = tags.most_common(1)[0][0] if tags else "unknown"
+            label = normalize_force_tag(label)
+            result[label] = group
+        return result
+
+    y_force_dict = clusters_to_dict(y_force_clusters)
+    t_force_dict = clusters_to_dict(t_force_clusters)
+
+    # Build named cluster summaries for comparison
+    def summarize_clusters(clusters_dict):
+        result = {}
+        for label, arts in clusters_dict.items():
+            dom_counts = Counter()
+            for a in arts:
+                for d in (a.get("domains") or []):
+                    dom_counts[d] += 1
+            top_domains = [d for d, _ in dom_counts.most_common(3)]
+            conns = [a.get("connection", "") for a in arts if a.get("connection")]
+            result[label] = {
+                "count": len(arts),
+                "domains": top_domains,
+                "sample_insight": conns[0] if conns else "",
+            }
+        return result
+
+    y_cluster_summary = summarize_clusters(y_force_dict)
+    t_cluster_summary = summarize_clusters(t_force_dict)
+
+    # Persisting forces (appeared both days) and new forces (only today)
+    shared_forces = set(y_cluster_summary.keys()) & set(t_cluster_summary.keys())
+    persisting = []
+    for f in shared_forces:
+        persisting.append({
+            "force": f,
+            "yesterday_count": y_cluster_summary[f]["count"],
+            "today_count": t_cluster_summary[f]["count"],
+            "domains": t_cluster_summary[f]["domains"],
+            "insight": t_cluster_summary[f]["sample_insight"],
+        })
+    persisting.sort(key=lambda x: x["today_count"], reverse=True)
+
+    new_forces = []
+    for f in set(t_cluster_summary.keys()) - shared_forces:
+        if t_cluster_summary[f]["count"] >= 3:  # only meaningful clusters
+            new_forces.append({
+                "force": f,
+                "count": t_cluster_summary[f]["count"],
+                "domains": t_cluster_summary[f]["domains"],
+                "insight": t_cluster_summary[f]["sample_insight"],
+            })
+    new_forces.sort(key=lambda x: x["count"], reverse=True)
+
+    faded_forces = []
+    for f in set(y_cluster_summary.keys()) - set(t_cluster_summary.keys()):
+        if y_cluster_summary[f]["count"] >= 3:
+            faded_forces.append({
+                "force": f,
+                "count": y_cluster_summary[f]["count"],
+                "domains": y_cluster_summary[f]["domains"],
+            })
+    faded_forces.sort(key=lambda x: x["count"], reverse=True)
+
+    return {
+        "has_yesterday": True,
+        "yesterday_date": yesterday_str,
+        "yesterday_total": y_total,
+        "today_total": t_total,
+        "volume_change_pct": volume_change_pct,
+        "domain_shifts": domain_shifts,
+        "surges": surges,
+        "drops": drops,
+        "persisting_forces": persisting[:8],
+        "new_forces": new_forces[:8],
+        "faded_forces": faded_forces[:5],
+        "yesterday_classified": sum(1 for a in yesterday_articles if a.get("force_tag")),
+        "today_classified": sum(1 for a in today_articles if a.get("force_tag")),
+    }
+
+
 def generate_daily_analysis(articles, analysis_date, history):
     domain_labels = get_domain_labels()
     unique_sources = set(a.get("source") for a in articles)
     cross_domain = sum(1 for a in articles if a.get("cross_domain", False))
+    ai_classified = sum(1 for a in articles if a.get("force_tag"))
+    has_connection = sum(1 for a in articles if a.get("connection"))
 
     dom_counts = Counter()
     for a in articles:
@@ -596,11 +946,15 @@ def generate_daily_analysis(articles, analysis_date, history):
 
     # Run all analysis components
     top_stories = analyze_top_stories(articles)
+    structural_forces = analyze_structural_forces_map(articles)
     what_connects = analyze_what_connects(articles)
     community_exclusive = analyze_community_exclusive(articles)
     active_threads = analyze_domain_collisions(articles, history)
     source_spectrum = analyze_source_spectrum(articles)
     questions = generate_questions_people_are_asking(articles)
+
+    # ── Temporal context: compare today vs yesterday ──
+    temporal_context = build_temporal_context(articles, analysis_date)
 
     return {
         "date": analysis_date,
@@ -610,20 +964,30 @@ def generate_daily_analysis(articles, analysis_date, history):
             "sources_reporting": len(unique_sources),
             "cross_domain": cross_domain,
             "cross_domain_pct": round(cross_domain / max(len(articles), 1) * 100),
+            "ai_classified": ai_classified,
+            "ai_classified_pct": round(ai_classified / max(len(articles), 1) * 100),
+            "connection_insights": has_connection,
             "top_domain": top_domain,
+            "domain_distribution": {
+                domain_labels.get(d, d): count
+                for d, count in dom_counts.most_common()
+            },
         },
+        "temporal_context": temporal_context,
         "top_stories": top_stories,
+        "structural_forces": structural_forces,
         "what_connects": what_connects,
         "community_exclusive": community_exclusive,
         "active_threads": active_threads,
         "source_spectrum": source_spectrum,
         "questions": questions,
-        # Keep old keys for backward compat with frontend
+        # Backward compat
         "narrative_divergence": [
             {
                 "topic": s["domains"][0] + " + " + s["domains"][1] if len(s["domains"]) >= 2 else s["domains"][0] if s["domains"] else "",
                 "theme": s["headline"],
                 "source_count": s["source_count"],
+                "structural_force": s.get("structural_force", ""),
                 "articles": s["articles"],
             }
             for s in top_stories[:3]
@@ -633,34 +997,47 @@ def generate_daily_analysis(articles, analysis_date, history):
 
 def print_summary(analysis):
     s = analysis["summary"]
-    print("\n========== DAILY NARRATIVE ANALYSIS ==========")
-    print(f"Date:               {analysis['date']}")
-    print(f"Total stories:      {s['total_stories']}")
-    print(f"Sources reporting:  {s['sources_reporting']}")
-    print(f"Cross-domain:       {s['cross_domain']} ({s['cross_domain_pct']}%)")
-    print(f"Top domain:         {s['top_domain']}")
+    print("\n" + "=" * 60)
+    print("  SIGNAL BOARD — DAILY STRUCTURAL ANALYSIS")
+    print("=" * 60)
+    print(f"Date:                  {analysis['date']}")
+    print(f"Total stories:         {s['total_stories']}")
+    print(f"Sources reporting:     {s['sources_reporting']}")
+    print(f"AI classified:         {s['ai_classified']} ({s['ai_classified_pct']}%)")
+    print(f"Connection insights:   {s['connection_insights']}")
+    print(f"Cross-domain:          {s['cross_domain']} ({s['cross_domain_pct']}%)")
+    print(f"Top domain:            {s['top_domain']}")
 
     if analysis.get("top_stories"):
-        print(f"\nTop stories ({len(analysis['top_stories'])} found):")
-        for i, st in enumerate(analysis["top_stories"][:5], 1):
-            print(f"  {i}. {st['headline'][:70]} ({st['source_count']} sources, {st['tier_count']} tiers)")
+        print(f"\n--- TOP STRUCTURAL FORCES ({len(analysis['top_stories'])} found) ---")
+        for i, st in enumerate(analysis["top_stories"][:8], 1):
+            force = st.get("structural_force", "")
+            domains = ", ".join(st["domains"][:3])
+            print(f"\n  {i}. [{force.upper()}]")
+            print(f"     {st['headline'][:80]}")
+            print(f"     {st['source_count']} sources | {st['article_count']} articles | {domains}")
+            if st.get("connections"):
+                print(f"     Insight: {st['connections'][0]['text']}")
+
+    if analysis.get("structural_forces"):
+        print(f"\n--- STRUCTURAL FORCES MAP ({len(analysis['structural_forces'])} forces) ---")
+        for f in analysis["structural_forces"][:10]:
+            print(f"  • {f['force']:40s}  {f['article_count']:3d} articles  {f['source_count']:2d} sources  [{', '.join(f['domains'][:3])}]")
 
     if analysis.get("what_connects"):
-        print(f"\nBridging stories ({len(analysis['what_connects'])} found):")
+        print(f"\n--- BRIDGING STORIES ({len(analysis['what_connects'])} found) ---")
         for i, b in enumerate(analysis["what_connects"][:3], 1):
-            print(f"  {i}. {b['headline'][:60]} ({b['spectrum_segments']}/4 spectrum segments)")
-
-    if analysis.get("community_exclusive"):
-        print(f"\nCommunity-exclusive ({len(analysis['community_exclusive'])} found):")
-        for i, c in enumerate(analysis["community_exclusive"][:5], 1):
-            print(f"  {i}. [{c['source']}] {c['title'][:60]}")
+            print(f"  {i}. {b['headline'][:60]}")
+            print(f"     Force: {b.get('structural_force', 'n/a')} | {b['spectrum_segments']}/4 segments | {b['total_sources']} sources")
 
     if analysis.get("questions"):
-        print(f"\nQuestions people are asking:")
-        for q in analysis["questions"][:4]:
+        print(f"\n--- QUESTIONS PEOPLE ARE ASKING ---")
+        for q in analysis["questions"][:5]:
             print(f"  ? {q['question']} ({q['article_count']} articles)")
+            if q.get("ai_insights"):
+                print(f"    → {q['ai_insights'][0]}")
 
-    print("===========================================\n")
+    print("\n" + "=" * 60)
 
 
 def main():

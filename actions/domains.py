@@ -256,16 +256,16 @@ DOMAINS = {
 }
 
 
-def tag_article(title: str, summary: str) -> list[str]:
+def tag_article(title: str, summary: str, full_text: str = "") -> list[str]:
     """
     Tag an article with matching domains based on keyword presence
-    in title and summary. Returns list of domain keys.
+    in title, summary, and full text. Returns list of domain keys.
 
-    Title matches are weighted higher (a keyword in a headline
-    is a stronger signal than one buried in a summary).
+    Title matches are weighted highest, summary next, full text lowest.
     """
-    text_lower = f"{title} {summary}".lower()
     title_lower = title.lower()
+    summary_lower = f"{title} {summary}".lower()
+    full_lower = f"{title} {summary} {full_text}".lower() if full_text else summary_lower
 
     matches = []
     for domain_key, domain in DOMAINS.items():
@@ -274,10 +274,12 @@ def tag_article(title: str, summary: str) -> list[str]:
             kw = keyword.lower()
             if kw in title_lower:
                 score += 3  # title match is strong signal
-            elif kw in text_lower:
+            elif kw in summary_lower:
                 score += 1  # summary match is weaker
+            elif kw in full_lower:
+                score += 0.5  # full text match is weakest but still counts
 
-        if score >= 2:  # threshold: at least one title match or two summary matches
+        if score >= 1:  # lowered threshold: catch more articles
             matches.append(domain_key)
 
     return matches

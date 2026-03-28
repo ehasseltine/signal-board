@@ -21,10 +21,17 @@ from datetime import datetime, timezone
 from pathlib import Path
 from time import mktime
 
+import ssl
+import urllib.request
+
 import feedparser
 
 from domains import tag_article, get_domain_labels
 from ai_classify import classify_batch, get_client
+
+# Allow SSL connections even when certificates are outdated
+if hasattr(ssl, '_create_unverified_context'):
+    ssl._create_default_https_context = ssl._create_unverified_context
 
 # Sources known to have paywalls (partial or full)
 PAYWALLED_SOURCES = {
@@ -44,8 +51,8 @@ ARTICLES_FILE = ROOT / "data" / "articles.json"
 # Limit how far back we look (avoids massive initial pulls)
 MAX_ARTICLES_PER_FEED = 25
 
-# User agent so feeds don't block us
-USER_AGENT = "SignalBoard/1.0 (https://github.com/ehasseltine/signal-board)"
+# User agent — some feeds block bot-style UAs, use browser-like
+USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
 
 
 def load_feeds() -> list[dict]:
@@ -59,6 +66,7 @@ def load_feeds() -> list[dict]:
                 "url": row["url"].strip(),
                 "tier": row["tier"].strip(),
                 "region": row["region"].strip(),
+                "media_type": row.get("media_type", "news").strip(),
                 "description": row.get("description", "").strip(),
                 "why": row.get("why", "").strip(),
             })
@@ -182,6 +190,7 @@ def fetch_feed(feed: dict) -> list[dict]:
                 "source": feed["name"],
                 "tier": feed["tier"],
                 "region": feed["region"],
+                "media_type": feed["media_type"],
                 "domains": domains,
                 "cross_domain": len(domains) > 1,
                 "paywall": feed["name"] in PAYWALLED_SOURCES,

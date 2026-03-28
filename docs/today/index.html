@@ -1,769 +1,1782 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Daily narrative analysis: what's happening across 213 news sources, and how the stories connect.">
-<meta property="og:title" content="Today at Signal Board">
-<meta property="og:description" content="Daily narrative analysis from 213 sources. See what connects.">
-<title>Today at Signal Board</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-  *{margin:0;padding:0;box-sizing:border-box;}
-  body{font-family:'Inter',sans-serif;background:#0a0a0a;color:#e8e8e8;min-height:100vh;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
-  a{color:inherit;text-decoration:none;}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="What's happening today across 239 news sources, and how the biggest stories connect to your life.">
+  <meta property="og:title" content="Today at Signal Board">
+  <meta property="og:description" content="239 sources, one clear picture. See what connects the biggest stories shaping your world today.">
+  <meta property="og:image" content="https://signal-board.org/og-image.png">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://signal-board.org/today">
+  <title>Today at Signal Board</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-  .shapes{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:0.08;}
-  .wrap{position:relative;z-index:1;max-width:920px;margin:0 auto;padding:0 1.5rem;}
+    /* Skip link for keyboard navigation */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: #6652FF;
+      color: #fff;
+      padding: 0.5rem 1rem;
+      z-index: 200;
+      font-size: 0.9rem;
+      font-weight: 600;
+      border-radius: 0 0 8px 0;
+      transition: top 0.2s;
+    }
+    .skip-link:focus {
+      top: 3px;
+    }
 
-  /* SITE NAV */
-  .site-nav{display:flex;align-items:center;justify-content:space-between;padding:1.5rem 0;margin-bottom:1rem;border-bottom:1px solid rgba(255,255,255,0.06);}
-  .nav-logo{font-family:'Space Grotesk',sans-serif;font-size:1.1rem;font-weight:800;color:#fff;letter-spacing:-0.03em;}
-  .nav-links{display:flex;gap:1.5rem;align-items:center;}
-  .nav-links a{font-size:0.85rem;color:rgba(235,230,245,0.5);font-weight:500;transition:color 0.15s;}
-  .nav-links a:hover{color:#fff;}
-  .nav-links a.active{color:#fff;font-weight:700;}
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0f0f14;
+      color: #ede9f5;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      position: relative;
+      font-size: 16px;
+      line-height: 1.7;
+    }
 
-  /* HEADER */
-  .header{padding:6vh 0 1.5rem;}
-  .date-line{font-family:'Space Grotesk',sans-serif;font-size:0.85rem;font-weight:700;color:rgba(235,230,245,0.5);text-transform:uppercase;letter-spacing:0.12em;margin-bottom:0.8rem;}
-  .header h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(2.2rem,5vw,3.2rem);font-weight:800;letter-spacing:-0.04em;color:#fff;line-height:1.1;margin-bottom:1.5rem;}
-  .big-picture{font-size:clamp(1rem,2.2vw,1.15rem);color:rgba(235,230,245,0.75);line-height:1.8;max-width:720px;margin-bottom:2.5rem;}
+    /* Animated gradient orbs background */
+    body::before,
+    body::after {
+      content: '';
+      position: fixed;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      z-index: 0;
+      pointer-events: none;
+    }
 
-  /* STAT BLOCKS */
-  .stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:0.8rem;margin-bottom:3.5rem;}
-  .stat-block{border-radius:24px;padding:1.8rem 1.5rem;display:flex;flex-direction:column;justify-content:flex-end;min-height:140px;transition:transform 0.2s;}
-  .stat-block:hover{transform:scale(1.02);}
-  .stat-block .num{font-family:'Space Grotesk',sans-serif;font-size:clamp(2rem,5vw,2.8rem);font-weight:800;color:#fff;letter-spacing:-0.04em;line-height:1;}
-  .stat-block .label{font-size:0.78rem;color:rgba(255,255,255,0.65);margin-top:0.4rem;font-weight:500;}
+    body::before {
+      background: radial-gradient(circle at center, rgba(102, 82, 255, 0.08) 0%, rgba(102, 82, 255, 0.02) 70%, transparent 100%);
+      top: -150px;
+      left: -150px;
+      animation: float 25s ease-in-out infinite;
+    }
 
-  /* SECTION TITLE */
-  .section-title{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.8rem,4vw,2.4rem);font-weight:800;letter-spacing:-0.03em;color:#fff;margin-bottom:1.8rem;margin-top:3rem;}
+    body::after {
+      background: radial-gradient(circle at center, rgba(0, 194, 168, 0.08) 0%, rgba(0, 194, 168, 0.02) 70%, transparent 100%);
+      bottom: -200px;
+      right: -200px;
+      animation: float 30s ease-in-out infinite reverse;
+    }
 
-  /* TOP STORIES */
-  .story-grid{display:grid;grid-template-columns:1fr;gap:1.2rem;margin-bottom:3rem;}
-  .story-card{border-radius:20px;padding:2rem;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.08);transition:transform 0.15s;}
-  .story-card:hover{transform:translateY(-2px);}
+    @keyframes float {
+      0%, 100% {
+        transform: translate(0, 0);
+      }
+      50% {
+        transform: translate(40px, -40px);
+      }
+    }
 
-  .story-headline{font-family:'Space Grotesk',sans-serif;font-size:1.25rem;font-weight:800;color:#fff;letter-spacing:-0.02em;margin-bottom:1rem;line-height:1.4;}
-  .story-meta{display:flex;gap:1rem;align-items:center;flex-wrap:wrap;margin-bottom:1.2rem;font-size:0.85rem;color:rgba(235,230,245,0.6);}
-  .meta-item{display:flex;gap:0.3rem;align-items:center;}
+    /* Additional animated orb */
+    .orb-3 {
+      position: fixed;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle at center, rgba(255, 84, 0, 0.1) 0%, rgba(255, 84, 0, 0.02) 70%, transparent 100%);
+      border-radius: 50%;
+      top: 40%;
+      right: 10%;
+      z-index: 0;
+      pointer-events: none;
+      animation: float 28s ease-in-out infinite;
+    }
 
-  .story-domains{display:flex;gap:0.6rem;flex-wrap:wrap;margin-bottom:1.5rem;}
-  .domain-pill{display:inline-block;padding:0.4rem 0.8rem;border-radius:100px;font-size:0.75rem;font-weight:600;text-transform:capitalize;}
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.15s;
+    }
 
-  .tier-framing{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,0.06);}
-  .tier-frame{background:rgba(0,0,0,0.3);border-radius:12px;padding:1rem;font-size:0.85rem;}
-  .tier-frame-label{font-family:'Space Grotesk',sans-serif;font-weight:700;text-transform:capitalize;color:rgba(235,230,245,0.8);margin-bottom:0.6rem;font-size:0.75rem;}
-  .tier-frame-count{color:rgba(235,230,245,0.5);font-size:0.7rem;margin-bottom:0.5rem;}
-  .tier-frame-sample{color:#fff;line-height:1.4;font-size:0.8rem;}
+    a:hover {
+      color: #fff;
+    }
 
-  .story-articles{display:grid;grid-template-columns:1fr;gap:0.7rem;margin-top:1rem;}
-  .article-row{background:rgba(0,0,0,0.2);border-radius:12px;padding:0.8rem;font-size:0.85rem;display:flex;gap:0.8rem;align-items:flex-start;transition:background 0.15s;cursor:pointer;}
-  .article-row:hover{background:rgba(0,0,0,0.3);}
-  .article-source{font-family:'Space Grotesk',sans-serif;font-size:0.7rem;font-weight:700;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.08em;min-width:70px;flex-shrink:0;position:relative;}
-  .source-tooltip{display:none;position:absolute;bottom:100%;left:0;background:rgba(0,0,0,0.95);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:0.6rem;width:200px;font-size:0.7rem;color:rgba(235,230,245,0.7);line-height:1.4;z-index:10;white-space:normal;margin-bottom:0.5rem;}
-  .article-row:hover .source-tooltip{display:block;}
-  .article-title{flex:1;color:#fff;line-height:1.4;}
+    /* Gradient accent bar at top */
+    .gradient-bar {
+      height: 3px;
+      background: linear-gradient(
+        to right,
+        #6652FF 0%,
+        #FF5400 11.1%,
+        #FF0054 22.2%,
+        #9E0059 33.3%,
+        #00C2A8 44.4%,
+        #4CAF50 55.5%,
+        #D32F2F 66.6%,
+        #1976D2 77.7%,
+        #7B1FA2 88.8%,
+        #FF9800 100%
+      );
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 101;
+    }
 
-  /* CONSTELLATION SVG */
-  .constellation{background:rgba(255,255,255,0.02);border-radius:24px;padding:2.5rem;margin-bottom:3rem;border:1px solid rgba(255,255,255,0.08);}
-  .constellation svg{width:100%;height:auto;max-height:500px;}
-  .constellation-info{font-size:0.85rem;color:rgba(235,230,245,0.5);margin-top:1.2rem;text-align:center;}
+    body {
+      padding-top: 3px;
+    }
 
-  /* WHAT CONNECTS US */
-  .connects-section{margin-bottom:3.5rem;}
-  .connects-intro{font-size:clamp(1rem,2.2vw,1.15rem);color:rgba(235,230,245,0.7);line-height:1.8;max-width:720px;margin-bottom:2.5rem;}
-  .connects-stat{display:flex;align-items:baseline;gap:0.6rem;margin-bottom:2rem;}
-  .connects-stat .big{font-family:'Space Grotesk',sans-serif;font-size:clamp(3rem,7vw,4.5rem);font-weight:800;color:#fff;letter-spacing:-0.04em;line-height:1;}
-  .connects-stat .context{font-size:1rem;color:rgba(235,230,245,0.6);line-height:1.6;max-width:400px;}
+    .wrap {
+      position: relative;
+      z-index: 1;
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
 
-  .shared-story{border-radius:20px;padding:2rem;margin-bottom:1.2rem;border:1px solid rgba(255,255,255,0.08);background:rgba(255,255,255,0.02);transition:transform 0.15s;}
-  .shared-story:hover{transform:translateY(-2px);}
-  .shared-story-topic{font-family:'Space Grotesk',sans-serif;font-size:1.3rem;font-weight:800;color:#fff;letter-spacing:-0.02em;margin-bottom:0.3rem;}
-  .shared-story-sub{font-size:0.9rem;color:rgba(235,230,245,0.55);margin-bottom:1.2rem;line-height:1.5;}
-  .spectrum-dots{display:flex;gap:0.4rem;align-items:center;margin-top:0.8rem;}
-  .spectrum-dot{display:inline-block;width:8px;height:8px;border-radius:50%;}
+    /* NAVIGATION */
+    .site-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.5rem 0;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      position: sticky;
+      top: 3px;
+      background: rgba(15, 15, 20, 0.95);
+      backdrop-filter: blur(20px);
+      z-index: 100;
+    }
 
-  .headline-strip{display:flex;flex-direction:column;gap:0.5rem;}
-  .headline-row{display:flex;gap:0.8rem;align-items:flex-start;padding:0.6rem 0;border-top:1px solid rgba(255,255,255,0.04);}
-  .headline-row:first-child{border-top:none;padding-top:0;}
-  .headline-src{font-family:'Space Grotesk',sans-serif;font-size:0.7rem;font-weight:700;color:rgba(235,230,245,0.4);text-transform:uppercase;letter-spacing:0.06em;min-width:100px;flex-shrink:0;padding-top:0.15rem;}
-  .headline-text{font-size:0.92rem;color:rgba(235,230,245,0.85);line-height:1.5;flex:1;cursor:pointer;transition:color 0.15s;}
-  .headline-text:hover{color:#fff;}
-  .tier-dot{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:0.3rem;vertical-align:middle;}
-  .tier-dot.national{background:#6652FF;}
-  .tier-dot.international{background:#1976D2;}
-  .tier-dot.community{background:#FF5400;}
-  .tier-dot.specialist{background:#00C2A8;}
-  .tier-dot.explainer{background:#FF9800;}
-  .tier-dot.analysis{background:#4CAF50;}
+    .nav-logo {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.03em;
+    }
 
-  /* QUESTIONS SECTION */
-  .questions-grid{display:grid;grid-template-columns:1fr;gap:1.2rem;margin-bottom:3rem;}
-  .question-card{border-radius:20px;padding:2rem;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.08);transition:transform 0.15s;}
-  .question-card:hover{transform:translateY(-2px);}
-  .question-text{font-family:'Space Grotesk',sans-serif;font-size:1.15rem;font-weight:800;color:#fff;letter-spacing:-0.02em;margin-bottom:1rem;line-height:1.4;}
-  .question-stats{display:flex;gap:1.5rem;margin-bottom:1.2rem;flex-wrap:wrap;}
-  .question-stat{font-size:0.85rem;}
-  .question-stat-value{font-family:'Space Grotesk',sans-serif;font-weight:800;color:#fff;margin-right:0.3rem;}
-  .question-domains{display:flex;gap:0.6rem;flex-wrap:wrap;margin-bottom:1rem;}
-  .question-sources{display:grid;grid-template-columns:1fr;gap:0.6rem;}
-  .question-source{background:rgba(0,0,0,0.2);border-radius:12px;padding:0.7rem;font-size:0.8rem;display:flex;gap:0.6rem;align-items:flex-start;}
-  .question-source-name{font-family:'Space Grotesk',sans-serif;font-weight:700;color:rgba(255,255,255,0.7);min-width:60px;text-transform:uppercase;font-size:0.7rem;}
-  .question-source-title{flex:1;color:#fff;}
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+    }
 
-  /* ACTIVE THREADS */
-  .thread-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem;margin-bottom:3rem;}
-  .thread-block{border-radius:20px;padding:1.8rem;display:flex;flex-direction:column;transition:transform 0.2s,filter 0.15s;}
-  .thread-block:hover{transform:translateY(-2px);filter:brightness(1.06);}
+    .nav-links a {
+      font-size: 0.85rem;
+      color: rgba(235, 230, 245, 0.65);
+      font-weight: 500;
+      transition: color 0.15s;
+    }
 
-  .thread-pair{font-family:'Space Grotesk',sans-serif;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:rgba(0,0,0,0.7);margin-bottom:0.8rem;}
-  .thread-count{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.8rem,4vw,2.4rem);font-weight:800;letter-spacing:-0.03em;color:#fff;margin-bottom:0.6rem;}
-  .thread-label{font-size:0.85rem;color:rgba(255,255,255,0.75);line-height:1.5;margin-bottom:0.6rem;}
-  .thread-explanation{font-size:0.8rem;color:rgba(255,255,255,0.65);line-height:1.5;}
-  .trend-badge{display:inline-block;margin-top:0.8rem;font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;padding:0.4rem 0.9rem;border-radius:100px;background:rgba(0,0,0,0.2);color:rgba(255,255,255,0.8);}
+    .nav-links a:hover {
+      color: #fff;
+    }
 
-  /* SOURCE SPECTRUM */
-  .spectrum-container{background:rgba(255,255,255,0.02);border-radius:24px;padding:2.5rem;border:1px solid rgba(255,255,255,0.08);margin-bottom:3rem;}
-  .spectrum-label{font-size:0.8rem;color:rgba(235,230,245,0.5);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:1.5rem;font-weight:600;}
-  .spectrum-bars{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1rem;margin-bottom:2rem;}
-  .spectrum-bar{display:flex;flex-direction:column;}
-  .bar-label{font-family:'Space Grotesk',sans-serif;font-size:0.8rem;font-weight:700;color:rgba(255,255,255,0.8);margin-bottom:0.6rem;text-transform:capitalize;}
-  .bar-fill{height:60px;border-radius:12px;transition:filter 0.2s;}
-  .bar-fill:hover{filter:brightness(1.15);}
-  .bar-count{font-family:'Space Grotesk',sans-serif;font-size:0.85rem;font-weight:700;color:#fff;margin-top:0.5rem;}
+    .nav-links a.active {
+      color: #fff;
+      font-weight: 700;
+    }
 
-  /* MISSED STORIES */
-  .missed-stories{background:linear-gradient(135deg, rgba(102,82,255,0.1) 0%, rgba(255,84,0,0.08) 100%);border-radius:24px;padding:2.5rem;border:1px solid rgba(255,255,255,0.1);margin-bottom:3rem;}
-  .missed-intro{font-size:1rem;color:rgba(235,230,245,0.85);line-height:1.7;margin-bottom:1.8rem;max-width:680px;}
+    /* HEADER SECTION */
+    .header {
+      padding: 3rem 0 2rem;
+    }
 
-  .community-cards{display:grid;grid-template-columns:1fr;gap:1rem;}
-  .community-card{background:rgba(0,0,0,0.3);border-radius:16px;padding:1.4rem;border:1px solid rgba(255,255,255,0.08);transition:background 0.15s;}
-  .community-card:hover{background:rgba(0,0,0,0.4);}
+    .date-line {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: rgba(235, 230, 245, 0.65);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 0.8rem;
+    }
 
-  .community-source{display:flex;align-items:center;gap:0.6rem;font-size:0.8rem;color:rgba(255,255,255,0.6);margin-bottom:0.6rem;font-weight:600;}
-  .source-badge{display:inline-block;width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.4);}
-  .community-title{font-size:0.95rem;color:#fff;line-height:1.5;font-weight:500;margin-bottom:0.8rem;}
-  .community-excerpt{font-size:0.85rem;color:rgba(235,230,245,0.6);line-height:1.5;}
-  .community-domains{display:flex;gap:0.4rem;flex-wrap:wrap;margin-top:0.6rem;}
-  .community-domain-tag{display:inline-block;padding:0.3rem 0.6rem;border-radius:6px;font-size:0.7rem;font-weight:600;text-transform:capitalize;}
+    .header h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2.2rem, 5vw, 3.2rem);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      color: #fff;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+    }
 
-  /* FOOTER */
-  .footer{border-top:1px solid rgba(255,255,255,0.06);padding:2.5rem 0 3rem;font-size:0.8rem;color:rgba(235,230,245,0.4);display:flex;gap:1.5rem;flex-wrap:wrap;margin-top:2rem;}
+    .header-context {
+      font-size: clamp(1rem, 2.2vw, 1.15rem);
+      color: rgba(235, 230, 245, 0.75);
+      line-height: 1.8;
+      max-width: 720px;
+      margin-bottom: 2rem;
+    }
 
-  /* DOMAIN COLORS */
-  .color-ai{background:#6652FF;color:#000;}
-  .color-labor{background:#FF5400;color:#000;}
-  .color-governance{background:#FF0054;color:#fff;}
-  .color-information{background:#9E0059;color:#fff;}
-  .color-economics{background:#00C2A8;color:#000;}
-  .color-climate{background:#4CAF50;color:#000;}
-  .color-security{background:#D32F2F;color:#fff;}
-  .color-geopolitics{background:#1976D2;color:#fff;}
-  .color-domestic_politics{background:#7B1FA2;color:#fff;}
-  .color-legal{background:#FF9800;color:#000;}
+    /* KEY STATS — colorful blocks */
+    .key-stats {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0.5rem;
+      margin-bottom: 3rem;
+    }
 
-  /* LOADING STATE */
-  .loading{text-align:center;padding:4rem 2rem;color:rgba(235,230,245,0.5);}
-  .spinner{display:inline-block;width:24px;height:24px;border:2px solid rgba(235,230,245,0.2);border-top-color:rgba(235,230,245,0.8);border-radius:50%;animation:spin 0.8s linear infinite;}
-  @keyframes spin{to{transform:rotate(360deg);}}
+    .stat-item {
+      border-radius: 16px;
+      padding: 0.9rem 0.8rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 72px;
+      border: 1px solid rgba(255,255,255,0.06);
+      text-align: center;
+    }
 
-  /* RESPONSIVE */
-  @media(max-width:768px){
-    .wrap{padding:0 1rem;}
-    .site-nav{flex-direction:column;gap:0.8rem;align-items:flex-start;}
-    .nav-links{gap:1rem;flex-wrap:wrap;}
-    .stat-row{grid-template-columns:repeat(2,1fr);}
-    .thread-grid{grid-template-columns:1fr;}
-    .spectrum-bars{grid-template-columns:repeat(2,1fr);}
-    .tier-framing{grid-template-columns:1fr;}
-  }
+    .stat-num {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2rem, 5vw, 2.8rem);
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.04em;
+      line-height: 1;
+    }
 
-  @media(max-width:480px){
-    .header{padding:4vh 0 1rem;}
-    .header h1{font-size:1.8rem;}
-    .stat-row{grid-template-columns:1fr;}
-    .spectrum-bars{grid-template-columns:1fr;}
-    .thread-grid{grid-template-columns:1fr;}
-  }
-</style>
+    .stat-label {
+      font-size: 0.78rem;
+      color: rgba(255, 255, 255, 0.7);
+      margin-top: 0.3rem;
+      font-weight: 500;
+    }
+
+    /* SECTION HEADING */
+    .section-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(1.8rem, 4vw, 2.4rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: #fff;
+      margin: 3.5rem 0 2rem;
+      text-transform: uppercase;
+      position: relative;
+      padding-bottom: 1rem;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 40px;
+      height: 3px;
+      background: #6652FF;
+      border-radius: 2px;
+    }
+
+    /* FORCE CARDS */
+    .forces-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .force-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 2.5rem;
+      transition: all 0.2s;
+      border-left: 4px solid;
+    }
+
+    .force-card:hover {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: rgba(255, 255, 255, 0.15);
+      transform: translateY(-2px);
+    }
+
+    .force-headline {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.2rem;
+      text-transform: uppercase;
+      line-height: 1.3;
+    }
+
+    .force-domains {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.8rem;
+    }
+
+    .domain-pill {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      border-radius: 100px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border: 1px solid;
+    }
+
+    /* Domain colors — ONLY on pills */
+    .domain-pill.domain-ai { background: #6652FF; color: #fff; border-color: #6652FF; }
+    .domain-pill.domain-labor { background: #FF5400; color: #fff; border-color: #FF5400; }
+    .domain-pill.domain-governance { background: #FF0054; color: #fff; border-color: #FF0054; }
+    .domain-pill.domain-information { background: #9E0059; color: #fff; border-color: #9E0059; }
+    .domain-pill.domain-economics { background: #00C2A8; color: #000; border-color: #00C2A8; }
+    .domain-pill.domain-climate { background: #4CAF50; color: #000; border-color: #4CAF50; }
+    .domain-pill.domain-security { background: #D32F2F; color: #fff; border-color: #D32F2F; }
+    .domain-pill.domain-geopolitics { background: #1976D2; color: #fff; border-color: #1976D2; }
+    .domain-pill.domain-domestic_politics { background: #7B1FA2; color: #fff; border-color: #7B1FA2; }
+    .domain-pill.domain-legal { background: #FF9800; color: #000; border-color: #FF9800; }
+
+    /* Force card left border accent */
+    .force-card.domain-ai { border-left-color: #6652FF; }
+    .force-card.domain-labor { border-left-color: #FF5400; }
+    .force-card.domain-governance { border-left-color: #FF0054; }
+    .force-card.domain-information { border-left-color: #9E0059; }
+    .force-card.domain-economics { border-left-color: #00C2A8; }
+    .force-card.domain-climate { border-left-color: #4CAF50; }
+    .force-card.domain-security { border-left-color: #D32F2F; }
+    .force-card.domain-geopolitics { border-left-color: #1976D2; }
+    .force-card.domain-domestic_politics { border-left-color: #7B1FA2; }
+    .force-card.domain-legal { border-left-color: #FF9800; }
+
+    .force-connections {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .connection-insight {
+      padding: 1rem;
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 12px;
+      border-left: 3px solid rgba(102, 82, 255, 0.4);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #e8e8e8;
+    }
+
+    .force-metadata {
+      display: flex;
+      gap: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      font-size: 0.85rem;
+      color: rgba(235, 230, 245, 0.6);
+    }
+
+    .meta-block {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+
+    .meta-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 600;
+      color: rgba(235, 230, 245, 0.55);
+    }
+
+    .meta-value {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    /* HEATMAP SECTION — the hero */
+    .heatmap-container {
+      background: linear-gradient(135deg, rgba(102,82,255,0.06) 0%, rgba(255,0,84,0.04) 50%, rgba(0,194,168,0.06) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 28px;
+      padding: 3.5rem 3rem;
+      margin: 4rem -1rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .heatmap-container::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      border-radius: 30px;
+      background: linear-gradient(135deg, #6652FF, #FF0054, #00C2A8, #FF5400, #4CAF50);
+      z-index: -1;
+      opacity: 0.15;
+      filter: blur(1px);
+    }
+
+    .heatmap-header {
+      margin-bottom: 2.5rem;
+      text-align: center;
+    }
+
+    .heatmap-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2rem, 4.5vw, 3rem);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      color: #fff;
+      margin-bottom: 0.8rem;
+      text-transform: uppercase;
+      background: linear-gradient(135deg, #fff 0%, #e0d6ff 50%, #fff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .heatmap-subtitle {
+      font-size: 1rem;
+      color: rgba(235, 230, 245, 0.75);
+      line-height: 1.7;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .heatmap-grid {
+      width: 100%;
+      max-width: 100%;
+      margin-bottom: 1.5rem;
+      border-radius: 12px;
+      overflow: visible;
+    }
+
+    .heatmap-grid svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .heatmap-legend {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      color: rgba(235, 230, 245, 0.6);
+      margin-top: 1.5rem;
+    }
+
+    .legend-item {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+    .legend-box {
+      width: 14px;
+      height: 14px;
+      border-radius: 4px;
+    }
+
+    /* QUESTIONS SECTION */
+    .questions-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .question-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 2rem;
+      transition: all 0.2s;
+      cursor: pointer;
+    }
+
+    .question-card:hover {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: rgba(255, 255, 255, 0.15);
+      transform: translateY(-2px);
+    }
+
+    .question-card.expanded {
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .question-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .question-text {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.02em;
+      line-height: 1.4;
+      flex: 1;
+    }
+
+    .question-count {
+      display: inline-block;
+      padding: 0.35rem 0.75rem;
+      background: rgba(102, 82, 255, 0.2);
+      border: 1px solid rgba(102, 82, 255, 0.4);
+      border-radius: 100px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #6652FF;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      flex-shrink: 0;
+    }
+
+    .expand-icon {
+      font-size: 1.5rem;
+      color: rgba(235, 230, 245, 0.65);
+      flex-shrink: 0;
+      transition: transform 0.2s;
+      margin-top: 0.2rem;
+    }
+
+    .question-card.expanded .expand-icon {
+      transform: rotate(180deg);
+    }
+
+    .question-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s;
+    }
+
+    .question-card.expanded .question-content {
+      max-height: 1000px;
+    }
+
+    .question-details {
+      padding-top: 1.5rem;
+      margin-top: 1.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .question-stat {
+      margin-bottom: 1.2rem;
+    }
+
+    .question-stat-value {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    .question-stat-label {
+      font-size: 0.85rem;
+      color: rgba(235, 230, 245, 0.6);
+    }
+
+    .question-domains {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+    }
+
+    .question-sources {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.8rem;
+    }
+
+    .question-source {
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 12px;
+      padding: 0.9rem;
+      font-size: 0.85rem;
+    }
+
+    .source-tier-dot {
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      margin-right: 0.5rem;
+      vertical-align: middle;
+    }
+
+    .tier-national { background: #6652FF; }
+    .tier-international { background: #1976D2; }
+    .tier-community { background: #FF5400; }
+    .tier-specialist { background: #00C2A8; }
+    .tier-analysis { background: #4CAF50; }
+    .tier-explainer { background: #FF9800; }
+    .tier-podcast { background: #9E0059; }
+
+    .source-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.8);
+      text-transform: uppercase;
+      font-size: 0.7rem;
+      letter-spacing: 0.05em;
+      min-width: 80px;
+    }
+
+    .source-title {
+      color: #e8e8e8;
+      line-height: 1.5;
+      flex: 1;
+    }
+
+    /* SOURCE DIVERSITY */
+    .diversity-container {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 2.5rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .diversity-intro {
+      font-size: 0.95rem;
+      color: rgba(235, 230, 245, 0.7);
+      line-height: 1.7;
+      margin-bottom: 2rem;
+      max-width: 720px;
+    }
+
+    .spectrum-bars {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .spectrum-bar {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .bar-label {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 0.8rem;
+      text-transform: capitalize;
+    }
+
+    .bar-container {
+      display: flex;
+      height: 8px;
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 100px;
+      overflow: hidden;
+      gap: 0;
+    }
+
+    .bar-segment {
+      height: 100%;
+      transition: filter 0.2s;
+    }
+
+    .bar-container:hover .bar-segment {
+      filter: brightness(1.2);
+    }
+
+    .bar-count {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #fff;
+      margin-top: 0.6rem;
+    }
+
+    /* COMMUNITY STORIES */
+    .community-stories {
+      background: linear-gradient(135deg, rgba(102, 82, 255, 0.1) 0%, rgba(255, 84, 0, 0.08) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 20px;
+      padding: 2.5rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .community-intro {
+      font-size: 0.95rem;
+      color: rgba(235, 230, 245, 0.85);
+      line-height: 1.7;
+      margin-bottom: 2rem;
+      max-width: 720px;
+    }
+
+    .community-cards {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+    }
+
+    .community-card {
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 16px;
+      padding: 1.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: all 0.2s;
+    }
+
+    .community-card:hover {
+      background: rgba(0, 0, 0, 0.4);
+      border-color: rgba(255, 255, 255, 0.12);
+      transform: translateY(-2px);
+    }
+
+    .community-source {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.6);
+      margin-bottom: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .source-badge {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.4);
+    }
+
+    .community-title {
+      font-size: 0.95rem;
+      color: #fff;
+      line-height: 1.5;
+      font-weight: 500;
+      margin-bottom: 0.8rem;
+    }
+
+    .community-excerpt {
+      font-size: 0.85rem;
+      color: rgba(235, 230, 245, 0.6);
+      line-height: 1.5;
+    }
+
+    /* CONNECTING STORIES */
+    .connecting-container {
+      margin-bottom: 3.5rem;
+    }
+
+    .connecting-intro {
+      font-size: 0.95rem;
+      color: rgba(235, 230, 245, 0.7);
+      line-height: 1.7;
+      margin-bottom: 2rem;
+      max-width: 720px;
+    }
+
+    .connecting-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+    }
+
+    .connecting-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 20px;
+      padding: 2rem;
+      transition: all 0.2s;
+    }
+
+    .connecting-card:hover {
+      background: rgba(255, 255, 255, 0.03);
+      border-color: rgba(255, 255, 255, 0.12);
+      transform: translateY(-2px);
+    }
+
+    .connecting-headline {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.8rem;
+    }
+
+    .connecting-force {
+      font-size: 0.8rem;
+      color: rgba(235, 230, 245, 0.65);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .connecting-insight {
+      padding: 1rem;
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 12px;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: #e8e8e8;
+      margin-bottom: 1rem;
+    }
+
+    .spectrum-indicators {
+      display: flex;
+      gap: 0.8rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .spectrum-label {
+      font-size: 0.75rem;
+      color: rgba(235, 230, 245, 0.65);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 600;
+    }
+
+    .spectrum-dots {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+    .spectrum-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+
+    .dot-left { background: #7B1FA2; }
+    .dot-right { background: #D32F2F; }
+    .dot-intl { background: #1976D2; }
+    .dot-community { background: #FF5400; }
+
+    .force-articles {
+      margin-top: 1.2rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .force-article {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      font-size: 0.82rem;
+      color: rgba(235,230,245,0.7);
+      line-height: 1.4;
+    }
+
+    .force-article a {
+      color: rgba(235,230,245,0.7);
+    }
+
+    .force-article a:hover {
+      color: #fff;
+    }
+
+    .force-article-tier {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      flex-shrink: 0;
+      color: #fff;
+      background: rgba(255,255,255,0.1);
+    }
+
+    .tier-national { background: rgba(102,82,255,0.3); }
+    .tier-international { background: rgba(25,118,210,0.3); }
+    .tier-community { background: rgba(255,84,0,0.3); }
+    .tier-specialist { background: rgba(0,194,168,0.3); }
+    .tier-analysis { background: rgba(76,175,80,0.3); }
+    .tier-explainer { background: rgba(255,152,0,0.3); }
+
+    .question-ai-insights {
+      margin-bottom: 1rem;
+    }
+
+    .question-ai-insight {
+      font-size: 0.9rem;
+      color: rgba(235,230,245,0.8);
+      line-height: 1.6;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+
+    .question-ai-insight:last-child {
+      border-bottom: none;
+    }
+
+    /* SVG HEATMAP STYLES */
+    .heatmap-cell {
+      transition: opacity 0.2s;
+    }
+
+    .heatmap-cell-text {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      fill: rgba(235, 230, 245, 0.5);
+      pointer-events: none;
+    }
+
+    .heatmap-tooltip {
+      position: absolute;
+      background: rgba(0, 0, 0, 0.95);
+      color: #fff;
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      z-index: 1000;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      line-height: 1.5;
+      max-width: 280px;
+      pointer-events: none;
+    }
+
+    .tooltip-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+
+    .tooltip-count {
+      color: rgba(235, 230, 245, 0.7);
+      font-size: 0.75rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .tooltip-insight {
+      color: rgba(235, 230, 245, 0.8);
+      font-size: 0.8rem;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 3rem 0;
+      margin-top: 3.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      font-size: 0.85rem;
+      color: rgba(235, 230, 245, 0.65);
+      text-align: center;
+    }
+
+    footer a {
+      color: inherit;
+      text-decoration: underline;
+    }
+
+    footer a:hover {
+      color: #fff;
+    }
+
+    /* LOADING STATE */
+    .loading {
+      padding: 3rem;
+      text-align: center;
+      color: rgba(235, 230, 245, 0.6);
+    }
+
+    .loader {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      border: 3px solid rgba(235, 230, 245, 0.2);
+      border-top-color: #6652FF;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .wrap {
+        padding: 0 1rem;
+      }
+
+      .site-nav {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        width: 100%;
+        justify-content: flex-start;
+      }
+
+      .key-stats {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 0.4rem;
+      }
+
+      .forces-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .force-card {
+        padding: 1.5rem;
+      }
+
+      .heatmap-container {
+        padding: 1.5rem 1rem;
+        margin: 2rem -0.5rem;
+      }
+
+      .spectrum-bars {
+        grid-template-columns: 1fr;
+      }
+
+      .connecting-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .question-card {
+        padding: 1.5rem;
+      }
+
+      .section-title::after {
+        width: 30px;
+      }
+    }
+  </style>
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <div class="gradient-bar" aria-hidden="true"></div>
+  <div class="orb-3" aria-hidden="true"></div>
 
-<!-- Decorative shapes -->
-<svg class="shapes" viewBox="0 0 1400 900" xmlns="http://www.w3.org/2000/svg">
-  <circle cx="120" cy="80" r="60" fill="#6652FF"/>
-  <circle cx="1300" cy="150" r="90" fill="#FF5400"/>
-  <rect x="200" y="700" width="80" height="80" rx="15" fill="#00C2A8" transform="rotate(15,240,740)"/>
-  <circle cx="1100" cy="800" r="70" fill="#FF0054"/>
-  <rect x="600" y="50" width="60" height="120" rx="12" fill="#4CAF50" transform="rotate(-20,630,110)"/>
-  <circle cx="80" cy="500" r="40" fill="#FF9800"/>
-</svg>
-
-<div class="wrap">
-  <nav class="site-nav">
-    <a href="../" class="nav-logo">Signal Board</a>
-    <div class="nav-links">
-      <a href="./" class="active">Today</a>
-      <a href="../stories/">Stories</a>
-      <a href="../sources/">Sources</a>
-      <a href="../how-it-works/">How It Works</a>
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="wrap" style="display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 0;">
+      <div class="nav-logo">Signal Board</div>
+      <div class="nav-links">
+        <a href="./" class="active">Today</a>
+        <a href="../sources/">Sources</a>
+        <a href="../archive/">Archive</a>
+      </div>
     </div>
   </nav>
 
-  <div class="header">
-    <div class="date-line" id="dateLine"></div>
-    <h1 id="headline"></h1>
-    <p class="big-picture" id="bigPicture"></p>
-  </div>
+  <main class="wrap" id="main-content" role="main">
+    <!-- HEADER — the story, not the stats -->
+    <header class="header" id="header" role="banner">
+      <div class="date-line" id="dateLine"></div>
+      <h1 id="headline">Loading...</h1>
+      <div id="narrativeLead" style="max-width:720px;margin:0 auto;"></div>
+    </header>
 
-  <div class="stat-row">
-    <div class="stat-block color-security">
-      <div class="num" id="totalStories">0</div>
-      <div class="label">Stories Today</div>
+    <!-- TODAY'S THROUGH-LINES — the force chains that connect everything -->
+    <section id="throughLines" aria-label="Today's major stories"></section>
+
+    <!-- QUESTIONS WORTH ASKING -->
+    <section>
+      <h2 class="section-title">Questions Worth Asking</h2>
+      <div class="questions-grid" id="questionsGrid"></div>
+    </section>
+
+    <!-- WHAT'S BEING MISSED -->
+    <section class="community-stories" id="communitySection"></section>
+
+    <!-- SAME FORCE, DIFFERENT HEADLINES -->
+    <!-- Connecting stories section removed — redundant with mega-stories -->
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p style="margin-bottom:1rem;">239 sources read every day, covering everything from global security to your local school board. <a href="../sources/">How we choose our sources</a></p>
+      <details style="font-size:0.8rem;color:rgba(235,230,245,0.55);max-width:680px;margin:0 auto;text-align:left;">
+        <summary style="cursor:pointer;color:rgba(235,230,245,0.65);font-weight:600;margin-bottom:0.5rem;">How we did this</summary>
+        <p style="line-height:1.7;margin-bottom:0.6rem;">Signal Board pulls articles from 239 RSS feeds every morning, covering U.S. newsrooms, international press, community outlets, think tanks, specialist journals, and explainer sites. Each article is classified by an AI model (Claude Haiku) that identifies which topics it covers and how it connects to other stories. About 70% of articles receive a full analysis. The stories you see above are grouped by keyword clustering and then synthesized by AI into coherent paragraphs. A human editor reviews the output for accuracy, tone, and writing quality.</p>
+        <p style="line-height:1.7;margin-bottom:0.6rem;">Source selection is editorial: we chose outlets that represent different perspectives, geographies, and communities, with a deliberate emphasis on sources that are underrepresented in algorithmic news feeds. The full source list is available on the <a href="../sources/" style="color:rgba(235,230,245,0.65);text-decoration:underline;">Sources page</a>.</p>
+        <p style="line-height:1.7;">This is a working prototype. It has blind spots, particularly in non-English language coverage and in communities without strong digital news infrastructure. If you notice something missing, that is useful information. <a href="mailto:elise.hasseltine@gmail.com" style="color:rgba(235,230,245,0.65);text-decoration:underline;">Tell us</a>.</p>
+      </details>
     </div>
-    <div class="stat-block color-information">
-      <div class="num" id="totalSources">0</div>
-      <div class="label">Sources</div>
-    </div>
-    <div class="stat-block color-economics">
-      <div class="num" id="crossDomainPct">0%</div>
-      <div class="label">Cross-Domain</div>
-    </div>
-  </div>
+  </footer>
 
-  <h2 class="section-title">Top Stories Today</h2>
-  <div class="story-grid" id="topStoriesSection">
-    <div class="loading"><div class="spinner"></div> Loading top stories...</div>
-  </div>
+  <script type="application/ld+json" id="faqSchema"></script>
+  <script>
+    const DOMAIN_COLORS = {
+      ai: '#6652FF',
+      labor: '#FF5400',
+      governance: '#FF0054',
+      information: '#9E0059',
+      economics: '#00C2A8',
+      climate: '#4CAF50',
+      security: '#D32F2F',
+      geopolitics: '#1976D2',
+      domestic_politics: '#7B1FA2',
+      legal: '#FF9800'
+    };
 
-  <h2 class="section-title">Questions People Are Asking</h2>
-  <div class="questions-grid" id="questionsSection">
-    <div class="loading"><div class="spinner"></div> Loading questions...</div>
-  </div>
+    const DOMAIN_LABELS = {
+      ai: 'AI', labor: 'Labor', governance: 'Governance',
+      information: 'Information', economics: 'Economics', climate: 'Climate',
+      security: 'Security', geopolitics: 'Geopolitics',
+      domestic_politics: 'Politics', legal: 'Legal'
+    };
 
-  <h2 class="section-title">What Connects Us</h2>
-  <div class="connects-section" id="connectsSection">
-    <div class="loading"><div class="spinner"></div> Finding shared stories...</div>
-  </div>
+    /* Friendly labels for source types (no jargon) */
+    const SOURCE_TYPE_LABELS = {
+      national: 'Major outlets',
+      international: 'International press',
+      community: 'Community sources',
+      specialist: 'Deep-expertise sources',
+      analysis: 'Analysis & think tanks',
+      explainer: 'Explainer outlets',
+      podcast: 'Podcasts',
+      newsletter: 'Newsletters'
+    };
 
-  <h2 class="section-title">Domain Constellation</h2>
-  <div class="constellation">
-    <svg id="constellationViz" width="100%" height="500" viewBox="0 0 600 500" style="background:rgba(0,0,0,0.2);border-radius:20px;"></svg>
-    <div class="constellation-info">Hover over domains to see their connections. Size shows article volume today.</div>
-  </div>
+    const SOURCE_TYPE_COLORS = {
+      national: '#6652FF',
+      international: '#1976D2',
+      community: '#FF5400',
+      specialist: '#00C2A8',
+      analysis: '#4CAF50',
+      explainer: '#FF9800',
+      podcast: '#9E0059',
+      newsletter: '#7B1FA2'
+    };
 
-  <h2 class="section-title">Active Threads</h2>
-  <p style="font-size:clamp(0.95rem,2vw,1.05rem);color:rgba(235,230,245,0.6);line-height:1.75;max-width:720px;margin-bottom:2rem;">When two domains keep showing up together in the news, it usually means a deeper force is at work. These are the connections gaining the most momentum right now, and what they mean for daily life.</p>
-  <div class="thread-grid" id="threadsGrid">
-    <div class="loading"><div class="spinner"></div> Loading trends...</div>
-  </div>
+    let appData = null;
 
-  <h2 class="section-title">Who's Telling the Story</h2>
-  <div class="spectrum-container" id="spectrumContainer">
-    <div class="spectrum-label" style="text-transform:none;letter-spacing:normal;font-size:1rem;color:rgba(235,230,245,0.65);line-height:1.7;margin-bottom:2rem;">The same event looks different depending on who covers it. National outlets frame it through politics and markets. International outlets see the geopolitical picture. Community sources cover what lands on people's lives. Specialists go deeper on a single domain than anyone else. The fuller the spread, the closer you get to the whole picture.</div>
-    <div id="spectrumBars">
-      <div class="loading"><div class="spinner"></div> Loading...</div>
-    </div>
-  </div>
+    fetch('../data/daily/latest.json')
+      .then(r => r.json())
+      .then(data => { appData = data; renderPage(); })
+      .catch(() => {
+        document.body.innerHTML = '<div class="wrap" style="padding:4rem 1.5rem;color:#e8e8e8;">Failed to load today\'s data. Please try refreshing.</div>';
+      });
 
-  <h2 class="section-title">Stories You Won't Find Everywhere</h2>
-  <div class="missed-stories">
-    <p class="missed-intro">Community sources, local outlets, and specialist publications are covering stories that national news outlets haven't picked up. These perspectives matter. Here's what's being reported outside the mainstream coverage today.</p>
-    <div class="community-cards" id="communityCards">
-      <div class="loading"><div class="spinner"></div> Loading stories...</div>
-    </div>
-  </div>
+    /* ─── PAGE RENDER ─── */
+    function renderPage() {
+      renderHeader();
+      renderThroughLines();
+      renderQuestions();
+      renderCommunityStories();
+      updateFAQSchema();
+    }
 
-  <div class="footer">
-    <span>Updated daily at 2 AM ET</span>
-    <span id="footerSources">Based on analysis from 213 sources across 10 domains</span>
-  </div>
-</div>
+    /* ─── HEADER — the briefing, not the dashboard ─── */
+    function renderHeader() {
+      const { date, summary, mega_stories } = appData;
+      const s = summary;
 
-<script>
-const DOMAIN_COLORS = {
-  ai: '#6652FF',
-  labor: '#FF5400',
-  governance: '#FF0054',
-  information: '#9E0059',
-  economics: '#00C2A8',
-  climate: '#4CAF50',
-  security: '#D32F2F',
-  geopolitics: '#1976D2',
-  domestic_politics: '#7B1FA2',
-  legal: '#FF9800'
-};
+      const dateObj = new Date(date + 'T12:00:00');
+      document.getElementById('dateLine').textContent = new Intl.DateTimeFormat('en-US', {
+        weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+      }).format(dateObj);
 
-const DOMAIN_LABELS = {
-  ai: 'AI',
-  labor: 'Labor',
-  governance: 'Governance',
-  information: 'Information',
-  economics: 'Economics',
-  climate: 'Climate',
-  security: 'Security',
-  geopolitics: 'Geopolitics',
-  domestic_politics: 'Politics',
-  legal: 'Legal'
-};
+      document.getElementById('headline').textContent = 'Today\'s Signal';
 
-let articlesData = null;
-let dailyData = null;
+      const narrativeEl = document.getElementById('narrativeLead');
+      const ms = mega_stories || [];
 
-async function loadData() {
-  try {
-    const [articlesRes, dailyRes] = await Promise.all([
-      fetch('../data/articles.json'),
-      fetch('../data/daily/latest.json')
-    ]);
+      // Use the first mega-story's synthesis as the lead — this is the product
+      const leadSynthesis = ms[0] && ms[0].synthesis
+        ? ms[0].synthesis.split('. ').slice(0, 2).join('. ') + '.'
+        : '';
 
-    articlesData = await articlesRes.json();
-    dailyData = await dailyRes.json();
+      // Story count overview
+      const storyList = ms.slice(0, 4).map(m =>
+        `<strong style="color:#fff;">${m.name}</strong> (${m.article_count} articles)`
+      ).join(', ');
 
-    render();
-  } catch (e) {
-    console.error('Failed to load data:', e);
-    document.body.innerHTML += '<p style="color:red;padding:2rem;">Failed to load data. Please refresh.</p>';
-  }
-}
-
-function formatDate(dateStr) {
-  const [year, month, day] = dateStr.split('-');
-  const date = new Date(year, month - 1, day);
-  return date.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
-}
-
-function render() {
-  renderHeader();
-  renderStats();
-  renderTopStories();
-  renderQuestions();
-  renderWhatConnects();
-  renderConstellation();
-  renderActiveThreads();
-  renderSourceSpectrum();
-  renderCommunityStories();
-  updateFooter();
-}
-
-function renderHeader() {
-  document.getElementById('dateLine').textContent = formatDate(dailyData.date);
-  document.getElementById('headline').textContent = `${dailyData.summary.total_stories} stories. ${dailyData.summary.sources_reporting} sources. Here's what connects.`;
-
-  const topDomain = dailyData.summary.top_domain;
-  const summary = `Across our network today, stories are clustering around ${topDomain}, intersecting with governance, politics, and economics. The real signal is in how these domains collide with each other. The intersection points reveal the tensions shaping this moment: where decisions get challenged in courts, where policy affects people's lives, where economic uncertainty meets security risk. Read through these clusters to see where the real momentum is building.`;
-
-  document.getElementById('bigPicture').textContent = summary;
-}
-
-function renderStats() {
-  document.getElementById('totalStories').textContent = dailyData.summary.total_stories.toLocaleString();
-  document.getElementById('totalSources').textContent = dailyData.summary.sources_reporting;
-  document.getElementById('crossDomainPct').textContent = dailyData.summary.cross_domain_pct + '%';
-}
-
-function renderTopStories() {
-  const container = document.getElementById('topStoriesSection');
-  container.innerHTML = '';
-
-  dailyData.top_stories.slice(0, 5).forEach(story => {
-    const card = document.createElement('div');
-    card.className = 'story-card';
-
-    const domainPills = story.domains.map((d, idx) => {
-      const domKey = story.domain_keys[idx] || d.toLowerCase();
-      const color = DOMAIN_COLORS[domKey] || '#666';
-      return `<div class="domain-pill" style="background:${color};color:${getTextColor(color)};}">${d}</div>`;
-    }).join('');
-
-    const tierFramingHtml = Object.entries(story.tier_framing).map(([tierName, tierData]) => {
-      const tierColor = getTierColor(tierName);
-      const sample = tierData.sample;
-      return `
-        <div class="tier-frame">
-          <div class="tier-frame-label"><span class="tier-dot ${tierName}"></span>${tierName === 'specialist' ? 'Specialist' : tierName.charAt(0).toUpperCase() + tierName.slice(1)}</div>
-          <div class="tier-frame-count">${tierData.count} articles</div>
-          <div class="tier-frame-sample">${sample.title}</div>
+      narrativeEl.innerHTML = `
+        <div style="font-size:1.05rem;color:rgba(235,230,245,0.85);line-height:1.8;margin-bottom:1.5rem;">
+          <p style="margin:0 0 1rem 0;">${leadSynthesis}</p>
+          <p style="margin:0;font-size:0.9rem;color:rgba(235,230,245,0.65);">Today's coverage clusters around ${ms.length} stories: ${storyList}.</p>
+        </div>
+        <div style="font-size:0.78rem;color:rgba(235,230,245,0.5);border-top:1px solid rgba(255,255,255,0.08);padding-top:0.8rem;line-height:1.6;">
+          Every day, Signal Board reads every new article from ${s.sources_reporting} sources, covering everything from international security to local community reporting. Today that was ${s.total_stories.toLocaleString()} articles. ${s.ai_classified.toLocaleString()} were analyzed by AI to surface the patterns you see below. These numbers change daily because the news does.
         </div>
       `;
-    }).join('');
+    }
 
-    const articleRows = story.articles.slice(0, 3).map(article => {
-      const tierColor = getTierColor(article.tier);
-      return `
-        <a href="${article.url || '#'}" target="_blank" rel="noopener" class="article-row" style="text-decoration:none;">
-          <div class="article-source">
-            <span class="tier-dot ${article.tier}"></span>
-            ${article.source}
-            <div class="source-tooltip">${article.context || 'Source information'}</div>
+    /* ─── TODAY'S STORIES — mega-stories with full evidence weight ─── */
+    function renderThroughLines() {
+      const ms = appData.mega_stories;
+      const section = document.getElementById('throughLines');
+      if (!ms || ms.length === 0) { section.style.display = 'none'; return; }
+
+      const storyColors = ['#FF0054', '#6652FF', '#00C2A8', '#FF5400', '#4CAF50'];
+
+      const storiesHtml = ms.map((story, idx) => {
+        const color = storyColors[idx % storyColors.length];
+
+        // Temporal context — explain what the number change means
+        let temporalLine = '';
+        if (story.yesterday_count > 0) {
+          const diff = story.article_count - story.yesterday_count;
+          const direction = diff > 0 ? 'up' : diff < 0 ? 'down' : 'steady';
+          const arrow = diff > 0 ? '\u2191' : diff < 0 ? '\u2193' : '\u2192';
+          const verb = diff > 0 ? 'more coverage than yesterday' : diff < 0 ? 'fewer articles than yesterday' : 'same as yesterday';
+          temporalLine = `<span style="font-size:0.78rem;color:rgba(235,230,245,0.6);display:inline-flex;align-items:center;gap:0.3rem;">
+            <span style="color:${diff > 0 ? '#00C2A8' : diff < 0 ? '#FF5400' : 'rgba(235,230,245,0.5)'};font-weight:700;">${arrow} ${Math.abs(diff)}</span> ${verb}
+          </span>`;
+        }
+
+        // Visual source tier bar — shows where the coverage comes from at a glance
+        const tiers = story.source_tiers || {};
+        const totalArticles = story.article_count || 1;
+        const tierColors = {
+          national: '#6652FF', international: '#1976D2', community: '#FF5400',
+          specialist: '#00C2A8', analysis: '#4CAF50', explainer: '#FF9800',
+          podcast: '#9E0059', newsletter: '#7B1FA2', research: '#D32F2F', government: '#FF0054'
+        };
+        const tierLabels = {
+          national: 'U.S. newsrooms', international: 'Global press', community: 'Local outlets',
+          specialist: 'Expert sources', analysis: 'Think tanks', explainer: 'Explainers',
+          podcast: 'Podcasts', newsletter: 'Newsletters', research: 'Research', government: 'Government'
+        };
+        const tierEntries = Object.entries(tiers).filter(([k,v]) => v > 0 && k !== 'unknown').sort((a,b) => b[1] - a[1]);
+        const barSegments = tierEntries.map(([tier, count]) => {
+          const pct = (count / totalArticles * 100).toFixed(1);
+          return `<div style="width:${pct}%;height:100%;background:${tierColors[tier]||'#666'};min-width:2px;" title="${tierLabels[tier]||tier}: ${count}"></div>`;
+        }).join('');
+        const barLabels = tierEntries.slice(0,4).map(([tier,count]) =>
+          `<span style="display:inline-flex;align-items:center;gap:0.3rem;"><span style="width:6px;height:6px;border-radius:50%;background:${tierColors[tier]||'#666'};"></span>${tierLabels[tier]||tier} (${count})</span>`
+        ).join('<span style="opacity:0.3;"> · </span>');
+
+        const tierBarHtml = `
+          <div style="margin-bottom:1.2rem;">
+            <div style="display:flex;height:6px;border-radius:4px;overflow:hidden;gap:2px;margin-bottom:0.5rem;">
+              ${barSegments}
+            </div>
+            <div style="font-size:0.72rem;color:rgba(235,230,245,0.55);display:flex;flex-wrap:wrap;gap:0.6rem;">
+              ${barLabels}
+            </div>
           </div>
-          <div class="article-title">${article.title}</div>
-        </a>
-      `;
-    }).join('');
+        `;
 
-    card.innerHTML = `
-      <div class="story-headline">${story.headline}</div>
-      <div class="story-meta">
-        <div class="meta-item"><span class="story-meta">${story.source_count} sources</span></div>
-        <div class="meta-item"><span class="story-meta">${story.tier_count} tiers</span></div>
-      </div>
-      <div class="story-domains">${domainPills}</div>
-      <div class="tier-framing">${tierFramingHtml}</div>
-      <div class="story-articles">${articleRows}</div>
-    `;
+        // WHY THIS MATTERS — plain language, daily life connection
+        const whyMattersHtml = story.why_this_matters
+          ? `<div style="padding:0.8rem 1.1rem;background:rgba(255,200,0,0.06);border-radius:12px;margin-bottom:1.2rem;border-left:3px solid rgba(255,200,0,0.5);">
+              <span style="font-size:0.72rem;text-transform:uppercase;letter-spacing:0.06em;color:rgba(255,200,0,0.8);font-weight:700;">Why this matters to you</span>
+              <p style="font-size:0.9rem;color:rgba(235,230,245,0.85);line-height:1.6;margin:0.4rem 0 0 0;">${story.why_this_matters}</p>
+            </div>`
+          : '';
 
-    container.appendChild(card);
-  });
-}
+        // THE SYNTHESIS
+        const synthesisHtml = story.synthesis
+          ? `<div style="font-size:0.95rem;color:rgba(235,230,245,0.85);line-height:1.8;margin-bottom:1.2rem;">${story.synthesis}</div>`
+          : '';
 
-function renderQuestions() {
-  const container = document.getElementById('questionsSection');
-  container.innerHTML = '';
+        // Watch for
+        const watchHtml = story.watch_for
+          ? `<div style="padding:0.8rem 1.1rem;background:rgba(255,255,255,0.04);border-radius:12px;margin-bottom:1rem;border-left:3px solid ${color};">
+              <span style="font-size:0.72rem;text-transform:uppercase;letter-spacing:0.06em;color:${color};font-weight:700;">What to watch</span>
+              <p style="font-size:0.88rem;color:rgba(235,230,245,0.7);line-height:1.6;margin:0.4rem 0 0 0;">${story.watch_for}</p>
+            </div>`
+          : '';
 
-  dailyData.questions.slice(0, 3).forEach(q => {
-    const card = document.createElement('div');
-    card.className = 'question-card';
+        // Cross-spectrum note
+        const spectrumHtml = story.cross_spectrum
+          ? `<div style="padding:0.8rem 1.1rem;background:rgba(102,82,255,0.05);border-radius:12px;margin-bottom:1rem;border-left:3px solid #6652FF;">
+              <span style="font-size:0.72rem;text-transform:uppercase;letter-spacing:0.06em;color:#6652FF;font-weight:700;">Across the spectrum</span>
+              <p style="font-size:0.88rem;color:rgba(235,230,245,0.7);line-height:1.6;margin:0.4rem 0 0 0;">${story.cross_spectrum}</p>
+            </div>`
+          : '';
 
-    const domainPills = q.domains.map(d => {
-      const domKey = d.toLowerCase();
-      const color = DOMAIN_COLORS[domKey] || '#666';
-      return `<div class="domain-pill" style="background:${color};color:${getTextColor(color)};margin-bottom:0.5rem;">${d}</div>`;
-    }).join('');
+        // Source names
+        const sampleSources = (story.sources_sample || []).slice(0, 8);
+        const sourceNameLine = sampleSources.length > 0
+          ? `<div style="font-size:0.75rem;color:rgba(235,230,245,0.45);margin-top:0.5rem;">Sources include ${sampleSources.slice(0, 5).join(', ')}${story.source_count > 5 ? ` and ${story.source_count - 5} more` : ''}</div>`
+          : '';
 
-    const sourcesByTier = q.sources_by_tier || {};
-    const sourcesHtml = Object.entries(sourcesByTier).map(([tierName, sources]) => {
-      return sources.slice(0, 2).map(src => {
         return `
-          <div class="question-source">
-            <div class="question-source-name"><span class="tier-dot ${tierName}"></span>${tierName}</div>
-            <div class="question-source-title">${src.title}</div>
+          <article style="background:rgba(255,255,255,0.025);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:2.2rem;margin-bottom:1.5rem;border-top:3px solid ${color};">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:0.6rem;flex-wrap:wrap;gap:0.5rem;">
+              <h3 style="font-family:'Space Grotesk',sans-serif;font-size:1.35rem;font-weight:800;color:#fff;letter-spacing:-0.02em;margin:0;">${story.name}</h3>
+              ${temporalLine}
+            </div>
+            <div style="font-size:0.85rem;color:${color};font-weight:700;margin-bottom:0.8rem;">
+              ${story.article_count} articles from ${story.source_count} sources
+            </div>
+            ${tierBarHtml}
+            ${whyMattersHtml}
+            ${synthesisHtml}
+            ${watchHtml}
+            ${spectrumHtml}
+            ${sourceNameLine}
+          </article>
+        `;
+      }).join('');
+
+      section.innerHTML = `
+        <h2 class="section-title">What's Happening</h2>
+        <p style="font-size:0.9rem;color:rgba(235,230,245,0.65);margin-bottom:1.5rem;line-height:1.7;">These are the stories that appeared most often across the widest range of sources today. When outlets that rarely agree start covering the same thing, that convergence is worth paying attention to.</p>
+        ${storiesHtml}
+      `;
+    }
+
+    /* ─── HEATMAP ANNOTATIONS — plain language callouts ─── */
+    function renderHeatmapAnnotations() {
+      const threads = appData.active_threads;
+      const annotEl = document.getElementById('heatmapAnnotations');
+      if (!threads || threads.length === 0) return;
+
+      // Top 3 hottest intersections with their insights
+      const top3 = threads
+        .filter(t => t.today_count > 0)
+        .sort((a, b) => b.today_count - a.today_count)
+        .slice(0, 3);
+
+      const html = top3.map((t, i) => {
+        const insight = (t.ai_connections && t.ai_connections[0]) || t.explanation || '';
+        const color = i === 0 ? '#FF0054' : i === 1 ? '#6652FF' : '#00C2A8';
+        return `
+          <div style="display:flex;gap:0.8rem;align-items:flex-start;padding:0.7rem 0;${i < 2 ? 'border-bottom:1px solid rgba(255,255,255,0.05);' : ''}">
+            <span style="font-size:1.4rem;color:${color};flex-shrink:0;">●</span>
+            <div>
+              <span style="font-size:0.78rem;font-weight:700;color:${color};">${t.label}</span>
+              <span style="font-size:0.72rem;color:rgba(235,230,245,0.5);margin-left:0.5rem;">${t.today_count} stories</span>
+              <p style="font-size:0.82rem;color:rgba(235,230,245,0.6);margin:0.2rem 0 0 0;line-height:1.45;">${insight}</p>
+            </div>
           </div>
         `;
       }).join('');
-    }).join('');
 
-    card.innerHTML = `
-      <div class="question-text">${q.question}</div>
-      <div class="question-stats">
-        <div class="question-stat"><span class="question-stat-value">${q.article_count}</span> articles</div>
-      </div>
-      <div class="question-domains">${domainPills}</div>
-      <div style="font-size:0.8rem;color:rgba(235,230,245,0.5);margin-bottom:1rem;">Covered across multiple sources:</div>
-      <div class="question-sources">${sourcesHtml || '<div style="color:rgba(235,230,245,0.4);">Loading sources...</div>'}</div>
-    `;
-
-    container.appendChild(card);
-  });
-}
-
-function renderWhatConnects() {
-  const container = document.getElementById('connectsSection');
-  container.innerHTML = '';
-
-  const statDiv = document.createElement('div');
-  statDiv.innerHTML = `
-    <div class="connects-intro">Today's news looks fragmented until you see the overlaps. When you look at what ${dailyData.summary.sources_reporting} sources from across the political, geographic, and demographic spectrum are actually covering, something comes through clearly: the same forces are showing up everywhere. The stories that matter cross every boundary we use to divide ourselves.</div>
-    <div class="connects-stat">
-      <div class="big">${dailyData.summary.cross_domain_pct}%</div>
-      <div class="context">of today's stories touch more than one domain, meaning the issues people care about are deeply interconnected regardless of where they get their news.</div>
-    </div>
-  `;
-  container.appendChild(statDiv);
-
-  if (dailyData.what_connects && dailyData.what_connects.length > 0) {
-    dailyData.what_connects.slice(0, 3).forEach(item => {
-      const card = document.createElement('div');
-      card.className = 'shared-story';
-
-      const spectrumDots = `
-        <div class="spectrum-dots">
-          ${item.left_sources && item.left_sources.length > 0 ? `<span class="spectrum-dot" style="background:#6652FF;" title="Left-leaning sources"></span>` : ''}
-          ${item.right_sources && item.right_sources.length > 0 ? `<span class="spectrum-dot" style="background:#7B1FA2;" title="Right-leaning sources"></span>` : ''}
-          ${item.international_sources && item.international_sources.length > 0 ? `<span class="spectrum-dot" style="background:#1976D2;" title="International sources"></span>` : ''}
-          ${item.community_sources && item.community_sources.length > 0 ? `<span class="spectrum-dot" style="background:#FF5400;" title="Community sources"></span>` : ''}
-        </div>
-      `;
-
-      const domainLabels = (item.domains || []).map(d => DOMAIN_LABELS[d] || d).join(' + ');
-
-      card.innerHTML = `
-        <div class="shared-story-topic">${item.headline}</div>
-        <div class="shared-story-sub">${item.total_sources} sources across ${item.spectrum_segments} segments covering this story</div>
-        ${spectrumDots}
-      `;
-
-      container.appendChild(card);
-    });
-  }
-
-  const thesis = document.createElement('div');
-  thesis.style.cssText = 'font-size:1.05rem;color:rgba(235,230,245,0.55);line-height:1.8;margin-top:1.5rem;max-width:680px;';
-  thesis.textContent = 'When left-leaning, right-leaning, international, and community sources all cover the same story, it signals an issue that cuts across all our divides. That shared attention is the signal. It means these issues belong to everyone.';
-  container.appendChild(thesis);
-}
-
-function renderConstellation() {
-  const svg = document.getElementById('constellationViz');
-  svg.innerHTML = '';
-
-  const width = 600;
-  const height = 500;
-  const centerX = width / 2;
-  const centerY = height / 2;
-  const radius = 140;
-
-  const domains = Object.keys(articlesData.stats.domains);
-  const nodePositions = {};
-
-  domains.forEach((domain, idx) => {
-    const angle = (idx / domains.length) * Math.PI * 2 - Math.PI / 2;
-    nodePositions[domain] = {
-      x: centerX + radius * Math.cos(angle),
-      y: centerY + radius * Math.sin(angle)
-    };
-  });
-
-  // Draw connections first
-  const connections = {};
-  dailyData.active_threads.forEach(thread => {
-    const pair = thread.pair.sort().join('+');
-    connections[pair] = thread.today_count || 1;
-  });
-
-  Object.entries(connections).forEach(([pair, count]) => {
-    const [d1, d2] = pair.split('+');
-    const pos1 = nodePositions[d1];
-    const pos2 = nodePositions[d2];
-
-    if (!pos1 || !pos2) return;
-
-    const thickness = Math.max(1, Math.min(4, count / 15));
-    const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-    line.setAttribute('x1', pos1.x);
-    line.setAttribute('y1', pos1.y);
-    line.setAttribute('x2', pos2.x);
-    line.setAttribute('y2', pos2.y);
-    line.setAttribute('stroke', 'rgba(235,230,245,0.2)');
-    line.setAttribute('stroke-width', thickness);
-    line.setAttribute('opacity', 0.6);
-    svg.appendChild(line);
-  });
-
-  // Draw nodes
-  domains.forEach(domain => {
-    const pos = nodePositions[domain];
-    const count = articlesData.stats.domains[domain].today;
-    const size = Math.max(20, Math.min(60, count / 2));
-
-    const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
-    g.style.cursor = 'pointer';
-
-    const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-    circle.setAttribute('cx', pos.x);
-    circle.setAttribute('cy', pos.y);
-    circle.setAttribute('r', size);
-    circle.setAttribute('fill', DOMAIN_COLORS[domain]);
-    circle.setAttribute('opacity', 0.9);
-
-    const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-    text.setAttribute('x', pos.x);
-    text.setAttribute('y', pos.y);
-    text.setAttribute('text-anchor', 'middle');
-    text.setAttribute('dominant-baseline', 'middle');
-    text.setAttribute('font-family', 'Space Grotesk, sans-serif');
-    text.setAttribute('font-size', '11');
-    text.setAttribute('font-weight', '700');
-    text.setAttribute('fill', count > 50 ? '#000' : '#fff');
-    text.setAttribute('pointer-events', 'none');
-    text.textContent = DOMAIN_LABELS[domain];
-
-    g.appendChild(circle);
-    g.appendChild(text);
-
-    g.addEventListener('mouseenter', () => {
-      highlightDomain(svg, domain);
-    });
-    g.addEventListener('mouseleave', () => {
-      clearHighlight(svg);
-    });
-
-    svg.appendChild(g);
-  });
-}
-
-function highlightDomain(svg, domain) {
-  const lines = svg.querySelectorAll('line');
-  const pairs = [];
-
-  dailyData.active_threads.forEach(thread => {
-    if (thread.pair.includes(domain)) {
-      pairs.push(thread.pair.sort().join('+'));
+      annotEl.innerHTML = html;
     }
-  });
 
-  lines.forEach(line => {
-    line.setAttribute('opacity', 0.15);
-  });
+    /* ─── TEMPORAL CONTEXT — event-specific, not abstract labels ─── */
+    function renderTemporalContext() {
+      // Temporal context is now woven into the mega-story synthesis paragraphs.
+      // Hide this standalone section.
+      const section = document.getElementById('temporalSection');
+      section.style.display = 'none';
+    }
 
-  const domainLines = Array.from(lines).filter(line => true);
-  domainLines.forEach(line => line.setAttribute('opacity', 0.8));
-}
+    /* renderForces removed — replaced by renderThroughLines */
 
-function clearHighlight(svg) {
-  svg.querySelectorAll('line').forEach(line => {
-    line.setAttribute('opacity', 0.6);
-  });
-}
+    /* ─── DOMAIN HEATMAP — candy-land colors ─── */
+    function renderHeatmap() {
+      const svg = document.getElementById('heatmapSvg');
+      const { active_threads } = appData;
+      if (!active_threads) return;
 
-function renderActiveThreads() {
-  const container = document.getElementById('threadsGrid');
-  container.innerHTML = '';
+      const domainList = Object.keys(DOMAIN_COLORS);
+      const matrix = {};
+      active_threads.forEach(thread => {
+        const [d1, d2] = thread.pair;
+        matrix[[d1, d2].sort().join('-')] = thread;
+      });
 
-  const topThreads = dailyData.active_threads.slice(0, 4);
+      const cellSize = 74, gap = 4, leftMargin = 115, topMargin = 95;
+      const totalWidth = leftMargin + domainList.length * (cellSize + gap) + 20;
+      const totalHeight = topMargin + domainList.length * (cellSize + gap) + 20;
+      svg.setAttribute('viewBox', `0 0 ${totalWidth} ${totalHeight}`);
 
-  topThreads.forEach(thread => {
-    const [d1, d2] = thread.pair;
-    const color1 = DOMAIN_COLORS[d1];
-    const color2 = DOMAIN_COLORS[d2];
+      const counts = Object.values(matrix).map(t => t.today_count);
+      const maxCount = Math.max(...counts, 1);
 
-    const block = document.createElement('div');
-    block.className = 'thread-block';
-    block.style.background = `linear-gradient(135deg, ${color1}cc 0%, ${color2}cc 100%)`;
+      /* Candy-land intensity ramp: dark indigo → electric purple → hot pink → coral → bright gold */
+      const CANDY_STOPS = [
+        [30, 15, 60],      // 0.0 — deep void
+        [88, 40, 180],     // 0.15 — indigo
+        [140, 50, 255],    // 0.3 — electric purple
+        [255, 0, 110],     // 0.5 — hot pink
+        [255, 84, 0],      // 0.7 — coral/orange
+        [255, 200, 0],     // 0.9 — bright gold
+        [255, 255, 100],   // 1.0 — candy yellow
+      ];
 
-    const trend = thread.trend === 'rising' ? '↑ Rising' : thread.trend === 'falling' ? '↓ Falling' : thread.trend === 'new' ? '• New' : 'Stable';
+      function candyColor(t) {
+        t = Math.max(0, Math.min(1, t));
+        const idx = t * (CANDY_STOPS.length - 1);
+        const lo = Math.floor(idx);
+        const hi = Math.min(lo + 1, CANDY_STOPS.length - 1);
+        const frac = idx - lo;
+        const r = Math.round(CANDY_STOPS[lo][0] + (CANDY_STOPS[hi][0] - CANDY_STOPS[lo][0]) * frac);
+        const g = Math.round(CANDY_STOPS[lo][1] + (CANDY_STOPS[hi][1] - CANDY_STOPS[lo][1]) * frac);
+        const b = Math.round(CANDY_STOPS[lo][2] + (CANDY_STOPS[hi][2] - CANDY_STOPS[lo][2]) * frac);
+        return [r, g, b];
+      }
 
-    block.innerHTML = `
-      <div class="thread-pair">${DOMAIN_LABELS[d1]} + ${DOMAIN_LABELS[d2]}</div>
-      <div class="thread-count">${thread.today_count}</div>
-      <div class="thread-label">${thread.label || `${DOMAIN_LABELS[d1]} and ${DOMAIN_LABELS[d2]} intersection`}</div>
-      <div class="thread-explanation">${thread.explanation || ''}</div>
-      <div class="trend-badge">${trend}</div>
-    `;
+      // SVG defs — glow filters at different intensities
+      const defs = makeSvg('defs');
+      [2, 4, 6].forEach((s, i) => {
+        const f = makeSvg('filter', { id: `glow${i}`, x: '-50%', y: '-50%', width: '200%', height: '200%' });
+        f.appendChild(makeSvg('feGaussianBlur', { stdDeviation: String(s), result: 'blur' }));
+        const m = makeSvg('feMerge');
+        m.appendChild(makeSvg('feMergeNode', { in: 'blur' }));
+        m.appendChild(makeSvg('feMergeNode', { in: 'SourceGraphic' }));
+        f.appendChild(m);
+        defs.appendChild(f);
+      });
+      svg.appendChild(defs);
 
-    container.appendChild(block);
-  });
-}
+      const g = makeSvg('g');
 
-function renderSourceSpectrum() {
-  const container = document.getElementById('spectrumBars');
-  container.innerHTML = '';
+      domainList.forEach((d1, i) => {
+        domainList.forEach((d2, j) => {
+          const x = leftMargin + i * (cellSize + gap);
+          const y = topMargin + j * (cellSize + gap);
+          const key = [d1, d2].sort().join('-');
+          const threadData = matrix[key];
+          const count = threadData ? threadData.today_count : 0;
 
-  const spectrum = dailyData.source_spectrum || {};
-  const total = Object.values(spectrum).reduce((s, c) => s + c, 0) || 1;
+          let fill, glowFilter = '';
+          if (count === 0) {
+            fill = 'rgba(255,255,255,0.025)';
+          } else {
+            const t = Math.pow(count / maxCount, 0.6); // compress range so mid-values pop
+            const [r, gr, b] = candyColor(t);
+            fill = `rgb(${r},${gr},${b})`;
+            glowFilter = t > 0.6 ? 'url(#glow2)' : t > 0.3 ? 'url(#glow1)' : 'url(#glow0)';
+          }
 
-  const tiers = [
-    { key: 'national', label: 'National Outlets', color: '#6652FF',
-      what: 'Major US news organizations across the political spectrum, from NYT to Fox News to NPR.',
-      insight: 'Set the mainstream narrative. Frame stories through politics and economics.' },
-    { key: 'international', label: 'International Sources', color: '#1976D2',
-      what: 'Outlets from outside the US: BBC, Al Jazeera, Deutsche Welle, Guardian, and more.',
-      insight: 'See the security and geopolitical picture that American outlets often underplay.' },
-    { key: 'community', label: 'Community Voices', color: '#FF5400',
-      what: 'Outlets serving specific communities: Indigenous, Black, Latino, LGBTQ+, faith, rural, and regional.',
-      insight: 'Cover how policy actually lands on people. Stories that national outlets miss entirely.' },
-    { key: 'specialist', label: 'Specialist Publications', color: '#00C2A8',
-      what: 'Deep-domain expertise: climate science, labor law, technology, security.',
-      insight: 'Go deeper on a single topic than any generalist outlet can.' },
-    { key: 'explainer', label: 'Explainers', color: '#FF9800',
-      what: 'Sources that make complex topics accessible: Vox, The Conversation, 404 Media.',
-      insight: 'Help connect what happened to why it matters.' },
-    { key: 'analysis', label: 'Think Tanks', color: '#4CAF50',
-      what: 'Research organizations from multiple ideological perspectives.',
-      insight: 'Provide the data and policy analysis behind the headlines.' }
-  ];
+          const rect = makeSvg('rect', {
+            x, y, width: cellSize, height: cellSize, rx: '8', fill,
+            'data-pair': `${d1},${d2}`, 'data-count': count
+          });
+          if (glowFilter) rect.setAttribute('filter', glowFilter);
 
-  tiers.forEach(tier => {
-    const count = spectrum[tier.key] || 0;
-    const pct = Math.round(count / total * 100);
+          // Tooltip
+          rect.addEventListener('mouseenter', (e) => {
+            if (!count) return;
+            const tip = document.createElement('div');
+            tip.className = 'heatmap-tooltip';
+            const connText = threadData.ai_connections && threadData.ai_connections[0] || '';
+            tip.innerHTML = `
+              <div class="tooltip-title">${capitalize(d1)} + ${capitalize(d2)}</div>
+              <div class="tooltip-count">${count} article${count !== 1 ? 's' : ''}</div>
+              ${connText ? `<div class="tooltip-insight">${connText}</div>` : ''}
+            `;
+            document.body.appendChild(tip);
+            const box = e.target.getBoundingClientRect();
+            tip.style.left = (box.left + box.width / 2 - tip.offsetWidth / 2) + 'px';
+            tip.style.top = (box.top - tip.offsetHeight - 10) + 'px';
+            e.target.addEventListener('mouseleave', () => tip.remove(), { once: true });
+          });
 
-    const card = document.createElement('div');
-    card.style.cssText = 'background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:20px;padding:1.8rem 2rem;margin-bottom:0.8rem;border-left:5px solid ' + tier.color + ';';
-    card.innerHTML = `
-      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:0.5rem;">
-        <div style="font-family:'Space Grotesk',sans-serif;font-size:1.2rem;font-weight:800;color:${tier.color};">${tier.label}</div>
-        <div style="font-family:'Space Grotesk',sans-serif;font-size:1.6rem;font-weight:800;color:#fff;">${count}</div>
-      </div>
-      <div style="font-size:0.85rem;color:rgba(235,230,245,0.55);line-height:1.6;margin-bottom:0.4rem;">${tier.what}</div>
-      <div style="font-size:0.85rem;color:rgba(235,230,245,0.75);line-height:1.6;font-weight:500;">${tier.insight}</div>
-      <div style="font-size:0.72rem;color:rgba(235,230,245,0.3);margin-top:0.4rem;">${pct}% of today's coverage</div>
-    `;
-    container.appendChild(card);
-  });
-}
+          g.appendChild(rect);
 
-function renderCommunityStories() {
-  const container = document.getElementById('communityCards');
-  container.innerHTML = '';
+          // Count label inside bright cells
+          if (count > 0) {
+            const t = count / maxCount;
+            const txt = makeSvg('text', {
+              x: x + cellSize / 2, y: y + cellSize / 2,
+              'text-anchor': 'middle', 'dominant-baseline': 'middle',
+              fill: t > 0.35 ? 'rgba(0,0,0,0.7)' : '#fff',
+              'font-size': '14', 'font-weight': '800', 'font-family': 'Space Grotesk, sans-serif',
+              'pointer-events': 'none'
+            });
+            txt.textContent = count;
+            g.appendChild(txt);
+          }
+        });
+      });
 
-  if (dailyData.community_exclusive && dailyData.community_exclusive.length > 0) {
-    dailyData.community_exclusive.slice(0, 6).forEach(story => {
-      const card = document.createElement('a');
-      card.className = 'community-card';
-      card.href = story.url;
-      card.target = '_blank';
-      card.rel = 'noopener';
-      card.style.textDecoration = 'none';
+      // Row labels — use domain colors
+      domainList.forEach((domain, i) => {
+        const text = makeSvg('text', {
+          x: leftMargin - 14, y: topMargin + i * (cellSize + gap) + cellSize / 2,
+          'text-anchor': 'end', 'dominant-baseline': 'middle',
+          fill: DOMAIN_COLORS[domain], 'font-size': '13', 'font-weight': '700',
+          'font-family': 'Space Grotesk, sans-serif'
+        });
+        text.textContent = DOMAIN_LABELS[domain] || capitalize(domain);
+        g.appendChild(text);
+      });
 
-      const domainTags = (story.domains || []).map(d => {
-        const domKey = d.toLowerCase();
-        const color = DOMAIN_COLORS[domKey] || '#666';
-        return `<div class="community-domain-tag" style="background:${color};color:${getTextColor(color)};">${d}</div>`;
+      // Column labels (rotated) — use domain colors
+      domainList.forEach((domain, i) => {
+        const g2 = makeSvg('g', {
+          transform: `translate(${leftMargin + i * (cellSize + gap) + cellSize / 2}, ${topMargin - 14}) rotate(-45)`
+        });
+        const text = makeSvg('text', {
+          'text-anchor': 'end', 'dominant-baseline': 'middle',
+          fill: DOMAIN_COLORS[domain], 'font-size': '13', 'font-weight': '700',
+          'font-family': 'Space Grotesk, sans-serif'
+        });
+        text.textContent = DOMAIN_LABELS[domain] || capitalize(domain);
+        g2.appendChild(text);
+        g.appendChild(g2);
+      });
+
+      svg.appendChild(g);
+
+      // Candy-land legend gradient
+      const legend = document.getElementById('heatmapLegend');
+      const gradientSteps = 8;
+      let legendHtml = '<span style="color:rgba(235,230,245,0.65);font-size:0.78rem;margin-right:0.3rem;">Fewer</span>';
+      for (let s = 0; s < gradientSteps; s++) {
+        const t = s / (gradientSteps - 1);
+        const [r, gr, b] = candyColor(t);
+        legendHtml += `<div class="legend-box" style="background:rgb(${r},${gr},${b});width:${14 + t * 10}px;height:${14 + t * 4}px;border-radius:4px;display:inline-block;"></div>`;
+      }
+      legendHtml += '<span style="color:rgba(235,230,245,0.65);font-size:0.78rem;margin-left:0.3rem;">More coverage</span>';
+      legend.innerHTML = legendHtml;
+    }
+
+    /* ─── QUESTIONS — answers visible, not hidden ─── */
+    function renderQuestions() {
+      const { questions } = appData;
+      if (!questions) return;
+      const grid = document.getElementById('questionsGrid');
+
+      const qColors = ['#6652FF','#FF0054','#00C2A8','#FF5400','#4CAF50','#1976D2','#FF9800'];
+
+      const html = questions.map((q, idx) => {
+        const count = q.article_count || 0;
+        const color = qColors[idx % qColors.length];
+        const insights = q.ai_insights || [];
+
+        // Domain pills
+        const domainBadges = (q.domains || []).map(d => {
+          const key = domainToKey(d);
+          return `<span class="domain-pill domain-${key}" style="font-size:0.6rem;padding:0.25rem 0.55rem;">${d}</span>`;
+        }).join('');
+
+        // First insight is the lead, rest expand the answer
+        const leadInsight = insights[0]
+          ? `<p style="font-size:0.92rem;color:rgba(235,230,245,0.85);line-height:1.75;margin:0 0 0.8rem 0;">${insights[0]}</p>`
+          : '';
+        const remainingInsights = insights.slice(1).map(insight =>
+          `<p style="font-size:0.88rem;color:rgba(235,230,245,0.7);line-height:1.7;margin:0 0 0.5rem 0;">${insight}</p>`
+        ).join('');
+
+        // Sources as compact attribution
+        const allSources = [];
+        for (const [tier, articles] of Object.entries(q.sources_by_tier || {})) {
+          (articles || []).forEach(a => allSources.push({...a, tier}));
+        }
+        const sourceAttribution = allSources.length > 0
+          ? `<div style="font-size:0.75rem;color:rgba(235,230,245,0.5);margin-top:0.6rem;">Based on reporting from ${[...new Set(allSources.map(a => a.source))].slice(0, 5).join(', ')}${allSources.length > 5 ? ` and ${allSources.length - 5} more` : ''}</div>`
+          : '';
+
+        return `
+          <article class="question-card" style="border-left:4px solid ${color};cursor:default;">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:0.8rem;">
+              <h3 class="question-text" style="flex:1;">${q.question}</h3>
+              <span class="question-count" style="background:${color}22;border-color:${color}55;color:${color};">${count} articles</span>
+            </div>
+            ${leadInsight}
+            ${remainingInsights}
+            <div style="display:flex;gap:0.3rem;flex-wrap:wrap;margin-top:0.5rem;">${domainBadges}</div>
+            ${sourceAttribution}
+          </article>
+        `;
       }).join('');
 
-      card.innerHTML = `
-        <div class="community-source">
-          <span class="source-badge"></span>
-          ${story.source}
-        </div>
-        <div class="community-title">${story.title}</div>
-        <div class="community-excerpt">${story.text_preview || story.context || 'Specialist coverage'}</div>
-        <div class="community-domains">${domainTags}</div>
+      grid.innerHTML = html;
+    }
+
+    /* ─── SOURCE DIVERSITY — SVG donut chart ─── */
+    function renderSourceDonut() {
+      const spectrum = appData.source_spectrum;
+      if (!spectrum) return;
+      const container = document.getElementById('sourceDonut');
+      const realTotal = appData.summary.total_stories;
+
+      // Intuitive labels
+      const LABELS = {
+        national: 'U.S. newsrooms',
+        international: 'Global press',
+        community: 'Local & cultural outlets',
+        specialist: 'Expert journals',
+        analysis: 'Think tanks',
+        explainer: 'Explainers',
+        podcast: 'Podcasts',
+        newsletter: 'Newsletters',
+        research: 'Research orgs',
+        government: 'Government sources'
+      };
+      const COLORS = {
+        national: '#6652FF', international: '#1976D2', community: '#FF5400',
+        specialist: '#00C2A8', analysis: '#4CAF50', explainer: '#FF9800',
+        podcast: '#9E0059', newsletter: '#7B1FA2', research: '#D32F2F',
+        government: '#FF0054', other: 'rgba(255,255,255,0.15)'
+      };
+
+      const entries = Object.entries(spectrum).sort((a, b) => b[1] - a[1]);
+      const spectrumTotal = entries.reduce((s, [, c]) => s + c, 0);
+      const gap = realTotal - spectrumTotal;
+      const allEntries = gap > 0 ? [...entries, ['other', gap]] : entries;
+
+      // Build SVG donut
+      const size = 220, cx = size / 2, cy = size / 2, r = 85, stroke = 28;
+      const gapAngle = 1.2;
+      const totalGap = gapAngle * allEntries.length;
+      const available = 360 - totalGap;
+      let cumAngle = -90;
+      let arcs = '';
+
+      allEntries.forEach(([key, count]) => {
+        const angle = (count / realTotal) * available;
+        if (angle < 0.5) { cumAngle += angle + gapAngle; return; }
+        const startRad = (cumAngle * Math.PI) / 180;
+        const endRad = ((cumAngle + angle) * Math.PI) / 180;
+        const x1 = cx + r * Math.cos(startRad);
+        const y1 = cy + r * Math.sin(startRad);
+        const x2 = cx + r * Math.cos(endRad);
+        const y2 = cy + r * Math.sin(endRad);
+        const large = angle > 180 ? 1 : 0;
+        arcs += `<path d="M ${x1} ${y1} A ${r} ${r} 0 ${large} 1 ${x2} ${y2}" fill="none" stroke="${COLORS[key] || 'rgba(255,255,255,0.2)'}" stroke-width="${stroke}" stroke-linecap="round" opacity="0.9"/>`;
+        cumAngle += angle + gapAngle;
+      });
+
+      const centerText = `
+        <text x="${cx}" y="${cy - 8}" text-anchor="middle" fill="#fff" font-family="Space Grotesk, sans-serif" font-size="28" font-weight="800">${realTotal.toLocaleString()}</text>
+        <text x="${cx}" y="${cy + 14}" text-anchor="middle" fill="rgba(235,230,245,0.5)" font-family="Inter, sans-serif" font-size="11" font-weight="500">stories today</text>
       `;
 
-      container.appendChild(card);
-    });
-  }
-}
+      // Legend — skip "other" if tiny
+      const legendHtml = allEntries.filter(([k, c]) => c > 2 && k !== 'other').map(([key, count]) => {
+        const pct = ((count / realTotal) * 100).toFixed(0);
+        return `
+          <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.5rem;">
+            <div style="width:10px;height:10px;border-radius:50%;background:${COLORS[key] || '#666'};flex-shrink:0;"></div>
+            <span style="font-family:'Space Grotesk',sans-serif;font-size:0.88rem;font-weight:700;color:#fff;">${count}</span>
+            <span style="font-size:0.78rem;color:rgba(235,230,245,0.65);">${LABELS[key] || capitalize(key)}</span>
+          </div>
+        `;
+      }).join('');
 
-function getTierColor(tierName) {
-  const tierColors = {
-    national: '#6652FF',
-    international: '#1976D2',
-    community: '#FF5400',
-    specialist: '#00C2A8',
-    explainer: '#FF9800',
-    analysis: '#4CAF50'
-  };
-  return tierColors[tierName] || '#666';
-}
+      container.innerHTML = `
+        <div style="flex-shrink:0;">
+          <svg width="${size}" height="${size}" viewBox="0 0 ${size} ${size}">
+            ${arcs}
+            ${centerText}
+          </svg>
+        </div>
+        <div style="min-width:180px;">${legendHtml}</div>
+      `;
+    }
 
-function getTextColor(hexColor) {
-  const rgb = hexToRgb(hexColor);
-  const brightness = (rgb[0] * 299 + rgb[1] * 587 + rgb[2] * 114) / 1000;
-  return brightness > 155 ? '#000' : '#fff';
-}
+    /* ─── COMMUNITY STORIES — insight extraction, not title listing ─── */
+    function renderCommunityStories() {
+      const section = document.getElementById('communitySection');
+      const synthesis = appData.community_synthesis;
+      const examples = appData.community_examples || [];
+      const stories = appData.community_exclusive || [];
 
-function hexToRgb(hex) {
-  const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-  return result ? [
-    parseInt(result[1], 16),
-    parseInt(result[2], 16),
-    parseInt(result[3], 16)
-  ] : [0, 0, 0];
-}
+      if (!synthesis && stories.length === 0) { section.style.display = 'none'; return; }
 
-function updateFooter() {
-  const footerEl = document.getElementById('footerSources');
-  footerEl.textContent = `Based on analysis from ${dailyData.summary.sources_reporting}+ sources across 10 domains`;
-}
+      // Examples as insight cards
+      const examplesHtml = examples.map((ex, i) => {
+        const colors = ['#FF5400', '#6652FF', '#00C2A8'];
+        const color = colors[i % colors.length];
+        return `
+          <div style="padding:1rem 1.2rem;background:rgba(255,255,255,0.02);border-left:3px solid ${color};border-radius:0 10px 10px 0;margin-bottom:0.6rem;">
+            <p style="font-size:0.9rem;color:rgba(235,230,245,0.75);line-height:1.55;margin:0;">${ex}</p>
+          </div>
+        `;
+      }).join('');
 
-// Load data and render
-loadData();
-</script>
+      // Source attribution
+      const sourceNames = [...new Set(stories.map(s => s.source))].slice(0, 8);
+      const sourceLine = sourceNames.length > 0
+        ? `<div style="font-size:0.72rem;color:rgba(235,230,245,0.5);margin-top:1rem;">Reporting from: ${sourceNames.join(', ')}</div>`
+        : '';
 
+      section.innerHTML = `
+        <h2 class="section-title">What's Being Missed</h2>
+        ${synthesis ? `<div style="font-size:0.95rem;color:rgba(235,230,245,0.7);line-height:1.7;margin-bottom:1.5rem;">${synthesis}</div>` : ''}
+        ${examplesHtml}
+        ${sourceLine}
+      `;
+    }
+
+    /* ─── CONNECTING STORIES — now redundant with mega-stories, hidden ─── */
+    function renderConnectingStories() {
+      const section = document.getElementById('connectingSection');
+      section.style.display = 'none';
+    }
+
+    /* ─── UTILITIES ─── */
+    function makeSvg(tag, attrs) {
+      const el = document.createElementNS('http://www.w3.org/2000/svg', tag);
+      if (attrs) Object.entries(attrs).forEach(([k, v]) => el.setAttribute(k, v));
+      return el;
+    }
+
+    function hexToRgb(hex) {
+      const m = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+      return m ? [parseInt(m[1], 16), parseInt(m[2], 16), parseInt(m[3], 16)] : [102, 82, 255];
+    }
+
+    function capitalize(str) {
+      if (!str) return '';
+      return str.split('_').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+    }
+
+    function domainToKey(label) {
+      if (!label) return '';
+      const l = label.toLowerCase().trim();
+      for (const [key, name] of Object.entries(DOMAIN_LABELS)) {
+        if (name.toLowerCase() === l || key === l) return key;
+      }
+      return l.replace(/ /g, '_');
+    }
+
+    function cleanTitle(t) {
+      if (!t) return '';
+      return t.replace(/<[^>]+>/g, '').replace(/&nbsp;/g, ' ').trim();
+    }
+
+    function titleCase(str) {
+      if (!str) return '';
+      const minor = new Set(['a','an','the','and','but','or','for','nor','in','on','at','to','by','of','with']);
+      return str.split(' ').map((w, i) => {
+        if (i === 0 || !minor.has(w.toLowerCase())) return w.charAt(0).toUpperCase() + w.slice(1).toLowerCase();
+        return w.toLowerCase();
+      }).join(' ');
+    }
+
+    function updateFAQSchema() {
+      const { questions } = appData;
+      if (!questions || !questions.length) return;
+
+      const faqItems = questions.slice(0, 5).map(q => ({
+        '@type': 'Question',
+        'name': q.question,
+        'acceptedAnswer': {
+          '@type': 'Answer',
+          'text': (q.ai_insights && q.ai_insights[0]) || 'See sources for details.'
+        }
+      }));
+
+      document.getElementById('faqSchema').textContent = JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        'mainEntity': faqItems
+      });
+    }
+  </script>
 </body>
 </html>
