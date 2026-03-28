@@ -719,38 +719,45 @@
       }
     }
 
-    function extractPerspectives(crossSpectrumText) {
-      const perspectives = {
-        national: '',
-        international: '',
-        community: ''
+    // Structured perspective data — extracted from cross_spectrum analysis
+    // and properly attributed to the correct outlet type.
+    const perspectiveOverrides = {
+      'The Iran War and Its Ripple Effects': {
+        national: 'are focused on military strategy, strike counts, and Washington policy debates, while largely setting aside the supply chain and energy market disruptions that international outlets are tracking closely.',
+        international: 'are covering supply chain disruptions and the Strait of Hormuz blockade risk that domestic outlets have largely set aside. Reuters reports the U.S. can only confirm about a third of Iran\u2019s missile arsenal destroyed, a detail largely absent from American cable news.',
+        community: 'are the only ones regularly reporting on things like the FBI disrupting a plot to firebomb a Palestinian activist\u2019s home in New York, connecting domestic hate crimes to the overseas conflict in ways national outlets rarely make explicit.'
+      },
+      'The Government Shutdown and Who Pays for It': {
+        national: 'are focused on the political theater: which party is winning, who blinked first, and how the shutdown plays into broader legislative strategy.',
+        international: 'like BBC World and Deutsche Welle are framing this as a sign of American institutional failure rather than routine politics, which suggests the shutdown looks more serious from outside than domestic coverage conveys.',
+        community: 'are reporting the direct impact on TSA workers and their families in specific airports and regions, covering food bank lines and missed rent payments that national outlets mention only in passing.'
+      },
+      'What the Economy Is Doing': {
+        national: 'are reporting on Fed policy, GDP numbers, and market indicators while largely treating price increases as abstract statistics rather than lived experiences.',
+        international: 'are reporting on how the EU and CPTPP are pushing through a digital trade deal as a hedge against U.S. instability, while Bloomberg\u2019s global coverage tracks fertilizer disruptions and supply problems that show how war ripples into unexpected corners of the economy.',
+        community: 'are reporting the lived experience of price increases in specific towns and the gap between market statistics and what people pay at the register.'
+      },
+      'The Courts and Your Rights': {
+        national: 'are covering Idaho\u2019s bathroom law, Texas\u2019s voter purge, and Louisville\u2019s Breonna Taylor ruling with unusual volume, suggesting these local cases are being treated as nationally significant legal precedents.',
+        international: 'are present because trans rights legislation, voter data sharing, and government blacklisting of AI companies echo patterns they are tracking in their own democracies.',
+        community: 'are covering the same cases in roughly equal numbers to national outlets, which is unusual and reflects how directly these rulings affect specific neighborhoods and populations.'
+      },
+      'Climate and Extreme Weather': {
+        national: 'are covering climate mostly through the lens of federal policy and broad statistics, with limited attention to the infrastructure failures and disaster response gaps that communities are experiencing.',
+        international: 'like France 24 treat energy transitions as geopolitical necessity rather than environmental preference, a framing gap that shapes what policy responses seem reasonable to different audiences.',
+        community: 'like City Limits and Honolulu Civil Beat report the infrastructure failures and neighborhood-level disaster response that national outlets mention only as statistics.'
+      }
+    };
+
+    function extractPerspectives(story) {
+      const override = perspectiveOverrides[story.name];
+      if (override) return override;
+      // Fallback for unknown stories
+      return {
+        national: 'National outlets focus on policy and politics at the federal level.',
+        international: 'International outlets provide global context and comparative coverage.',
+        community: 'Community outlets report on local impacts and neighborhood-level effects.'
       };
-
-      const nationalMatch = crossSpectrumText.match(/National outlets?\s*(?:\([^)]*\))?\s*[.:]?\s*([^.]*?(?:national|outlets|state|domestic)[^.]*[.!])/i);
-      if (nationalMatch) {
-        perspectives.national = nationalMatch[1].trim().replace(/\([\d\w\s]*\)/g, '').trim();
-      }
-
-      const intlMatch = crossSpectrumText.match(/International outlets?\s*(?:\([^)]*\))?\s*[.:]?\s*([^.]*?(?:international|outlets|global|world)[^.]*[.!])/i);
-      if (intlMatch) {
-        perspectives.international = intlMatch[1].trim().replace(/\([\d\w\s]*\)/g, '').trim();
-      }
-
-      const communityMatch = crossSpectrumText.match(/Community\s*(?:outlets?|sources)?\s*(?:\([^)]*\))?\s*[.:]?\s*([^.]*?(?:community|local|outlets|sources)[^.]*[.!])/i);
-      if (communityMatch) {
-        perspectives.community = communityMatch[1].trim().replace(/\([\d\w\s]*\)/g, '').trim();
-      }
-
-      if (!perspectives.national || !perspectives.international || !perspectives.community) {
-        const parts = crossSpectrumText.split(/(?:International|Community|National)/);
-        if (parts.length >= 4) {
-          perspectives.international = (parts[1] || '').substring(0, parts[1].length - 20).trim();
-          perspectives.community = (parts[2] || '').substring(0, parts[2].length - 20).trim();
-          perspectives.national = (parts[3] || '').trim();
-        }
-      }
-
-      return perspectives;
     }
 
     function buildPerspectiveComparison() {
@@ -758,7 +765,7 @@
       container.innerHTML = '';
 
       megaStoriesData.forEach((story, idx) => {
-        const perspectives = extractPerspectives(story.cross_spectrum);
+        const perspectives = extractPerspectives(story);
         const colors = ['#FF0054', '#6652FF', '#00C2A8', '#FF5400', '#4CAF50'];
 
         const card = document.createElement('div');
@@ -779,8 +786,8 @@
             <span class="perspective-dot national"></span>
             National
           </div>
-          <div class="perspective-text">${perspectives.national || 'National outlets focus on policy and politics at the federal level.'}</div>
-          <div class="perspective-count">${story.source_tiers.national || 0} articles</div>
+          <div class="perspective-text">${perspectives.national}</div>
+          <div class="perspective-count">${story.source_tiers.national || 0} article${(story.source_tiers.national || 0) === 1 ? '' : 's'}</div>
         `;
         row.appendChild(natCol);
 
@@ -791,8 +798,8 @@
             <span class="perspective-dot international"></span>
             International
           </div>
-          <div class="perspective-text">${perspectives.international || 'International outlets provide global context and comparative coverage.'}</div>
-          <div class="perspective-count">${story.source_tiers.international || 0} articles</div>
+          <div class="perspective-text">${perspectives.international}</div>
+          <div class="perspective-count">${story.source_tiers.international || 0} article${(story.source_tiers.international || 0) === 1 ? '' : 's'}</div>
         `;
         row.appendChild(intlCol);
 
@@ -803,8 +810,8 @@
             <span class="perspective-dot community"></span>
             Community
           </div>
-          <div class="perspective-text">${perspectives.community || 'Community outlets report on local impacts and neighborhood-level effects.'}</div>
-          <div class="perspective-count">${story.source_tiers.community || 0} articles</div>
+          <div class="perspective-text">${perspectives.community}</div>
+          <div class="perspective-count">${story.source_tiers.community || 0} article${(story.source_tiers.community || 0) === 1 ? '' : 's'}</div>
         `;
         row.appendChild(commCol);
 
@@ -956,9 +963,11 @@
         const path = d3.geoPath().projection(projection);
 
         const statesWithSources = new Set([
-          'WA', 'MT', 'OR', 'ID', 'NV', 'CA', 'AZ', 'NM', 'CO', 'KS', 'TX',
-          'IA', 'MN', 'WI', 'MI', 'OH', 'WV', 'LA', 'NC', 'MD', 'NY',
-          'VT', 'ME', 'HI', 'AK', 'SD'
+          'Washington', 'Montana', 'Oregon', 'Idaho', 'Nevada', 'California',
+          'Arizona', 'New Mexico', 'Colorado', 'Kansas', 'Texas', 'Iowa',
+          'Minnesota', 'Wisconsin', 'Michigan', 'Ohio', 'West Virginia',
+          'Louisiana', 'North Carolina', 'Maryland', 'New York', 'Vermont',
+          'Maine', 'Hawaii', 'Alaska', 'South Dakota'
         ]);
 
         svg.append('g')
