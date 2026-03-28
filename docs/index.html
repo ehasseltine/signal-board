@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Signal Board tracks how today's biggest stories connect across topics and sources. 80+ outlets, every perspective, updated daily.">
+<meta name="description" content="Signal Board tracks how today's biggest stories connect across topics and sources. 120+ outlets, every perspective, updated daily.">
 <title>Signal Board</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -142,6 +142,23 @@
   .archive-link:hover{opacity:0.7;}
   .archive-link svg{width:14px;height:14px;}
 
+  /* CONSTELLATION VISUAL */
+  .constellation{margin:1.5rem auto 2rem;position:relative;}
+  .constellation svg{display:block;margin:0 auto;}
+  .constellation .cst-label{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:0.7rem;fill:rgba(255,255,255,0.6);text-anchor:middle;pointer-events:none;}
+  .constellation .cst-count{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.1rem;fill:#fff;text-anchor:middle;pointer-events:none;}
+  .constellation line{stroke-linecap:round;transition:stroke-opacity 0.3s;}
+  .constellation circle{transition:r 0.3s,filter 0.3s;cursor:pointer;}
+  .constellation circle:hover{filter:brightness(1.4) drop-shadow(0 0 8px currentColor);}
+
+  /* SPECTRUM ARC */
+  .spectrum-visual{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;margin:1rem 0 1.5rem;}
+  .spec-ring{position:relative;width:100px;height:100px;}
+  .spec-ring svg{transform:rotate(-90deg);}
+  .spec-ring-label{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+  .spec-ring-n{font-family:'Space Grotesk',sans-serif;font-size:1.4rem;font-weight:700;color:#fff;line-height:1;}
+  .spec-ring-t{font-size:0.6rem;color:var(--text-dim);margin-top:0.15rem;}
+
   @media(max-width:600px){
     .wrap{padding:0 1rem;}
     .hdr{padding:2rem 0 1rem;}
@@ -233,7 +250,7 @@ async function init(){
 }
 
 function render(){
-  renderBar();renderLegend();renderToday();renderCollisions();renderFeed();renderAbout();
+  renderBar();renderLegend();renderToday();renderConstellation();renderCollisions();renderFeed();renderAbout();
 }
 
 function renderBar(){
@@ -286,15 +303,28 @@ function renderToday(){
     <div class="daily-date">${dateStr}</div>
     <div class="daily-headline">${storyCount} stories. ${srcCount} sources. ${crossCount} connections.</div>
 
-    <div style="margin-bottom:2.2rem;">
-      <div style="font-size:0.88rem;color:var(--text-mid);line-height:1.7;max-width:580px;">The world is more connected than any single story can show. Today's coverage spans ${srcCount} outlets — national, international, community, and specialist — revealing where the real conversations are happening across domains that rarely talk to each other.</div>
-    </div>
+    <div style="font-size:0.88rem;color:var(--text-mid);line-height:1.7;max-width:580px;margin-bottom:0.5rem;">The world is more connected than any single story can show. Here's what ${srcCount} outlets are revealing today.</div>
+
+    <div class="constellation" id="constellation"></div>
 
     <div style="margin-bottom:2.2rem;">
-      <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1.2rem;">
-        ${Object.entries({national:'National',international:'International',specialist:'Specialist',explainer:'Explainer',community:'Community',analysis:'Analysis'}).map(([k,l])=>
-          `<div class="about-stat"><span class="about-stat-n">${spectrum[k]||0}</span><span class="about-stat-l">${l}</span></div>`
-        ).join('')}
+      <div style="font-family:'Space Grotesk',sans-serif;font-size:1.05rem;font-weight:700;color:#fff;margin-bottom:0.5rem;">Source Spectrum</div>
+      <div style="font-size:0.82rem;color:var(--text-dim);margin-bottom:0.8rem;line-height:1.6;">The wider the spread, the more complete your picture.</div>
+      <div class="spectrum-visual" id="spectrum-visual">
+        ${Object.entries({national:'National',international:'International',specialist:'Specialist',explainer:'Explainer',community:'Community',analysis:'Analysis'}).map(([k,l])=>{
+          const v=spectrum[k]||0;
+          const max=Math.max(...Object.values(spectrum),1);
+          const pct=Math.round((v/max)*100);
+          const colors={national:'#6652FF',international:'#1976D2',specialist:'#FF5400',explainer:'#00C2A8',community:'#4CAF50',analysis:'#9E0059'};
+          const c=colors[k]||'#666';
+          return `<div class="spec-ring">
+            <svg width="100" height="100" viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="42" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="6"/>
+              <circle cx="50" cy="50" r="42" fill="none" stroke="${c}" stroke-width="6" stroke-dasharray="${pct*2.64} ${264-pct*2.64}" stroke-linecap="round" opacity="0.85"/>
+            </svg>
+            <div class="spec-ring-label"><span class="spec-ring-n">${v}</span><span class="spec-ring-t">${l}</span></div>
+          </div>`;
+        }).join('')}
       </div>
     </div>
 
@@ -367,6 +397,76 @@ function renderToday(){
       `).join('')}
     </div>`:''}
   `;
+}
+
+// CONSTELLATION — visual network of domain connections
+function renderConstellation(){
+  const el=document.getElementById('constellation');
+  if(!el)return;
+  const todayArts=articles.filter(a=>a.date===today);
+  if(!todayArts.length)return;
+
+  // Count domain frequencies and pair frequencies
+  const domCounts={};
+  const pairCounts={};
+  for(const a of todayArts){
+    for(const d of(a.domains||[]))domCounts[d]=(domCounts[d]||0)+1;
+    if(a.cross_domain&&a.domains?.length>=2){
+      const ds=[...a.domains].sort();
+      for(let i=0;i<ds.length;i++)for(let j=i+1;j<ds.length;j++){
+        const k=ds[i]+'|'+ds[j];pairCounts[k]=(pairCounts[k]||0)+1;
+      }
+    }
+  }
+
+  const keys=Object.keys(DL);
+  const n=keys.length;
+  const w=Math.min(el.parentElement?.offsetWidth||700,700);
+  const h=w*0.62;
+  const cx=w/2,cy=h/2,r=Math.min(cx,cy)*0.68;
+
+  // Position domains in a circle
+  const pos={};
+  keys.forEach((k,i)=>{
+    const angle=(i/n)*Math.PI*2-Math.PI/2;
+    pos[k]={x:cx+Math.cos(angle)*r,y:cy+Math.sin(angle)*r};
+  });
+
+  // Draw connections (lines between pairs)
+  const maxPair=Math.max(...Object.values(pairCounts),1);
+  let lines='';
+  for(const[pk,count]of Object.entries(pairCounts)){
+    const[d1,d2]=pk.split('|');
+    if(!pos[d1]||!pos[d2])continue;
+    const thick=Math.max(1,Math.min(6,(count/maxPair)*6));
+    const opacity=Math.max(0.08,Math.min(0.5,(count/maxPair)*0.5));
+    // Gradient midpoint color
+    const c1=DC[d1]||'#666',c2=DC[d2]||'#666';
+    lines+=`<line x1="${pos[d1].x}" y1="${pos[d1].y}" x2="${pos[d2].x}" y2="${pos[d2].y}" stroke="${c1}" stroke-width="${thick}" stroke-opacity="${opacity}"/>`;
+  }
+
+  // Draw domain nodes
+  const maxDom=Math.max(...Object.values(domCounts),1);
+  let nodes='';
+  keys.forEach(k=>{
+    const p=pos[k];
+    const count=domCounts[k]||0;
+    const sz=Math.max(12,Math.min(30,(count/maxDom)*30));
+    const c=DC[k]||'#666';
+    // Glow
+    nodes+=`<circle cx="${p.x}" cy="${p.y}" r="${sz+4}" fill="${c}" opacity="0.08"/>`;
+    nodes+=`<circle cx="${p.x}" cy="${p.y}" r="${sz}" fill="${c}" opacity="0.85" style="color:${c}"/>`;
+    // Count inside
+    if(sz>=16)nodes+=`<text class="cst-count" x="${p.x}" y="${p.y+0.35*14}" style="font-size:${Math.max(10,sz*0.65)}px">${count}</text>`;
+    // Label outside
+    const labelR=r+28;
+    const angle=Math.atan2(p.y-cy,p.x-cx);
+    const lx=cx+Math.cos(angle)*labelR;
+    const ly=cy+Math.sin(angle)*labelR;
+    nodes+=`<text class="cst-label" x="${lx}" y="${ly+4}">${DL[k]}</text>`;
+  });
+
+  el.innerHTML=`<svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg">${lines}${nodes}</svg>`;
 }
 
 function computeSpectrum(arts){
