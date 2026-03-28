@@ -1,6 +1,6 @@
 {
   "date": "2026-03-28",
-  "generated": "2026-03-28T15:48:02Z",
+  "generated": "2026-03-28T16:02:45Z",
   "summary": {
     "total_stories": 1033,
     "sources_reporting": 142,
@@ -23,6 +23,258 @@
       "AI": 45
     }
   },
+  "temporal_context": {
+    "has_yesterday": true,
+    "yesterday_date": "2026-03-27",
+    "yesterday_total": 907,
+    "today_total": 1033,
+    "volume_change_pct": 14,
+    "domain_shifts": [
+      {
+        "domain": "geopolitics",
+        "label": "Geopolitics",
+        "yesterday": 188,
+        "today": 256,
+        "change_pct": 36
+      },
+      {
+        "domain": "security",
+        "label": "Security",
+        "yesterday": 205,
+        "today": 265,
+        "change_pct": 29
+      },
+      {
+        "domain": "ai",
+        "label": "AI",
+        "yesterday": 62,
+        "today": 45,
+        "change_pct": -27
+      },
+      {
+        "domain": "economics",
+        "label": "Economics",
+        "yesterday": 186,
+        "today": 229,
+        "change_pct": 23
+      },
+      {
+        "domain": "legal",
+        "label": "Legal",
+        "yesterday": 185,
+        "today": 216,
+        "change_pct": 17
+      },
+      {
+        "domain": "labor",
+        "label": "Labor",
+        "yesterday": 78,
+        "today": 71,
+        "change_pct": -9
+      },
+      {
+        "domain": "climate",
+        "label": "Climate",
+        "yesterday": 138,
+        "today": 126,
+        "change_pct": -9
+      },
+      {
+        "domain": "information",
+        "label": "Information",
+        "yesterday": 159,
+        "today": 146,
+        "change_pct": -8
+      },
+      {
+        "domain": "domestic_politics",
+        "label": "Politics",
+        "yesterday": 215,
+        "today": 225,
+        "change_pct": 5
+      },
+      {
+        "domain": "governance",
+        "label": "Governance",
+        "yesterday": 330,
+        "today": 331,
+        "change_pct": 0
+      }
+    ],
+    "surges": [
+      {
+        "domain": "geopolitics",
+        "label": "Geopolitics",
+        "yesterday": 188,
+        "today": 256,
+        "change_pct": 36
+      },
+      {
+        "domain": "security",
+        "label": "Security",
+        "yesterday": 205,
+        "today": 265,
+        "change_pct": 29
+      },
+      {
+        "domain": "economics",
+        "label": "Economics",
+        "yesterday": 186,
+        "today": 229,
+        "change_pct": 23
+      }
+    ],
+    "drops": [
+      {
+        "domain": "ai",
+        "label": "AI",
+        "yesterday": 62,
+        "today": 45,
+        "change_pct": -27
+      }
+    ],
+    "persisting_forces": [
+      {
+        "force": "regulatory capture",
+        "yesterday_count": 17,
+        "today_count": 6,
+        "domains": [
+          "governance",
+          "legal",
+          "climate"
+        ],
+        "insight": "Environmental regulator's permit decision challenged through legal process over compliance with own procedural rules."
+      }
+    ],
+    "new_forces": [
+      {
+        "force": "military escalation",
+        "count": 28,
+        "domains": [
+          "security",
+          "geopolitics",
+          "economics"
+        ],
+        "insight": "Direct military escalation between U.S.-Israel coalition and Iran reshapes Middle East power dynamics."
+      },
+      {
+        "force": "geopolitical supply chain disruption",
+        "count": 11,
+        "domains": [
+          "economics",
+          "geopolitics",
+          "climate"
+        ],
+        "insight": "Military conflict disrupts global fertilizer supply chains, transmitting geopolitical shocks into agricultural costs and food security."
+      },
+      {
+        "force": "institutional accountability",
+        "count": 9,
+        "domains": [
+          "legal",
+          "governance",
+          "security"
+        ],
+        "insight": "Financial institutions face liability when their compliance failures enable serious crimes to persist undetected."
+      },
+      {
+        "force": "executive power concentration",
+        "count": 9,
+        "domains": [
+          "governance",
+          "domestic_politics",
+          "legal"
+        ],
+        "insight": "Executive override of congressional appropriations process uses federal workers' livelihoods as leverage in partisan conflict."
+      },
+      {
+        "force": "proxy warfare escalation",
+        "count": 6,
+        "domains": [
+          "geopolitics",
+          "security"
+        ],
+        "insight": "Yemen-based missile fire and U.S. military planning reveal coordinated proxy conflict dynamics."
+      },
+      {
+        "force": "cyber espionage escalation",
+        "count": 6,
+        "domains": [
+          "security",
+          "geopolitics",
+          "information"
+        ],
+        "insight": "Iranian hacking of U.S. intelligence leadership signals escalating cyber warfare as geopolitical tool against American security apparatus."
+      },
+      {
+        "force": "partisan budgetary standoff",
+        "count": 5,
+        "domains": [
+          "governance",
+          "domestic_politics"
+        ],
+        "insight": "Congressional party divisions block routine government funding as DHS appropriations become partisan leverage point."
+      },
+      {
+        "force": "escalating regional conflict",
+        "count": 4,
+        "domains": [
+          "security",
+          "geopolitics"
+        ],
+        "insight": "Military casualties demonstrate Iran's sustained regional military capability despite ongoing strikes."
+      }
+    ],
+    "faded_forces": [
+      {
+        "force": "supply chain weaponization",
+        "count": 6,
+        "domains": [
+          "economics",
+          "geopolitics",
+          "climate"
+        ]
+      },
+      {
+        "force": "scapegoating as political mobilization",
+        "count": 6,
+        "domains": [
+          "domestic_politics",
+          "information",
+          "geopolitics"
+        ]
+      },
+      {
+        "force": "executive power opportunism",
+        "count": 4,
+        "domains": [
+          "domestic_politics",
+          "legal",
+          "security"
+        ]
+      },
+      {
+        "force": "institutional mission creep",
+        "count": 4,
+        "domains": [
+          "security",
+          "governance",
+          "labor"
+        ]
+      },
+      {
+        "force": "state-sponsored information warfare",
+        "count": 4,
+        "domains": [
+          "security",
+          "information",
+          "ai"
+        ]
+      }
+    ],
+    "yesterday_classified": 642,
+    "today_classified": 728
+  },
   "top_stories": [
     {
       "headline": "Direct military escalation between U.S.-Israel coalition and Iran reshapes Middle East power dynamics.",
@@ -37,9 +289,9 @@
       "source_count": 22,
       "tier_count": 3,
       "tiers": [
-        "national",
+        "international",
         "community",
-        "international"
+        "national"
       ],
       "domains": [
         "Security",
@@ -227,8 +479,8 @@
       "source_count": 11,
       "tier_count": 2,
       "tiers": [
-        "national",
-        "international"
+        "international",
+        "national"
       ],
       "domains": [
         "Economics",
@@ -403,10 +655,10 @@
       "source_count": 9,
       "tier_count": 4,
       "tiers": [
-        "analysis",
-        "national",
+        "international",
         "community",
-        "international"
+        "analysis",
+        "national"
       ],
       "domains": [
         "Governance",
@@ -435,7 +687,7 @@
         {
           "text": "Presidential policy proposal raises concerns requiring legislative and institutional scrutiny.",
           "source": "Cato Institute",
-          "title": "Additional Concerns Regarding President Trump’s “Golden Dome” - Cato Institute",
+          "title": "Additional Concerns Regarding President Trump\u2019s \u201cGolden Dome\u201d - Cato Institute",
           "domains": [
             "governance",
             "domestic_politics"
@@ -529,7 +781,7 @@
             "dome"
           ],
           "sample": {
-            "title": "Additional Concerns Regarding President Trump’s “Golden Dome” - Cato Institute",
+            "title": "Additional Concerns Regarding President Trump\u2019s \u201cGolden Dome\u201d - Cato Institute",
             "source": "Cato Institute",
             "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9tSmpGTGdIMURWd3o2X3N2SjVmcG9zLVpDTHIybV8wZW1VR3E0X2dyX2VNSG83Z1BrSUY0NmZUSExTMUlmYk5WZEtLdnJQMm5JYTlkMFlhTm01Nll4SGZlWHdEcTVwdUltUk9lY2l1TlNJY2pzQlpN?oc=5",
             "context": ""
@@ -612,9 +864,9 @@
       "source_count": 5,
       "tier_count": 3,
       "tiers": [
+        "international",
         "community",
-        "specialist",
-        "international"
+        "specialist"
       ],
       "domains": [
         "Governance",
@@ -642,7 +894,7 @@
         {
           "text": "Executive panel overrides environmental law to prioritize fossil fuel extraction over species protection.",
           "source": "Inside Climate News",
-          "title": "Trump’s ‘God Squad’ Will Weigh Gulf Oil Drilling Against the Survival of Endange",
+          "title": "Trump\u2019s \u2018God Squad\u2019 Will Weigh Gulf Oil Drilling Against the Survival of Endange",
           "domains": [
             "climate",
             "governance",
@@ -670,7 +922,7 @@
         {
           "text": "Government proposes costly proprietary digital system despite free alternative existing, raising questions about procurement efficiency and whether budgetary growth drives technology adoption.",
           "source": "Rappler",
-          "title": "[Vantage Point] The insensitivity of Customs’ ITAMSS push: Why pay if you can ge",
+          "title": "[Vantage Point] The insensitivity of Customs\u2019 ITAMSS push: Why pay if you can ge",
           "domains": [
             "governance",
             "economics"
@@ -720,7 +972,7 @@
             "drilling"
           ],
           "sample": {
-            "title": "Trump’s ‘God Squad’ Will Weigh Gulf Oil Drilling Against the Survival of Endangered Whales and Turtles",
+            "title": "Trump\u2019s \u2018God Squad\u2019 Will Weigh Gulf Oil Drilling Against the Survival of Endangered Whales and Turtles",
             "source": "Inside Climate News",
             "url": "https://insideclimatenews.org/news/27032026/trump-god-squad-gulf-oil-drilling-endangered-species/",
             "context": ""
@@ -749,7 +1001,7 @@
           "force_tag": "regulatory capture by industry"
         },
         {
-          "title": "[Vantage Point] The insensitivity of Customs’ ITAMSS push: Why pay if you can get it free?",
+          "title": "[Vantage Point] The insensitivity of Customs\u2019 ITAMSS push: Why pay if you can get it free?",
           "source": "Rappler",
           "url": "https://www.rappler.com/voices/thought-leaders/vantage-point-customs-itamss-tracking-system-opposed/",
           "tier": "international",
@@ -769,7 +1021,7 @@
           "force_tag": "regulatory capture through corruption"
         },
         {
-          "title": "Trump’s ‘God Squad’ Will Weigh Gulf Oil Drilling Against the Survival of Endangered Whales and Turtles",
+          "title": "Trump\u2019s \u2018God Squad\u2019 Will Weigh Gulf Oil Drilling Against the Survival of Endangered Whales and Turtles",
           "source": "Inside Climate News",
           "url": "https://insideclimatenews.org/news/27032026/trump-god-squad-gulf-oil-drilling-endangered-species/",
           "tier": "specialist",
@@ -793,9 +1045,9 @@
       "source_count": 7,
       "tier_count": 3,
       "tiers": [
-        "national",
+        "international",
         "community",
-        "international"
+        "national"
       ],
       "domains": [
         "Legal",
@@ -979,9 +1231,9 @@
       "source_count": 3,
       "tier_count": 3,
       "tiers": [
-        "national",
+        "international",
         "community",
-        "international"
+        "national"
       ],
       "domains": [
         "Governance",
@@ -1120,10 +1372,10 @@
       "source_count": 6,
       "tier_count": 4,
       "tiers": [
-        "national",
-        "explainer",
         "international",
-        "community"
+        "community",
+        "national",
+        "explainer"
       ],
       "domains": [
         "Security",
@@ -1140,7 +1392,7 @@
         {
           "text": "Iranian hacking of U.S. intelligence leadership signals escalating cyber warfare as geopolitical tool against American security apparatus.",
           "source": "AP News",
-          "title": "Pro-Iranian hacking group claims credit for hack of FBI Director Kash Patel’s pe",
+          "title": "Pro-Iranian hacking group claims credit for hack of FBI Director Kash Patel\u2019s pe",
           "domains": [
             "security",
             "geopolitics"
@@ -1149,7 +1401,7 @@
         {
           "text": "Iranian hack of U.S. official's emails demonstrates cyber warfare targeting government officials amid escalating Iran tensions.",
           "source": "New York Times",
-          "title": "Kash Patel’s Emails Circulate Online as Iran Takes Responsibility for Release",
+          "title": "Kash Patel\u2019s Emails Circulate Online as Iran Takes Responsibility for Release",
           "domains": [
             "security",
             "information",
@@ -1159,7 +1411,7 @@
         {
           "text": "State-sponsored cyberattacks targeting U.S. officials reflect escalating intelligence competition between nations.",
           "source": "Wired",
-          "title": "Iranian Hackers Breached Kash Patel’s Email—but Not the FBI’s",
+          "title": "Iranian Hackers Breached Kash Patel\u2019s Email,but Not the FBI\u2019s",
           "domains": [
             "security",
             "geopolitics"
@@ -1195,7 +1447,7 @@
             "claims"
           ],
           "sample": {
-            "title": "Pro-Iranian hacking group claims credit for hack of FBI Director Kash Patel’s personal account",
+            "title": "Pro-Iranian hacking group claims credit for hack of FBI Director Kash Patel\u2019s personal account",
             "source": "AP News",
             "url": "https://apnews.com/article/patel-iran-hacking-cyberscurity-9237ca30d1c85f237d7d83e6798d97f0",
             "context": "Nonprofit cooperative owned by member newspapers and broadcasters. Generally regarded as centrist wire service."
@@ -1236,7 +1488,7 @@
       },
       "articles": [
         {
-          "title": "Pro-Iranian hacking group claims credit for hack of FBI Director Kash Patel’s personal account",
+          "title": "Pro-Iranian hacking group claims credit for hack of FBI Director Kash Patel\u2019s personal account",
           "source": "AP News",
           "url": "https://apnews.com/article/patel-iran-hacking-cyberscurity-9237ca30d1c85f237d7d83e6798d97f0",
           "tier": "national",
@@ -1246,7 +1498,7 @@
           "force_tag": "cyber espionage escalation"
         },
         {
-          "title": "Kash Patel’s Emails Circulate Online as Iran Takes Responsibility for Release",
+          "title": "Kash Patel\u2019s Emails Circulate Online as Iran Takes Responsibility for Release",
           "source": "New York Times",
           "url": "https://www.nytimes.com/2026/03/27/us/fbi-director-kash-patel-hacked-email-iran.html",
           "tier": "national",
@@ -1266,7 +1518,7 @@
           "force_tag": "state-sponsored cyber espionage"
         },
         {
-          "title": "Iran-linked hackers breach FBI Director Kash Patel’s personal email, publish excerpts online",
+          "title": "Iran-linked hackers breach FBI Director Kash Patel\u2019s personal email, publish excerpts online",
           "source": "Dawn",
           "url": "https://www.dawn.com/news/1985963/iran-linked-hackers-breach-fbi-director-kash-patels-personal-email-publish-excerpts-online",
           "tier": "international",
@@ -1286,7 +1538,7 @@
           "force_tag": "state-sponsored cyber espionage"
         },
         {
-          "title": "Iranian Hackers Breached Kash Patel’s Email—but Not the FBI’s",
+          "title": "Iranian Hackers Breached Kash Patel\u2019s Email,but Not the FBI\u2019s",
           "source": "Wired",
           "url": "https://www.wired.com/story/iranian-hackers-breached-the-fbi-directors-personal-email-but-not-the-fbi/",
           "tier": "explainer",
@@ -1309,8 +1561,8 @@
       "source_count": 4,
       "tier_count": 3,
       "tiers": [
-        "national",
         "community",
+        "national",
         "government"
       ],
       "domains": [
@@ -1337,7 +1589,7 @@
         {
           "text": "Federal employee compensation gaps create situations where private citizens attempt to supplement inadequate government wages.",
           "source": "The Grio",
-          "title": "Tyler Perry blocked from giving cash to unpaid TSA agents at Atlanta’s airport",
+          "title": "Tyler Perry blocked from giving cash to unpaid TSA agents at Atlanta\u2019s airport",
           "domains": [
             "governance",
             "economics"
@@ -1389,7 +1641,7 @@
             "giving"
           ],
           "sample": {
-            "title": "Tyler Perry blocked from giving cash to unpaid TSA agents at Atlanta’s airport",
+            "title": "Tyler Perry blocked from giving cash to unpaid TSA agents at Atlanta\u2019s airport",
             "source": "The Grio",
             "url": "https://thegrio.com/2026/03/27/tyler-perry-unpaid-tsa-agents-donation-blocked/",
             "context": ""
@@ -1418,7 +1670,7 @@
           "force_tag": "public sector wage crisis"
         },
         {
-          "title": "Tyler Perry blocked from giving cash to unpaid TSA agents at Atlanta’s airport",
+          "title": "Tyler Perry blocked from giving cash to unpaid TSA agents at Atlanta\u2019s airport",
           "source": "The Grio",
           "url": "https://thegrio.com/2026/03/27/tyler-perry-unpaid-tsa-agents-donation-blocked/",
           "tier": "community",
@@ -1451,9 +1703,9 @@
       "source_count": 4,
       "tier_count": 3,
       "tiers": [
-        "national",
+        "international",
         "community",
-        "international"
+        "national"
       ],
       "domains": [
         "Governance",
@@ -1470,7 +1722,7 @@
         {
           "text": "Partisan control over executive enforcement funding creates structural leverage in policy implementation.",
           "source": "The Federalist",
-          "title": "Americans Shouldn’t Need The House To Save Mass Deportations From Weak Senate Re",
+          "title": "Americans Shouldn\u2019t Need The House To Save Mass Deportations From Weak Senate Re",
           "domains": [
             "domestic_politics",
             "governance"
@@ -1516,7 +1768,7 @@
             "mass"
           ],
           "sample": {
-            "title": "Americans Shouldn’t Need The House To Save Mass Deportations From Weak Senate Republicans",
+            "title": "Americans Shouldn\u2019t Need The House To Save Mass Deportations From Weak Senate Republicans",
             "source": "The Federalist",
             "url": "https://thefederalist.com/2026/03/27/americans-shouldnt-need-the-house-to-save-mass-deportations-from-weak-senate-republicans/?utm_source=rss&utm_medium=rss&utm_campaign=americans-shouldnt-need-the-house-to-save-mass-deportations-from-weak-senate-republicans",
             "context": "Conservative online magazine. Represents populist and social conservative perspectives."
@@ -1557,7 +1809,7 @@
       },
       "articles": [
         {
-          "title": "Americans Shouldn’t Need The House To Save Mass Deportations From Weak Senate Republicans",
+          "title": "Americans Shouldn\u2019t Need The House To Save Mass Deportations From Weak Senate Republicans",
           "source": "The Federalist",
           "url": "https://thefederalist.com/2026/03/27/americans-shouldnt-need-the-house-to-save-mass-deportations-from-weak-senate-republicans/?utm_source=rss&utm_medium=rss&utm_campaign=americans-shouldnt-need-the-house-to-save-mass-deportations-from-weak-senate-republicans",
           "tier": "national",
@@ -1609,8 +1861,8 @@
       "source_count": 3,
       "tier_count": 3,
       "tiers": [
-        "national",
         "community",
+        "national",
         "analysis"
       ],
       "domains": [
@@ -1941,7 +2193,7 @@
         "information",
         "security"
       ],
-      "sample_title": "Pro-Iranian hacking group claims credit for hack of FBI Director Kash Patel’s personal account"
+      "sample_title": "Pro-Iranian hacking group claims credit for hack of FBI Director Kash Patel\u2019s personal account"
     },
     {
       "force": "proxy warfare escalation",
@@ -2025,7 +2277,7 @@
         "governance",
         "labor"
       ],
-      "sample_title": "Americans Shouldn’t Need The House To Save Mass Deportations From Weak Senate Republicans"
+      "sample_title": "Americans Shouldn\u2019t Need The House To Save Mass Deportations From Weak Senate Republicans"
     },
     {
       "force": "trade weaponization uncertainty",
@@ -2225,7 +2477,7 @@
         "geopolitics",
         "security"
       ],
-      "sample_title": "Can ‘reliable friend’ China fill the gap as US pressures allies to snub South Africa?"
+      "sample_title": "Can \u2018reliable friend\u2019 China fill the gap as US pressures allies to snub South Africa?"
     },
     {
       "force": "police accountability enforcement",
@@ -2314,19 +2566,19 @@
         "ABC News"
       ],
       "right_sources": [
-        "Reason",
-        "Daily Wire",
-        "Heritage Foundation"
+        "Heritage Foundation",
+        "Breitbart",
+        "Daily Wire"
       ],
       "international_sources": [
-        "Taipei Times",
+        "NHK World",
         "Straits Times",
-        "Al Jazeera"
+        "The Globe and Mail"
       ],
       "community_sources": [
+        "El Diario NY",
         "Arab American News",
-        "Military Times",
-        "El Diario NY"
+        "Military Times"
       ],
       "article_count": 43,
       "domains": [
@@ -2343,22 +2595,22 @@
       "spectrum_segments": 4,
       "left_sources": [
         "NBC News",
-        "ABC News",
-        "The Atlantic"
+        "The Atlantic",
+        "ABC News"
       ],
       "right_sources": [
         "Washington Times",
         "Fox News"
       ],
       "international_sources": [
-        "Taipei Times",
-        "Times of India",
-        "The Guardian World"
+        "ABC Australia",
+        "Dawn",
+        "The Hindu"
       ],
       "community_sources": [
-        "Atlanta Black Star",
         "The Root",
-        "National Catholic Reporter"
+        "National Catholic Reporter",
+        "Atlanta Black Star"
       ],
       "article_count": 26,
       "domains": [
@@ -2369,7 +2621,7 @@
       "sample_connection": ""
     },
     {
-      "headline": "Pro-Iranian hacking group claims credit for hack of FBI Director Kash Patel’s personal account",
+      "headline": "Pro-Iranian hacking group claims credit for hack of FBI Director Kash Patel\u2019s personal account",
       "structural_force": "cyber espionage escalation",
       "total_sources": 13,
       "spectrum_segments": 4,
@@ -2381,14 +2633,14 @@
         "Fox News"
       ],
       "international_sources": [
-        "BBC World",
+        "The Japan Times",
         "Dawn",
-        "The Japan Times"
+        "BBC World"
       ],
       "community_sources": [
         "The Root",
-        "Atlanta Black Star",
-        "The Grio"
+        "The Grio",
+        "Atlanta Black Star"
       ],
       "article_count": 14,
       "domains": [
@@ -2411,13 +2663,13 @@
       ],
       "international_sources": [
         "ABC Australia",
-        "The Hindu",
-        "Rappler"
+        "Rappler",
+        "The Hindu"
       ],
       "community_sources": [
-        "Canopy Forum",
         "Task and Purpose",
-        "The Grio"
+        "The Grio",
+        "Canopy Forum"
       ],
       "article_count": 15,
       "domains": [
@@ -2441,12 +2693,12 @@
       ],
       "international_sources": [
         "ABC Australia",
-        "Rappler",
-        "Al Jazeera"
+        "The Guardian World",
+        "Rappler"
       ],
       "community_sources": [
-        "AsAmNews",
-        "Atlanta Black Star"
+        "Atlanta Black Star",
+        "AsAmNews"
       ],
       "article_count": 12,
       "domains": [
@@ -2470,8 +2722,8 @@
       ],
       "international_sources": [
         "Straits Times",
-        "Times of India",
-        "South China Morning Post"
+        "ABC Australia",
+        "The Hindu"
       ],
       "community_sources": [
         "Colorado Sun"
@@ -2500,9 +2752,9 @@
         "Al Jazeera"
       ],
       "community_sources": [
-        "The Advocate",
+        "Kansas Reflector",
         "Military Times",
-        "Kansas Reflector"
+        "The Advocate"
       ],
       "article_count": 9,
       "domains": [
@@ -2513,7 +2765,7 @@
       "sample_connection": "Executive override of congressional appropriations process uses federal workers' livelihoods as leverage in partisan conflict."
     },
     {
-      "headline": "Photos | Former House Speaker Philip Gunn’s Portrait Unveiled at Mississippi Capitol",
+      "headline": "Photos | Former House Speaker Philip Gunn\u2019s Portrait Unveiled at Mississippi Capitol",
       "structural_force": "institutional commemoration",
       "total_sources": 7,
       "spectrum_segments": 4,
@@ -2521,16 +2773,16 @@
         "New York Times"
       ],
       "right_sources": [
+        "RealClearPolitics",
         "American Enterprise Institute",
-        "Washington Examiner",
-        "RealClearPolitics"
+        "Washington Examiner"
       ],
       "international_sources": [
         "Straits Times"
       ],
       "community_sources": [
-        "El Diario NY",
-        "Mississippi Free Press"
+        "Mississippi Free Press",
+        "El Diario NY"
       ],
       "article_count": 8,
       "domains": [
@@ -2616,7 +2868,7 @@
       "source": "Indian Country Today",
       "url": "https://ictnews.org/news/indian-health-service-is-digging-out-of-decades-old-construction-backlog-for-medical-buildings/",
       "tier": "community",
-      "text_preview": "Savannah Peters Associated Press SANTA ANA PUEBLO, N.M. — An empty lot between a fire station and a soccer field just outside Albuquerque soon will be the home of a federal medical center first promised to Native American patients more than 30 years ",
+      "text_preview": "Savannah Peters Associated Press SANTA ANA PUEBLO, N.M. , An empty lot between a fire station and a soccer field just outside Albuquerque soon will be the home of a federal medical center first promised to Native American patients more than 30 years ",
       "domains": [
         "governance",
         "legal"
@@ -2630,7 +2882,7 @@
       "source": "Honolulu Civil Beat",
       "url": "https://www.civilbeat.org/2026/03/after-floods-otake-camp-cleans-up/",
       "tier": "community",
-      "text_preview": "Otake Camp, situated on the bank of Kaukonahua Stream, was among Oʻahu's hardest hit areas after a recent storm devastated the island's North Shore.",
+      "text_preview": "Otake Camp, situated on the bank of Kaukonahua Stream, was among O\u02bbahu's hardest hit areas after a recent storm devastated the island's North Shore.",
       "domains": [
         "climate",
         "governance"
@@ -2658,7 +2910,7 @@
       "source": "Jewish Telegraphic Agency",
       "url": "https://www.jta.org/2026/03/27/ny/nyc-council-members-host-mahmoud-khalil-at-islamophobia-briefing-sparking-backlash-from-colleagues",
       "tier": "community",
-      "text_preview": "A version of this piece first ran as part of the New York Jewish Week&#8217;s daily newsletter, rounding up the latest on politics, culture, food and what’s new with Jews in the city. Sign up here to get it in your inbox . NYC passes ‘buffer zone’ le",
+      "text_preview": "A version of this piece first ran as part of the New York Jewish Week&#8217;s daily newsletter, rounding up the latest on politics, culture, food and what\u2019s new with Jews in the city. Sign up here to get it in your inbox . NYC passes \u2018buffer zone\u2019 le",
       "domains": [
         "domestic_politics",
         "information"
@@ -2682,7 +2934,7 @@
       "context": "Independent news covering military and veteran communities. Not affiliated with DoD."
     },
     {
-      "title": "L.A. County’s New Office of Transition Age Youth Aims to Provide ‘Holistic Wellness’",
+      "title": "L.A. County\u2019s New Office of Transition Age Youth Aims to Provide \u2018Holistic Wellness\u2019",
       "source": "The Imprint",
       "url": "https://imprintnews.org/child-welfare-2/l-a-countys-new-office-of-transition-age-youth-aims-to-provide-holistic-wellness/273374",
       "tier": "community",
@@ -2739,8 +2991,7 @@
         }
       ],
       "ai_connections": [
-        "Military enforcement of sanctions against Russian assets requires naval interdiction to tighten economic pressure on a sanctioned state.",
-        "Regional military conflict demonstrates sustained offensive capability despite foreign military intervention."
+        "The military buildup around Iran is driving both the security and geopolitics coverage simultaneously, with sanctions enforcement, cyber operations, and regional conflict all feeding the same escalation cycle."
       ]
     },
     {
@@ -2770,8 +3021,7 @@
         }
       ],
       "ai_connections": [
-        "Federal agencies weaponize voter data through citizenship verification tool, raising privacy and civil rights concerns.",
-        "Executive official's intervention in military promotions may constitute civil rights violation and abuse of executive power."
+        "Courts at every level are being asked to check executive branch actions that expanded without clear congressional authorization, from voter data collection to agency restructuring to military oversight."
       ]
     },
     {
@@ -2801,8 +3051,7 @@
         }
       ],
       "ai_connections": [
-        "Partisan budget standoff disrupts critical security infrastructure, forcing emergency executive action to maintain operations.",
-        "Executive branch uses digital communications tool to promote political agenda while embedding enforcement agency integration."
+        "The budget impasse is forcing the executive branch to sustain government operations through workarounds that bypass Congress, raising practical questions about how long critical services can run this way."
       ]
     },
     {
@@ -2832,8 +3081,7 @@
         }
       ],
       "ai_connections": [
-        "Government agency cost-cutting through digital payment infrastructure modernization delays refunds for vulnerable taxpayers.",
-        "National security policy creates asymmetric information advantages enabling financial market manipulation, regulatory gap exposed."
+        "Government cost-cutting through agency restructuring is creating real delays in services that affect people's finances directly, from tax refund processing to benefit disbursements to small business loan approvals."
       ]
     },
     {
@@ -2857,14 +3105,13 @@
           "url": "https://www.cnbc.com/2026/03/27/tech-stocks-iran-war-meta-verdict.html"
         },
         {
-          "title": "Cramer’s game plan: Oil shock is driving this sell-off and tech won’t bottom unt",
+          "title": "Cramer\u2019s game plan: Oil shock is driving this sell-off and tech won\u2019t bottom unt",
           "source": "CNBC",
           "url": "https://www.cnbc.com/2026/03/27/cramers-gameplan-oil-driving-sell-off-tech-wont-bottom-until-it-ends.html"
         }
       ],
       "ai_connections": [
-        "War uncertainty prevents market prediction, leaving traders unable to price oil based on conflicting geopolitical outcomes.",
-        "Tech stocks fall as geopolitical conflict raises oil costs while legal defeats erode platform valuations simultaneously."
+        "Military tensions in the Middle East are moving oil and commodity prices in ways that flow directly into energy costs, shipping rates, and grocery bills for American households."
       ]
     },
     {
@@ -2888,7 +3135,7 @@
           "url": "https://www.nbcnews.com/tech/security/iranian-hackers-publish-emails-allegedly-stolen-kash-patel-rcna265490"
         },
         {
-          "title": "Savannah Guthrie to return to ‘Today’",
+          "title": "Savannah Guthrie to return to \u2018Today\u2019",
           "source": "NBC News",
           "url": "https://www.nbcnews.com/nightly-news/video/savannah-guthrie-to-return-to-today-260233285959"
         }
@@ -2945,7 +3192,7 @@
           "url": "https://www.npr.org/2026/03/27/nx-s1-5764266/voter-data-trump-doj-dhs"
         },
         {
-          "title": "TMZ wants photos of lawmakers vacationing ‘at your expense’ amid TSA shutdown",
+          "title": "TMZ wants photos of lawmakers vacationing \u2018at your expense\u2019 amid TSA shutdown",
           "source": "The Hill",
           "url": "https://thehill.com/media/5804806-tmz-asks-travelers-to-snap-lawmakers/"
         },
@@ -2981,7 +3228,7 @@
           "url": "https://www.bloomberg.com/news/articles/2026-03-28/australia-resumes-some-operations-at-cyclone-hit-key-port"
         },
         {
-          "title": "China Urges Private Grain Firms to Tap Whole‑Grain Policy Push",
+          "title": "China Urges Private Grain Firms to Tap Whole\u2011Grain Policy Push",
           "source": "Bloomberg",
           "url": "https://www.bloomberg.com/news/articles/2026-03-28/china-urges-private-grain-firms-to-tap-whole-grain-policy-push"
         }
@@ -3136,7 +3383,7 @@
           "url": "https://thehill.com/business/5804965-dow-jones-iran-war-impact/"
         },
         {
-          "title": "Rubio warns Europe that Iran could impose ‘tolling system’ on Strait of Hormuz",
+          "title": "Rubio warns Europe that Iran could impose \u2018tolling system\u2019 on Strait of Hormuz",
           "source": "The Hill",
           "url": "https://thehill.com/homenews/administration/5804665-marco-rubio-iran-strait-hormuz-tolling/"
         }
@@ -3167,7 +3414,7 @@
           "url": "https://www.washingtontimes.com/news/2026/mar/27/landslides-triggered-heavy-rainfall-kill-least-20-tanzania/"
         },
         {
-          "title": "China Urges Private Grain Firms to Tap Whole‑Grain Policy Push",
+          "title": "China Urges Private Grain Firms to Tap Whole\u2011Grain Policy Push",
           "source": "Bloomberg",
           "url": "https://www.bloomberg.com/news/articles/2026-03-28/china-urges-private-grain-firms-to-tap-whole-grain-policy-push"
         }
@@ -3193,6 +3440,11 @@
   "questions": [
     {
       "question": "What is the current state of international military tensions?",
+      "ai_insights": [
+        "The U.S. and Israel appear to be moving toward a direct military confrontation with Iran, with 247 articles across 70 sources covering different dimensions of the same escalation. What makes this moment different from past tensions is the convergence of sanctions enforcement at sea, cyber operations targeting U.S. officials, and ongoing regional conflict that has not paused despite international pressure. The military buildup is happening alongside a diplomatic vacuum, which means the escalation has no obvious off-ramp that either side has publicly acknowledged.",
+        "International outlets are covering supply chain disruptions and intelligence dimensions that most American newsrooms have largely set aside, while community outlets are already reporting the economic pressure people feel from uncertainty alone, before any shots are fired.",
+        "Oil markets, shipping insurance rates, and defense contractor stock prices are all moving in the same direction, which suggests investors are pricing in sustained conflict rather than a diplomatic resolution."
+      ],
       "article_count": 141,
       "domains": [
         "Geopolitics",
@@ -3215,15 +3467,15 @@
             "connection": "Regional military conflict demonstrates sustained offensive capability despite foreign military intervention."
           }
         ]
-      },
-      "ai_insights": [
-        "Military enforcement of sanctions against Russian assets requires naval interdiction to tighten economic pressure on a sanctioned state.",
-        "Regional military conflict demonstrates sustained offensive capability despite foreign military intervention.",
-        "Foreign intelligence breach targets U.S. official to undermine national security through information warfare."
-      ]
+      }
     },
     {
       "question": "Which government actions are being challenged in court?",
+      "ai_insights": [
+        "Courts are handling an unusual volume of cases that all test the same underlying question: how much authority does the executive branch have to act without congressional approval or judicial review? Across 92 articles, the cases range from voter data collection to military promotions to transgender rights, but the pattern underneath is consistent. Federal agencies are expanding their reach into areas where their legal authority is contested, and judges at every level are being asked to decide whether to check that expansion or defer to it.",
+        "What stands out is that community and national outlets are covering these cases in roughly equal numbers, which is unusual and suggests the local impacts are being treated as nationally significant rather than isolated incidents.",
+        "Whether courts rule on the substance of these cases or dismiss them on procedural grounds will say a lot about whether the judiciary sees its role as resolving these power conflicts or stepping back from them."
+      ],
       "article_count": 92,
       "domains": [
         "Governance",
@@ -3246,15 +3498,15 @@
             "connection": "Firing and potential prosecution hinge on whether departmental discipline and criminal justice can enforce de-escalation training mandates."
           }
         ]
-      },
-      "ai_insights": [
-        "Federal agencies weaponize voter data through citizenship verification tool, raising privacy and civil rights concerns.",
-        "Executive official's intervention in military promotions may constitute civil rights violation and abuse of executive power.",
-        "Firing and potential prosecution hinge on whether departmental discipline and criminal justice can enforce de-escalation training mandates."
-      ]
+      }
     },
     {
-      "question": "What is the government actually doing right now?",
+      "question": "What is the government doing right now?",
+      "ai_insights": [
+        "The federal government is operating through a series of executive workarounds because Congress has not passed an actual budget. Across 81 articles, the picture that emerges is a cycle where each stopgap measure makes the next budget showdown more likely to repeat the same pattern. Federal workers are being paid through executive action rather than congressional appropriation, which keeps the lights on but raises questions about whether this approach can sustain critical services if it becomes the new normal.",
+        "The practical impact is already visible in specific agencies: tax refund processing is delayed, security infrastructure is running on contingency plans, and the administrative machinery that keeps government programs functioning is stretched thinner each week the impasse continues.",
+        "International sources are framing this not as routine American political gridlock but as a sign of institutional dysfunction, which suggests it looks more serious from outside than domestic coverage typically conveys."
+      ],
       "article_count": 81,
       "domains": [
         "Politics",
@@ -3277,15 +3529,15 @@
             "connection": "Executive workaround for congressional impasse creates wage security for federal workers but bypasses legislative appropriations authority, raising separation-of-powers questions."
           }
         ]
-      },
-      "ai_insights": [
-        "Partisan budget standoff disrupts critical security infrastructure, forcing emergency executive action to maintain operations.",
-        "Executive branch uses digital communications tool to promote political agenda while embedding enforcement agency integration.",
-        "Executive workaround for congressional impasse creates wage security for federal workers but bypasses legislative appropriations authority, raising separation-of-powers questions."
-      ]
+      }
     },
     {
-      "question": "How are trade and global power shifts affecting the US economy?",
+      "question": "How are trade and global power shifts affecting the economy?",
+      "ai_insights": [
+        "Multiple economic shocks are hitting at once, and most coverage treats each one in isolation. Oil prices are rising because of military escalation in the Middle East. Tech stocks are falling because of both higher energy costs and separate legal challenges to platform companies. Agricultural commodity prices are shifting because conflict zones overlap with major fertilizer-producing regions. Taken together, these are not separate economic stories but a single picture of an economy absorbing geopolitical stress from several directions simultaneously.",
+        "The gap in coverage is between financial reporting that tracks market numbers and community reporting that tracks what those numbers mean for grocery bills, gas prices, and small business costs in specific towns. The connection between global instability and local affordability pressure stays mostly invisible unless you read across both.",
+        "Emerging market currencies and bond markets are showing whether investors believe the instability is temporary or structural, which matters because that assessment eventually shapes lending rates, trade terms, and job markets that reach ordinary people."
+      ],
       "article_count": 71,
       "domains": [
         "Economics",
@@ -3308,15 +3560,15 @@
             "connection": "Tech stocks fall as geopolitical conflict raises oil costs while legal defeats erode platform valuations simultaneously."
           }
         ]
-      },
-      "ai_insights": [
-        "War uncertainty prevents market prediction, leaving traders unable to price oil based on conflicting geopolitical outcomes.",
-        "Tech stocks fall as geopolitical conflict raises oil costs while legal defeats erode platform valuations simultaneously.",
-        "Geopolitical tensions in the Middle East drive oil prices higher, which ripple through financial markets and destabilize tech valuations."
-      ]
+      }
     },
     {
       "question": "What legal challenges are being filed, and what do they mean?",
+      "ai_insights": [
+        "Across 52 articles, the legal landscape today includes criminal prosecutions of political figures, new state laws restricting transgender rights in private businesses, and ongoing battles over government surveillance authority. The thread connecting these cases is that each one tests where the boundary sits between state power and individual rights, and the outcomes will set precedents that outlast the specific controversies driving them.",
+        "Idaho's new law criminalizing transgender bathroom access in private businesses is notable because it extends government regulation into spaces that were previously treated as private, which is a meaningful expansion regardless of where you stand on the underlying issue.",
+        "The partisan framing of these cases in national coverage tends to obscure the legal principles at stake, which matter for everyone because the same precedents that apply to one group's rights apply to all groups' rights."
+      ],
       "article_count": 52,
       "domains": [
         "Politics",
@@ -3339,15 +3591,15 @@
             "connection": "Criminal prosecution of political figure creates tension between judicial process and partisan political interests."
           }
         ]
-      },
-      "ai_insights": [
-        "Criminal prosecution of political figure creates tension between judicial process and partisan political interests.",
-        "Criminal indictment details become focal point in partisan political conflict over accountability.",
-        "Idaho criminalizes transgender bathroom access in private businesses, extending state gender regulation into private sphere."
-      ]
+      }
     },
     {
       "question": "How is the government shaping what information reaches you?",
+      "ai_insights": [
+        "Several stories across 48 articles touch on how government agencies influence the flow of information, from voter data collection tools that raise privacy concerns to social media regulations aimed at minors to the use of official digital channels for political messaging. The common thread is that the boundary between government communication and government control over information is getting harder to locate, and there is no consensus on where it should be.",
+        "What makes this worth paying attention to is that these information-shaping actions are happening across multiple agencies and levels of government simultaneously, which means no single story captures the full picture of how the information environment is shifting.",
+        "State-level social media laws targeting young people's access to platforms are framed as child protection, but they also establish a precedent for government deciding what content citizens can see, which has implications that extend well beyond the intended population."
+      ],
       "article_count": 48,
       "domains": [
         "Governance",
@@ -3364,7 +3616,7 @@
           },
           {
             "source": "The Hill",
-            "title": "TMZ wants photos of lawmakers vacationing ‘at your expense’ amid TSA shutdown",
+            "title": "TMZ wants photos of lawmakers vacationing \u2018at your expense\u2019 amid TSA shutdown",
             "url": "https://thehill.com/media/5804806-tmz-asks-travelers-to-snap-lawmakers/",
             "context": "",
             "connection": "Media outlet weaponizes citizen surveillance to pressure lawmakers during government shutdown, blurring accountability and privacy."
@@ -3380,21 +3632,21 @@
           },
           {
             "source": "The Guardian World",
-            "title": "Italy investigates beauty brands over concerns about young girls’ mental health",
+            "title": "Italy investigates beauty brands over concerns about young girls\u2019 mental health",
             "url": "https://www.theguardian.com/world/2026/mar/27/italian-regulator-probes-sephora-benefit-cosmeticorexia-claims",
             "context": "Owned by the Scott Trust, a nonprofit. British newspaper. Generally regarded as left-leaning. No paywall.",
             "connection": "Regulators scrutinize algorithmic marketing tactics targeting minors, balancing platform autonomy against consumer protection."
           }
         ]
-      },
-      "ai_insights": [
-        "Federal agencies weaponize voter data through citizenship verification tool, raising privacy and civil rights concerns.",
-        "Media outlet weaponizes citizen surveillance to pressure lawmakers during government shutdown, blurring accountability and privacy.",
-        "Governments regulate social media content access for minors through legislation, balancing child protection against platform autonomy and free expression."
-      ]
+      }
     },
     {
       "question": "How are energy and environmental changes affecting costs?",
+      "ai_insights": [
+        "Today's coverage connects military conflict, extreme weather, and agricultural policy into a single cost-of-living story that most outlets report in separate sections. Fertilizer supply chains are disrupted because conflict zones overlap with production regions. Extreme weather is reducing crop yields and export capacity. Government policy is trying to redirect corporate agricultural production toward food security. Each of these independently pushes food prices higher, and together they represent compounding pressure on household budgets that accumulates faster than any single headline suggests.",
+        "Community outlets, particularly those covering farming regions and food-insecure neighborhoods, are reporting the actual price increases and supply gaps that national outlets mention only as statistics or market trends.",
+        "The energy transition is being framed very differently depending on who is writing about it: international outlets treat it as a geopolitical necessity, while domestic coverage still largely frames it as an environmental choice, and that framing gap shapes what policy responses seem reasonable to different audiences."
+      ],
       "article_count": 46,
       "domains": [
         "Climate",
@@ -3420,18 +3672,13 @@
         "international": [
           {
             "source": "France 24",
-            "title": "'We need to double down' on energy autonomy: EIB chief Nadia Calviño",
+            "title": "'We need to double down' on energy autonomy: EIB chief Nadia Calvi\u00f1o",
             "url": "https://www.france24.com/en/tv-shows/talking-europe/20260327-we-need-to-double-down-on-energy-autonomy-eib-chief-nadia-calvi%C3%B1o",
             "context": "",
             "connection": "Europe's energy transition strategy responds to both climate imperatives and geopolitical vulnerability from fossil fuel dependence."
           }
         ]
-      },
-      "ai_insights": [
-        "Military conflict disrupts global fertilizer supply chains, transmitting geopolitical shocks into agricultural costs and food security.",
-        "Extreme weather disrupts commodity supply chains and export capacity, directly linking environmental events to market availability.",
-        "Government policy directs corporate agricultural production toward national food security and modernized supply chains."
-      ]
+      }
     }
   ],
   "narrative_divergence": [
@@ -3639,5 +3886,454 @@
         }
       ]
     }
+  ],
+  "mega_stories": [
+    {
+      "name": "The Iran War and Its Ripple Effects",
+      "article_count": 247,
+      "source_count": 70,
+      "sources_sample": [
+        "ABC Australia",
+        "ABC News",
+        "AP News",
+        "Al Jazeera",
+        "American Enterprise Institute",
+        "Arab American News",
+        "Ars Technica",
+        "Atlanta Black Star",
+        "BBC World",
+        "Balkan Insight"
+      ],
+      "domains": [
+        "geopolitics",
+        "security",
+        "economics",
+        "domestic_politics",
+        "governance",
+        "information",
+        "legal",
+        "climate",
+        "ai",
+        "labor"
+      ],
+      "domain_counts": {
+        "geopolitics": 185,
+        "security": 157,
+        "economics": 54,
+        "domestic_politics": 36,
+        "governance": 23,
+        "information": 23,
+        "legal": 18,
+        "climate": 12,
+        "ai": 7,
+        "labor": 7
+      },
+      "patterns": [
+        {
+          "name": "cyber espionage escalation",
+          "count": 3
+        },
+        {
+          "name": "state-sponsored cyber espionage",
+          "count": 3
+        },
+        {
+          "name": "military escalation",
+          "count": 3
+        },
+        {
+          "name": "regional military escalation",
+          "count": 3
+        },
+        {
+          "name": "geopolitical supply chain disruption",
+          "count": 2
+        },
+        {
+          "name": "escalating regional conflict",
+          "count": 2
+        }
+      ],
+      "insights": [
+        "Domestic terrorism investigation reveals how extremist group uses undercover operations to target activism.",
+        "Executive official's intervention in military promotions may constitute civil rights violation and abuse of executive power.",
+        "War uncertainty prevents market prediction, leaving traders unable to price oil based on conflicting geopolitical outcomes.",
+        "Tech stocks fall as geopolitical conflict raises oil costs while legal defeats erode platform valuations simultaneously.",
+        "Political leader proposes novel territorial control framework for strategic chokepoint, blending personal branding with foreign policy.",
+        "Advances in AI capabilities threaten to displace entire business sectors, creating market uncertainty and stock selloffs.",
+        "Failed diplomatic negotiations over Iran sanctions create commodity supply uncertainty that drives global energy prices.",
+        "Trump's shift toward Middle East allies while undermining NATO reflects a strategic realignment reshaping U.S. foreign policy priorities."
+      ],
+      "source_tiers": {
+        "national": 91,
+        "international": 108,
+        "explainer": 3,
+        "analysis": 9,
+        "community": 25,
+        "specialist": 10,
+        "newsletter": 1
+      },
+      "yesterday_count": 166,
+      "change_description": "Up from 166 yesterday",
+      "synthesis": "Coverage of Iran jumped from 166 articles yesterday to 247 today, which means this story crossed a threshold overnight from regional tension into something that touches American households directly. Oil markets are seizing up because traders cannot predict prices when military conflict remains undefined, and gas prices and heating costs are becoming hostages to a diplomatic process that has not produced results. Executive decisions about military leadership, cyber operations, and technology sector layoffs are all being driven by the same uncertainty, and the economic pressure is already spreading into American paychecks and job security before any shots are fired.",
+      "watch_for": "Watch whether gas prices at your local station move in the next few days. Oil futures are already responding to the escalation, and the speed at which pump prices follow is the clearest signal of whether markets believe this conflict will be contained or sustained. If prices jump more than 10 cents in a week, it means traders are betting on a longer disruption than the headlines suggest.",
+      "cross_spectrum": "International outlets (108 articles) are covering supply chain and cyber dimensions that domestic outlets buried. Community sources (25 articles) are the only ones regularly reporting how specific neighborhoods and worker populations feel economic pressure from the uncertainty. American national news is still treating this as a foreign policy question while people experiencing it know it is already a pocketbook issue.",
+      "why_this_matters": "This affects gas prices, shipping costs, and job security in defense-connected industries. If you commute, heat your home, or work in a supply chain, you are already inside this story."
+    },
+    {
+      "name": "The Government Shutdown and Who Pays for It",
+      "article_count": 89,
+      "source_count": 46,
+      "sources_sample": [
+        "ABC News",
+        "AP News",
+        "Al Jazeera",
+        "Arab American News",
+        "Arizona Mirror",
+        "Ars Technica",
+        "Bloomberg",
+        "Breitbart",
+        "Business Insider",
+        "CNBC"
+      ],
+      "domains": [
+        "governance",
+        "domestic_politics",
+        "legal",
+        "labor",
+        "economics",
+        "information",
+        "security",
+        "climate",
+        "ai"
+      ],
+      "domain_counts": {
+        "governance": 79,
+        "domestic_politics": 49,
+        "legal": 18,
+        "labor": 17,
+        "economics": 10,
+        "information": 7,
+        "security": 5,
+        "climate": 2,
+        "ai": 1
+      },
+      "patterns": [
+        {
+          "name": "partisan budgetary standoff",
+          "count": 4
+        },
+        {
+          "name": "partisan budget weaponization",
+          "count": 4
+        },
+        {
+          "name": "executive power concentration",
+          "count": 2
+        },
+        {
+          "name": "executive power expansion",
+          "count": 2
+        },
+        {
+          "name": "government shutdown impact on services",
+          "count": 1
+        },
+        {
+          "name": "legislative gridlock disrupting services",
+          "count": 1
+        }
+      ],
+      "insights": [
+        "Partisan budget standoff disrupts critical security infrastructure, forcing emergency executive action to maintain operations.",
+        "Executive branch uses digital communications tool to promote political agenda while embedding enforcement agency integration.",
+        "Extreme weather events expose government capacity gaps in disaster response and emergency management infrastructure.",
+        "Executive workaround for congressional impasse creates wage security for federal workers but bypasses legislative appropriations authority, raising separation-of-powers questions.",
+        "Government funding deadlock leaves federal workers unpaid, directly harming labor conditions and worker welfare.",
+        "Government shutdown prevents wage payment, forcing essential workers into poverty and food insecurity.",
+        "Congressional party divisions block routine government funding as DHS appropriations become partisan leverage point.",
+        "Senate compromise on DHS funding rejected by House GOP leadership, exposing intraparty disagreement on executive branch appropriations."
+      ],
+      "source_tiers": {
+        "national": 52,
+        "international": 8,
+        "explainer": 2,
+        "community": 21,
+        "specialist": 3,
+        "analysis": 2,
+        "government": 1
+      },
+      "yesterday_count": 87,
+      "change_description": "Up from 87 yesterday",
+      "synthesis": "Eighty-nine articles paint a picture of a budget standoff that has become a deliberate strategy: control of the budget process is being used to force concessions on unrelated issues, and when Congress deadlocks, the executive branch steps in with workarounds that technically keep the government running but bypass Congress entirely. Federal workers are going unpaid, which means real people facing food insecurity and unpaid rent while the political theater continues. Coverage held steady from 87 articles yesterday, suggesting this has reached a point where the human cost is becoming undeniable and forcing new angles on a story that has been running long enough to feel routine even though the consequences keep compounding.",
+      "watch_for": "Watch whether federal services you rely on, from tax refund processing to passport applications to veterans' benefits, start showing longer wait times or processing delays over the next week. Each executive workaround keeps the system running, but every workaround has a shelf life, and the practical effects hit specific people before they become national news.",
+      "cross_spectrum": "Community outlets are emphasizing direct impact on workers and families in specific regions. National outlets focus on the constitutional question of executive power. International sources frame this as a sign of American institutional dysfunction rather than a routine political disagreement, which suggests it looks more serious from outside than domestic coverage conveys.",
+      "why_this_matters": "Federal workers are not getting paid. Tax refunds are delayed. Passport processing is backed up. If you depend on any federal service, this is hitting you right now."
+    },
+    {
+      "name": "What the Economy Is Doing",
+      "article_count": 84,
+      "source_count": 43,
+      "sources_sample": [
+        "ABC Australia",
+        "Atlanta Black Star",
+        "Bangkok Post",
+        "Bloomberg",
+        "Breitbart",
+        "Bridge Michigan",
+        "Brookings",
+        "Business Insider",
+        "CNBC",
+        "Center for Strategic and International Studies"
+      ],
+      "domains": [
+        "economics",
+        "governance",
+        "geopolitics",
+        "ai",
+        "climate",
+        "labor",
+        "domestic_politics",
+        "security",
+        "legal",
+        "information"
+      ],
+      "domain_counts": {
+        "economics": 72,
+        "governance": 40,
+        "geopolitics": 16,
+        "ai": 10,
+        "climate": 9,
+        "labor": 8,
+        "domestic_politics": 7,
+        "security": 6,
+        "legal": 5,
+        "information": 4
+      },
+      "patterns": [
+        {
+          "name": "commodity price shock from geopolitical risk",
+          "count": 1
+        },
+        {
+          "name": "administrative efficiency harming service access",
+          "count": 1
+        },
+        {
+          "name": "policy uncertainty economic shock",
+          "count": 1
+        },
+        {
+          "name": "climate-induced supply disruption",
+          "count": 1
+        },
+        {
+          "name": "speculative tech asset valuation",
+          "count": 1
+        },
+        {
+          "name": "political uncertainty pricing",
+          "count": 1
+        }
+      ],
+      "insights": [
+        "Geopolitical tensions in the Middle East drive oil prices higher, which ripple through financial markets and destabilize tech valuations.",
+        "Government agency cost-cutting through digital payment infrastructure modernization delays refunds for vulnerable taxpayers.",
+        "Presidential policy signals trigger market volatility, showing political decisions directly impact financial stability.",
+        "Extreme weather disrupts commodity supply chains and export capacity, directly linking environmental events to market availability.",
+        "AI company valuations and IPO prospects drive market performance of investment funds exposed to private tech.",
+        "Bond pricing reflects investor confidence in Argentina's economic stability beyond current president's term.",
+        "Local mayor addresses affordability crisis while planning economic growth through major sporting events.",
+        "Geopolitical conflict uncertainty drives commodity prices, reshaping asset valuations and investment risk assessments."
+      ],
+      "source_tiers": {
+        "national": 20,
+        "international": 30,
+        "explainer": 1,
+        "analysis": 5,
+        "community": 16,
+        "specialist": 11,
+        "podcast": 1
+      },
+      "yesterday_count": 99,
+      "change_description": "Down from 99 yesterday",
+      "synthesis": "Eighty-four articles describe an economy absorbing multiple shocks at once, each one reinforcing the others. Middle East tensions are pushing oil prices higher, which ripples into tech company valuations and investment fund performance. Extreme weather is disrupting the supply of goods that move through markets. Government agencies trying to modernize payment systems are delaying refunds to people who need them most. Coverage dropped from 99 articles yesterday to 84, suggesting reporting is consolidating around the core problem: several moving parts that amplify each other, which is harder to report cleanly and easier for readers to miss.",
+      "watch_for": "Watch your grocery receipt. The combination of higher energy costs, disrupted fertilizer supply chains, and agricultural uncertainty tends to show up in food prices within two to three weeks of the triggering events. If you are noticing price increases on staples, you are already seeing the downstream effects of the geopolitical and climate stories on this page.",
+      "cross_spectrum": "International outlets (30 articles) are giving more weight to how geopolitical risk reshapes investment flows globally. Domestic sources split between national financial reporting (20 articles) focused on U.S. market impact and community reporting (16 articles) that captures lived experience of payment delays and affordability pressures in specific towns. The connection between global shocks and local harm stays invisible to readers who do not read across all three.",
+      "why_this_matters": "Food prices, energy costs, and interest rates are all being pushed by forces that are usually reported as separate stories. If your grocery bill or rent has gone up, the connections on this page help explain why."
+    },
+    {
+      "name": "The Courts and Your Rights",
+      "article_count": 55,
+      "source_count": 37,
+      "sources_sample": [
+        "ABC Australia",
+        "Arab American News",
+        "Arizona Mirror",
+        "Ars Technica",
+        "Atlanta Black Star",
+        "Bridge Michigan",
+        "CNN",
+        "Colorado Sun",
+        "Deutsche Welle",
+        "Education Week"
+      ],
+      "domains": [
+        "legal",
+        "governance",
+        "domestic_politics",
+        "information",
+        "economics",
+        "security",
+        "climate",
+        "geopolitics",
+        "labor",
+        "ai"
+      ],
+      "domain_counts": {
+        "legal": 44,
+        "governance": 24,
+        "domestic_politics": 22,
+        "information": 7,
+        "economics": 6,
+        "security": 6,
+        "climate": 2,
+        "geopolitics": 2,
+        "labor": 2,
+        "ai": 1
+      },
+      "patterns": [
+        {
+          "name": "justice politicization",
+          "count": 2
+        },
+        {
+          "name": "surveillance for political control",
+          "count": 1
+        },
+        {
+          "name": "institutional obstruction of accountability",
+          "count": 1
+        },
+        {
+          "name": "federal-state jurisdictional conflict",
+          "count": 1
+        },
+        {
+          "name": "institutional independence vs political influence",
+          "count": 1
+        },
+        {
+          "name": "speech restriction vs discrimination prevention",
+          "count": 1
+        }
+      ],
+      "insights": [
+        "Federal agencies weaponize voter data through citizenship verification tool, raising privacy and civil rights concerns.",
+        "Federal prosecution of a government agent requires overcoming the evidentiary barriers of body camera concealment and institutional protection.",
+        "Federal courts are arbitrating whether state tuition policy for undocumented residents overrides federal immigration law.",
+        "Artist's lawsuit dismissal request raises questions about institutional autonomy versus political pressure on cultural institutions' content decisions.",
+        "Criminal hate speech conviction restricts religious speech rights, creating tension between expression freedom and discrimination law enforcement.",
+        "Criminal prosecution of political figure creates tension between judicial process and partisan political interests.",
+        "Criminal indictment details become focal point in partisan political conflict over accountability.",
+        "State attorney general challenges NFL diversity hiring as state law violation, politicizing corporate civil rights practices."
+      ],
+      "source_tiers": {
+        "national": 20,
+        "international": 14,
+        "explainer": 1,
+        "community": 19,
+        "specialist": 1
+      },
+      "yesterday_count": 84,
+      "change_description": "Down from 84 yesterday",
+      "synthesis": "Fifty-five articles describe courts becoming the place where the fundamental rules of who gets to do what are being rewritten. Federal agencies are using citizenship data to screen voters. Prosecutors are pursuing government agents through evidentiary fog. States are trying to override federal immigration policy through tuition rules. State attorneys general are treating corporate diversity programs as violations of state law. What connects these cases is that institutions with once-settled authority are all being challenged simultaneously, each challenge framed as a question of rights rather than policy disagreement. Coverage dropped from 84 articles yesterday, suggesting reporting is consolidating around specific flashpoint cases rather than treating these as isolated incidents.",
+      "watch_for": "Watch for whether the courts hearing these cases issue rulings on the actual legal questions or dismiss them on procedural grounds. The difference matters because procedural dismissals leave the underlying power questions unresolved, which means the same conflicts will come back in different forms, and the legal uncertainty continues to affect the people whose rights are at stake.",
+      "cross_spectrum": "Community and national outlets are covering this roughly equally (19 vs 20 articles), which is unusual and suggests local impacts are being treated as nationally significant. International outlets are present at 14 articles, likely because several of these conflicts echo patterns they are tracking in their own democracies.",
+      "why_this_matters": "The cases in the news right now are deciding who has authority over voting, immigration, free speech, and workplace discrimination. The outcomes will set rules that apply to everyone, not just the people in the headlines."
+    },
+    {
+      "name": "Climate and Extreme Weather",
+      "article_count": 9,
+      "source_count": 8,
+      "sources_sample": [
+        "ABC Australia",
+        "Center for Strategic and International Studies",
+        "City Limits",
+        "France 24",
+        "Honolulu Civil Beat",
+        "Mother Jones",
+        "NBC News Latino",
+        "Source NM"
+      ],
+      "domains": [
+        "climate",
+        "governance",
+        "geopolitics",
+        "economics",
+        "domestic_politics",
+        "security"
+      ],
+      "domain_counts": {
+        "climate": 9,
+        "governance": 3,
+        "geopolitics": 2,
+        "economics": 2,
+        "domestic_politics": 1,
+        "security": 1
+      },
+      "patterns": [
+        {
+          "name": "strategic decoupling from adversary leverage",
+          "count": 1
+        },
+        {
+          "name": "extreme weather impacts",
+          "count": 1
+        },
+        {
+          "name": "extreme weather event",
+          "count": 1
+        },
+        {
+          "name": "climate disaster response capacity",
+          "count": 1
+        },
+        {
+          "name": "climate system acceleration",
+          "count": 1
+        },
+        {
+          "name": "centralized vs. distributed risk allocation",
+          "count": 1
+        }
+      ],
+      "insights": [
+        "Europe's energy transition strategy responds to both climate imperatives and geopolitical vulnerability from fossil fuel dependence.",
+        "Extreme weather events require government coordination of disaster response and community infrastructure management.",
+        "State energy policy must balance nuclear expansion's emissions benefits against downstate safety and environmental justice concerns.",
+        "Former vice president mobilizing grassroots climate activism reflects political void left by current federal climate policy retreat.",
+        "Agricultural pest spread from climate-altered regions triggers federal containment policy and biosecurity concerns.",
+        "Energy investment deals balance climate transition, energy affordability, and geopolitical risk across trading partners."
+      ],
+      "source_tiers": {
+        "international": 3,
+        "community": 4,
+        "national": 1,
+        "analysis": 1
+      },
+      "yesterday_count": 34,
+      "change_description": "Down from 34 yesterday",
+      "synthesis": "Nine articles is a small number compared to the other stories today, but what they reveal is disproportionately important: climate change is working as a cascading pressure on systems that most people interact with daily without thinking about them as climate-connected. Agricultural pest spread is being accelerated by warmer temperatures in ways that directly threaten food production. Infrastructure in coastal and flood-prone areas is failing during weather events that used to be considered unusual but are now recurring. Energy policy debates are accelerating as the cost calculus shifts. The reason this matters even at low article volume is that climate pressure shows up inside every other story on this page, from food prices in the economy section to disaster response in the government section, and treating it as a separate beat is part of what makes it so easy to underreport.",
+      "watch_for": "Pay attention to whether food prices in your area tick up over the next two weeks, because agricultural disruptions driven by pest spread and extreme weather take about that long to reach grocery shelves, and the connection between what is happening in farming regions and what you pay at the store is one of the most consistently underreported links in American news.",
+      "cross_spectrum": "Community outlets like City Limits and Honolulu Civil Beat report the infrastructure failures and neighborhood-level disaster response that national outlets mention only as statistics. International sources like France 24 treat energy transitions as geopolitical necessity rather than environmental preference. That framing gap shapes what policy responses seem reasonable to different audiences.",
+      "why_this_matters": "Extreme weather is already raising food prices and breaking infrastructure in specific communities. If you live in a flood zone, farm region, or coastal area, this is not a future problem."
+    }
+  ],
+  "community_synthesis": "Community and specialist outlets are doing something national coverage consistently fails to do: they are naming the specific people, places, and mechanisms involved. Where national outlets report that voter data is being shared between agencies, the Texas Tribune reports that voting rights groups are suing Texas over the actual removal process. Where national outlets mention federal infrastructure spending, Indian Country Today reports that the Indian Health Service is digging out of a construction backlog for medical buildings on reservations that goes back decades. The specificity is the point. It is what lets you understand whether a policy is working or failing, and it is almost entirely absent from the outlets most Americans read.",
+  "community_examples": [
+    "Voting rights groups in Texas are suing the state over its removal of potential noncitizens from voter rolls, a process the Texas Tribune reports lacks meaningful oversight and affects tens of thousands of registered voters who may be citizens. The case tests whether states can use citizenship-screening databases to cancel registrations without giving individuals a real chance to prove their eligibility before they lose their right to vote.",
+    "Indian Country Today reports that the Indian Health Service is working through a decades-old construction backlog for medical buildings on reservations, a backlog that exists because these communities were systematically underfunded in every previous federal infrastructure cycle. The same week, the Supreme Court denied the Chinook Nation's petition for federal recognition, which means a community that has existed for centuries still lacks the legal standing to access the health and education services that recognition provides.",
+    "Cities in Texas and Florida are installing new rainbow crosswalks even as Republican state legislatures crack down on Pride visibility, according to The Advocate. Idaho's legislature sent a bill to the governor that would make it a felony for transgender people to use bathrooms matching their gender identity in private businesses. Tennessee's House passed what amounts to a transgender registry. Three states, three different mechanisms, all moving in the same direction during the same week."
   ]
 }
