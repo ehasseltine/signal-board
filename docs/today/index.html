@@ -215,8 +215,8 @@
 
     .header-context {
       font-size: clamp(1rem, 2.2vw, 1.15rem);
-      color: rgba(235, 230, 245, 0.75);
-      line-height: 1.8;
+      color: rgba(235, 230, 245, 0.82);
+      line-height: 1.85;
       max-width: 720px;
       margin-bottom: 2rem;
     }
@@ -501,22 +501,22 @@
     }
 
     .question-card {
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.035);
+      border: 1px solid rgba(255, 255, 255, 0.12);
       border-radius: 20px;
-      padding: 2rem;
+      padding: 2.2rem;
       transition: all 0.2s;
       cursor: pointer;
     }
 
     .question-card:hover {
-      background: rgba(255, 255, 255, 0.05);
-      border-color: rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.055);
+      border-color: rgba(255, 255, 255, 0.18);
       transform: translateY(-2px);
     }
 
     .question-card.expanded {
-      background: rgba(255, 255, 255, 0.04);
+      background: rgba(255, 255, 255, 0.045);
     }
 
     .question-header {
@@ -1115,12 +1115,12 @@
 
   <footer>
     <div class="wrap">
-      <p style="margin-bottom:1rem;">239 sources read every day, covering everything from global security to your local school board. <a href="../sources/">How we choose our sources</a></p>
-      <details style="font-size:0.8rem;color:rgba(235,230,245,0.55);max-width:680px;margin:0 auto;text-align:left;">
-        <summary style="cursor:pointer;color:rgba(235,230,245,0.65);font-weight:600;margin-bottom:0.5rem;">How we did this</summary>
-        <p style="line-height:1.7;margin-bottom:0.6rem;">Signal Board pulls articles from 239 RSS feeds every morning, covering U.S. newsrooms, international press, community outlets, think tanks, specialist journals, and explainer sites. Each article is classified by an AI model (Claude Haiku) that identifies which topics it covers and how it connects to other stories. About 70% of articles receive a full analysis. The stories you see above are grouped by keyword clustering and then synthesized by AI into coherent paragraphs. A human editor reviews the output for accuracy, tone, and writing quality.</p>
-        <p style="line-height:1.7;margin-bottom:0.6rem;">Source selection is editorial: we chose outlets that represent different perspectives, geographies, and communities, with a deliberate emphasis on sources that are underrepresented in algorithmic news feeds. The full source list is available on the <a href="../sources/" style="color:rgba(235,230,245,0.65);text-decoration:underline;">Sources page</a>.</p>
-        <p style="line-height:1.7;">This is a working prototype. It has blind spots, particularly in non-English language coverage and in communities without strong digital news infrastructure. If you notice something missing, that is useful information. <a href="mailto:elise.hasseltine@gmail.com" style="color:rgba(235,230,245,0.65);text-decoration:underline;">Tell us</a>.</p>
+      <p style="margin-bottom:1.2rem;color:rgba(235,230,245,0.7);">239 sources read every day, covering everything from global security to your local school board. <a href="../sources/" style="color:rgba(235,230,245,0.8);text-decoration:underline;">How we choose our sources</a></p>
+      <details style="font-size:0.85rem;color:rgba(235,230,245,0.62);max-width:680px;margin:0 auto;text-align:left;">
+        <summary style="cursor:pointer;color:rgba(235,230,245,0.72);font-weight:600;margin-bottom:0.6rem;">How we did this</summary>
+        <p style="line-height:1.75;margin-bottom:0.7rem;">Signal Board pulls articles from 239 RSS feeds every morning, covering U.S. newsrooms, international press, community outlets, think tanks, specialist journals, and explainer sites. Each article is classified by an AI model (Claude Haiku) that identifies which topics it covers and how it connects to other stories. About 70% of articles receive a full analysis. The stories you see above are grouped by keyword clustering and then synthesized by AI into coherent paragraphs. A human editor reviews the output for accuracy, tone, and writing quality.</p>
+        <p style="line-height:1.75;margin-bottom:0.7rem;">Source selection is editorial: we chose outlets that represent different perspectives, geographies, and communities, with a deliberate emphasis on sources that are underrepresented in algorithmic news feeds. The full source list is available on the <a href="../sources/" style="color:rgba(235,230,245,0.72);text-decoration:underline;">Sources page</a>.</p>
+        <p style="line-height:1.75;">This is a working prototype. It has blind spots, particularly in non-English language coverage and in communities without strong digital news infrastructure. If you notice something missing, that is useful information. <a href="mailto:elise.hasseltine@gmail.com" style="color:rgba(235,230,245,0.72);text-decoration:underline;">Tell us</a>.</p>
       </details>
     </div>
   </footer>
@@ -1270,11 +1270,11 @@
         ).join('<span style="opacity:0.3;"> · </span>');
 
         const tierBarHtml = `
-          <div style="margin-bottom:1.2rem;">
-            <div style="display:flex;height:6px;border-radius:4px;overflow:hidden;gap:2px;margin-bottom:0.5rem;">
+          <div style="margin-bottom:1.4rem;">
+            <div style="display:flex;height:8px;border-radius:4px;overflow:hidden;gap:2px;margin-bottom:0.6rem;">
               ${barSegments}
             </div>
-            <div style="font-size:0.72rem;color:rgba(235,230,245,0.55);display:flex;flex-wrap:wrap;gap:0.6rem;">
+            <div style="font-size:0.78rem;color:rgba(235,230,245,0.68);display:flex;flex-wrap:wrap;gap:0.7rem;">
               ${barLabels}
             </div>
           </div>
@@ -1282,46 +1282,46 @@
 
         // WHY THIS MATTERS — plain language, daily life connection
         const whyMattersHtml = story.why_this_matters
-          ? `<div style="padding:0.8rem 1.1rem;background:rgba(255,200,0,0.06);border-radius:12px;margin-bottom:1.2rem;border-left:3px solid rgba(255,200,0,0.5);">
-              <span style="font-size:0.72rem;text-transform:uppercase;letter-spacing:0.06em;color:rgba(255,200,0,0.8);font-weight:700;">Why this matters to you</span>
-              <p style="font-size:0.9rem;color:rgba(235,230,245,0.85);line-height:1.6;margin:0.4rem 0 0 0;">${story.why_this_matters}</p>
+          ? `<div style="padding:1rem 1.2rem;background:rgba(255,200,0,0.08);border-radius:12px;margin-bottom:1.5rem;border-left:3px solid rgba(255,200,0,0.6);">
+              <span style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.06em;color:rgba(255,200,0,0.9);font-weight:700;">Why this matters to you</span>
+              <p style="font-size:0.92rem;color:rgba(235,230,245,0.9);line-height:1.7;margin:0.5rem 0 0 0;">${story.why_this_matters}</p>
             </div>`
           : '';
 
         // THE SYNTHESIS
         const synthesisHtml = story.synthesis
-          ? `<div style="font-size:1rem;color:rgba(235,230,245,0.88);line-height:1.85;margin-bottom:1.5rem;">${story.synthesis}</div>`
+          ? `<div style="font-size:1rem;color:rgba(235,230,245,0.92);line-height:1.9;margin-bottom:1.8rem;">${story.synthesis}</div>`
           : '';
 
         // Watch for
         const watchHtml = story.watch_for
-          ? `<div style="padding:0.8rem 1.1rem;background:rgba(255,255,255,0.04);border-radius:12px;margin-bottom:1rem;border-left:3px solid ${color};">
-              <span style="font-size:0.72rem;text-transform:uppercase;letter-spacing:0.06em;color:${color};font-weight:700;">What to watch</span>
-              <p style="font-size:0.88rem;color:rgba(235,230,245,0.7);line-height:1.6;margin:0.4rem 0 0 0;">${story.watch_for}</p>
+          ? `<div style="padding:1rem 1.2rem;background:rgba(255,255,255,0.05);border-radius:12px;margin-bottom:1.2rem;border-left:3px solid ${color};">
+              <span style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.06em;color:${color};font-weight:700;">What to watch</span>
+              <p style="font-size:0.9rem;color:rgba(235,230,245,0.8);line-height:1.7;margin:0.5rem 0 0 0;">${story.watch_for}</p>
             </div>`
           : '';
 
         // Cross-spectrum note
         const spectrumHtml = story.cross_spectrum
-          ? `<div style="padding:0.8rem 1.1rem;background:rgba(102,82,255,0.05);border-radius:12px;margin-bottom:1rem;border-left:3px solid #6652FF;">
-              <span style="font-size:0.72rem;text-transform:uppercase;letter-spacing:0.06em;color:#6652FF;font-weight:700;">Across the spectrum</span>
-              <p style="font-size:0.88rem;color:rgba(235,230,245,0.7);line-height:1.6;margin:0.4rem 0 0 0;">${story.cross_spectrum}</p>
+          ? `<div style="padding:1rem 1.2rem;background:rgba(102,82,255,0.06);border-radius:12px;margin-bottom:1.2rem;border-left:3px solid #6652FF;">
+              <span style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.06em;color:#8070FF;font-weight:700;">Across the spectrum</span>
+              <p style="font-size:0.9rem;color:rgba(235,230,245,0.8);line-height:1.7;margin:0.5rem 0 0 0;">${story.cross_spectrum}</p>
             </div>`
           : '';
 
         // Source names
         const sampleSources = (story.sources_sample || []).slice(0, 8);
         const sourceNameLine = sampleSources.length > 0
-          ? `<div style="font-size:0.75rem;color:rgba(235,230,245,0.45);margin-top:0.5rem;">Sources include ${sampleSources.slice(0, 5).join(', ')}${story.source_count > 5 ? ` and ${story.source_count - 5} more` : ''}</div>`
+          ? `<div style="font-size:0.78rem;color:rgba(235,230,245,0.55);margin-top:0.8rem;padding-top:0.8rem;border-top:1px solid rgba(255,255,255,0.06);">Sources include ${sampleSources.slice(0, 5).join(', ')}${story.source_count > 5 ? ` and ${story.source_count - 5} more` : ''}</div>`
           : '';
 
         return `
-          <article style="background:rgba(255,255,255,0.025);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:2.2rem;margin-bottom:1.5rem;border-top:3px solid ${color};">
-            <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:0.6rem;flex-wrap:wrap;gap:0.5rem;">
-              <h3 style="font-family:'Space Grotesk',sans-serif;font-size:1.35rem;font-weight:800;color:#fff;letter-spacing:-0.02em;margin:0;">${story.name}</h3>
+          <article style="background:rgba(255,255,255,0.035);border:1px solid rgba(255,255,255,0.12);border-radius:20px;padding:2.5rem;margin-bottom:1.8rem;border-top:3px solid ${color};">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:0.7rem;flex-wrap:wrap;gap:0.5rem;">
+              <h3 style="font-family:'Space Grotesk',sans-serif;font-size:1.4rem;font-weight:800;color:#fff;letter-spacing:-0.02em;margin:0;">${story.name}</h3>
               ${temporalLine}
             </div>
-            <div style="font-size:0.85rem;color:${color};font-weight:700;margin-bottom:0.8rem;">
+            <div style="font-size:0.88rem;color:${color};font-weight:700;margin-bottom:1rem;">
               ${story.article_count} articles from ${story.source_count} sources
             </div>
             ${tierBarHtml}
@@ -1336,7 +1336,7 @@
 
       section.innerHTML = `
         <h2 class="section-title">What's Happening</h2>
-        <p style="font-size:0.9rem;color:rgba(235,230,245,0.65);margin-bottom:1.5rem;line-height:1.7;">These are the stories that appeared most often across the widest range of sources today. When outlets that rarely agree start covering the same thing, that convergence is worth paying attention to.</p>
+        <p style="font-size:0.92rem;color:rgba(235,230,245,0.72);margin-bottom:2rem;line-height:1.8;">These are the stories that appeared most often across the widest range of sources today. When outlets that rarely agree start covering the same thing, that convergence is worth paying attention to.</p>
         ${storiesHtml}
       `;
     }
@@ -1563,10 +1563,10 @@
 
         // First insight is the lead, rest expand the answer
         const leadInsight = insights[0]
-          ? `<p style="font-size:0.92rem;color:rgba(235,230,245,0.85);line-height:1.75;margin:0 0 0.8rem 0;">${insights[0]}</p>`
+          ? `<p style="font-size:0.94rem;color:rgba(235,230,245,0.9);line-height:1.8;margin:0 0 0.8rem 0;">${insights[0]}</p>`
           : '';
         const remainingInsights = insights.slice(1).map(insight =>
-          `<p style="font-size:0.88rem;color:rgba(235,230,245,0.7);line-height:1.7;margin:0 0 0.5rem 0;">${insight}</p>`
+          `<p style="font-size:0.9rem;color:rgba(235,230,245,0.78);line-height:1.75;margin:0 0 0.6rem 0;">${insight}</p>`
         ).join('');
 
         // Sources as compact attribution
@@ -1575,7 +1575,7 @@
           (articles || []).forEach(a => allSources.push({...a, tier}));
         }
         const sourceAttribution = allSources.length > 0
-          ? `<div style="font-size:0.75rem;color:rgba(235,230,245,0.5);margin-top:0.6rem;">Based on reporting from ${[...new Set(allSources.map(a => a.source))].slice(0, 5).join(', ')}${allSources.length > 5 ? ` and ${allSources.length - 5} more` : ''}</div>`
+          ? `<div style="font-size:0.78rem;color:rgba(235,230,245,0.55);margin-top:0.8rem;">Based on reporting from ${[...new Set(allSources.map(a => a.source))].slice(0, 5).join(', ')}${allSources.length > 5 ? ` and ${allSources.length - 5} more` : ''}</div>`
           : '';
 
         return `
@@ -1691,8 +1691,8 @@
         const colors = ['#FF5400', '#6652FF', '#00C2A8'];
         const color = colors[i % colors.length];
         return `
-          <div style="padding:1rem 1.2rem;background:rgba(255,255,255,0.02);border-left:3px solid ${color};border-radius:0 10px 10px 0;margin-bottom:0.6rem;">
-            <p style="font-size:0.9rem;color:rgba(235,230,245,0.75);line-height:1.55;margin:0;">${ex}</p>
+          <div style="padding:1.1rem 1.3rem;background:rgba(255,255,255,0.035);border-left:3px solid ${color};border-radius:0 12px 12px 0;margin-bottom:0.8rem;">
+            <p style="font-size:0.92rem;color:rgba(235,230,245,0.85);line-height:1.7;margin:0;">${ex}</p>
           </div>
         `;
       }).join('');
@@ -1700,12 +1700,12 @@
       // Source attribution
       const sourceNames = [...new Set(stories.map(s => s.source))].slice(0, 8);
       const sourceLine = sourceNames.length > 0
-        ? `<div style="font-size:0.72rem;color:rgba(235,230,245,0.5);margin-top:1rem;">Reporting from: ${sourceNames.join(', ')}</div>`
+        ? `<div style="font-size:0.78rem;color:rgba(235,230,245,0.58);margin-top:1.2rem;padding-top:0.8rem;border-top:1px solid rgba(255,255,255,0.06);">Reporting from: ${sourceNames.join(', ')}</div>`
         : '';
 
       section.innerHTML = `
         <h2 class="section-title">What's Being Missed</h2>
-        ${synthesis ? `<div style="font-size:0.95rem;color:rgba(235,230,245,0.7);line-height:1.7;margin-bottom:1.5rem;">${synthesis}</div>` : ''}
+        ${synthesis ? `<div style="font-size:0.98rem;color:rgba(235,230,245,0.8);line-height:1.8;margin-bottom:1.8rem;">${synthesis}</div>` : ''}
         ${examplesHtml}
         ${sourceLine}
       `;
