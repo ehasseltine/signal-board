@@ -1,22 +1,22 @@
 {
   "date": "2026-03-28",
-  "generated": "2026-03-28T03:38:37Z",
+  "generated": "2026-03-28T07:48:41Z",
   "summary": {
-    "total_stories": 1013,
-    "sources_reporting": 128,
-    "cross_domain": 395,
+    "total_stories": 1201,
+    "sources_reporting": 129,
+    "cross_domain": 466,
     "cross_domain_pct": 39,
     "top_domain": "Security"
   },
   "top_stories": [
     {
       "headline": "Tiger Woods arrested on suspicion of DUI, authorities say",
-      "source_count": 16,
+      "source_count": 17,
       "tier_count": 3,
       "tiers": [
         "community",
-        "national",
-        "international"
+        "international",
+        "national"
       ],
       "domains": [
         "Legal"
@@ -24,15 +24,15 @@
       "domain_keys": [
         "legal"
       ],
-      "article_count": 19,
+      "article_count": 21,
       "tier_framing": {
         "national": {
-          "count": 10,
+          "count": 11,
           "keywords": [
             "tiger",
             "woods",
-            "rollover",
             "crash",
+            "rollover",
             "florida"
           ],
           "sample": {
@@ -43,7 +43,7 @@
           }
         },
         "international": {
-          "count": 6,
+          "count": 7,
           "keywords": [
             "tiger",
             "woods",
@@ -231,12 +231,114 @@
       ]
     },
     {
-      "headline": "Iran-linked hackers breach FBI director's personal email, publish photos and documents - Reuters",
-      "source_count": 5,
+      "headline": "Iranian attack injures 10 Americans on base in Saudi Arabia",
+      "source_count": 6,
       "tier_count": 2,
       "tiers": [
         "national",
         "international"
+      ],
+      "domains": [
+        "Security",
+        "Labor"
+      ],
+      "domain_keys": [
+        "security",
+        "labor"
+      ],
+      "article_count": 6,
+      "tier_framing": {
+        "national": {
+          "count": 2,
+          "keywords": [
+            "iranian",
+            "saudi",
+            "arabia",
+            "attack",
+            "injures"
+          ],
+          "sample": {
+            "title": "Iranian attack injures 10 Americans on base in Saudi Arabia",
+            "source": "The Hill",
+            "url": "https://thehill.com/policy/defense/5805412-iranian-attack-saudi-base-injures-us-troops/",
+            "context": ""
+          }
+        },
+        "international": {
+          "count": 4,
+          "keywords": [
+            "iran",
+            "strike",
+            "troops",
+            "saudi",
+            "israel"
+          ],
+          "sample": {
+            "title": "Iran strike wounds US troops and damages planes at Saudi airbase",
+            "source": "South China Morning Post",
+            "url": "https://www.scmp.com/news/world/middle-east/article/3348220/iran-strike-wounds-us-troops-and-damages-planes-saudi-airbase?utm_source=rss_feed",
+            "context": ""
+          }
+        }
+      },
+      "articles": [
+        {
+          "title": "Iranian attack injures 10 Americans on base in Saudi Arabia",
+          "source": "The Hill",
+          "url": "https://thehill.com/policy/defense/5805412-iranian-attack-saudi-base-injures-us-troops/",
+          "tier": "national",
+          "paywall": false,
+          "context": ""
+        },
+        {
+          "title": "At least 10 US troops wounded in Iranian strike in Saudi Arabia: Report",
+          "source": "Washington Examiner",
+          "url": "https://www.washingtonexaminer.com/news/world/4508105/us-troops-wounded-iran-strike-saudi-arabia/",
+          "tier": "national",
+          "paywall": false,
+          "context": ""
+        },
+        {
+          "title": "Iran strike wounds US troops and damages planes at Saudi airbase",
+          "source": "South China Morning Post",
+          "url": "https://www.scmp.com/news/world/middle-east/article/3348220/iran-strike-wounds-us-troops-and-damages-planes-saudi-airbase?utm_source=rss_feed",
+          "tier": "international",
+          "paywall": false,
+          "context": ""
+        },
+        {
+          "title": "Iran-Israel war LIVE: Israel military says striking 'regime targets' in Tehran; One killed in Tel Aviv amid Iranian miss",
+          "source": "The Hindu",
+          "url": "https://www.thehindu.com/news/international/iran-israel-us-war-west-asia-conflict-strait-of-hormuz-attacks-march-28-2026/article70795241.ece",
+          "tier": "international",
+          "paywall": false,
+          "context": ""
+        },
+        {
+          "title": "Iran war: US troops wounded in strike on Saudi base",
+          "source": "Deutsche Welle",
+          "url": "https://www.dw.com/en/iran-war-us-troops-wounded-in-strike-on-saudi-base/live-76573681?maca=en-rss-en-all-1573-rdf",
+          "tier": "international",
+          "paywall": false,
+          "context": ""
+        },
+        {
+          "title": "Iranian strike on Saudi Arabia base injures 12 US troops, 2 seriously wounded",
+          "source": "Times of India",
+          "url": "https://timesofindia.indiatimes.com/world/us/iranian-strike-on-saudi-arabia-base-injures-12-us-troops-2-seriously-wounded/articleshow/129858060.cms",
+          "tier": "international",
+          "paywall": false,
+          "context": ""
+        }
+      ]
+    },
+    {
+      "headline": "Iran-linked hackers breach FBI director's personal email, publish photos and documents - Reuters",
+      "source_count": 5,
+      "tier_count": 2,
+      "tiers": [
+        "international",
+        "national"
       ],
       "domains": [
         "Security",
@@ -329,9 +431,9 @@
       "source_count": 5,
       "tier_count": 3,
       "tiers": [
+        "international",
         "explainer",
-        "national",
-        "international"
+        "national"
       ],
       "domains": [
         "Politics",
@@ -499,92 +601,6 @@
       ]
     },
     {
-      "headline": "Iranian attack injures 10 Americans on base in Saudi Arabia",
-      "source_count": 4,
-      "tier_count": 2,
-      "tiers": [
-        "national",
-        "international"
-      ],
-      "domains": [
-        "Security",
-        "Labor"
-      ],
-      "domain_keys": [
-        "security",
-        "labor"
-      ],
-      "article_count": 4,
-      "tier_framing": {
-        "national": {
-          "count": 1,
-          "keywords": [
-            "iranian",
-            "attack",
-            "injures",
-            "americans",
-            "base"
-          ],
-          "sample": {
-            "title": "Iranian attack injures 10 Americans on base in Saudi Arabia",
-            "source": "The Hill",
-            "url": "https://thehill.com/policy/defense/5805412-iranian-attack-saudi-base-injures-us-troops/",
-            "context": ""
-          }
-        },
-        "international": {
-          "count": 3,
-          "keywords": [
-            "iran",
-            "strike",
-            "troops",
-            "saudi",
-            "israel"
-          ],
-          "sample": {
-            "title": "Iran strike wounds US troops and damages planes at Saudi airbase",
-            "source": "South China Morning Post",
-            "url": "https://www.scmp.com/news/world/middle-east/article/3348220/iran-strike-wounds-us-troops-and-damages-planes-saudi-airbase?utm_source=rss_feed",
-            "context": ""
-          }
-        }
-      },
-      "articles": [
-        {
-          "title": "Iranian attack injures 10 Americans on base in Saudi Arabia",
-          "source": "The Hill",
-          "url": "https://thehill.com/policy/defense/5805412-iranian-attack-saudi-base-injures-us-troops/",
-          "tier": "national",
-          "paywall": false,
-          "context": ""
-        },
-        {
-          "title": "Iran strike wounds US troops and damages planes at Saudi airbase",
-          "source": "South China Morning Post",
-          "url": "https://www.scmp.com/news/world/middle-east/article/3348220/iran-strike-wounds-us-troops-and-damages-planes-saudi-airbase?utm_source=rss_feed",
-          "tier": "international",
-          "paywall": false,
-          "context": ""
-        },
-        {
-          "title": "Iran-Israel war LIVE: Israel military says striking 'regime targets' in Tehran; One killed in Tel Aviv amid Iranian miss",
-          "source": "The Hindu",
-          "url": "https://www.thehindu.com/news/international/iran-israel-us-war-west-asia-conflict-strait-of-hormuz-attacks-march-28-2026/article70795241.ece",
-          "tier": "international",
-          "paywall": false,
-          "context": ""
-        },
-        {
-          "title": "Iran war: US troops wounded in strike on Saudi base",
-          "source": "Deutsche Welle",
-          "url": "https://www.dw.com/en/iran-war-us-troops-wounded-in-strike-on-saudi-base/live-76573681?maca=en-rss-en-all-1573-rdf",
-          "tier": "international",
-          "paywall": false,
-          "context": ""
-        }
-      ]
-    },
-    {
       "headline": "What's next in the DHS funding fight?",
       "source_count": 4,
       "tier_count": 1,
@@ -601,16 +617,16 @@
         "domestic_politics",
         "legal"
       ],
-      "article_count": 7,
+      "article_count": 8,
       "tier_framing": {
         "national": {
-          "count": 7,
+          "count": 8,
           "keywords": [
             "senate",
             "funding",
             "bill",
-            "homeland",
-            "security"
+            "deal",
+            "rejecting"
           ],
           "sample": {
             "title": "What's next in the DHS funding fight?",
@@ -747,11 +763,11 @@
   "what_connects": [
     {
       "headline": "Tiger Woods arrested on suspicion of DUI, authorities say",
-      "total_sources": 10,
+      "total_sources": 11,
       "spectrum_segments": 3,
       "left_sources": [
-        "NPR",
         "NBC News",
+        "NPR",
         "ABC News"
       ],
       "right_sources": [
@@ -759,11 +775,11 @@
       ],
       "international_sources": [
         "Deutsche Welle",
-        "Al Jazeera",
-        "The Globe and Mail"
+        "South China Morning Post",
+        "Al Jazeera"
       ],
       "community_sources": [],
-      "article_count": 12,
+      "article_count": 13,
       "domains": []
     }
   ],
@@ -861,14 +877,12 @@
       "context": ""
     },
     {
-      "title": "Democrat Chris Pappas in dead heat with John Sununu in New Hampshire Senate race",
+      "title": "Cities in Texas and Florida install new rainbow walkways as Republicans crack down on Pride crosswalks",
       "source": "The Advocate",
-      "url": "https://www.advocate.com/politics/election/chris-pappas-tied-john-sununu",
+      "url": "https://www.advocate.com/politics/states/rainbow-crosswalk-texas-florida",
       "tier": "community",
-      "text_preview": "A new poll shows Democratic Rep. Chris Pappas and former Sen. John E. Sununu locked in a statistical tie in New Hampshire’s 2026 U.S. Senate race. Keep up with the latest in LGBTQ + news and politics. Sign up for The Advocate's email newsletter. The ",
+      "text_preview": "City leaders in San Antonio plans will unveil new rainbow sidewalks as part of a Pride celebration this week. The act comes even as Texas cracks down on other decorated walkways across the Lone Star State. Keep up with the latest in LGBTQ + news and ",
       "domains": [
-        "governance",
-        "information",
         "domestic_politics"
       ],
       "context": "LGBTQ+ news magazine, one of the oldest in the US. Covers issues affecting approximately 20 million LGBTQ+ Americans."
@@ -902,7 +916,7 @@
       ],
       "label": "Governance + Legal",
       "explanation": "Government actions being challenged or upheld in courts",
-      "today_count": 87,
+      "today_count": 105,
       "trend": "rising",
       "sample_articles": [
         {
@@ -929,7 +943,7 @@
       ],
       "label": "Politics + Security",
       "explanation": "Defense and public safety as political issues",
-      "today_count": 67,
+      "today_count": 77,
       "trend": "rising",
       "sample_articles": [
         {
@@ -956,7 +970,7 @@
       ],
       "label": "Politics + Governance",
       "explanation": "Political conflict over how government agencies operate",
-      "today_count": 63,
+      "today_count": 70,
       "trend": "rising",
       "sample_articles": [
         {
@@ -983,7 +997,7 @@
       ],
       "label": "Politics + Legal",
       "explanation": "Political disputes reaching the courts",
-      "today_count": 55,
+      "today_count": 60,
       "trend": "rising",
       "sample_articles": [
         {
@@ -1010,7 +1024,7 @@
       ],
       "label": "Economics + Security",
       "explanation": "Military spending and conflict affecting markets",
-      "today_count": 40,
+      "today_count": 48,
       "trend": "rising",
       "sample_articles": [
         {
@@ -1032,39 +1046,12 @@
     },
     {
       "pair": [
-        "governance",
-        "security"
-      ],
-      "label": "Governance + Security",
-      "explanation": "Defense policy and military strategy",
-      "today_count": 35,
-      "trend": "rising",
-      "sample_articles": [
-        {
-          "title": "Hegseth Strikes Two Black and Two Female Officers From Promotion List",
-          "source": "New York Times",
-          "url": "https://www.nytimes.com/2026/03/27/us/hegseth-promotion-list.html"
-        },
-        {
-          "title": "California bans officials from using inside knowledge to bet on prediction marke",
-          "source": "Reuters",
-          "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNT3RGc1RlQjRIdkdVRjQyX3VGdXh4clNTTEJQOUktMEN6SlRhYlJhbWlLeXA4TlJFZlVLekRhNDhMMDZublNoWDdUZGZCTjJYbHJBZGFGRUhUcVdINV9MblM3Zk02Q3dJZ0F2MDJURFEyQWFVbDd2YklHZ05FbjdmenRVbzg2d0pRMVIxUWhfV2J0Q1ltMDZtU2p5XzNuTjVjb1pKNGFkZVB4eW9HVXlfMmRTd25yTHdHWUVhMFlQZ2xMQQ?oc=5"
-        },
-        {
-          "title": "US judiciary withdraws new requirements for amicus brief disclosures - Reuters",
-          "source": "Reuters",
-          "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPMjdKZjhaSnhWcjl4MU5JN1dmUHdDSFNPb1lOZWk4UTBSWFB1c0p0c0VybmdmSFRmQ0FCTWVOWHQ4cUVoY0NHT0lza0hqcmExN3NaZlhtWFNBZEdEMi00aGZVanpjd1BtWEM3TnRjWnBkdEUyMzZRbE1aUHktYTFxQTd0cU9oXzgwU01SQTVlTzJPTk5YcnozUHp1c0JfYzhaR3NlV0I2dV9GMjNRWHBsMW1VZzRUTWV4?oc=5"
-        }
-      ]
-    },
-    {
-      "pair": [
         "climate",
         "security"
       ],
       "label": "Climate + Security",
       "explanation": "Environmental change creating security or military challenges",
-      "today_count": 34,
+      "today_count": 40,
       "trend": "rising",
       "sample_articles": [
         {
@@ -1086,39 +1073,12 @@
     },
     {
       "pair": [
-        "domestic_politics",
-        "economics"
-      ],
-      "label": "Politics + Economics",
-      "explanation": "Economic conditions shaping political debate",
-      "today_count": 33,
-      "trend": "rising",
-      "sample_articles": [
-        {
-          "title": "Pro-Iranian hacking group claims credit for hack of FBI Director Kash Patel’s pe",
-          "source": "AP News",
-          "url": "https://apnews.com/article/patel-iran-hacking-cyberscurity-9237ca30d1c85f237d7d83e6798d97f0"
-        },
-        {
-          "title": "Trump tells farmers that tractor companies should lower prices - Reuters",
-          "source": "Reuters",
-          "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNSzlReHJhXzFrTlh4YzByQ2tJQV9IazRvNW1CNl9ScnhUNURnM3hwUE1WOVZFbU1wck9pNlZhanFyNHRGRC1qeHpsSkhocGFrMGRYZ2R2aVpybndEOXJLekUxbF9CeUxpYlRZTGhTVWJlNFAzNGduLU96WVR1WTZnbF85M0IyNTE5MzlzbURMQkMxN2ZjMmxuY3VJSnJSa3lERGI4QkxTbV9QcDVSSWpha0tJSQ?oc=5"
-        },
-        {
-          "title": "Market Priced for Risk, Not Disruption: Fmr. WH Advisor",
-          "source": "Bloomberg",
-          "url": "https://www.bloomberg.com/news/videos/2026-03-27/market-priced-for-risk-not-disruption-fmr-wh-advisor-video"
-        }
-      ]
-    },
-    {
-      "pair": [
         "geopolitics",
         "security"
       ],
       "label": "Geopolitics + Security",
       "explanation": "Military tensions between nations",
-      "today_count": 32,
+      "today_count": 40,
       "trend": "rising",
       "sample_articles": [
         {
@@ -1140,28 +1100,55 @@
     },
     {
       "pair": [
-        "economics",
-        "legal"
+        "governance",
+        "security"
       ],
-      "label": "Economics + Legal",
-      "explanation": "Antitrust enforcement, financial regulation, and corporate law",
-      "today_count": 28,
+      "label": "Governance + Security",
+      "explanation": "Defense policy and military strategy",
+      "today_count": 39,
       "trend": "rising",
       "sample_articles": [
         {
-          "title": "EU and CPTPP agree to progress with \"historic\" digital trade deal, Canada's inte",
-          "source": "Reuters",
-          "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQMlFPa1FBMERsNGVGeEdfQlIxTlZIYTBaSzNJN3JzbzcyWlRTQXR5djFURkpkZHU5NlhtNDhlWGVTeGJzODBpZmd2S0FVZ2pWT0NjVFEzUHBud25WVlZERFIwMkxpcFVRU0JEMFdDek93VnVYbnZaWG85bjZtNFJJUDIwOXFubE52V0RkRFdEVW5Eb3JROE1FcTA4TEhBcmp1UXpEdEViQmFUeE95VGxmNjM5Rmk1OEJ5SDNBNUtYQ1RpVlpNa0NBUg?oc=5"
+          "title": "Hegseth Strikes Two Black and Two Female Officers From Promotion List",
+          "source": "New York Times",
+          "url": "https://www.nytimes.com/2026/03/27/us/hegseth-promotion-list.html"
         },
         {
-          "title": "Exclusive: US sends subpoenas in Warner-Paramount antitrust review as probe pick",
+          "title": "California bans officials from using inside knowledge to bet on prediction marke",
           "source": "Reuters",
-          "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNbk5UU21MRVZ2UW9kMENwZ2dBY1NjSzRVbFYxMFlWbkJtUGZGc3U2QWdkZzA0bHJWYXhLWk0wekhRWS00Y0pjRjNHMHJIRExjZ051bkowMGc2RzVreWhBMTNFTjhWeHJXeVNvNjhLLWRQVXV5aFZaVk1VUHVKU0F2dlBoUEJsRngyTUhoQng0RmtxVEpxMTFxREg3V2pKNHZmYUZwQTI0Vkp2QmMtaVVTZWFEN3Q1QQ?oc=5"
+          "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNT3RGc1RlQjRIdkdVRjQyX3VGdXh4clNTTEJQOUktMEN6SlRhYlJhbWlLeXA4TlJFZlVLekRhNDhMMDZublNoWDdUZGZCTjJYbHJBZGFGRUhUcVdINV9MblM3Zk02Q3dJZ0F2MDJURFEyQWFVbDd2YklHZ05FbjdmenRVbzg2d0pRMVIxUWhfV2J0Q1ltMDZtU2p5XzNuTjVjb1pKNGFkZVB4eW9HVXlfMmRTd25yTHdHWUVhMFlQZ2xMQQ?oc=5"
         },
         {
-          "title": "Kalshi Secures License to Offer Margin Trading to Pros",
+          "title": "US judiciary withdraws new requirements for amicus brief disclosures - Reuters",
+          "source": "Reuters",
+          "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPMjdKZjhaSnhWcjl4MU5JN1dmUHdDSFNPb1lOZWk4UTBSWFB1c0p0c0VybmdmSFRmQ0FCTWVOWHQ4cUVoY0NHT0lza0hqcmExN3NaZlhtWFNBZEdEMi00aGZVanpjd1BtWEM3TnRjWnBkdEUyMzZRbE1aUHktYTFxQTd0cU9oXzgwU01SQTVlTzJPTk5YcnozUHp1c0JfYzhaR3NlV0I2dV9GMjNRWHBsMW1VZzRUTWV4?oc=5"
+        }
+      ]
+    },
+    {
+      "pair": [
+        "domestic_politics",
+        "economics"
+      ],
+      "label": "Politics + Economics",
+      "explanation": "Economic conditions shaping political debate",
+      "today_count": 36,
+      "trend": "rising",
+      "sample_articles": [
+        {
+          "title": "Pro-Iranian hacking group claims credit for hack of FBI Director Kash Patel’s pe",
+          "source": "AP News",
+          "url": "https://apnews.com/article/patel-iran-hacking-cyberscurity-9237ca30d1c85f237d7d83e6798d97f0"
+        },
+        {
+          "title": "Trump tells farmers that tractor companies should lower prices - Reuters",
+          "source": "Reuters",
+          "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNSzlReHJhXzFrTlh4YzByQ2tJQV9IazRvNW1CNl9ScnhUNURnM3hwUE1WOVZFbU1wck9pNlZhanFyNHRGRC1qeHpsSkhocGFrMGRYZ2R2aVpybndEOXJLekUxbF9CeUxpYlRZTGhTVWJlNFAzNGduLU96WVR1WTZnbF85M0IyNTE5MzlzbURMQkMxN2ZjMmxuY3VJSnJSa3lERGI4QkxTbV9QcDVSSWpha0tJSQ?oc=5"
+        },
+        {
+          "title": "Market Priced for Risk, Not Disruption: Fmr. WH Advisor",
           "source": "Bloomberg",
-          "url": "https://www.bloomberg.com/news/articles/2026-03-27/kalshi-approved-for-margin-trading-as-it-lures-wall-street-pros"
+          "url": "https://www.bloomberg.com/news/videos/2026-03-27/market-priced-for-risk-not-disruption-fmr-wh-advisor-video"
         }
       ]
     },
@@ -1172,7 +1159,7 @@
       ],
       "label": "Economics + Governance",
       "explanation": "Tax policy, trade agreements, and government spending",
-      "today_count": 26,
+      "today_count": 35,
       "trend": "rising",
       "sample_articles": [
         {
@@ -1194,12 +1181,39 @@
     },
     {
       "pair": [
+        "economics",
+        "legal"
+      ],
+      "label": "Economics + Legal",
+      "explanation": "Antitrust enforcement, financial regulation, and corporate law",
+      "today_count": 34,
+      "trend": "rising",
+      "sample_articles": [
+        {
+          "title": "EU and CPTPP agree to progress with \"historic\" digital trade deal, Canada's inte",
+          "source": "Reuters",
+          "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQMlFPa1FBMERsNGVGeEdfQlIxTlZIYTBaSzNJN3JzbzcyWlRTQXR5djFURkpkZHU5NlhtNDhlWGVTeGJzODBpZmd2S0FVZ2pWT0NjVFEzUHBud25WVlZERFIwMkxpcFVRU0JEMFdDek93VnVYbnZaWG85bjZtNFJJUDIwOXFubE52V0RkRFdEVW5Eb3JROE1FcTA4TEhBcmp1UXpEdEViQmFUeE95VGxmNjM5Rmk1OEJ5SDNBNUtYQ1RpVlpNa0NBUg?oc=5"
+        },
+        {
+          "title": "Exclusive: US sends subpoenas in Warner-Paramount antitrust review as probe pick",
+          "source": "Reuters",
+          "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNbk5UU21MRVZ2UW9kMENwZ2dBY1NjSzRVbFYxMFlWbkJtUGZGc3U2QWdkZzA0bHJWYXhLWk0wekhRWS00Y0pjRjNHMHJIRExjZ051bkowMGc2RzVreWhBMTNFTjhWeHJXeVNvNjhLLWRQVXV5aFZaVk1VUHVKU0F2dlBoUEJsRngyTUhoQng0RmtxVEpxMTFxREg3V2pKNHZmYUZwQTI0Vkp2QmMtaVVTZWFEN3Q1QQ?oc=5"
+        },
+        {
+          "title": "Kalshi Secures License to Offer Margin Trading to Pros",
+          "source": "Bloomberg",
+          "url": "https://www.bloomberg.com/news/articles/2026-03-27/kalshi-approved-for-margin-trading-as-it-lures-wall-street-pros"
+        }
+      ]
+    },
+    {
+      "pair": [
         "climate",
         "economics"
       ],
       "label": "Climate + Economics",
       "explanation": "Energy costs, food prices, and insurance rates linked to environmental change",
-      "today_count": 24,
+      "today_count": 26,
       "trend": "rising",
       "sample_articles": [
         {
@@ -1221,39 +1235,12 @@
     },
     {
       "pair": [
-        "climate",
-        "domestic_politics"
-      ],
-      "label": "Climate + Politics",
-      "explanation": "Environmental policy as a political issue",
-      "today_count": 20,
-      "trend": "rising",
-      "sample_articles": [
-        {
-          "title": "One Republican Farmer in Wisconsin Is Bitter Over Trump’s Deportations",
-          "source": "New York Times",
-          "url": "https://www.nytimes.com/2026/03/27/us/politics/wisconsin-farmer-republicans-immigration-trump.html"
-        },
-        {
-          "title": "Trump tells farmers that tractor companies should lower prices - Reuters",
-          "source": "Reuters",
-          "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNSzlReHJhXzFrTlh4YzByQ2tJQV9IazRvNW1CNl9ScnhUNURnM3hwUE1WOVZFbU1wck9pNlZhanFyNHRGRC1qeHpsSkhocGFrMGRYZ2R2aVpybndEOXJLekUxbF9CeUxpYlRZTGhTVWJlNFAzNGduLU96WVR1WTZnbF85M0IyNTE5MzlzbURMQkMxN2ZjMmxuY3VJSnJSa3lERGI4QkxTbV9QcDVSSWpha0tJSQ?oc=5"
-        },
-        {
-          "title": "AIDS prevention campaign kicks off in France",
-          "source": "France 24",
-          "url": "https://www.france24.com/en/video/20260327-aids-prevention-campaign-kicks-off-in-france"
-        }
-      ]
-    },
-    {
-      "pair": [
         "information",
         "security"
       ],
       "label": "Information + Security",
       "explanation": "War coverage and information about military operations",
-      "today_count": 20,
+      "today_count": 25,
       "trend": "rising",
       "sample_articles": [
         {
@@ -1275,44 +1262,71 @@
     },
     {
       "pair": [
-        "governance",
-        "labor"
+        "legal",
+        "security"
       ],
-      "label": "Governance + Labor",
-      "explanation": "Workplace regulation and labor law enforcement",
-      "today_count": 18,
+      "label": "Legal + Security",
+      "explanation": "Legal and Security",
+      "today_count": 23,
       "trend": "new",
       "sample_articles": [
         {
-          "title": "Hegseth Strikes Two Black and Two Female Officers From Promotion List",
+          "title": "After Being Struck by Air Canada Plane, Last Firefighter Is Released From Hospit",
           "source": "New York Times",
-          "url": "https://www.nytimes.com/2026/03/27/us/hegseth-promotion-list.html"
+          "url": "https://www.nytimes.com/2026/03/27/nyregion/laguardia-firefighters-truck-air-canada.html"
         },
         {
-          "title": "Trump orders paycheques for TSA workers as Congress stalls and airport chaos gri",
-          "source": "BBC World",
-          "url": "https://www.bbc.com/news/articles/c33l4j03kr3o?at_medium=RSS&at_campaign=rss"
+          "title": "Exclusive: US sends subpoenas in Warner-Paramount antitrust review as probe pick",
+          "source": "Reuters",
+          "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNbk5UU21MRVZ2UW9kMENwZ2dBY1NjSzRVbFYxMFlWbkJtUGZGc3U2QWdkZzA0bHJWYXhLWk0wekhRWS00Y0pjRjNHMHJIRExjZ051bkowMGc2RzVreWhBMTNFTjhWeHJXeVNvNjhLLWRQVXV5aFZaVk1VUHVKU0F2dlBoUEJsRngyTUhoQng0RmtxVEpxMTFxREg3V2pKNHZmYUZwQTI0Vkp2QmMtaVVTZWFEN3Q1QQ?oc=5"
         },
         {
-          "title": "Anger on the banks of the Musi",
-          "source": "The Hindu",
-          "url": "https://www.thehindu.com/news/cities/Hyderabad/anger-on-the-banks-of-the-musi/article70793826.ece"
+          "title": "Defense Secretary Hegseth intervened to stop promotions of Black and female offi",
+          "source": "NPR",
+          "url": "https://www.npr.org/2026/03/27/nx-s1-5763863/hegseth-soldiers-promotions"
+        }
+      ]
+    },
+    {
+      "pair": [
+        "climate",
+        "domestic_politics"
+      ],
+      "label": "Climate + Politics",
+      "explanation": "Environmental policy as a political issue",
+      "today_count": 21,
+      "trend": "rising",
+      "sample_articles": [
+        {
+          "title": "One Republican Farmer in Wisconsin Is Bitter Over Trump’s Deportations",
+          "source": "New York Times",
+          "url": "https://www.nytimes.com/2026/03/27/us/politics/wisconsin-farmer-republicans-immigration-trump.html"
+        },
+        {
+          "title": "Trump tells farmers that tractor companies should lower prices - Reuters",
+          "source": "Reuters",
+          "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNSzlReHJhXzFrTlh4YzByQ2tJQV9IazRvNW1CNl9ScnhUNURnM3hwUE1WOVZFbU1wck9pNlZhanFyNHRGRC1qeHpsSkhocGFrMGRYZ2R2aVpybndEOXJLekUxbF9CeUxpYlRZTGhTVWJlNFAzNGduLU96WVR1WTZnbF85M0IyNTE5MzlzbURMQkMxN2ZjMmxuY3VJSnJSa3lERGI4QkxTbV9QcDVSSWpha0tJSQ?oc=5"
+        },
+        {
+          "title": "AIDS prevention campaign kicks off in France",
+          "source": "France 24",
+          "url": "https://www.france24.com/en/video/20260327-aids-prevention-campaign-kicks-off-in-france"
         }
       ]
     }
   ],
   "source_spectrum": {
-    "national": 341,
-    "international": 351,
+    "national": 375,
+    "international": 490,
     "specialist": 54,
-    "explainer": 23,
-    "community": 224,
+    "explainer": 28,
+    "community": 234,
     "analysis": 20
   },
   "questions": [
     {
       "question": "Which government actions are being challenged in court?",
-      "article_count": 87,
+      "article_count": 105,
       "domains": [
         "Governance",
         "Legal"
@@ -1350,7 +1364,7 @@
     },
     {
       "question": "How are defense and security decisions being shaped by politics?",
-      "article_count": 67,
+      "article_count": 77,
       "domains": [
         "Politics",
         "Security"
@@ -1388,7 +1402,7 @@
     },
     {
       "question": "What is the government actually doing right now?",
-      "article_count": 63,
+      "article_count": 70,
       "domains": [
         "Politics",
         "Governance"
@@ -1426,7 +1440,7 @@
     },
     {
       "question": "What legal challenges are being filed, and what do they mean?",
-      "article_count": 55,
+      "article_count": 60,
       "domains": [
         "Politics",
         "Legal"
@@ -1486,7 +1500,7 @@
     },
     {
       "question": "How is the conflict affecting prices and the economy?",
-      "article_count": 40,
+      "article_count": 48,
       "domains": [
         "Economics",
         "Security"
@@ -1509,39 +1523,39 @@
       }
     },
     {
-      "question": "What military and defense policy decisions are being made?",
-      "article_count": 35,
+      "question": "How is environmental change creating security risks?",
+      "article_count": 40,
       "domains": [
-        "Governance",
+        "Climate",
         "Security"
       ],
       "sources_by_tier": {
         "national": [
           {
-            "source": "New York Times",
-            "title": "Hegseth Strikes Two Black and Two Female Officers From Promotion List",
-            "url": "https://www.nytimes.com/2026/03/27/us/hegseth-promotion-list.html",
-            "context": "Publicly traded, headquartered in New York. Largest US newspaper by circulation. Generally regarded as center-left in editorial stance. Revenue from subscriptions and advertising."
+            "source": "Reuters",
+            "title": "Services firms feel the squeeze as oil rally from Iran war fails to spur drilling - Reuters",
+            "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNTjJUODdya25tZFRjSm8wVVFPVTlfd1FoeW1hVGdfNFMxMW1lMHIyRkNaM28wRzI3QjhuZWVUSnlNUTIyMGdZSl9DR3dtc1E3VzI2RGxMX2ZJYUxDdXFORGJ4NEgtbnMzYmZnOU9XLVJ6RHI1SjFuQTZDU0JMQlVxRVpLcEQydV9GS2w0YnFLTm9qN2JtU2FvdS1SRnM3THF4eVM2OEpQSnhYOEFIMk9MRW9hYnpYS00tLWc?oc=5",
+            "context": "Owned by Thomson Reuters. Major international wire service. Generally regarded as centrist. Core audience includes institutional investors and news organizations."
           },
           {
-            "source": "Reuters",
-            "title": "California bans officials from using inside knowledge to bet on prediction markets - Reuters",
-            "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNT3RGc1RlQjRIdkdVRjQyX3VGdXh4clNTTEJQOUktMEN6SlRhYlJhbWlLeXA4TlJFZlVLekRhNDhMMDZublNoWDdUZGZCTjJYbHJBZGFGRUhUcVdINV9MblM3Zk02Q3dJZ0F2MDJURFEyQWFVbDd2YklHZ05FbjdmenRVbzg2d0pRMVIxUWhfV2J0Q1ltMDZtU2p5XzNuTjVjb1pKNGFkZVB4eW9HVXlfMmRTd25yTHdHWUVhMFlQZ2xMQQ?oc=5",
-            "context": "Owned by Thomson Reuters. Major international wire service. Generally regarded as centrist. Core audience includes institutional investors and news organizations."
+            "source": "NPR",
+            "title": "How long will the war last? No one knows, and it's making oil prices weird",
+            "url": "https://www.npr.org/2026/03/27/nx-s1-5757946/oil-iran-war-markets-uncertainty",
+            "context": "Nonprofit public media organization funded by member stations, corporate sponsors, and foundations. Generally regarded as center-left. Reaches approximately 30 million weekly listeners."
           }
         ],
         "international": [
           {
-            "source": "BBC World",
-            "title": "Austria becomes latest to propose social media ban for children",
-            "url": "https://www.bbc.com/news/articles/cwyv70de9exo?at_medium=RSS&at_campaign=rss",
-            "context": "Funded by the UK license fee and UK government grants for international service. British public broadcaster. Generally regarded as centrist by international standards."
+            "source": "Al Jazeera",
+            "title": "Grieving Iranian mother tells UN about children before school attack",
+            "url": "https://www.aljazeera.com/video/newsfeed/2026/3/27/grieving-iranian-mother-tells-un-about-children-before-school-attack?traffic_source=rss",
+            "context": "Funded by the government of Qatar. Major international news network. Provides significant coverage of the Middle East and Global South that US outlets often underreport. Qatar's foreign policy interests can influence editorial priorities."
           },
           {
-            "source": "The Guardian World",
-            "title": "Labor to underwrite Australian fuel imports under new security powers to ensure supply",
-            "url": "https://www.theguardian.com/australia-news/2026/mar/28/anthony-albanese-chris-bowen-fuel-security-powers-oil-crisis-petrol-diesel-prices",
-            "context": "Owned by the Scott Trust, a nonprofit. British newspaper. Generally regarded as left-leaning. No paywall, funded by reader contributions."
+            "source": "Deutsche Welle",
+            "title": "Iran war: Israel hits Iranian heavy water nuclear reactor",
+            "url": "https://www.dw.com/en/iran-war-israel-hits-iranian-heavy-water-nuclear-reactor/live-76555531?maca=en-rss-en-all-1573-rdf",
+            "context": ""
           }
         ]
       }
@@ -1551,7 +1565,7 @@
     {
       "topic": "Legal",
       "theme": "Tiger Woods arrested on suspicion of DUI, authorities say",
-      "source_count": 16,
+      "source_count": 17,
       "articles": [
         {
           "title": "Tiger Woods arrested on suspicion of DUI, authorities say",
@@ -1659,46 +1673,54 @@
       ]
     },
     {
-      "topic": "Security + Politics",
-      "theme": "Iran-linked hackers breach FBI director's personal email, publish photos and documents - Reuters",
-      "source_count": 5,
+      "topic": "Security + Labor",
+      "theme": "Iranian attack injures 10 Americans on base in Saudi Arabia",
+      "source_count": 6,
       "articles": [
         {
-          "title": "Iran-linked hackers breach FBI director's personal email, publish photos and documents - Reuters",
-          "source": "Reuters",
-          "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOZnl4Mkp5MnI3ZDg3X1RYMk1aX1JpWkhKLUN5czJlUGtoaU9NZE9RM2dQZlJkMXNQMWtfRElSU0tjMTdZaWN2UnNUb0dIcEZLZjB0RThIdEpQMW5WWkxWblMzNmszZElmcjE2WXNnMXBjNHA0NE15V0dYMVZhYmNjcm8ySjlUZkVIaWZURW1aQmhLNEk4TDV6d1g3SXpJV1psSTBxZTViRE5iSU9WYzRXbjhrUDZ2Um93MDFYNkpDUQ?oc=5",
-          "tier": "national",
-          "paywall": false,
-          "context": "Owned by Thomson Reuters. Major international wire service. Generally regarded as centrist. Core audience includes institutional investors and news organizations."
-        },
-        {
-          "title": "Iranian hackers publish emails allegedly stolen from Kash Patel",
-          "source": "NBC News",
-          "url": "https://www.nbcnews.com/tech/security/iranian-hackers-publish-emails-allegedly-stolen-kash-patel-rcna265490",
+          "title": "Iranian attack injures 10 Americans on base in Saudi Arabia",
+          "source": "The Hill",
+          "url": "https://thehill.com/policy/defense/5805412-iranian-attack-saudi-base-injures-us-troops/",
           "tier": "national",
           "paywall": false,
           "context": ""
         },
         {
-          "title": "Iran-backed hackers breach FBI director Kash Patel's personal emails",
-          "source": "BBC World",
-          "url": "https://www.bbc.com/news/articles/cvgl4yk7vgpo?at_medium=RSS&at_campaign=rss",
-          "tier": "international",
+          "title": "At least 10 US troops wounded in Iranian strike in Saudi Arabia: Report",
+          "source": "Washington Examiner",
+          "url": "https://www.washingtonexaminer.com/news/world/4508105/us-troops-wounded-iran-strike-saudi-arabia/",
+          "tier": "national",
           "paywall": false,
-          "context": "Funded by the UK license fee and UK government grants for international service. British public broadcaster. Generally regarded as centrist by international standards."
+          "context": ""
         },
         {
-          "title": "Iran-linked hackers breach FBI director Kash Patel's personal email, publish photos and documents",
+          "title": "Iran strike wounds US troops and damages planes at Saudi airbase",
+          "source": "South China Morning Post",
+          "url": "https://www.scmp.com/news/world/middle-east/article/3348220/iran-strike-wounds-us-troops-and-damages-planes-saudi-airbase?utm_source=rss_feed",
+          "tier": "international",
+          "paywall": false,
+          "context": ""
+        },
+        {
+          "title": "Iran-Israel war LIVE: Israel military says striking 'regime targets' in Tehran; One killed in Tel Aviv amid Iranian miss",
           "source": "The Hindu",
-          "url": "https://www.thehindu.com/news/international/iran-linked-hackers-breach-fbi-director-kash-patels-personal-email-publish-photos-and-documents/article70795233.ece",
+          "url": "https://www.thehindu.com/news/international/iran-israel-us-war-west-asia-conflict-strait-of-hormuz-attacks-march-28-2026/article70795241.ece",
           "tier": "international",
           "paywall": false,
           "context": ""
         },
         {
-          "title": "FBI responds to Iran-backed group’s hacking of Director Kash Patel’s personal email",
+          "title": "Iran war: US troops wounded in strike on Saudi base",
+          "source": "Deutsche Welle",
+          "url": "https://www.dw.com/en/iran-war-us-troops-wounded-in-strike-on-saudi-base/live-76573681?maca=en-rss-en-all-1573-rdf",
+          "tier": "international",
+          "paywall": false,
+          "context": ""
+        },
+        {
+          "title": "Iranian strike on Saudi Arabia base injures 12 US troops, 2 seriously wounded",
           "source": "Times of India",
-          "url": "https://timesofindia.indiatimes.com/technology/tech-news/fbi-responds-to-iran-backed-groups-hacking-of-director-kash-patels-personal-email-the-information-in-question-is-/articleshow/129851644.cms",
+          "url": "https://timesofindia.indiatimes.com/world/us/iranian-strike-on-saudi-arabia-base-injures-12-us-troops-2-seriously-wounded/articleshow/129858060.cms",
           "tier": "international",
           "paywall": false,
           "context": ""
