@@ -1,0 +1,904 @@
+{
+  "date": "2026-03-28",
+  "generated": "2026-03-28T02:17:27Z",
+  "summary": {
+    "total_stories": 615,
+    "sources_reporting": 71,
+    "cross_domain": 253,
+    "top_domain": "Security"
+  },
+  "narrative_divergence": [
+    {
+      "topic": "Politics + Security",
+      "theme": "Military and defense issues in political campaigns",
+      "source_count": 29,
+      "articles": [
+        {
+          "title": "At CPAC, the ‘America First’ Crowd Ponders Giving War a Chance",
+          "source": "New York Times",
+          "url": "https://www.nytimes.com/2026/03/27/us/politics/cpac-trump-iran-war.html",
+          "paywall": false,
+          "connection": "Covers both domestic_politics and security"
+        },
+        {
+          "title": "Pro-Iranian hacking group claims credit for hack of FBI Director Kash Patel’s personal account",
+          "source": "AP News",
+          "url": "https://apnews.com/article/patel-iran-hacking-cyberscurity-9237ca30d1c85f237d7d83e6798d97f0",
+          "paywall": false,
+          "connection": "Covers both domestic_politics and security"
+        },
+        {
+          "title": "Defense Secretary Hegseth intervened to stop promotions of Black and female officers",
+          "source": "NPR",
+          "url": "https://www.npr.org/2026/03/27/nx-s1-5763863/hegseth-soldiers-promotions",
+          "paywall": false,
+          "connection": "Covers both domestic_politics and security"
+        },
+        {
+          "title": "Trump Repeats Call to Fully Open Strait of Hormuz",
+          "source": "Bloomberg",
+          "url": "https://www.bloomberg.com/news/videos/2026-03-27/trump-repeats-call-to-fully-open-strait-of-hormuz-video",
+          "paywall": false,
+          "connection": "Covers both domestic_politics and security"
+        },
+        {
+          "title": "Iran-backed hackers breach FBI director Kash Patel's personal emails",
+          "source": "BBC World",
+          "url": "https://www.bbc.com/news/articles/cvgl4yk7vgpo?at_medium=RSS&at_campaign=rss",
+          "paywall": false,
+          "connection": "Covers both domestic_politics and security"
+        }
+      ]
+    },
+    {
+      "topic": "Governance + Legal",
+      "theme": "Government actions running into the courts",
+      "source_count": 27,
+      "articles": [
+        {
+          "title": "Plot to firebomb Palestinian activist’s home disrupted by FBI and NYPD",
+          "source": "AP News",
+          "url": "https://apnews.com/article/fbi-nypd-nerdeen-kiswani-e8fa38819b4f65f830b26b640d44cd72",
+          "paywall": false,
+          "connection": "Covers both governance and legal"
+        },
+        {
+          "title": "Exclusive: US sends subpoenas in Warner-Paramount antitrust review as probe picks up steam - Reuters",
+          "source": "Reuters",
+          "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNbk5UU21MRVZ2UW9kMENwZ2dBY1NjSzRVbFYxMFlWbkJtUGZGc3U2QWdkZzA0bHJWYXhLWk0wekhRWS00Y0pjRjNHMHJIRExjZ051bkowMGc2RzVreWhBMTNFTjhWeHJXeVNvNjhLLWRQVXV5aFZaVk1VUHVKU0F2dlBoUEJsRngyTUhoQng0RmtxVEpxMTFxREg3V2pKNHZmYUZwQTI0Vkp2QmMtaVVTZWFEN3Q1QQ?oc=5",
+          "paywall": false,
+          "connection": "Covers both governance and legal"
+        },
+        {
+          "title": "The Justice Department plans to share sensitive voter data with Homeland Security",
+          "source": "NPR",
+          "url": "https://www.npr.org/2026/03/27/nx-s1-5764266/voter-data-trump-doj-dhs",
+          "paywall": false,
+          "connection": "Covers both governance and legal"
+        },
+        {
+          "title": "DHS confirms that Lewandowski left the department along with Noem",
+          "source": "Politico",
+          "url": "https://www.politico.com/news/2026/03/27/dhs-lewandowski-left-with-noem-00849313",
+          "paywall": false,
+          "connection": "Covers both governance and legal"
+        },
+        {
+          "title": "Labor to underwrite Australian fuel imports under new security powers to ensure supply",
+          "source": "The Guardian World",
+          "url": "https://www.theguardian.com/australia-news/2026/mar/28/anthony-albanese-chris-bowen-fuel-security-powers-oil-crisis-petrol-diesel-prices",
+          "paywall": false,
+          "connection": "Covers both governance and legal"
+        }
+      ]
+    },
+    {
+      "topic": "Politics + Governance",
+      "theme": "Political conflict over governance direction",
+      "source_count": 22,
+      "articles": [
+        {
+          "title": "Hegseth Strikes Two Black and Two Female Officers From Promotion List",
+          "source": "New York Times",
+          "url": "https://www.nytimes.com/2026/03/27/us/hegseth-promotion-list.html",
+          "paywall": false,
+          "connection": "Covers both domestic_politics and governance"
+        },
+        {
+          "title": "The Justice Department plans to share sensitive voter data with Homeland Security",
+          "source": "NPR",
+          "url": "https://www.npr.org/2026/03/27/nx-s1-5764266/voter-data-trump-doj-dhs",
+          "paywall": false,
+          "connection": "Covers both domestic_politics and governance"
+        },
+        {
+          "title": "Trump orders paycheques for TSA workers as Congress stalls and airport chaos grinds on",
+          "source": "BBC World",
+          "url": "https://www.bbc.com/news/articles/c33l4j03kr3o?at_medium=RSS&at_campaign=rss",
+          "paywall": false,
+          "connection": "Covers both domestic_politics and governance"
+        },
+        {
+          "title": "US Republicans reject Senate bill to end shutdown, fund TSA",
+          "source": "Deutsche Welle",
+          "url": "https://www.dw.com/en/us-republicans-reject-senate-bill-to-end-shutdown-fund-tsa/a-76564649?maca=en-rss-en-all-1573-rdf",
+          "paywall": false,
+          "connection": "Covers both domestic_politics and governance"
+        },
+        {
+          "title": "ECI suspends police officer for failing to tackle BJP-Trinamool Congress clashes",
+          "source": "The Hindu",
+          "url": "https://www.thehindu.com/elections/west-bengal-assembly/eci-suspends-police-officer-for-failing-to-tackle-bjp-trinamool-congress-clashes/article70793669.ece",
+          "paywall": false,
+          "connection": "Covers both domestic_politics and governance"
+        }
+      ]
+    },
+    {
+      "topic": "Economics + Security",
+      "theme": "Military spending and defense as economic activity",
+      "source_count": 19,
+      "articles": [
+        {
+          "title": "Stocks Keep Falling as Investor Lose Patience With the War in Iran",
+          "source": "New York Times",
+          "url": "https://www.nytimes.com/2026/03/27/business/iran-war-stock-market-investors.html",
+          "paywall": false,
+          "connection": "Covers both economics and security"
+        },
+        {
+          "title": "Pro-Iranian hacking group claims credit for hack of FBI Director Kash Patel’s personal account",
+          "source": "AP News",
+          "url": "https://apnews.com/article/patel-iran-hacking-cyberscurity-9237ca30d1c85f237d7d83e6798d97f0",
+          "paywall": false,
+          "connection": "Covers both economics and security"
+        },
+        {
+          "title": "Wall St Week Ahead US jobs data to give economic view for war-gripped markets - Reuters",
+          "source": "Reuters",
+          "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQNnNRUHRHY1FOWDhhWld3MkhCOEdzTk1XRk9oUUZ1b0dKU0ZKVDBQeU50Z0VRMWg1RjJncGRrZFRwNk0yVURndWdmVTVYcVMxTjk5VkJaSmVBS0dmYVdOTjZkeFdkN0R2eHVFbllOV28taE5SX3AwZVlVdndHVTlRZXdjS1h6cXlfR1M3S3ppLXNtUE5ObGEwSENUa0otajgtOFdtNXprVllhSS12d194aDNySHBKUQ?oc=5",
+          "paywall": false,
+          "connection": "Covers both economics and security"
+        },
+        {
+          "title": "How long will the war last? No one knows, and it's making oil prices weird",
+          "source": "NPR",
+          "url": "https://www.npr.org/2026/03/27/nx-s1-5757946/oil-iran-war-markets-uncertainty",
+          "paywall": false,
+          "connection": "Covers both economics and security"
+        },
+        {
+          "title": "Wall Street Week | China’s Role in Iran War, Global Fertilizer Disruptions, Matcha’s Supply Problem",
+          "source": "Bloomberg",
+          "url": "https://www.bloomberg.com/news/videos/2026-03-27/wall-street-week-global-fertilizer-supply-disruptions-video",
+          "paywall": false,
+          "connection": "Covers both economics and security"
+        }
+      ]
+    },
+    {
+      "topic": "Politics + Legal",
+      "theme": "Courts and judges in political battles",
+      "source_count": 18,
+      "articles": [
+        {
+          "title": "The Justice Department plans to share sensitive voter data with Homeland Security",
+          "source": "NPR",
+          "url": "https://www.npr.org/2026/03/27/nx-s1-5764266/voter-data-trump-doj-dhs",
+          "paywall": false,
+          "connection": "Covers both domestic_politics and legal"
+        },
+        {
+          "title": "US Republicans reject Senate bill to end shutdown, fund TSA",
+          "source": "Deutsche Welle",
+          "url": "https://www.dw.com/en/us-republicans-reject-senate-bill-to-end-shutdown-fund-tsa/a-76564649?maca=en-rss-en-all-1573-rdf",
+          "paywall": false,
+          "connection": "Covers both domestic_politics and legal"
+        },
+        {
+          "title": "ECI suspends police officer for failing to tackle BJP-Trinamool Congress clashes",
+          "source": "The Hindu",
+          "url": "https://www.thehindu.com/elections/west-bengal-assembly/eci-suspends-police-officer-for-failing-to-tackle-bjp-trinamool-congress-clashes/article70793669.ece",
+          "paywall": false,
+          "connection": "Covers both domestic_politics and legal"
+        },
+        {
+          "title": "The sneaky way Trump’s lawyers are supercharging ICE",
+          "source": "Vox",
+          "url": "https://www.vox.com/politics/484131/trump-ice-mandatory-detention-minneapolis-supreme-court",
+          "paywall": false,
+          "connection": "Covers both domestic_politics and legal"
+        },
+        {
+          "title": "DOJ confirms FBI Director Kash Patel’s personal email was hacked",
+          "source": "Ars Technica",
+          "url": "https://arstechnica.com/tech-policy/2026/03/doj-confirms-fbi-director-kash-patels-personal-email-was-hacked/",
+          "paywall": false,
+          "connection": "Covers both domestic_politics and legal"
+        }
+      ]
+    },
+    {
+      "topic": "Politics + Economics",
+      "theme": "Economic issues driving political divisions",
+      "source_count": 17,
+      "articles": [
+        {
+          "title": "Pro-Iranian hacking group claims credit for hack of FBI Director Kash Patel’s personal account",
+          "source": "AP News",
+          "url": "https://apnews.com/article/patel-iran-hacking-cyberscurity-9237ca30d1c85f237d7d83e6798d97f0",
+          "paywall": false,
+          "connection": "Covers both domestic_politics and economics"
+        },
+        {
+          "title": "Trump tells farmers that tractor companies should lower prices - Reuters",
+          "source": "Reuters",
+          "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNSzlReHJhXzFrTlh4YzByQ2tJQV9IazRvNW1CNl9ScnhUNURnM3hwUE1WOVZFbU1wck9pNlZhanFyNHRGRC1qeHpsSkhocGFrMGRYZ2R2aVpybndEOXJLekUxbF9CeUxpYlRZTGhTVWJlNFAzNGduLU96WVR1WTZnbF85M0IyNTE5MzlzbURMQkMxN2ZjMmxuY3VJSnJSa3lERGI4QkxTbV9QcDVSSWpha0tJSQ?oc=5",
+          "paywall": false,
+          "connection": "Covers both domestic_politics and economics"
+        },
+        {
+          "title": "Market Priced for Risk, Not Disruption: Fmr. WH Advisor",
+          "source": "Bloomberg",
+          "url": "https://www.bloomberg.com/news/videos/2026-03-27/market-priced-for-risk-not-disruption-fmr-wh-advisor-video",
+          "paywall": false,
+          "connection": "Covers both domestic_politics and economics"
+        },
+        {
+          "title": "US Republicans reject Senate bill to end shutdown, fund TSA",
+          "source": "Deutsche Welle",
+          "url": "https://www.dw.com/en/us-republicans-reject-senate-bill-to-end-shutdown-fund-tsa/a-76564649?maca=en-rss-en-all-1573-rdf",
+          "paywall": false,
+          "connection": "Covers both domestic_politics and economics"
+        },
+        {
+          "title": "Trump administration sidelines, threatens Europe in Iran war: EU flounders in new world order",
+          "source": "France 24",
+          "url": "https://www.france24.com/en/tv-shows/talking-europe/20260327-trump-administration-sidelines-threatens-europe-in-iran-war-eu-flounders-in-new-world-order",
+          "paywall": false,
+          "connection": "Covers both domestic_politics and economics"
+        }
+      ]
+    },
+    {
+      "topic": "Governance + Security",
+      "theme": "Military strategy and defense policy",
+      "source_count": 16,
+      "articles": [
+        {
+          "title": "Hegseth Strikes Two Black and Two Female Officers From Promotion List",
+          "source": "New York Times",
+          "url": "https://www.nytimes.com/2026/03/27/us/hegseth-promotion-list.html",
+          "paywall": false,
+          "connection": "Covers both governance and security"
+        },
+        {
+          "title": "California bans officials from using inside knowledge to bet on prediction markets - Reuters",
+          "source": "Reuters",
+          "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNT3RGc1RlQjRIdkdVRjQyX3VGdXh4clNTTEJQOUktMEN6SlRhYlJhbWlLeXA4TlJFZlVLekRhNDhMMDZublNoWDdUZGZCTjJYbHJBZGFGRUhUcVdINV9MblM3Zk02Q3dJZ0F2MDJURFEyQWFVbDd2YklHZ05FbjdmenRVbzg2d0pRMVIxUWhfV2J0Q1ltMDZtU2p5XzNuTjVjb1pKNGFkZVB4eW9HVXlfMmRTd25yTHdHWUVhMFlQZ2xMQQ?oc=5",
+          "paywall": false,
+          "connection": "Covers both governance and security"
+        },
+        {
+          "title": "Man arrested in plot to firebomb Palestinian activist's home after undercover op",
+          "source": "NPR",
+          "url": "https://www.npr.org/2026/03/27/g-s1-115549/new-york-gaza-firebomb-home-plot-activist",
+          "paywall": false,
+          "connection": "Covers both governance and security"
+        },
+        {
+          "title": "Austria becomes latest to propose social media ban for children",
+          "source": "BBC World",
+          "url": "https://www.bbc.com/news/articles/cwyv70de9exo?at_medium=RSS&at_campaign=rss",
+          "paywall": false,
+          "connection": "Covers both governance and security"
+        },
+        {
+          "title": "Labor to underwrite Australian fuel imports under new security powers to ensure supply",
+          "source": "The Guardian World",
+          "url": "https://www.theguardian.com/australia-news/2026/mar/28/anthony-albanese-chris-bowen-fuel-security-powers-oil-crisis-petrol-diesel-prices",
+          "paywall": false,
+          "connection": "Covers both governance and security"
+        }
+      ]
+    },
+    {
+      "topic": "Climate + Security",
+      "theme": "Climate as security and geopolitical issue",
+      "source_count": 15,
+      "articles": [
+        {
+          "title": "Services firms feel the squeeze as oil rally from Iran war fails to spur drilling - Reuters",
+          "source": "Reuters",
+          "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNTjJUODdya25tZFRjSm8wVVFPVTlfd1FoeW1hVGdfNFMxMW1lMHIyRkNaM28wRzI3QjhuZWVUSnlNUTIyMGdZSl9DR3dtc1E3VzI2RGxMX2ZJYUxDdXFORGJ4NEgtbnMzYmZnOU9XLVJ6RHI1SjFuQTZDU0JMQlVxRVpLcEQydV9GS2w0YnFLTm9qN2JtU2FvdS1SRnM3THF4eVM2OEpQSnhYOEFIMk9MRW9hYnpYS00tLWc?oc=5",
+          "paywall": false,
+          "connection": "Covers both climate and security"
+        },
+        {
+          "title": "How long will the war last? No one knows, and it's making oil prices weird",
+          "source": "NPR",
+          "url": "https://www.npr.org/2026/03/27/nx-s1-5757946/oil-iran-war-markets-uncertainty",
+          "paywall": false,
+          "connection": "Covers both climate and security"
+        },
+        {
+          "title": "Wall Street Week | China’s Role in Iran War, Global Fertilizer Disruptions, Matcha’s Supply Problem",
+          "source": "Bloomberg",
+          "url": "https://www.bloomberg.com/news/videos/2026-03-27/wall-street-week-global-fertilizer-supply-disruptions-video",
+          "paywall": false,
+          "connection": "Covers both climate and security"
+        },
+        {
+          "title": "Grieving Iranian mother tells UN about children before school attack",
+          "source": "Al Jazeera",
+          "url": "https://www.aljazeera.com/video/newsfeed/2026/3/27/grieving-iranian-mother-tells-un-about-children-before-school-attack?traffic_source=rss",
+          "paywall": false,
+          "connection": "Covers both climate and security"
+        },
+        {
+          "title": "Iran war: Israel hits Iranian heavy water nuclear reactor",
+          "source": "Deutsche Welle",
+          "url": "https://www.dw.com/en/iran-war-israel-hits-iranian-heavy-water-nuclear-reactor/live-76555531?maca=en-rss-en-all-1573-rdf",
+          "paywall": false,
+          "connection": "Covers both climate and security"
+        }
+      ]
+    },
+    {
+      "topic": "Legal + Security",
+      "theme": "legal and security intersection",
+      "source_count": 14,
+      "articles": [
+        {
+          "title": "After Being Struck by Air Canada Plane, Last Firefighter Is Released From Hospital",
+          "source": "New York Times",
+          "url": "https://www.nytimes.com/2026/03/27/nyregion/laguardia-firefighters-truck-air-canada.html",
+          "paywall": false,
+          "connection": "Covers both legal and security"
+        },
+        {
+          "title": "Exclusive: US sends subpoenas in Warner-Paramount antitrust review as probe picks up steam - Reuters",
+          "source": "Reuters",
+          "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNbk5UU21MRVZ2UW9kMENwZ2dBY1NjSzRVbFYxMFlWbkJtUGZGc3U2QWdkZzA0bHJWYXhLWk0wekhRWS00Y0pjRjNHMHJIRExjZ051bkowMGc2RzVreWhBMTNFTjhWeHJXeVNvNjhLLWRQVXV5aFZaVk1VUHVKU0F2dlBoUEJsRngyTUhoQng0RmtxVEpxMTFxREg3V2pKNHZmYUZwQTI0Vkp2QmMtaVVTZWFEN3Q1QQ?oc=5",
+          "paywall": false,
+          "connection": "Covers both legal and security"
+        },
+        {
+          "title": "Defense Secretary Hegseth intervened to stop promotions of Black and female officers",
+          "source": "NPR",
+          "url": "https://www.npr.org/2026/03/27/nx-s1-5763863/hegseth-soldiers-promotions",
+          "paywall": false,
+          "connection": "Covers both legal and security"
+        },
+        {
+          "title": "Labor to underwrite Australian fuel imports under new security powers to ensure supply",
+          "source": "The Guardian World",
+          "url": "https://www.theguardian.com/australia-news/2026/mar/28/anthony-albanese-chris-bowen-fuel-security-powers-oil-crisis-petrol-diesel-prices",
+          "paywall": false,
+          "connection": "Covers both legal and security"
+        },
+        {
+          "title": "Canada’s Bill C-12 an ‘attack on refugee, migrant rights’: Advocates",
+          "source": "Al Jazeera",
+          "url": "https://www.aljazeera.com/news/2026/3/27/canadas-bill-c-12-an-attack-on-refugee-migrant-rights-advocates?traffic_source=rss",
+          "paywall": false,
+          "connection": "Covers both legal and security"
+        }
+      ]
+    },
+    {
+      "topic": "Information + Security",
+      "theme": "War coverage and narrative control",
+      "source_count": 13,
+      "articles": [
+        {
+          "title": "Research points to how companies could make social media less addictive for teens",
+          "source": "NPR",
+          "url": "https://www.npr.org/2026/03/27/nx-s1-5763017/social-media-teens-addictive-design",
+          "paywall": false,
+          "connection": "Covers both information and security"
+        },
+        {
+          "title": "Wall Street Week | China’s Role in Iran War, Global Fertilizer Disruptions, Matcha’s Supply Problem",
+          "source": "Bloomberg",
+          "url": "https://www.bloomberg.com/news/videos/2026-03-27/wall-street-week-global-fertilizer-supply-disruptions-video",
+          "paywall": false,
+          "connection": "Covers both information and security"
+        },
+        {
+          "title": "Austria becomes latest to propose social media ban for children",
+          "source": "BBC World",
+          "url": "https://www.bbc.com/news/articles/cwyv70de9exo?at_medium=RSS&at_campaign=rss",
+          "paywall": false,
+          "connection": "Covers both information and security"
+        },
+        {
+          "title": "Austria plans to ban social media for under-14s",
+          "source": "Deutsche Welle",
+          "url": "https://www.dw.com/en/austria-plans-to-ban-social-media-for-under-14s/a-76571330?maca=en-rss-en-all-1573-rdf",
+          "paywall": false,
+          "connection": "Covers both information and security"
+        },
+        {
+          "title": "Why Pakistan has emerged as a mediator between US and Iran",
+          "source": "France 24",
+          "url": "https://www.france24.com/en/video/20260327-why-pakistan-has-emerged-as-a-mediator-between-us-and-iran",
+          "paywall": false,
+          "connection": "Covers both information and security"
+        }
+      ]
+    }
+  ],
+  "collision_threads": [
+    {
+      "pair": [
+        "domestic_politics",
+        "security"
+      ],
+      "label": "Politics + Security",
+      "explanation": "Military and defense issues in political campaigns",
+      "count": 105,
+      "today_count": 52,
+      "trend": "rising",
+      "sample_articles": [
+        {
+          "title": "At CPAC, the ‘America First’ Crowd Ponders Giving War a Chance",
+          "source": "New York Times",
+          "url": "https://www.nytimes.com/2026/03/27/us/politics/cpac-trump-iran-war.html"
+        },
+        {
+          "title": "Hegseth Strikes Two Black and Two Female Officers From Promotion List",
+          "source": "New York Times",
+          "url": "https://www.nytimes.com/2026/03/27/us/hegseth-promotion-list.html"
+        },
+        {
+          "title": "Kash Patel’s Emails Circulate Online as Iran Takes Responsibility for Release",
+          "source": "New York Times",
+          "url": "https://www.nytimes.com/2026/03/27/us/fbi-director-kash-patel-hacked-email-iran.html"
+        }
+      ]
+    },
+    {
+      "pair": [
+        "governance",
+        "legal"
+      ],
+      "label": "Governance + Legal",
+      "explanation": "Government actions running into the courts",
+      "count": 130,
+      "today_count": 47,
+      "trend": "rising",
+      "sample_articles": [
+        {
+          "title": "Plot to firebomb Palestinian activist’s home disrupted by FBI and NYPD",
+          "source": "AP News",
+          "url": "https://apnews.com/article/fbi-nypd-nerdeen-kiswani-e8fa38819b4f65f830b26b640d44cd72"
+        },
+        {
+          "title": "Exclusive: US sends subpoenas in Warner-Paramount antitrust review as probe pick",
+          "source": "Reuters",
+          "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNbk5UU21MRVZ2UW9kMENwZ2dBY1NjSzRVbFYxMFlWbkJtUGZGc3U2QWdkZzA0bHJWYXhLWk0wekhRWS00Y0pjRjNHMHJIRExjZ051bkowMGc2RzVreWhBMTNFTjhWeHJXeVNvNjhLLWRQVXV5aFZaVk1VUHVKU0F2dlBoUEJsRngyTUhoQng0RmtxVEpxMTFxREg3V2pKNHZmYUZwQTI0Vkp2QmMtaVVTZWFEN3Q1QQ?oc=5"
+        },
+        {
+          "title": "The Justice Department plans to share sensitive voter data with Homeland Securit",
+          "source": "NPR",
+          "url": "https://www.npr.org/2026/03/27/nx-s1-5764266/voter-data-trump-doj-dhs"
+        }
+      ]
+    },
+    {
+      "pair": [
+        "domestic_politics",
+        "governance"
+      ],
+      "label": "Politics + Governance",
+      "explanation": "Political conflict over governance direction",
+      "count": 100,
+      "today_count": 40,
+      "trend": "rising",
+      "sample_articles": [
+        {
+          "title": "Hegseth Strikes Two Black and Two Female Officers From Promotion List",
+          "source": "New York Times",
+          "url": "https://www.nytimes.com/2026/03/27/us/hegseth-promotion-list.html"
+        },
+        {
+          "title": "Hasan Piker Rallies Spark Backlash in Michigan’s Democratic Senate Primary",
+          "source": "New York Times",
+          "url": "https://www.nytimes.com/2026/03/27/us/politics/elsayed-piker-michigan-rally-backlash.html"
+        },
+        {
+          "title": "The Justice Department plans to share sensitive voter data with Homeland Securit",
+          "source": "NPR",
+          "url": "https://www.npr.org/2026/03/27/nx-s1-5764266/voter-data-trump-doj-dhs"
+        }
+      ]
+    },
+    {
+      "pair": [
+        "economics",
+        "security"
+      ],
+      "label": "Economics + Security",
+      "explanation": "Military spending and defense as economic activity",
+      "count": 75,
+      "today_count": 33,
+      "trend": "rising",
+      "sample_articles": [
+        {
+          "title": "Stocks Keep Falling as Investor Lose Patience With the War in Iran",
+          "source": "New York Times",
+          "url": "https://www.nytimes.com/2026/03/27/business/iran-war-stock-market-investors.html"
+        },
+        {
+          "title": "The Iran War Has Diesel Prices Soaring, and Consumers Could Pay the Price",
+          "source": "New York Times",
+          "url": "https://www.nytimes.com/2026/03/27/business/diesel-prices-inflation-consumer-prices.html"
+        },
+        {
+          "title": "Pro-Iranian hacking group claims credit for hack of FBI Director Kash Patel’s pe",
+          "source": "AP News",
+          "url": "https://apnews.com/article/patel-iran-hacking-cyberscurity-9237ca30d1c85f237d7d83e6798d97f0"
+        }
+      ]
+    },
+    {
+      "pair": [
+        "domestic_politics",
+        "legal"
+      ],
+      "label": "Politics + Legal",
+      "explanation": "Courts and judges in political battles",
+      "count": 69,
+      "today_count": 31,
+      "trend": "rising",
+      "sample_articles": [
+        {
+          "title": "The Justice Department plans to share sensitive voter data with Homeland Securit",
+          "source": "NPR",
+          "url": "https://www.npr.org/2026/03/27/nx-s1-5764266/voter-data-trump-doj-dhs"
+        },
+        {
+          "title": "Defense Secretary Hegseth intervened to stop promotions of Black and female offi",
+          "source": "NPR",
+          "url": "https://www.npr.org/2026/03/27/nx-s1-5763863/hegseth-soldiers-promotions"
+        },
+        {
+          "title": "US Republicans reject Senate bill to end shutdown, fund TSA",
+          "source": "Deutsche Welle",
+          "url": "https://www.dw.com/en/us-republicans-reject-senate-bill-to-end-shutdown-fund-tsa/a-76564649?maca=en-rss-en-all-1573-rdf"
+        }
+      ]
+    },
+    {
+      "pair": [
+        "climate",
+        "security"
+      ],
+      "label": "Climate + Security",
+      "explanation": "Climate as security and geopolitical issue",
+      "count": 80,
+      "today_count": 27,
+      "trend": "rising",
+      "sample_articles": [
+        {
+          "title": "Services firms feel the squeeze as oil rally from Iran war fails to spur drillin",
+          "source": "Reuters",
+          "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNTjJUODdya25tZFRjSm8wVVFPVTlfd1FoeW1hVGdfNFMxMW1lMHIyRkNaM28wRzI3QjhuZWVUSnlNUTIyMGdZSl9DR3dtc1E3VzI2RGxMX2ZJYUxDdXFORGJ4NEgtbnMzYmZnOU9XLVJ6RHI1SjFuQTZDU0JMQlVxRVpLcEQydV9GS2w0YnFLTm9qN2JtU2FvdS1SRnM3THF4eVM2OEpQSnhYOEFIMk9MRW9hYnpYS00tLWc?oc=5"
+        },
+        {
+          "title": "Exclusive: US sends subpoenas in Warner-Paramount antitrust review as probe pick",
+          "source": "Reuters",
+          "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNbk5UU21MRVZ2UW9kMENwZ2dBY1NjSzRVbFYxMFlWbkJtUGZGc3U2QWdkZzA0bHJWYXhLWk0wekhRWS00Y0pjRjNHMHJIRExjZ051bkowMGc2RzVreWhBMTNFTjhWeHJXeVNvNjhLLWRQVXV5aFZaVk1VUHVKU0F2dlBoUEJsRngyTUhoQng0RmtxVEpxMTFxREg3V2pKNHZmYUZwQTI0Vkp2QmMtaVVTZWFEN3Q1QQ?oc=5"
+        },
+        {
+          "title": "How long will the war last? No one knows, and it's making oil prices weird",
+          "source": "NPR",
+          "url": "https://www.npr.org/2026/03/27/nx-s1-5757946/oil-iran-war-markets-uncertainty"
+        }
+      ]
+    },
+    {
+      "pair": [
+        "governance",
+        "security"
+      ],
+      "label": "Governance + Security",
+      "explanation": "Military strategy and defense policy",
+      "count": 75,
+      "today_count": 23,
+      "trend": "rising",
+      "sample_articles": [
+        {
+          "title": "Hegseth Strikes Two Black and Two Female Officers From Promotion List",
+          "source": "New York Times",
+          "url": "https://www.nytimes.com/2026/03/27/us/hegseth-promotion-list.html"
+        },
+        {
+          "title": "California bans officials from using inside knowledge to bet on prediction marke",
+          "source": "Reuters",
+          "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNT3RGc1RlQjRIdkdVRjQyX3VGdXh4clNTTEJQOUktMEN6SlRhYlJhbWlLeXA4TlJFZlVLekRhNDhMMDZublNoWDdUZGZCTjJYbHJBZGFGRUhUcVdINV9MblM3Zk02Q3dJZ0F2MDJURFEyQWFVbDd2YklHZ05FbjdmenRVbzg2d0pRMVIxUWhfV2J0Q1ltMDZtU2p5XzNuTjVjb1pKNGFkZVB4eW9HVXlfMmRTd25yTHdHWUVhMFlQZ2xMQQ?oc=5"
+        },
+        {
+          "title": "US judiciary withdraws new requirements for amicus brief disclosures - Reuters",
+          "source": "Reuters",
+          "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPMjdKZjhaSnhWcjl4MU5JN1dmUHdDSFNPb1lOZWk4UTBSWFB1c0p0c0VybmdmSFRmQ0FCTWVOWHQ4cUVoY0NHT0lza0hqcmExN3NaZlhtWFNBZEdEMi00aGZVanpjd1BtWEM3TnRjWnBkdEUyMzZRbE1aUHktYTFxQTd0cU9oXzgwU01SQTVlTzJPTk5YcnozUHp1c0JfYzhaR3NlV0I2dV9GMjNRWHBsMW1VZzRUTWV4?oc=5"
+        }
+      ]
+    },
+    {
+      "pair": [
+        "domestic_politics",
+        "economics"
+      ],
+      "label": "Politics + Economics",
+      "explanation": "Economic issues driving political divisions",
+      "count": 54,
+      "today_count": 22,
+      "trend": "rising",
+      "sample_articles": [
+        {
+          "title": "Pro-Iranian hacking group claims credit for hack of FBI Director Kash Patel’s pe",
+          "source": "AP News",
+          "url": "https://apnews.com/article/patel-iran-hacking-cyberscurity-9237ca30d1c85f237d7d83e6798d97f0"
+        },
+        {
+          "title": "Trump tells farmers that tractor companies should lower prices - Reuters",
+          "source": "Reuters",
+          "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNSzlReHJhXzFrTlh4YzByQ2tJQV9IazRvNW1CNl9ScnhUNURnM3hwUE1WOVZFbU1wck9pNlZhanFyNHRGRC1qeHpsSkhocGFrMGRYZ2R2aVpybndEOXJLekUxbF9CeUxpYlRZTGhTVWJlNFAzNGduLU96WVR1WTZnbF85M0IyNTE5MzlzbURMQkMxN2ZjMmxuY3VJSnJSa3lERGI4QkxTbV9QcDVSSWpha0tJSQ?oc=5"
+        },
+        {
+          "title": "Market Priced for Risk, Not Disruption: Fmr. WH Advisor",
+          "source": "Bloomberg",
+          "url": "https://www.bloomberg.com/news/videos/2026-03-27/market-priced-for-risk-not-disruption-fmr-wh-advisor-video"
+        }
+      ]
+    },
+    {
+      "pair": [
+        "geopolitics",
+        "security"
+      ],
+      "label": "Geopolitics + Security",
+      "explanation": "Military tensions and power dynamics between nations",
+      "count": 93,
+      "today_count": 19,
+      "trend": "rising",
+      "sample_articles": [
+        {
+          "title": "Wall Street Week | China’s Role in Iran War, Global Fertilizer Disruptions, Matc",
+          "source": "Bloomberg",
+          "url": "https://www.bloomberg.com/news/videos/2026-03-27/wall-street-week-global-fertilizer-supply-disruptions-video"
+        },
+        {
+          "title": "Trump says US-Israeli war on Iran creating a new Middle East",
+          "source": "Al Jazeera",
+          "url": "https://www.aljazeera.com/video/newsfeed/2026/3/28/trump-says-us-israeli-war-on-iran-creating-a-new-middle-east?traffic_source=rss"
+        },
+        {
+          "title": "Iran war live: Trump again slams NATO’s lack of support for war on Tehran",
+          "source": "Al Jazeera",
+          "url": "https://www.aljazeera.com/news/liveblog/2026/3/28/iran-war-live-trump-again-slams-natos-lack-of-support-for-war-on-tehran?traffic_source=rss"
+        }
+      ]
+    },
+    {
+      "pair": [
+        "climate",
+        "economics"
+      ],
+      "label": "Climate + Economics",
+      "explanation": "Costs and investments in climate transition",
+      "count": 49,
+      "today_count": 16,
+      "trend": "rising",
+      "sample_articles": [
+        {
+          "title": "Trump tells farmers that tractor companies should lower prices - Reuters",
+          "source": "Reuters",
+          "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNSzlReHJhXzFrTlh4YzByQ2tJQV9IazRvNW1CNl9ScnhUNURnM3hwUE1WOVZFbU1wck9pNlZhanFyNHRGRC1qeHpsSkhocGFrMGRYZ2R2aVpybndEOXJLekUxbF9CeUxpYlRZTGhTVWJlNFAzNGduLU96WVR1WTZnbF85M0IyNTE5MzlzbURMQkMxN2ZjMmxuY3VJSnJSa3lERGI4QkxTbV9QcDVSSWpha0tJSQ?oc=5"
+        },
+        {
+          "title": "Exclusive: US sends subpoenas in Warner-Paramount antitrust review as probe pick",
+          "source": "Reuters",
+          "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNbk5UU21MRVZ2UW9kMENwZ2dBY1NjSzRVbFYxMFlWbkJtUGZGc3U2QWdkZzA0bHJWYXhLWk0wekhRWS00Y0pjRjNHMHJIRExjZ051bkowMGc2RzVreWhBMTNFTjhWeHJXeVNvNjhLLWRQVXV5aFZaVk1VUHVKU0F2dlBoUEJsRngyTUhoQng0RmtxVEpxMTFxREg3V2pKNHZmYUZwQTI0Vkp2QmMtaVVTZWFEN3Q1QQ?oc=5"
+        },
+        {
+          "title": "How long will the war last? No one knows, and it's making oil prices weird",
+          "source": "NPR",
+          "url": "https://www.npr.org/2026/03/27/nx-s1-5757946/oil-iran-war-markets-uncertainty"
+        }
+      ]
+    },
+    {
+      "pair": [
+        "economics",
+        "legal"
+      ],
+      "label": "Economics + Legal",
+      "explanation": "Antitrust, merger review, and financial regulation",
+      "count": 39,
+      "today_count": 16,
+      "trend": "rising",
+      "sample_articles": [
+        {
+          "title": "EU and CPTPP agree to progress with \"historic\" digital trade deal, Canada's inte",
+          "source": "Reuters",
+          "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQMlFPa1FBMERsNGVGeEdfQlIxTlZIYTBaSzNJN3JzbzcyWlRTQXR5djFURkpkZHU5NlhtNDhlWGVTeGJzODBpZmd2S0FVZ2pWT0NjVFEzUHBud25WVlZERFIwMkxpcFVRU0JEMFdDek93VnVYbnZaWG85bjZtNFJJUDIwOXFubE52V0RkRFdEVW5Eb3JROE1FcTA4TEhBcmp1UXpEdEViQmFUeE95VGxmNjM5Rmk1OEJ5SDNBNUtYQ1RpVlpNa0NBUg?oc=5"
+        },
+        {
+          "title": "Exclusive: US sends subpoenas in Warner-Paramount antitrust review as probe pick",
+          "source": "Reuters",
+          "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNbk5UU21MRVZ2UW9kMENwZ2dBY1NjSzRVbFYxMFlWbkJtUGZGc3U2QWdkZzA0bHJWYXhLWk0wekhRWS00Y0pjRjNHMHJIRExjZ051bkowMGc2RzVreWhBMTNFTjhWeHJXeVNvNjhLLWRQVXV5aFZaVk1VUHVKU0F2dlBoUEJsRngyTUhoQng0RmtxVEpxMTFxREg3V2pKNHZmYUZwQTI0Vkp2QmMtaVVTZWFEN3Q1QQ?oc=5"
+        },
+        {
+          "title": "Kalshi Secures License to Offer Margin Trading to Pros",
+          "source": "Bloomberg",
+          "url": "https://www.bloomberg.com/news/articles/2026-03-27/kalshi-approved-for-margin-trading-as-it-lures-wall-street-pros"
+        }
+      ]
+    },
+    {
+      "pair": [
+        "information",
+        "security"
+      ],
+      "label": "Information + Security",
+      "explanation": "War coverage and narrative control",
+      "count": 62,
+      "today_count": 16,
+      "trend": "rising",
+      "sample_articles": [
+        {
+          "title": "Research points to how companies could make social media less addictive for teen",
+          "source": "NPR",
+          "url": "https://www.npr.org/2026/03/27/nx-s1-5763017/social-media-teens-addictive-design"
+        },
+        {
+          "title": "Wall Street Week | China’s Role in Iran War, Global Fertilizer Disruptions, Matc",
+          "source": "Bloomberg",
+          "url": "https://www.bloomberg.com/news/videos/2026-03-27/wall-street-week-global-fertilizer-supply-disruptions-video"
+        },
+        {
+          "title": "US Signals to Allies No Immediate Plans for Iran Invasion",
+          "source": "Bloomberg",
+          "url": "https://www.bloomberg.com/news/videos/2026-03-27/us-signals-to-allies-no-immediate-iran-invasion-plans-video"
+        }
+      ]
+    },
+    {
+      "pair": [
+        "legal",
+        "security"
+      ],
+      "label": "Legal + Security",
+      "explanation": "legal and security intersection",
+      "count": 57,
+      "today_count": 15,
+      "trend": "rising",
+      "sample_articles": [
+        {
+          "title": "After Being Struck by Air Canada Plane, Last Firefighter Is Released From Hospit",
+          "source": "New York Times",
+          "url": "https://www.nytimes.com/2026/03/27/nyregion/laguardia-firefighters-truck-air-canada.html"
+        },
+        {
+          "title": "Exclusive: US sends subpoenas in Warner-Paramount antitrust review as probe pick",
+          "source": "Reuters",
+          "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNbk5UU21MRVZ2UW9kMENwZ2dBY1NjSzRVbFYxMFlWbkJtUGZGc3U2QWdkZzA0bHJWYXhLWk0wekhRWS00Y0pjRjNHMHJIRExjZ051bkowMGc2RzVreWhBMTNFTjhWeHJXeVNvNjhLLWRQVXV5aFZaVk1VUHVKU0F2dlBoUEJsRngyTUhoQng0RmtxVEpxMTFxREg3V2pKNHZmYUZwQTI0Vkp2QmMtaVVTZWFEN3Q1QQ?oc=5"
+        },
+        {
+          "title": "Defense Secretary Hegseth intervened to stop promotions of Black and female offi",
+          "source": "NPR",
+          "url": "https://www.npr.org/2026/03/27/nx-s1-5763863/hegseth-soldiers-promotions"
+        }
+      ]
+    },
+    {
+      "pair": [
+        "domestic_politics",
+        "information"
+      ],
+      "label": "Politics + Information",
+      "explanation": "Media coverage of political campaigns and conflict",
+      "count": 28,
+      "today_count": 12,
+      "trend": "new",
+      "sample_articles": [
+        {
+          "title": "How Trump's approval has slid on key issues - Reuters",
+          "source": "Reuters",
+          "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPVGFaNEVPR2NPcThVaUV4OV96SmY3eDhlUzFQQ2JzUHRDRmpRMWhnZllVY2lxT19mT0t4ZmxtMS0wbFJnY2FQb0V0c3JVN0RvRl9vWTJhR1NraEU5QXV4ZEpUV1ZnSkV4OE9QWXpYckMteDBnQXJFaVQyUWJ2SDl1dWRFc01aSlkzci10UA?oc=5"
+        },
+        {
+          "title": "The White House has an app now, and Trump wants you to report people to ICE on i",
+          "source": "The Verge",
+          "url": "https://www.theverge.com/tech/902703/white-house-app-iphone-android"
+        },
+        {
+          "title": "WATCH: Trump goes viral for illustrating how to cut government waste with his fa",
+          "source": "Fox News",
+          "url": "https://www.foxnews.com/politics/watch-trump-goes-viral-illustrating-how-cut-government-waste-his-favorite-white-house-pen"
+        }
+      ]
+    },
+    {
+      "pair": [
+        "domestic_politics",
+        "labor"
+      ],
+      "label": "Politics + Labor",
+      "explanation": "domestic_politics and labor intersection",
+      "count": 27,
+      "today_count": 12,
+      "trend": "new",
+      "sample_articles": [
+        {
+          "title": "Hegseth Strikes Two Black and Two Female Officers From Promotion List",
+          "source": "New York Times",
+          "url": "https://www.nytimes.com/2026/03/27/us/hegseth-promotion-list.html"
+        },
+        {
+          "title": "Trump orders paycheques for TSA workers as Congress stalls and airport chaos gri",
+          "source": "BBC World",
+          "url": "https://www.bbc.com/news/articles/c33l4j03kr3o?at_medium=RSS&at_campaign=rss"
+        },
+        {
+          "title": "House Republicans shoot down bill that would pay federal airport workers",
+          "source": "Al Jazeera",
+          "url": "https://www.aljazeera.com/news/2026/3/27/house-republicans-shoot-down-bill-that-would-pay-federal-airport-workers?traffic_source=rss"
+        }
+      ]
+    }
+  ],
+  "source_spectrum": {
+    "national": 277,
+    "international": 222,
+    "specialist": 9,
+    "explainer": 23,
+    "community": 78,
+    "analysis": 6
+  },
+  "emerging_signals": [
+    {
+      "description": "Politics + Security collision intensity elevated (52 articles today)",
+      "type": "trend",
+      "pair": [
+        "domestic_politics",
+        "security"
+      ]
+    },
+    {
+      "description": "Governance + Legal collision intensity elevated (47 articles today)",
+      "type": "trend",
+      "pair": [
+        "governance",
+        "legal"
+      ]
+    },
+    {
+      "description": "Politics + Governance collision intensity elevated (40 articles today)",
+      "type": "trend",
+      "pair": [
+        "domestic_politics",
+        "governance"
+      ]
+    },
+    {
+      "description": "Economics + Security collision intensity elevated (33 articles today)",
+      "type": "trend",
+      "pair": [
+        "economics",
+        "security"
+      ]
+    },
+    {
+      "description": "Politics + Legal collision intensity elevated (31 articles today)",
+      "type": "trend",
+      "pair": [
+        "domestic_politics",
+        "legal"
+      ]
+    }
+  ]
+}

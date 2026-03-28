@@ -79,3 +79,45 @@ Center for American Progress,https://news.google.com/rss/search?q=when:7d+site:a
 Chatham House,https://news.google.com/rss/search?q=when:7d+site:chathamhouse.org&hl=en-US,analysis,uk
 Heritage Foundation,https://news.google.com/rss/search?q=when:7d+site:heritage.org&hl=en-US,analysis,us
 Brookings,https://news.google.com/rss/search?q=when:7d+site:brookings.edu&hl=en-US,analysis,us
+Nikkei Asia,https://asia.nikkei.com/rss,international,japan
+Times of India,https://timesofindia.indiatimes.com/rssfeedstopstories.cms,international,india
+Kyiv Independent,https://kyivindependent.com/feed/,international,ukraine
+Haaretz,https://www.haaretz.com/srv/haaretz-latest-rss,international,israel
+The East African,https://www.theeastafrican.co.ke/tea/rss,international,africa
+Straits Times,https://www.straitstimes.com/news/world/rss.xml,international,singapore
+The Advocate,https://www.advocate.com/feed,community,us
+Jewish Telegraphic Agency,https://www.jta.org/feed,community,us
+Arab American News,https://www.arabamericannews.com/feed/,community,us
+Disability Scoop,https://www.disabilityscoop.com/feed/,community,us
+Military Times,https://www.militarytimes.com/arc/outboundfeeds/rss/?outputType=xml,community,us
+Daily Yonder,https://dailyyonder.com/feed/,community,us
+Scalawag,https://scalawagmagazine.org/feed/,community,us
+Honolulu Civil Beat,https://www.civilbeat.org/feed/,community,us
+Teen Vogue,https://www.teenvogue.com/feed/rss,community,us
+AsAmNews,https://asamnews.com/feed/,community,us
+The Forward,https://forward.com/feed/,community,us
+Sojourners,https://sojo.net/feed/articles/rss.xml,community,us
+National Catholic Reporter,https://www.ncronline.org/rss.xml,community,us
+The Imprint,https://imprintnews.org/feed,community,us
+Mississippi Free Press,https://www.mississippifreepress.org/feed,community,us
+Bolts Magazine,https://boltsmag.org/feed/,community,us
+Capital B News,https://capitalbnews.org/feed/,community,us
+Canopy Forum,https://canopyforum.org/feed/,community,us
+ICT News,https://news.google.com/rss/search?q=when:7d+site:ictnews.org&hl=en-US,community,us
+The Trace,https://www.thetrace.org/feed/,community,us
+Next City,https://nextcity.org/feed,community,us
+Prism,https://prismreports.org/feed/,community,us
+Borderland Beat,https://www.borderlandbeat.com/feeds/posts/default?alt=rss,community,us
+The Plug,https://tpinsights.com/feed/,community,us
+Inside Climate News,https://insideclimatenews.org/feed/,specialist,climate
+War on the Rocks,https://warontherocks.com/feed/,specialist,security
+Just Security,https://www.justsecurity.org/feed/,specialist,governance
+Inequality.org,https://inequality.org/feed/,specialist,economics
+The Intercept,https://theintercept.com/feed/?rss,specialist,governance
+Protocol Africa,https://news.google.com/rss/search?q=when:7d+site:africanews.com&hl=en-US,international,africa
+Rappler,https://www.rappler.com/feed/,international,philippines
+Meduza,https://meduza.io/rss/en/all,international,russia
+The Wire India,https://thewire.in/feed,international,india
+Cato Institute,https://www.cato.org/rss/recent-opeds.xml,analysis,us
+Manhattan Institute,https://www.manhattan-institute.org/feed,analysis,us
+Third Way,https://www.thirdway.org/feed,analysis,us

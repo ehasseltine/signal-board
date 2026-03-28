@@ -3,114 +3,153 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Signal Board shows how today's biggest news stories connect to each other in ways most coverage misses.">
+<meta name="description" content="Signal Board tracks how today's biggest stories connect across topics and sources. 80+ outlets, every perspective, updated daily.">
 <title>Signal Board</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg:#0a0a0a; --surface:#131316; --surface-hover:#1a1a1f;
-    --border:#1f1f25; --text:#e8e8e8; --text-dim:rgba(235,230,245,0.45);
-    --text-mid:rgba(235,230,245,0.7); --purple:#6652FF;
+    --bg:#0a0a0a; --surface:#111114; --surface-hover:#18181d;
+    --border:#1e1e24; --text:#e8e8e8; --text-dim:rgba(235,230,245,0.4);
+    --text-mid:rgba(235,230,245,0.65); --purple:#6652FF;
+    --ai:#6652FF; --labor:#FF5400; --governance:#FF0054; --information:#9E0059;
+    --economics:#00C2A8; --climate:#4CAF50; --security:#D32F2F;
+    --geopolitics:#1976D2; --domestic_politics:#7B1FA2; --legal:#FF9800;
   }
   *{margin:0;padding:0;box-sizing:border-box;}
   body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;line-height:1.6;-webkit-font-smoothing:antialiased;}
 
-  .wrap{max-width:720px;margin:0 auto;padding:0 1.5rem;}
+  .wrap{max-width:800px;margin:0 auto;padding:0 1.5rem;}
 
-  /* HEADER */
-  .hdr{text-align:center;padding-top:2.5rem;padding-bottom:1.2rem;}
-  .hdr h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(2rem,5vw,2.6rem);font-weight:700;letter-spacing:-0.04em;color:#fff;margin-bottom:0.35rem;}
-  .hdr p{color:var(--text-mid);font-size:0.92rem;max-width:460px;margin:0 auto;line-height:1.6;}
+  /* HEADER — big, bold, purposeful */
+  .hdr{padding:3rem 0 1.5rem;text-align:center;}
+  .hdr h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(2.8rem,6vw,3.4rem);font-weight:700;letter-spacing:-0.05em;color:#fff;line-height:1.05;}
+  .hdr .sub{color:var(--text-mid);font-size:1rem;margin-top:0.6rem;max-width:520px;margin-left:auto;margin-right:auto;line-height:1.65;}
 
-  /* COLOR BAR */
-  .bar{display:flex;height:12px;border-radius:6px;overflow:hidden;gap:2px;margin-bottom:0.3rem;}
-  .bar-s{border-radius:3px;cursor:pointer;transition:transform 0.2s,filter 0.2s;position:relative;}
-  .bar-s:hover{filter:brightness(1.3);transform:scaleY(1.6);z-index:2;}
-  .bar-tip{display:none;position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);background:#1c1c22;border:1px solid rgba(255,255,255,0.1);padding:0.4rem 0.65rem;border-radius:7px;font-size:0.7rem;white-space:nowrap;color:var(--text);z-index:100;pointer-events:none;box-shadow:0 6px 20px rgba(0,0,0,0.5);}
+  /* COLOR BAR — the heartbeat */
+  .bar-wrap{margin:1.5rem 0 0.5rem;}
+  .bar{display:flex;height:14px;border-radius:7px;overflow:hidden;gap:2px;}
+  .bar-s{border-radius:4px;cursor:pointer;transition:transform 0.2s,filter 0.2s;position:relative;}
+  .bar-s:hover{filter:brightness(1.3);transform:scaleY(1.8);z-index:2;}
+  .bar-tip{display:none;position:absolute;bottom:calc(100% + 10px);left:50%;transform:translateX(-50%);background:#1c1c22;border:1px solid rgba(255,255,255,0.08);padding:0.5rem 0.75rem;border-radius:8px;font-size:0.75rem;white-space:nowrap;color:#fff;z-index:100;pointer-events:none;box-shadow:0 8px 24px rgba(0,0,0,0.6);}
   .bar-tip::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);border:5px solid transparent;border-top-color:#1c1c22;}
   .bar-s:hover .bar-tip{display:block;}
 
-  .legend{display:flex;justify-content:center;gap:0.7rem;flex-wrap:wrap;margin-bottom:1.5rem;}
-  .leg{display:flex;align-items:center;gap:0.25rem;font-size:0.6rem;color:var(--text-dim);cursor:default;position:relative;}
-  .leg-d{width:5px;height:5px;border-radius:50%;}
-  .leg .tdef{display:none;position:absolute;bottom:calc(100% + 6px);left:50%;transform:translateX(-50%);background:#1c1c22;border:1px solid rgba(255,255,255,0.1);padding:0.4rem 0.6rem;border-radius:7px;font-size:0.66rem;line-height:1.4;color:var(--text);width:max-content;max-width:220px;z-index:100;pointer-events:none;box-shadow:0 6px 20px rgba(0,0,0,0.5);white-space:normal;}
-  .tdef::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);border:4px solid transparent;border-top-color:#1c1c22;}
+  .legend{display:flex;justify-content:center;gap:0.85rem;flex-wrap:wrap;padding:0.5rem 0 1.5rem;}
+  .leg{display:flex;align-items:center;gap:0.3rem;font-size:0.68rem;color:var(--text-dim);cursor:default;position:relative;transition:color 0.15s;}
+  .leg-d{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+  .leg .tdef{display:none;position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);background:#1c1c22;border:1px solid rgba(255,255,255,0.08);padding:0.5rem 0.7rem;border-radius:8px;font-size:0.72rem;line-height:1.5;color:var(--text);width:max-content;max-width:240px;z-index:100;pointer-events:none;box-shadow:0 8px 24px rgba(0,0,0,0.6);white-space:normal;}
+  .tdef::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);border:5px solid transparent;border-top-color:#1c1c22;}
   .leg:hover .tdef{display:block;}
   .leg:hover{color:#fff;}
 
-  /* TABS */
-  .tabs{display:flex;gap:0;border-bottom:1px solid var(--border);margin-bottom:1.5rem;}
-  .tab{padding:0.6rem 1rem;font-family:'Space Grotesk',sans-serif;font-size:0.78rem;font-weight:600;color:var(--text-dim);cursor:pointer;background:none;border:none;border-bottom:2px solid transparent;transition:all 0.15s;letter-spacing:-0.01em;}
-  .tab:hover{color:var(--text);}
+  /* TABS — oversized, easy, inviting */
+  .tabs{display:flex;gap:0;margin-bottom:0;border-bottom:2px solid var(--border);}
+  .tab{flex:1;padding:1.1rem 0.5rem;font-family:'Space Grotesk',sans-serif;font-size:1.05rem;font-weight:700;color:var(--text-dim);cursor:pointer;background:none;border:none;border-bottom:3px solid transparent;margin-bottom:-2px;transition:all 0.15s;letter-spacing:-0.02em;text-align:center;}
+  .tab:hover{color:var(--text);background:rgba(255,255,255,0.02);}
   .tab.on{color:#fff;border-bottom-color:var(--purple);}
-  .tab .badge{font-size:0.6rem;color:var(--text-dim);margin-left:0.3rem;font-weight:400;}
+  .tab .cnt{font-size:0.65rem;font-weight:500;color:var(--text-dim);margin-left:0.25rem;opacity:0.6;}
 
-  .panel{display:none;}
+  .panel{display:none;padding-top:1.8rem;}
   .panel.on{display:block;}
 
-  /* COLLISION CARDS */
-  .card{border-radius:12px;padding:1.1rem 1.2rem;margin-bottom:0.65rem;transition:transform 0.2s;overflow:hidden;}
-  .card:hover{transform:translateY(-2px);}
-  .card-h{display:flex;align-items:center;gap:0.35rem;margin-bottom:0.12rem;}
-  .card-h .dn{font-family:'Space Grotesk',sans-serif;font-size:0.9rem;font-weight:700;}
-  .card-h .x{font-size:0.65rem;color:rgba(255,255,255,0.2);font-weight:700;}
-  .card-h .ct{margin-left:auto;font-size:0.55rem;color:rgba(255,255,255,0.28);font-family:'Space Grotesk',sans-serif;font-weight:600;background:rgba(255,255,255,0.05);padding:0.1rem 0.4rem;border-radius:100px;}
-  .card-w{font-size:0.78rem;color:rgba(255,255,255,0.45);margin-bottom:0.7rem;line-height:1.5;}
-  .card-a{display:block;text-decoration:none;color:inherit;padding:0.45rem 0.55rem;background:rgba(0,0,0,0.22);border-radius:7px;border:1px solid rgba(255,255,255,0.03);margin-bottom:0.35rem;transition:background 0.12s,transform 0.12s;}
-  .card-a:hover{background:rgba(0,0,0,0.38);transform:translateX(2px);}
-  .card-at{font-size:0.78rem;color:rgba(255,255,255,0.86);line-height:1.38;font-weight:500;}
-  .card-ac{font-size:0.65rem;color:rgba(255,255,255,0.38);margin-top:0.08rem;font-style:italic;}
-  .card-as{font-size:0.58rem;color:rgba(255,255,255,0.25);margin-top:0.06rem;}
-  .pw{font-size:0.5rem;color:rgba(255,255,255,0.3);background:rgba(255,255,255,0.06);padding:0.06rem 0.3rem;border-radius:100px;margin-left:0.3rem;font-weight:600;letter-spacing:0.02em;vertical-align:middle;}
+  /* SECTION INTROS */
+  .sec-intro{font-size:0.95rem;color:var(--text-mid);margin-bottom:1.5rem;line-height:1.7;max-width:600px;}
 
-  /* RADAR */
-  .ri{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:0.9rem 1.1rem;margin-bottom:0.5rem;text-decoration:none;color:inherit;display:block;transition:transform 0.15s,border-color 0.15s;}
-  .ri:hover{transform:translateY(-1px);border-color:rgba(255,255,255,0.08);}
-  .ri-tags{display:flex;gap:0.2rem;margin-bottom:0.35rem;flex-wrap:wrap;}
-  .ri-tag{padding:0.1rem 0.45rem;border-radius:100px;font-size:0.55rem;font-weight:700;color:rgba(0,0,0,0.9);text-transform:uppercase;letter-spacing:0.03em;}
-  .ri-t{font-size:0.85rem;font-weight:600;line-height:1.36;margin-bottom:0.15rem;}
-  .ri-c{font-size:0.74rem;color:var(--purple);font-weight:500;margin-bottom:0.2rem;line-height:1.4;}
-  .ri-s{font-size:0.62rem;color:var(--text-dim);}
+  /* TODAY'S UPDATES - the daily blog panel */
+  .daily-date{font-family:'Space Grotesk',sans-serif;font-size:0.75rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.4rem;}
+  .daily-headline{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.4rem,3.5vw,1.8rem);font-weight:700;color:#fff;letter-spacing:-0.03em;line-height:1.2;margin-bottom:1.2rem;}
+
+  /* DIVERGENCE BLOCKS */
+  .diverge{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.4rem 1.5rem;margin-bottom:1rem;transition:border-color 0.15s;}
+  .diverge:hover{border-color:rgba(255,255,255,0.08);}
+  .diverge-label{font-family:'Space Grotesk',sans-serif;font-size:0.65rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--purple);font-weight:700;margin-bottom:0.6rem;}
+  .diverge-topic{font-family:'Space Grotesk',sans-serif;font-size:1.15rem;font-weight:700;color:#fff;letter-spacing:-0.02em;margin-bottom:0.5rem;}
+  .diverge-desc{font-size:0.85rem;color:var(--text-mid);line-height:1.65;margin-bottom:1rem;}
+  .diverge-sources{display:flex;flex-direction:column;gap:0.5rem;}
+  .dv-src{display:flex;align-items:flex-start;gap:0.75rem;padding:0.7rem 0.85rem;background:rgba(0,0,0,0.25);border-radius:10px;text-decoration:none;color:inherit;transition:background 0.12s,transform 0.12s;border:1px solid rgba(255,255,255,0.03);}
+  .dv-src:hover{background:rgba(0,0,0,0.45);transform:translateX(3px);}
+  .dv-src-name{font-size:0.72rem;font-weight:700;color:var(--text-mid);min-width:90px;flex-shrink:0;padding-top:0.05rem;}
+  .dv-src-title{font-size:0.82rem;color:rgba(255,255,255,0.85);line-height:1.4;font-weight:500;}
+  .dv-src-meta{font-size:0.62rem;color:var(--text-dim);margin-top:0.15rem;}
+  .pw{font-size:0.52rem;color:rgba(255,255,255,0.3);background:rgba(255,255,255,0.06);padding:0.08rem 0.35rem;border-radius:100px;margin-left:0.25rem;font-weight:600;letter-spacing:0.02em;vertical-align:middle;}
+
+  /* COLLISION CARDS — reimagined */
+  .collision{background:var(--surface);border-radius:14px;padding:1.3rem 1.4rem;margin-bottom:0.75rem;border:1px solid var(--border);transition:border-color 0.15s,transform 0.15s;}
+  .collision:hover{border-color:rgba(255,255,255,0.08);transform:translateY(-1px);}
+  .coll-pair{display:flex;align-items:center;gap:0.4rem;margin-bottom:0.2rem;}
+  .coll-pair .dn{font-family:'Space Grotesk',sans-serif;font-size:1rem;font-weight:700;}
+  .coll-pair .x{font-size:0.7rem;color:rgba(255,255,255,0.15);font-weight:700;}
+  .coll-pair .ct{margin-left:auto;font-family:'Space Grotesk',sans-serif;font-size:0.85rem;font-weight:700;color:rgba(255,255,255,0.2);}
+  .coll-why{font-size:0.82rem;color:var(--text-dim);margin-bottom:0.85rem;line-height:1.55;}
+  .coll-article{display:block;text-decoration:none;color:inherit;padding:0.6rem 0.75rem;background:rgba(0,0,0,0.2);border-radius:9px;border:1px solid rgba(255,255,255,0.03);margin-bottom:0.35rem;transition:background 0.12s,transform 0.12s;}
+  .coll-article:hover{background:rgba(0,0,0,0.4);transform:translateX(3px);}
+  .coll-article-t{font-size:0.82rem;color:rgba(255,255,255,0.85);line-height:1.4;font-weight:500;}
+  .coll-article-c{font-size:0.72rem;color:var(--purple);margin-top:0.1rem;line-height:1.4;font-weight:500;}
+  .coll-article-s{font-size:0.62rem;color:var(--text-dim);margin-top:0.1rem;}
+
+  /* THREAD TRACKER */
+  .thread{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.3rem 1.4rem;margin-bottom:0.75rem;}
+  .thread-label{font-family:'Space Grotesk',sans-serif;font-size:0.65rem;text-transform:uppercase;letter-spacing:0.1em;font-weight:700;margin-bottom:0.5rem;}
+  .thread-title{font-family:'Space Grotesk',sans-serif;font-size:1.05rem;font-weight:700;color:#fff;letter-spacing:-0.02em;margin-bottom:0.3rem;}
+  .thread-count{font-size:0.8rem;color:var(--text-dim);margin-bottom:0.65rem;}
+  .thread-bar{height:8px;border-radius:4px;overflow:hidden;display:flex;gap:1px;margin-bottom:0.6rem;}
+  .thread-bar-s{border-radius:3px;transition:filter 0.15s;min-width:4px;}
+  .thread-articles{display:flex;flex-direction:column;gap:0.25rem;}
+  .thread-a{display:block;text-decoration:none;padding:0.45rem 0.65rem;background:rgba(0,0,0,0.2);border-radius:8px;border:1px solid rgba(255,255,255,0.03);transition:background 0.12s;}
+  .thread-a:hover{background:rgba(0,0,0,0.4);}
+  .thread-a-t{font-size:0.78rem;color:rgba(255,255,255,0.85);font-weight:500;line-height:1.35;}
+  .thread-a-s{font-size:0.6rem;color:var(--text-dim);margin-top:0.06rem;}
 
   /* ALL STORIES FEED */
-  .chips{display:flex;gap:0.3rem;flex-wrap:wrap;margin-bottom:1rem;}
-  .chip{padding:0.35rem 0.75rem;border-radius:100px;border:1px solid var(--border);background:none;color:var(--text-dim);font-family:'Space Grotesk',sans-serif;font-size:0.7rem;font-weight:600;cursor:pointer;transition:all 0.15s;display:flex;align-items:center;gap:0.3rem;}
+  .chips{display:flex;gap:0.4rem;flex-wrap:wrap;margin-bottom:1.2rem;}
+  .chip{padding:0.5rem 1rem;border-radius:100px;border:1px solid var(--border);background:none;color:var(--text-dim);font-family:'Space Grotesk',sans-serif;font-size:0.78rem;font-weight:600;cursor:pointer;transition:all 0.15s;display:flex;align-items:center;gap:0.35rem;}
   .chip:hover{border-color:rgba(255,255,255,0.15);color:var(--text);}
   .chip.on{color:#fff;}
-  .chip-d{width:6px;height:6px;border-radius:50%;}
-  .fi{display:grid;grid-template-columns:1fr auto;gap:0.8rem;align-items:center;padding:0.6rem 0.7rem;background:var(--surface);border-radius:5px;text-decoration:none;color:var(--text);transition:background 0.12s;margin-bottom:1px;}
+  .chip-d{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+
+  .fi{display:grid;grid-template-columns:1fr auto;gap:0.8rem;align-items:center;padding:0.85rem 1rem;background:var(--surface);border-radius:8px;text-decoration:none;color:var(--text);transition:background 0.12s;margin-bottom:2px;}
   .fi:hover{background:var(--surface-hover);}
-  .fi-t{font-size:0.8rem;font-weight:500;line-height:1.35;}
-  .fi-m{font-size:0.62rem;color:var(--text-dim);margin-top:0.1rem;}
+  .fi-t{font-size:0.88rem;font-weight:500;line-height:1.4;}
+  .fi-m{font-size:0.68rem;color:var(--text-dim);margin-top:0.15rem;}
   .fi-src{font-weight:600;color:var(--text-mid);}
-  .fi-tags{display:flex;gap:0.2rem;flex-shrink:0;flex-wrap:wrap;justify-content:flex-end;}
-  .fi-tag{padding:0.08rem 0.38rem;border-radius:100px;font-size:0.52rem;font-weight:700;color:rgba(0,0,0,0.9);white-space:nowrap;}
-  .more{display:block;width:100%;padding:0.6rem;margin-top:0.4rem;border:1px solid var(--border);background:none;color:var(--text-dim);font-family:'Space Grotesk',sans-serif;font-size:0.72rem;font-weight:600;cursor:pointer;border-radius:6px;transition:all 0.15s;}
+  .fi-tags{display:flex;gap:0.25rem;flex-shrink:0;flex-wrap:wrap;justify-content:flex-end;}
+  .fi-tag{padding:0.12rem 0.45rem;border-radius:100px;font-size:0.58rem;font-weight:700;color:rgba(0,0,0,0.9);white-space:nowrap;}
+  .more{display:block;width:100%;padding:0.9rem;margin-top:0.6rem;border:1px solid var(--border);background:none;color:var(--text-dim);font-family:'Space Grotesk',sans-serif;font-size:0.82rem;font-weight:600;cursor:pointer;border-radius:8px;transition:all 0.15s;}
   .more:hover{border-color:rgba(255,255,255,0.15);color:var(--text);}
 
   /* ABOUT */
-  .about-text{font-size:0.85rem;color:var(--text-mid);line-height:1.7;margin-bottom:1.5rem;max-width:560px;}
+  .about-text{font-size:0.95rem;color:var(--text-mid);line-height:1.75;margin-bottom:1.5rem;max-width:580px;}
   .about-text strong{color:#fff;font-weight:600;}
+  .about-stat{display:inline-flex;align-items:center;gap:0.4rem;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:0.6rem 1rem;margin:0 0.3rem 0.5rem 0;font-family:'Space Grotesk',sans-serif;}
+  .about-stat-n{font-size:1.3rem;font-weight:700;color:#fff;}
+  .about-stat-l{font-size:0.72rem;color:var(--text-dim);}
+
   .faq-i{margin-bottom:0.4rem;}
-  .faq-q{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:0.7rem 0.9rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;width:100%;text-align:left;font-family:inherit;color:var(--text);transition:background 0.15s;}
+  .faq-q{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:0.85rem 1.1rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;width:100%;text-align:left;font-family:inherit;color:var(--text);transition:background 0.15s;}
   .faq-q:hover{background:var(--surface-hover);}
-  .faq-qt{font-size:0.8rem;font-weight:500;}
-  .faq-tog{font-size:0.9rem;color:var(--text-dim);transition:transform 0.2s;}
+  .faq-qt{font-size:0.88rem;font-weight:500;}
+  .faq-tog{font-size:1rem;color:var(--text-dim);transition:transform 0.2s;}
   .faq-tog.open{transform:rotate(45deg);}
-  .faq-a{background:rgba(19,19,22,0.8);border:1px solid var(--border);border-top:none;border-radius:0 0 8px 8px;padding:0.7rem 0.9rem;font-size:0.76rem;line-height:1.65;color:var(--text-dim);display:none;}
+  .faq-a{background:rgba(17,17,20,0.9);border:1px solid var(--border);border-top:none;border-radius:0 0 10px 10px;padding:0.85rem 1.1rem;font-size:0.82rem;line-height:1.7;color:var(--text-dim);display:none;}
   .faq-a.open{display:block;}
 
-  .section-sub{font-size:0.8rem;color:var(--text-dim);margin-bottom:1rem;line-height:1.55;}
-
-  .footer{padding:1rem 0 2rem;border-top:1px solid var(--border);margin-top:2rem;font-size:0.65rem;color:var(--text-dim);text-align:center;}
+  .footer{padding:1.5rem 0 2.5rem;border-top:1px solid var(--border);margin-top:2.5rem;font-size:0.7rem;color:var(--text-dim);text-align:center;line-height:1.8;}
   .footer a{color:var(--purple);text-decoration:none;}
+
+  /* ARCHIVE LINK */
+  .archive-link{display:inline-flex;align-items:center;gap:0.4rem;color:var(--purple);text-decoration:none;font-family:'Space Grotesk',sans-serif;font-size:0.82rem;font-weight:600;margin-top:0.5rem;transition:opacity 0.15s;}
+  .archive-link:hover{opacity:0.7;}
+  .archive-link svg{width:14px;height:14px;}
 
   @media(max-width:600px){
     .wrap{padding:0 1rem;}
-    .hdr{padding-top:2rem;}
+    .hdr{padding:2rem 0 1rem;}
+    .tab{font-size:0.88rem;padding:0.9rem 0.3rem;}
     .fi{grid-template-columns:1fr;}
     .fi-tags{margin-top:0.2rem;justify-content:flex-start;}
+    .dv-src{flex-direction:column;gap:0.3rem;}
+    .dv-src-name{min-width:auto;}
   }
 </style>
 </head>
@@ -119,26 +158,29 @@
 
 <div class="hdr">
   <h1>Signal Board</h1>
-  <p>See where today's stories overlap and why those connections matter.</p>
+  <div class="sub">The news makes more sense when you can see the connections. 120+ sources, every perspective, updated daily.</div>
 </div>
 
-<div class="bar" id="bar"></div>
+<div class="bar-wrap">
+  <div class="bar" id="bar"></div>
+</div>
 <div class="legend" id="legend"></div>
 
 <div class="tabs" id="tabs">
-  <button class="tab on" data-t="collisions">Collisions</button>
-  <button class="tab" data-t="radar">Radar</button>
+  <button class="tab on" data-t="today">Today</button>
+  <button class="tab" data-t="collisions">Collisions</button>
   <button class="tab" data-t="feed">All Stories</button>
   <button class="tab" data-t="about">About</button>
 </div>
 
-<div class="panel on" id="p-collisions"></div>
-<div class="panel" id="p-radar"></div>
+<div class="panel on" id="p-today"></div>
+<div class="panel" id="p-collisions"></div>
 <div class="panel" id="p-feed"></div>
 <div class="panel" id="p-about"></div>
 
 <div class="footer">
-  <span id="srcCount"></span> sources · Updated daily · Built by <a href="https://www.elisehasseltine.com/">Elise Hasseltine</a>
+  <span id="srcCount"></span> sources · <span id="artCount"></span> articles tracked · Updated daily<br>
+  Built by <a href="https://www.elisehasseltine.com/">Elise Hasseltine</a>
 </div>
 
 </div>
@@ -147,11 +189,10 @@
 const DC={ai:'#6652FF',labor:'#FF5400',governance:'#FF0054',information:'#9E0059',economics:'#00C2A8',climate:'#4CAF50',security:'#D32F2F',geopolitics:'#1976D2',domestic_politics:'#7B1FA2',legal:'#FF9800'};
 const DL={ai:'AI',labor:'Labor',governance:'Governance',information:'Information',economics:'Economics',climate:'Climate',security:'Security',geopolitics:'Geopolitics',domestic_politics:'Politics',legal:'Legal'};
 const DD={ai:'Artificial intelligence and automation',labor:'Jobs, workers, pay, and working conditions',governance:'Government agencies, executive actions, and public services',information:'Media, data, tech platforms, and how information spreads',economics:'Markets, prices, trade, and the economy',climate:'Environment, energy, and the effects of climate change',security:'Military, defense, policing, and threats to safety',geopolitics:'Relationships and tensions between countries',domestic_politics:'U.S. political parties, elections, and policy fights',legal:'Courts, laws, enforcement, and legal rights'};
-const PE={'governance+legal':'Government actions running into the courts.','geopolitics+security':'Tensions between countries that affect military action and safety.','domestic_politics+security':'Political decisions that directly affect defense or public safety.','economics+security':'When conflict and military spending hit markets and wallets.','climate+security':'Environmental change creating security threats.','climate+economics':'Environmental shifts affecting energy costs, food prices, and jobs.','ai+labor':'Automation changing the jobs people do and how they\'re paid.','ai+governance':'Governments trying to regulate AI.','ai+economics':'AI\'s effect on markets, investment, and who profits.','ai+information':'AI changing what people see, trust, and share.','ai+security':'AI in military, surveillance, and cybersecurity.','governance+domestic_politics':'Political battles over how agencies are run.','governance+economics':'Government spending and regulation shaping costs.','governance+information':'Government shaping what information the public gets.','governance+climate':'Government climate and environmental policy.','governance+labor':'Policy on workers\' rights and workplace rules.','governance+geopolitics':'Foreign policy decisions and global impact.','domestic_politics+legal':'Political battles playing out in courts.','domestic_politics+economics':'Political decisions affecting economy and prices.','domestic_politics+information':'Politics shaping media and what people trust.','economics+legal':'Business regulation and how law shapes markets.','economics+labor':'Economic conditions affecting wages and cost of living.','economics+geopolitics':'International relationships affecting trade and prices.','economics+information':'Tech platforms and media shaping markets.','information+security':'Surveillance, data privacy, and digital threats.','information+legal':'Tech regulation and who controls what you see online.','information+domestic_politics':'Media and misinformation shaping political outcomes.','labor+legal':'Workers\' rights, unions, and employment law.','labor+economics':'Economic conditions affecting wages and affordability.','labor+domestic_politics':'Political battles over labor protections.','climate+geopolitics':'Climate and energy competition between countries.','climate+legal':'Environmental lawsuits and climate court battles.','climate+information':'Climate science communication and distortion.','climate+labor':'Environmental shifts affecting jobs.','legal+security':'Law enforcement, civil rights, and justice.','legal+geopolitics':'International law and cross-border disputes.','geopolitics+domestic_politics':'Foreign policy tensions in U.S. politics.','geopolitics+information':'Propaganda and information warfare between countries.','security+legal':'Surveillance law and the justice system.'};
-const DG={};for(const[k,c]of Object.entries(DC)){const r=parseInt(c.slice(1,3),16),g=parseInt(c.slice(3,5),16),b=parseInt(c.slice(5,7),16);DG[k]=`linear-gradient(135deg,rgba(${r},${g},${b},0.16) 0%,rgba(${r},${g},${b},0.03) 100%)`;}
-const JUNK=[/\bsmart lock\b/i,/\bsmart home\b/i,/\bproduct review\b/i,/\bbest .{0,20}(buy|deal|price|sale)\b/i,/\bcoupon\b/i,/\bgadget\b/i,/\bunboxing\b/i,/\bhoroscope\b/i,/\brecipe\b/i];
+const PE={'governance+legal':'Government actions running into the courts','geopolitics+security':'Tensions between countries that affect military action and safety','domestic_politics+security':'Political decisions that directly affect defense or public safety','economics+security':'When conflict and military spending hit markets and wallets','climate+security':'Environmental change creating security threats','climate+economics':'Environmental shifts affecting energy costs, food prices, and jobs','ai+labor':'Automation changing the jobs people do and how they\'re paid','ai+governance':'Governments trying to regulate AI','ai+economics':'AI\'s effect on markets, investment, and who profits','ai+information':'AI changing what people see, trust, and share','ai+security':'AI in military, surveillance, and cybersecurity','governance+domestic_politics':'Political battles over how agencies are run','governance+economics':'Government spending and regulation shaping costs','governance+information':'Government shaping what information the public gets','governance+climate':'Government climate and environmental policy','governance+labor':'Policy on workers\' rights and workplace rules','governance+geopolitics':'Foreign policy decisions and global impact','domestic_politics+legal':'Political battles playing out in courts','domestic_politics+economics':'Political decisions affecting economy and prices','domestic_politics+information':'Politics shaping media and what people trust','economics+legal':'Business regulation and how law shapes markets','economics+labor':'Economic conditions affecting wages and cost of living','economics+geopolitics':'International relationships affecting trade and prices','economics+information':'Tech platforms and media shaping markets','information+security':'Surveillance, data privacy, and digital threats','information+legal':'Tech regulation and who controls what you see online','information+domestic_politics':'Media and misinformation shaping political outcomes','labor+legal':'Workers\' rights, unions, and employment law','labor+economics':'Economic conditions affecting wages and affordability','labor+domestic_politics':'Political battles over labor protections','climate+geopolitics':'Climate and energy competition between countries','climate+legal':'Environmental lawsuits and climate court battles','climate+information':'Climate science communication and distortion','climate+labor':'Environmental shifts affecting jobs','legal+security':'Law enforcement, civil rights, and justice','legal+geopolitics':'International law and cross-border disputes','geopolitics+domestic_politics':'Foreign policy tensions in U.S. politics','geopolitics+information':'Propaganda and information warfare between countries','security+legal':'Surveillance law and the justice system'};
 
-let articles=[],stats={},feedFilter='all',showing=50;
+let articles=[],stats={},daily=null,feedFilter='all',showing=50;
+const today=new Date().toISOString().slice(0,10);
 
 // TABS
 document.getElementById('tabs').addEventListener('click',e=>{
@@ -166,22 +207,33 @@ document.getElementById('tabs').addEventListener('click',e=>{
 async function init(){
   try{
     const cb='?v='+Date.now();
+    // Load articles
     let r;
     try{r=await fetch('./data/articles.json'+cb);if(!r.ok)throw 0;}
     catch{r=await fetch('../data/articles.json'+cb);}
     const d=await r.json();
     articles=d.articles||[];stats=d.stats||{};
-    document.getElementById('srcCount').textContent=stats.total_sources||59;
-    // Update tab badges
-    const cross=articles.filter(a=>a.cross_domain).length;
-    document.querySelector('[data-t="collisions"]').innerHTML=`Collisions`;
-    document.querySelector('[data-t="feed"]').innerHTML=`All Stories <span class="badge">${articles.length}</span>`;
+
+    // Load daily analysis
+    try{
+      let dr;
+      try{dr=await fetch('./data/daily/latest.json'+cb);if(!dr.ok)throw 0;}
+      catch{dr=await fetch('../data/daily/latest.json'+cb);}
+      daily=await dr.json();
+    }catch(e){daily=null;}
+
+    document.getElementById('srcCount').textContent=stats.total_sources||'120+';
+    document.getElementById('artCount').textContent=articles.length.toLocaleString();
+    const todayArts=articles.filter(a=>a.date===today);
+    document.querySelector('[data-t="today"]').innerHTML=`Today <span class="cnt">${todayArts.length||daily?.summary?.total_stories||''}</span>`;
+    document.querySelector('[data-t="collisions"]').innerHTML=`Collisions <span class="cnt">${articles.filter(a=>a.cross_domain).length}</span>`;
+    document.querySelector('[data-t="feed"]').innerHTML=`All Stories <span class="cnt">${articles.length.toLocaleString()}</span>`;
     render();
   }catch(e){console.error(e);}
 }
 
 function render(){
-  renderBar();renderLegend();renderCollisions();renderRadar();renderFeed();renderAbout();
+  renderBar();renderLegend();renderToday();renderCollisions();renderFeed();renderAbout();
 }
 
 function renderBar(){
@@ -192,7 +244,7 @@ function renderBar(){
   if(!total)return;
   bar.innerHTML=Object.entries(counts).sort((a,b)=>b[1]-a[1]).map(([k,c])=>{
     const pct=Math.max((c/total)*100,3);
-    return `<div class="bar-s" style="width:${pct}%;background:${DC[k]||'#666'}"><div class="bar-tip"><strong style="color:#fff">${DL[k]||k}</strong> · ${c} stories</div></div>`;
+    return `<div class="bar-s" style="width:${pct}%;background:${DC[k]||'#666'}"><div class="bar-tip"><strong>${DL[k]||k}</strong> · ${c} stories</div></div>`;
   }).join('');
 }
 
@@ -202,8 +254,149 @@ function renderLegend(){
   ).join('');
 }
 
-function pk(d1,d2){return PE[d1+'+'+d2]||PE[d2+'+'+d1]||`Where ${DL[d1]} and ${DL[d2]} overlap.`;}
+function pk(d1,d2){return PE[d1+'+'+d2]||PE[d2+'+'+d1]||`Where ${DL[d1]} and ${DL[d2]} overlap`;}
 
+// TODAY'S UPDATES — the daily visual narrative
+function renderToday(){
+  const el=document.getElementById('p-today');
+  const todayArts=articles.filter(a=>a.date===today);
+  const crossToday=todayArts.filter(a=>a.cross_domain);
+
+  // Use daily analysis if available, otherwise compute from articles
+  const ds=daily?.summary||{};
+  const storyCount=ds.total_stories||todayArts.length;
+  const srcCount=ds.sources_reporting||new Set(todayArts.map(a=>a.source)).size;
+  const crossCount=ds.cross_domain||crossToday.length;
+
+  if(!storyCount){
+    el.innerHTML='<div style="padding:3rem;text-align:center;color:var(--text-dim);font-size:1rem;">Today\'s analysis is generating. Check back soon.</div>';
+    return;
+  }
+
+  // Build narrative divergence from daily analysis or compute from articles
+  const divergences=daily?.narrative_divergence||findTopicClusters(todayArts);
+  const threads=daily?.collision_threads||[];
+  const spectrum=daily?.source_spectrum||computeSpectrum(todayArts);
+  const signals=daily?.emerging_signals||[];
+
+  // Format date
+  const dateStr=new Date(today+'T12:00:00Z').toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'});
+
+  el.innerHTML=`
+    <div class="daily-date">${dateStr}</div>
+    <div class="daily-headline">${storyCount} stories. ${srcCount} sources. ${crossCount} connections.</div>
+
+    <div style="margin-bottom:2.2rem;">
+      <div style="font-size:0.88rem;color:var(--text-mid);line-height:1.7;max-width:580px;">The world is more connected than any single story can show. Today's coverage spans ${srcCount} outlets — national, international, community, and specialist — revealing where the real conversations are happening across domains that rarely talk to each other.</div>
+    </div>
+
+    <div style="margin-bottom:2.2rem;">
+      <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1.2rem;">
+        ${Object.entries({national:'National',international:'International',specialist:'Specialist',explainer:'Explainer',community:'Community',analysis:'Analysis'}).map(([k,l])=>
+          `<div class="about-stat"><span class="about-stat-n">${spectrum[k]||0}</span><span class="about-stat-l">${l}</span></div>`
+        ).join('')}
+      </div>
+    </div>
+
+    ${divergences.length?`
+    <div style="margin-bottom:2.2rem;">
+      <div style="font-family:'Space Grotesk',sans-serif;font-size:1.05rem;font-weight:700;color:#fff;margin-bottom:0.5rem;">Where Coverage Converges</div>
+      <div style="font-size:0.85rem;color:var(--text-mid);margin-bottom:1.2rem;line-height:1.65;">When many different sources cover the same intersection of topics, something important is happening. These are the stories drawing attention from across the spectrum.</div>
+      ${(Array.isArray(divergences[0]?.articles)?divergences:divergences.map(d=>({...d,articles:d.articles||[]}))).slice(0,3).map(cluster=>{
+        const label=cluster.topic||cluster.domains?.map(d=>DL[d]).join(' + ')||'';
+        const theme=cluster.theme||'';
+        const arts=cluster.articles||[];
+        const srcN=cluster.source_count||cluster.sourceCount||arts.length;
+        return `<div class="diverge">
+          <div class="diverge-label">${esc(label)}</div>
+          <div class="diverge-topic">${esc(theme)}</div>
+          <div class="diverge-desc">${srcN} sources covering this intersection today</div>
+          <div class="diverge-sources">
+            ${arts.slice(0,4).map(a=>`
+              <a class="dv-src" href="${a.url}" target="_blank" rel="noopener">
+                <div class="dv-src-name">${esc(a.source)}${a.paywall?'<span class="pw">paywall</span>':''}</div>
+                <div>
+                  <div class="dv-src-title">${esc(a.title)}</div>
+                  ${a.connection?`<div class="dv-src-meta" style="color:var(--purple);margin-top:0.15rem;">${esc(a.connection)}</div>`:''}
+                </div>
+              </a>
+            `).join('')}
+          </div>
+        </div>`;
+      }).join('')}
+    </div>`:''}
+
+    ${threads.length?`
+    <div style="margin-bottom:2.2rem;">
+      <div style="font-family:'Space Grotesk',sans-serif;font-size:1.05rem;font-weight:700;color:#fff;margin-bottom:0.5rem;">Active Threads</div>
+      <div style="font-size:0.85rem;color:var(--text-mid);margin-bottom:1.2rem;line-height:1.65;">Domain pairs generating the most overlap right now. Over time, these threads reveal which structural connections are intensifying and which are fading.</div>
+      ${threads.filter(t=>t.today_count>0).slice(0,4).map(t=>{
+        const pair=t.pair||[];
+        const d1=pair[0],d2=pair[1];
+        const c1=DC[d1]||'#666',c2=DC[d2]||'#666';
+        const trend=t.trend==='rising'?'<span style="color:#4CAF50;font-size:0.7rem;margin-left:0.4rem;">&#x25B2; Rising</span>':t.trend==='falling'?'<span style="color:#D32F2F;font-size:0.7rem;margin-left:0.4rem;">&#x25BC; Falling</span>':'';
+        return `<div class="thread">
+          <div class="thread-label" style="color:${c1}">${DL[d1]||d1} + ${DL[d2]||d2}${trend}</div>
+          <div class="thread-title">${esc(t.explanation||pk(d1,d2))}</div>
+          <div class="thread-count">${t.today_count} stories today · ${t.count} total tracked</div>
+          <div class="thread-bar">
+            <div class="thread-bar-s" style="background:${c1};flex:1"></div>
+            <div class="thread-bar-s" style="background:${c2};flex:1"></div>
+          </div>
+          ${t.sample_articles?.length?`<div class="thread-articles">
+            ${t.sample_articles.slice(0,2).map(a=>`
+              <a class="thread-a" href="${a.url}" target="_blank" rel="noopener">
+                <div class="thread-a-t">${esc(a.title)}</div>
+                <div class="thread-a-s">${esc(a.source)} · ${daily?.date||today}</div>
+              </a>
+            `).join('')}
+          </div>`:''}
+        </div>`;
+      }).join('')}
+    </div>`:''}
+
+    ${signals.length?`
+    <div style="margin-bottom:1.5rem;">
+      <div style="font-family:'Space Grotesk',sans-serif;font-size:1.05rem;font-weight:700;color:#fff;margin-bottom:0.5rem;">Emerging Signals</div>
+      <div style="font-size:0.85rem;color:var(--text-mid);margin-bottom:1rem;line-height:1.65;">Patterns that stand out from the baseline. These are collision pairs or domains where today's activity is notably higher than usual.</div>
+      ${signals.slice(0,3).map(s=>`
+        <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:0.85rem 1.1rem;margin-bottom:0.4rem;font-size:0.85rem;color:var(--text-mid);line-height:1.5;">
+          <span style="color:var(--purple);font-weight:600;margin-right:0.3rem;">${s.type==='trend'?'&#x2197;':'&#x26A1;'}</span>
+          ${esc(s.description)}
+        </div>
+      `).join('')}
+    </div>`:''}
+  `;
+}
+
+function computeSpectrum(arts){
+  const s={national:0,international:0,specialist:0,explainer:0,community:0,analysis:0};
+  for(const a of arts){const t=a.tier;if(t==='domain')s.specialist++;else if(t==='lived')s.community++;else if(s[t]!==undefined)s[t]++;}
+  return s;
+}
+
+function findTopicClusters(todayArts){
+  const pairMap={};
+  for(const a of todayArts){
+    if(!a.cross_domain||!a.domains||a.domains.length<2)continue;
+    const ds=[...a.domains].sort();
+    for(let i=0;i<ds.length;i++)for(let j=i+1;j<ds.length;j++){
+      const key=ds[i]+'+'+ds[j];if(!pairMap[key])pairMap[key]=[];pairMap[key].push(a);
+    }
+  }
+  const clusters=[];
+  for(const[key,arts]of Object.entries(pairMap)){
+    const sources=new Set(arts.map(a=>a.source));
+    if(sources.size>=3&&arts.length>=4){
+      const[d1,d2]=key.split('+');
+      clusters.push({topic:`${DL[d1]} + ${DL[d2]}`,theme:pk(d1,d2),articles:arts,source_count:sources.size});
+    }
+  }
+  clusters.sort((a,b)=>b.source_count-a.source_count);
+  return clusters.slice(0,3);
+}
+
+// COLLISIONS
 function renderCollisions(){
   const el=document.getElementById('p-collisions');
   const pairs={};
@@ -215,66 +408,40 @@ function renderCollisions(){
       }
     }
   }
-  const top=Object.entries(pairs).sort((a,b)=>b[1].length-a[1].length).slice(0,4);
-  if(!top.length){el.innerHTML='<div style="padding:2rem;text-align:center;color:var(--text-dim)">Loading...</div>';return;}
+  const top=Object.entries(pairs).sort((a,b)=>b[1].length-a[1].length).slice(0,6);
+  if(!top.length){el.innerHTML='<div style="padding:3rem;text-align:center;color:var(--text-dim)">Loading...</div>';return;}
 
   el.innerHTML=`
-    <div class="section-sub">When a story touches two worlds at once, that overlap is usually where the most important thing is happening.</div>
+    <div class="sec-intro">When a story touches two domains at once, that overlap is usually where the most important structural shift is happening. These are the highest-volume collisions across all tracked data.</div>
     ${top.map(([ppk,arts])=>{
       const[d1,d2]=ppk.split('+');
       const c1=DC[d1]||'#666',c2=DC[d2]||'#666';
-      return `<div class="card" style="background:${DG[d1]};border:1px solid ${c1}15">
-        <div class="card-h">
+      return `<div class="collision">
+        <div class="coll-pair">
           <span class="dn" style="color:${c1}">${DL[d1]}</span>
           <span class="x">+</span>
           <span class="dn" style="color:${c2}">${DL[d2]}</span>
           <span class="ct">${arts.length}</span>
         </div>
-        <div class="card-w">${pk(d1,d2)}</div>
-        ${arts.slice(0,3).map(a=>`<a class="card-a" href="${a.url}" target="_blank" rel="noopener">
-          <div class="card-at">${esc(a.title)}</div>
-          ${a.connection?`<div class="card-ac">${esc(a.connection)}</div>`:''}
-          <div class="card-as">${esc(a.source)}${a.paywall?'<span class="pw">paywall</span>':''} · ${a.date}</div>
+        <div class="coll-why">${pk(d1,d2)}</div>
+        ${arts.slice(0,3).map(a=>`<a class="coll-article" href="${a.url}" target="_blank" rel="noopener">
+          <div class="coll-article-t">${esc(a.title)}</div>
+          ${a.connection?`<div class="coll-article-c">${esc(a.connection)}</div>`:''}
+          <div class="coll-article-s">${esc(a.source)}${a.paywall?'<span class="pw">paywall</span>':''} · ${a.date}</div>
         </a>`).join('')}
       </div>`;
     }).join('')}
   `;
 }
 
-function renderRadar(){
-  const el=document.getElementById('p-radar');
-  const srcCounts={};
-  for(const a of articles)srcCounts[a.source]=(srcCounts[a.source]||0)+1;
-  const topSrc=Object.keys(srcCounts).sort((a,b)=>srcCounts[b]-srcCounts[a]).slice(0,5);
-  const radar=articles.filter(a=>
-    a.cross_domain&&!topSrc.includes(a.source)&&
-    !JUNK.some(p=>p.test(a.title+' '+(a.summary||'')))
-  ).slice(0,6);
-  if(!radar.length){el.innerHTML='';return;}
-
-  el.innerHTML=`
-    <div class="section-sub">Important stories from smaller outlets that connect multiple topics. These don't get the same attention.</div>
-    ${radar.map(a=>{
-      const tags=(a.domains||[]).filter(d=>DL[d]).map(d=>
-        `<span class="ri-tag" style="background:${DC[d]}">${DL[d]}</span>`
-      ).join('');
-      return `<a class="ri" href="${a.url}" target="_blank" rel="noopener">
-        <div class="ri-tags">${tags}</div>
-        <div class="ri-t">${esc(a.title)}</div>
-        ${a.connection?`<div class="ri-c">${esc(a.connection)}</div>`:''}
-        <div class="ri-s">${esc(a.source)}${a.paywall?'<span class="pw">paywall</span>':''} · ${a.date}</div>
-      </a>`;
-    }).join('')}
-  `;
-}
-
+// ALL STORIES FEED
 function renderFeed(){
   const el=document.getElementById('p-feed');
   const filtered=feedFilter==='cross'?articles.filter(a=>a.cross_domain):feedFilter!=='all'?articles.filter(a=>a.domains&&a.domains.includes(feedFilter)):articles;
   const slice=filtered.slice(0,showing);
 
   let chips=`<button class="chip ${feedFilter==='all'?'on':''}" onclick="setFeed('all')" style="${feedFilter==='all'?'background:var(--purple);border-color:var(--purple)':''}">All</button>`;
-  chips+=`<button class="chip ${feedFilter==='cross'?'on':''}" onclick="setFeed('cross')" style="${feedFilter==='cross'?'background:#fff;border-color:#fff;color:#000':''}">Connected</button>`;
+  chips+=`<button class="chip ${feedFilter==='cross'?'on':''}" onclick="setFeed('cross')" style="${feedFilter==='cross'?'background:#fff;border-color:#fff;color:#000':''}">Cross-domain</button>`;
   for(const[k,l]of Object.entries(DL)){
     const on=feedFilter===k;
     chips+=`<button class="chip ${on?'on':''}" onclick="setFeed('${k}')" style="${on?`background:${DC[k]};border-color:${DC[k]};color:rgba(0,0,0,0.9)`:''}"><span class="chip-d" style="background:${DC[k]}"></span>${l}</button>`;
@@ -292,32 +459,48 @@ function renderFeed(){
 
   const moreBtn=filtered.length>showing?`<button class="more" onclick="showMore()">Show more (${filtered.length-showing} remaining)</button>`:'';
 
-  el.innerHTML=`<div class="chips">${chips}</div><div>${feed}</div>${moreBtn}`;
+  el.innerHTML=`
+    <div class="sec-intro">Every article from every source, tagged by domain. Filter to see what each domain is producing, or show only cross-domain stories.</div>
+    <div class="chips">${chips}</div><div>${feed}</div>${moreBtn}`;
 }
 
 function setFeed(f){feedFilter=f;showing=50;renderFeed();}
 function showMore(){showing+=50;renderFeed();}
 
+// ABOUT
 function renderAbout(){
   const el=document.getElementById('p-about');
+  const srcList=[...new Set(articles.map(a=>a.source))].sort();
   el.innerHTML=`
     <div class="about-text">
-      Signal Board reads <strong>80+ news sources</strong> every day, from across the political spectrum, and sorts each story by topic. When a story touches more than one topic at the same time, this tool flags it. Those overlaps are usually where the most important things are happening, and they're exactly what normal news coverage tends to miss.
+      Signal Board reads <strong>${srcList.length} news sources</strong> every day, spanning the full American political and demographic spectrum plus major international outlets. Each story is classified by topic. When a story touches more than one topic at the same time, this tool flags it as a connection. Those connections are where you start to see the larger picture that siloed coverage misses.
     </div>
     <div class="about-text">
-      Sources include outlets from the left, right, and center, plus international, community, specialist, and analysis publications. The goal is not to tell you what to think. It's to show you what's connected so you can think better.
+      This is not about left or right. Sources include outlets from every political perspective, plus international, community, specialist, and analysis publications. Indigenous, Latino, Black, faith-based, and regional voices sit alongside national broadsheets and cable news. The tool exists so you can see connections, not to tell you what to think.
     </div>
+    <div style="margin-bottom:1.5rem;">
+      <div class="about-stat"><span class="about-stat-n">${srcList.length}</span><span class="about-stat-l">sources</span></div>
+      <div class="about-stat"><span class="about-stat-n">${articles.length.toLocaleString()}</span><span class="about-stat-l">articles</span></div>
+      <div class="about-stat"><span class="about-stat-n">${articles.filter(a=>a.cross_domain).length}</span><span class="about-stat-l">collisions</span></div>
+      <div class="about-stat"><span class="about-stat-n">10</span><span class="about-stat-l">domains</span></div>
+    </div>
+
+    <div style="font-family:'Space Grotesk',sans-serif;font-size:0.95rem;font-weight:700;color:#fff;margin-bottom:0.8rem;">Frequently Asked</div>
     <div class="faq-i">
       <button class="faq-q" onclick="togFaq(0)"><span class="faq-qt">Why do the overlaps matter?</span><span class="faq-tog" id="ft0">+</span></button>
-      <div class="faq-a" id="fa0">Most news covers one thing at a time. A jobs reporter writes about jobs. A climate reporter writes about climate. But in real life, these things affect each other constantly. When gas prices go up because of a conflict overseas, that's economics and security and geopolitics all at once. Seeing those connections helps you understand what's actually going on.</div>
+      <div class="faq-a" id="fa0">Most news covers one thing at a time. A jobs reporter writes about jobs. A climate reporter writes about climate. But in real life, these things affect each other constantly. When gas prices go up because of a conflict overseas, that's economics and security and geopolitics all at once. Seeing those connections helps you understand what's actually going on, not just what each beat reporter was assigned to cover.</div>
     </div>
     <div class="faq-i">
       <button class="faq-q" onclick="togFaq(1)"><span class="faq-qt">What do the colors mean?</span><span class="faq-tog" id="ft1">+</span></button>
-      <div class="faq-a" id="fa1">Each color is a topic. Hover over any topic name in the legend above the tabs to see what it covers. When you see multiple colors on one story, that story sits at the intersection of those worlds.</div>
+      <div class="faq-a" id="fa1">Each color is a domain — a broad area of life that the news touches. Hover over any domain name in the color legend to see what it covers. When you see multiple colors on one story, that story sits at the intersection of those worlds. The color bar at the top shows the overall distribution of coverage across all sources right now.</div>
     </div>
     <div class="faq-i">
       <button class="faq-q" onclick="togFaq(2)"><span class="faq-qt">Where do the stories come from?</span><span class="faq-tog" id="ft2">+</span></button>
-      <div class="faq-a" id="fa2">80+ sources spanning the political and geographic spectrum: national outlets (NYT, Fox News, NPR, Daily Wire, WSJ), international (BBC, Al Jazeera, Guardian), community outlets (Texas Tribune, Indian Country Today, The Root, Christianity Today), specialist publications, explainers, and think tanks from both sides. No editorial filtering. The patterns surface on their own.</div>
+      <div class="faq-a" id="fa2">${srcList.length} sources spanning the full American political and demographic spectrum: national outlets across the ideological range (NYT, Fox News, NPR, Daily Wire, WSJ, National Review, Washington Post), international (BBC, Al Jazeera, Guardian, Deutsche Welle, Nikkei Asia, Kyiv Independent), community voices (Indian Country Today, The Root, Latino USA, Christianity Today, The Forward, The Advocate, AsAmNews, Military Times, Daily Yonder, Capital B News), specialist publications, explainers, and think tanks from multiple perspectives. No editorial filtering. The patterns surface on their own.</div>
+    </div>
+    <div class="faq-i">
+      <button class="faq-q" onclick="togFaq(3)"><span class="faq-qt">What builds over time?</span><span class="faq-tog" id="ft3">+</span></button>
+      <div class="faq-a" id="fa3">Every day the system adds new articles to a growing dataset. Over weeks and months, patterns emerge that a single day's snapshot can't show: which collision pairs are intensifying, which topics are rising or fading, how different sources frame the same events over time. The longer it runs, the more it reveals about the structural forces shaping the information Americans receive.</div>
     </div>
   `;
 }
