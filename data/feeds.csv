@@ -2,12 +2,12 @@ name,url,tier,region
 New York Times,https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml,national,us
 Washington Post,https://feeds.washingtonpost.com/rss/national,national,us
 AP News,https://feedx.net/rss/ap.xml,national,us
-Reuters,https://www.reutersagency.com/feed/?best-topics=political-general&post_type=best,national,us
+Reuters,https://news.google.com/rss/search?q=when:24h+allinurl:reuters.com&hl=en-US&gl=US&ceid=US:en,national,us
 NPR,https://feeds.npr.org/1001/rss.xml,national,us
-CNN,https://rss.cnn.com/rss/cnn_topstories.rss,national,us
+CNN,http://rss.cnn.com/rss/cnn_latest.rss,national,us
 Wall Street Journal,https://feeds.a.dj.com/rss/RSSWorldNews.xml,national,us
 Bloomberg,https://feeds.bloomberg.com/markets/news.rss,national,us
-Politico,https://www.politico.com/rss/politicopicks.xml,national,us
+Politico,https://rss.politico.com/politics-news.xml,national,us
 The Atlantic,https://www.theatlantic.com/feed/all/,national,us
 BBC World,https://feeds.bbci.co.uk/news/world/rss.xml,international,uk
 The Guardian World,https://www.theguardian.com/world/rss,international,uk
@@ -28,8 +28,8 @@ EPI Blog,https://www.epi.org/blog/feed/,domain,labor
 American Prospect,https://prospect.org/api/rss/all.rss,domain,labor
 Columbia Journalism Review,https://www.cjr.org/feed,domain,information
 Nieman Lab,https://www.niemanlab.org/feed/,domain,information
-Brookings,https://www.brookings.edu/feed,domain,governance
-Lawfare,https://www.lawfaremedia.org/feed,domain,governance
+Brookings,https://www.brookings.edu/feed/,domain,governance
+Lawfare,https://www.lawfaremedia.org/feed/,domain,governance
 ProPublica,https://feeds.propublica.org/propublica/main,domain,governance
 Carbon Brief,https://www.carbonbrief.org/feed,domain,climate
 Grist,https://grist.org/feed/,domain,climate
@@ -46,7 +46,7 @@ Wired,https://www.wired.com/feed/rss,explainer,us
 Ars Technica,https://feeds.arstechnica.com/arstechnica/index,explainer,us
 Platformer,https://www.platformer.news/rss/,explainer,us
 The 19th News,https://19thnews.org/feed/,lived,us
-The Marshall Project,https://www.themarshallproject.org/rss/all,lived,us
+The Marshall Project,https://www.themarshallproject.org/rss/taxonomy/all,lived,us
 CalMatters,https://calmatters.org/feed/,lived,us
 Stateline,https://stateline.org/feed/,lived,us
 High Country News,https://www.hcn.org/feed/,lived,us
@@ -54,7 +54,7 @@ Civil Eats,https://civileats.com/feed/,lived,us
 Documented,https://documentedny.com/feed/,lived,us
 RAND,https://www.rand.org/blog.xml,analysis,us
 Roosevelt Institute,https://rooseveltinstitute.org/feed/,analysis,us
-Carnegie Endowment,https://carnegieendowment.org/rss/solr-feed,analysis,us
+Carnegie Endowment,https://carnegieendowment.org/rss/,analysis,us
 Foreign Affairs,https://www.foreignaffairs.com/rss.xml,analysis,us
 Center for American Progress,https://www.americanprogress.org/feed/,analysis,us
-Chatham House,https://www.chathamhouse.org/rss/publication,analysis,uk
+Chatham House,https://www.chathamhouse.org/publications/rss,analysis,uk

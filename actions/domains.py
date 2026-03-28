@@ -26,6 +26,8 @@ DOMAINS = {
             "ai act", "frontier model", "ai executive order", "copilot",
             "ai startup", "ai chip", "gpu", "nvidia", "semiconductor",
             "content moderation", "recommendation algorithm",
+            "chatbot", "ai system", "ai tool", "ai-powered",
+            "machine intelligence", "robot", "robotics",
         ],
     },
     "labor": {
@@ -43,6 +45,9 @@ DOMAINS = {
             "platform worker", "delivery driver", "warehouse",
             "income inequality", "economic mobility", "working class",
             "labor shortage", "immigration", "h-1b", "visa worker",
+            "pay gap", "unpaid", "furlough", "staffing",
+            "child care", "childcare", "paid leave", "sick leave",
+            "working mom", "working parent", "cost of child",
         ],
     },
     "governance": {
@@ -62,6 +67,12 @@ DOMAINS = {
             "international law", "treaty", "sanctions", "diplomacy",
             "authoritarianism", "press freedom", "civil liberties",
             "lobbying", "campaign finance", "political spending",
+            "usda", "fda", "epa", "fema", "hud",
+            "federal program", "government program", "public funding",
+            "ban", "bans", "criminalize", "mandate",
+            "medicaid", "medicare", "social security",
+            "protest", "protests", "rally", "demonstration",
+            "activist", "activism", "dissent",
         ],
     },
     "information": {
@@ -83,6 +94,10 @@ DOMAINS = {
             "open source", "public interest technology",
             "digital divide", "broadband", "internet access",
             "search engine", "seo", "discovery", "recommendation",
+            "data broker", "data collection", "screen time",
+            "tech company", "big tech", "tech industry",
+            "online influence", "online harassment", "doxxing",
+            "app", "dating app", "surveillance",
         ],
     },
     "economics": {
@@ -102,6 +117,11 @@ DOMAINS = {
             "small business", "startup", "entrepreneurship",
             "global south", "developing economy", "world bank", "imf",
             "industrial policy", "manufacturing", "reshoring",
+            "ipo", "bond", "credit", "private credit", "fund",
+            "investor", "loan", "lend", "lending", "predatory",
+            "afford", "affordability", "cost of living",
+            "gas price", "oil price", "energy price", "price",
+            "billion", "trillion",
         ],
     },
     "climate": {
@@ -121,6 +141,11 @@ DOMAINS = {
             "electric vehicle", "ev", "battery", "energy storage",
             "carbon tax", "emissions trading", "climate adaptation",
             "food security", "agriculture", "land use",
+            "farm", "farmer", "crop", "livestock", "poultry",
+            "food system", "food supply", "conservation",
+            "water", "water supply", "contamination", "pfas",
+            "wildfire smoke", "heat wave", "heatwave",
+            "climate refugee", "climate migration",
         ],
     },
     "security": {
@@ -188,6 +213,44 @@ DOMAINS = {
             "first amendment", "religious liberty",
             "political polarization", "populism", "progressive",
             "conservative", "liberal", "far right", "far left",
+        ],
+    },
+    "legal": {
+        "label": "Legal",
+        "color": "#FF9800",
+        "keywords": [
+            # Courts and rulings
+            "supreme court", "court ruling", "court order", "federal judge",
+            "appeals court", "district court", "circuit court", "ruling",
+            "lawsuit", "plaintiff", "defendant", "litigation", "verdict",
+            "injunction", "preliminary injunction", "stay", "overturn",
+            "precedent", "legal challenge", "class action", "settlement",
+            "judicial review", "constitutional", "unconstitutional",
+            # Regulatory and enforcement
+            "regulation", "regulatory", "enforcement", "compliance",
+            "consent decree", "penalty", "fine", "sanction",
+            "ftc", "sec", "doj", "fcc", "epa", "osha", "nlrb", "cfpb",
+            "department of justice", "attorney general", "prosecutor",
+            "federal investigation", "indictment", "grand jury",
+            # Executive and legislative law
+            "executive order", "executive action", "signing statement",
+            "legislation", "statute", "codify", "repeal", "amend",
+            "bill signed", "bill passed", "enacted", "ratified",
+            # Rights and civil law
+            "civil rights", "civil liberties", "due process", "equal protection",
+            "discrimination", "title ix", "title vii", "ada", "voting rights act",
+            "criminal justice", "sentencing", "incarceration", "parole", "probation",
+            "police", "policing", "qualified immunity", "use of force",
+            "asylum", "immigration court", "deportation order",
+            # Corporate and tech law
+            "antitrust", "monopoly", "merger approval", "consent order",
+            "intellectual property", "patent", "copyright",
+            "data protection", "privacy law", "gdpr", "ccpa",
+            "terms of service", "liability", "section 230",
+            # International law
+            "international law", "treaty", "convention", "tribunal",
+            "war crime", "international criminal court", "icc",
+            "extradition", "jurisdiction", "sovereignty",
         ],
     },
 }

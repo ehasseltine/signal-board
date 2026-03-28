@@ -16,17 +16,6 @@
     --text-dim: rgba(235,230,245,0.6);
     --text-mid: rgba(235,230,245,0.8);
     --purple: #6652FF;
-    --pink: #FF0054;
-    --magenta: #9E0059;
-    --orange: #FF5400;
-    --teal: #00C2A8;
-    --green: #4CAF50;
-    --ai: #6652FF;
-    --labor: #FF5400;
-    --governance: #FF0054;
-    --information: #9E0059;
-    --economics: #00C2A8;
-    --climate: #4CAF50;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -138,6 +127,7 @@
     display: flex;
     gap: 0.5rem;
     margin-bottom: 1.5rem;
+    flex-wrap: wrap;
   }
   .tier-btn {
     padding: 0.35rem 0.75rem;
@@ -153,12 +143,8 @@
   .tier-btn:hover { border-color: var(--text-dim); }
   .tier-btn.active { background: var(--surface); border-color: var(--text-dim); color: var(--text); }
 
-  /* ─── CROSS-DOMAIN HIGHLIGHT ─── */
+  /* ─── CROSS-DOMAIN CLUSTERS ─── */
   .cross-section {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 1.2rem 1.5rem;
     margin-bottom: 2rem;
   }
   .cross-section h2 {
@@ -167,12 +153,69 @@
     text-transform: uppercase;
     letter-spacing: 0.08em;
     color: var(--text-mid);
-    margin-bottom: 0.8rem;
+    margin-bottom: 0.3rem;
   }
   .cross-section .cross-desc {
     font-size: 0.8rem;
     color: var(--text-dim);
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem;
+  }
+  .cluster-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 0.8rem;
+  }
+  .cluster-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem 1.2rem;
+  }
+  .cluster-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.7rem;
+  }
+  .cluster-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .cluster-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .cluster-count {
+    font-size: 0.7rem;
+    color: var(--text-dim);
+    margin-left: auto;
+  }
+  .cluster-articles {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+  }
+  .cluster-article {
+    display: block;
+    text-decoration: none;
+    color: var(--text);
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    transition: color 0.15s;
+  }
+  .cluster-article:last-child { border-bottom: none; }
+  .cluster-article:hover { color: #fff; }
+  .cluster-article-title {
+    font-size: 0.82rem;
+    line-height: 1.4;
+  }
+  .cluster-article-meta {
+    font-size: 0.68rem;
+    color: var(--text-dim);
+    margin-top: 0.15rem;
   }
 
   /* ─── ARTICLE LIST ─── */
@@ -237,6 +280,8 @@
     gap: 0.3rem;
     flex-shrink: 0;
     align-self: center;
+    flex-wrap: wrap;
+    justify-content: flex-end;
   }
   .domain-tag {
     padding: 0.15rem 0.5rem;
@@ -288,6 +333,7 @@
     .header, .main, .footer { padding-left: 1rem; padding-right: 1rem; }
     .article-card { grid-template-columns: 1fr; }
     .domain-tags { margin-top: 0.4rem; }
+    .cluster-grid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -301,7 +347,7 @@
 
 <div class="main">
   <div class="heat-section">
-    <h2>Domain activity</h2>
+    <h2 id="heatLabel">Domain activity</h2>
     <div class="heat-bar" id="heatBar"></div>
   </div>
 
@@ -310,9 +356,9 @@
   <div class="tier-filters" id="tierFilters"></div>
 
   <div class="cross-section" id="crossSection">
-    <h2>Cross-domain signals</h2>
-    <p class="cross-desc">Articles that touch multiple domains at once. These are the structural connections that single-beat coverage misses.</p>
-    <div class="article-list" id="crossList"></div>
+    <h2>Where domains intersect</h2>
+    <p class="cross-desc">The strongest structural connections right now, grouped by which domains are colliding. These overlaps are where the real story lives.</p>
+    <div class="cluster-grid" id="clusterGrid"></div>
   </div>
 
   <div>
@@ -340,6 +386,7 @@ const DOMAIN_COLORS = {
   security: '#D32F2F',
   geopolitics: '#1976D2',
   domestic_politics: '#7B1FA2',
+  legal: '#FF9800',
 };
 const DOMAIN_LABELS = {
   ai: 'AI',
@@ -351,6 +398,7 @@ const DOMAIN_LABELS = {
   security: 'Security',
   geopolitics: 'Geopolitics',
   domestic_politics: 'Politics',
+  legal: 'Legal',
 };
 
 let allArticles = [];
@@ -361,7 +409,6 @@ let displayCount = 50;
 
 async function init() {
   try {
-    // Cache-bust so browsers always load fresh data
     const cb = '?v=' + Date.now();
     let resp;
     try {
@@ -381,11 +428,7 @@ async function init() {
       <span>Updated ${formatDate(data.last_updated)}</span>
     `;
 
-    renderHeatBar();
-    renderFilters();
-    renderTierFilters();
-    renderCrossDomain();
-    renderArticles();
+    renderAll();
   } catch (e) {
     document.getElementById('articleList').innerHTML =
       '<div class="empty-state">No data yet. Run the ingest script to populate.</div>';
@@ -393,22 +436,56 @@ async function init() {
   }
 }
 
+function renderAll() {
+  renderHeatBar();
+  renderFilters();
+  renderTierFilters();
+  renderClusters();
+  renderArticles();
+}
+
 function renderHeatBar() {
   const bar = document.getElementById('heatBar');
-  if (!stats.domains) return;
+  const label = document.getElementById('heatLabel');
 
-  const total = Object.values(stats.domains).reduce((s, d) => s + d.count, 0);
-  if (total === 0) return;
+  // Heat bar reflects current filters
+  const filtered = getBaseFiltered();
+  const domainCounts = {};
+  for (const a of filtered) {
+    for (const d of (a.domains || [])) {
+      domainCounts[d] = (domainCounts[d] || 0) + 1;
+    }
+  }
 
-  bar.innerHTML = Object.entries(stats.domains)
-    .sort((a, b) => b[1].count - a[1].count)
-    .map(([key, d]) => {
-      const pct = Math.max((d.count / total) * 100, 5);
-      return `<div class="heat-segment" style="width:${pct}%;background:${DOMAIN_COLORS[key]}"
-                   onclick="setFilter('${key}')" title="${d.label}: ${d.count} articles">
-        <span class="seg-label">${d.label} ${d.count}</span>
+  const total = Object.values(domainCounts).reduce((s, c) => s + c, 0);
+  if (total === 0) {
+    bar.innerHTML = '<div class="empty-state" style="padding:0.5rem">No tagged articles match filters</div>';
+    return;
+  }
+
+  const tierLabel = activeTier === 'all' ? '' : ` — ${activeTier}`;
+  label.textContent = `Domain activity${tierLabel}`;
+
+  bar.innerHTML = Object.entries(domainCounts)
+    .sort((a, b) => b[1] - a[1])
+    .map(([key, count]) => {
+      const pct = Math.max((count / total) * 100, 4);
+      const color = DOMAIN_COLORS[key] || '#666';
+      const name = DOMAIN_LABELS[key] || key;
+      return `<div class="heat-segment" style="width:${pct}%;background:${color}"
+                   onclick="setFilter('${key}')" title="${name}: ${count} articles">
+        <span class="seg-label">${name} ${count}</span>
       </div>`;
     }).join('');
+}
+
+// Get articles filtered by tier only (used by heat bar and clusters)
+function getBaseFiltered() {
+  let articles = allArticles;
+  if (activeTier !== 'all') {
+    articles = articles.filter(a => a.tier === activeTier);
+  }
+  return articles;
 }
 
 function renderFilters() {
@@ -454,16 +531,11 @@ function setFilter(f) {
 function setTier(t) {
   activeTier = t;
   displayCount = 50;
-  renderTierFilters();
-  renderArticles();
-  renderCrossDomain();
+  renderAll();
 }
 
 function getFiltered() {
-  let articles = allArticles;
-  if (activeTier !== 'all') {
-    articles = articles.filter(a => a.tier === activeTier);
-  }
+  let articles = getBaseFiltered();
   if (activeFilter === 'cross') {
     articles = articles.filter(a => a.cross_domain);
   } else if (activeFilter !== 'all') {
@@ -472,20 +544,59 @@ function getFiltered() {
   return articles;
 }
 
-function renderCrossDomain() {
-  const list = document.getElementById('crossList');
-  let cross = allArticles.filter(a => a.cross_domain);
-  if (activeTier !== 'all') {
-    cross = cross.filter(a => a.tier === activeTier);
-  }
-  cross = cross.slice(0, 8);
+function renderClusters() {
+  const grid = document.getElementById('clusterGrid');
+  const base = getBaseFiltered();
+  const cross = base.filter(a => a.cross_domain && a.domains && a.domains.length >= 2);
 
-  if (cross.length === 0) {
-    list.innerHTML = '<div class="empty-state">No cross-domain signals found.</div>';
+  // Build domain pair counts
+  const pairs = {};
+  for (const a of cross) {
+    const domains = a.domains.sort();
+    for (let i = 0; i < domains.length; i++) {
+      for (let j = i + 1; j < domains.length; j++) {
+        const key = domains[i] + '+' + domains[j];
+        if (!pairs[key]) pairs[key] = [];
+        pairs[key].push(a);
+      }
+    }
+  }
+
+  // Sort by count, take top 6 pairs
+  const topPairs = Object.entries(pairs)
+    .sort((a, b) => b[1].length - a[1].length)
+    .slice(0, 6);
+
+  if (topPairs.length === 0) {
+    grid.innerHTML = '<div class="empty-state">No cross-domain signals found.</div>';
     return;
   }
 
-  list.innerHTML = cross.map(a => articleCard(a)).join('');
+  grid.innerHTML = topPairs.map(([pairKey, articles]) => {
+    const [d1, d2] = pairKey.split('+');
+    const label1 = DOMAIN_LABELS[d1] || d1;
+    const label2 = DOMAIN_LABELS[d2] || d2;
+    const color1 = DOMAIN_COLORS[d1] || '#666';
+    const color2 = DOMAIN_COLORS[d2] || '#666';
+
+    const shown = articles.slice(0, 4);
+    const articleHtml = shown.map(a =>
+      `<a class="cluster-article" href="${a.url}" target="_blank" rel="noopener">
+        <div class="cluster-article-title">${escHtml(a.title)}</div>
+        <div class="cluster-article-meta">${escHtml(a.source)} &middot; ${a.date}</div>
+      </a>`
+    ).join('');
+
+    return `<div class="cluster-card">
+      <div class="cluster-header">
+        <span class="cluster-dot" style="background:${color1}"></span>
+        <span class="cluster-dot" style="background:${color2}"></span>
+        <span class="cluster-label">${label1} + ${label2}</span>
+        <span class="cluster-count">${articles.length} articles</span>
+      </div>
+      <div class="cluster-articles">${articleHtml}</div>
+    </div>`;
+  }).join('');
 }
 
 function renderArticles() {
