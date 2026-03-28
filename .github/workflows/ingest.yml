@@ -21,10 +21,12 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install feedparser
+        run: pip install feedparser anthropic
 
       - name: Run ingest
         working-directory: actions
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: python ingest.py
 
       - name: Copy data to docs for GitHub Pages
