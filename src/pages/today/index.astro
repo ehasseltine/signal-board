@@ -45,6 +45,9 @@ const sourcesReporting = summary.sources_reporting || 0;
 const crossDomainPct = summary.cross_domain_pct || 0;
 const crossDomain = summary.cross_domain || 0;
 
+// Total sources Signal Board monitors (not just today's active sources)
+const totalMonitoredSources = 275;
+
 // Helpers
 function escapeHtml(text: string): string {
   return text
@@ -137,7 +140,7 @@ function dotCount(articles: number): number {
       </div>
       <span class="masthead-date r d1">{dateStr}</span>
       <h1 class="masthead-hook r d2">
-        {editorial?.headline || `Today, ${sourcesReporting} sources published ${totalStories} stories. When you see them together, a picture emerges.`}
+        {editorial?.headline || `Today, ${totalMonitoredSources} sources published ${totalStories} stories. When you see them together, a picture emerges.`}
       </h1>
       <p class="masthead-sub r d3">
         {editorial?.subheadline || `${crossDomain} stories crossed domain boundaries — ${crossDomainPct}% of everything we read. That's where the connections live.`}
@@ -494,7 +497,7 @@ function dotCount(articles: number): number {
     )}
 
     <p class="body r d3" style="color: var(--on-navy-dim); margin-top: 32px;">
-      Signal Board reads {sourcesReporting} sources every day across the political spectrum, across borders, and across languages, because the outlets being squeezed out by consolidation and platform economics are the ones doing the most essential reporting.
+      Signal Board reads {totalMonitoredSources} sources every day across the political spectrum, across borders, and across languages, because the outlets being squeezed out by consolidation and platform economics are the ones doing the most essential reporting.
     </p>
   </div>
 </div>
@@ -531,7 +534,7 @@ function dotCount(articles: number): number {
     </div>
 
     <p class="r" style="margin-top: 52px; font-family: 'Lora', Georgia, serif; font-style: italic; font-size: clamp(16px, 1.7vw, 19px); color: var(--ink-mid); max-width: 600px;">
-      Tomorrow, Signal Board reads all {sourcesReporting} sources again, and the picture will be different. Come back and see what nobody else will show you.
+      Tomorrow, Signal Board reads all {totalMonitoredSources} sources again, and the picture will be different. Come back and see what nobody else will show you.
     </p>
 
     <p style="margin-top: 40px; font-family: 'Inter', sans-serif; font-size: 13px; color: var(--ink-light);">
