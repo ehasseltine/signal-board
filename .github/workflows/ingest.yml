@@ -1,4 +1,4 @@
-name: Daily Ingest
+name: Daily Pipeline
 
 on:
   schedule:
@@ -23,15 +23,23 @@ jobs:
       - name: Install dependencies
         run: pip install feedparser anthropic
 
-      - name: Run ingest
+      - name: Run ingest (Stage 1 — fetch RSS + AI classify)
         working-directory: actions
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: python ingest.py
 
-      - name: Run daily analysis
+      - name: Run daily analysis (Stage 2 — cluster + spectrum + cooperation)
         working-directory: actions
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: python analyze.py
+
+      - name: Run editorial synthesis (Stage 3 — narrative + headline)
+        working-directory: actions
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python synthesize.py
 
       - name: Copy data to docs for GitHub Pages
         run: |

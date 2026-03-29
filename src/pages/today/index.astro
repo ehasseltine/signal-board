@@ -24,6 +24,7 @@ const meanwhileStory = selectMeanwhile(cooperation, localRegional);
 
 const dateStr = pipelineData.date || new Date().toISOString().split('T')[0];
 const summary = pipelineData.summary || {};
+const editorial = pipelineData.editorial || {};
 
 // Domain distribution becomes our category pills
 const domainDistribution = summary.domain_distribution || {};
@@ -34,6 +35,14 @@ const cooperationRate = cooperation.cooperation_rate || 0;
 
 // Progress bar: % of sources that reported cross-domain stories
 const crossDomainPct = summary.cross_domain_pct || 0;
+
+// Editorial synthesis (from synthesize.py, Stage 3)
+const editorialHeadline = editorial.headline || '';
+const editorialSubheadline = editorial.subheadline || '';
+const editorialNarrative = editorial.synthesis || '';
+const cooperationHighlight = editorial.cooperation_highlight || '';
+const coverageGapNote = editorial.coverage_gap_note || '';
+const threadToWatch = editorial.thread_to_watch || '';
 
 // Helper functions
 function escapeHtml(text: string): string {
@@ -102,10 +111,10 @@ function generateSvgIcon(iconType: string): string {
       </div>
       <span class="masthead-date r d1">{dateStr}</span>
       <h1 class="masthead-hook r d2">
-        Today's news tells a story nobody else will show you alone.
+        {editorialHeadline || 'Today\'s news tells a story nobody else will show you alone.'}
       </h1>
       <p class="masthead-sub r d3">
-        Today, {sourcesReporting} sources published {totalStories} stories. {summary.cross_domain} crossed domain boundaries. When you see all of them together, a picture emerges that no single outlet can show you alone.
+        {editorialSubheadline || `Today, ${sourcesReporting} sources published ${totalStories} stories. ${summary.cross_domain || 0} crossed domain boundaries. When you see all of them together, a picture emerges that no single outlet can show you alone.`}
       </p>
       <div class="scroll-cue">
         <span>scroll</span>
@@ -318,10 +327,29 @@ function generateSvgIcon(iconType: string): string {
 <!-- CLOSE — NAVY -->
 <div class="close-section">
   <div class="wrap">
-    <h2 class="headline r">
-      Every day, Signal Board looks for something the current news architecture isn't designed to surface: who showed up for someone else, and what did it cost them.
-    </h2>
-    <p class="body r d1" style="color: var(--on-navy-dim);">
+    {editorialNarrative ? (
+      <div class="body r" style="color: var(--on-navy-dim); margin-bottom: 48px; white-space: pre-line;" set:html={escapeHtml(editorialNarrative)} />
+    ) : (
+      <h2 class="headline r">
+        Every day, Signal Board looks for something the current news architecture isn't designed to surface: who showed up for someone else, and what did it cost them.
+      </h2>
+    )}
+
+    {coverageGapNote && (
+      <div class="r d1" style="margin-bottom: 32px;">
+        <span class="section-label" style="color: var(--red); font-size: 13px; margin-bottom: 8px; display: block;">What national coverage missed</span>
+        <p class="body" style="color: var(--on-navy-dim);">{coverageGapNote}</p>
+      </div>
+    )}
+
+    {threadToWatch && (
+      <div class="r d2" style="margin-bottom: 32px;">
+        <span class="section-label" style="color: var(--green); font-size: 13px; margin-bottom: 8px; display: block;">Thread to watch</span>
+        <p class="body" style="color: var(--on-navy-dim);">{threadToWatch}</p>
+      </div>
+    )}
+
+    <p class="body r d3" style="color: var(--on-navy-dim);">
       Signal Board reads {sourcesReporting} sources every day across the political spectrum, across borders, and across languages, because the outlets being squeezed out by consolidation and platform economics are the ones doing the most essential reporting.
     </p>
   </div>
