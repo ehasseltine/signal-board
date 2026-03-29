@@ -31,6 +31,14 @@
     --teal-wash: #E4F7F1;
     --teal-soft: rgba(59,206,172,0.08);
 
+    /* ── DOMAIN COLOR IDENTITY ── per blueprint §2 */
+    --domain-ai: #1B2A4B;        /* navy — depth, computation */
+    --domain-labor: #D94032;     /* red — urgency, solidarity */
+    --domain-governance: #FFD23F; /* yellow — illumination, watchdog */
+    --domain-information: #3BCEAC; /* teal — flow, connectivity */
+    --domain-economics: #0EAD69; /* green — money, growth */
+    --domain-climate: #E07B4F;   /* amber — warmth, earth, energy (new) */
+
     /* ── ON-NAVY tokens ── */
     --on-navy: #F5EFDF;
     --on-navy-dim: rgba(245,239,223,0.7);
