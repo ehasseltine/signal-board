@@ -4,3 +4,4 @@ __pycache__/
 .venv/
 .vite
 .astro
+node_modules/

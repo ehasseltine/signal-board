@@ -42,6 +42,10 @@
     line-height: 1.15;
     color: var(--ink);
   }
+  /* Section weight hierarchy: Thread > Gap > Meanwhile */
+  .headline-thread { font-size: clamp(32px, 5vw, 60px); }
+  .headline-gap { font-size: clamp(26px, 3.5vw, 44px); }
+  .headline-meanwhile { font-size: clamp(24px, 3vw, 40px); }
 
   /* NO inner max-width — text fills the wrap container naturally */
   .body {
@@ -144,7 +148,7 @@
   /* ================ LAYOUT ================ */
   .wrap { max-width: 1080px; margin: 0 auto; padding: 0 clamp(24px, 4vw, 48px); }
   .wrap-wide { max-width: 1280px; margin: 0 auto; padding: 0 clamp(24px, 4vw, 48px); }
-  .section { padding: clamp(72px, 10vw, 120px) 0; }
+  .section { padding: clamp(48px, 6vw, 72px) 0; }
 
   /* ================ NAVY SECTION — reusable ================ */
   .navy {
@@ -170,17 +174,17 @@
   /* ================ MASTHEAD — NAVY ================ */
   .masthead-wrap {
     background: var(--ink);
-    min-height: 100vh;
+    min-height: 70vh;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     position: relative;
   }
   .masthead {
-    padding: clamp(48px, 8vw, 80px) 0;
+    padding: clamp(32px, 5vw, 48px) 0;
     width: 100%;
   }
   .masthead-title {
-    font-size: clamp(68px, 15vw, 200px);
+    font-size: clamp(48px, 10vw, 120px);
   }
   .masthead-date {
     font-family: 'Caveat', cursive;
@@ -191,10 +195,10 @@
   }
   .masthead-hook {
     font-family: 'Abril Fatface', Georgia, serif;
-    font-size: clamp(22px, 3.2vw, 42px);
+    font-size: clamp(20px, 2.8vw, 36px);
     line-height: 1.22;
     color: var(--cream);
-    margin-top: clamp(44px, 6vw, 72px);
+    margin-top: clamp(24px, 3vw, 40px);
   }
   .masthead-sub {
     font-family: 'Lora', Georgia, serif;
@@ -485,7 +489,7 @@
   /* ================ CLOSE — NAVY ================ */
   .close-section {
     background: var(--ink);
-    padding: clamp(80px, 11vw, 130px) 0;
+    padding: clamp(48px, 6vw, 72px) 0;
   }
   .close-section .headline {
     color: var(--cream);
@@ -520,14 +524,14 @@
 
   /* ================ REVEAL ================ */
   .r {
-    opacity: 0; transform: translateY(14px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
+    opacity: 0; transform: translateY(6px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
   }
   .r.v { opacity: 1; transform: translateY(0); }
-  .d1 { transition-delay: 0.1s; }
-  .d2 { transition-delay: 0.2s; }
-  .d3 { transition-delay: 0.3s; }
-  .d4 { transition-delay: 0.4s; }
+  .d1 { transition-delay: 0.05s; }
+  .d2 { transition-delay: 0.1s; }
+  .d3 { transition-delay: 0.15s; }
+  .d4 { transition-delay: 0.2s; }
 
   /* ================ SKIP NAV ================ */
   .skip-nav {

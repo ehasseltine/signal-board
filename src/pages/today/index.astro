@@ -144,10 +144,6 @@ function tierLabel(tier: string): string {
   return labels[tier] || tier;
 }
 
-// Dot grid for article count visualization
-function dotCount(articles: number): number {
-  return Math.min(Math.ceil(articles / 20), 30);
-}
 ---
 
 <BaseLayout title="Today" description={`${dateStr}: Signal Board read ${totalMonitoredSources} sources and found ${totalStories} stories. ${editorial?.accessible_headline || editorial?.headline || 'See what the picture looks like today.'}`} dateStr={dateStr} totalStories={totalStories} sourcesReporting={sourcesReporting}>
@@ -279,7 +275,7 @@ function dotCount(articles: number): number {
       <svg class="cat-icon" width="22" height="18" viewBox="0 0 22 18" fill="none"><line x1="1" y1="4" x2="21" y2="4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="4" y1="9" x2="18" y2="9" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" opacity="0.5"/><line x1="7" y1="14" x2="15" y2="14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" opacity="0.25"/></svg>
       The Daily Thread
     </span>
-    <h2 class="headline r d1">{threadStory.title}</h2>
+    <h2 class="headline headline-thread r d1">{threadStory.title}</h2>
 
     {threadStory.changeDescription && (
       <p class="r d1" style="font-family: 'Caveat', cursive; font-size: clamp(18px, 2vw, 22px); color: var(--red); margin-top: 8px;">
@@ -299,14 +295,14 @@ function dotCount(articles: number): number {
       </div>
     </div>
 
-    <!-- Dot grid -->
-    <div style="display: flex; flex-wrap: wrap; gap: 6px; margin: 16px 0; max-width: 400px;">
-      {Array.from({ length: dotCount(threadStory.articleCount) }).map(() => (
-        <div style="width: 14px; height: 14px; border-radius: 50%; background: var(--red);"></div>
-      ))}
-      {Array.from({ length: Math.max(0, 30 - dotCount(threadStory.articleCount)) }).map(() => (
-        <div style="width: 14px; height: 14px; border-radius: 50%; background: var(--red); opacity: 0.15;"></div>
-      ))}
+    <!-- Proportion bar — thread articles as share of total -->
+    <div style="margin: 16px 0; max-width: 480px;">
+      <div style="height: 6px; background: var(--ink-faint); border-radius: 3px; overflow: hidden;">
+        <div style={`height: 100%; width: ${Math.min(100, Math.round((threadStory.articleCount / Math.max(totalStories, 1)) * 100))}%; background: var(--red); border-radius: 3px;`}></div>
+      </div>
+      <span style="font-family: 'Inter', sans-serif; font-size: 11px; color: var(--ink-light); margin-top: 4px; display: block;">
+        {Math.round((threadStory.articleCount / Math.max(totalStories, 1)) * 100)}% of today's {totalStories} stories
+      </span>
     </div>
 
     <!-- Source tier breakdown -->
@@ -381,7 +377,7 @@ function dotCount(articles: number): number {
 <!-- SOURCES -->
 {threadStory.sourcesSample.length > 0 && (
 <div class="wrap">
-  <div style="padding: 32px 0 clamp(72px, 10vw, 120px);">
+  <div style="padding: 32px 0 clamp(48px, 6vw, 64px);">
     <div class="coverage-label r">Sources reporting</div>
     <div class="coverage-grid r">
       {threadStory.sourcesSample.slice(0, 8).map(sourceName => (
@@ -410,7 +406,7 @@ function dotCount(articles: number): number {
       <svg class="cat-icon" width="20" height="18" viewBox="0 0 20 18" fill="none"><rect x="1" y="1" width="6" height="16" rx="1" fill="currentColor"/><rect x="13" y="1" width="6" height="16" rx="1" fill="currentColor" opacity="0.25"/></svg>
       The Daily Gap
     </span>
-    <h2 class="headline r d1">{gapStory.title}</h2>
+    <h2 class="headline headline-gap r d1">{gapStory.title}</h2>
 
     {gapStory.changeDescription && (
       <p class="r d1" style="font-family: 'Caveat', cursive; font-size: clamp(18px, 2vw, 22px); color: var(--red); margin-top: 8px;">
@@ -473,7 +469,7 @@ function dotCount(articles: number): number {
 <!-- SOURCES -->
 {gapStory.sourcesSample.length > 0 && (
 <div class="wrap">
-  <div style="padding: 32px 0 clamp(72px, 10vw, 120px);">
+  <div style="padding: 32px 0 clamp(48px, 6vw, 64px);">
     <div class="coverage-label r" style="color: var(--on-navy-dim);">Sources reporting</div>
     <div class="coverage-grid r">
       {gapStory.sourcesSample.slice(0, 8).map(sourceName => (
@@ -502,7 +498,7 @@ function dotCount(articles: number): number {
       <svg class="cat-icon" width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="4" fill="currentColor"/><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5" opacity="0.3"/></svg>
       Meanwhile
     </span>
-    <h2 class="headline r d1">{meanwhileStory.title}</h2>
+    <h2 class="headline headline-meanwhile r d1">{meanwhileStory.title}</h2>
   </div>
 </div>
 
@@ -631,10 +627,6 @@ function dotCount(articles: number): number {
   );
 })()}
 
-<div class="wrap">
-  <div style="padding: 32px 0 clamp(72px, 10vw, 120px);">
-  </div>
-</div>
 </article>
 )}
 
@@ -714,7 +706,7 @@ function dotCount(articles: number): number {
       ))}
     </div>
 
-    <p class="r" style="margin-top: 52px; font-family: 'Lora', Georgia, serif; font-style: italic; font-size: clamp(16px, 1.7vw, 19px); color: var(--ink-mid); max-width: 600px;">
+    <p class="r" style="margin-top: 32px; font-family: 'Lora', Georgia, serif; font-style: italic; font-size: clamp(16px, 1.7vw, 19px); color: var(--ink-mid); max-width: 600px;">
       Tomorrow, Signal Board reads all {totalMonitoredSources} sources again. The picture will be different.
     </p>
 
