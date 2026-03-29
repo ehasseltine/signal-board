@@ -407,7 +407,7 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
       {threadStory.crossSpectrum.split(/(?<=\.)\s+/).filter((s: string) => s.trim().length > 10).map((sentence: string, i: number) => {
         const tierMatch = sentence.match(/^(National|International|Local|Specialist|Military|Conservative|Progressive|Analysis)/i);
         const tierName = tierMatch ? tierMatch[1] : `Perspective ${i + 1}`;
-        const content = tierMatch ? sentence.replace(tierMatch[0], '').replace(/^\s*(?:outlets?|sources?|media|press|coverage)?\s*/i, '').replace(/^[,.:]\s*/, '') : sentence;
+        const content = tierMatch ? sentence.replace(tierMatch[0], '').replace(/^[-\s]*(?:focused|oriented|leaning)?\s*(?:outlets?|sources?|media|press|coverage)?\s*/i, '').replace(/^[,.:]\s*/, '') : sentence;
         return (
         <div style={`display: flex; gap: 0; border-bottom: 1px solid rgba(27,42,74,0.06);${i === 0 ? ' border-top: 1px solid rgba(27,42,74,0.06);' : ''}`}>
           <div style="width: clamp(80px, 12vw, 120px); flex-shrink: 0; padding: 14px 16px 14px 0; display: flex; align-items: flex-start;">
