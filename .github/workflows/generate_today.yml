@@ -1,0 +1,56 @@
+name: Generate Today Page
+
+on:
+  push:
+    paths:
+      - "docs/data/daily/latest.json"
+      - "docs/data/daily/*.json"
+  workflow_dispatch:
+  workflow_run:
+    workflows: ["Daily Ingest Pipeline", "Daily Pipeline", "Ingest"]
+    types:
+      - completed
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    if: >
+      github.event_name == 'workflow_dispatch' ||
+      github.event_name == 'push' ||
+      (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success')
+    
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Verify pipeline data exists
+        run: |
+          if [ ! -f docs/data/daily/latest.json ]; then
+            echo 'No pipeline data found'
+            exit 1
+          fi
+          echo 'Pipeline data:' && ls -la docs/data/daily/latest.json
+
+      - name: Generate today page
+        run: python3 actions/generate_today.py
+
+      - name: Verify output
+        run: |
+          test -f docs/today/index.html || exit 1
+          size=$(wc -c < docs/today/index.html)
+          echo "Generated: ${size} bytes"
+          test "$size" -gt 1000
+
+      - name: Commit and push
+        run: |
+          git config user.name 'Signal Board Bot'
+          git config user.email 'bot@signalboard.org'
+          git add docs/today/index.html
+          git diff --staged --quiet || (git commit -m "Update today page for $(date +%Y-%m-%d)" && git push)
