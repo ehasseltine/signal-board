@@ -17,6 +17,7 @@ import json
 import hashlib
 import argparse
 import sys
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
 from pathlib import Path
 from time import mktime
@@ -286,14 +287,26 @@ def main():
     existing = load_existing_articles()
     print(f"Loaded {len(feeds)} feeds, {len(existing)} existing articles\n")
 
-    # Fetch all feeds
+    # Fetch all feeds in parallel (8 threads — fast enough, won't overwhelm servers)
     new_articles = []
+    feed_results = []
 
-    for feed in feeds:
-        articles = fetch_feed(feed)
-        for article in articles:
-            if article["id"] not in existing:
-                new_articles.append(article)
+    print("Fetching feeds...")
+    with ThreadPoolExecutor(max_workers=8) as executor:
+        futures = {executor.submit(fetch_feed, feed): feed for feed in feeds}
+        done_count = 0
+        for future in as_completed(futures):
+            done_count += 1
+            if done_count % 50 == 0 or done_count == len(feeds):
+                print(f"  ... {done_count}/{len(feeds)} feeds fetched")
+            try:
+                articles = future.result()
+                for article in articles:
+                    if article["id"] not in existing:
+                        new_articles.append(article)
+            except Exception as e:
+                feed_name = futures[future].get("name", "unknown")
+                print(f"  ERROR: {feed_name} — {e}")
 
     print(f"\nNew articles found: {len(new_articles)}")
 
