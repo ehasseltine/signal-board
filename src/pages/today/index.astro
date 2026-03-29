@@ -1,0 +1,344 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { loadLatestData } from '../../lib/data';
+import {
+  selectDailyThread,
+  selectDailyGap,
+  selectMeanwhile
+} from '../../lib/storySelection';
+
+// Load the pipeline data
+const pipelineData = loadLatestData();
+
+// Extract data
+const megaStories = pipelineData.mega_stories || [];
+const localRegional = pipelineData.local_regional_synthesis || {};
+
+// Select stories using the same algorithms as generate_today.py
+const threadStory = selectDailyThread(megaStories);
+const gapStory = selectDailyGap(megaStories, localRegional);
+const meanwhileStory = selectMeanwhile(megaStories, localRegional);
+
+const dateStr = pipelineData.date || new Date().toISOString().split('T')[0];
+const summary = pipelineData.summary || {};
+
+// Helper functions
+function escapeHtml(text: string): string {
+  return text
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+function extractTopSources(sources: Record<string, any>): string[] {
+  return Object.keys(sources).slice(0, 5);
+}
+
+function getSourceContext(sourceName: string): string | null {
+  const SOURCE_CONTEXT: Record<string, string> = {
+    'Dawn': 'Founded 1941, oldest English-language newspaper in Pakistan',
+    'Arab American News': 'Published in Dearborn MI since 1984, independent',
+    'The Advocate': 'Oldest LGBTQ+ publication in US, founded 1967',
+    'Colorado Sun': 'Founded 2018 by ex-Denver Post journalists',
+    'Indian Country Today': 'Native American news, founded 1981',
+    'El Diario NY': 'Oldest Spanish-language daily in US',
+    'Inside Climate News': 'Pulitzer-winning nonprofit climate journalism',
+    'Mother Jones': 'Nonprofit investigative journalism',
+  };
+  return SOURCE_CONTEXT[sourceName] || null;
+}
+
+function generateSvgIcon(iconType: string): string {
+  if (iconType === 'thread') {
+    return '<svg class="cat-icon" width="22" height="18" viewBox="0 0 22 18" fill="none"><line x1="1" y1="4" x2="21" y2="4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="4" y1="9" x2="18" y2="9" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" opacity="0.5"/><line x1="7" y1="14" x2="15" y2="14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" opacity="0.25"/></svg>';
+  } else if (iconType === 'gap') {
+    return '<svg class="cat-icon" width="20" height="18" viewBox="0 0 20 18" fill="none"><rect x="1" y="1" width="6" height="16" rx="1" fill="currentColor"/><rect x="13" y="1" width="6" height="16" rx="1" fill="currentColor" opacity="0.25"/></svg>';
+  } else if (iconType === 'meanwhile') {
+    return '<svg class="cat-icon" width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="4" fill="currentColor"/><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5" opacity="0.3"/></svg>';
+  }
+  return '';
+}
+---
+
+<BaseLayout title="Today">
+
+<!-- MASTHEAD — NAVY -->
+<div class="masthead-wrap">
+  <div class="wrap">
+    <div class="masthead">
+      <div class="r">
+        <div class="display masthead-title">SIGNAL</div>
+        <div class="display masthead-title">BOARD</div>
+      </div>
+      <span class="masthead-date r d1">{dateStr}</span>
+      <h1 class="masthead-hook r d2">
+        {summary.hook || 'Today\'s news tells a story nobody else will show you alone.'}
+      </h1>
+      <p class="masthead-sub r d3">
+        Today, {summary.sources_reporting || '0'} sources across {summary.geographic_reach || '0'} countries published {summary.total_articles || '0'} stories. When you see all of them together, a picture emerges that no single outlet can show you alone.
+      </p>
+      <div class="scroll-cue">
+        <span>scroll</span>
+        <svg width="18" height="10" viewBox="0 0 18 10" fill="none">
+          <path d="M2,2 L9,8 L16,2" stroke="var(--cream)" stroke-width="1.5" stroke-linecap="round" opacity="0.35"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SUMMARY CARDS — CREAM -->
+<div class="wrap-wide" style="padding-top: clamp(48px, 7vw, 80px); padding-bottom: clamp(24px, 4vw, 40px);">
+  <div class="summary-grid r">
+
+    <a href="#thread" class="summary-card" style="text-decoration: none; color: inherit;">
+      <div class="card-label">
+        <svg width="18" height="14" viewBox="0 0 22 18" fill="none" style="vertical-align: -2px; margin-right: 6px;">
+          <line x1="1" y1="4" x2="21" y2="4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="4" y1="9" x2="18" y2="9" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" opacity="0.5"/>
+          <line x1="7" y1="14" x2="15" y2="14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" opacity="0.25"/>
+        </svg>The Daily Thread
+      </div>
+      <div class="card-stat card-stat-ink">{Object.keys(threadStory?.sources || {}).length}</div>
+      <div class="card-meta">sources across the political spectrum</div>
+      <div class="card-hook">How one story connects across sources and perspectives. See how different outlets frame the same news.</div>
+      <span class="card-arrow">Read &darr;</span>
+    </a>
+
+    <a href="#gap" class="summary-card" style="text-decoration: none; color: inherit;">
+      <div class="card-label">
+        <svg width="16" height="14" viewBox="0 0 20 18" fill="none" style="vertical-align: -2px; margin-right: 6px;">
+          <rect x="1" y="1" width="6" height="16" rx="1" fill="currentColor"/>
+          <rect x="13" y="1" width="6" height="16" rx="1" fill="currentColor" opacity="0.25"/>
+        </svg>The Daily Gap
+      </div>
+      <div class="card-stat">1 <span style="font-family: 'Lora', serif; font-size: clamp(14px, 1.5vw, 17px); font-style: italic; color: var(--ink-mid);">of many</span></div>
+      <div class="card-meta">outlets with a different frame</div>
+      <div class="card-hook">What corporate outlets miss. Stories where independent and international sources show a different picture.</div>
+      <span class="card-arrow">Read &darr;</span>
+    </a>
+
+    <a href="#meanwhile" class="summary-card summary-card-green" style="text-decoration: none; color: inherit;">
+      <div class="card-label card-label-green">
+        <svg width="16" height="16" viewBox="0 0 20 20" fill="none" style="vertical-align: -2px; margin-right: 6px;">
+          <circle cx="10" cy="10" r="4" fill="currentColor"/>
+          <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5" opacity="0.3"/>
+        </svg>Meanwhile
+      </div>
+      <div class="card-stat card-stat-green">{summary.meanwhile_actions || '0'}</div>
+      <div class="card-meta">places where people showed up</div>
+      <div class="card-hook">Who showed up. Communities taking care of each other, organizing, acting, building something better.</div>
+      <span class="card-arrow">Read &darr;</span>
+    </a>
+
+  </div>
+</div>
+
+<!-- THE DAILY THREAD — CREAM -->
+{threadStory && (
+<div id="thread">
+<div class="wrap">
+  <div class="section" style="padding-bottom: 0;">
+    <span class="section-label r">
+      <Fragment set:html={generateSvgIcon('thread')} />
+      The Daily Thread
+    </span>
+    <h2 class="headline r d1">{threadStory.title}</h2>
+    {threadStory.synthesis?.narrative && (
+      <p class="body r d2" style="margin-top: 28px;" set:html={escapeHtml(threadStory.synthesis.narrative)} />
+    )}
+  </div>
+</div>
+
+<!-- SOURCE COVERAGE VIZ -->
+{threadStory.sources && Object.keys(threadStory.sources).length > 0 && (
+<div class="wrap-wide">
+  <div style="margin: 40px auto 0; padding: 0 clamp(16px, 3vw, 32px);" class="r">
+    <div class="coverage-label">Sources reporting today</div>
+    <div class="coverage-grid">
+      {extractTopSources(threadStory.sources).map(sourceName => (
+        <div class="coverage-card">
+          <div class="coverage-name">{sourceName}</div>
+          {getSourceContext(sourceName) && (
+            <div class="coverage-type">{getSourceContext(sourceName)}</div>
+          )}
+        </div>
+      ))}
+    </div>
+    {threadStory.synthesis?.narrative && (
+      <div class="coverage-note">
+        <strong>What the data shows:</strong> Multiple outlets independently reported on this story across the political spectrum and around the world.
+      </div>
+    )}
+  </div>
+</div>
+)}
+
+<div class="wrap">
+  <div style="padding: 40px 0 clamp(72px, 10vw, 120px);">
+    {threadStory.synthesis?.key_developments && threadStory.synthesis.key_developments.length > 0 && (
+      <div class="r">
+        {threadStory.synthesis.key_developments.map((dev: string, idx: number) => (
+          <p class="body r" style={`margin-top: ${idx === 0 ? '0' : '1.5rem'};`}>
+            {dev}
+          </p>
+        ))}
+      </div>
+    )}
+
+    {threadStory.sources && (
+      <div class="sources r">
+        {extractTopSources(threadStory.sources).map((name, idx) => (
+          <>
+            {idx > 0 && ' · '}
+            <span>{name}</span>
+          </>
+        ))}
+      </div>
+    )}
+  </div>
+</div>
+</div>
+)}
+
+<!-- THE DAILY GAP — NAVY -->
+{gapStory && (
+<div id="gap" class="navy">
+<div class="wrap">
+  <div class="section" style="padding-bottom: 0;">
+    <span class="section-label r">
+      <Fragment set:html={generateSvgIcon('gap')} />
+      The Daily Gap
+    </span>
+    <h2 class="headline r d1">{gapStory.title}</h2>
+    {gapStory.synthesis?.narrative && (
+      <p class="body r d2" style="margin-top: 28px;" set:html={escapeHtml(gapStory.synthesis.narrative)} />
+    )}
+  </div>
+</div>
+
+<div class="wrap">
+  <div style="padding: 32px 0 clamp(72px, 10vw, 120px);">
+    {gapStory.synthesis?.key_developments && gapStory.synthesis.key_developments.length > 0 && (
+      <div class="r">
+        {gapStory.synthesis.key_developments.map((dev: string, idx: number) => (
+          <p class="body r" style={`margin-top: ${idx === 0 ? '0' : '1.5rem'};`}>
+            {dev}
+          </p>
+        ))}
+      </div>
+    )}
+
+    {gapStory.sources && (
+      <div class="sources r">
+        {extractTopSources(gapStory.sources).map((name, idx) => (
+          <>
+            {idx > 0 && ' · '}
+            <span>{name}</span>
+          </>
+        ))}
+      </div>
+    )}
+  </div>
+</div>
+</div>
+)}
+
+<!-- MEANWHILE — CREAM with green wash -->
+{meanwhileStory && (
+<div id="meanwhile" style="background: #EFF5EE;">
+<div class="wrap">
+  <div class="section" style="padding-bottom: 0;">
+    <span class="section-label section-label-green r">
+      <Fragment set:html={generateSvgIcon('meanwhile')} />
+      Meanwhile
+    </span>
+    <h2 class="headline r d1">{meanwhileStory.title}</h2>
+    {meanwhileStory.synthesis?.narrative && (
+      <p class="body r d2" style="margin-top: 28px;" set:html={escapeHtml(meanwhileStory.synthesis.narrative)} />
+    )}
+  </div>
+</div>
+
+<div class="wrap">
+  <div style="padding: 32px 0 clamp(72px, 10vw, 120px);">
+    {meanwhileStory.synthesis?.key_developments && meanwhileStory.synthesis.key_developments.length > 0 && (
+      <div class="r">
+        {meanwhileStory.synthesis.key_developments.map((dev: string, idx: number) => (
+          <p class="body r" style={`margin-top: ${idx === 0 ? '0' : '1.5rem'};`}>
+            {dev}
+          </p>
+        ))}
+      </div>
+    )}
+
+    {meanwhileStory.sources && (
+      <div class="sources r">
+        {extractTopSources(meanwhileStory.sources).map((name, idx) => (
+          <>
+            {idx > 0 && ' · '}
+            <span>{name}</span>
+          </>
+        ))}
+      </div>
+    )}
+  </div>
+</div>
+</div>
+)}
+
+<!-- CLOSE — NAVY -->
+<div class="close-section">
+  <div class="wrap">
+    <h2 class="headline r">
+      Every day, Signal Board looks for something the current news architecture isn't designed to surface: who showed up for someone else, and what did it cost them.
+    </h2>
+    <p class="body r d1" style="color: var(--on-navy-dim);">
+      Signal Board reads {summary.sources_reporting || '275'} sources every day across the political spectrum, across borders, and across languages, because the outlets being squeezed out by consolidation and platform economics are the ones doing the most essential reporting.
+    </p>
+  </div>
+</div>
+
+<!-- SOURCES — CREAM -->
+<div class="wrap">
+  <div class="section">
+    <span class="section-label r">Today's Sources</span>
+
+    <div class="r d1" style="position: relative; display: inline-block; margin-top: 4px;">
+      <svg style="position: absolute; top: -14px; left: -20px; width: calc(100% + 40px); height: calc(100% + 28px);" viewBox="0 0 200 120" fill="none" preserveAspectRatio="none">
+        <ellipse cx="100" cy="60" rx="90" ry="52" stroke="var(--red)" stroke-width="2" fill="none" opacity="0.25" transform="rotate(-2, 100, 60)" stroke-dasharray="5,4"/>
+      </svg>
+      <div class="display" style="font-size: clamp(64px, 13vw, 150px); line-height: 1;">{summary.total_articles || '0'}</div>
+    </div>
+    <p class="r d2" style="font-family: 'Caveat', cursive; font-size: 22px; color: var(--ink-light); margin-top: 4px;">articles analyzed today</p>
+
+    <div class="r d3" style="margin-top: 20px; max-width: 500px;">
+      <div style="height: 8px; background: var(--ink-faint); border-radius: 4px; overflow: hidden;">
+        <div style="height: 100%; width: 51.6%; background: var(--red); border-radius: 4px;"></div>
+      </div>
+      <div style="display: flex; justify-content: space-between; margin-top: 6px;">
+        <span style="font-family: 'Inter', sans-serif; font-size: 11px; color: var(--ink-light);">{summary.total_articles || '0'} analyzed</span>
+        <span style="font-family: 'Inter', sans-serif; font-size: 11px; color: var(--ink-light);">275 sources</span>
+      </div>
+    </div>
+
+    <div class="pills r d4">
+      {(summary.categories_covered || []).slice(0, 15).map((cat: string) => (
+        <span class="pill">{cat}</span>
+      ))}
+      <span class="pill pill-red">+ more</span>
+    </div>
+
+    <p class="r" style="margin-top: 52px; font-family: 'Lora', Georgia, serif; font-style: italic; font-size: clamp(16px, 1.7vw, 19px); color: var(--ink-mid); max-width: 600px;">
+      Tomorrow, Signal Board reads all 275 sources again, and the picture will be different. Come back and see what nobody else will show you.
+    </p>
+
+    <p style="margin-top: 40px; font-family: 'Inter', sans-serif; font-size: 13px; color: var(--ink-light);">
+      <a href="/" style="color: var(--ink-light);">About Signal Board</a>&ensp;·&ensp;<a href="/" style="color: var(--ink-light);">See all 275 sources</a>&ensp;·&ensp;<a href="/" style="color: var(--ink-light);">The Constellation</a>
+    </p>
+  </div>
+</div>
+
+</BaseLayout>

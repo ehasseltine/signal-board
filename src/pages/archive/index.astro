@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { listDailyDates } from '../../lib/data';
+
+const dates = listDailyDates();
+---
+
+<BaseLayout title="Archive">
+
+<div class="masthead-wrap" style="min-height: auto; padding: clamp(48px, 8vw, 80px) 0;">
+  <div class="wrap">
+    <div class="masthead" style="padding: 0;">
+      <div class="r">
+        <div class="display masthead-title">ARCHIVE</div>
+      </div>
+      <p class="masthead-sub r d1" style="color: var(--cream); margin-top: clamp(24px, 4vw, 40px);">
+        Browse all daily Signal Board editions
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="wrap" style="padding: clamp(48px, 8vw, 80px) clamp(24px, 4vw, 48px);">
+  <div class="section" style="padding: 0;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: clamp(16px, 2vw, 24px);">
+      {dates.map(date => (
+        <a href={`/signal-board/archive/${date}/`} style="text-decoration: none; color: inherit;">
+          <div class="summary-card r" style="height: 100%; display: flex; flex-direction: column;">
+            <div class="card-label" style="margin-bottom: 16px;">{date}</div>
+            <p class="card-hook" style="flex-grow: 1; margin-bottom: 20px;">
+              View the daily analysis for this date
+            </p>
+            <span class="card-arrow">Read &darr;</span>
+          </div>
+        </a>
+      ))}
+    </div>
+
+    {dates.length === 0 && (
+      <div style="text-align: center; padding: clamp(48px, 10vw, 100px) 0;">
+        <p class="body" style="color: var(--ink-light);">No archives available yet. Check back soon.</p>
+      </div>
+    )}
+  </div>
+</div>
+
+</BaseLayout>

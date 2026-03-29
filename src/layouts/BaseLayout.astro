@@ -1,0 +1,57 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signal Board - {title}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Caveat:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div id="progress"></div>
+
+<slot />
+
+<script>
+  // Intersection Observer for scroll reveals
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('v'); });
+  }, { threshold: 0.06, rootMargin: '0px 0px -30px 0px' });
+  document.querySelectorAll('.r').forEach(el => obs.observe(el));
+
+  setTimeout(() => {
+    document.querySelectorAll('.masthead .r').forEach(el => el.classList.add('v'));
+  }, 200);
+
+  const bar = document.getElementById('progress');
+  window.addEventListener('scroll', () => {
+    bar.style.width = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100 + '%';
+  }, { passive: true });
+
+  let scrolled = false;
+  window.addEventListener('scroll', () => {
+    if (!scrolled) { scrolled = true; const c = document.querySelector('.scroll-cue'); if (c) c.style.opacity = '0'; }
+  }, { passive: true });
+
+  document.querySelectorAll('.summary-card').forEach(card => {
+    card.addEventListener('click', (e) => {
+      e.preventDefault();
+      const target = document.querySelector(card.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+</script>
+
+</body>
+</html>
