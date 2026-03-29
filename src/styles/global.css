@@ -181,8 +181,40 @@
     padding: var(--space-lg) 28px;
     background: var(--red-soft);
     border-radius: var(--radius-sm);
+    position: relative;
   }
   .callout-green { background: var(--green-soft); }
+
+  /* Gradient wash behind callout cards — color as atmosphere */
+  .callout-wash {
+    position: relative;
+  }
+  .callout-wash::before {
+    content: '';
+    position: absolute;
+    top: -24px; left: -32px; right: -32px; bottom: -24px;
+    border-radius: var(--radius-md);
+    z-index: -1;
+    opacity: 0.4;
+  }
+  .callout-wash-red::before {
+    background: radial-gradient(ellipse at 20% 50%, rgba(217,64,50,0.08) 0%, transparent 70%);
+  }
+  .callout-wash-yellow::before {
+    background: radial-gradient(ellipse at 80% 50%, rgba(255,210,63,0.1) 0%, transparent 70%);
+  }
+  .callout-wash-green::before {
+    background: radial-gradient(ellipse at 20% 50%, rgba(14,173,105,0.08) 0%, transparent 70%);
+  }
+
+  /* Section transition gradient strips */
+  .section-transition {
+    height: 64px;
+    width: 100%;
+  }
+  .section-transition-teal-green {
+    background: linear-gradient(to bottom, var(--teal-wash), #E0F5EC);
+  }
   .callout-label {
     font-family: 'Inter', sans-serif;
     font-weight: 700;
@@ -259,10 +291,10 @@
   .thread-world::before { background: var(--red); }
   .thread-world .section-label { color: var(--red-accessible); }
 
-  /* Gap — navy bg, teal accent bar */
-  .gap-world { background: var(--ink); }
+  /* Gap — teal wash bg, teal accent bar (navy only for header strip) */
+  .gap-world { background: var(--teal-wash); }
   .gap-world::before { background: var(--teal); }
-  .gap-world .section-label { color: var(--teal); }
+  .gap-world .section-label { color: var(--teal-accessible); }
 
   /* Meanwhile — teal wash bg, green accent bar */
   .meanwhile-world { background: var(--teal-wash); }
@@ -392,12 +424,24 @@
     font-weight: 800;
     font-size: clamp(40px, 6vw, 56px);
     line-height: 1;
-    color: var(--ink);
+    color: var(--red);
     margin-bottom: var(--space-sm);
     font-variant-numeric: tabular-nums;
   }
-  .card-stat-green { color: var(--ink); }
-  .card-stat-ink { color: var(--ink); }
+  .card-stat-teal { color: var(--teal-accessible); }
+  .card-stat-green { color: var(--green-accessible); }
+
+  /* Caveat annotation — editorial context beside big numbers */
+  .stat-annotation {
+    font-family: 'Caveat', cursive;
+    font-size: clamp(16px, 1.8vw, 20px);
+    line-height: 1.4;
+    color: var(--ink-mid);
+    margin-top: 4px;
+  }
+  .stat-annotation-red { color: var(--red-accessible); }
+  .stat-annotation-teal { color: var(--teal-accessible); }
+  .stat-annotation-green { color: var(--green-accessible); }
 
   .card-meta {
     font-family: 'Inter', sans-serif;
@@ -448,11 +492,36 @@
 
   .coverage-card {
     padding: var(--space-md) 20px;
-    background: var(--ink-faint);
+    background: var(--white);
     border-radius: var(--radius-sm);
-    transition: background var(--duration-hover) var(--ease-out);
+    border-left: 3px solid var(--ink-faint);
+    transition: background var(--duration-hover) var(--ease-out),
+                transform var(--duration-hover) var(--ease-out);
   }
-  .coverage-card:hover { background: rgba(27,42,74,0.1); }
+  .coverage-card:hover { transform: translateY(-2px); box-shadow: 0 4px 16px var(--shadow); }
+  /* Tier color borders */
+  .coverage-card[data-tier="national"] { border-left-color: var(--red); }
+  .coverage-card[data-tier="international"] { border-left-color: var(--ink); }
+  .coverage-card[data-tier="local-regional"] { border-left-color: var(--yellow); }
+  .coverage-card[data-tier="specialist"] { border-left-color: var(--teal); }
+  .coverage-card[data-tier="analysis"] { border-left-color: var(--green); }
+  /* Geography warmth shifts */
+  .coverage-card[data-geo="international"] { background: rgba(27,42,74,0.03); }
+  .coverage-card[data-geo="local"] { background: rgba(255,210,63,0.04); }
+
+  .coverage-country {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    background: var(--ink-faint);
+    padding: 2px 6px;
+    border-radius: 3px;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
 
   .coverage-name {
     font-family: 'Inter', sans-serif;
@@ -524,11 +593,58 @@
   .d3 { transition-delay: 0.18s; }
   .d4 { transition-delay: 0.24s; }
 
+  /* ================ RECTANGLE BREAKERS ================ */
+  /* Rotated watch-for card — subtle playful angle */
+  .watch-for-card {
+    transform: rotate(-1.5deg);
+    transition: transform var(--duration-hover) var(--ease-out);
+  }
+  .watch-for-card:hover {
+    transform: rotate(0deg);
+  }
+
+  /* Oversized Substack CTA */
+  .cta-oversized {
+    font-family: 'Abril Fatface', Georgia, serif;
+    font-size: clamp(32px, 5vw, 56px);
+    line-height: 1.15;
+    color: var(--red);
+    text-decoration: none;
+    display: inline-block;
+    transition: color var(--duration-hover) var(--ease-out),
+                transform var(--duration-hover) var(--ease-out);
+  }
+  .cta-oversized:hover {
+    color: var(--ink);
+    transform: translateX(8px);
+  }
+  .cta-oversized .cta-arrow {
+    display: inline-block;
+    transition: transform var(--duration-hover) var(--ease-out);
+  }
+  .cta-oversized:hover .cta-arrow {
+    transform: translateX(6px);
+  }
+
+  /* Constellation bleed — SVG lines bleeding past nav boundary */
+  .constellation-bleed {
+    position: absolute;
+    bottom: -60px;
+    right: 0;
+    width: 55%;
+    height: 120px;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.05;
+  }
+
   /* Reduced motion — progressive enhancement per blueprint §7 */
   @media (prefers-reduced-motion: reduce) {
     .r { opacity: 1; transform: none; transition-duration: 0.01ms; }
     .scroll-cue { animation: none; }
     .summary-card { transition-duration: 0.01ms; }
+    .watch-for-card { transform: none; transition-duration: 0.01ms; }
+    .cta-oversized { transition-duration: 0.01ms; }
     html { scroll-behavior: auto; }
   }
 
