@@ -48,6 +48,9 @@ jobs:
       - name: Build with Astro
         run: npx astro build
 
+      - name: Disable Jekyll processing
+        run: touch docs/.nojekyll
+
       - name: Verify output
         run: |
           if [ ! -f docs/today/index.html ]; then
