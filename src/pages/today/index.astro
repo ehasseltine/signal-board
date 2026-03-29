@@ -234,14 +234,14 @@ function tierLabel(tier: string): string {
     )}
 
     {gapStory && (
-    <a href="#gap" class="summary-card" style="text-decoration: none; color: inherit;">
-      <div class="card-label">
+    <a href="#gap" class="summary-card summary-card-teal" style="text-decoration: none; color: inherit;">
+      <div class="card-label card-label-teal">
         <svg width="16" height="14" viewBox="0 0 20 18" fill="none" style="vertical-align: -2px; margin-right: 6px;">
           <rect x="1" y="1" width="6" height="16" rx="1" fill="currentColor"/>
           <rect x="13" y="1" width="6" height="16" rx="1" fill="currentColor" opacity="0.25"/>
         </svg>The Daily Gap
       </div>
-      <div class="card-stat">{gapStory.sourceCount} <span style="font-family: 'Lora', serif; font-size: clamp(14px, 1.5vw, 17px); font-style: italic; color: var(--ink-mid);">sources</span></div>
+      <div class="card-stat">{gapStory.sourceCount} <span style="font-family: 'Inter', sans-serif; font-size: 13px; color: var(--ink-mid);">sources</span></div>
       <div class="card-meta">covering what others miss</div>
       <div class="card-hook">{gapStory.title}</div>
       <span class="card-arrow">Read &darr;</span>
@@ -278,7 +278,7 @@ function tierLabel(tier: string): string {
     <h2 class="headline headline-thread r d1">{threadStory.title}</h2>
 
     {threadStory.changeDescription && (
-      <p class="r d1" style="font-family: 'Caveat', cursive; font-size: clamp(18px, 2vw, 22px); color: var(--red); margin-top: 8px;">
+      <p class="r d1" style="font-family: 'Caveat', cursive; font-size: clamp(18px, 2vw, 22px); color: var(--red-accessible); margin-top: 8px;">
         {threadStory.changeDescription}
       </p>
     )}
@@ -288,7 +288,7 @@ function tierLabel(tier: string): string {
   <div class="r d2" style="margin-top: 32px; padding: 28px 0; border-top: 1px solid rgba(27,42,74,0.08); border-bottom: 1px solid rgba(27,42,74,0.08);">
     <div style="display: flex; align-items: center; gap: 24px; flex-wrap: wrap;">
       <div>
-        <div class="display" style="font-size: clamp(48px, 7vw, 72px); line-height: 1; color: var(--red);">{threadStory.articleCount}</div>
+        <div class="display" style="font-size: clamp(48px, 7vw, 72px); line-height: 1; color: var(--red-accessible);">{threadStory.articleCount}</div>
         <div style="font-family: 'Inter', sans-serif; font-size: 12px; color: var(--ink-light); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.05em;">articles</div>
       </div>
       <div style="flex: 1; min-width: 200px;">
@@ -337,7 +337,7 @@ function tierLabel(tier: string): string {
         return (
         <div style={`display: flex; gap: 0; border-bottom: 1px solid rgba(27,42,74,0.06);${i === 0 ? ' border-top: 1px solid rgba(27,42,74,0.06);' : ''}`}>
           <div style="width: clamp(80px, 12vw, 120px); flex-shrink: 0; padding: 14px 16px 14px 0; display: flex; align-items: flex-start;">
-            <span style="font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--red);">{tierName}</span>
+            <span style="font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--red-accessible);">{tierName}</span>
           </div>
           <div style="flex: 1; padding: 14px 0 14px 16px; border-left: 2px solid var(--red);">
             <p class="body" style="font-size: clamp(14px, 1.4vw, 16px); line-height: 1.65; color: var(--ink); margin: 0;">{content.trim()}</p>
@@ -365,7 +365,7 @@ function tierLabel(tier: string): string {
   <div style="padding: 28px 0 0;">
     <div class="r">
       <div style="border-left: 4px solid var(--red); padding: 14px 18px; background: rgba(217, 64, 50, 0.04); border-radius: 0 8px 8px 0;">
-        <span style="font-family: 'Inter', sans-serif; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--red); font-weight: 600; display: block; margin-bottom: 8px;">What to watch for</span>
+        <span style="font-family: 'Inter', sans-serif; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--red-accessible); font-weight: 600; display: block; margin-bottom: 8px;">What to watch for</span>
         <p class="body" style="font-size: clamp(15px, 1.5vw, 17px); line-height: 1.8; color: var(--ink); margin: 0;" set:html={escapeHtml(threadStory.watchFor)} />
       </div>
     </div>
@@ -512,7 +512,7 @@ function tierLabel(tier: string): string {
     <!-- Big number + inline cooperation type sentence -->
     <div class="r d2" style="margin-top: 24px;">
       <div style="display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap;">
-        <div class="display" style="font-size: clamp(40px, 6vw, 64px); line-height: 1; color: var(--green);">{cooperation?.total_cooperation_stories || meanwhileStory.articleCount}</div>
+        <div class="display" style="font-size: clamp(40px, 6vw, 64px); line-height: 1; color: var(--green-accessible);">{cooperation?.total_cooperation_stories || meanwhileStory.articleCount}</div>
         <div style="font-family: 'Lora', serif; font-size: clamp(15px, 1.4vw, 18px); color: var(--ink-mid);">
           stories of cooperation — <strong>{cooperation?.cooperation_rate || 25}%</strong> of everything we read
         </div>
@@ -521,7 +521,7 @@ function tierLabel(tier: string): string {
         <p style="font-family: 'Lora', serif; font-size: clamp(14px, 1.3vw, 16px); color: var(--ink-light); margin-top: 10px; line-height: 1.6;">
           {cooperation.by_type.map((t: any, i: number) => (
             <span>
-              <strong style="color: var(--green); font-weight: 700;">{t.count}</strong>{' '}{t.type}{i < cooperation.by_type.length - 1 ? ', ' : ''}
+              <strong style="color: var(--green-accessible); font-weight: 700;">{t.count}</strong>{' '}{t.type}{i < cooperation.by_type.length - 1 ? ', ' : ''}
             </span>
           ))}
         </p>
@@ -552,7 +552,7 @@ function tierLabel(tier: string): string {
   <div style="padding: 24px 0 0;">
     <div class="r">
       <div style="border-left: 4px solid var(--green); padding: 14px 18px; background: rgba(14, 173, 105, 0.04); border-radius: 0 8px 8px 0;">
-        <span style="font-family: 'Inter', sans-serif; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--green); font-weight: 600; display: block; margin-bottom: 8px;">What to watch for</span>
+        <span style="font-family: 'Inter', sans-serif; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--green-accessible); font-weight: 600; display: block; margin-bottom: 8px;">What to watch for</span>
         <p class="body" style="font-size: clamp(15px, 1.5vw, 17px); line-height: 1.8; color: var(--ink); margin: 0;" set:html={escapeHtml(meanwhileStory.watchFor)} />
       </div>
     </div>
@@ -565,7 +565,7 @@ function tierLabel(tier: string): string {
     <div class="r" style="font-family: 'Inter', sans-serif; font-size: 12px; color: var(--ink-light); line-height: 1.8;">
       Sources: {cooperation.highlights.slice(0, 6).map((h: any, i: number) => (
         <span>
-          <a href={h.url || '#'} target="_blank" rel="noopener" style="color: var(--green); text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1px;">{h.source}</a>{i < Math.min(cooperation.highlights.length, 6) - 1 ? ', ' : ''}
+          <a href={h.url || '#'} target="_blank" rel="noopener" style="color: var(--green-accessible); text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1px;">{h.source}</a>{i < Math.min(cooperation.highlights.length, 6) - 1 ? ', ' : ''}
         </span>
       ))}
     </div>
@@ -618,14 +618,18 @@ function tierLabel(tier: string): string {
 
     <!-- Substack CTA — integrated -->
     <div class="r" style="margin-top: 24px;">
-      <a href="https://substack.com/@elisehasseltine" target="_blank" rel="noopener" style="font-family: 'Lora', Georgia, serif; font-style: italic; font-size: clamp(16px, 1.7vw, 19px); color: var(--red); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; transition: color 0.2s;">
+      <a href="https://substack.com/@elisehasseltine" target="_blank" rel="noopener" style="font-family: 'Lora', Georgia, serif; font-style: italic; font-size: clamp(16px, 1.7vw, 19px); color: var(--red-accessible); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; transition: color 0.2s;">
         Get tomorrow's analysis on Substack &rarr;
       </a>
     </div>
 
-    <nav aria-label="Footer navigation" style="margin-top: 40px; padding-bottom: 24px; font-family: 'Inter', sans-serif; font-size: 13px; color: var(--ink-light);">
-      <a href="/signal-board/about/" style="color: var(--ink-light);">About Signal Board</a>&ensp;·&ensp;<a href="/signal-board/archive/" style="color: var(--ink-light);">Archive</a>&ensp;·&ensp;<a href="https://substack.com/@elisehasseltine" target="_blank" rel="noopener" style="color: var(--ink-light);">Subscribe</a>
+    <nav aria-label="Footer navigation" style="margin-top: 40px; font-family: 'Inter', sans-serif; font-size: 13px; color: var(--ink-light);">
+      <a href="/signal-board/about/" style="color: var(--ink-light);">About</a>&ensp;·&ensp;<a href="/signal-board/archive/" style="color: var(--ink-light);">Archive</a>&ensp;·&ensp;<a href="https://substack.com/@elisehasseltine" target="_blank" rel="noopener" style="color: var(--ink-light);">Subscribe</a>&ensp;·&ensp;<a href="https://github.com/ehasseltine/signal-board" target="_blank" rel="noopener" style="color: var(--ink-light);">Source</a>
     </nav>
+
+    <div style="margin-top: 20px; padding-bottom: 32px; font-family: 'Inter', sans-serif; font-size: 11px; color: var(--ink-light); opacity: 0.7;">
+      Signal Board · Created by <a href="https://www.elisehasseltine.com" style="color: var(--ink-light);">Elise Hasseltine</a> · Last updated: <time datetime={dateStr}>{dateStr}</time> · No tracking · No ads
+    </div>
   </div>
 </div>
 </footer>
