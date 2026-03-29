@@ -169,21 +169,50 @@ function topStoryToSection(
     }
   }
 
-  // PRIMARY: actual article sources from this story
-  let sourcesSample = [...new Set((ts.articles || []).map(a => a.source))];
+  // PRIMARY: actual article sources from this story, ordered by editorial interest
+  // International & local-regional sources first (unique angles), then specialist, then national
+  // Within national, deprioritize aggregators
+  const AGGREGATORS = new Set(['RealClearPolitics', 'RealClearDefense', 'RealClearEnergy', 'Google News', 'Yahoo News', 'MSN']);
+  const TIER_PRIORITY: Record<string, number> = {
+    'international': 0,
+    'local-regional': 1,
+    'specialist': 2,
+    'national': 3,
+  };
 
-  // SUPPLEMENT: if we have few article sources but what_connects has more, add them
-  if (sourcesSample.length < 4 && wc) {
-    const wcSources = [
-      ...(wc.left_sources || []),
-      ...(wc.right_sources || []),
-      ...(wc.international_sources || []),
-      ...(wc.local_regional_sources || []),
-    ];
-    for (const s of wcSources) {
-      if (!sourcesSample.includes(s)) sourcesSample.push(s);
+  // Combine articles + connections + tier_framing samples for complete source picture
+  const allSourceEntries: Array<{ source: string; tier: string }> = [];
+
+  for (const art of (ts.articles || [])) {
+    allSourceEntries.push({ source: art.source, tier: art.tier || 'national' });
+  }
+  // Add sources from connections that aren't already in articles
+  const articleSources = new Set((ts.articles || []).map(a => a.source));
+  for (const conn of (ts.connections || [])) {
+    if (conn.source && !articleSources.has(conn.source)) {
+      allSourceEntries.push({ source: conn.source, tier: 'national' });
     }
   }
+  // Add sources from tier_framing samples
+  if (ts.tier_framing) {
+    for (const [tier, data] of Object.entries(ts.tier_framing)) {
+      if (data?.sample?.source && !articleSources.has(data.sample.source)) {
+        allSourceEntries.push({ source: data.sample.source, tier });
+      }
+    }
+  }
+
+  const sortedArticles = allSourceEntries.sort((a, b) => {
+    const aTier = TIER_PRIORITY[a.tier || 'national'] ?? 3;
+    const bTier = TIER_PRIORITY[b.tier || 'national'] ?? 3;
+    if (aTier !== bTier) return aTier - bTier;
+    // Within same tier, deprioritize aggregators
+    const aAgg = AGGREGATORS.has(a.source) ? 1 : 0;
+    const bAgg = AGGREGATORS.has(b.source) ? 1 : 0;
+    return aAgg - bAgg;
+  });
+
+  let sourcesSample = [...new Set(sortedArticles.map(a => a.source))];
 
   // Build tier counts from articles
   const tierCounts: Record<string, number> = {};
