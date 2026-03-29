@@ -28,22 +28,32 @@ jobs:
 
       - name: Sync pipeline data to public/
         run: |
-          # The pipeline writes to docs/data/daily/.
+          # Pipeline writes to data/daily/ (primary) and docs/data/daily/ (copy).
           # Astro reads from public/data/daily/ at build time.
           mkdir -p public/data/daily
-          if [ -f docs/data/daily/latest.json ]; then
+
+          # Try primary location first, fall back to docs copy
+          if [ -f data/daily/latest.json ]; then
+            cp data/daily/latest.json public/data/daily/latest.json
+            for f in data/daily/2*.json; do
+              [ -f "$f" ] && cp "$f" public/data/daily/
+            done
+            echo "Synced from data/daily/"
+          elif [ -f docs/data/daily/latest.json ]; then
             cp docs/data/daily/latest.json public/data/daily/latest.json
-            echo "Copied latest.json to public/"
+            for f in docs/data/daily/2*.json; do
+              [ -f "$f" ] && cp "$f" public/data/daily/
+            done
+            echo "Synced from docs/data/daily/"
           else
-            echo "No pipeline data found. Skipping build."
+            echo "No pipeline data found in data/ or docs/data/. Skipping build."
             exit 1
           fi
-          # Copy all dated archives too
-          for f in docs/data/daily/2*.json; do
-            [ -f "$f" ] && cp "$f" public/data/daily/
-          done
+
           echo "Data synced:"
           ls -la public/data/daily/
+          echo "Latest date:"
+          python3 -c "import json; print(json.load(open('public/data/daily/latest.json'))['date'])"
 
       - name: Build with Astro
         run: npx astro build
