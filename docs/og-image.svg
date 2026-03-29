@@ -1,0 +1,32 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <!-- Navy background -->
+  <rect width="1200" height="630" fill="#1B2A4A"/>
+
+  <!-- Decorative dot grid elements in red/green/cream -->
+  <!-- Top right cluster -->
+  <circle cx="1050" cy="80" r="8" fill="#D94032" opacity="0.7"/>
+  <circle cx="1100" cy="100" r="6" fill="#2D8A4E" opacity="0.6"/>
+  <circle cx="1120" cy="60" r="7" fill="#F5EFDF" opacity="0.5"/>
+  <circle cx="1080" cy="130" r="5" fill="#D94032" opacity="0.5"/>
+
+  <!-- Bottom left cluster -->
+  <circle cx="100" cy="550" r="9" fill="#2D8A4E" opacity="0.7"/>
+  <circle cx="70" cy="580" r="6" fill="#F5EFDF" opacity="0.6"/>
+  <circle cx="150" cy="570" r="7" fill="#D94032" opacity="0.5"/>
+  <circle cx="120" cy="610" r="5" fill="#2D8A4E" opacity="0.4"/>
+
+  <!-- Center accent dots -->
+  <circle cx="600" cy="280" r="4" fill="#F5EFDF" opacity="0.3"/>
+  <circle cx="630" cy="310" r="4" fill="#F5EFDF" opacity="0.3"/>
+  <circle cx="570" cy="310" r="4" fill="#F5EFDF" opacity="0.3"/>
+
+  <!-- Main text -->
+  <text x="600" y="260" font-family="Arial, sans-serif" font-size="96" font-weight="bold" text-anchor="middle" fill="white" letter-spacing="2">
+    SIGNAL BOARD
+  </text>
+
+  <!-- Subtitle -->
+  <text x="600" y="380" font-family="Georgia, serif" font-size="42" text-anchor="middle" fill="#F5EFDF">
+    275 sources. One picture.
+  </text>
+</svg>

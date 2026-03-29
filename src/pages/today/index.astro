@@ -150,7 +150,7 @@ function dotCount(articles: number): number {
 }
 ---
 
-<BaseLayout title="Today">
+<BaseLayout title="Today" description={`${dateStr}: Signal Board read ${totalMonitoredSources} sources and found ${totalStories} stories. ${editorial?.accessible_headline || editorial?.headline || 'See what the picture looks like today.'}`}>
 
 <!-- MASTHEAD — NAVY -->
 <div class="masthead-wrap">
@@ -162,7 +162,7 @@ function dotCount(articles: number): number {
       </div>
       <span class="masthead-date r d1">{dateStr}</span>
       <h1 class="masthead-hook r d2">
-        {editorial?.headline || `Today, ${totalMonitoredSources} sources published ${totalStories} stories. When you see them together, a picture emerges.`}
+        {editorial?.accessible_headline || editorial?.headline || `Today, ${totalMonitoredSources} sources published ${totalStories} stories. When you see them together, a picture emerges.`}
       </h1>
       <p class="masthead-sub r d3">
         {editorial?.subheadline || `${crossDomain} stories crossed domain boundaries — ${crossDomainPct}% of everything we read. That's where the connections live.`}
@@ -599,6 +599,20 @@ function dotCount(articles: number): number {
 )}
 
 <!-- ================================================================ -->
+<!-- SUBSTACK EMAIL CAPTURE — CREAM                                   -->
+<!-- ================================================================ -->
+<div class="wrap" style="padding: 0;">
+  <div style="background: var(--cream); padding: clamp(48px, 8vw, 80px) clamp(24px, 5vw, 60px); text-align: center;">
+    <div class="r" style="max-width: 600px; margin: 0 auto;">
+      <p style="font-family: 'Inter', sans-serif; font-size: clamp(14px, 1.5vw, 16px); color: var(--ink-mid); margin-bottom: 24px; font-weight: 500;">
+        Get tomorrow's analysis in your inbox
+      </p>
+      <iframe src="https://elisehasseltine.substack.com/embed" width="480" height="150" style="border:none; background:transparent; max-width: 100%; display: block; margin: 0 auto;" frameborder="0" scrolling="no"></iframe>
+    </div>
+  </div>
+</div>
+
+<!-- ================================================================ -->
 <!-- CLOSE — NAVY                                                     -->
 <!-- ================================================================ -->
 <div class="close-section">
@@ -662,8 +676,13 @@ function dotCount(articles: number): number {
       Tomorrow, Signal Board reads all {totalMonitoredSources} sources again. The picture will be different.
     </p>
 
+    <div class="r" style="margin-top: 40px; max-width: 320px;">
+      <p style="font-family: 'Inter', sans-serif; font-size: 12px; color: var(--ink-light); margin-bottom: 12px;">Get tomorrow's analysis</p>
+      <iframe src="https://elisehasseltine.substack.com/embed" width="320" height="120" style="border:none; background:transparent; max-width: 100%; display: block;" frameborder="0" scrolling="no"></iframe>
+    </div>
+
     <p style="margin-top: 40px; font-family: 'Inter', sans-serif; font-size: 13px; color: var(--ink-light);">
-      <a href="/" style="color: var(--ink-light);">About Signal Board</a>&ensp;·&ensp;<a href="/" style="color: var(--ink-light);">See all sources</a>&ensp;·&ensp;<a href="/" style="color: var(--ink-light);">The Constellation</a>
+      <a href="/about/" style="color: var(--ink-light);">About Signal Board</a>&ensp;·&ensp;<a href="https://substack.com/@elisehasseltine" target="_blank" style="color: var(--ink-light);">Subscribe</a>
     </p>
   </div>
 </div>

@@ -86,7 +86,8 @@ STRUCTURE:
 OUTPUT FORMAT:
 Return valid JSON with these fields:
 {{
-  "headline": "A single sentence (max 15 words) that captures the day's most important structural insight, not a summary, an insight",
+  "headline": "A single sentence (max 15 words) that captures the day's most important structural insight",
+  "accessible_headline": "A short, plain-English headline (max 12 words, 8th grade reading level) that a friend would text you. No jargon. No words like 'clusters', 'weaponizes', 'escalation', 'signals'. Example: 'The Pentagon is planning ground operations in Iran. Here's what 18 outlets saw.'",
   "subheadline": "One sentence expanding on the headline with a specific detail or connection",
   "synthesis": "The full 4-6 paragraph editorial narrative",
   "cooperation_highlight": "One specific cooperation story (2-3 sentences) drawn from the data, with source attribution",
