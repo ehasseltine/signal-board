@@ -27,17 +27,22 @@ if (!pipelineData) {
   return Astro.redirect('/signal-board/archive/');
 }
 
-// Extract data
-const megaStories = pipelineData.mega_stories || [];
-const localRegional = pipelineData.local_regional_synthesis || {};
+// Extract real pipeline fields
+const whatConnects = pipelineData.what_connects || [];
+const narrativeDivergence = pipelineData.narrative_divergence || [];
+const topStories = pipelineData.top_stories || [];
+const cooperation = pipelineData.cooperation || {};
+const localRegional = pipelineData.local_regional_exclusive || [];
 
-// Select stories using the same algorithms as generate_today.py
-const threadStory = selectDailyThread(megaStories);
-const gapStory = selectDailyGap(megaStories, localRegional);
-const meanwhileStory = selectMeanwhile(megaStories, localRegional);
+// Select stories for each section
+const threadStory = selectDailyThread(whatConnects);
+const gapStory = selectDailyGap(narrativeDivergence, topStories);
+const meanwhileStory = selectMeanwhile(cooperation, localRegional);
 
 const dateStr = pipelineData.date || date;
 const summary = pipelineData.summary || {};
+const totalStories = summary.total_stories || 0;
+const sourcesReporting = summary.sources_reporting || 0;
 
 // Helper functions
 function escapeHtml(text: string): string {
@@ -50,21 +55,17 @@ function escapeHtml(text: string): string {
 }
 
 function extractTopSources(sources: Record<string, any>): string[] {
-  return Object.keys(sources).slice(0, 5);
+  return Object.keys(sources).slice(0, 6);
 }
 
-function getSourceContext(sourceName: string): string | null {
-  const SOURCE_CONTEXT: Record<string, string> = {
-    'Dawn': 'Founded 1941, oldest English-language newspaper in Pakistan',
-    'Arab American News': 'Published in Dearborn MI since 1984, independent',
-    'The Advocate': 'Oldest LGBTQ+ publication in US, founded 1967',
-    'Colorado Sun': 'Founded 2018 by ex-Denver Post journalists',
-    'Indian Country Today': 'Native American news, founded 1981',
-    'El Diario NY': 'Oldest Spanish-language daily in US',
-    'Inside Climate News': 'Pulitzer-winning nonprofit climate journalism',
-    'Mother Jones': 'Nonprofit investigative journalism',
+function getTierLabel(tier: string): string {
+  const labels: Record<string, string> = {
+    'left': 'left-leaning',
+    'right': 'right-leaning',
+    'international': 'international',
+    'local-regional': 'local/regional',
   };
-  return SOURCE_CONTEXT[sourceName] || null;
+  return labels[tier] || tier;
 }
 
 function generateSvgIcon(iconType: string): string {
@@ -91,10 +92,10 @@ function generateSvgIcon(iconType: string): string {
       </div>
       <span class="masthead-date r d1">{dateStr}</span>
       <h1 class="masthead-hook r d2">
-        {summary.hook || 'This day\'s news told through independent sources.'}
+        This day's news told through independent sources.
       </h1>
       <p class="masthead-sub r d3">
-        {summary.sources_reporting || '0'} sources published {summary.total_articles || '0'} stories about {summary.geographic_reach || '0'} topics.
+        {sourcesReporting} sources published {totalStories} stories.
       </p>
       <div class="scroll-cue">
         <span>scroll</span>
@@ -118,7 +119,7 @@ function generateSvgIcon(iconType: string): string {
           <line x1="7" y1="14" x2="15" y2="14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" opacity="0.25"/>
         </svg>The Daily Thread
       </div>
-      <div class="card-stat card-stat-ink">{Object.keys(threadStory?.sources || {}).length}</div>
+      <div class="card-stat card-stat-ink">{threadStory?.sourceCount || 0}</div>
       <div class="card-meta">sources across the political spectrum</div>
       <div class="card-hook">How one story connects across sources and perspectives.</div>
       <span class="card-arrow">Read &darr;</span>
@@ -131,7 +132,7 @@ function generateSvgIcon(iconType: string): string {
           <rect x="13" y="1" width="6" height="16" rx="1" fill="currentColor" opacity="0.25"/>
         </svg>The Daily Gap
       </div>
-      <div class="card-stat">1 <span style="font-family: 'Lora', serif; font-size: clamp(14px, 1.5vw, 17px); font-style: italic; color: var(--ink-mid);">of many</span></div>
+      <div class="card-stat">{gapStory?.sourceCount || 0} <span style="font-family: 'Lora', serif; font-size: clamp(14px, 1.5vw, 17px); font-style: italic; color: var(--ink-mid);">sources diverge</span></div>
       <div class="card-meta">outlets with a different frame</div>
       <div class="card-hook">Stories where independent and international sources show a different picture.</div>
       <span class="card-arrow">Read &darr;</span>
@@ -144,8 +145,8 @@ function generateSvgIcon(iconType: string): string {
           <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5" opacity="0.3"/>
         </svg>Meanwhile
       </div>
-      <div class="card-stat card-stat-green">{summary.meanwhile_actions || '0'}</div>
-      <div class="card-meta">places where people showed up</div>
+      <div class="card-stat card-stat-green">{cooperation.total_cooperation_stories || 0}</div>
+      <div class="card-meta">stories of people showing up</div>
       <div class="card-hook">Who showed up. Communities taking care of each other, organizing, acting.</div>
       <span class="card-arrow">Read &darr;</span>
     </a>
@@ -163,13 +164,12 @@ function generateSvgIcon(iconType: string): string {
       The Daily Thread
     </span>
     <h2 class="headline r d1">{threadStory.title}</h2>
-    {threadStory.synthesis?.narrative && (
-      <p class="body r d2" style="margin-top: 28px;" set:html={escapeHtml(threadStory.synthesis.narrative)} />
+    {threadStory.narrative && (
+      <p class="body r d2" style="margin-top: 28px;" set:html={escapeHtml(threadStory.narrative)} />
     )}
   </div>
 </div>
 
-<!-- SOURCE COVERAGE VIZ -->
 {threadStory.sources && Object.keys(threadStory.sources).length > 0 && (
 <div class="wrap-wide">
   <div style="margin: 40px auto 0; padding: 0 clamp(16px, 3vw, 32px);" class="r">
@@ -178,9 +178,7 @@ function generateSvgIcon(iconType: string): string {
       {extractTopSources(threadStory.sources).map(sourceName => (
         <div class="coverage-card">
           <div class="coverage-name">{sourceName}</div>
-          {getSourceContext(sourceName) && (
-            <div class="coverage-type">{getSourceContext(sourceName)}</div>
-          )}
+          <div class="coverage-type">{getTierLabel(threadStory.sources[sourceName]?.tier || '')}</div>
         </div>
       ))}
     </div>
@@ -190,9 +188,9 @@ function generateSvgIcon(iconType: string): string {
 
 <div class="wrap">
   <div style="padding: 40px 0 clamp(72px, 10vw, 120px);">
-    {threadStory.synthesis?.key_developments && threadStory.synthesis.key_developments.length > 0 && (
+    {threadStory.key_developments && threadStory.key_developments.length > 0 && (
       <div class="r">
-        {threadStory.synthesis.key_developments.map((dev: string, idx: number) => (
+        {threadStory.key_developments.map((dev: string, idx: number) => (
           <p class="body r" style={`margin-top: ${idx === 0 ? '0' : '1.5rem'};`}>
             {dev}
           </p>
@@ -225,17 +223,17 @@ function generateSvgIcon(iconType: string): string {
       The Daily Gap
     </span>
     <h2 class="headline r d1">{gapStory.title}</h2>
-    {gapStory.synthesis?.narrative && (
-      <p class="body r d2" style="margin-top: 28px;" set:html={escapeHtml(gapStory.synthesis.narrative)} />
+    {gapStory.narrative && (
+      <p class="body r d2" style="margin-top: 28px;" set:html={escapeHtml(gapStory.narrative)} />
     )}
   </div>
 </div>
 
 <div class="wrap">
   <div style="padding: 32px 0 clamp(72px, 10vw, 120px);">
-    {gapStory.synthesis?.key_developments && gapStory.synthesis.key_developments.length > 0 && (
+    {gapStory.key_developments && gapStory.key_developments.length > 0 && (
       <div class="r">
-        {gapStory.synthesis.key_developments.map((dev: string, idx: number) => (
+        {gapStory.key_developments.map((dev: string, idx: number) => (
           <p class="body r" style={`margin-top: ${idx === 0 ? '0' : '1.5rem'};`}>
             {dev}
           </p>
@@ -268,17 +266,17 @@ function generateSvgIcon(iconType: string): string {
       Meanwhile
     </span>
     <h2 class="headline r d1">{meanwhileStory.title}</h2>
-    {meanwhileStory.synthesis?.narrative && (
-      <p class="body r d2" style="margin-top: 28px;" set:html={escapeHtml(meanwhileStory.synthesis.narrative)} />
+    {meanwhileStory.narrative && (
+      <p class="body r d2" style="margin-top: 28px;" set:html={escapeHtml(meanwhileStory.narrative)} />
     )}
   </div>
 </div>
 
 <div class="wrap">
   <div style="padding: 32px 0 clamp(72px, 10vw, 120px);">
-    {meanwhileStory.synthesis?.key_developments && meanwhileStory.synthesis.key_developments.length > 0 && (
+    {meanwhileStory.key_developments && meanwhileStory.key_developments.length > 0 && (
       <div class="r">
-        {meanwhileStory.synthesis.key_developments.map((dev: string, idx: number) => (
+        {meanwhileStory.key_developments.map((dev: string, idx: number) => (
           <p class="body r" style={`margin-top: ${idx === 0 ? '0' : '1.5rem'};`}>
             {dev}
           </p>

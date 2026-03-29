@@ -1,209 +1,232 @@
-// Story selection logic ported from generate_today.py
-// Works with both cross_spectrum format and sources-with-bias format
+// Story selection logic mapped to ACTUAL pipeline data structure
+// Pipeline outputs: top_stories, what_connects, cooperation,
+// narrative_divergence, local_regional_exclusive
 
-interface Synthesis {
-  narrative: string;
-  key_developments?: string[];
+interface WhatConnects {
+  headline: string;
+  structural_force: string;
+  total_sources: number;
+  spectrum_segments: number;
+  left_sources: string[];
+  right_sources: string[];
+  international_sources: string[];
+  local_regional_sources: string[];
+  article_count: number;
+  domains: string[];
+  sample_connection: string;
 }
 
-interface CrossSpectrum {
-  left_lean?: string;
-  center?: string;
-  right_lean?: string;
-  international?: string;
-  independent?: string;
+interface NarrativeDivergence {
+  topic: string;
+  theme: string;
+  source_count: number;
+  structural_force: string;
+  articles: Array<{
+    source: string;
+    title: string;
+    url?: string;
+    tier?: string;
+    framing?: string;
+  }>;
 }
 
-interface StoryData {
+interface CooperationHighlight {
   title: string;
-  article_count?: number;
-  spectrum_count?: number;
-  cross_spectrum?: CrossSpectrum | boolean;
-  synthesis?: Synthesis;
-  sources?: Record<string, any>;
-  from_local?: boolean;
-  local_angle?: boolean;
-  community_action?: boolean;
-  category?: string;
+  source: string;
+  url?: string;
+  type?: string;
 }
 
-interface LocalRegional {
-  narrative?: string;
-  themes?: string[];
-  notable_coverage?: Array<{ source: string; url?: string }>;
-  community_actions?: string[];
+interface Cooperation {
+  total_cooperation_stories: number;
+  cooperation_rate: number;
+  by_type?: Record<string, number>;
+  by_force?: Record<string, number>;
+  highlights: CooperationHighlight[];
+  coverage_gap: Array<{ force: string; article_count: number; note: string }>;
+}
+
+interface TopStory {
+  headline: string;
+  structural_force: string;
+  all_forces?: string[];
+  source_count: number;
+  tier_count: number;
+  tiers: string[];
+  domains: string[];
+  article_count: number;
+  connections: Array<{ text: string }>;
+  tier_framing?: Record<string, any>;
+  articles: Array<{
+    source: string;
+    title: string;
+    url?: string;
+    tier?: string;
+  }>;
+}
+
+interface LocalRegionalExclusive {
+  title: string;
+  source: string;
+  url?: string;
+  tier: string;
+  text_preview: string;
+  domains: string[];
+  connection: string;
+  force_tag: string;
+  context: string;
+}
+
+// What we return for each section (normalized for the template)
+export interface SectionStory {
+  title: string;
+  narrative: string;
+  key_developments: string[];
+  sources: Record<string, { tier?: string; url?: string; headline?: string }>;
+  sourceCount: number;
+  spectrumSegments?: number;
 }
 
 /**
- * Count how many distinct bias categories are represented in sources.
- * Maps bias labels like "center-left" → "left_lean", etc.
+ * THE DAILY THREAD — Cross-spectrum convergence
+ * Uses `what_connects`: stories covered by left, right, international, local sources
+ * Picks the one with widest spectrum coverage
  */
-function countSpectrumFromSources(sources: Record<string, any>): number {
-  const biasCategories = new Set<string>();
-  for (const [, info] of Object.entries(sources)) {
-    const bias = (info?.bias || '').toLowerCase();
-    if (bias.includes('left')) biasCategories.add('left');
-    if (bias.includes('right')) biasCategories.add('right');
-    if (bias === 'center') biasCategories.add('center');
-    if (bias.includes('international')) biasCategories.add('international');
-    if (bias.includes('independent')) biasCategories.add('independent');
-  }
-  return biasCategories.size;
+export function selectDailyThread(whatConnects: WhatConnects[]): SectionStory | null {
+  if (!whatConnects || whatConnects.length === 0) return null;
+
+  // Sort by spectrum_segments (widest coverage) then total_sources
+  const sorted = [...whatConnects].sort((a, b) => {
+    const segDiff = (b.spectrum_segments || 0) - (a.spectrum_segments || 0);
+    if (segDiff !== 0) return segDiff;
+    return (b.total_sources || 0) - (a.total_sources || 0);
+  });
+
+  const pick = sorted[0];
+
+  // Build sources map from spectrum lists
+  const sources: Record<string, { tier?: string; url?: string; headline?: string }> = {};
+  for (const s of (pick.left_sources || [])) sources[s] = { tier: 'left' };
+  for (const s of (pick.right_sources || [])) sources[s] = { tier: 'right' };
+  for (const s of (pick.international_sources || [])) sources[s] = { tier: 'international' };
+  for (const s of (pick.local_regional_sources || [])) sources[s] = { tier: 'local-regional' };
+
+  return {
+    title: pick.headline,
+    narrative: pick.sample_connection || '',
+    key_developments: pick.domains
+      ? [`Covered across ${pick.domains.join(', ')} domains by ${pick.total_sources} sources spanning ${pick.spectrum_segments} points on the political spectrum.`]
+      : [],
+    sources,
+    sourceCount: pick.total_sources,
+    spectrumSegments: pick.spectrum_segments,
+  };
 }
 
-export function selectDailyThread(megaStories: StoryData[]): StoryData | null {
-  let bestStory: StoryData | null = null;
-  let bestScore = 0;
-
-  for (const story of megaStories) {
-    const sourceCount = story.sources ? Object.keys(story.sources).length : 0;
-    const articleCount = story.article_count || sourceCount;
-
-    // Try cross_spectrum object first
-    let populatedCategories = 0;
-    if (story.cross_spectrum && typeof story.cross_spectrum === 'object') {
-      const cs = story.cross_spectrum as CrossSpectrum;
-      populatedCategories = [
-        'left_lean', 'center', 'right_lean', 'international', 'independent'
-      ].filter(cat => cs[cat as keyof CrossSpectrum]).length;
-    }
-
-    // Fall back to counting bias diversity from sources
-    if (populatedCategories === 0 && story.sources) {
-      populatedCategories = countSpectrumFromSources(story.sources);
-    }
-
-    // Also accept spectrum_count or cross_spectrum === true
-    if (populatedCategories === 0 && story.spectrum_count) {
-      populatedCategories = story.spectrum_count;
-    }
-    if (populatedCategories === 0 && story.cross_spectrum === true) {
-      populatedCategories = 3; // Treat boolean true as meeting threshold
-    }
-
-    // Score: prioritize spectrum breadth, then article count
-    const score = populatedCategories * 1000 + articleCount;
-
-    if (score > bestScore && populatedCategories >= 3) {
-      bestScore = score;
-      bestStory = story;
-    }
-  }
-
-  return bestStory;
-}
-
+/**
+ * THE DAILY GAP — Framing differences
+ * Uses `narrative_divergence`: where outlets tell the same story differently
+ * Picks the topic with the most sources (most contested framing)
+ */
 export function selectDailyGap(
-  megaStories: StoryData[],
-  localRegional: LocalRegional
-): StoryData | null {
-  let gapStory: StoryData | null = null;
+  narrativeDivergence: NarrativeDivergence[],
+  topStories: TopStory[]
+): SectionStory | null {
+  if (narrativeDivergence && narrativeDivergence.length > 0) {
+    const sorted = [...narrativeDivergence].sort(
+      (a, b) => (b.source_count || 0) - (a.source_count || 0)
+    );
+    const pick = sorted[0];
 
-  // Strategy 1: Look for stories with independent/international framing
-  for (const story of megaStories) {
-    // Check cross_spectrum object
-    if (story.cross_spectrum && typeof story.cross_spectrum === 'object') {
-      const cs = story.cross_spectrum as CrossSpectrum;
-      const hasAlt = cs.independent || cs.international;
-      const hasMain = cs.left_lean || cs.center || cs.right_lean;
-      if (hasAlt && hasMain) {
-        gapStory = story;
-        break;
-      }
+    const sources: Record<string, any> = {};
+    for (const art of (pick.articles || [])) {
+      sources[art.source] = { url: art.url, headline: art.title, tier: art.tier };
     }
 
-    // Check sources for bias diversity that suggests framing gap
-    if (!gapStory && story.sources) {
-      const biases = Object.values(story.sources).map((s: any) => (s?.bias || '').toLowerCase());
-      const hasIndependent = biases.some(b => b.includes('independent'));
-      const hasInternational = biases.some(b => b.includes('international'));
-      const hasMainstream = biases.some(b => b.includes('left') || b.includes('right') || b === 'center');
-      if ((hasIndependent || hasInternational) && hasMainstream) {
-        gapStory = story;
-        break;
-      }
-    }
-  }
-
-  // Strategy 2: Pick a story with fewest sources (likely underreported)
-  if (!gapStory) {
-    let fewest = Infinity;
-    for (const story of megaStories) {
-      const count = story.sources ? Object.keys(story.sources).length : 0;
-      if (count > 0 && count < fewest) {
-        fewest = count;
-        gapStory = story;
-      }
-    }
-  }
-
-  // Strategy 3: Fall back to notable local/regional coverage
-  if (!gapStory && localRegional?.notable_coverage?.length) {
-    gapStory = {
-      title: (localRegional.narrative || 'Local and Regional News').substring(0, 100),
-      from_local: true,
-      sources: Object.fromEntries(
-        localRegional.notable_coverage.map(src => [src.source, { url: src.url || '' }])
+    return {
+      title: pick.theme || pick.topic,
+      narrative: `Across ${pick.source_count} sources covering ${pick.topic}, the framing diverges — revealing how the same events get shaped into different stories depending on who's telling them.`,
+      key_developments: pick.articles.slice(0, 3).map(
+        a => `${a.source}: "${a.title?.substring(0, 120)}"`
       ),
-      synthesis: {
-        narrative: localRegional.narrative || '',
-        key_developments: localRegional.themes || []
-      }
+      sources,
+      sourceCount: pick.source_count,
     };
   }
 
-  return gapStory;
-}
-
-export function selectMeanwhile(
-  megaStories: StoryData[],
-  localRegional: LocalRegional
-): StoryData | null {
-  // Keywords suggesting community action / "meanwhile" content
-  const meanwhileKeywords = [
-    'community', 'local', 'action', 'resistance', 'municipal',
-    'council', 'support', 'care', 'organizing', 'initiative',
-    'movement', 'solidarity', 'mutual aid', 'volunteer', 'neighbors'
-  ];
-
-  // Priority 1: Stories explicitly flagged as community_action
-  for (const story of megaStories) {
-    if (story.community_action) return story;
-  }
-
-  // Priority 2: Check local_regional community_actions or narrative
-  if (localRegional) {
-    const actions = localRegional.community_actions || [];
-    const narrative = (localRegional.narrative || '').toLowerCase();
-    const themes = localRegional.themes || [];
-
-    if (
-      actions.length > 0 ||
-      meanwhileKeywords.some(kw => narrative.includes(kw)) ||
-      themes.some(t => meanwhileKeywords.some(kw => String(t).toLowerCase().includes(kw)))
-    ) {
+  // Fallback: use a top story with multiple tiers showing different framing
+  if (topStories && topStories.length > 0) {
+    const multiTier = topStories.find(s => s.tier_count >= 2 && s.tier_framing);
+    if (multiTier) {
+      const sources: Record<string, any> = {};
+      for (const art of (multiTier.articles || [])) {
+        sources[art.source] = { url: art.url, tier: art.tier };
+      }
       return {
-        title: 'Communities Taking Action',
-        from_local: true,
-        synthesis: {
-          narrative: localRegional.narrative || actions.join('. ') || '',
-          key_developments: actions.length > 0 ? actions : themes
-        },
-        sources: Object.fromEntries(
-          (localRegional.notable_coverage || []).map(src => [src.source, { url: src.url || '' }])
-        )
+        title: multiTier.headline,
+        narrative: multiTier.connections?.[0]?.text || '',
+        key_developments: Object.entries(multiTier.tier_framing || {}).map(
+          ([tier, framing]: [string, any]) =>
+            `${tier}: ${typeof framing === 'string' ? framing : JSON.stringify(framing).substring(0, 150)}`
+        ),
+        sources,
+        sourceCount: multiTier.source_count,
       };
     }
   }
 
-  // Priority 3: Search mega stories by keyword
-  for (const story of megaStories) {
-    const title = (story.title || '').toLowerCase();
-    const narrative = (story.synthesis?.narrative || '').toLowerCase();
+  return null;
+}
 
-    if (meanwhileKeywords.some(kw => title.includes(kw) || narrative.includes(kw))) {
-      return story;
+/**
+ * MEANWHILE — Who showed up
+ * Uses `cooperation`: stories about communities taking action
+ * Picks from cooperation highlights
+ */
+export function selectMeanwhile(
+  cooperation: Cooperation,
+  localRegional: LocalRegionalExclusive[]
+): SectionStory | null {
+  if (cooperation && cooperation.highlights && cooperation.highlights.length > 0) {
+    const highlights = cooperation.highlights;
+
+    const sources: Record<string, any> = {};
+    for (const h of highlights.slice(0, 6)) {
+      sources[h.source] = { url: h.url, headline: h.title };
     }
+
+    return {
+      title: 'Communities Taking Action',
+      narrative: `Today, ${cooperation.total_cooperation_stories} stories showed people cooperating — a ${cooperation.cooperation_rate}% cooperation signal across everything we read. Here's who showed up.`,
+      key_developments: highlights.slice(0, 4).map(h => h.title),
+      sources,
+      sourceCount: highlights.length,
+    };
+  }
+
+  // Fallback: use local/regional exclusives about community action
+  if (localRegional && localRegional.length > 0) {
+    const communityKeywords = ['community', 'volunteer', 'mutual aid', 'neighbors', 'organize', 'solidarity', 'support'];
+    const communityStories = localRegional.filter(lr =>
+      communityKeywords.some(kw =>
+        lr.title.toLowerCase().includes(kw) ||
+        lr.text_preview.toLowerCase().includes(kw)
+      )
+    );
+    const picks = communityStories.length > 0 ? communityStories : localRegional.slice(0, 4);
+
+    const sources: Record<string, any> = {};
+    for (const lr of picks) {
+      sources[lr.source] = { url: lr.url, headline: lr.title };
+    }
+
+    return {
+      title: 'Communities Taking Action',
+      narrative: 'Local and independent outlets cover what the national cycle misses — people showing up for each other.',
+      key_developments: picks.slice(0, 4).map(lr => `${lr.source}: ${lr.title}`),
+      sources,
+      sourceCount: picks.length,
+    };
   }
 
   return null;
