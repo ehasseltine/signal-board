@@ -119,10 +119,11 @@ const canonicalUrl = `${siteUrl}/${title === 'Today' ? 'today/' : title === 'Abo
     })} />
   )}
 
-  <!-- Fonts with display=swap for performance -->
+  <!-- Fonts — consolidated to 4 families for performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Outfit:wght@700;800&family=IBM+Plex+Mono:wght@500;600&family=Merriweather:wght@400;700&family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Caveat:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&family=Abril+Fatface&family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Caveat:wght@400;700&family=Inter:wght@400;500;600&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&family=Abril+Fatface&family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Caveat:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -160,6 +161,20 @@ const canonicalUrl = `${siteUrl}/${title === 'Today' ? 'today/' : title === 'Abo
       if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   });
+
+  // Scroll depth tracking — fires once per threshold
+  const depthMarks = [25, 50, 75, 100];
+  const depthFired = new Set();
+  window.addEventListener('scroll', () => {
+    const pct = Math.round((window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100);
+    depthMarks.forEach(m => {
+      if (pct >= m && !depthFired.has(m)) {
+        depthFired.add(m);
+        if (typeof gtag === 'function') gtag('event', 'scroll_depth', { depth: m });
+        console.log(`[Signal Board] Scroll depth: ${m}%`);
+      }
+    });
+  }, { passive: true });
 </script>
 
 </body>

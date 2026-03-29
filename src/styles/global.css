@@ -49,24 +49,24 @@
     line-height: 1.15;
     color: var(--ink);
   }
-  /* Section-specific headline fonts — each section has its own voice */
+  /* Section headlines — Outfit at different weights/spacing for distinct voices */
   .headline-thread {
     font-family: 'Outfit', sans-serif;
     font-weight: 800;
-    font-size: clamp(32px, 5vw, 60px);
+    font-size: clamp(28px, 4.5vw, 52px);
     letter-spacing: -0.03em;
   }
   .headline-gap {
-    font-family: 'IBM Plex Mono', monospace;
-    font-weight: 600;
-    font-size: clamp(26px, 3.8vw, 48px);
-    letter-spacing: -0.01em;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    font-size: clamp(24px, 3.5vw, 44px);
+    letter-spacing: 0.01em;
   }
   .headline-meanwhile {
-    font-family: 'Merriweather', serif;
-    font-weight: 700;
-    font-size: clamp(26px, 3.5vw, 48px);
-    letter-spacing: -0.01em;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    font-size: clamp(24px, 3.5vw, 44px);
+    letter-spacing: 0;
   }
 
   /* NO inner max-width — text fills the wrap container naturally */
@@ -173,33 +173,33 @@
   .wrap-wide { max-width: 1280px; margin: 0 auto; padding: 0 clamp(24px, 4vw, 48px); }
   .section { padding: clamp(48px, 6vw, 72px) 0; }
 
-  /* ================ THREAD SECTION — warm yellow world ================ */
-  .thread-world {
-    background: var(--yellow-warm);
+  /* ================ SECTION COLOR WORLDS ================ */
+  /* Shared: left-edge color bar at same width/position */
+  .section-world {
     position: relative;
   }
-  .thread-world::before {
+  .section-world::before {
     content: '';
     position: absolute;
     top: 0; left: 0;
-    width: 5px; height: 100%;
-    background: var(--red);
+    width: 4px; height: 100%;
   }
+
+  /* Thread — cream bg, red accent bar */
+  .thread-world { background: var(--cream); }
+  .thread-world::before { background: var(--red); }
   .thread-world .section-label { color: var(--red); }
   .thread-world .body strong { color: var(--red); }
 
-  /* ================ MEANWHILE SECTION — cool teal world ================ */
-  .meanwhile-world {
-    background: var(--teal-wash);
-    position: relative;
-  }
-  .meanwhile-world::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 5px; height: 100%;
-    background: var(--green);
-  }
+  /* Gap — navy bg, teal accent bar */
+  .gap-world { background: var(--ink); }
+  .gap-world::before { background: var(--teal); }
+  .gap-world .section-label { color: var(--teal); }
+  .gap-world .body strong { color: var(--teal); }
+
+  /* Meanwhile — teal wash bg, green accent bar */
+  .meanwhile-world { background: var(--teal-wash); }
+  .meanwhile-world::before { background: var(--green); }
   .meanwhile-world .section-label { color: var(--green); }
   .meanwhile-world .section-label-green { color: var(--green); }
   .meanwhile-world .body strong { color: var(--green); }
@@ -541,19 +541,7 @@
     padding: 8px 4px;
   }
 
-  /* ================ CLOSE — NAVY ================ */
-  .close-section {
-    background: var(--ink);
-    padding: clamp(48px, 6vw, 72px) 0;
-  }
-  .close-section .headline {
-    color: var(--cream);
-    font-size: clamp(26px, 3.8vw, 48px);
-  }
-  .close-section .body {
-    color: var(--on-navy-dim);
-    margin-top: 24px;
-  }
+  /* (Close section removed — content redistributed to Thread, Gap, and footer) */
 
   /* ================ SOURCE PILLS ================ */
   .pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
