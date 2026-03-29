@@ -5,12 +5,9 @@
  * - Legacy (2026-03-28): mega_stories with synthesis, cross_spectrum, why_this_matters, watch_for
  * - Current (2026-03-29+): top_stories, what_connects, cooperation, narrative_divergence, editorial
  *
- * The current pipeline (ingest → analyze → synthesize) produces:
- *   editorial: headline, subheadline, synthesis, cooperation_highlight, coverage_gap_note, thread_to_watch
- *   cooperation: total_cooperation_stories, cooperation_rate, highlights[], coverage_gap[]
- *   what_connects: cross-spectrum stories with left/right/intl/local sources
- *   narrative_divergence: framing gaps between outlets
- *   top_stories: tier_framing, connections[], articles[]
+ * Priority for current format: top_stories → what_connects → narrative_divergence
+ * The editorial object provides GLOBAL synthesis (used only in close section),
+ * NOT per-story synthesis. Per-story content comes from connections and tier_framing.
  */
 
 // ── INTERFACES ──
@@ -72,7 +69,16 @@ export interface Cooperation {
   total_cooperation_stories: number;
   cooperation_rate: number;
   by_type?: Array<{ type: string; count: number; sources: string[] }>;
-  highlights: Array<{ title: string; source: string; url?: string; type?: string }>;
+  highlights: Array<{
+    title: string;
+    source: string;
+    url?: string;
+    type?: string;
+    cooperation_type?: string;
+    force_tag?: string;
+    connection?: string;
+    context?: string;
+  }>;
   coverage_gap: Array<{ force: string; article_count: number; note: string }>;
 }
 
@@ -125,56 +131,70 @@ function megaToSection(story: MegaStory): SectionStory {
   };
 }
 
-function whatConnectsToSection(
-  wc: WhatConnects,
-  topStory?: TopStory,
-  editorial?: Editorial
+/**
+ * Convert a top_story into a SectionStory.
+ * Uses connections for narrative, tier_framing for cross-spectrum analysis.
+ */
+function topStoryToSection(
+  ts: TopStory,
+  wc?: WhatConnects
 ): SectionStory {
-  // Build sources list from spectrum
-  const allSources = [
-    ...(wc.left_sources || []),
-    ...(wc.right_sources || []),
-    ...(wc.international_sources || []),
-    ...(wc.local_regional_sources || []),
-  ];
+  // Build synthesis from connections
+  const connectionTexts = (ts.connections || []).map(c => c.text).filter(Boolean);
+  const synthesis = connectionTexts.join(' ');
 
-  // Build cross-spectrum description
+  // Build cross-spectrum from tier_framing (how different tiers frame the story)
   const specParts: string[] = [];
-  if (wc.left_sources?.length) specParts.push(`Left-leaning: ${wc.left_sources.join(', ')}`);
-  if (wc.right_sources?.length) specParts.push(`Right-leaning: ${wc.right_sources.join(', ')}`);
-  if (wc.international_sources?.length) specParts.push(`International: ${wc.international_sources.join(', ')}`);
-  if (wc.local_regional_sources?.length) specParts.push(`Local & Regional: ${wc.local_regional_sources.join(', ')}`);
-
-  // Use editorial synthesis if available, fall back to connection text
-  const synthesis = editorial?.synthesis
-    || topStory?.connections?.[0]?.text
-    || wc.sample_connection
-    || '';
-
-  // Build tier framing from top story if available
-  const tierFraming: string[] = [];
-  if (topStory?.tier_framing) {
-    for (const [tier, data] of Object.entries(topStory.tier_framing)) {
+  if (ts.tier_framing) {
+    for (const [tier, data] of Object.entries(ts.tier_framing)) {
+      const label = tier === 'national' ? 'National outlets' :
+                    tier === 'international' ? 'International outlets' :
+                    tier === 'local-regional' ? 'Local & regional outlets' :
+                    tier === 'specialist' ? 'Specialist outlets' :
+                    tier === 'explainer' ? 'Explainers' : tier;
       if (data?.sample?.title) {
-        tierFraming.push(`${tier}: "${data.sample.title}"`);
+        specParts.push(`${label} frame it as: "${data.sample.title}"`);
       }
     }
   }
 
+  // If we have a matching what_connects, use its spectrum sources for the sourcesSample
+  let sourcesSample: string[] = [];
+  if (wc) {
+    sourcesSample = [
+      ...(wc.left_sources || []),
+      ...(wc.right_sources || []),
+      ...(wc.international_sources || []),
+      ...(wc.local_regional_sources || []),
+    ];
+  }
+  if (sourcesSample.length === 0) {
+    sourcesSample = (ts.articles || []).map(a => a.source);
+    sourcesSample = [...new Set(sourcesSample)];
+  }
+
+  // Build tier counts from articles
+  const tierCounts: Record<string, number> = {};
+  for (const art of (ts.articles || [])) {
+    if (art.tier) {
+      tierCounts[art.tier] = (tierCounts[art.tier] || 0) + 1;
+    }
+  }
+
   return {
-    title: wc.headline,
+    title: ts.headline,
     synthesis,
-    crossSpectrum: specParts.join('. ') + '.',
+    crossSpectrum: specParts.join(' '),
     whyThisMatters: '',
-    watchFor: editorial?.thread_to_watch || '',
-    articleCount: wc.article_count || 0,
-    sourceCount: wc.total_sources || 0,
-    sourcesSample: allSources.slice(0, 12),
-    domains: wc.domains || [],
+    watchFor: '',
+    articleCount: ts.article_count || 0,
+    sourceCount: ts.source_count || 0,
+    sourcesSample: sourcesSample.slice(0, 12),
+    domains: ts.domains || [],
     domainCounts: {},
-    sourceTiers: {},
+    sourceTiers: tierCounts,
     changeDescription: '',
-    insights: tierFraming,
+    insights: [],
     yesterdayCount: 0,
   };
 }
@@ -182,7 +202,10 @@ function whatConnectsToSection(
 // ── SELECTION FUNCTIONS ──
 
 /**
- * THE DAILY THREAD — Widest coverage story
+ * THE DAILY THREAD — The biggest, most cross-cutting story
+ *
+ * Priority: mega_stories (legacy) → top_stories[0] (current)
+ * Uses the story with the most sources across the most tiers.
  */
 export function selectDailyThread(
   megaStories: MegaStory[],
@@ -200,29 +223,66 @@ export function selectDailyThread(
     return megaToSection(scored[0].story);
   }
 
-  // Current format: use what_connects + top_stories
-  if (whatConnects && whatConnects.length > 0) {
-    const sorted = [...whatConnects].sort((a, b) => {
-      const segDiff = (b.spectrum_segments || 0) - (a.spectrum_segments || 0);
-      if (segDiff !== 0) return segDiff;
-      return (b.total_sources || 0) - (a.total_sources || 0);
-    });
-    const pick = sorted[0];
+  // Current format: use top_stories (ranked by source_count × tier_count)
+  if (topStories && topStories.length > 0) {
+    const scored = topStories.map(ts => ({
+      story: ts,
+      score: (ts.tier_count || 1) * 100 + (ts.source_count || 0),
+    }));
+    scored.sort((a, b) => b.score - a.score);
+    const pick = scored[0].story;
 
-    // Find matching top story for richer data
-    const matchingTop = topStories?.find(ts =>
-      ts.structural_force === pick.structural_force ||
-      ts.headline?.includes(pick.headline?.substring(0, 30))
+    // Find matching what_connects for spectrum source details
+    const matchWc = whatConnects?.find(wc =>
+      wc.structural_force === pick.structural_force ||
+      wc.headline?.includes(pick.headline?.substring(0, 30))
     );
 
-    return whatConnectsToSection(pick, matchingTop, editorial);
+    const section = topStoryToSection(pick, matchWc);
+
+    // Add editorial's thread_to_watch as watchFor
+    if (editorial?.thread_to_watch) {
+      section.watchFor = editorial.thread_to_watch;
+    }
+
+    return section;
+  }
+
+  // Fallback: what_connects alone
+  if (whatConnects && whatConnects.length > 0) {
+    const sorted = [...whatConnects].sort((a, b) => (b.total_sources || 0) - (a.total_sources || 0));
+    const pick = sorted[0];
+    const allSources = [
+      ...(pick.left_sources || []),
+      ...(pick.right_sources || []),
+      ...(pick.international_sources || []),
+      ...(pick.local_regional_sources || []),
+    ];
+    return {
+      title: pick.headline,
+      synthesis: pick.sample_connection || '',
+      crossSpectrum: '',
+      whyThisMatters: '',
+      watchFor: editorial?.thread_to_watch || '',
+      articleCount: pick.article_count || 0,
+      sourceCount: pick.total_sources || 0,
+      sourcesSample: allSources.slice(0, 12),
+      domains: pick.domains || [],
+      domainCounts: {},
+      sourceTiers: {},
+      changeDescription: '',
+      insights: [],
+      yesterdayCount: 0,
+    };
   }
 
   return null;
 }
 
 /**
- * THE DAILY GAP — Where framing diverges
+ * THE DAILY GAP — Where framing diverges most
+ *
+ * Priority: mega_stories (legacy) → narrative_divergence (current) → second top_story
  */
 export function selectDailyGap(
   megaStories: MegaStory[],
@@ -244,28 +304,58 @@ export function selectDailyGap(
     }
   }
 
-  // Current: narrative_divergence
+  // Current: narrative_divergence — pick one that differs from the thread
   if (narrativeDivergence && narrativeDivergence.length > 0) {
-    const sorted = [...narrativeDivergence].sort(
-      (a, b) => (b.source_count || 0) - (a.source_count || 0)
+    // Try to find a divergence that's NOT the same story as the thread
+    let pick = narrativeDivergence.find(nd =>
+      nd.theme !== threadTitle && !nd.theme?.startsWith(threadTitle?.substring(0, 30) || '___')
     );
-    const pick = sorted[0];
+    if (!pick) pick = narrativeDivergence[0];
 
     const sources: string[] = (pick.articles || []).map(a => a.source);
     const uniqueSources = [...new Set(sources)];
 
-    // Build framing insights from articles
-    const framings = (pick.articles || [])
-      .filter(a => a.framing || a.title)
-      .slice(0, 4)
-      .map(a => `${a.source}: "${a.title}"`);
+    // Build framing comparisons from articles — this is the GAP's value
+    const framingInsights: string[] = [];
+    const articlesByTier: Record<string, any[]> = {};
+    for (const art of (pick.articles || [])) {
+      const tier = art.tier || 'unknown';
+      if (!articlesByTier[tier]) articlesByTier[tier] = [];
+      articlesByTier[tier].push(art);
+    }
+
+    // Show how different tiers frame the same story
+    for (const [tier, arts] of Object.entries(articlesByTier)) {
+      const label = tier === 'national' ? 'National outlets' :
+                    tier === 'international' ? 'International outlets' :
+                    tier === 'local-regional' ? 'Local & regional outlets' :
+                    tier === 'specialist' ? 'Specialist outlets' : tier;
+      const best = arts[0];
+      if (best?.title) {
+        framingInsights.push(`${label}: "${best.title}" — ${best.source}`);
+      }
+    }
+
+    // Build synthesis from the framing tension
+    const synthParts: string[] = [];
+    if (pick.source_count > 1) {
+      synthParts.push(`${pick.source_count} sources are covering this story, but the way they frame it reveals sharp differences in what they think matters.`);
+    }
+
+    // Add article-level framing if available
+    const framedArticles = (pick.articles || []).filter(a => a.framing);
+    if (framedArticles.length > 0) {
+      for (const fa of framedArticles.slice(0, 2)) {
+        synthParts.push(`${fa.source} frames it as: ${fa.framing}`);
+      }
+    }
 
     return {
       title: pick.theme || pick.topic,
-      synthesis: editorial?.coverage_gap_note
-        || `Across ${pick.source_count} sources covering ${pick.topic}, the framing diverges — revealing how the same events get shaped into different stories depending on who's telling them.`,
-      crossSpectrum: '',
-      whyThisMatters: '',
+      synthesis: editorial?.coverage_gap_note || synthParts.join(' ') ||
+        `Across ${pick.source_count} sources, the framing diverges — revealing how the same events get shaped into different stories.`,
+      crossSpectrum: framingInsights.join(' '),
+      whyThisMatters: 'When the same event gets told as different stories, the gap between those frames is where the real story lives.',
       watchFor: '',
       articleCount: pick.articles?.length || 0,
       sourceCount: pick.source_count || 0,
@@ -273,17 +363,31 @@ export function selectDailyGap(
       domains: [pick.topic],
       domainCounts: {},
       sourceTiers: {},
-      changeDescription: '',
-      insights: framings,
+      changeDescription: `${pick.source_count} sources, ${Object.keys(articlesByTier).length} tiers`,
+      insights: framingInsights,
       yesterdayCount: 0,
     };
+  }
+
+  // Fallback: second top_story
+  if (topStories && topStories.length > 1) {
+    const candidates = topStories.filter(ts => ts.headline !== threadTitle);
+    if (candidates.length > 0) {
+      const section = topStoryToSection(candidates[0]);
+      if (editorial?.coverage_gap_note) {
+        section.synthesis = editorial.coverage_gap_note;
+      }
+      return section;
+    }
   }
 
   return null;
 }
 
 /**
- * MEANWHILE — Who showed up
+ * MEANWHILE — Who showed up (cooperation stories)
+ *
+ * Priority: cooperation data → local_regional_synthesis → remaining mega_story
  */
 export function selectMeanwhile(
   megaStories: MegaStory[],
@@ -294,14 +398,34 @@ export function selectMeanwhile(
   threadTitle?: string,
   gapTitle?: string
 ): SectionStory | null {
-  // Current format: use cooperation data + editorial cooperation highlight
+  // Current format: use cooperation data
   if (cooperation && cooperation.highlights && cooperation.highlights.length > 0) {
     const highlights = cooperation.highlights;
+
+    // Build a narrative from the cooperation data, not just stats
     const cooperationNarrative = editorial?.cooperation_highlight
       || `Today, ${cooperation.total_cooperation_stories} stories showed people cooperating — a ${cooperation.cooperation_rate}% cooperation signal across everything we read.`;
 
+    // Build richer insight cards from highlights (with connection text when available)
+    const insightCards: string[] = [];
+    for (const h of highlights.slice(0, 5)) {
+      if (h.connection) {
+        insightCards.push(`${h.source}: ${h.connection}`);
+      } else {
+        insightCards.push(`${h.source}: ${h.title}`);
+      }
+    }
+
+    // Cooperation types breakdown
+    const typeBreakdown: string[] = [];
+    if (cooperation.by_type) {
+      for (const t of cooperation.by_type.slice(0, 3)) {
+        typeBreakdown.push(`${t.type}: ${t.count} stories from ${t.sources.slice(0, 3).join(', ')}`);
+      }
+    }
+
     return {
-      title: 'Communities Taking Action',
+      title: 'Who Showed Up Today',
       synthesis: cooperationNarrative,
       crossSpectrum: '',
       whyThisMatters: 'The stories that local and specialist outlets tell are the stories most likely to affect your daily life — and most likely to be missing from the national cycle.',
@@ -313,7 +437,7 @@ export function selectMeanwhile(
       domainCounts: {},
       sourceTiers: {},
       changeDescription: `${cooperation.cooperation_rate}% of today's coverage`,
-      insights: highlights.slice(0, 5).map(h => `${h.source}: ${h.title}`),
+      insights: insightCards,
       yesterdayCount: 0,
     };
   }
@@ -325,7 +449,7 @@ export function selectMeanwhile(
     );
 
     return {
-      title: 'Communities Taking Action',
+      title: 'Who Showed Up Today',
       synthesis: localRegionalSynthesis,
       crossSpectrum: '',
       whyThisMatters: 'The stories that local and specialist outlets tell are the stories most likely to affect your daily life — and most likely to be missing from the national cycle.',

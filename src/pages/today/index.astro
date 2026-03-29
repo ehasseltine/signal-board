@@ -367,16 +367,16 @@ function dotCount(articles: number): number {
 </div>
 )}
 
-<!-- CROSS-SPECTRUM -->
-{gapStory.crossSpectrum && (
+<!-- FRAMING INSIGHTS — How different outlets tell the same story -->
+{gapStory.insights && gapStory.insights.length > 0 && (
 <div class="wrap">
   <div style="padding: 32px 0 0;">
-    <div class="r">
-      <span class="section-label" style="font-size: 13px; margin-bottom: 12px; display: block; color: var(--red);">Across the spectrum</span>
-      <div style="border-left: 4px solid var(--red); padding: 20px 24px; background: rgba(255, 255, 255, 0.06); border-radius: 0 8px 8px 0;">
-        <p class="body" style="font-size: clamp(15px, 1.5vw, 17px); line-height: 1.8; color: var(--on-navy-dim);" set:html={escapeHtml(gapStory.crossSpectrum)} />
+    <span class="section-label r" style="font-size: 13px; margin-bottom: 16px; display: block; color: var(--red);">How outlets framed it</span>
+    {gapStory.insights.slice(0, 4).map((insight: string) => (
+      <div class="r" style="margin-bottom: 16px; padding: 16px 20px; background: rgba(255, 255, 255, 0.06); border-radius: 0 8px 8px 0; border-left: 4px solid var(--red);">
+        <p class="body" style="font-size: clamp(15px, 1.5vw, 17px); line-height: 1.7; color: var(--on-navy-dim);" set:html={escapeHtml(insight)} />
       </div>
-    </div>
+    ))}
   </div>
 </div>
 )}
@@ -386,20 +386,7 @@ function dotCount(articles: number): number {
 <div class="wrap">
   <div style="padding: 32px 0 0;">
     <div class="r">
-      <span class="section-label" style="font-size: 13px; margin-bottom: 12px; display: block; color: var(--red);">Why this matters to you</span>
       <p class="body" style="font-size: clamp(16px, 1.7vw, 19px); line-height: 1.8; font-style: italic; color: var(--cream);" set:html={escapeHtml(gapStory.whyThisMatters)} />
-    </div>
-  </div>
-</div>
-)}
-
-<!-- WATCH FOR -->
-{gapStory.watchFor && (
-<div class="wrap">
-  <div style="padding: 32px 0 0;">
-    <div class="r">
-      <span class="section-label" style="font-size: 13px; margin-bottom: 12px; display: block; color: var(--green);">What to watch for</span>
-      <p class="body" style="font-size: clamp(15px, 1.5vw, 17px); line-height: 1.8; color: var(--on-navy-dim);" set:html={escapeHtml(gapStory.watchFor)} />
     </div>
   </div>
 </div>
@@ -409,12 +396,15 @@ function dotCount(articles: number): number {
 {gapStory.sourcesSample.length > 0 && (
 <div class="wrap">
   <div style="padding: 32px 0 clamp(72px, 10vw, 120px);">
-    <div class="sources r">
-      {gapStory.sourcesSample.slice(0, 8).map((name, idx) => (
-        <>
-          {idx > 0 && ' · '}
-          <span>{name}</span>
-        </>
+    <div class="coverage-label r" style="color: var(--on-navy-dim);">Sources reporting</div>
+    <div class="coverage-grid r">
+      {gapStory.sourcesSample.slice(0, 8).map(sourceName => (
+        <div class="coverage-card" style="background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.1);">
+          <div class="coverage-name" style="color: var(--cream);">{sourceName}</div>
+          {getSourceContext(sourceName) && (
+            <div class="coverage-type" style="color: var(--on-navy-dim);">{getSourceContext(sourceName)}</div>
+          )}
+        </div>
       ))}
     </div>
   </div>
@@ -485,13 +475,9 @@ function dotCount(articles: number): number {
 <!-- ================================================================ -->
 <div class="close-section">
   <div class="wrap">
-    {editorial?.synthesis ? (
-      <div class="body r" style="color: var(--on-navy-dim); font-size: clamp(17px, 1.8vw, 20px); line-height: 1.8; margin-bottom: 32px;" set:html={escapeHtml(editorial.synthesis)} />
-    ) : (
-      <h2 class="headline r">
-        Every day, Signal Board looks for something the current news architecture isn't designed to surface: who showed up for someone else, and what did it cost them.
-      </h2>
-    )}
+    <h2 class="headline r" style="color: var(--cream); margin-bottom: 24px;">
+      {editorial?.headline || `Today, ${sourcesReporting} sources published ${totalStories} stories. Here's what stood out.`}
+    </h2>
 
     {editorial?.coverage_gap_note && (
       <div class="r d1" style="margin-bottom: 24px;">
