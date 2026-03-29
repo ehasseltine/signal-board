@@ -505,9 +505,7 @@
   .coverage-card[data-tier="local-regional"] { border-left-color: var(--yellow); }
   .coverage-card[data-tier="specialist"] { border-left-color: var(--teal); }
   .coverage-card[data-tier="analysis"] { border-left-color: var(--green); }
-  /* Geography warmth shifts */
-  .coverage-card[data-geo="international"] { background: rgba(27,42,74,0.03); }
-  .coverage-card[data-geo="local"] { background: rgba(255,210,63,0.04); }
+  /* All source cards stay white for consistency */
 
   .coverage-country {
     font-family: 'Inter', sans-serif;
@@ -594,13 +592,9 @@
   .d4 { transition-delay: 0.24s; }
 
   /* ================ RECTANGLE BREAKERS ================ */
-  /* Rotated watch-for card — subtle playful angle */
+  /* Watch-for card */
   .watch-for-card {
-    transform: rotate(-1.5deg);
     transition: transform var(--duration-hover) var(--ease-out);
-  }
-  .watch-for-card:hover {
-    transform: rotate(0deg);
   }
 
   /* Oversized Substack CTA */
@@ -643,7 +637,7 @@
     .r { opacity: 1; transform: none; transition-duration: 0.01ms; }
     .scroll-cue { animation: none; }
     .summary-card { transition-duration: 0.01ms; }
-    .watch-for-card { transform: none; transition-duration: 0.01ms; }
+    .watch-for-card { transition-duration: 0.01ms; }
     .cta-oversized { transition-duration: 0.01ms; }
     html { scroll-behavior: auto; }
   }
