@@ -146,6 +146,25 @@
   }
   .pull-quote-green { border-left-color: var(--green); }
 
+  /* Warm editorial wash — "the analyst is speaking to you" */
+  .editorial-wash {
+    position: relative;
+    padding: clamp(32px, 4vw, 48px) 0;
+  }
+  .editorial-wash::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -5vw; right: -5vw; bottom: 0;
+    background: radial-gradient(
+      ellipse 80% 100% at 30% 50%,
+      rgba(255,210,63,0.1) 0%,
+      rgba(255,210,63,0.04) 40%,
+      transparent 75%
+    );
+    pointer-events: none;
+    z-index: -1;
+  }
+
   /* Section labels — Inter uppercase, not Caveat cursive.
      Caveat stays for date/annotation, but labels should be precise. */
   .section-label {
@@ -207,13 +226,134 @@
     background: radial-gradient(ellipse at 20% 50%, rgba(14,173,105,0.08) 0%, transparent 70%);
   }
 
-  /* Section transition gradient strips */
-  .section-transition {
-    height: 64px;
-    width: 100%;
+  /* ================ FRAMING EXHIBIT ================ */
+  /* The analytical centerpiece — tier-colored perspective rows */
+  .framing-row {
+    display: flex;
+    gap: 0;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    margin-bottom: 4px;
   }
-  .section-transition-teal-green {
-    background: linear-gradient(to bottom, var(--teal-wash), #E0F5EC);
+  .framing-label {
+    width: clamp(90px, 14vw, 140px);
+    flex-shrink: 0;
+    padding: 18px 16px;
+    display: flex;
+    align-items: flex-start;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 800;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .framing-content {
+    flex: 1;
+    padding: 18px 20px;
+    border-left: 3px solid;
+    font-family: 'Lora', Georgia, serif;
+    font-style: italic;
+    font-size: clamp(14px, 1.5vw, 17px);
+    line-height: 1.7;
+    color: var(--ink);
+  }
+  /* Tier washes — color as atmosphere, not decoration */
+  .framing-row[data-tier="national"],
+  .framing-row[data-tier="National"] {
+    background: rgba(217,64,50,0.06);
+  }
+  .framing-row[data-tier="national"] .framing-label,
+  .framing-row[data-tier="National"] .framing-label { color: var(--red-accessible); }
+  .framing-row[data-tier="national"] .framing-content,
+  .framing-row[data-tier="National"] .framing-content { border-left-color: var(--red); }
+
+  .framing-row[data-tier="international"],
+  .framing-row[data-tier="International"] {
+    background: rgba(27,42,74,0.05);
+  }
+  .framing-row[data-tier="international"] .framing-label,
+  .framing-row[data-tier="International"] .framing-label { color: var(--ink); }
+  .framing-row[data-tier="international"] .framing-content,
+  .framing-row[data-tier="International"] .framing-content { border-left-color: var(--ink); }
+
+  .framing-row[data-tier="military"],
+  .framing-row[data-tier="Military"] {
+    background: rgba(255,210,63,0.08);
+  }
+  .framing-row[data-tier="military"] .framing-label,
+  .framing-row[data-tier="Military"] .framing-label { color: var(--yellow-accessible); }
+  .framing-row[data-tier="military"] .framing-content,
+  .framing-row[data-tier="Military"] .framing-content { border-left-color: var(--yellow); }
+
+  .framing-row[data-tier="local"],
+  .framing-row[data-tier="Local"] {
+    background: rgba(255,210,63,0.06);
+  }
+  .framing-row[data-tier="local"] .framing-label,
+  .framing-row[data-tier="Local"] .framing-label { color: var(--yellow-accessible); }
+  .framing-row[data-tier="local"] .framing-content,
+  .framing-row[data-tier="Local"] .framing-content { border-left-color: var(--yellow); }
+
+  .framing-row[data-tier="specialist"],
+  .framing-row[data-tier="Specialist"] {
+    background: rgba(59,206,172,0.06);
+  }
+  .framing-row[data-tier="specialist"] .framing-label,
+  .framing-row[data-tier="Specialist"] .framing-label { color: var(--teal-accessible); }
+  .framing-row[data-tier="specialist"] .framing-content,
+  .framing-row[data-tier="Specialist"] .framing-content { border-left-color: var(--teal); }
+
+  .framing-row[data-tier="conservative"],
+  .framing-row[data-tier="Conservative"] {
+    background: rgba(217,64,50,0.04);
+  }
+  .framing-row[data-tier="conservative"] .framing-label,
+  .framing-row[data-tier="Conservative"] .framing-label { color: var(--red-accessible); }
+  .framing-row[data-tier="conservative"] .framing-content,
+  .framing-row[data-tier="Conservative"] .framing-content { border-left-color: var(--red); }
+
+  .framing-row[data-tier="progressive"],
+  .framing-row[data-tier="Progressive"] {
+    background: rgba(14,173,105,0.06);
+  }
+  .framing-row[data-tier="progressive"] .framing-label,
+  .framing-row[data-tier="Progressive"] .framing-label { color: var(--green-accessible); }
+  .framing-row[data-tier="progressive"] .framing-content,
+  .framing-row[data-tier="Progressive"] .framing-content { border-left-color: var(--green); }
+
+  .framing-row[data-tier="analysis"],
+  .framing-row[data-tier="Analysis"] {
+    background: rgba(27,42,74,0.04);
+  }
+  .framing-row[data-tier="analysis"] .framing-label,
+  .framing-row[data-tier="Analysis"] .framing-label { color: var(--ink); }
+  .framing-row[data-tier="analysis"] .framing-content,
+  .framing-row[data-tier="Analysis"] .framing-content { border-left-color: var(--ink-mid); }
+
+  /* Default/fallback framing row */
+  .framing-row:not([data-tier]) {
+    background: var(--ink-faint);
+  }
+  .framing-row:not([data-tier]) .framing-label { color: var(--ink-mid); }
+  .framing-row:not([data-tier]) .framing-content { border-left-color: var(--ink-light); }
+
+  /* ================ SECTION DIVIDERS ================ */
+  /* Angled transitions — stories don't stay in their lanes */
+  .section-divider {
+    position: relative;
+    width: 100%;
+    height: 0;
+    overflow: visible;
+    z-index: 2;
+    line-height: 0;
+    margin: 0;
+    padding: 0;
+  }
+  .section-divider svg {
+    display: block;
+    width: 100%;
+    height: clamp(40px, 5vw, 72px);
+    position: relative;
   }
   .callout-label {
     font-family: 'Inter', sans-serif;
@@ -343,7 +483,7 @@
     font-weight: 500;
     font-size: clamp(20px, 2.5vw, 28px);
     color: var(--on-navy-dim);
-    margin-top: 12px;
+    margin-top: 4px;            /* tight: title + date are one unit */
   }
   .masthead-hook {
     font-family: 'Outfit', sans-serif;
@@ -351,7 +491,7 @@
     font-size: clamp(20px, 2.8vw, 36px);
     line-height: 1.25;
     color: var(--cream);
-    margin-top: clamp(24px, 3vw, 40px);
+    margin-top: clamp(40px, 5vw, 64px);  /* generous gap: second beat */
     letter-spacing: -0.01em;
   }
   .masthead-sub {
@@ -602,14 +742,14 @@
     font-family: 'Abril Fatface', Georgia, serif;
     font-size: clamp(32px, 5vw, 56px);
     line-height: 1.15;
-    color: var(--red);
+    color: var(--ink);
     text-decoration: none;
     display: inline-block;
     transition: color var(--duration-hover) var(--ease-out),
                 transform var(--duration-hover) var(--ease-out);
   }
   .cta-oversized:hover {
-    color: var(--ink);
+    color: var(--red);
     transform: translateX(8px);
   }
   .cta-oversized .cta-arrow {

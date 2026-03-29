@@ -399,23 +399,19 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
   </div>
   )}
 
-  <!-- CROSS-SPECTRUM — side-by-side comparison -->
+  <!-- CROSS-SPECTRUM — framing exhibit -->
   {threadStory.crossSpectrum && (
-  <div style="padding: 28px 0 0;">
-    <span class="section-label r" style="font-size: 13px; margin-bottom: 16px; display: block;">How outlets told it differently</span>
+  <div style="padding: 32px 0 0;">
+    <span class="section-label r" style="font-size: 13px; margin-bottom: 20px; display: block;">How outlets told it differently</span>
     <div class="r" style="display: flex; flex-direction: column; gap: 0;">
       {threadStory.crossSpectrum.split(/(?<=\.)\s+/).filter((s: string) => s.trim().length > 10).map((sentence: string, i: number) => {
         const tierMatch = sentence.match(/^(National|International|Local|Specialist|Military|Conservative|Progressive|Analysis)/i);
         const tierName = tierMatch ? tierMatch[1] : `Perspective ${i + 1}`;
         const content = tierMatch ? sentence.replace(tierMatch[0], '').replace(/^[-\s]*(?:focused|oriented|leaning)?\s*(?:outlets?|sources?|media|press|coverage)?\s*/i, '').replace(/^[,.:]\s*/, '') : sentence;
         return (
-        <div style={`display: flex; gap: 0; border-bottom: 1px solid rgba(27,42,74,0.06);${i === 0 ? ' border-top: 1px solid rgba(27,42,74,0.06);' : ''}`}>
-          <div style="width: clamp(80px, 12vw, 120px); flex-shrink: 0; padding: 14px 16px 14px 0; display: flex; align-items: flex-start;">
-            <span style="font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--red-accessible);">{tierName}</span>
-          </div>
-          <div style="flex: 1; padding: 14px 0 14px 16px; border-left: 2px solid var(--red);">
-            <p class="body" style="font-size: clamp(14px, 1.4vw, 16px); line-height: 1.65; color: var(--ink); margin: 0;">{content.trim()}</p>
-          </div>
+        <div class="framing-row" data-tier={tierName}>
+          <div class="framing-label">{tierName}</div>
+          <div class="framing-content">{content.trim()}</div>
         </div>
         );
       })}
@@ -424,11 +420,11 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
   )}
 </div>
 
-<!-- WHY THIS MATTERS — full-bleed background break -->
+<!-- WHY THIS MATTERS — warm editorial wash -->
 {threadStory.whyThisMatters && (
-<div class="r" style="background: var(--ink); margin-top: 32px;">
-  <div class="wrap" style="padding: clamp(36px, 5vw, 56px) 0;">
-    <p style="font-family: 'Lora', serif; font-style: italic; font-size: clamp(19px, 2.2vw, 26px); line-height: 1.7; color: var(--cream); max-width: 680px;" set:html={escapeHtml(threadStory.whyThisMatters)} />
+<div class="editorial-wash r" style="margin-top: 32px; overflow: hidden;">
+  <div class="wrap">
+    <p style="font-family: 'Lora', serif; font-style: italic; font-size: clamp(19px, 2.2vw, 26px); line-height: 1.7; color: var(--ink); max-width: 680px;" set:html={escapeHtml(threadStory.whyThisMatters)} />
   </div>
 </div>
 )}
@@ -481,12 +477,19 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
 </article>
 )}
 
+<!-- Angled divider: cream → navy -->
+<div class="section-divider" aria-hidden="true">
+  <svg viewBox="0 0 1440 72" preserveAspectRatio="none" fill="none">
+    <polygon points="0,0 1440,24 1440,72 0,72" fill="var(--ink)"/>
+  </svg>
+</div>
+
 <!-- ================================================================ -->
-<!-- THE DAILY GAP — NAVY BACKGROUND                                  -->
+<!-- THE DAILY GAP — NAVY HEADER + TEAL WASH BODY                     -->
 <!-- ================================================================ -->
 {gapStory && (
 <!-- Gap header strip — navy -->
-<div class="navy" style="padding-bottom: 0;">
+<div class="navy" style="padding-bottom: 0; margin-top: -1px;">
 <div class="wrap">
   <div style="padding: 48px 0 0;">
     <span class="section-label r" style="color: var(--teal);">
@@ -512,18 +515,25 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
 </div>
 </div>
 
+<!-- Angled divider: navy → teal wash -->
+<div class="section-divider" aria-hidden="true">
+  <svg viewBox="0 0 1440 72" preserveAspectRatio="none" fill="none">
+    <polygon points="0,0 1440,0 1440,48 0,72" fill="var(--ink)"/>
+    <polygon points="0,72 1440,48 1440,72" fill="var(--teal-wash)"/>
+  </svg>
+</div>
+
 <!-- Gap body — teal wash background -->
-<article id="gap" class="section-world gap-world" aria-label="The Daily Gap" style="background: var(--teal-wash);">
+<article id="gap" class="section-world gap-world" aria-label="The Daily Gap" style="background: var(--teal-wash); margin-top: -1px;">
 <div class="wrap">
 
-  <!-- COVERAGE GAP NOTE — hero highlight card, navy background -->
+  <!-- COVERAGE GAP NOTE — hero highlight card on teal wash -->
   {editorial?.coverage_gap_note && (
   <div style="padding: 32px 0 0;">
     <div class="r">
-      <div style="padding: 28px 32px; background: var(--ink); border-radius: var(--radius-md); position: relative; overflow: hidden;">
-        <div style="position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--teal);"></div>
-        <span style="font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 14px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--teal); display: block; margin-bottom: 12px;">What national coverage missed</span>
-        <p style="font-family: 'Lora', serif; font-size: clamp(17px, 1.9vw, 22px); line-height: 1.75; color: var(--cream); margin: 0;" set:html={escapeHtml(editorial.coverage_gap_note)} />
+      <div style="padding: 28px 32px; background: var(--white); border-radius: var(--radius-md); border-left: 4px solid var(--teal); box-shadow: 0 4px 24px rgba(27,42,74,0.06);">
+        <span style="font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 14px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--teal-accessible); display: block; margin-bottom: 12px;">What national coverage missed</span>
+        <p style="font-family: 'Lora', serif; font-size: clamp(17px, 1.9vw, 22px); line-height: 1.75; color: var(--ink); margin: 0;" set:html={escapeHtml(editorial.coverage_gap_note)} />
       </div>
     </div>
   </div>
@@ -538,26 +548,32 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
   </div>
   )}
 
-  <!-- FRAMING INSIGHTS — teal left borders on cream-ish bg -->
+  <!-- FRAMING INSIGHTS — framing exhibit for Gap -->
   {gapStory.insights && gapStory.insights.length > 0 && (
-  <div style="padding: 28px 0 0;">
-    <span class="section-label r section-label-teal" style="font-size: 13px; margin-bottom: 16px; display: block;">How outlets framed it</span>
+  <div style="padding: 32px 0 0;">
+    <span class="section-label r section-label-teal" style="font-size: 13px; margin-bottom: 20px; display: block;">How outlets framed it</span>
     <div class="r" style="display: flex; flex-direction: column; gap: 0;">
-      {gapStory.insights.slice(0, 4).map((insight: string, i: number) => (
-        <div style={`padding: 14px 0 14px 16px; border-left: 2px solid var(--teal);${i > 0 ? ' border-top: 1px solid rgba(59,206,172,0.15);' : ''}`}>
-          <p class="body" style="font-size: clamp(14px, 1.4vw, 16px); line-height: 1.7; margin: 0;" set:html={escapeHtml(insight)} />
+      {gapStory.insights.slice(0, 4).map((insight: string, i: number) => {
+        const tierMatch = insight.match(/^(National|International|Local|Specialist|Military|Conservative|Progressive|Analysis)/i);
+        const tierName = tierMatch ? tierMatch[1] : '';
+        const content = tierMatch ? insight.replace(tierMatch[0], '').replace(/^[-\s]*(?:focused|oriented|leaning)?\s*(?:outlets?|sources?|media|press|coverage)?\s*/i, '').replace(/^[,.:]\s*/, '') : insight;
+        return (
+        <div class="framing-row" data-tier={tierName || undefined} style={!tierName ? 'background: rgba(59,206,172,0.06);' : ''}>
+          {tierName && <div class="framing-label">{tierName}</div>}
+          <div class="framing-content" style={`${!tierName ? 'border-left-color: var(--teal);' : ''}`}>
+            <span set:html={escapeHtml(content.trim())} />
+          </div>
         </div>
-      ))}
+        );
+      })}
     </div>
   </div>
   )}
 
-  <!-- WHY THIS MATTERS -->
+  <!-- WHY THIS MATTERS — warm editorial wash -->
   {gapStory.whyThisMatters && (
-  <div style="padding: 28px 0 0;">
-    <div class="r">
-      <p class="body" style="font-style: italic; font-size: clamp(17px, 1.9vw, 21px); line-height: 1.7;" set:html={escapeHtml(gapStory.whyThisMatters)} />
-    </div>
+  <div class="editorial-wash r" style="overflow: hidden;">
+    <p class="body" style="font-style: italic; font-size: clamp(17px, 1.9vw, 21px); line-height: 1.7;" set:html={escapeHtml(gapStory.whyThisMatters)} />
   </div>
   )}
 
@@ -584,8 +600,12 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
 </article>
 )}
 
-<!-- Section transition: teal wash → meanwhile green -->
-<div class="section-transition section-transition-teal-green" aria-hidden="true"></div>
+<!-- Angled divider: teal wash → meanwhile teal wash (subtle wave) -->
+<div class="section-divider" aria-hidden="true">
+  <svg viewBox="0 0 1440 72" preserveAspectRatio="none" fill="none">
+    <path d="M0,72 L0,48 Q360,0 720,36 Q1080,72 1440,24 L1440,72 Z" fill="var(--teal-wash)"/>
+  </svg>
+</div>
 
 <!-- ================================================================ -->
 <!-- MEANWHILE — TEAL WASH BACKGROUND                                 -->
@@ -680,15 +700,15 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
 
     <div class="r d1" style="position: relative; display: inline-block; margin-top: 4px;">
       <svg style="position: absolute; top: -14px; left: -20px; width: calc(100% + 40px); height: calc(100% + 28px);" viewBox="0 0 200 120" fill="none" preserveAspectRatio="none" aria-hidden="true">
-        <ellipse cx="100" cy="60" rx="90" ry="52" stroke="var(--red)" stroke-width="2" fill="none" opacity="0.25" transform="rotate(-2, 100, 60)" stroke-dasharray="5,4"/>
+        <ellipse cx="100" cy="60" rx="90" ry="52" stroke="var(--ink)" stroke-width="2" fill="none" opacity="0.15" transform="rotate(-2, 100, 60)" stroke-dasharray="5,4"/>
       </svg>
-      <div class="display" style="font-size: clamp(64px, 13vw, 150px); line-height: 1;">{totalStories}</div>
+      <div class="display" style="font-size: clamp(64px, 13vw, 150px); line-height: 1; color: var(--ink);">{totalStories}</div>
     </div>
-    <p class="stat-annotation stat-annotation-red r d2" style="font-size: 22px; margin-top: 4px;">articles analyzed today</p>
+    <p class="stat-annotation r d2" style="font-size: 22px; margin-top: 4px;">articles analyzed today</p>
 
     <div class="r d3" style="margin-top: 20px; max-width: 500px;">
       <div style="height: 8px; background: var(--ink-faint); border-radius: 4px; overflow: hidden;" role="progressbar" aria-valuenow={crossDomainPct} aria-valuemin="0" aria-valuemax="100" aria-label={`${crossDomainPct}% of stories crossed domain boundaries`}>
-        <div style={`height: 100%; width: ${crossDomainPct}%; background: var(--red); border-radius: 4px;`}></div>
+        <div style={`height: 100%; width: ${crossDomainPct}%; background: var(--ink); border-radius: 4px;`}></div>
       </div>
       <div style="display: flex; justify-content: space-between; margin-top: 6px;">
         <span style="font-family: 'Inter', sans-serif; font-size: 11px; color: var(--ink-light);">{crossDomain} cross-domain</span>
