@@ -82,7 +82,7 @@
 
   .display {
     font-family: 'Abril Fatface', Georgia, serif;
-    color: var(--ink);
+    color: var(--red);
     line-height: 0.9;
     letter-spacing: -0.02em;
     font-variant-numeric: tabular-nums;
