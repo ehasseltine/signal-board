@@ -10,9 +10,16 @@
     --red: #D94032;
     --red-soft: rgba(217,64,50,0.06);
     --red-mark: rgba(217,64,50,0.2);
-    --green: #2D8A4E;
-    --green-soft: rgba(45,138,78,0.05);
-    --green-mark: rgba(45,138,78,0.16);
+    --green: #0EAD69;
+    --green-soft: rgba(14,173,105,0.05);
+    --green-mark: rgba(14,173,105,0.16);
+    /* V2 palette additions */
+    --yellow: #FFD23F;
+    --yellow-warm: #FFF8E7;
+    --yellow-mid: rgba(255,210,63,0.18);
+    --teal: #3BCEAC;
+    --teal-wash: #E4F7F1;
+    --teal-soft: rgba(59,206,172,0.08);
     /* Navy section tokens */
     --on-navy: rgba(245,239,223,0.88);
     --on-navy-dim: rgba(245,239,223,0.5);
@@ -42,10 +49,25 @@
     line-height: 1.15;
     color: var(--ink);
   }
-  /* Section weight hierarchy: Thread > Gap > Meanwhile */
-  .headline-thread { font-size: clamp(32px, 5vw, 60px); }
-  .headline-gap { font-size: clamp(26px, 3.5vw, 44px); }
-  .headline-meanwhile { font-size: clamp(24px, 3vw, 40px); }
+  /* Section-specific headline fonts — each section has its own voice */
+  .headline-thread {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 800;
+    font-size: clamp(32px, 5vw, 60px);
+    letter-spacing: -0.03em;
+  }
+  .headline-gap {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 600;
+    font-size: clamp(26px, 3.8vw, 48px);
+    letter-spacing: -0.01em;
+  }
+  .headline-meanwhile {
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+    font-size: clamp(26px, 3.5vw, 48px);
+    letter-spacing: -0.01em;
+  }
 
   /* NO inner max-width — text fills the wrap container naturally */
   .body {
@@ -87,6 +109,7 @@
     gap: 10px;
   }
   .section-label-green { color: var(--green); }
+  .section-label-teal { color: var(--teal); }
   .cat-icon { flex-shrink: 0; }
 
   .aside {
@@ -149,6 +172,38 @@
   .wrap { max-width: 1080px; margin: 0 auto; padding: 0 clamp(24px, 4vw, 48px); }
   .wrap-wide { max-width: 1280px; margin: 0 auto; padding: 0 clamp(24px, 4vw, 48px); }
   .section { padding: clamp(48px, 6vw, 72px) 0; }
+
+  /* ================ THREAD SECTION — warm yellow world ================ */
+  .thread-world {
+    background: var(--yellow-warm);
+    position: relative;
+  }
+  .thread-world::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 5px; height: 100%;
+    background: var(--red);
+  }
+  .thread-world .section-label { color: var(--red); }
+  .thread-world .body strong { color: var(--red); }
+
+  /* ================ MEANWHILE SECTION — cool teal world ================ */
+  .meanwhile-world {
+    background: var(--teal-wash);
+    position: relative;
+  }
+  .meanwhile-world::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 5px; height: 100%;
+    background: var(--green);
+  }
+  .meanwhile-world .section-label { color: var(--green); }
+  .meanwhile-world .section-label-green { color: var(--green); }
+  .meanwhile-world .body strong { color: var(--green); }
+  .meanwhile-world .body a { color: var(--green); }
 
   /* ================ NAVY SECTION — reusable ================ */
   .navy {

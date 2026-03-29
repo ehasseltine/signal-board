@@ -268,7 +268,7 @@ function tierLabel(tier: string): string {
 <!-- THE DAILY THREAD — CREAM BACKGROUND                              -->
 <!-- ================================================================ -->
 {threadStory && (
-<article id="thread" aria-label="The Daily Thread">
+<article id="thread" class="thread-world" aria-label="The Daily Thread">
 <div class="wrap">
   <div class="section" style="padding-bottom: 0;">
     <span class="section-label r">
@@ -297,8 +297,8 @@ function tierLabel(tier: string): string {
 
     <!-- Proportion bar — thread articles as share of total -->
     <div style="margin: 16px 0; max-width: 480px;">
-      <div style="height: 6px; background: var(--ink-faint); border-radius: 3px; overflow: hidden;">
-        <div style={`height: 100%; width: ${Math.min(100, Math.round((threadStory.articleCount / Math.max(totalStories, 1)) * 100))}%; background: var(--red); border-radius: 3px;`}></div>
+      <div style="height: 6px; background: rgba(27,42,74,0.1); border-radius: 3px; overflow: hidden;">
+        <div style={`height: 100%; width: ${Math.min(100, Math.round((threadStory.articleCount / Math.max(totalStories, 1)) * 100))}%; background: var(--yellow); border-radius: 3px;`}></div>
       </div>
       <span style="font-family: 'Inter', sans-serif; font-size: 11px; color: var(--ink-light); margin-top: 4px; display: block;">
         {Math.round((threadStory.articleCount / Math.max(totalStories, 1)) * 100)}% of today's {totalStories} stories
@@ -334,9 +334,9 @@ function tierLabel(tier: string): string {
 <div class="wrap">
   <div style="padding: 32px 0 0;">
     <span class="section-label r" style="font-size: clamp(18px, 2.2vw, 24px); margin-bottom: 20px; display: block;">How outlets told it differently</span>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1px; background: var(--ink-faint);" class="r">
+    <div style="display: flex; flex-wrap: wrap; gap: 1px; background: rgba(27,42,74,0.06);" class="r">
       {threadStory.crossSpectrum.split(/(?<=\.)\s+/).filter((s: string) => s.trim().length > 10).map((sentence: string) => (
-        <div style="padding: 18px 22px; background: var(--cream);">
+        <div style="padding: 18px 22px; background: var(--yellow-warm); flex: 1 1 280px;">
           <p class="body" style="font-size: clamp(14px, 1.4vw, 16px); line-height: 1.7; color: var(--ink); margin: 0;">{sentence.trim()}</p>
         </div>
       ))}
@@ -399,7 +399,8 @@ function tierLabel(tier: string): string {
 <!-- THE DAILY GAP — NAVY BACKGROUND                                  -->
 <!-- ================================================================ -->
 {gapStory && (
-<article id="gap" class="navy" aria-label="The Daily Gap">
+<article id="gap" class="navy" aria-label="The Daily Gap" style="position: relative;">
+<div style="position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--teal);"></div>
 <div class="wrap">
   <div class="section" style="padding-bottom: 0;">
     <span class="section-label r">
@@ -439,10 +440,10 @@ function tierLabel(tier: string): string {
 {gapStory.insights && gapStory.insights.length > 0 && (
 <div class="wrap">
   <div style="padding: 32px 0 0;">
-    <span class="section-label r" style="font-size: clamp(18px, 2.2vw, 24px); margin-bottom: 20px; display: block; color: var(--red);">How outlets framed it</span>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1px; background: var(--on-navy-faint);" class="r">
+    <span class="section-label r" style="font-size: clamp(18px, 2.2vw, 24px); margin-bottom: 20px; display: block; color: var(--teal);">How outlets framed it</span>
+    <div style="display: flex; flex-wrap: wrap; gap: 1px; background: rgba(59,206,172,0.12);" class="r">
       {gapStory.insights.slice(0, 4).map((insight: string) => (
-        <div style="padding: 18px 22px; background: var(--ink);">
+        <div style="padding: 18px 22px; background: var(--ink); flex: 1 1 280px;">
           <p class="body" style="font-size: clamp(14px, 1.4vw, 16px); line-height: 1.7; color: var(--on-navy-dim); margin: 0;" set:html={escapeHtml(insight)} />
         </div>
       ))}
@@ -491,7 +492,7 @@ function tierLabel(tier: string): string {
 <!-- MEANWHILE — GREEN WASH BACKGROUND                                -->
 <!-- ================================================================ -->
 {meanwhileStory && (
-<article id="meanwhile" style="background: #EFF5EE;" aria-label="Meanwhile">
+<article id="meanwhile" class="meanwhile-world" aria-label="Meanwhile">
 <div class="wrap">
   <div class="section" style="padding-bottom: 0;">
     <span class="section-label section-label-green r">
@@ -506,7 +507,7 @@ function tierLabel(tier: string): string {
 <div class="wrap-wide">
   <div style="margin: 32px auto 0; padding: 0 clamp(16px, 3vw, 32px);" class="r">
     <div style="display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap;">
-      <div class="display" style="font-size: clamp(48px, 8vw, 80px); line-height: 1; color: var(--green);">{cooperation?.total_cooperation_stories || meanwhileStory.articleCount}</div>
+      <div style="font-family: 'Merriweather', serif; font-weight: 700; font-size: clamp(48px, 8vw, 80px); line-height: 1; color: var(--green);">{cooperation?.total_cooperation_stories || meanwhileStory.articleCount}</div>
       <div style="font-family: 'Lora', serif; font-size: clamp(16px, 1.5vw, 19px); color: var(--ink-mid);">
         stories of cooperation — <strong>{cooperation?.cooperation_rate || 25}%</strong> of everything we read
       </div>
@@ -524,68 +525,35 @@ function tierLabel(tier: string): string {
 </div>
 )}
 
-<!-- COOPERATION HIGHLIGHTS — Editorial card layout with featured first story -->
-{cooperation && cooperation.highlights && cooperation.highlights.length > 0 && (() => {
-  const featured = cooperation.highlights[0];
-  const rest = cooperation.highlights.slice(1, 6);
-  return (
+<!-- COOPERATION HIGHLIGHTS — Flowing editorial bands -->
+{cooperation && cooperation.highlights && cooperation.highlights.length > 0 && (
 <div class="wrap">
-  <div style="padding: 32px 0 0;">
-
-    {/* Featured cooperation story — full width */}
-    <a href={featured.url || '#'} target="_blank" rel="noopener" class="r" style="text-decoration: none; color: inherit; display: block; margin-bottom: 20px;">
-      <div style="padding: 28px 32px; background: white; border-top: 3px solid var(--green); transition: border-color 0.2s;">
-        <div style="display: flex; align-items: baseline; gap: 12px; margin-bottom: 12px;">
-          <span style="font-family: 'Inter', sans-serif; font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--green); font-weight: 600;">
-            {featured.cooperation_type || featured.force_tag || 'cooperation'}
-          </span>
-          <span style="font-family: 'Inter', sans-serif; font-size: 11px; color: var(--ink-light);">{featured.source}</span>
-          {getSourceContext(featured.source) && (
-            <span style="font-family: 'Inter', sans-serif; font-size: 11px; color: var(--ink-light);">· {getSourceContext(featured.source)}</span>
-          )}
+  <div style="padding: 32px 0 0; max-width: 720px;">
+    {cooperation.highlights.slice(0, 6).map((h: any, i: number) => (
+      <a href={h.url || '#'} target="_blank" rel="noopener" class="r" style={`text-decoration: none; color: inherit; display: block; padding: 20px 0; border-top: 1px solid rgba(27,42,74,0.08);${i % 2 === 1 ? ' padding-left: 12%;' : ''}`}>
+        <span style="font-family: 'Inter', sans-serif; font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--green); font-weight: 600;">
+          {h.cooperation_type || h.force_tag || 'cooperation'}
+        </span>
+        <div style="font-family: 'Merriweather', serif; font-size: clamp(16px, 1.8vw, 20px); line-height: 1.4; color: var(--ink); font-weight: 700; margin: 6px 0 4px;">
+          {h.title}
         </div>
-        <div style="font-family: 'Lora', serif; font-size: clamp(18px, 2vw, 22px); line-height: 1.4; color: var(--ink); font-weight: 600; max-width: 720px;">
-          {featured.title}
-        </div>
-        {featured.connection && (
-          <p style="font-family: 'Lora', serif; font-size: clamp(15px, 1.5vw, 17px); line-height: 1.65; color: var(--ink-mid); margin: 12px 0 0; max-width: 720px;">{featured.connection}</p>
-        )}
-      </div>
-    </a>
-
-    {/* Remaining cooperation stories — compact grid */}
-    {rest.length > 0 && (
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1px; background: var(--ink-faint);" class="r">
-      {rest.map((h: any) => (
-        <a href={h.url || '#'} target="_blank" rel="noopener" style="text-decoration: none; color: inherit; display: block;">
-          <div style="padding: 20px 24px; background: white; height: 100%; transition: background 0.2s;">
-            <span style="font-family: 'Inter', sans-serif; font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--green); font-weight: 600;">
-              {h.cooperation_type || h.force_tag || 'cooperation'}
-            </span>
-            <div style="font-family: 'Lora', serif; font-size: clamp(15px, 1.5vw, 17px); line-height: 1.45; color: var(--ink); font-weight: 600; margin: 6px 0;">
-              {h.title}
-            </div>
-            <span style="font-family: 'Inter', sans-serif; font-size: 11px; color: var(--ink-light);">
-              {h.source}{getSourceContext(h.source) ? ` · ${getSourceContext(h.source)}` : ''}
-            </span>
-          </div>
-        </a>
-      ))}
-    </div>
-    )}
+        <span style="font-family: 'Inter', sans-serif; font-size: 11px; color: var(--ink-light);">
+          {h.source}{getSourceContext(h.source) ? ` · ${getSourceContext(h.source)}` : ''}
+        </span>
+      </a>
+    ))}
   </div>
 </div>
-  );
-})()}
+)}
 
 <!-- CROSS-SPECTRUM — How local vs national cover the same events -->
 {meanwhileStory.crossSpectrum && (
 <div class="wrap">
   <div style="padding: 32px 0 0;">
     <span class="section-label section-label-green r" style="font-size: clamp(18px, 2.2vw, 24px); margin-bottom: 20px; display: block;">Same story, different lens</span>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1px; background: var(--ink-faint);" class="r">
+    <div style="display: flex; flex-wrap: wrap; gap: 1px; background: rgba(14,173,105,0.1);" class="r">
       {meanwhileStory.crossSpectrum.split(/(?<=\.)\s+/).filter((s: string) => s.trim().length > 10).map((sentence: string) => (
-        <div style="padding: 18px 22px; background: white;">
+        <div style="padding: 18px 22px; background: var(--teal-wash); flex: 1 1 280px;">
           <p class="body" style="font-size: clamp(14px, 1.4vw, 16px); line-height: 1.7; color: var(--ink); margin: 0;">{sentence.trim()}</p>
         </div>
       ))}
@@ -631,18 +599,17 @@ function tierLabel(tier: string): string {
 <div class="wrap">
   <div style="padding: 32px 0 0;">
     <span class="section-label section-label-green r" style="font-size: 13px; margin-bottom: 16px; display: block;">What cooperation looked like today</span>
-    <div style="display: flex; flex-wrap: wrap; gap: 8px;" class="r">
-      {cooperation.by_type.map((t: any) => (
-        <div style="background: white; padding: 6px 14px; display: flex; align-items: center; gap: 6px; border: 1px solid var(--ink-faint);">
-          <span style="font-family: 'Abril Fatface', serif; font-size: 16px; color: var(--green);">{t.count}</span>
-          <span style="font-family: 'Inter', sans-serif; font-size: 12px; color: var(--ink-mid);">{t.type}</span>
-        </div>
+    <div class="r" style="font-family: 'Lora', serif; font-size: clamp(15px, 1.6vw, 18px); color: var(--ink-mid); line-height: 1.8;">
+      {cooperation.by_type.map((t: any, i: number) => (
+        <span>
+          <strong style="font-family: 'Merriweather', serif; font-weight: 700; color: var(--green);">{t.count}</strong>{' '}{t.type}{i < cooperation.by_type.length - 1 ? <span style="color: var(--ink-light); margin: 0 8px;">&middot;</span> : ''}
+        </span>
       ))}
       {uncategorized > 0 && (
-        <div style="background: white; padding: 6px 14px; display: flex; align-items: center; gap: 6px; border: 1px solid var(--ink-faint); opacity: 0.6;">
-          <span style="font-family: 'Abril Fatface', serif; font-size: 16px; color: var(--green);">+{uncategorized}</span>
-          <span style="font-family: 'Inter', sans-serif; font-size: 12px; color: var(--ink-mid);">more</span>
-        </div>
+        <span>
+          <span style="color: var(--ink-light); margin: 0 8px;">&middot;</span>
+          <strong style="font-family: 'Merriweather', serif; font-weight: 700; color: var(--green);">+{uncategorized}</strong>{' '}more
+        </span>
       )}
     </div>
   </div>
