@@ -24,9 +24,13 @@ from time import mktime
 import ssl
 import urllib.request
 
+import socket
 import feedparser
 
 from domains import tag_article, get_domain_labels
+
+# Set a global socket timeout so no single feed can hang the pipeline
+socket.setdefaulttimeout(30)
 from ai_classify import classify_batch, get_client
 
 # Allow SSL connections even when certificates are outdated
