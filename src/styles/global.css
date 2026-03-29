@@ -21,9 +21,9 @@
     --teal-wash: #E4F7F1;
     --teal-soft: rgba(59,206,172,0.08);
     /* Navy section tokens */
-    --on-navy: rgba(245,239,223,0.88);
-    --on-navy-dim: rgba(245,239,223,0.5);
-    --on-navy-faint: rgba(245,239,223,0.12);
+    --on-navy: #F5EFDF;
+    --on-navy-dim: rgba(245,239,223,0.7);
+    --on-navy-faint: rgba(245,239,223,0.15);
   }
 
   html { scroll-behavior: smooth; }
@@ -211,11 +211,11 @@
     color: var(--on-navy);
   }
   .navy .headline { color: var(--cream); }
-  .navy .section-label { color: var(--red); }
-  .navy .body { color: var(--on-navy); }
-  .navy .body a { color: var(--red); }
+  .navy .section-label { color: var(--teal); }
+  .navy .body { color: var(--cream); }
+  .navy .body a { color: var(--teal); }
   .navy .body a:hover { opacity: 0.7; }
-  .navy .body strong { color: var(--red); }
+  .navy .body strong { color: var(--teal); }
   .navy .pull-quote { color: var(--on-navy); border-left-color: var(--red); }
   .navy .aside { color: var(--on-navy-dim); border-left-color: var(--on-navy-faint); }
   .navy .aside strong { color: var(--red); }
