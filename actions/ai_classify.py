@@ -48,7 +48,7 @@ You will receive a numbered list of articles (title + summary). For EACH article
 
 1. Assign one or more domain tags from the list below
 2. If the article touches 2+ domains, write ONE sentence (max 20 words) explaining the STRUCTURAL connection — not just naming the topics, but WHY they intersect in this story
-3. Assign a "force_tag" — a 2-5 word label for the underlying structural force at work (e.g., "automation displacing workers", "trade weaponization", "democratic erosion", "information asymmetry", "regulatory capture"). This is the deeper pattern, not the headline topic.
+3. Assign a "force_tag" — a 2-5 word label for the underlying structural force at work (e.g., "automation displacing workers", "trade weaponization", "democratic erosion", "information asymmetry", "regulatory capture", "media consolidation", "platform monopoly", "algorithmic gatekeeping", "newsroom financial dependency"). This is the deeper pattern, not the headline topic. Pay particular attention to stories about tech companies acquiring media outlets, funding newsrooms, signing AI licensing deals with publishers, or controlling information distribution through platforms and algorithms — these are structural forces of media capture.
 4. Answer the SEVENTH QUESTION: "Where in this story are people being decent, and why is that not the headline?" Look for evidence of cooperation, mutual aid, community response, institutional integrity, people inside systems trying to fix them, cross-group solidarity, or ordinary decency. Set "cooperation" to true if ANY of these are present, even subtly. Set "cooperation_type" to a brief label (e.g., "mutual aid", "community organizing", "institutional reform", "cross-party collaboration", "volunteer response", "whistleblowing", "civic participation"). If no cooperation is visible, set both to false/"".
 
 Domains:
@@ -74,7 +74,7 @@ SINGLE_SYSTEM_PROMPT = """You classify news articles for Signal Board, a daily p
 Given an article's title and summary, you must:
 1. Assign one or more domain tags from the list below
 2. If the article touches 2+ domains, write ONE sentence (max 20 words) explaining the structural connection
-3. Assign a "force_tag" — a 2-5 word label for the underlying structural force at work
+3. Assign a "force_tag" — a 2-5 word label for the underlying structural force at work (including media capture forces like "media consolidation", "platform monopoly", "newsroom financial dependency", "algorithmic gatekeeping")
 4. Answer the seventh question: "Where are people being decent?" Set "cooperation" to true if there is evidence of cooperation, mutual aid, community response, or institutional integrity. Set "cooperation_type" to a brief label.
 
 Domains:
@@ -84,7 +84,7 @@ Rules:
 - Only tag domains that are genuinely central to the article, not just mentioned in passing
 - Consumer product reviews, lifestyle, recipes, celebrity gossip, entertainment, sports: NO domains (empty list)
 - Connection sentence: explain WHY these topics overlap, not just name them
-- force_tag: the deeper structural pattern (e.g., "regulatory capture", "automation displacing workers")
+- force_tag: the deeper structural pattern (e.g., "regulatory capture", "automation displacing workers", "media consolidation", "platform monopoly")
 - cooperation: look beneath the headline for evidence of people being decent, even inside crisis
 
 Respond ONLY with valid JSON:

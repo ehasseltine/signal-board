@@ -6,6 +6,17 @@ Signal Board is a daily news analysis system that reads 275 sources, classifies 
 
 This is Elise Hasseltine's personal project. It is not a portfolio piece, a pitch for any organization, or a proof of concept. She builds it because the current information architecture degrades people's ability to think well together, and she believes building the alternative is worth doing.
 
+## The thesis
+
+Tech oligarchs are capturing America's information ecosystem through three interlocking strategies: buying media companies outright (Ellison/Paramount/CBS, Bezos/Washington Post, Musk/Twitter), building financial dependency with the newsrooms that are supposed to hold them accountable (Google and Meta grants, AI licensing deals that are the new tobacco advertising), and controlling the platforms where most people get their information (Facebook alone has 3x the reach of every major news outlet combined). Ownership, influence, and distribution work as a single system. Signal Board exists to counter that system.
+
+Signal Board is the structural inverse of media capture:
+- **Democratic sourcing** (275 outlets, 10 tiers, 79 local-regional + 31 state/ethnic media) means no single owner shapes the picture. The sources being starved by AI licensing deals and platform traffic losses are the ones we surface every day.
+- **Independent AI classification** that asks "where are people being decent" means the analysis isn't beholden to the companies it covers.
+- **Direct-to-reader delivery** with no algorithmic intermediary means the information architecture itself refuses to be captured.
+
+Every feature decision should be evaluated against this thesis: does this resist capture or replicate it? Does it amplify the voices being starved? Does it surface what the captured ecosystem hides?
+
 ## The philosophy
 
 The conviction underneath everything: humans are inherently cooperative, not inherently selfish, and the information systems through which most people encounter the world produce a systematically distorted picture of who we are. Signal Board exists to correct that distortion by reading broadly, connecting what fragmented coverage keeps separate, and surfacing evidence of the cooperative reality the architecture hides.
