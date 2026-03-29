@@ -6,7 +6,7 @@ import {
   selectDailyGap,
   selectMeanwhile
 } from '../../lib/storySelection';
-import type { MegaStory, Editorial, Cooperation } from '../../lib/storySelection';
+import type { MegaStory, Editorial, Cooperation, StorySynthesis } from '../../lib/storySelection';
 
 // Load the pipeline data
 const pipelineData = loadLatestData();
@@ -20,10 +20,11 @@ const cooperation: Cooperation | null = pipelineData.cooperation || null;
 const editorial: Editorial | undefined = pipelineData.editorial || undefined;
 const localRegionalSynthesis: string = pipelineData.local_regional_synthesis || '';
 const localRegionalExamples: any[] = pipelineData.local_regional_examples || [];
+const storySyntheses: StorySynthesis[] = pipelineData.story_syntheses || [];
 
 // Select stories using whichever data is available
-const threadStory = selectDailyThread(megaStories, whatConnects, topStories, editorial);
-const gapStory = selectDailyGap(megaStories, narrativeDivergence, topStories, editorial, threadStory?.title);
+const threadStory = selectDailyThread(megaStories, whatConnects, topStories, editorial, storySyntheses);
+const gapStory = selectDailyGap(megaStories, narrativeDivergence, topStories, editorial, threadStory?.title, storySyntheses);
 const meanwhileStory = selectMeanwhile(
   megaStories,
   cooperation,
@@ -31,7 +32,8 @@ const meanwhileStory = selectMeanwhile(
   localRegionalExamples,
   editorial,
   threadStory?.title || '',
-  gapStory?.title || ''
+  gapStory?.title || '',
+  storySyntheses
 );
 
 const dateStr = pipelineData.date || new Date().toISOString().split('T')[0];

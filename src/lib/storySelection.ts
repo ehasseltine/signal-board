@@ -6,8 +6,10 @@
  * - Current (2026-03-29+): top_stories, what_connects, cooperation, narrative_divergence, editorial
  *
  * Priority for current format: top_stories → what_connects → narrative_divergence
- * The editorial object provides GLOBAL synthesis (used only in close section),
- * NOT per-story synthesis. Per-story content comes from connections and tier_framing.
+ *
+ * When story_syntheses[] exists in the pipeline data (produced by synthesize.py Pass 2),
+ * those rich per-story narratives are merged into the SectionStory output, replacing
+ * the thin connection-text fallbacks. This is the primary path for quality content.
  */
 
 // ── INTERFACES ──
@@ -89,6 +91,15 @@ export interface Editorial {
   cooperation_highlight: string;
   coverage_gap_note: string;
   thread_to_watch: string;
+}
+
+export interface StorySynthesis {
+  role: string;              // "thread" | "gap" | "meanwhile"
+  structural_force: string;
+  synthesis: string;         // 2-3 paragraph narrative
+  cross_spectrum: string;    // How outlets framed it differently
+  why_this_matters: string;  // Personal relevance
+  watch_for: string;         // What to track
 }
 
 // ── OUTPUT ──
@@ -206,12 +217,15 @@ function topStoryToSection(
  *
  * Priority: mega_stories (legacy) → top_stories[0] (current)
  * Uses the story with the most sources across the most tiers.
+ * When story_syntheses contains a "thread" entry, its rich narrative
+ * replaces the thin connection-text fallback.
  */
 export function selectDailyThread(
   megaStories: MegaStory[],
   whatConnects: WhatConnects[],
   topStories: TopStory[],
-  editorial?: Editorial
+  editorial?: Editorial,
+  storySyntheses?: StorySynthesis[]
 ): SectionStory | null {
   // Legacy format: use mega_stories
   if (megaStories && megaStories.length > 0) {
@@ -240,8 +254,15 @@ export function selectDailyThread(
 
     const section = topStoryToSection(pick, matchWc);
 
-    // Add editorial's thread_to_watch as watchFor
-    if (editorial?.thread_to_watch) {
+    // Merge per-story synthesis if available (the rich narrative from Pass 2)
+    const threadSynth = storySyntheses?.find(s => s.role === 'thread');
+    if (threadSynth) {
+      if (threadSynth.synthesis) section.synthesis = threadSynth.synthesis;
+      if (threadSynth.cross_spectrum) section.crossSpectrum = threadSynth.cross_spectrum;
+      if (threadSynth.why_this_matters) section.whyThisMatters = threadSynth.why_this_matters;
+      if (threadSynth.watch_for) section.watchFor = threadSynth.watch_for;
+    } else if (editorial?.thread_to_watch) {
+      // Fallback: use editorial's thread_to_watch
       section.watchFor = editorial.thread_to_watch;
     }
 
@@ -289,7 +310,8 @@ export function selectDailyGap(
   narrativeDivergence: NarrativeDivergence[],
   topStories: TopStory[],
   editorial?: Editorial,
-  threadTitle?: string
+  threadTitle?: string,
+  storySyntheses?: StorySynthesis[]
 ): SectionStory | null {
   // Legacy: second-best mega story with cross_spectrum
   if (megaStories && megaStories.length > 0) {
@@ -350,10 +372,10 @@ export function selectDailyGap(
       }
     }
 
-    return {
+    const gapSection: SectionStory = {
       title: pick.theme || pick.topic,
       synthesis: editorial?.coverage_gap_note || synthParts.join(' ') ||
-        `Across ${pick.source_count} sources, the framing diverges — revealing how the same events get shaped into different stories.`,
+        `Across ${pick.source_count} sources, the framing diverges, revealing how the same events get shaped into different stories.`,
       crossSpectrum: framingInsights.join(' '),
       whyThisMatters: 'When the same event gets told as different stories, the gap between those frames is where the real story lives.',
       watchFor: '',
@@ -367,6 +389,17 @@ export function selectDailyGap(
       insights: framingInsights,
       yesterdayCount: 0,
     };
+
+    // Merge per-story synthesis if available
+    const gapSynth = storySyntheses?.find(s => s.role === 'gap');
+    if (gapSynth) {
+      if (gapSynth.synthesis) gapSection.synthesis = gapSynth.synthesis;
+      if (gapSynth.cross_spectrum) gapSection.crossSpectrum = gapSynth.cross_spectrum;
+      if (gapSynth.why_this_matters) gapSection.whyThisMatters = gapSynth.why_this_matters;
+      if (gapSynth.watch_for) gapSection.watchFor = gapSynth.watch_for;
+    }
+
+    return gapSection;
   }
 
   // Fallback: second top_story
@@ -396,7 +429,8 @@ export function selectMeanwhile(
   localRegionalExamples: any[],
   editorial?: Editorial,
   threadTitle?: string,
-  gapTitle?: string
+  gapTitle?: string,
+  storySyntheses?: StorySynthesis[]
 ): SectionStory | null {
   // Current format: use cooperation data
   if (cooperation && cooperation.highlights && cooperation.highlights.length > 0) {
@@ -424,11 +458,11 @@ export function selectMeanwhile(
       }
     }
 
-    return {
+    const meanwhileSection: SectionStory = {
       title: 'Who Showed Up Today',
       synthesis: cooperationNarrative,
       crossSpectrum: '',
-      whyThisMatters: 'The stories that local and specialist outlets tell are the stories most likely to affect your daily life — and most likely to be missing from the national cycle.',
+      whyThisMatters: 'The stories that local and specialist outlets tell are the stories most likely to affect your daily life, and most likely to be missing from the national cycle.',
       watchFor: '',
       articleCount: cooperation.total_cooperation_stories || 0,
       sourceCount: highlights.length,
@@ -440,6 +474,17 @@ export function selectMeanwhile(
       insights: insightCards,
       yesterdayCount: 0,
     };
+
+    // Merge per-story synthesis if available
+    const meanwhileSynth = storySyntheses?.find(s => s.role === 'meanwhile');
+    if (meanwhileSynth) {
+      if (meanwhileSynth.synthesis) meanwhileSection.synthesis = meanwhileSynth.synthesis;
+      if (meanwhileSynth.cross_spectrum) meanwhileSection.crossSpectrum = meanwhileSynth.cross_spectrum;
+      if (meanwhileSynth.why_this_matters) meanwhileSection.whyThisMatters = meanwhileSynth.why_this_matters;
+      if (meanwhileSynth.watch_for) meanwhileSection.watchFor = meanwhileSynth.watch_for;
+    }
+
+    return meanwhileSection;
   }
 
   // Legacy format: local_regional_synthesis
