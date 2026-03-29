@@ -1,1824 +1,966 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-03SKXNX53F"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-03SKXNX53F');
-  </script>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="What's happening today across 275 news sources, and how the biggest stories connect to your life.">
-  <meta property="og:title" content="Today at Signal Board">
-  <meta property="og:description" content="275 sources, one clear picture. See what connects the biggest stories shaping your world today.">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="https://www.elisehasseltine.com/signal-board/og-image.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" type="image/svg+xml" href="/signal-board/favicon.svg">
-  <link rel="icon" type="image/png" sizes="32x32" href="/signal-board/favicon.png">
-  <link rel="canonical" href="https://www.elisehasseltine.com/signal-board/today/">
-  <title>Today at Signal Board</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    /* Skip link for keyboard navigation */
-    .skip-link {
-      position: absolute;
-      top: -40px;
-      left: 0;
-      background: #6652FF;
-      color: #fff;
-      padding: 0.5rem 1rem;
-      z-index: 200;
-      font-size: 0.9rem;
-      font-weight: 600;
-      border-radius: 0 0 8px 0;
-      transition: top 0.2s;
-    }
-    .skip-link:focus {
-      top: 3px;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #0f0f14;
-      color: #ede9f5;
-      min-height: 100vh;
-      -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
-      position: relative;
-      font-size: 16px;
-      line-height: 1.7;
-    }
-
-    /* Animated gradient orbs background */
-    body::before,
-    body::after {
-      content: '';
-      position: fixed;
-      width: 500px;
-      height: 500px;
-      border-radius: 50%;
-      z-index: 0;
-      pointer-events: none;
-    }
-
-    body::before {
-      background: radial-gradient(circle at center, rgba(102, 82, 255, 0.08) 0%, rgba(102, 82, 255, 0.02) 70%, transparent 100%);
-      top: -150px;
-      left: -150px;
-      animation: float 25s ease-in-out infinite;
-    }
-
-    body::after {
-      background: radial-gradient(circle at center, rgba(0, 194, 168, 0.08) 0%, rgba(0, 194, 168, 0.02) 70%, transparent 100%);
-      bottom: -200px;
-      right: -200px;
-      animation: float 30s ease-in-out infinite reverse;
-    }
-
-    @keyframes float {
-      0%, 100% {
-        transform: translate(0, 0);
-      }
-      50% {
-        transform: translate(40px, -40px);
-      }
-    }
-
-    /* Additional animated orb */
-    .orb-3 {
-      position: fixed;
-      width: 400px;
-      height: 400px;
-      background: radial-gradient(circle at center, rgba(255, 84, 0, 0.1) 0%, rgba(255, 84, 0, 0.02) 70%, transparent 100%);
-      border-radius: 50%;
-      top: 40%;
-      right: 10%;
-      z-index: 0;
-      pointer-events: none;
-      animation: float 28s ease-in-out infinite;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-      transition: color 0.15s;
-    }
-
-    a:hover {
-      color: #fff;
-    }
-
-    /* Gradient accent bar at top */
-    .gradient-bar {
-      height: 3px;
-      background: linear-gradient(
-        to right,
-        #6652FF 0%,
-        #FF5400 11.1%,
-        #FF0054 22.2%,
-        #9E0059 33.3%,
-        #00C2A8 44.4%,
-        #4CAF50 55.5%,
-        #D32F2F 66.6%,
-        #1976D2 77.7%,
-        #7B1FA2 88.8%,
-        #FF9800 100%
-      );
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 101;
-    }
-
-    body {
-      padding-top: 3px;
-    }
-
-    .wrap {
-      position: relative;
-      z-index: 1;
-      max-width: 920px;
-      margin: 0 auto;
-      padding: 0 1.5rem;
-    }
-
-    /* NAVIGATION */
-    .site-nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1.5rem 0;
-      margin-bottom: 1rem;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-      position: sticky;
-      top: 3px;
-      background: rgba(15, 15, 20, 0.95);
-      backdrop-filter: blur(20px);
-      z-index: 100;
-    }
-
-    .nav-logo {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.1rem;
-      font-weight: 800;
-      color: #fff;
-      letter-spacing: -0.03em;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 1.5rem;
-      align-items: center;
-    }
-
-    .nav-links a {
-      font-size: 0.85rem;
-      color: rgba(235, 230, 245, 0.65);
-      font-weight: 500;
-      transition: color 0.15s;
-    }
-
-    .nav-links a:hover {
-      color: #fff;
-    }
-
-    .nav-links a.active {
-      color: #fff;
-      font-weight: 700;
-    }
-
-    /* HEADER SECTION */
-    .header {
-      padding: 3.5rem 0 2.5rem;
-    }
-
-    .date-line {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 0.85rem;
-      font-weight: 700;
-      color: rgba(235, 230, 245, 0.65);
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      margin-bottom: 0.8rem;
-    }
-
-    .header h1 {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: clamp(2.2rem, 5vw, 3.2rem);
-      font-weight: 800;
-      letter-spacing: -0.04em;
-      color: #fff;
-      line-height: 1.1;
-      margin-bottom: 1.5rem;
-      text-transform: uppercase;
-    }
-
-    .header-context {
-      font-size: clamp(1rem, 2.2vw, 1.15rem);
-      color: rgba(235, 230, 245, 0.82);
-      line-height: 1.85;
-      max-width: 720px;
-      margin-bottom: 2rem;
-    }
-
-    /* KEY STATS — colorful blocks */
-    .key-stats {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 0.5rem;
-      margin-bottom: 3rem;
-    }
-
-    .stat-item {
-      border-radius: 16px;
-      padding: 0.9rem 0.8rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      min-height: 72px;
-      border: 1px solid rgba(255,255,255,0.06);
-      text-align: center;
-    }
-
-    .stat-num {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: clamp(2rem, 5vw, 2.8rem);
-      font-weight: 800;
-      color: #fff;
-      letter-spacing: -0.04em;
-      line-height: 1;
-    }
-
-    .stat-label {
-      font-size: 0.78rem;
-      color: rgba(255, 255, 255, 0.7);
-      margin-top: 0.3rem;
-      font-weight: 500;
-    }
-
-    /* SECTION HEADING */
-    .section-title {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: clamp(1.8rem, 4vw, 2.4rem);
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      color: #fff;
-      margin: 3.5rem 0 2rem;
-      text-transform: uppercase;
-      position: relative;
-      padding-bottom: 1rem;
-    }
-
-    .section-title::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 40px;
-      height: 3px;
-      background: #6652FF;
-      border-radius: 2px;
-    }
-
-    /* FORCE CARDS */
-    .forces-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.2rem;
-      margin-bottom: 3.5rem;
-    }
-
-    .force-card {
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 20px;
-      padding: 2.5rem;
-      transition: all 0.2s;
-      border-left: 4px solid;
-    }
-
-    .force-card:hover {
-      background: rgba(255, 255, 255, 0.05);
-      border-color: rgba(255, 255, 255, 0.15);
-      transform: translateY(-2px);
-    }
-
-    .force-headline {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.4rem;
-      font-weight: 800;
-      color: #fff;
-      letter-spacing: -0.02em;
-      margin-bottom: 1.2rem;
-      text-transform: uppercase;
-      line-height: 1.3;
-    }
-
-    .force-domains {
-      display: flex;
-      gap: 0.6rem;
-      flex-wrap: wrap;
-      margin-bottom: 1.8rem;
-    }
-
-    .domain-pill {
-      display: inline-block;
-      padding: 0.5rem 1rem;
-      border-radius: 100px;
-      font-size: 0.75rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      border: 1px solid;
-    }
-
-    /* Domain colors — ONLY on pills */
-    .domain-pill.domain-ai { background: #6652FF; color: #fff; border-color: #6652FF; }
-    .domain-pill.domain-labor { background: #FF5400; color: #fff; border-color: #FF5400; }
-    .domain-pill.domain-governance { background: #FF0054; color: #fff; border-color: #FF0054; }
-    .domain-pill.domain-information { background: #9E0059; color: #fff; border-color: #9E0059; }
-    .domain-pill.domain-economics { background: #00C2A8; color: #000; border-color: #00C2A8; }
-    .domain-pill.domain-climate { background: #4CAF50; color: #000; border-color: #4CAF50; }
-    .domain-pill.domain-security { background: #D32F2F; color: #fff; border-color: #D32F2F; }
-    .domain-pill.domain-geopolitics { background: #1976D2; color: #fff; border-color: #1976D2; }
-    .domain-pill.domain-domestic_politics { background: #7B1FA2; color: #fff; border-color: #7B1FA2; }
-    .domain-pill.domain-legal { background: #FF9800; color: #000; border-color: #FF9800; }
-
-    /* Force card left border accent */
-    .force-card.domain-ai { border-left-color: #6652FF; }
-    .force-card.domain-labor { border-left-color: #FF5400; }
-    .force-card.domain-governance { border-left-color: #FF0054; }
-    .force-card.domain-information { border-left-color: #9E0059; }
-    .force-card.domain-economics { border-left-color: #00C2A8; }
-    .force-card.domain-climate { border-left-color: #4CAF50; }
-    .force-card.domain-security { border-left-color: #D32F2F; }
-    .force-card.domain-geopolitics { border-left-color: #1976D2; }
-    .force-card.domain-domestic_politics { border-left-color: #7B1FA2; }
-    .force-card.domain-legal { border-left-color: #FF9800; }
-
-    .force-connections {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1.2rem;
-      margin-bottom: 2rem;
-    }
-
-    .connection-insight {
-      padding: 1rem;
-      background: rgba(0, 0, 0, 0.2);
-      border-radius: 12px;
-      border-left: 3px solid rgba(102, 82, 255, 0.4);
-      font-size: 0.95rem;
-      line-height: 1.6;
-      color: #e8e8e8;
-    }
-
-    .force-metadata {
-      display: flex;
-      gap: 2rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.06);
-      font-size: 0.85rem;
-      color: rgba(235, 230, 245, 0.6);
-    }
-
-    .meta-block {
-      display: flex;
-      flex-direction: column;
-      gap: 0.3rem;
-    }
-
-    .meta-label {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      font-weight: 600;
-      color: rgba(235, 230, 245, 0.55);
-    }
-
-    .meta-value {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: #fff;
-    }
-
-    /* HEATMAP SECTION — the hero */
-    .heatmap-container {
-      background: linear-gradient(135deg, rgba(102,82,255,0.06) 0%, rgba(255,0,84,0.04) 50%, rgba(0,194,168,0.06) 100%);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 28px;
-      padding: 3.5rem 3rem;
-      margin: 4rem -1rem 4rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .heatmap-container::before {
-      content: '';
-      position: absolute;
-      top: -2px;
-      left: -2px;
-      right: -2px;
-      bottom: -2px;
-      border-radius: 30px;
-      background: linear-gradient(135deg, #6652FF, #FF0054, #00C2A8, #FF5400, #4CAF50);
-      z-index: -1;
-      opacity: 0.15;
-      filter: blur(1px);
-    }
-
-    .heatmap-header {
-      margin-bottom: 2.5rem;
-      text-align: center;
-    }
-
-    .heatmap-title {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: clamp(2rem, 4.5vw, 3rem);
-      font-weight: 800;
-      letter-spacing: -0.04em;
-      color: #fff;
-      margin-bottom: 0.8rem;
-      text-transform: uppercase;
-      background: linear-gradient(135deg, #fff 0%, #e0d6ff 50%, #fff 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .heatmap-subtitle {
-      font-size: 1rem;
-      color: rgba(235, 230, 245, 0.75);
-      line-height: 1.7;
-      max-width: 640px;
-      margin: 0 auto;
-    }
-
-    .heatmap-grid {
-      width: 100%;
-      max-width: 100%;
-      margin-bottom: 1.5rem;
-      border-radius: 12px;
-      overflow: visible;
-    }
-
-    .heatmap-grid svg {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .heatmap-legend {
-      display: flex;
-      gap: 0.5rem;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.8rem;
-      color: rgba(235, 230, 245, 0.6);
-      margin-top: 1.5rem;
-    }
-
-    .legend-item {
-      display: flex;
-      gap: 0.5rem;
-      align-items: center;
-    }
-
-    .legend-box {
-      width: 14px;
-      height: 14px;
-      border-radius: 4px;
-    }
-
-    /* QUESTIONS SECTION */
-    .questions-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1.2rem;
-      margin-bottom: 3.5rem;
-    }
-
-    .question-card {
-      background: rgba(255, 255, 255, 0.035);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: 20px;
-      padding: 2.2rem;
-      transition: all 0.2s;
-      cursor: pointer;
-    }
-
-    .question-card:hover {
-      background: rgba(255, 255, 255, 0.055);
-      border-color: rgba(255, 255, 255, 0.18);
-      transform: translateY(-2px);
-    }
-
-    .question-card.expanded {
-      background: rgba(255, 255, 255, 0.045);
-    }
-
-    .question-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 1rem;
-    }
-
-    .question-text {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.15rem;
-      font-weight: 800;
-      color: #fff;
-      letter-spacing: -0.02em;
-      line-height: 1.4;
-      flex: 1;
-    }
-
-    .question-count {
-      display: inline-block;
-      padding: 0.35rem 0.75rem;
-      background: rgba(102, 82, 255, 0.2);
-      border: 1px solid rgba(102, 82, 255, 0.4);
-      border-radius: 100px;
-      font-size: 0.75rem;
-      font-weight: 700;
-      color: #6652FF;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      flex-shrink: 0;
-    }
-
-    .expand-icon {
-      font-size: 1.5rem;
-      color: rgba(235, 230, 245, 0.65);
-      flex-shrink: 0;
-      transition: transform 0.2s;
-      margin-top: 0.2rem;
-    }
-
-    .question-card.expanded .expand-icon {
-      transform: rotate(180deg);
-    }
-
-    .question-content {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s;
-    }
-
-    .question-card.expanded .question-content {
-      max-height: 1000px;
-    }
-
-    .question-details {
-      padding-top: 1.5rem;
-      margin-top: 1.5rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.06);
-    }
-
-    .question-stat {
-      margin-bottom: 1.2rem;
-    }
-
-    .question-stat-value {
-      font-family: 'Space Grotesk', sans-serif;
-      font-weight: 800;
-      color: #fff;
-    }
-
-    .question-stat-label {
-      font-size: 0.85rem;
-      color: rgba(235, 230, 245, 0.6);
-    }
-
-    .question-domains {
-      display: flex;
-      gap: 0.6rem;
-      flex-wrap: wrap;
-      margin-bottom: 1.5rem;
-    }
-
-    .question-sources {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 0.8rem;
-    }
-
-    .question-source {
-      background: rgba(0, 0, 0, 0.3);
-      border-radius: 12px;
-      padding: 0.9rem;
-      font-size: 0.85rem;
-    }
-
-    .source-tier-dot {
-      display: inline-block;
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      margin-right: 0.5rem;
-      vertical-align: middle;
-    }
-
-    .tier-national { background: #6652FF; }
-    .tier-international { background: #1976D2; }
-    .tier-local-regional { background: #FF5400; }
-    .tier-specialist { background: #00C2A8; }
-    .tier-analysis { background: #4CAF50; }
-    .tier-explainer { background: #FF9800; }
-    .tier-podcast { background: #9E0059; }
-
-    .source-name {
-      font-family: 'Space Grotesk', sans-serif;
-      font-weight: 700;
-      color: rgba(255, 255, 255, 0.8);
-      text-transform: uppercase;
-      font-size: 0.7rem;
-      letter-spacing: 0.05em;
-      min-width: 80px;
-    }
-
-    .source-title {
-      color: #e8e8e8;
-      line-height: 1.5;
-      flex: 1;
-    }
-
-    /* SOURCE DIVERSITY */
-    .diversity-container {
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 20px;
-      padding: 2.5rem;
-      margin-bottom: 3.5rem;
-    }
-
-    .diversity-intro {
-      font-size: 0.95rem;
-      color: rgba(235, 230, 245, 0.7);
-      line-height: 1.7;
-      margin-bottom: 2rem;
-      max-width: 720px;
-    }
-
-    .spectrum-bars {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 1.5rem;
-      margin-bottom: 2rem;
-    }
-
-    .spectrum-bar {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .bar-label {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 0.8rem;
-      font-weight: 700;
-      color: rgba(255, 255, 255, 0.8);
-      margin-bottom: 0.8rem;
-      text-transform: capitalize;
-    }
-
-    .bar-container {
-      display: flex;
-      height: 8px;
-      background: rgba(0, 0, 0, 0.3);
-      border-radius: 100px;
-      overflow: hidden;
-      gap: 0;
-    }
-
-    .bar-segment {
-      height: 100%;
-      transition: filter 0.2s;
-    }
-
-    .bar-container:hover .bar-segment {
-      filter: brightness(1.2);
-    }
-
-    .bar-count {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 0.85rem;
-      font-weight: 700;
-      color: #fff;
-      margin-top: 0.6rem;
-    }
-
-    /* LOCAL & REGIONAL STORIES */
-    .local-regional-stories {
-      background: linear-gradient(135deg, rgba(102, 82, 255, 0.1) 0%, rgba(255, 84, 0, 0.08) 100%);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: 20px;
-      padding: 2.5rem;
-      margin-bottom: 3.5rem;
-    }
-
-    .local-regional-intro {
-      font-size: 0.95rem;
-      color: rgba(235, 230, 245, 0.85);
-      line-height: 1.7;
-      margin-bottom: 2rem;
-      max-width: 720px;
-    }
-
-    .local-regional-cards {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1.2rem;
-    }
-
-    .local-regional-card {
-      background: rgba(0, 0, 0, 0.3);
-      border-radius: 16px;
-      padding: 1.5rem;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      transition: all 0.2s;
-    }
-
-    .local-regional-card:hover {
-      background: rgba(0, 0, 0, 0.4);
-      border-color: rgba(255, 255, 255, 0.12);
-      transform: translateY(-2px);
-    }
-
-    .local-regional-source {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      font-size: 0.8rem;
-      color: rgba(255, 255, 255, 0.6);
-      margin-bottom: 0.8rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    .source-badge {
-      display: inline-block;
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.4);
-    }
-
-    .local-regional-title {
-      font-size: 0.95rem;
-      color: #fff;
-      line-height: 1.5;
-      font-weight: 500;
-      margin-bottom: 0.8rem;
-    }
-
-    .local-regional-excerpt {
-      font-size: 0.85rem;
-      color: rgba(235, 230, 245, 0.6);
-      line-height: 1.5;
-    }
-
-    /* CONNECTING STORIES */
-    .connecting-container {
-      margin-bottom: 3.5rem;
-    }
-
-    .connecting-intro {
-      font-size: 0.95rem;
-      color: rgba(235, 230, 245, 0.7);
-      line-height: 1.7;
-      margin-bottom: 2rem;
-      max-width: 720px;
-    }
-
-    .connecting-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1.2rem;
-    }
-
-    .connecting-card {
-      background: rgba(255, 255, 255, 0.02);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 20px;
-      padding: 2rem;
-      transition: all 0.2s;
-    }
-
-    .connecting-card:hover {
-      background: rgba(255, 255, 255, 0.03);
-      border-color: rgba(255, 255, 255, 0.12);
-      transform: translateY(-2px);
-    }
-
-    .connecting-headline {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.2rem;
-      font-weight: 800;
-      color: #fff;
-      letter-spacing: -0.02em;
-      margin-bottom: 0.8rem;
-    }
-
-    .connecting-force {
-      font-size: 0.8rem;
-      color: rgba(235, 230, 245, 0.65);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 1rem;
-      font-weight: 600;
-    }
-
-    .connecting-insight {
-      padding: 1rem;
-      background: rgba(0, 0, 0, 0.2);
-      border-radius: 12px;
-      font-size: 0.9rem;
-      line-height: 1.6;
-      color: #e8e8e8;
-      margin-bottom: 1rem;
-    }
-
-    .spectrum-indicators {
-      display: flex;
-      gap: 0.8rem;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    .spectrum-label {
-      font-size: 0.75rem;
-      color: rgba(235, 230, 245, 0.65);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      font-weight: 600;
-    }
-
-    .spectrum-dots {
-      display: flex;
-      gap: 0.5rem;
-      align-items: center;
-    }
-
-    .spectrum-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-    }
-
-    .dot-left { background: #7B1FA2; }
-    .dot-right { background: #D32F2F; }
-    .dot-intl { background: #1976D2; }
-    .dot-local-regional { background: #FF5400; }
-
-    .force-articles {
-      margin-top: 1.2rem;
-      padding-top: 1.2rem;
-      border-top: 1px solid rgba(255,255,255,0.06);
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-
-    .force-article {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.6rem;
-      font-size: 0.82rem;
-      color: rgba(235,230,245,0.7);
-      line-height: 1.4;
-    }
-
-    .force-article a {
-      color: rgba(235,230,245,0.7);
-    }
-
-    .force-article a:hover {
-      color: #fff;
-    }
-
-    .force-article-tier {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 0.65rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      padding: 0.2rem 0.5rem;
-      border-radius: 4px;
-      flex-shrink: 0;
-      color: #fff;
-      background: rgba(255,255,255,0.1);
-    }
-
-    .tier-national { background: rgba(102,82,255,0.3); }
-    .tier-international { background: rgba(25,118,210,0.3); }
-    .tier-local-regional { background: rgba(255,84,0,0.3); }
-    .tier-specialist { background: rgba(0,194,168,0.3); }
-    .tier-analysis { background: rgba(76,175,80,0.3); }
-    .tier-explainer { background: rgba(255,152,0,0.3); }
-
-    .question-ai-insights {
-      margin-bottom: 1rem;
-    }
-
-    .question-ai-insight {
-      font-size: 0.9rem;
-      color: rgba(235,230,245,0.8);
-      line-height: 1.6;
-      padding: 0.6rem 0;
-      border-bottom: 1px solid rgba(255,255,255,0.04);
-    }
-
-    .question-ai-insight:last-child {
-      border-bottom: none;
-    }
-
-    /* SVG HEATMAP STYLES */
-    .heatmap-cell {
-      transition: opacity 0.2s;
-    }
-
-    .heatmap-cell-text {
-      font-family: 'Inter', sans-serif;
-      font-size: 11px;
-      fill: rgba(235, 230, 245, 0.5);
-      pointer-events: none;
-    }
-
-    .heatmap-tooltip {
-      position: absolute;
-      background: rgba(0, 0, 0, 0.95);
-      color: #fff;
-      padding: 0.75rem 1rem;
-      border-radius: 8px;
-      font-size: 0.85rem;
-      z-index: 1000;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      line-height: 1.5;
-      max-width: 280px;
-      pointer-events: none;
-    }
-
-    .tooltip-title {
-      font-family: 'Space Grotesk', sans-serif;
-      font-weight: 700;
-      margin-bottom: 0.3rem;
-    }
-
-    .tooltip-count {
-      color: rgba(235, 230, 245, 0.7);
-      font-size: 0.75rem;
-      margin-bottom: 0.4rem;
-    }
-
-    .tooltip-insight {
-      color: rgba(235, 230, 245, 0.8);
-      font-size: 0.8rem;
-    }
-
-    /* FOOTER */
-    footer {
-      padding: 3rem 0;
-      margin-top: 3.5rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.06);
-      font-size: 0.85rem;
-      color: rgba(235, 230, 245, 0.65);
-      text-align: center;
-    }
-
-    footer a {
-      color: inherit;
-      text-decoration: underline;
-    }
-
-    footer a:hover {
-      color: #fff;
-    }
-
-    /* LOADING STATE */
-    .loading {
-      padding: 3rem;
-      text-align: center;
-      color: rgba(235, 230, 245, 0.6);
-    }
-
-    .loader {
-      display: inline-block;
-      width: 40px;
-      height: 40px;
-      border: 3px solid rgba(235, 230, 245, 0.2);
-      border-top-color: #6652FF;
-      border-radius: 50%;
-      animation: spin 0.8s linear infinite;
-    }
-
-    @keyframes spin {
-      to { transform: rotate(360deg); }
-    }
-
-    /* RESPONSIVE */
-    @media (max-width: 768px) {
-      .wrap {
-        padding: 0 1rem;
-      }
-
-      .site-nav {
-        flex-direction: column;
-        gap: 1rem;
-        align-items: flex-start;
-      }
-
-      .nav-links {
-        width: 100%;
-        justify-content: flex-start;
-      }
-
-      .key-stats {
-        grid-template-columns: repeat(5, 1fr);
-        gap: 0.4rem;
-      }
-
-      .forces-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .force-card {
-        padding: 1.5rem;
-      }
-
-      .heatmap-container {
-        padding: 1.5rem 1rem;
-        margin: 2rem -0.5rem;
-      }
-
-      .spectrum-bars {
-        grid-template-columns: 1fr;
-      }
-
-      .connecting-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .question-card {
-        padding: 1.5rem;
-      }
-
-      .section-title::after {
-        width: 30px;
-      }
-    }
-  </style>
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebSite",
-      "name": "Signal Board",
-      "url": "https://www.elisehasseltine.com/signal-board/",
-      "description": "Signal Board reads 275 news sources every day and synthesizes them into connected mega-stories that show how the biggest forces shaping the world are linked.",
-      "author": {
-        "@type": "Person",
-        "name": "Elise Hasseltine",
-        "url": "https://www.elisehasseltine.com/"
-      }
-    },
-    {
-      "@type": "WebPage",
-      "name": "Today at Signal Board",
-      "url": "https://www.elisehasseltine.com/signal-board/today/",
-      "description": "What's happening today across 275 news sources, and how the biggest stories connect.",
-      "isPartOf": {
-        "@type": "WebSite",
-        "name": "Signal Board",
-        "url": "https://www.elisehasseltine.com/signal-board/"
-      },
-      "dateModified": "2026-03-28"
-    }
-  ]
-}
-  </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Signal Board — March 28, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Caveat:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --cream: #F5EFDF;
+    --cream-dark: #EDE7D5;
+    --ink: #1B2A4A;
+    --ink-mid: rgba(27,42,74,0.72);
+    --ink-light: rgba(27,42,74,0.45);
+    --ink-faint: rgba(27,42,74,0.08);
+    --red: #D94032;
+    --red-soft: rgba(217,64,50,0.06);
+    --red-mark: rgba(217,64,50,0.2);
+    --green: #2D8A4E;
+    --green-soft: rgba(45,138,78,0.05);
+    --green-mark: rgba(45,138,78,0.16);
+    /* Navy section tokens */
+    --on-navy: rgba(245,239,223,0.88);
+    --on-navy-dim: rgba(245,239,223,0.5);
+    --on-navy-faint: rgba(245,239,223,0.12);
+  }
+
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Lora', Georgia, serif;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ================ TYPOGRAPHY ================ */
+  .display {
+    font-family: 'Abril Fatface', Georgia, serif;
+    color: var(--red);
+    line-height: 0.9;
+    letter-spacing: -0.02em;
+  }
+
+  .headline {
+    font-family: 'Abril Fatface', Georgia, serif;
+    font-size: clamp(28px, 4vw, 52px);
+    line-height: 1.15;
+    color: var(--ink);
+  }
+
+  /* NO inner max-width — text fills the wrap container naturally */
+  .body {
+    font-family: 'Lora', Georgia, serif;
+    font-size: clamp(17px, 1.8vw, 20px);
+    line-height: 1.82;
+    color: var(--ink);
+  }
+  .body a {
+    color: var(--red);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1.5px;
+    font-weight: 600;
+  }
+  .body a:hover { opacity: 0.7; }
+  .body strong { font-weight: 700; color: var(--red); }
+
+  .pull-quote {
+    font-family: 'Lora', Georgia, serif;
+    font-style: italic;
+    font-size: clamp(20px, 2.4vw, 26px);
+    line-height: 1.55;
+    color: var(--ink);
+    padding-left: 24px;
+    border-left: 3px solid var(--red);
+    margin: 52px 0;
+  }
+  .pull-quote-green { border-left-color: var(--green); }
+
+  .section-label {
+    font-family: 'Caveat', cursive;
+    font-weight: 700;
+    font-size: clamp(24px, 3vw, 32px);
+    color: var(--red);
+    margin-bottom: 16px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-label-green { color: var(--green); }
+  .cat-icon { flex-shrink: 0; }
+
+  .aside {
+    font-family: 'Lora', Georgia, serif;
+    font-style: italic;
+    font-size: clamp(15px, 1.6vw, 17px);
+    line-height: 1.75;
+    color: var(--ink-mid);
+    padding-left: 24px;
+    border-left: 2px solid var(--ink-faint);
+    margin: 40px 0;
+  }
+  .aside strong { font-style: normal; font-weight: 700; color: var(--red); }
+  .aside-green strong { color: var(--green); }
+
+  .callout {
+    margin: 44px 0;
+    padding: 24px 28px;
+    background: var(--red-soft);
+  }
+  .callout-green { background: var(--green-soft); }
+  .callout-label {
+    font-family: 'Caveat', cursive;
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--red);
+    margin-bottom: 6px;
+  }
+  .callout-label-green { color: var(--green); }
+  .callout-text {
+    font-family: 'Lora', Georgia, serif;
+    font-size: clamp(15px, 1.6vw, 17px);
+    line-height: 1.72;
+    color: var(--ink);
+  }
+
+  .mark {
+    background: linear-gradient(to top, var(--red-mark) 45%, transparent 45%);
+    padding: 0 3px;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+  }
+  .mark-green {
+    background: linear-gradient(to top, var(--green-mark) 45%, transparent 45%);
+  }
+
+  .sources {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: var(--ink-light);
+    line-height: 1.6;
+    margin-top: 44px;
+    padding-top: 16px;
+    border-top: 1px solid var(--ink-faint);
+  }
+  .sources a { color: var(--ink-light); text-decoration: underline; text-underline-offset: 2px; }
+  .sources a:hover { color: var(--red); }
+
+  /* ================ LAYOUT ================ */
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 clamp(24px, 4vw, 48px); }
+  .wrap-wide { max-width: 1280px; margin: 0 auto; padding: 0 clamp(24px, 4vw, 48px); }
+  .section { padding: clamp(72px, 10vw, 120px) 0; }
+
+  /* ================ NAVY SECTION — reusable ================ */
+  .navy {
+    background: var(--ink);
+    color: var(--on-navy);
+  }
+  .navy .headline { color: var(--cream); }
+  .navy .section-label { color: var(--red); }
+  .navy .body { color: var(--on-navy); }
+  .navy .body a { color: var(--red); }
+  .navy .body a:hover { opacity: 0.7; }
+  .navy .body strong { color: var(--red); }
+  .navy .pull-quote { color: var(--on-navy); border-left-color: var(--red); }
+  .navy .aside { color: var(--on-navy-dim); border-left-color: var(--on-navy-faint); }
+  .navy .aside strong { color: var(--red); }
+  .navy .callout { background: rgba(217,64,50,0.08); }
+  .navy .callout-text { color: var(--on-navy); }
+  .navy .sources { color: var(--on-navy-dim); border-top-color: var(--on-navy-faint); }
+  .navy .sources a { color: var(--on-navy-dim); }
+  .navy .sources a:hover { color: var(--red); }
+  .navy .mark { background: linear-gradient(to top, rgba(217,64,50,0.3) 45%, transparent 45%); }
+
+  /* ================ MASTHEAD — NAVY ================ */
+  .masthead-wrap {
+    background: var(--ink);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  .masthead {
+    padding: clamp(48px, 8vw, 80px) 0;
+    width: 100%;
+  }
+  .masthead-title {
+    font-size: clamp(68px, 15vw, 200px);
+  }
+  .masthead-date {
+    font-family: 'Caveat', cursive;
+    font-weight: 500;
+    font-size: clamp(20px, 2.5vw, 28px);
+    color: var(--on-navy-dim);
+    margin-top: 12px;
+  }
+  .masthead-hook {
+    font-family: 'Abril Fatface', Georgia, serif;
+    font-size: clamp(22px, 3.2vw, 42px);
+    line-height: 1.22;
+    color: var(--cream);
+    margin-top: clamp(44px, 6vw, 72px);
+  }
+  .masthead-sub {
+    font-family: 'Lora', Georgia, serif;
+    font-style: italic;
+    font-size: clamp(16px, 1.7vw, 19px);
+    line-height: 1.65;
+    color: var(--on-navy-dim);
+    max-width: 720px;
+    margin-top: 20px;
+  }
+  .scroll-cue {
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    animation: drift 3s ease-in-out infinite;
+    transition: opacity 0.6s;
+  }
+  .scroll-cue span { font-family: 'Caveat', cursive; font-size: 17px; color: var(--on-navy-dim); }
+  @keyframes drift {
+    0%, 100% { transform: translateX(-50%) translateY(0); opacity: 0.3; }
+    50% { transform: translateX(-50%) translateY(5px); opacity: 0.65; }
+  }
+
+  /* ================ SUMMARY CARDS ================ */
+  .summary-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(16px, 2.5vw, 28px);
+  }
+  @media (max-width: 700px) { .summary-grid { grid-template-columns: 1fr; } }
+
+  .summary-card {
+    padding: clamp(24px, 3vw, 36px);
+    border: 1px solid var(--ink-faint);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+  }
+  .summary-card:hover {
+    border-color: var(--red);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(27,42,74,0.08);
+  }
+  .summary-card-green:hover { border-color: var(--green); }
+
+  .card-label {
+    font-family: 'Caveat', cursive;
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--red);
+    margin-bottom: 10px;
+  }
+  .card-label-green { color: var(--green); }
+
+  .card-stat {
+    font-family: 'Abril Fatface', Georgia, serif;
+    font-size: clamp(40px, 6vw, 60px);
+    line-height: 1;
+    color: var(--red);
+    margin-bottom: 8px;
+  }
+  .card-stat-green { color: var(--green); }
+  .card-stat-ink { color: var(--ink); }
+
+  .card-meta {
+    font-family: 'Lora', serif;
+    font-size: 14px;
+    color: var(--ink-mid);
+    margin-bottom: 10px;
+  }
+
+  .card-hook {
+    font-family: 'Lora', Georgia, serif;
+    font-size: clamp(14px, 1.5vw, 16px);
+    line-height: 1.6;
+    color: var(--ink-mid);
+  }
+
+  .card-arrow {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: var(--ink-light);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .summary-card:hover .card-arrow { opacity: 1; }
+
+  /* ================ DATA VIZ: SOURCE COVERAGE ================ */
+  .coverage-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+    margin-top: 16px;
+  }
+
+  .coverage-card {
+    padding: 16px 20px;
+    background: var(--red-soft);
+    transition: background 0.2s;
+  }
+  .coverage-card:hover { background: rgba(217,64,50,0.1); }
+
+  .coverage-name {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--ink);
+  }
+
+  .coverage-type {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 13px;
+    color: var(--ink-light);
+    margin-top: 3px;
+  }
+
+  .coverage-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    margin-bottom: 12px;
+  }
+
+  .coverage-note {
+    margin-top: 24px;
+    font-family: 'Lora', Georgia, serif;
+    font-style: italic;
+    font-size: clamp(14px, 1.5vw, 16px);
+    color: var(--ink-mid);
+    padding-top: 16px;
+    border-top: 1px dashed var(--ink-faint);
+  }
+  .coverage-note strong { font-style: normal; color: var(--red); }
+
+  /* ================ DATA VIZ: 21 vs 1 DOTS ================ */
+  .dots-viz { margin: 48px 0; }
+  .dots-section { margin-bottom: 28px; }
+
+  .dots-header {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 14px;
+  }
+
+  .dots-count {
+    font-family: 'Abril Fatface', Georgia, serif;
+    font-size: clamp(44px, 7vw, 64px);
+    line-height: 1;
+    color: var(--cream);
+  }
+
+  .dots-desc {
+    font-family: 'Lora', Georgia, serif;
+    font-style: italic;
+    font-size: clamp(14px, 1.5vw, 17px);
+    color: var(--on-navy-dim);
+  }
+
+  .dots-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .dot {
+    width: clamp(16px, 2.2vw, 20px);
+    height: clamp(16px, 2.2vw, 20px);
+    border-radius: 50%;
+    background: var(--cream);
+    opacity: 0.2;
+  }
+
+  .dots-labels {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 14px;
+    margin-top: 12px;
+  }
+
+  .dots-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    color: var(--on-navy-dim);
+    white-space: nowrap;
+  }
+
+  .dots-divider {
+    border: none;
+    border-top: 1px solid var(--on-navy-faint);
+    margin: 28px 0;
+  }
+
+  .dot-one {
+    width: clamp(24px, 3.5vw, 32px);
+    height: clamp(24px, 3.5vw, 32px);
+    border-radius: 50%;
+    background: var(--red);
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 16px;
+    box-shadow: 0 0 0 5px rgba(217,64,50,0.2);
+  }
+
+  .dot-one-name {
+    font-family: 'Abril Fatface', Georgia, serif;
+    font-size: clamp(36px, 5vw, 52px);
+    line-height: 1.1;
+    color: var(--red);
+  }
+
+  .dot-one-desc {
+    font-family: 'Lora', Georgia, serif;
+    font-style: italic;
+    font-size: clamp(15px, 1.6vw, 18px);
+    color: var(--on-navy-dim);
+    margin-top: 8px;
+  }
+
+  /* ================ DATA VIZ: TENSION ================ */
+  .tension-viz {
+    margin: 48px 0;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 0;
+    align-items: stretch;
+  }
+  @media (max-width: 600px) {
+    .tension-viz { grid-template-columns: 1fr; gap: 24px; }
+    .tension-divider { display: none; }
+  }
+
+  .tension-col { padding: clamp(20px, 3vw, 32px); }
+  .tension-side-label {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .tension-side-label-red { color: var(--red); }
+  .tension-side-label-green { color: var(--green); }
+
+  .tension-item { margin-bottom: 16px; }
+  .tension-state {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--ink);
+    margin-bottom: 2px;
+  }
+  .tension-action {
+    font-family: 'Lora', Georgia, serif;
+    font-style: italic;
+    font-size: clamp(14px, 1.5vw, 16px);
+    line-height: 1.5;
+    color: var(--ink-mid);
+  }
+  .tension-divider {
+    width: 1px;
+    background: var(--ink-faint);
+    position: relative;
+  }
+  .tension-divider::after {
+    content: 'vs';
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Caveat', cursive;
+    font-size: 18px;
+    color: var(--ink-light);
+    background: #EFF5EE;
+    padding: 8px 4px;
+  }
+
+  /* ================ CLOSE — NAVY ================ */
+  .close-section {
+    background: var(--ink);
+    padding: clamp(80px, 11vw, 130px) 0;
+  }
+  .close-section .headline {
+    color: var(--cream);
+    font-size: clamp(26px, 3.8vw, 48px);
+  }
+  .close-section .body {
+    color: var(--on-navy-dim);
+    margin-top: 24px;
+  }
+
+  /* ================ SOURCE PILLS ================ */
+  .pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
+  .pill {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    padding: 6px 14px;
+    border: 1px solid var(--ink-faint);
+    color: var(--ink-mid);
+    white-space: nowrap;
+    transition: all 0.2s;
+  }
+  .pill:hover { border-color: var(--red); color: var(--red); }
+  .pill-red { border-color: var(--red); color: var(--red); font-weight: 600; }
+
+  /* ================ PROGRESS ================ */
+  #progress {
+    position: fixed; top: 0; left: 0;
+    height: 2px; background: var(--red);
+    z-index: 100; width: 0%;
+    transition: width 0.12s linear;
+  }
+
+  /* ================ REVEAL ================ */
+  .r {
+    opacity: 0; transform: translateY(14px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .r.v { opacity: 1; transform: translateY(0); }
+  .d1 { transition-delay: 0.1s; }
+  .d2 { transition-delay: 0.2s; }
+  .d3 { transition-delay: 0.3s; }
+  .d4 { transition-delay: 0.4s; }
+
+  /* ================ RESPONSIVE ================ */
+  @media (max-width: 600px) {
+    .masthead-title { font-size: clamp(52px, 17vw, 90px); }
+    .pull-quote { padding-left: 18px; }
+    .aside { padding-left: 18px; }
+    .section { padding: 56px 0; }
+  }
+</style>
 </head>
 <body>
-  <a href="#main-content" class="skip-link">Skip to main content</a>
-  <div class="gradient-bar" aria-hidden="true"></div>
-  <div class="orb-3" aria-hidden="true"></div>
 
-  <nav class="site-nav" aria-label="Main navigation">
-    <div class="wrap" style="display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 0;">
-      <div class="nav-logo">Signal Board</div>
-      <div class="nav-links">
-        <a href="./" class="active">Today</a>
-        <a href="../sources/">Sources</a>
-        <a href="../data-viz/">Data</a>
-        <a href="../archive/">Archive</a>
-        <a href="../about/">About</a>
+<div id="progress"></div>
+
+<!-- ================================================================
+     MASTHEAD — NAVY
+     ================================================================ -->
+<div class="masthead-wrap">
+  <div class="wrap">
+    <div class="masthead">
+      <div class="r">
+        <div class="display masthead-title">SIGNAL</div>
+        <div class="display masthead-title">BOARD</div>
+      </div>
+      <span class="masthead-date r d1">March 28, 2026</span>
+      <h1 class="masthead-hook r d2">
+        Cities in Texas painted rainbow crosswalks this week. A war drove up food prices on four continents. And a community newspaper in Michigan told a story nobody else would tell.
+      </h1>
+      <p class="masthead-sub r d3">
+        Today, 142 sources across 40 countries published 1,033 stories. When you see all of them together, a picture emerges that no single outlet can show you alone.
+      </p>
+      <div class="scroll-cue">
+        <span>scroll</span>
+        <svg width="18" height="10" viewBox="0 0 18 10" fill="none">
+          <path d="M2,2 L9,8 L16,2" stroke="var(--cream)" stroke-width="1.5" stroke-linecap="round" opacity="0.35"/>
+        </svg>
       </div>
     </div>
-  </nav>
+  </div>
+</div>
 
-  <main class="wrap" id="main-content" role="main">
-    <!-- HEADER — the story, not the stats -->
-    <header class="header" id="header" role="banner">
-      <div class="date-line" id="dateLine"></div>
-      <h1 id="headline">Loading...</h1>
-      <div id="narrativeLead" style="max-width:720px;margin:0 auto;"></div>
-    </header>
 
-    <!-- TODAY'S THROUGH-LINES — the force chains that connect everything -->
-    <section id="throughLines" aria-label="Today's major stories"></section>
+<!-- ================================================================
+     SUMMARY CARDS — CREAM
+     ================================================================ -->
+<div class="wrap-wide" style="padding-top: clamp(48px, 7vw, 80px); padding-bottom: clamp(24px, 4vw, 40px);">
+  <div class="summary-grid r">
 
-    <!-- QUESTIONS WORTH ASKING -->
-    <section>
-      <h2 class="section-title">Questions Worth Asking</h2>
-      <div class="questions-grid" id="questionsGrid"></div>
-    </section>
+    <a href="#thread" class="summary-card" style="text-decoration: none; color: inherit;">
+      <div class="card-label"><svg width="18" height="14" viewBox="0 0 22 18" fill="none" style="vertical-align: -2px; margin-right: 6px;"><line x1="1" y1="4" x2="21" y2="4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="4" y1="9" x2="18" y2="9" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" opacity="0.5"/><line x1="7" y1="14" x2="15" y2="14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" opacity="0.25"/></svg>The Daily Thread</div>
+      <div class="card-stat card-stat-ink">5</div>
+      <div class="card-meta">sources across the political spectrum</div>
+      <div class="card-hook">Conservative and centrist outlets independently reported the same food supply disruption, which usually means the underlying data is serious enough to cross partisan lines.</div>
+      <span class="card-arrow">Read &darr;</span>
+    </a>
 
-    <!-- WHAT'S BEING MISSED -->
-    <section class="local-regional-stories" id="localRegionalSection"></section>
+    <a href="#gap" class="summary-card" style="text-decoration: none; color: inherit;">
+      <div class="card-label"><svg width="16" height="14" viewBox="0 0 20 18" fill="none" style="vertical-align: -2px; margin-right: 6px;"><rect x="1" y="1" width="6" height="16" rx="1" fill="currentColor"/><rect x="13" y="1" width="6" height="16" rx="1" fill="currentColor" opacity="0.25"/></svg>The Daily Gap</div>
+      <div class="card-stat">1 <span style="font-family: 'Lora', serif; font-size: clamp(14px, 1.5vw, 17px); font-style: italic; color: var(--ink-mid);">of 22</span></div>
+      <div class="card-meta">outlets used a different name</div>
+      <div class="card-hook">Twenty-one outlets called it the "Iran war." One community newspaper in Dearborn, Michigan framed it as something else entirely.</div>
+      <span class="card-arrow">Read &darr;</span>
+    </a>
 
-    <!-- SAME FORCE, DIFFERENT HEADLINES -->
-    <!-- Connecting stories section removed — redundant with mega-stories -->
-  </main>
+    <a href="#meanwhile" class="summary-card summary-card-green" style="text-decoration: none; color: inherit;">
+      <div class="card-label card-label-green"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" style="vertical-align: -2px; margin-right: 6px;"><circle cx="10" cy="10" r="4" fill="currentColor"/><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5" opacity="0.3"/></svg>Meanwhile</div>
+      <div class="card-stat card-stat-green">2</div>
+      <div class="card-meta">states where cities pushed back</div>
+      <div class="card-hook">While Idaho criminalized bathroom access and Tennessee moved toward a transgender registry, cities in Texas and Florida painted rainbow crosswalks the same week.</div>
+      <span class="card-arrow">Read &darr;</span>
+    </a>
 
-  <footer>
-    <div class="wrap">
-      <p style="margin-bottom:1.2rem;color:rgba(235,230,245,0.7);">275 sources read every day, covering everything from global security to your local school board. <a href="../sources/" style="color:rgba(235,230,245,0.8);text-decoration:underline;">How we choose our sources</a></p>
-      <details style="font-size:0.85rem;color:rgba(235,230,245,0.62);max-width:680px;margin:0 auto;text-align:left;">
-        <summary style="cursor:pointer;color:rgba(235,230,245,0.72);font-weight:600;margin-bottom:0.6rem;">How we did this</summary>
-        <p style="line-height:1.75;margin-bottom:0.7rem;">Signal Board pulls articles from 275 RSS feeds every morning, covering U.S. newsrooms, international press, local and regional outlets, think tanks, specialist journals, and explainer sites. Each article is classified by an AI model (Claude Haiku) that identifies which topics it covers and how it connects to other stories. About 70% of articles receive a full analysis. The stories you see above are grouped by keyword clustering and then synthesized by AI into coherent paragraphs. A human editor reviews the output for accuracy, tone, and writing quality.</p>
-        <p style="line-height:1.75;margin-bottom:0.7rem;">Source selection is editorial: we chose outlets that represent different perspectives, geographies, and communities, with a deliberate emphasis on sources that are underrepresented in algorithmic news feeds. The full source list is available on the <a href="../sources/" style="color:rgba(235,230,245,0.72);text-decoration:underline;">Sources page</a>.</p>
-        <p style="line-height:1.75;">This is a working prototype. It has blind spots, particularly in non-English language coverage and in communities without strong digital news infrastructure. If you notice something missing, that is useful information. <a href="mailto:elise.hasseltine@gmail.com" style="color:rgba(235,230,245,0.72);text-decoration:underline;">Tell us</a>.</p>
-      </details>
+  </div>
+</div>
+
+
+<!-- ================================================================
+     THE DAILY THREAD — CREAM
+     ================================================================ -->
+<div id="thread">
+<div class="wrap">
+  <div class="section" style="padding-bottom: 0;">
+    <span class="section-label r"><svg class="cat-icon" width="22" height="18" viewBox="0 0 22 18" fill="none"><line x1="1" y1="4" x2="21" y2="4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="4" y1="9" x2="18" y2="9" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" opacity="0.5"/><line x1="7" y1="14" x2="15" y2="14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" opacity="0.25"/></svg>The Daily Thread</span>
+    <h2 class="headline r d1">The war in Iran is raising the price of food in countries that have nothing to do with the war.</h2>
+    <p class="body r d2" style="margin-top: 28px;">
+      Iran is the world's fourth-largest producer of urea, a nitrogen-based fertilizer that farmers on every continent use to grow food, and the <strong>U.S.-Israel military campaign</strong> has disrupted shipping through the Strait of Hormuz, which carries roughly 20% of the world's traded oil and a significant share of its chemical exports.
+    </p>
+  </div>
+</div>
+
+<!-- SOURCE COVERAGE VIZ -->
+<div class="wrap-wide">
+  <div style="margin: 40px auto 0; padding: 0 clamp(16px, 3vw, 32px);" class="r">
+    <div class="coverage-label">Sources reporting on food price disruption today</div>
+    <div class="coverage-grid">
+      <div class="coverage-card">
+        <div class="coverage-name">Washington Times</div>
+        <div class="coverage-type">Conservative-leaning, U.S.</div>
+      </div>
+      <div class="coverage-card">
+        <div class="coverage-name">Washington Examiner</div>
+        <div class="coverage-type">Conservative-leaning, U.S.</div>
+      </div>
+      <div class="coverage-card">
+        <div class="coverage-name">Bloomberg</div>
+        <div class="coverage-type">Financial, U.S.</div>
+      </div>
+      <div class="coverage-card">
+        <div class="coverage-name">Dawn</div>
+        <div class="coverage-type">Independent, Pakistan</div>
+      </div>
+      <div class="coverage-card">
+        <div class="coverage-name">The Guardian</div>
+        <div class="coverage-type">Center-left, U.K./Australia</div>
+      </div>
     </div>
-  </footer>
-
-  <script type="application/ld+json" id="faqSchema"></script>
-  <script>
-    const DOMAIN_COLORS = {
-      ai: '#6652FF',
-      labor: '#FF5400',
-      governance: '#FF0054',
-      information: '#9E0059',
-      economics: '#00C2A8',
-      climate: '#4CAF50',
-      security: '#D32F2F',
-      geopolitics: '#1976D2',
-      domestic_politics: '#7B1FA2',
-      legal: '#FF9800'
-    };
-
-    const DOMAIN_LABELS = {
-      ai: 'AI', labor: 'Labor', governance: 'Governance',
-      information: 'Information', economics: 'Economics', climate: 'Climate',
-      security: 'Security', geopolitics: 'Geopolitics',
-      domestic_politics: 'Politics', legal: 'Legal'
-    };
-
-    /* Friendly labels for source types (no jargon) */
-    const SOURCE_TYPE_LABELS = {
-      national: 'Major outlets',
-      international: 'International press',
-      local_regional: 'Local & Regional sources',
-      specialist: 'Deep-expertise sources',
-      analysis: 'Analysis & think tanks',
-      explainer: 'Explainer outlets',
-      podcast: 'Podcasts',
-      newsletter: 'Newsletters'
-    };
-
-    const SOURCE_TYPE_COLORS = {
-      national: '#6652FF',
-      international: '#1976D2',
-      local_regional: '#FF5400',
-      specialist: '#00C2A8',
-      analysis: '#4CAF50',
-      explainer: '#FF9800',
-      podcast: '#9E0059',
-      newsletter: '#7B1FA2'
-    };
-
-    let appData = null;
-
-    fetch('../data/daily/latest.json')
-      .then(r => r.json())
-      .then(data => { appData = data; renderPage(); })
-      .catch(() => {
-        document.body.innerHTML = '<div class="wrap" style="padding:4rem 1.5rem;color:#e8e8e8;">Failed to load today\'s data. Please try refreshing.</div>';
-      });
-
-    /* ─── PAGE RENDER ─── */
-    function renderPage() {
-      renderHeader();
-      renderThroughLines();
-      renderQuestions();
-      renderLocalRegionalStories();
-      updateFAQSchema();
-    }
-
-    /* ─── HEADER — the briefing, not the dashboard ─── */
-    function renderHeader() {
-      const { date, summary, mega_stories } = appData;
-      const s = summary;
-
-      const dateObj = new Date(date + 'T12:00:00');
-      document.getElementById('dateLine').textContent = new Intl.DateTimeFormat('en-US', {
-        weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
-      }).format(dateObj);
-
-      document.getElementById('headline').textContent = 'Today\'s Signal';
-
-      const narrativeEl = document.getElementById('narrativeLead');
-      const ms = mega_stories || [];
-
-      // Use the first mega-story's synthesis as the lead — this is the product
-      const leadSynthesis = ms[0] && ms[0].synthesis
-        ? ms[0].synthesis.split('. ').slice(0, 2).join('. ') + '.'
-        : '';
-
-      // Story count overview
-      const storyList = ms.slice(0, 4).map(m =>
-        `<strong style="color:#fff;">${m.name}</strong> (${m.article_count} articles)`
-      ).join(', ');
-
-      narrativeEl.innerHTML = `
-        <div style="font-size:1.05rem;color:rgba(235,230,245,0.85);line-height:1.8;margin-bottom:1.5rem;">
-          <p style="margin:0 0 1rem 0;">${leadSynthesis}</p>
-          <p style="margin:0;font-size:0.9rem;color:rgba(235,230,245,0.65);">Today's coverage clusters around ${ms.length} stories: ${storyList}.</p>
-        </div>
-        <div style="font-size:0.78rem;color:rgba(235,230,245,0.5);border-top:1px solid rgba(255,255,255,0.08);padding-top:0.8rem;line-height:1.6;">
-          Every day, Signal Board reads every new article from ${s.sources_reporting} sources, covering everything from international security to local local and regional reporting. Today that was ${s.total_stories.toLocaleString()} articles. ${s.ai_classified.toLocaleString()} were analyzed by AI to surface the patterns you see below. These numbers change daily because the news does.
-        </div>
-      `;
-    }
-
-    /* ─── TODAY'S STORIES — mega-stories with full evidence weight ─── */
-    function renderThroughLines() {
-      const ms = appData.mega_stories;
-      const section = document.getElementById('throughLines');
-      if (!ms || ms.length === 0) { section.style.display = 'none'; return; }
-
-      const storyColors = ['#FF0054', '#6652FF', '#00C2A8', '#FF5400', '#4CAF50'];
-
-      const storiesHtml = ms.map((story, idx) => {
-        const color = storyColors[idx % storyColors.length];
-
-        // Temporal context — explain what the number change means
-        let temporalLine = '';
-        if (story.yesterday_count > 0) {
-          const diff = story.article_count - story.yesterday_count;
-          const direction = diff > 0 ? 'up' : diff < 0 ? 'down' : 'steady';
-          const arrow = diff > 0 ? '\u2191' : diff < 0 ? '\u2193' : '\u2192';
-          const verb = diff > 0 ? 'more coverage than yesterday' : diff < 0 ? 'fewer articles than yesterday' : 'same as yesterday';
-          temporalLine = `<span style="font-size:0.78rem;color:rgba(235,230,245,0.6);display:inline-flex;align-items:center;gap:0.3rem;">
-            <span style="color:${diff > 0 ? '#00C2A8' : diff < 0 ? '#FF5400' : 'rgba(235,230,245,0.5)'};font-weight:700;">${arrow} ${Math.abs(diff)}</span> ${verb}
-          </span>`;
-        }
-
-        // Visual source tier bar — shows where the coverage comes from at a glance
-        const tiers = story.source_tiers || {};
-        const totalArticles = story.article_count || 1;
-        const tierColors = {
-          national: '#6652FF', international: '#1976D2', local_regional: '#FF5400',
-          specialist: '#00C2A8', analysis: '#4CAF50', explainer: '#FF9800',
-          podcast: '#9E0059', newsletter: '#7B1FA2', research: '#D32F2F', government: '#FF0054'
-        };
-        const tierLabels = {
-          national: 'U.S. newsrooms', international: 'Global press', local_regional: 'Local & Regional outlets',
-          specialist: 'Expert sources', analysis: 'Think tanks', explainer: 'Explainers',
-          podcast: 'Podcasts', newsletter: 'Newsletters', research: 'Research', government: 'Government'
-        };
-        const tierEntries = Object.entries(tiers).filter(([k,v]) => v > 0 && k !== 'unknown').sort((a,b) => b[1] - a[1]);
-        const barSegments = tierEntries.map(([tier, count]) => {
-          const pct = (count / totalArticles * 100).toFixed(1);
-          return `<div style="width:${pct}%;height:100%;background:${tierColors[tier]||'#666'};min-width:2px;" title="${tierLabels[tier]||tier}: ${count}"></div>`;
-        }).join('');
-        const barLabels = tierEntries.slice(0,4).map(([tier,count]) =>
-          `<span style="display:inline-flex;align-items:center;gap:0.3rem;"><span style="width:6px;height:6px;border-radius:50%;background:${tierColors[tier]||'#666'};"></span>${tierLabels[tier]||tier} (${count})</span>`
-        ).join('<span style="opacity:0.3;"> · </span>');
-
-        const tierBarHtml = `
-          <div style="margin-bottom:1.4rem;">
-            <div style="display:flex;height:8px;border-radius:4px;overflow:hidden;gap:2px;margin-bottom:0.6rem;">
-              ${barSegments}
-            </div>
-            <div style="font-size:0.78rem;color:rgba(235,230,245,0.68);display:flex;flex-wrap:wrap;gap:0.7rem;">
-              ${barLabels}
-            </div>
-          </div>
-        `;
-
-        // WHY THIS MATTERS — plain language, daily life connection
-        const whyMattersHtml = story.why_this_matters
-          ? `<div style="padding:1rem 1.2rem;background:rgba(255,200,0,0.08);border-radius:12px;margin-bottom:1.5rem;border-left:3px solid rgba(255,200,0,0.6);">
-              <span style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.06em;color:rgba(255,200,0,0.9);font-weight:700;">Why this matters to you</span>
-              <p style="font-size:0.92rem;color:rgba(235,230,245,0.9);line-height:1.7;margin:0.5rem 0 0 0;">${story.why_this_matters}</p>
-            </div>`
-          : '';
-
-        // THE SYNTHESIS
-        const synthesisHtml = story.synthesis
-          ? `<div style="font-size:1rem;color:rgba(235,230,245,0.92);line-height:1.9;margin-bottom:1.8rem;">${story.synthesis}</div>`
-          : '';
-
-        // Watch for
-        const watchHtml = story.watch_for
-          ? `<div style="padding:1rem 1.2rem;background:rgba(255,255,255,0.05);border-radius:12px;margin-bottom:1.2rem;border-left:3px solid ${color};">
-              <span style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.06em;color:${color};font-weight:700;">What to watch</span>
-              <p style="font-size:0.9rem;color:rgba(235,230,245,0.8);line-height:1.7;margin:0.5rem 0 0 0;">${story.watch_for}</p>
-            </div>`
-          : '';
-
-        // Cross-spectrum note
-        const spectrumHtml = story.cross_spectrum
-          ? `<div style="padding:1rem 1.2rem;background:rgba(102,82,255,0.06);border-radius:12px;margin-bottom:1.2rem;border-left:3px solid #6652FF;">
-              <span style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.06em;color:#8070FF;font-weight:700;">Across the spectrum</span>
-              <p style="font-size:0.9rem;color:rgba(235,230,245,0.8);line-height:1.7;margin:0.5rem 0 0 0;">${story.cross_spectrum}</p>
-            </div>`
-          : '';
-
-        // Source names
-        const sampleSources = (story.sources_sample || []).slice(0, 8);
-        const sourceNameLine = sampleSources.length > 0
-          ? `<div style="font-size:0.78rem;color:rgba(235,230,245,0.55);margin-top:0.8rem;padding-top:0.8rem;border-top:1px solid rgba(255,255,255,0.06);">Sources include ${sampleSources.slice(0, 5).join(', ')}${story.source_count > 5 ? ` and ${story.source_count - 5} more` : ''}</div>`
-          : '';
-
-        return `
-          <article style="background:rgba(255,255,255,0.035);border:1px solid rgba(255,255,255,0.12);border-radius:20px;padding:2.5rem;margin-bottom:1.8rem;border-top:3px solid ${color};">
-            <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:0.7rem;flex-wrap:wrap;gap:0.5rem;">
-              <h3 style="font-family:'Space Grotesk',sans-serif;font-size:1.4rem;font-weight:800;color:#fff;letter-spacing:-0.02em;margin:0;">${story.name}</h3>
-              ${temporalLine}
-            </div>
-            <div style="font-size:0.88rem;color:${color};font-weight:700;margin-bottom:1rem;">
-              ${story.article_count} articles from ${story.source_count} sources
-            </div>
-            ${tierBarHtml}
-            ${whyMattersHtml}
-            ${synthesisHtml}
-            ${watchHtml}
-            ${spectrumHtml}
-            ${sourceNameLine}
-          </article>
-        `;
-      }).join('');
-
-      section.innerHTML = `
-        <h2 class="section-title">What's Happening</h2>
-        <p style="font-size:0.92rem;color:rgba(235,230,245,0.72);margin-bottom:2rem;line-height:1.8;">These are the stories that appeared most often across the widest range of sources today. When outlets that rarely agree start covering the same thing, that convergence is worth paying attention to.</p>
-        ${storiesHtml}
-      `;
-    }
-
-    /* ─── HEATMAP ANNOTATIONS — plain language callouts ─── */
-    function renderHeatmapAnnotations() {
-      const threads = appData.active_threads;
-      const annotEl = document.getElementById('heatmapAnnotations');
-      if (!threads || threads.length === 0) return;
-
-      // Top 3 hottest intersections with their insights
-      const top3 = threads
-        .filter(t => t.today_count > 0)
-        .sort((a, b) => b.today_count - a.today_count)
-        .slice(0, 3);
-
-      const html = top3.map((t, i) => {
-        const insight = (t.ai_connections && t.ai_connections[0]) || t.explanation || '';
-        const color = i === 0 ? '#FF0054' : i === 1 ? '#6652FF' : '#00C2A8';
-        return `
-          <div style="display:flex;gap:0.8rem;align-items:flex-start;padding:0.7rem 0;${i < 2 ? 'border-bottom:1px solid rgba(255,255,255,0.05);' : ''}">
-            <span style="font-size:1.4rem;color:${color};flex-shrink:0;">●</span>
-            <div>
-              <span style="font-size:0.78rem;font-weight:700;color:${color};">${t.label}</span>
-              <span style="font-size:0.72rem;color:rgba(235,230,245,0.5);margin-left:0.5rem;">${t.today_count} stories</span>
-              <p style="font-size:0.82rem;color:rgba(235,230,245,0.6);margin:0.2rem 0 0 0;line-height:1.45;">${insight}</p>
-            </div>
-          </div>
-        `;
-      }).join('');
-
-      annotEl.innerHTML = html;
-    }
-
-    /* ─── TEMPORAL CONTEXT — event-specific, not abstract labels ─── */
-    function renderTemporalContext() {
-      // Temporal context is now woven into the mega-story synthesis paragraphs.
-      // Hide this standalone section.
-      const section = document.getElementById('temporalSection');
-      section.style.display = 'none';
-    }
-
-    /* renderForces removed — replaced by renderThroughLines */
-
-    /* ─── DOMAIN HEATMAP — candy-land colors ─── */
-    function renderHeatmap() {
-      const svg = document.getElementById('heatmapSvg');
-      const { active_threads } = appData;
-      if (!active_threads) return;
-
-      const domainList = Object.keys(DOMAIN_COLORS);
-      const matrix = {};
-      active_threads.forEach(thread => {
-        const [d1, d2] = thread.pair;
-        matrix[[d1, d2].sort().join('-')] = thread;
-      });
-
-      const cellSize = 74, gap = 4, leftMargin = 115, topMargin = 95;
-      const totalWidth = leftMargin + domainList.length * (cellSize + gap) + 20;
-      const totalHeight = topMargin + domainList.length * (cellSize + gap) + 20;
-      svg.setAttribute('viewBox', `0 0 ${totalWidth} ${totalHeight}`);
-
-      const counts = Object.values(matrix).map(t => t.today_count);
-      const maxCount = Math.max(...counts, 1);
-
-      /* Candy-land intensity ramp: dark indigo → electric purple → hot pink → coral → bright gold */
-      const CANDY_STOPS = [
-        [30, 15, 60],      // 0.0 — deep void
-        [88, 40, 180],     // 0.15 — indigo
-        [140, 50, 255],    // 0.3 — electric purple
-        [255, 0, 110],     // 0.5 — hot pink
-        [255, 84, 0],      // 0.7 — coral/orange
-        [255, 200, 0],     // 0.9 — bright gold
-        [255, 255, 100],   // 1.0 — candy yellow
-      ];
-
-      function candyColor(t) {
-        t = Math.max(0, Math.min(1, t));
-        const idx = t * (CANDY_STOPS.length - 1);
-        const lo = Math.floor(idx);
-        const hi = Math.min(lo + 1, CANDY_STOPS.length - 1);
-        const frac = idx - lo;
-        const r = Math.round(CANDY_STOPS[lo][0] + (CANDY_STOPS[hi][0] - CANDY_STOPS[lo][0]) * frac);
-        const g = Math.round(CANDY_STOPS[lo][1] + (CANDY_STOPS[hi][1] - CANDY_STOPS[lo][1]) * frac);
-        const b = Math.round(CANDY_STOPS[lo][2] + (CANDY_STOPS[hi][2] - CANDY_STOPS[lo][2]) * frac);
-        return [r, g, b];
-      }
-
-      // SVG defs — glow filters at different intensities
-      const defs = makeSvg('defs');
-      [2, 4, 6].forEach((s, i) => {
-        const f = makeSvg('filter', { id: `glow${i}`, x: '-50%', y: '-50%', width: '200%', height: '200%' });
-        f.appendChild(makeSvg('feGaussianBlur', { stdDeviation: String(s), result: 'blur' }));
-        const m = makeSvg('feMerge');
-        m.appendChild(makeSvg('feMergeNode', { in: 'blur' }));
-        m.appendChild(makeSvg('feMergeNode', { in: 'SourceGraphic' }));
-        f.appendChild(m);
-        defs.appendChild(f);
-      });
-      svg.appendChild(defs);
-
-      const g = makeSvg('g');
-
-      domainList.forEach((d1, i) => {
-        domainList.forEach((d2, j) => {
-          const x = leftMargin + i * (cellSize + gap);
-          const y = topMargin + j * (cellSize + gap);
-          const key = [d1, d2].sort().join('-');
-          const threadData = matrix[key];
-          const count = threadData ? threadData.today_count : 0;
-
-          let fill, glowFilter = '';
-          if (count === 0) {
-            fill = 'rgba(255,255,255,0.025)';
-          } else {
-            const t = Math.pow(count / maxCount, 0.6); // compress range so mid-values pop
-            const [r, gr, b] = candyColor(t);
-            fill = `rgb(${r},${gr},${b})`;
-            glowFilter = t > 0.6 ? 'url(#glow2)' : t > 0.3 ? 'url(#glow1)' : 'url(#glow0)';
-          }
-
-          const rect = makeSvg('rect', {
-            x, y, width: cellSize, height: cellSize, rx: '8', fill,
-            'data-pair': `${d1},${d2}`, 'data-count': count
-          });
-          if (glowFilter) rect.setAttribute('filter', glowFilter);
-
-          // Tooltip
-          rect.addEventListener('mouseenter', (e) => {
-            if (!count) return;
-            const tip = document.createElement('div');
-            tip.className = 'heatmap-tooltip';
-            const connText = threadData.ai_connections && threadData.ai_connections[0] || '';
-            tip.innerHTML = `
-              <div class="tooltip-title">${capitalize(d1)} + ${capitalize(d2)}</div>
-              <div class="tooltip-count">${count} article${count !== 1 ? 's' : ''}</div>
-              ${connText ? `<div class="tooltip-insight">${connText}</div>` : ''}
-            `;
-            document.body.appendChild(tip);
-            const box = e.target.getBoundingClientRect();
-            tip.style.left = (box.left + box.width / 2 - tip.offsetWidth / 2) + 'px';
-            tip.style.top = (box.top - tip.offsetHeight - 10) + 'px';
-            e.target.addEventListener('mouseleave', () => tip.remove(), { once: true });
-          });
-
-          g.appendChild(rect);
-
-          // Count label inside bright cells
-          if (count > 0) {
-            const t = count / maxCount;
-            const txt = makeSvg('text', {
-              x: x + cellSize / 2, y: y + cellSize / 2,
-              'text-anchor': 'middle', 'dominant-baseline': 'middle',
-              fill: t > 0.35 ? 'rgba(0,0,0,0.7)' : '#fff',
-              'font-size': '14', 'font-weight': '800', 'font-family': 'Space Grotesk, sans-serif',
-              'pointer-events': 'none'
-            });
-            txt.textContent = count;
-            g.appendChild(txt);
-          }
-        });
-      });
-
-      // Row labels — use domain colors
-      domainList.forEach((domain, i) => {
-        const text = makeSvg('text', {
-          x: leftMargin - 14, y: topMargin + i * (cellSize + gap) + cellSize / 2,
-          'text-anchor': 'end', 'dominant-baseline': 'middle',
-          fill: DOMAIN_COLORS[domain], 'font-size': '13', 'font-weight': '700',
-          'font-family': 'Space Grotesk, sans-serif'
-        });
-        text.textContent = DOMAIN_LABELS[domain] || capitalize(domain);
-        g.appendChild(text);
-      });
-
-      // Column labels (rotated) — use domain colors
-      domainList.forEach((domain, i) => {
-        const g2 = makeSvg('g', {
-          transform: `translate(${leftMargin + i * (cellSize + gap) + cellSize / 2}, ${topMargin - 14}) rotate(-45)`
-        });
-        const text = makeSvg('text', {
-          'text-anchor': 'end', 'dominant-baseline': 'middle',
-          fill: DOMAIN_COLORS[domain], 'font-size': '13', 'font-weight': '700',
-          'font-family': 'Space Grotesk, sans-serif'
-        });
-        text.textContent = DOMAIN_LABELS[domain] || capitalize(domain);
-        g2.appendChild(text);
-        g.appendChild(g2);
-      });
-
-      svg.appendChild(g);
-
-      // Candy-land legend gradient
-      const legend = document.getElementById('heatmapLegend');
-      const gradientSteps = 8;
-      let legendHtml = '<span style="color:rgba(235,230,245,0.65);font-size:0.78rem;margin-right:0.3rem;">Fewer</span>';
-      for (let s = 0; s < gradientSteps; s++) {
-        const t = s / (gradientSteps - 1);
-        const [r, gr, b] = candyColor(t);
-        legendHtml += `<div class="legend-box" style="background:rgb(${r},${gr},${b});width:${14 + t * 10}px;height:${14 + t * 4}px;border-radius:4px;display:inline-block;"></div>`;
-      }
-      legendHtml += '<span style="color:rgba(235,230,245,0.65);font-size:0.78rem;margin-left:0.3rem;">More coverage</span>';
-      legend.innerHTML = legendHtml;
-    }
-
-    /* ─── QUESTIONS — answers visible, not hidden ─── */
-    function renderQuestions() {
-      const { questions } = appData;
-      if (!questions) return;
-      const grid = document.getElementById('questionsGrid');
-
-      const qColors = ['#6652FF','#FF0054','#00C2A8','#FF5400','#4CAF50','#1976D2','#FF9800'];
-
-      const html = questions.map((q, idx) => {
-        const count = q.article_count || 0;
-        const color = qColors[idx % qColors.length];
-        const insights = q.ai_insights || [];
-
-        // Domain pills
-        const domainBadges = (q.domains || []).map(d => {
-          const key = domainToKey(d);
-          return `<span class="domain-pill domain-${key}" style="font-size:0.6rem;padding:0.25rem 0.55rem;">${d}</span>`;
-        }).join('');
-
-        // First insight is the lead, rest expand the answer
-        const leadInsight = insights[0]
-          ? `<p style="font-size:0.94rem;color:rgba(235,230,245,0.9);line-height:1.8;margin:0 0 0.8rem 0;">${insights[0]}</p>`
-          : '';
-        const remainingInsights = insights.slice(1).map(insight =>
-          `<p style="font-size:0.9rem;color:rgba(235,230,245,0.78);line-height:1.75;margin:0 0 0.6rem 0;">${insight}</p>`
-        ).join('');
-
-        // Sources as compact attribution
-        const allSources = [];
-        for (const [tier, articles] of Object.entries(q.sources_by_tier || {})) {
-          (articles || []).forEach(a => allSources.push({...a, tier}));
-        }
-        const sourceAttribution = allSources.length > 0
-          ? `<div style="font-size:0.78rem;color:rgba(235,230,245,0.55);margin-top:0.8rem;">Based on reporting from ${[...new Set(allSources.map(a => a.source))].slice(0, 5).join(', ')}${allSources.length > 5 ? ` and ${allSources.length - 5} more` : ''}</div>`
-          : '';
-
-        return `
-          <article class="question-card" style="border-left:4px solid ${color};cursor:default;">
-            <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:0.8rem;">
-              <h3 class="question-text" style="flex:1;">${q.question}</h3>
-              <span class="question-count" style="background:${color}22;border-color:${color}55;color:${color};">${count} articles</span>
-            </div>
-            ${leadInsight}
-            ${remainingInsights}
-            <div style="display:flex;gap:0.3rem;flex-wrap:wrap;margin-top:0.5rem;">${domainBadges}</div>
-            ${sourceAttribution}
-          </article>
-        `;
-      }).join('');
-
-      grid.innerHTML = html;
-    }
-
-    /* ─── SOURCE DIVERSITY — SVG donut chart ─── */
-    function renderSourceDonut() {
-      const spectrum = appData.source_spectrum;
-      if (!spectrum) return;
-      const container = document.getElementById('sourceDonut');
-      const realTotal = appData.summary.total_stories;
-
-      // Intuitive labels
-      const LABELS = {
-        national: 'U.S. newsrooms',
-        international: 'Global press',
-        local_regional: 'Local & Regional outlets',
-        specialist: 'Expert journals',
-        analysis: 'Think tanks',
-        explainer: 'Explainers',
-        podcast: 'Podcasts',
-        newsletter: 'Newsletters',
-        research: 'Research orgs',
-        government: 'Government sources'
-      };
-      const COLORS = {
-        national: '#6652FF', international: '#1976D2', local_regional: '#FF5400',
-        specialist: '#00C2A8', analysis: '#4CAF50', explainer: '#FF9800',
-        podcast: '#9E0059', newsletter: '#7B1FA2', research: '#D32F2F',
-        government: '#FF0054', other: 'rgba(255,255,255,0.15)'
-      };
-
-      const entries = Object.entries(spectrum).sort((a, b) => b[1] - a[1]);
-      const spectrumTotal = entries.reduce((s, [, c]) => s + c, 0);
-      const gap = realTotal - spectrumTotal;
-      const allEntries = gap > 0 ? [...entries, ['other', gap]] : entries;
-
-      // Build SVG donut
-      const size = 220, cx = size / 2, cy = size / 2, r = 85, stroke = 28;
-      const gapAngle = 1.2;
-      const totalGap = gapAngle * allEntries.length;
-      const available = 360 - totalGap;
-      let cumAngle = -90;
-      let arcs = '';
-
-      allEntries.forEach(([key, count]) => {
-        const angle = (count / realTotal) * available;
-        if (angle < 0.5) { cumAngle += angle + gapAngle; return; }
-        const startRad = (cumAngle * Math.PI) / 180;
-        const endRad = ((cumAngle + angle) * Math.PI) / 180;
-        const x1 = cx + r * Math.cos(startRad);
-        const y1 = cy + r * Math.sin(startRad);
-        const x2 = cx + r * Math.cos(endRad);
-        const y2 = cy + r * Math.sin(endRad);
-        const large = angle > 180 ? 1 : 0;
-        arcs += `<path d="M ${x1} ${y1} A ${r} ${r} 0 ${large} 1 ${x2} ${y2}" fill="none" stroke="${COLORS[key] || 'rgba(255,255,255,0.2)'}" stroke-width="${stroke}" stroke-linecap="round" opacity="0.9"/>`;
-        cumAngle += angle + gapAngle;
-      });
-
-      const centerText = `
-        <text x="${cx}" y="${cy - 8}" text-anchor="middle" fill="#fff" font-family="Space Grotesk, sans-serif" font-size="28" font-weight="800">${realTotal.toLocaleString()}</text>
-        <text x="${cx}" y="${cy + 14}" text-anchor="middle" fill="rgba(235,230,245,0.5)" font-family="Inter, sans-serif" font-size="11" font-weight="500">stories today</text>
-      `;
-
-      // Legend — skip "other" if tiny
-      const legendHtml = allEntries.filter(([k, c]) => c > 2 && k !== 'other').map(([key, count]) => {
-        const pct = ((count / realTotal) * 100).toFixed(0);
-        return `
-          <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.5rem;">
-            <div style="width:10px;height:10px;border-radius:50%;background:${COLORS[key] || '#666'};flex-shrink:0;"></div>
-            <span style="font-family:'Space Grotesk',sans-serif;font-size:0.88rem;font-weight:700;color:#fff;">${count}</span>
-            <span style="font-size:0.78rem;color:rgba(235,230,245,0.65);">${LABELS[key] || capitalize(key)}</span>
-          </div>
-        `;
-      }).join('');
-
-      container.innerHTML = `
-        <div style="flex-shrink:0;">
-          <svg width="${size}" height="${size}" viewBox="0 0 ${size} ${size}">
-            ${arcs}
-            ${centerText}
-          </svg>
-        </div>
-        <div style="min-width:180px;">${legendHtml}</div>
-      `;
-    }
-
-    /* ─── LOCAL & REGIONAL STORIES — insight extraction, not title listing ─── */
-    function renderLocalRegionalStories() {
-      const section = document.getElementById('localRegionalSection');
-      const synthesis = appData.local_regional_synthesis;
-      const examples = appData.local_regional_examples || [];
-      const stories = appData.local_regional_exclusive || [];
-
-      if (!synthesis && stories.length === 0) { section.style.display = 'none'; return; }
-
-      // Examples as insight cards
-      const examplesHtml = examples.map((ex, i) => {
-        const colors = ['#FF5400', '#6652FF', '#00C2A8'];
-        const color = colors[i % colors.length];
-        return `
-          <div style="padding:1.1rem 1.3rem;background:rgba(255,255,255,0.035);border-left:3px solid ${color};border-radius:0 12px 12px 0;margin-bottom:0.8rem;">
-            <p style="font-size:0.92rem;color:rgba(235,230,245,0.85);line-height:1.7;margin:0;">${ex}</p>
-          </div>
-        `;
-      }).join('');
-
-      // Source attribution
-      const sourceNames = [...new Set(stories.map(s => s.source))].slice(0, 8);
-      const sourceLine = sourceNames.length > 0
-        ? `<div style="font-size:0.78rem;color:rgba(235,230,245,0.58);margin-top:1.2rem;padding-top:0.8rem;border-top:1px solid rgba(255,255,255,0.06);">Reporting from: ${sourceNames.join(', ')}</div>`
-        : '';
-
-      section.innerHTML = `
-        <h2 class="section-title">What's Being Missed</h2>
-        ${synthesis ? `<div style="font-size:0.98rem;color:rgba(235,230,245,0.8);line-height:1.8;margin-bottom:1.8rem;">${synthesis}</div>` : ''}
-        ${examplesHtml}
-        ${sourceLine}
-      `;
-    }
-
-    /* ─── CONNECTING STORIES — now redundant with mega-stories, hidden ─── */
-    function renderConnectingStories() {
-      const section = document.getElementById('connectingSection');
-      section.style.display = 'none';
-    }
-
-    /* ─── UTILITIES ─── */
-    function makeSvg(tag, attrs) {
-      const el = document.createElementNS('http://www.w3.org/2000/svg', tag);
-      if (attrs) Object.entries(attrs).forEach(([k, v]) => el.setAttribute(k, v));
-      return el;
-    }
-
-    function hexToRgb(hex) {
-      const m = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-      return m ? [parseInt(m[1], 16), parseInt(m[2], 16), parseInt(m[3], 16)] : [102, 82, 255];
-    }
-
-    function capitalize(str) {
-      if (!str) return '';
-      return str.split('_').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
-    }
-
-    function domainToKey(label) {
-      if (!label) return '';
-      const l = label.toLowerCase().trim();
-      for (const [key, name] of Object.entries(DOMAIN_LABELS)) {
-        if (name.toLowerCase() === l || key === l) return key;
-      }
-      return l.replace(/ /g, '_');
-    }
-
-    function cleanTitle(t) {
-      if (!t) return '';
-      return t.replace(/<[^>]+>/g, '').replace(/&nbsp;/g, ' ').trim();
-    }
-
-    function titleCase(str) {
-      if (!str) return '';
-      const minor = new Set(['a','an','the','and','but','or','for','nor','in','on','at','to','by','of','with']);
-      return str.split(' ').map((w, i) => {
-        if (i === 0 || !minor.has(w.toLowerCase())) return w.charAt(0).toUpperCase() + w.slice(1).toLowerCase();
-        return w.toLowerCase();
-      }).join(' ');
-    }
-
-    function updateFAQSchema() {
-      const { questions } = appData;
-      if (!questions || !questions.length) return;
-
-      const faqItems = questions.slice(0, 5).map(q => ({
-        '@type': 'Question',
-        'name': q.question,
-        'acceptedAnswer': {
-          '@type': 'Answer',
-          'text': (q.ai_insights && q.ai_insights[0]) || 'See sources for details.'
-        }
-      }));
-
-      document.getElementById('faqSchema').textContent = JSON.stringify({
-        '@context': 'https://schema.org',
-        '@type': 'FAQPage',
-        'mainEntity': faqItems
-      });
-    }
-  </script>
+    <div class="coverage-note">
+      <strong>What the data shows:</strong> Conservative-leaning and centrist outlets independently reported the same food price disruption, which is the kind of cross-spectrum convergence that usually means the underlying economics are serious enough to override editorial framing.
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div style="padding: 40px 0 clamp(72px, 10vw, 120px);">
+    <p class="body r">
+      The <a href="https://www.washingtontimes.com/news/2026/mar/27/war-iran-sparks-global-fertilizer-shortage-threatens-food-prices/">Washington Times</a> reported that the fertilizer shortage is already threatening global food prices, while the <a href="https://www.washingtonexaminer.com/news/world/4507293/world-food-supply-crisis-strait-hormuz-blockade/">Washington Examiner</a> warned of a severe food supply crisis if the Hormuz blockade continues. <a href="https://www.bloomberg.com/news/articles/2026-03-28/australia-resumes-some-operations-at-cyclone-hit-key-port">Bloomberg</a> added that a cyclone shut down Port Hedland in Western Australia, one of the world's largest commodity export terminals, which has nothing to do with Iran but compounds the same global food supply squeeze from a completely different direction.
+    </p>
+
+    <div class="aside r">
+      <strong>About this source</strong>&ensp; Pakistan's <a href="https://www.dawn.com/news/1986107/pakistani-ports-emerge-as-safe-trade-hub" style="color: var(--red);">Dawn</a> is the country's oldest English-language newspaper, founded in 1941. Dawn reported that Pakistani ports are emerging as alternative trade hubs because the traditional shipping lanes are too dangerous, which is trade route data from port authorities reported by a newspaper whose readers are the people rerouting their cargo right now.
+    </div>
+
+    <div class="callout r">
+      <div class="callout-label">Watch for this</div>
+      <p class="callout-text">Grocery prices in your area in the next two to four weeks. Agricultural disruptions take roughly that long to reach store shelves. If food prices rise and nobody explains why, this is why.</p>
+    </div>
+
+    <div class="sources r">
+      <a href="https://www.washingtontimes.com/news/2026/mar/27/war-iran-sparks-global-fertilizer-shortage-threatens-food-prices/">Washington Times</a> · <a href="https://www.washingtonexaminer.com/news/world/4507293/world-food-supply-crisis-strait-hormuz-blockade/">Washington Examiner</a> · <a href="https://www.bloomberg.com/news/articles/2026-03-28/australia-resumes-some-operations-at-cyclone-hit-key-port">Bloomberg</a> · <a href="https://www.dawn.com/news/1986107/pakistani-ports-emerge-as-safe-trade-hub">Dawn</a> · <a href="https://www.theguardian.com/australia-news/2026/mar/28/anthony-albanese-chris-bowen-fuel-security-powers-oil-crisis-petrol-diesel-prices">The Guardian</a>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<!-- ================================================================
+     THE DAILY GAP — NAVY
+     ================================================================ -->
+<div id="gap" class="navy">
+<div class="wrap">
+  <div class="section" style="padding-bottom: 0;">
+    <span class="section-label r"><svg class="cat-icon" width="20" height="18" viewBox="0 0 20 18" fill="none"><rect x="1" y="1" width="6" height="16" rx="1" fill="currentColor"/><rect x="13" y="1" width="6" height="16" rx="1" fill="currentColor" opacity="0.25"/></svg>The Daily Gap</span>
+    <h2 class="headline r d1">The Arab American News is the only outlet in our 275-source network using a different name for the Iran war.</h2>
+    <p class="body r d2" style="margin-top: 28px;">
+      Twenty-two outlets covered the war today. ABC News, Reuters, BBC, The Hill, NBC, Daily Wire, Deutsche Welle, and the New York Times all used some variation of "Iran war." One outlet used a different frame entirely: the <a href="https://arabamericannews.com/2026/03/27/u-s-israel-war-on-iran-and-lebanon-enters-fifth-week-with-no-clear-end-in-sight/">Arab American News</a>.
+    </p>
+  </div>
+</div>
+
+<!-- 21 vs 1 DOTS — on navy -->
+<div class="wrap-wide">
+  <div class="dots-viz r" style="padding: 0 clamp(16px, 3vw, 32px);">
+
+    <div class="dots-section">
+      <div class="dots-header">
+        <div class="dots-count">21</div>
+        <div class="dots-desc">outlets used "Iran war" or a variation of it</div>
+      </div>
+      <div class="dots-grid">
+        <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+        <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+        <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+        <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+        <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+        <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+        <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      </div>
+      <div class="dots-labels">
+        <span class="dots-label">ABC News</span>
+        <span class="dots-label">Reuters</span>
+        <span class="dots-label">BBC</span>
+        <span class="dots-label">The Hill</span>
+        <span class="dots-label">NBC</span>
+        <span class="dots-label">Daily Wire</span>
+        <span class="dots-label">Deutsche Welle</span>
+        <span class="dots-label">New York Times</span>
+        <span class="dots-label">+ 13 more</span>
+      </div>
+    </div>
+
+    <hr class="dots-divider">
+
+    <div class="dots-section">
+      <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 16px;">
+        <div class="dot-one"></div>
+        <div><div class="dot-one-name">1</div></div>
+      </div>
+      <p class="dot-one-desc" style="margin-top: 10px;">
+        used <span class="mark">"U.S.-Israel war on Iran and Lebanon"</span>
+      </p>
+      <p style="font-family: 'Inter', sans-serif; font-size: 13px; color: var(--on-navy-dim); margin-top: 8px;">
+        Arab American News · Dearborn, Michigan · Independent · Founded 1984
+      </p>
+    </div>
+
+  </div>
+</div>
+
+<div class="wrap">
+  <div style="padding: 32px 0 clamp(72px, 10vw, 120px);">
+
+    <div class="pull-quote r">
+      "Iran war" centers Iran as the subject and implies Iran is the primary actor, while "U.S.-Israel war on Iran and Lebanon" centers the coalition conducting the strikes and names a second country that most American coverage has barely mentioned, which means the framing shapes who your mind assigns responsibility to before you read a single detail.
+    </div>
+
+    <p class="body r">
+      The 21 other outlets that covered this story today are, with the exception of Al Jazeera and Deutsche Welle, owned by large media corporations or funded through advertising models dependent on platform distribution. ABC News is Disney. The Times is publicly traded. Reuters is Thomson Reuters. The Arab American News is independent, with no corporate parent, no venture backing, and no reliance on platform traffic.
+    </p>
+
+    <div class="aside r">
+      <strong>About this source</strong>&ensp; The Arab American News has been published in Dearborn, Michigan since 1984. Dearborn has the highest concentration of Arab Americans in the United States, roughly 55,000 people in a city of 110,000, and many readers have family in Lebanon, Iraq, Yemen, Syria, and the Palestinian territories. When this newspaper writes about the war, its readers are reading about a military campaign in the place their parents were born or the place their cousins live right now, and the framing reflects how the war looks when you know people in the blast radius.
+    </div>
+
+    <div class="callout r">
+      <div class="callout-label">The question this raises</div>
+      <p class="callout-text">If the only independent community newspaper serving the population most directly affected frames the war differently than every corporate-owned outlet, what else looks different from inside the consequences than it does from outside them?</p>
+    </div>
+
+    <div class="sources r">
+      22 outlets covering Iran today, including <a href="https://abcnews.com/International/live-updates/iran-live-updates-trumps-48-hour-deadline-expire/?id=131316431">ABC News</a> · <a href="#">Reuters</a> · <a href="https://www.bbc.com/news/articles/cvgl4yk7vgpo">BBC</a> · <a href="https://arabamericannews.com/2026/03/27/u-s-israel-war-on-iran-and-lebanon-enters-fifth-week-with-no-clear-end-in-sight/">Arab American News</a>
+    </div>
+
+  </div>
+</div>
+</div>
+
+
+<!-- ================================================================
+     MEANWHILE — CREAM with green wash
+     ================================================================ -->
+<div id="meanwhile" style="background: #EFF5EE;">
+<div class="wrap">
+  <div class="section" style="padding-bottom: 0;">
+    <span class="section-label section-label-green r"><svg class="cat-icon" width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="4" fill="currentColor"/><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5" opacity="0.3"/></svg>Meanwhile</span>
+    <h2 class="headline r d1">While Idaho made it a felony to be transgender in the wrong bathroom, <span style="color: var(--green);">cities in Texas and Florida painted crosswalks.</span></h2>
+    <p class="body r d2" style="margin-top: 28px;">
+      Idaho's governor signed a law this week that makes it a felony, punishable by prison time, for a transgender person to use a bathroom matching their gender identity in a private business. Not a government building. A restaurant, a gym, a bookstore. Tennessee's House passed what amounts to a transgender registry the same week.
+    </p>
+  </div>
+</div>
+
+<!-- TENSION VIZ -->
+<div class="wrap-wide">
+  <div class="tension-viz r">
+    <div class="tension-col" style="background: rgba(217,64,50,0.04);">
+      <div class="tension-side-label tension-side-label-red">State Level</div>
+      <div class="tension-item">
+        <div class="tension-state">Idaho</div>
+        <div class="tension-action">Made it a felony to use a bathroom matching gender identity in private businesses</div>
+      </div>
+      <div class="tension-item">
+        <div class="tension-state">Tennessee</div>
+        <div class="tension-action">House passed a transgender registry</div>
+      </div>
+      <div style="margin-top: 16px; font-family: 'Caveat', cursive; font-size: 18px; color: var(--red);">↓ restriction</div>
+    </div>
+    <div class="tension-divider"></div>
+    <div class="tension-col" style="background: rgba(45,138,78,0.04);">
+      <div class="tension-side-label tension-side-label-green">City Level</div>
+      <div class="tension-item">
+        <div class="tension-state">Cities in Texas</div>
+        <div class="tension-action">Approved and installed new rainbow crosswalks</div>
+      </div>
+      <div class="tension-item">
+        <div class="tension-state">Cities in Florida</div>
+        <div class="tension-action">Approved and installed new rainbow crosswalks</div>
+      </div>
+      <div style="margin-top: 16px; font-family: 'Caveat', cursive; font-size: 18px; color: var(--green);">↑ visibility</div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div style="padding: 32px 0 clamp(72px, 10vw, 120px);">
+
+    <p class="body r">
+      The <a href="https://www.advocate.com/politics/national/hegseth-general-promotions-bree-fram" style="color: var(--green);">Advocate</a> reported all of this, including something almost no other outlet covered: during the same week, <span class="mark-green">cities in Texas and Florida approved and installed new rainbow crosswalks.</span>
+    </p>
+
+    <div class="pull-quote pull-quote-green r">
+      A crosswalk requires a city council vote, a budget allocation, a public works schedule, and a mayor willing to sign off, which means every rainbow crosswalk painted in Texas and Florida this week represents a paper trail of deliberate political decisions made in states whose legislatures would rather they hadn't.
+    </div>
+
+    <p class="body r">
+      In states where state-level politics are actively hostile to LGBTQ+ visibility, painting a rainbow crosswalk is an elected official using the specific authority they have to tell a community under legal threat that they are seen, that they belong, and that at least one level of government chose to show up rather than stay quiet, at real political cost, in an environment they understood completely.
+    </p>
+
+    <div class="aside aside-green r" style="border-left-color: rgba(45,138,78,0.2);">
+      <strong>About this source</strong>&ensp; The Advocate is the oldest LGBTQ+ publication in the United States, founded in 1967 in Los Angeles as a direct response to police raids on gay bars. Its reporters have institutional memory spanning nearly sixty years of civil rights fights, which is what allows them to see both the restriction and the resistance happening in the same week and understand that both movements are the story.
+    </div>
+
+    <div class="callout callout-green r">
+      <div class="callout-label callout-label-green">What this tells us</div>
+      <p class="callout-text">Restriction at the state level and visibility at the municipal level, happening simultaneously in the same states, is one of the most important structural dynamics in American governance right now, and the pattern extends well beyond LGBTQ+ rights into climate policy, immigration enforcement, and education.</p>
+    </div>
+
+    <div class="sources r">
+      <a href="https://www.advocate.com/politics/national/hegseth-general-promotions-bree-fram">The Advocate</a>, founded 1967, Los Angeles
+    </div>
+
+  </div>
+</div>
+</div>
+
+
+<!-- ================================================================
+     CLOSE — NAVY
+     ================================================================ -->
+<div class="close-section">
+  <div class="wrap">
+    <h2 class="headline r">
+      Every day, Signal Board looks for something the current news architecture isn't designed to surface: who showed up for someone else, and what did it cost them.
+    </h2>
+    <p class="body r d1" style="color: var(--on-navy-dim);">
+      Signal Board reads 275 sources every day across the political spectrum, across borders, and across languages, because the outlets being squeezed out by consolidation and platform economics are the ones doing the most essential reporting.
+    </p>
+  </div>
+</div>
+
+
+<!-- ================================================================
+     SOURCES — CREAM
+     ================================================================ -->
+<div class="wrap">
+  <div class="section">
+    <span class="section-label r">Today's Sources</span>
+
+    <div class="r d1" style="position: relative; display: inline-block; margin-top: 4px;">
+      <svg style="position: absolute; top: -14px; left: -20px; width: calc(100% + 40px); height: calc(100% + 28px);" viewBox="0 0 200 120" fill="none" preserveAspectRatio="none">
+        <ellipse cx="100" cy="60" rx="90" ry="52" stroke="var(--red)" stroke-width="2" fill="none" opacity="0.25" transform="rotate(-2, 100, 60)" stroke-dasharray="5,4"/>
+      </svg>
+      <div class="display" style="font-size: clamp(64px, 13vw, 150px); line-height: 1;">142</div>
+    </div>
+    <p class="r d2" style="font-family: 'Caveat', cursive; font-size: 22px; color: var(--ink-light); margin-top: 4px;">of 275 sources reported today</p>
+
+    <div class="r d3" style="margin-top: 20px; max-width: 500px;">
+      <div style="height: 8px; background: var(--ink-faint); border-radius: 4px; overflow: hidden;">
+        <div style="height: 100%; width: 51.6%; background: var(--red); border-radius: 4px;"></div>
+      </div>
+      <div style="display: flex; justify-content: space-between; margin-top: 6px;">
+        <span style="font-family: 'Inter', sans-serif; font-size: 11px; color: var(--ink-light);">142 reported</span>
+        <span style="font-family: 'Inter', sans-serif; font-size: 11px; color: var(--ink-light);">275 total</span>
+      </div>
+    </div>
+
+    <div class="pills r d4">
+      <span class="pill">ABC News</span>
+      <span class="pill">Al Jazeera</span>
+      <span class="pill">AP News</span>
+      <span class="pill">Arab American News</span>
+      <span class="pill">Balkan Insight</span>
+      <span class="pill">BBC World</span>
+      <span class="pill">Bloomberg</span>
+      <span class="pill">CNBC</span>
+      <span class="pill">Colorado Sun</span>
+      <span class="pill">Dawn</span>
+      <span class="pill">Deutsche Welle</span>
+      <span class="pill">El Diario NY</span>
+      <span class="pill">France 24</span>
+      <span class="pill">Indian Country Today</span>
+      <span class="pill">Inside Climate News</span>
+      <span class="pill">Mother Jones</span>
+      <span class="pill">NBC News</span>
+      <span class="pill">New York Times</span>
+      <span class="pill">NPR</span>
+      <span class="pill">Reuters</span>
+      <span class="pill">The Advocate</span>
+      <span class="pill">The Guardian</span>
+      <span class="pill">The Hill</span>
+      <span class="pill">Washington Examiner</span>
+      <span class="pill">Washington Times</span>
+      <span class="pill">Wired</span>
+      <span class="pill pill-red">+ 116 more</span>
+    </div>
+
+    <p class="r" style="margin-top: 52px; font-family: 'Lora', Georgia, serif; font-style: italic; font-size: clamp(16px, 1.7vw, 19px); color: var(--ink-mid); max-width: 600px;">
+      Tomorrow, Signal Board reads all 275 sources again, and the picture will be different. Come back and see what nobody else will show you.
+    </p>
+
+    <p style="margin-top: 40px; font-family: 'Inter', sans-serif; font-size: 13px; color: var(--ink-light);">
+      <a href="#" style="color: var(--ink-light);">About Signal Board</a>&ensp;·&ensp;<a href="#" style="color: var(--ink-light);">See all 275 sources</a>&ensp;·&ensp;<a href="#" style="color: var(--ink-light);">The Constellation</a>
+    </p>
+  </div>
+</div>
+
+
+<script>
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('v'); });
+}, { threshold: 0.06, rootMargin: '0px 0px -30px 0px' });
+document.querySelectorAll('.r').forEach(el => obs.observe(el));
+
+setTimeout(() => {
+  document.querySelectorAll('.masthead .r').forEach(el => el.classList.add('v'));
+}, 200);
+
+const bar = document.getElementById('progress');
+window.addEventListener('scroll', () => {
+  bar.style.width = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100 + '%';
+}, { passive: true });
+
+let scrolled = false;
+window.addEventListener('scroll', () => {
+  if (!scrolled) { scrolled = true; const c = document.querySelector('.scroll-cue'); if (c) c.style.opacity = '0'; }
+}, { passive: true });
+
+document.querySelectorAll('.summary-card').forEach(card => {
+  card.addEventListener('click', (e) => {
+    e.preventDefault();
+    const target = document.querySelector(card.getAttribute('href'));
+    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+</script>
+
 </body>
 </html>
