@@ -1,7 +1,7 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://ehasseltine.github.io',
+  site: 'https://www.elisehasseltine.com',
   base: '/signal-board',
   outDir: './docs',
   build: {
