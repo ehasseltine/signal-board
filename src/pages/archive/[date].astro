@@ -6,7 +6,7 @@ import {
   selectDailyGap,
   selectMeanwhile
 } from '../../lib/storySelection';
-import type { MegaStory } from '../../lib/storySelection';
+import type { MegaStory, Editorial, Cooperation } from '../../lib/storySelection';
 
 interface Props {
   date: string;
@@ -26,18 +26,25 @@ if (!pipelineData) {
   return Astro.redirect('/signal-board/archive/');
 }
 
-// Extract mega_stories — where the real analysis lives
+// Extract ALL data — supports both formats
 const megaStories: MegaStory[] = pipelineData.mega_stories || [];
+const whatConnects = pipelineData.what_connects || [];
+const topStories = pipelineData.top_stories || [];
+const narrativeDivergence = pipelineData.narrative_divergence || [];
+const cooperation: Cooperation | null = pipelineData.cooperation || null;
+const editorial: Editorial | undefined = pipelineData.editorial || undefined;
 const localRegionalSynthesis: string = pipelineData.local_regional_synthesis || '';
 const localRegionalExamples: any[] = pipelineData.local_regional_examples || [];
 
 // Select stories
-const threadStory = selectDailyThread(megaStories);
-const gapStory = selectDailyGap(megaStories, threadStory?.title || '');
+const threadStory = selectDailyThread(megaStories, whatConnects, topStories, editorial);
+const gapStory = selectDailyGap(megaStories, narrativeDivergence, topStories, editorial, threadStory?.title);
 const meanwhileStory = selectMeanwhile(
   megaStories,
+  cooperation,
   localRegionalSynthesis,
   localRegionalExamples,
+  editorial,
   threadStory?.title || '',
   gapStory?.title || ''
 );
