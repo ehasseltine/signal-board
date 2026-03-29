@@ -529,6 +529,28 @@
   .d3 { transition-delay: 0.3s; }
   .d4 { transition-delay: 0.4s; }
 
+  /* ================ SKIP NAV ================ */
+  .skip-nav {
+    position: absolute;
+    top: -100%;
+    left: 16px;
+    background: var(--ink);
+    color: var(--cream);
+    padding: 12px 24px;
+    border-radius: 0 0 8px 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    z-index: 200;
+    transition: top 0.2s ease;
+  }
+  .skip-nav:focus {
+    top: 0;
+    outline: 2px solid var(--red);
+    outline-offset: 2px;
+  }
+
   /* ================ RESPONSIVE ================ */
   @media (max-width: 600px) {
     .masthead-title { font-size: clamp(52px, 17vw, 90px); }

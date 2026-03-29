@@ -4,9 +4,12 @@ import '../styles/global.css';
 interface Props {
   title: string;
   description?: string;
+  dateStr?: string;
+  totalStories?: number;
+  sourcesReporting?: number;
 }
 
-const { title, description = 'Daily news analysis from 275 sources across the political spectrum, across borders, and across languages. See what no single outlet can show you.' } = Astro.props;
+const { title, description = 'Daily news analysis from 275 sources across the political spectrum, across borders, and across languages. See what no single outlet can show you.', dateStr, totalStories, sourcesReporting } = Astro.props;
 
 const siteUrl = 'https://www.elisehasseltine.com/signal-board';
 const ogImage = `${siteUrl}/og-image.png`;
@@ -39,17 +42,93 @@ const canonicalUrl = `${siteUrl}/${title === 'Today' ? 'today/' : title === 'Abo
   <meta property="og:url" content={canonicalUrl}>
   <meta property="og:site_name" content="Signal Board">
 
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content={pageTitle}>
+  <meta name="twitter:description" content={description}>
+  <meta name="twitter:image" content={ogImage}>
+
   <!-- Canonical -->
   <link rel="canonical" href={canonicalUrl}>
 
-  <!-- Fonts -->
+  <!-- JSON-LD Structured Data -->
+  {title === 'Today' && dateStr && (
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "NewsArticle",
+      "headline": pageTitle,
+      "description": description,
+      "image": ogImage,
+      "datePublished": dateStr,
+      "dateModified": dateStr,
+      "author": {
+        "@type": "Person",
+        "name": "Elise Hasseltine",
+        "url": "https://www.elisehasseltine.com"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Signal Board",
+        "url": siteUrl,
+        "logo": {
+          "@type": "ImageObject",
+          "url": `${siteUrl}/favicon-192.png`
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": canonicalUrl
+      },
+      "isAccessibleForFree": true,
+      ...(totalStories ? { "about": `Analysis of ${totalStories} articles from ${sourcesReporting || 275} sources` } : {})
+    })} />
+  )}
+  {title === 'About' && (
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "name": "About Signal Board",
+      "description": description,
+      "url": canonicalUrl,
+      "mainEntity": {
+        "@type": "WebApplication",
+        "name": "Signal Board",
+        "applicationCategory": "News Analysis",
+        "operatingSystem": "Web",
+        "description": "Daily news analysis from 275 sources across the political spectrum, across borders, and across languages.",
+        "author": {
+          "@type": "Person",
+          "name": "Elise Hasseltine",
+          "url": "https://www.elisehasseltine.com"
+        }
+      }
+    })} />
+  )}
+  {title !== 'Today' && title !== 'About' && (
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Signal Board",
+      "url": siteUrl,
+      "description": description,
+      "author": {
+        "@type": "Person",
+        "name": "Elise Hasseltine",
+        "url": "https://www.elisehasseltine.com"
+      }
+    })} />
+  )}
+
+  <!-- Fonts with display=swap for performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Caveat:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<div id="progress"></div>
+<a href="#main-content" class="skip-nav">Skip to content</a>
+
+<div id="progress" role="presentation"></div>
 
 <slot />
 

@@ -2,8 +2,9 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="About">
+<BaseLayout title="About" description="Signal Board reads 275 news sources every day and shows you the patterns, connections, and power structures that no single outlet can reveal.">
 
+<main id="main-content">
 <div class="wrap">
   <div style="padding: clamp(48px, 8vw, 80px) 0 clamp(72px, 10vw, 120px);">
 
@@ -54,10 +55,19 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
       <p style="margin-bottom: 32px;">The idea behind Signal Board came from watching the news landscape break. Not because outlets got worse at journalism. But because the structural forces moved faster than the outlets could name or change. This tool exists to make those forces visible.</p>
 
-      <p>Read more at <a href="https://substack.com/@elisehasseltine" target="_blank" style="color: var(--red); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1.5px; font-weight: 600;">Signal Board on Substack</a>.</p>
+      <p>Read more at <a href="https://substack.com/@elisehasseltine" target="_blank" rel="noopener" style="color: var(--red); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1.5px; font-weight: 600;">Signal Board on Substack</a>.</p>
     </div>
 
   </div>
 </div>
+</main>
+
+<footer role="contentinfo">
+<div class="wrap">
+  <nav aria-label="Footer navigation" style="padding: 40px 0; font-family: 'Inter', sans-serif; font-size: 13px; color: var(--ink-light); border-top: 1px solid var(--ink-faint);">
+    <a href="/signal-board/today/" style="color: var(--ink-light);">Today's Analysis</a>&ensp;·&ensp;<a href="/signal-board/archive/" style="color: var(--ink-light);">Archive</a>&ensp;·&ensp;<a href="https://substack.com/@elisehasseltine" target="_blank" rel="noopener" style="color: var(--ink-light);">Subscribe</a>
+  </nav>
+</div>
+</footer>
 
 </BaseLayout>
