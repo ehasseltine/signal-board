@@ -28,7 +28,7 @@ import urllib.request
 import socket
 import feedparser
 
-from domains import tag_article, get_domain_labels
+from domains import tag_article, get_domain_labels, normalize_tier, TIERS
 
 # Set a global socket timeout so no single feed can hang the pipeline
 socket.setdefaulttimeout(30)
@@ -193,7 +193,7 @@ def fetch_feed(feed: dict) -> list[dict]:
                 "summary": summary,
                 "text": full_text,
                 "source": feed["name"],
-                "tier": feed["tier"],
+                "tier": normalize_tier(feed["tier"]),
                 "region": feed["region"],
                 "media_type": feed["media_type"],
                 "domains": domains,
@@ -216,20 +216,17 @@ def compute_stats(articles: list[dict]) -> dict:
     domain_labels = get_domain_labels()
     today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
 
+    # Count articles by canonical tier name
+    from collections import Counter
+    tier_counts = Counter(normalize_tier(a.get("tier", "")) for a in articles)
+
     stats = {
         "total_articles": len(articles),
         "total_sources": len(set(a["source"] for a in articles)),
         "cross_domain_count": sum(1 for a in articles if a.get("cross_domain")),
         "today_count": sum(1 for a in articles if a["date"] == today),
         "domains": {},
-        "by_tier": {
-            "national": sum(1 for a in articles if a["tier"] == "national"),
-            "international": sum(1 for a in articles if a["tier"] == "international"),
-            "domain": sum(1 for a in articles if a["tier"] == "domain"),
-            "explainer": sum(1 for a in articles if a["tier"] == "explainer"),
-            "lived": sum(1 for a in articles if a["tier"] == "lived"),
-            "analysis": sum(1 for a in articles if a["tier"] == "analysis"),
-        },
+        "by_tier": {k: tier_counts.get(k, 0) for k in TIERS},
     }
 
     for domain_key, label in domain_labels.items():
@@ -254,12 +251,10 @@ def print_stats(articles: list[dict]):
     print(f"Cross-domain:      {stats['cross_domain_count']}")
     print(f"Added today:       {stats['today_count']}")
     print(f"\nBy tier:")
-    print(f"  National (US):   {stats['by_tier']['national']}")
-    print(f"  International:   {stats['by_tier']['international']}")
-    print(f"  Domain-specific: {stats['by_tier']['domain']}")
-    print(f"  Explainer:       {stats['by_tier']['explainer']}")
-    print(f"  Lived experience:{stats['by_tier']['lived']}")
-    print(f"  Analysis:        {stats['by_tier']['analysis']}")
+    for tier_key, tier_info in TIERS.items():
+        count = stats['by_tier'].get(tier_key, 0)
+        if count > 0:
+            print(f"  {tier_info['label']:20s} {count}")
     print(f"\nBy domain:")
     for key in sorted(stats["domains"], key=lambda k: stats["domains"][k]["count"], reverse=True):
         d = stats["domains"][key]

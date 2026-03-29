@@ -530,6 +530,135 @@ def analyze_structural_forces_map(articles):
     return families[:25]
 
 
+def analyze_cooperation_stories(articles):
+    """
+    The Seventh Question: Where are people being decent, and why is that
+    not the headline?
+
+    This surfaces articles where the AI classification detected cooperation,
+    mutual aid, community response, institutional integrity, or cross-group
+    solidarity. These are the stories the current information architecture
+    is structurally incapable of conveying.
+
+    Groups cooperation stories by type and connects them to the structural
+    forces they exist within, because cooperation doesn't happen in a vacuum.
+    It happens in response to pressure, inside crisis, alongside conflict.
+    The darkness is real and the goodness is real and Signal Board shows both.
+    """
+    domain_labels = get_domain_labels()
+
+    # Filter to articles with cooperation signals
+    coop_articles = [a for a in articles if a.get("cooperation")]
+
+    if not coop_articles:
+        return {
+            "total_cooperation_stories": 0,
+            "cooperation_rate": 0,
+            "by_type": [],
+            "by_force": [],
+            "highlights": [],
+            "coverage_gap": [],
+        }
+
+    total = len(articles)
+    coop_count = len(coop_articles)
+    coop_rate = round(coop_count / max(total, 1) * 100)
+
+    # Group by cooperation type
+    type_groups = defaultdict(list)
+    for a in coop_articles:
+        ctype = a.get("cooperation_type", "unspecified").strip().lower()
+        if ctype:
+            type_groups[ctype].append(a)
+
+    by_type = []
+    for ctype, arts in sorted(type_groups.items(), key=lambda x: len(x[1]), reverse=True):
+        sources = list(set(a["source"] for a in arts))
+        domains = Counter()
+        for a in arts:
+            for d in a.get("domains", []):
+                domains[d] += 1
+
+        by_type.append({
+            "type": ctype,
+            "count": len(arts),
+            "sources": sources[:5],
+            "domains": [domain_labels.get(d, d) for d, _ in domains.most_common(3)],
+            "sample": {
+                "title": arts[0]["title"][:120],
+                "source": arts[0]["source"],
+                "url": arts[0].get("url", ""),
+                "connection": arts[0].get("connection", ""),
+            },
+        })
+
+    # Group by structural force (cooperation within crisis)
+    force_coop = defaultdict(list)
+    for a in coop_articles:
+        tag = a.get("force_tag", "")
+        if tag:
+            force_coop[normalize_force_tag(tag)].append(a)
+
+    by_force = []
+    for force, arts in sorted(force_coop.items(), key=lambda x: len(x[1]), reverse=True)[:8]:
+        coop_types = list(set(a.get("cooperation_type", "") for a in arts if a.get("cooperation_type")))
+        by_force.append({
+            "force": force,
+            "cooperation_count": len(arts),
+            "cooperation_types": coop_types[:3],
+            "sample_title": arts[0]["title"][:120],
+            "sample_source": arts[0]["source"],
+        })
+
+    # Highlight stories: cooperation stories from tiers that typically
+    # get less attention (local-regional, specialist, solutions)
+    highlights = []
+    highlight_tiers = {"local-regional", "specialist", "solutions"}
+    for a in coop_articles:
+        tier = a.get("tier", "")
+        if tier in highlight_tiers or any(alias == tier for alias in ["lived", "domain"]):
+            highlights.append({
+                "title": a["title"][:120],
+                "source": a["source"],
+                "url": a.get("url", ""),
+                "tier": tier,
+                "cooperation_type": a.get("cooperation_type", ""),
+                "force_tag": a.get("force_tag", ""),
+                "connection": a.get("connection", ""),
+                "context": SOURCE_CONTEXT.get(a["source"], ""),
+            })
+
+    # Coverage gap: forces with MANY articles but ZERO cooperation signals
+    # These are the places where the architecture might be hiding goodness
+    force_total = defaultdict(int)
+    force_coop_count = defaultdict(int)
+    for a in articles:
+        tag = a.get("force_tag", "")
+        if tag:
+            nt = normalize_force_tag(tag)
+            force_total[nt] += 1
+            if a.get("cooperation"):
+                force_coop_count[nt] += 1
+
+    coverage_gap = []
+    for force, total_count in sorted(force_total.items(), key=lambda x: x[1], reverse=True):
+        if total_count >= 5 and force_coop_count.get(force, 0) == 0:
+            coverage_gap.append({
+                "force": force,
+                "article_count": total_count,
+                "note": "No cooperation signals detected. Is goodness happening here that the coverage isn't showing?",
+            })
+
+    return {
+        "total_cooperation_stories": coop_count,
+        "cooperation_rate": coop_rate,
+        "by_type": by_type[:10],
+        "by_force": by_force,
+        "highlights": highlights[:8],
+        "coverage_gap": coverage_gap[:5],
+    }
+
+
 def analyze_local_regional_exclusive(articles):
     """
     Find stories that local-regional/specialist sources cover but national
@@ -948,6 +1077,7 @@ def generate_daily_analysis(articles, analysis_date, history):
     top_stories = analyze_top_stories(articles)
     structural_forces = analyze_structural_forces_map(articles)
     what_connects = analyze_what_connects(articles)
+    cooperation = analyze_cooperation_stories(articles)
     local_regional_exclusive = analyze_local_regional_exclusive(articles)
     active_threads = analyze_domain_collisions(articles, history)
     source_spectrum = analyze_source_spectrum(articles)
@@ -977,6 +1107,7 @@ def generate_daily_analysis(articles, analysis_date, history):
         "top_stories": top_stories,
         "structural_forces": structural_forces,
         "what_connects": what_connects,
+        "cooperation": cooperation,
         "local_regional_exclusive": local_regional_exclusive,
         "active_threads": active_threads,
         "source_spectrum": source_spectrum,
@@ -1029,6 +1160,17 @@ def print_summary(analysis):
         for i, b in enumerate(analysis["what_connects"][:3], 1):
             print(f"  {i}. {b['headline'][:60]}")
             print(f"     Force: {b.get('structural_force', 'n/a')} | {b['spectrum_segments']}/4 segments | {b['total_sources']} sources")
+
+    if analysis.get("cooperation"):
+        coop = analysis["cooperation"]
+        print(f"\n--- WHERE PEOPLE ARE BEING DECENT ({coop['total_cooperation_stories']} stories, {coop['cooperation_rate']}% of coverage) ---")
+        for ct in coop.get("by_type", [])[:5]:
+            print(f"  • {ct['type']:30s}  {ct['count']:3d} articles  [{', '.join(ct['domains'][:2])}]")
+            print(f"    Example: {ct['sample']['title'][:70]}")
+        if coop.get("coverage_gap"):
+            print(f"\n  Coverage gaps (forces with no cooperation signals):")
+            for gap in coop["coverage_gap"][:3]:
+                print(f"    ? {gap['force']} ({gap['article_count']} articles)")
 
     if analysis.get("questions"):
         print(f"\n--- QUESTIONS PEOPLE ARE ASKING ---")

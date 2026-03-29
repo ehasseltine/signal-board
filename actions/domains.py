@@ -285,6 +285,42 @@ def tag_article(title: str, summary: str, full_text: str = "") -> list[str]:
     return matches
 
 
+# ---------------------------------------------------------------------------
+# TIER DEFINITIONS — canonical names, labels, and legacy aliases
+# ---------------------------------------------------------------------------
+
+TIERS = {
+    "national": {"label": "National", "color": "#6652FF"},
+    "international": {"label": "International", "color": "#1976D2"},
+    "specialist": {"label": "Specialist", "color": "#00C2A8", "aliases": ["domain"]},
+    "local-regional": {"label": "Local & Regional", "color": "#FF5400", "aliases": ["lived", "community"]},
+    "analysis": {"label": "Analysis & Think Tank", "color": "#9E0059"},
+    "podcast": {"label": "Podcast", "color": "#7B1FA2"},
+    "explainer": {"label": "Explainer", "color": "#FF9800"},
+    "newsletter": {"label": "Newsletter", "color": "#4CAF50"},
+    "government": {"label": "Government", "color": "#D32F2F"},
+    "research": {"label": "Research", "color": "#795548"},
+    "solutions": {"label": "Solutions Journalism", "color": "#00BCD4"},
+}
+
+# Map any legacy tier name to the canonical key
+TIER_ALIAS_MAP = {}
+for _key, _info in TIERS.items():
+    TIER_ALIAS_MAP[_key] = _key
+    for _alias in _info.get("aliases", []):
+        TIER_ALIAS_MAP[_alias] = _key
+
+
+def normalize_tier(tier: str) -> str:
+    """Convert any tier name (including legacy aliases) to canonical form."""
+    return TIER_ALIAS_MAP.get(tier.strip().lower(), tier.strip().lower())
+
+
+def get_tier_labels() -> dict:
+    """Return tier key -> display label mapping."""
+    return {k: v["label"] for k, v in TIERS.items()}
+
+
 def get_domain_colors() -> dict:
     """Return domain key -> color mapping for the frontend."""
     return {k: v["color"] for k, v in DOMAINS.items()}

@@ -33,7 +33,10 @@ The seventh question is what makes Signal Board different from everything else. 
 - **Bias data:** AllSides (CC BY-NC 4.0), 215/275 sources matched
 
 ### Known architectural debt
-The static HTML + JSON-in-git approach was right for getting live fast. It is now the primary bottleneck. Every new feature requires editing raw HTML across 11 files. There is no component reuse, no templating, no real data layer. This should migrate to Astro (content-first, ships minimal JS, great for SEO) with a proper data layer (SQLite or Turso for the article corpus, JSON API for the frontend).
+The static HTML + JSON-in-git approach was right for getting live fast. It is now the primary bottleneck. Every new feature requires editing raw HTML across 11 files. There is no component reuse, no templating, no real data layer. Migration plan:
+- **Next:** Astro (content-first, ships minimal JS, great for SEO), 4 pages: Today, Constellation, Sources, About
+- **After:** SQLite/Turso for the article corpus (data compounding, historical queries, temporal intelligence)
+- **Goal:** Data that builds on itself, learns from itself, gets more valuable every day it runs
 
 ## Source base
 
@@ -64,14 +67,24 @@ Tier colors: national=#6652FF, international=#1976D2, specialist=#00C2A8, local-
 - Batches 10-15 articles per API call
 - 4 concurrent threads via ThreadPoolExecutor
 - Classifies by structural force, not keyword overlap
-- Returns: domains (multi-select from 10), connection sentence, force_tag
+- Returns: domains (multi-select from 10), connection sentence, force_tag, cooperation (bool), cooperation_type
+- The seventh question is embedded in the prompt: "Where in this story are people being decent?"
 - Cost: ~$0.50/day for ~1,000 articles
 
 ### analyze.py
 - Filters to today's articles
 - Clusters by force_tag (Jaccard similarity merging)
 - Generates mega-story synthesis with source perspective breakdown
+- NEW: `analyze_cooperation_stories()` surfaces where people are being decent, grouped by cooperation type and structural force, with coverage gap detection
 - Outputs `data/daily/{date}.json` and `data/daily/latest.json`
+
+### synthesize.py
+- Stage 3 of the pipeline (runs after analyze.py)
+- Single Claude Sonnet call that reads the full day's analysis
+- Writes editorial narrative asking all seven questions in Elise's voice
+- Returns: headline, subheadline, synthesis (4-6 paragraphs), cooperation_highlight, coverage_gap_note, thread_to_watch
+- Merges output into `data/daily/{date}.json` under the `editorial` key
+- Cost: ~$0.20-0.50/day
 
 ## Domains
 
@@ -103,9 +116,10 @@ All prose on the site follows Elise's writing style. The key rules:
 - `data/articles.json` — full article corpus
 - `data/daily/latest.json` — today's analysis
 - `actions/ingest.py` — RSS fetcher + AI classification orchestrator
-- `actions/ai_classify.py` — Claude Haiku batched classifier
-- `actions/analyze.py` — daily synthesis generator
-- `actions/domains.py` — keyword fallback classification
+- `actions/ai_classify.py` — Claude Haiku batched classifier (with cooperation dimension)
+- `actions/analyze.py` — daily structural analysis + cooperation analysis
+- `actions/synthesize.py` — Claude Sonnet editorial narrative synthesis
+- `actions/domains.py` — keyword fallback classification + tier definitions
 - `docs/today/index.html` — main daily analysis page
 - `docs/sources/index.html` — source directory
 - `docs/about/index.html` — philosophy and methodology

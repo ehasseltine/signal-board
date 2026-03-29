@@ -42,12 +42,14 @@ DOMAIN_DESCRIPTIONS = {
 }
 
 # System prompt for batched classification
-BATCH_SYSTEM_PROMPT = """You classify news articles for Signal Board, a tool that helps people see how today's biggest stories connect across domains that are usually treated as separate.
+BATCH_SYSTEM_PROMPT = """You classify news articles for Signal Board, a daily practice of reading the world through the conviction that people are inherently good and that the information architecture is failing them.
 
 You will receive a numbered list of articles (title + summary). For EACH article, you must:
+
 1. Assign one or more domain tags from the list below
 2. If the article touches 2+ domains, write ONE sentence (max 20 words) explaining the STRUCTURAL connection — not just naming the topics, but WHY they intersect in this story
 3. Assign a "force_tag" — a 2-5 word label for the underlying structural force at work (e.g., "automation displacing workers", "trade weaponization", "democratic erosion", "information asymmetry", "regulatory capture"). This is the deeper pattern, not the headline topic.
+4. Answer the SEVENTH QUESTION: "Where in this story are people being decent, and why is that not the headline?" Look for evidence of cooperation, mutual aid, community response, institutional integrity, people inside systems trying to fix them, cross-group solidarity, or ordinary decency. Set "cooperation" to true if ANY of these are present, even subtly. Set "cooperation_type" to a brief label (e.g., "mutual aid", "community organizing", "institutional reform", "cross-party collaboration", "volunteer response", "whistleblowing", "civic participation"). If no cooperation is visible, set both to false/"".
 
 Domains:
 {domains}
@@ -57,21 +59,23 @@ Rules:
 - Consumer product reviews, lifestyle content, recipes, celebrity gossip, entertainment, and sports should get NO domains — return empty domains list
 - The connection sentence should explain WHY these topics overlap, not just name them
 - The force_tag should name the structural force or pattern at work — think like a systems analyst, not a headline writer
+- For the cooperation question: look beneath the headline. A protest IS civic participation. A whistleblower IS institutional integrity. Workers organizing IS cooperation. Do not require the article to be "positive" — cooperation often happens inside crisis. But do not stretch: a politician giving a speech is not cooperation unless the speech describes actual cooperative action.
 - Be specific to each article, not generic
 
 Respond ONLY with a valid JSON array, one object per article in order:
 [
-  {{"id": 1, "domains": ["domain_key", ...], "connection": "sentence or empty string", "force_tag": "structural force label"}},
+  {{"id": 1, "domains": ["domain_key", ...], "connection": "sentence or empty string", "force_tag": "structural force label", "cooperation": true/false, "cooperation_type": "label or empty string"}},
   ...
 ]"""
 
 # Single-article fallback prompt (for stragglers)
-SINGLE_SYSTEM_PROMPT = """You classify news articles for Signal Board, a tool that helps people see how today's biggest stories connect across topics.
+SINGLE_SYSTEM_PROMPT = """You classify news articles for Signal Board, a daily practice of reading the world through the conviction that people are inherently good and that the information architecture is failing them.
 
 Given an article's title and summary, you must:
 1. Assign one or more domain tags from the list below
 2. If the article touches 2+ domains, write ONE sentence (max 20 words) explaining the structural connection
 3. Assign a "force_tag" — a 2-5 word label for the underlying structural force at work
+4. Answer the seventh question: "Where are people being decent?" Set "cooperation" to true if there is evidence of cooperation, mutual aid, community response, or institutional integrity. Set "cooperation_type" to a brief label.
 
 Domains:
 {domains}
@@ -81,9 +85,10 @@ Rules:
 - Consumer product reviews, lifestyle, recipes, celebrity gossip, entertainment, sports: NO domains (empty list)
 - Connection sentence: explain WHY these topics overlap, not just name them
 - force_tag: the deeper structural pattern (e.g., "regulatory capture", "automation displacing workers")
+- cooperation: look beneath the headline for evidence of people being decent, even inside crisis
 
 Respond ONLY with valid JSON:
-{{"domains": ["domain_key", ...], "connection": "sentence or empty string", "force_tag": "structural force label"}}"""
+{{"domains": ["domain_key", ...], "connection": "sentence or empty string", "force_tag": "structural force label", "cooperation": true/false, "cooperation_type": "label or empty string"}}"""
 
 
 def get_client():
@@ -146,7 +151,7 @@ def classify_batch_chunk(articles_chunk: list[dict], chunk_index: int, client) -
     try:
         response = client.messages.create(
             model="claude-haiku-4-5-20251001",
-            max_tokens=2000,
+            max_tokens=3000,
             system=system,
             messages=[{"role": "user", "content": user_msg}],
         )
@@ -170,10 +175,14 @@ def classify_batch_chunk(articles_chunk: list[dict], chunk_index: int, client) -
                 domains = validate_domains(r.get("domains", []))
                 connection = r.get("connection", "")
                 force_tag = r.get("force_tag", "")
+                cooperation = bool(r.get("cooperation", False))
+                cooperation_type = r.get("cooperation_type", "") if cooperation else ""
                 output.append({
                     "domains": domains,
                     "connection": connection if len(domains) > 1 else "",
                     "force_tag": force_tag,
+                    "cooperation": cooperation,
+                    "cooperation_type": cooperation_type,
                 })
             else:
                 output.append(None)
@@ -192,7 +201,7 @@ def classify_batch_chunk(articles_chunk: list[dict], chunk_index: int, client) -
             try:
                 response = client.messages.create(
                     model="claude-haiku-4-5-20251001",
-                    max_tokens=2000,
+                    max_tokens=3000,
                     system=system,
                     messages=[{"role": "user", "content": user_msg}],
                 )
@@ -210,10 +219,14 @@ def classify_batch_chunk(articles_chunk: list[dict], chunk_index: int, client) -
                             domains = validate_domains(r.get("domains", []))
                             connection = r.get("connection", "")
                             force_tag = r.get("force_tag", "")
+                            cooperation = bool(r.get("cooperation", False))
+                            cooperation_type = r.get("cooperation_type", "") if cooperation else ""
                             output.append({
                                 "domains": domains,
                                 "connection": connection if len(domains) > 1 else "",
                                 "force_tag": force_tag,
+                                "cooperation": cooperation,
+                                "cooperation_type": cooperation_type,
                             })
                         else:
                             output.append(None)
@@ -247,6 +260,8 @@ def classify_batch(articles: list[dict], batch_size: int = 12) -> list[dict]:
             a["cross_domain"] = len(a["domains"]) > 1
             a["connection"] = ""
             a["force_tag"] = ""
+            a["cooperation"] = False
+            a["cooperation_type"] = ""
         return articles
 
     # Split into chunks
@@ -296,6 +311,8 @@ def classify_batch(articles: list[dict], batch_size: int = 12) -> list[dict]:
                 a["cross_domain"] = len(result["domains"]) > 1
                 a["connection"] = result.get("connection", "")
                 a["force_tag"] = result.get("force_tag", "")
+                a["cooperation"] = result.get("cooperation", False)
+                a["cooperation_type"] = result.get("cooperation_type", "")
                 ai_count += 1
             else:
                 # Fallback to keywords
@@ -303,6 +320,8 @@ def classify_batch(articles: list[dict], batch_size: int = 12) -> list[dict]:
                 a["cross_domain"] = len(a["domains"]) > 1
                 a["connection"] = ""
                 a["force_tag"] = ""
+                a["cooperation"] = False
+                a["cooperation_type"] = ""
                 fallback_count += 1
             article_idx += 1
 
@@ -330,10 +349,14 @@ def classify_article(title: str, summary: str, client=None) -> dict:
         domains = validate_domains(result.get("domains", []))
         connection = result.get("connection", "")
         force_tag = result.get("force_tag", "")
+        cooperation = bool(result.get("cooperation", False))
+        cooperation_type = result.get("cooperation_type", "") if cooperation else ""
         return {
             "domains": domains,
             "connection": connection if len(domains) > 1 else "",
             "force_tag": force_tag,
+            "cooperation": cooperation,
+            "cooperation_type": cooperation_type,
         }
     except Exception:
         return None
