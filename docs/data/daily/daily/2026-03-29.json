@@ -1,131 +1,211 @@
 {
   "date": "2026-03-29",
-  "generated": "2026-03-29T00:27:20Z",
+  "generated": "2026-03-29T07:54:14Z",
   "summary": {
-    "total_stories": 39,
-    "sources_reporting": 9,
-    "cross_domain": 22,
-    "cross_domain_pct": 56,
-    "ai_classified": 24,
-    "ai_classified_pct": 62,
-    "connection_insights": 18,
+    "total_stories": 313,
+    "sources_reporting": 59,
+    "cross_domain": 182,
+    "cross_domain_pct": 58,
+    "ai_classified": 203,
+    "ai_classified_pct": 65,
+    "connection_insights": 153,
     "top_domain": "Security",
     "domain_distribution": {
-      "Security": 16,
-      "Geopolitics": 12,
-      "Legal": 6,
-      "Information": 6,
-      "Governance": 5,
-      "Economics": 4,
-      "Politics": 3,
-      "Climate": 2,
-      "AI": 1
+      "Security": 103,
+      "Geopolitics": 95,
+      "Governance": 61,
+      "Politics": 60,
+      "Legal": 47,
+      "Economics": 44,
+      "Climate": 32,
+      "Information": 26,
+      "Labor": 17,
+      "AI": 6
     }
   },
   "temporal_context": {
     "has_yesterday": true,
     "yesterday_date": "2026-03-28",
-    "yesterday_total": 2071,
-    "today_total": 39,
-    "volume_change_pct": -98,
+    "yesterday_total": 2130,
+    "today_total": 313,
+    "volume_change_pct": -85,
     "domain_shifts": [
-      {
-        "domain": "labor",
-        "label": "Labor",
-        "yesterday": 95,
-        "today": 0,
-        "change_pct": -100
-      },
       {
         "domain": "climate",
         "label": "Climate",
-        "yesterday": 254,
-        "today": 2,
-        "change_pct": -99
-      },
-      {
-        "domain": "governance",
-        "label": "Governance",
-        "yesterday": 434,
-        "today": 5,
-        "change_pct": -99
-      },
-      {
-        "domain": "economics",
-        "label": "Economics",
-        "yesterday": 332,
-        "today": 4,
-        "change_pct": -99
+        "yesterday": 256,
+        "today": 32,
+        "change_pct": -88
       },
       {
         "domain": "domestic_politics",
         "label": "Politics",
-        "yesterday": 492,
-        "today": 3,
-        "change_pct": -99
+        "yesterday": 500,
+        "today": 60,
+        "change_pct": -88
+      },
+      {
+        "domain": "economics",
+        "label": "Economics",
+        "yesterday": 338,
+        "today": 44,
+        "change_pct": -87
+      },
+      {
+        "domain": "information",
+        "label": "Information",
+        "yesterday": 207,
+        "today": 26,
+        "change_pct": -87
+      },
+      {
+        "domain": "governance",
+        "label": "Governance",
+        "yesterday": 443,
+        "today": 61,
+        "change_pct": -86
       },
       {
         "domain": "legal",
         "label": "Legal",
-        "yesterday": 316,
-        "today": 6,
-        "change_pct": -98
-      },
-      {
-        "domain": "security",
-        "label": "Security",
-        "yesterday": 564,
-        "today": 16,
-        "change_pct": -97
+        "yesterday": 321,
+        "today": 47,
+        "change_pct": -85
       },
       {
         "domain": "ai",
         "label": "AI",
         "yesterday": 39,
-        "today": 1,
-        "change_pct": -97
+        "today": 6,
+        "change_pct": -85
       },
       {
-        "domain": "information",
-        "label": "Information",
-        "yesterday": 205,
-        "today": 6,
-        "change_pct": -97
+        "domain": "security",
+        "label": "Security",
+        "yesterday": 574,
+        "today": 103,
+        "change_pct": -82
+      },
+      {
+        "domain": "labor",
+        "label": "Labor",
+        "yesterday": 97,
+        "today": 17,
+        "change_pct": -82
       },
       {
         "domain": "geopolitics",
         "label": "Geopolitics",
-        "yesterday": 314,
-        "today": 12,
-        "change_pct": -96
+        "yesterday": 329,
+        "today": 95,
+        "change_pct": -71
       }
     ],
     "surges": [],
     "drops": [
       {
-        "domain": "labor",
-        "label": "Labor",
-        "yesterday": 95,
-        "today": 0,
-        "change_pct": -100
-      },
-      {
         "domain": "climate",
         "label": "Climate",
-        "yesterday": 254,
-        "today": 2,
-        "change_pct": -99
+        "yesterday": 256,
+        "today": 32,
+        "change_pct": -88
       },
       {
-        "domain": "governance",
-        "label": "Governance",
-        "yesterday": 434,
-        "today": 5,
-        "change_pct": -99
+        "domain": "domestic_politics",
+        "label": "Politics",
+        "yesterday": 500,
+        "today": 60,
+        "change_pct": -88
+      },
+      {
+        "domain": "economics",
+        "label": "Economics",
+        "yesterday": 338,
+        "today": 44,
+        "change_pct": -87
       }
     ],
-    "persisting_forces": [],
-    "new_forces": [],
+    "persisting_forces": [
+      {
+        "force": "arms race escalation",
+        "yesterday_count": 2,
+        "today_count": 8,
+        "domains": [
+          "security",
+          "geopolitics"
+        ],
+        "insight": "Nuclear-armed state accelerates weapons capability specifically designed to threaten US homeland."
+      },
+      {
+        "force": "military escalation",
+        "yesterday_count": 11,
+        "today_count": 6,
+        "domains": [
+          "security",
+          "geopolitics"
+        ],
+        "insight": "U.S. military escalation in Iran theater signals shift from deterrence to potential ground intervention."
+      },
+      {
+        "force": "electoral competition",
+        "yesterday_count": 2,
+        "today_count": 2,
+        "domains": [
+          "domestic_politics"
+        ],
+        "insight": ""
+      }
+    ],
+    "new_forces": [
+      {
+        "force": "civic participation",
+        "count": 10,
+        "domains": [
+          "domestic_politics",
+          "governance",
+          "legal"
+        ],
+        "insight": "Protesters use creative civic action to challenge state priorities, arguing World Cup spending displaces investment in basic urban needs."
+      },
+      {
+        "force": "regional proxy conflict",
+        "count": 6,
+        "domains": [
+          "geopolitics",
+          "security"
+        ],
+        "insight": "Air strikes on Iraqi militia forces reflect broader regional military operations and proxy conflicts."
+      },
+      {
+        "force": "supply chain weaponization",
+        "count": 4,
+        "domains": [
+          "geopolitics",
+          "economics",
+          "security"
+        ],
+        "insight": "Ukraine's drone strikes on Russian energy infrastructure weaponize supply chains, threatening global oil markets and forcing NATO allies to absorb economic shocks."
+      },
+      {
+        "force": "civic mobilization against enforcement",
+        "count": 3,
+        "domains": [
+          "domestic_politics",
+          "security"
+        ],
+        "insight": "Mass protest against immigration enforcement reflects political opposition to Trump's ICE policies and security apparatus priorities."
+      },
+      {
+        "force": "automation displacing workers",
+        "count": 3,
+        "domains": [
+          "labor",
+          "ai",
+          "security"
+        ],
+        "insight": "AI automation is replacing engineering work, forcing coders to manage rather than write code while maintaining employment."
+      }
+    ],
     "faded_forces": [
       {
         "force": "grassroots political mobilization",
@@ -137,11 +217,11 @@
       },
       {
         "force": "supply chain disruption",
-        "count": 13,
+        "count": 14,
         "domains": [
           "economics",
-          "security",
-          "geopolitics"
+          "geopolitics",
+          "security"
         ]
       },
       {
@@ -153,15 +233,6 @@
         ]
       },
       {
-        "force": "regulatory capture",
-        "count": 12,
-        "domains": [
-          "governance",
-          "legal",
-          "economics"
-        ]
-      },
-      {
         "force": "proxy conflict escalation",
         "count": 12,
         "domains": [
@@ -169,14 +240,2211 @@
           "security",
           "economics"
         ]
+      },
+      {
+        "force": "regulatory capture",
+        "count": 12,
+        "domains": [
+          "governance",
+          "legal",
+          "economics"
+        ]
       }
     ],
-    "yesterday_classified": 594,
-    "today_classified": 24
+    "yesterday_classified": 618,
+    "today_classified": 203
   },
-  "top_stories": [],
-  "structural_forces": [],
-  "what_connects": [],
+  "top_stories": [
+    {
+      "headline": "Protesters use creative civic action to challenge state priorities, arguing World Cup spending displaces investment in b",
+      "structural_force": "civic participation",
+      "all_forces": [
+        "civic participation",
+        "civic participation as justice-seeking"
+      ],
+      "source_count": 8,
+      "tier_count": 2,
+      "tiers": [
+        "local-regional",
+        "international"
+      ],
+      "domains": [
+        "Politics",
+        "Governance",
+        "Legal"
+      ],
+      "domain_keys": [
+        "domestic_politics",
+        "governance",
+        "legal"
+      ],
+      "article_count": 10,
+      "connections": [
+        {
+          "text": "Protesters use creative civic action to challenge state priorities, arguing World Cup spending displaces investment in basic urban needs.",
+          "source": "Straits Times",
+          "title": "Mexican protesters turn highway into football pitch to slam World Cup 'disposses",
+          "domains": [
+            "domestic_politics",
+            "governance"
+          ]
+        },
+        {
+          "text": "Widow running for office to seek justice for spouse's murder through electoral accountability mechanism.",
+          "source": "The Hindu",
+          "title": "Armstrong’s wife and AIADMK candidate A. Porkodi hopes to win Thiru.Vi.Ka. Nagar",
+          "domains": [
+            "domestic_politics",
+            "legal"
+          ]
+        }
+      ],
+      "tier_framing": {
+        "international": {
+          "count": 4,
+          "keywords": [
+            "kings",
+            "flagship",
+            "protest",
+            "brings",
+            "spotlight"
+          ],
+          "sample": {
+            "title": "‘No Kings’ flagship protest brings spotlight back to Minneapolis",
+            "source": "Straits Times",
+            "url": "https://www.straitstimes.com/world/united-states/no-kings-flagship-protest-brings-spotlight-back-to-minneapolis",
+            "context": ""
+          }
+        },
+        "local-regional": {
+          "count": 6,
+          "keywords": [
+            "kings",
+            "rallies",
+            "draw",
+            "thousands",
+            "across"
+          ],
+          "sample": {
+            "title": "No Kings rallies across Wisconsin draw thousands",
+            "source": "Wisconsin Examiner",
+            "url": "https://wisconsinexaminer.com/2026/03/28/no-kings-rallies-across-wisconsin-draw-thousands/",
+            "context": ""
+          }
+        }
+      },
+      "articles": [
+        {
+          "title": "Mexican protesters turn highway into football pitch to slam World Cup 'dispossession'",
+          "source": "Straits Times",
+          "url": "https://www.straitstimes.com/world/mexican-protesters-turn-highway-into-football-pitch-to-slam-world-cup-dispossession",
+          "tier": "international",
+          "paywall": false,
+          "context": "",
+          "connection": "Protesters use creative civic action to challenge state priorities, arguing World Cup spending displaces investment in basic urban needs.",
+          "force_tag": "civic participation"
+        },
+        {
+          "title": "Armstrong’s wife and AIADMK candidate A. Porkodi hopes to win Thiru.Vi.Ka. Nagar constituency",
+          "source": "The Hindu",
+          "url": "https://www.thehindu.com/elections/tamil-nadu-assembly/armstrongs-wife-and-aiadmk-candidate-a-porkodi-hopes-to-win-thiruvika-nagar-constituency/article70798786.ece",
+          "tier": "international",
+          "paywall": false,
+          "context": "",
+          "connection": "Widow running for office to seek justice for spouse's murder through electoral accountability mechanism.",
+          "force_tag": "civic participation as justice-seeking"
+        },
+        {
+          "title": "‘Put down the crown, clown’: Thousands rally against Trump in 'No Kings' protests",
+          "source": "Times of India",
+          "url": "https://timesofindia.indiatimes.com/world/us/put-down-the-crown-clown-no-kings-protests-see-thousands-across-us-rallying-against-trump/articleshow/129874606.cms",
+          "tier": "international",
+          "paywall": false,
+          "context": "",
+          "connection": "",
+          "force_tag": "civic participation"
+        },
+        {
+          "title": "No Kings rallies across Wisconsin draw thousands",
+          "source": "Wisconsin Examiner",
+          "url": "https://wisconsinexaminer.com/2026/03/28/no-kings-rallies-across-wisconsin-draw-thousands/",
+          "tier": "local-regional",
+          "paywall": false,
+          "context": "",
+          "connection": "",
+          "force_tag": "civic participation"
+        },
+        {
+          "title": "Thousands protest Trump agenda at “No Kings” rallies in Helena, Missoula and dozens of other locations in Montana",
+          "source": "Montana Free Press",
+          "url": "https://montanafreepress.org/2026/03/28/no-kings-protests-montana-helena-missoula/",
+          "tier": "local-regional",
+          "paywall": false,
+          "context": "",
+          "connection": "",
+          "force_tag": "civic participation"
+        },
+        {
+          "title": "‘Without those checks, he’s a king’: Thousands rally across Arizona against Trump for No Kings",
+          "source": "Arizona Mirror",
+          "url": "https://azmirror.com/2026/03/28/without-those-checks-hes-a-king-thousands-rally-across-arizona-against-trump-for-no-kings/",
+          "tier": "local-regional",
+          "paywall": false,
+          "context": "",
+          "connection": "",
+          "force_tag": "civic participation"
+        }
+      ]
+    },
+    {
+      "headline": "Iran's military capacity directly shapes regional escalation dynamics and U.S. deterrence calculations.",
+      "structural_force": "arms race escalation",
+      "all_forces": [
+        "arms race escalation",
+        "arms escalation spiral",
+        "arms race and deterrence escalation"
+      ],
+      "source_count": 8,
+      "tier_count": 2,
+      "tiers": [
+        "national",
+        "international"
+      ],
+      "domains": [
+        "Security",
+        "Geopolitics"
+      ],
+      "domain_keys": [
+        "security",
+        "geopolitics"
+      ],
+      "article_count": 8,
+      "connections": [
+        {
+          "text": "Nuclear-armed state accelerates weapons capability specifically designed to threaten US homeland.",
+          "source": "The Hindu",
+          "title": "North Korea conducts engine test for missile capable of targeting U.S. mainland",
+          "domains": [
+            "security",
+            "geopolitics"
+          ]
+        },
+        {
+          "text": "Military weapons development accelerates regional instability and nuclear proliferation risks.",
+          "source": "South China Morning Post",
+          "title": "North Korea tests powerful missile engine. Will an ICBM launch follow?",
+          "domains": [
+            "security",
+            "geopolitics"
+          ]
+        },
+        {
+          "text": "North Korea's missile development is a direct challenge to regional and global security architecture, escalating military brinkmanship.",
+          "source": "Times of India",
+          "title": "‘Targets around globe’: North Korea’s Kim Jong Un oversees high-thrust solid-fue",
+          "domains": [
+            "security",
+            "geopolitics"
+          ]
+        },
+        {
+          "text": "Nuclear-armed state advances ballistic missile capability, increasing regional security threat and strategic unpredictability.",
+          "source": "Dawn",
+          "title": "North Korea’s Kim Jong Un oversees test of high-thrust engine: state media",
+          "domains": [
+            "security",
+            "geopolitics"
+          ]
+        },
+        {
+          "text": "North Korea's weapons development advances within broader strategic competition and deterrence posture.",
+          "source": "Channel News Asia",
+          "title": "North Korea’s Kim oversees test of high-thrust engine: KCNA",
+          "domains": [
+            "security",
+            "geopolitics"
+          ]
+        }
+      ],
+      "tier_framing": {
+        "national": {
+          "count": 1,
+          "keywords": [
+            "toothless",
+            "iran",
+            "missile",
+            "drone",
+            "strikes"
+          ],
+          "sample": {
+            "title": "A Toothless Iran? Missile and Drone Strikes Show It Can Still Inflict Pain.",
+            "source": "New York Times",
+            "url": "https://www.nytimes.com/2026/03/29/world/middleeast/iran-missiles-war.html",
+            "context": "Publicly traded, headquartered in New York. Largest US newspaper by circulation. Generally regarded as center-left in editorial stance."
+          }
+        },
+        "international": {
+          "count": 7,
+          "keywords": [
+            "north",
+            "korea",
+            "engine",
+            "test",
+            "missile"
+          ],
+          "sample": {
+            "title": "North Korea conducts engine test for missile capable of targeting U.S. mainland",
+            "source": "The Hindu",
+            "url": "https://www.thehindu.com/news/international/north-korea-conducts-engine-test-for-missile-capable-of-targeting-us-mainland/article70798788.ece",
+            "context": ""
+          }
+        }
+      },
+      "articles": [
+        {
+          "title": "A Toothless Iran? Missile and Drone Strikes Show It Can Still Inflict Pain.",
+          "source": "New York Times",
+          "url": "https://www.nytimes.com/2026/03/29/world/middleeast/iran-missiles-war.html",
+          "tier": "national",
+          "paywall": true,
+          "context": "Publicly traded, headquartered in New York. Largest US newspaper by circulation. Generally regarded as center-left in editorial stance.",
+          "connection": "Iran's military capacity directly shapes regional escalation dynamics and U.S. deterrence calculations.",
+          "force_tag": "arms escalation spiral"
+        },
+        {
+          "title": "North Korea conducts engine test for missile capable of targeting U.S. mainland",
+          "source": "The Hindu",
+          "url": "https://www.thehindu.com/news/international/north-korea-conducts-engine-test-for-missile-capable-of-targeting-us-mainland/article70798788.ece",
+          "tier": "international",
+          "paywall": false,
+          "context": "",
+          "connection": "Nuclear-armed state accelerates weapons capability specifically designed to threaten US homeland.",
+          "force_tag": "arms race escalation"
+        },
+        {
+          "title": "North Korea tests powerful missile engine. Will an ICBM launch follow?",
+          "source": "South China Morning Post",
+          "url": "https://www.scmp.com/week-asia/politics/article/3348280/north-tests-powerful-missile-engine-will-icbm-launch-follow?utm_source=rss_feed",
+          "tier": "international",
+          "paywall": true,
+          "context": "",
+          "connection": "Military weapons development accelerates regional instability and nuclear proliferation risks.",
+          "force_tag": "arms race escalation"
+        },
+        {
+          "title": "‘Targets around globe’: North Korea’s Kim Jong Un oversees high-thrust solid-fuel rocket engine test",
+          "source": "Times of India",
+          "url": "https://timesofindia.indiatimes.com/defence/international/targets-around-globe-north-koreas-kim-jong-un-oversees-high-thrust-solid-fuel-rocket-engine-test/articleshow/129875131.cms",
+          "tier": "international",
+          "paywall": false,
+          "context": "",
+          "connection": "North Korea's missile development is a direct challenge to regional and global security architecture, escalating military brinkmanship.",
+          "force_tag": "arms race escalation"
+        },
+        {
+          "title": "North Korea’s Kim Jong Un oversees test of high-thrust engine: state media",
+          "source": "Dawn",
+          "url": "https://www.dawn.com/news/1986533/north-koreas-kim-jong-un-oversees-test-of-high-thrust-engine-state-media",
+          "tier": "international",
+          "paywall": false,
+          "context": "",
+          "connection": "Nuclear-armed state advances ballistic missile capability, increasing regional security threat and strategic unpredictability.",
+          "force_tag": "arms race escalation"
+        },
+        {
+          "title": "North Korea’s Kim oversees test of high-thrust engine: KCNA",
+          "source": "Channel News Asia",
+          "url": "https://www.channelnewsasia.com/east-asia/north-korea-kim-ground-test-solid-fuel-rocket-engine-kcna-6023886",
+          "tier": "international",
+          "paywall": false,
+          "context": "",
+          "connection": "North Korea's weapons development advances within broader strategic competition and deterrence posture.",
+          "force_tag": "arms race escalation"
+        }
+      ]
+    },
+    {
+      "headline": "Ukraine's drone strikes on Russian energy infrastructure weaponize supply chains, threatening global oil markets and for",
+      "structural_force": "supply chain weaponization",
+      "all_forces": [
+        "supply chain weaponization",
+        "supply chain vulnerability"
+      ],
+      "source_count": 3,
+      "tier_count": 1,
+      "tiers": [
+        "international"
+      ],
+      "domains": [
+        "Geopolitics",
+        "Economics",
+        "Security",
+        "Governance"
+      ],
+      "domain_keys": [
+        "geopolitics",
+        "economics",
+        "security",
+        "governance"
+      ],
+      "article_count": 4,
+      "connections": [
+        {
+          "text": "Ukraine's drone strikes on Russian energy infrastructure weaponize supply chains, threatening global oil markets and forcing NATO allies to absorb economic shocks.",
+          "source": "Straits Times",
+          "title": "Russia's Ust-Luga port damaged by Ukrainian drones, fire breaks out",
+          "domains": [
+            "security",
+            "geopolitics",
+            "economics"
+          ]
+        },
+        {
+          "text": "Saudi Arabia's pipeline circumvents geopolitical chokepoint vulnerability, using infrastructure as strategic hedge against regional military disruption.",
+          "source": "Times of India",
+          "title": "Saudi Arabia pumps 7 million bpd via east-west pipeline amid Hormuz disruption",
+          "domains": [
+            "economics",
+            "geopolitics",
+            "security"
+          ]
+        },
+        {
+          "text": "Modi frames global energy crisis as geopolitical consequence, signaling India's vulnerability to regional conflicts beyond its control.",
+          "source": "Times of India",
+          "title": "'Petrol, diesel crisis developing worldwide': PM Modi cautions during Mann ki Ba",
+          "domains": [
+            "economics",
+            "geopolitics",
+            "governance"
+          ]
+        },
+        {
+          "text": "Regional military conflict directly transmits price shocks through global supply chains to household utility costs and farm operations.",
+          "source": "The Japan Times",
+          "title": "One month on, Iran conflict fuels worries for Japanese firms and households",
+          "domains": [
+            "geopolitics",
+            "economics"
+          ]
+        }
+      ],
+      "tier_framing": {
+        "international": {
+          "count": 4,
+          "keywords": [
+            "russia",
+            "luga",
+            "port",
+            "damaged",
+            "ukrainian"
+          ],
+          "sample": {
+            "title": "Russia's Ust-Luga port damaged by Ukrainian drones, fire breaks out",
+            "source": "Straits Times",
+            "url": "https://www.straitstimes.com/world/europe/russias-ust-luga-port-damaged-by-ukrainian-drones-fire-breaks-out",
+            "context": ""
+          }
+        }
+      },
+      "articles": [
+        {
+          "title": "Russia's Ust-Luga port damaged by Ukrainian drones, fire breaks out",
+          "source": "Straits Times",
+          "url": "https://www.straitstimes.com/world/europe/russias-ust-luga-port-damaged-by-ukrainian-drones-fire-breaks-out",
+          "tier": "international",
+          "paywall": false,
+          "context": "",
+          "connection": "Ukraine's drone strikes on Russian energy infrastructure weaponize supply chains, threatening global oil markets and forcing NATO allies to absorb economic shocks.",
+          "force_tag": "supply chain weaponization"
+        },
+        {
+          "title": "Saudi Arabia pumps 7 million bpd via east-west pipeline amid Hormuz disruption",
+          "source": "Times of India",
+          "url": "https://timesofindia.indiatimes.com/business/international-business/saudi-arabia-pumps-7-million-bpd-via-east-west-pipeline-amid-hormuz-disruption/articleshow/129875927.cms",
+          "tier": "international",
+          "paywall": false,
+          "context": "",
+          "connection": "Saudi Arabia's pipeline circumvents geopolitical chokepoint vulnerability, using infrastructure as strategic hedge against regional military disruption.",
+          "force_tag": "supply chain weaponization"
+        },
+        {
+          "title": "One month on, Iran conflict fuels worries for Japanese firms and households",
+          "source": "The Japan Times",
+          "url": "https://www.japantimes.co.jp/business/2026/03/29/companies/one-month-iran-conflict/",
+          "tier": "international",
+          "paywall": false,
+          "context": "",
+          "connection": "Regional military conflict directly transmits price shocks through global supply chains to household utility costs and farm operations.",
+          "force_tag": "supply chain vulnerability"
+        }
+      ]
+    },
+    {
+      "headline": "U.S. military escalation in Iran theater signals shift from deterrence to potential ground intervention.",
+      "structural_force": "military escalation",
+      "all_forces": [
+        "military escalation",
+        "military escalation and diplomatic containment",
+        "military escalation in middle east",
+        "military escalation and civilian exposure",
+        "military escalation in regional conflict"
+      ],
+      "source_count": 5,
+      "tier_count": 2,
+      "tiers": [
+        "national",
+        "international"
+      ],
+      "domains": [
+        "Security",
+        "Geopolitics"
+      ],
+      "domain_keys": [
+        "security",
+        "geopolitics"
+      ],
+      "article_count": 6,
+      "connections": [
+        {
+          "text": "U.S. military escalation in Iran theater signals shift from deterrence to potential ground intervention.",
+          "source": "Reuters",
+          "title": "Pentagon preparing for weeks of ground operations in Iran, Washington Post repor",
+          "domains": [
+            "security",
+            "geopolitics"
+          ]
+        },
+        {
+          "text": "Regional military escalation drives multilateral diplomatic intervention as neighboring powers attempt to contain conflict spread.",
+          "source": "The Hindu",
+          "title": "Iran-Israel war LIVE: U.S., Israeli strikes hit Iran port city near Hormuz strai",
+          "domains": [
+            "security",
+            "geopolitics"
+          ]
+        },
+        {
+          "text": "Iran security threat to US educational institutions abroad reflects escalating military brinkmanship and institutional vulnerability.",
+          "source": "Deutsche Welle",
+          "title": "Iran war: IRGC says US campuses in Middle East at risk",
+          "domains": [
+            "security",
+            "geopolitics"
+          ]
+        },
+        {
+          "text": "U.S. military planning escalates ground operations in foreign territory contingent on presidential authorization.",
+          "source": "Washington Post",
+          "title": "Pentagon prepares for weeks of ground operations in Iran",
+          "domains": [
+            "security",
+            "geopolitics"
+          ]
+        },
+        {
+          "text": "Regional powers escalate military strikes targeting both civilian infrastructure and adversary forces.",
+          "source": "Dawn",
+          "title": "Houthis join fray by firing ballistic missiles at Israel",
+          "domains": [
+            "security",
+            "geopolitics"
+          ]
+        }
+      ],
+      "tier_framing": {
+        "national": {
+          "count": 2,
+          "keywords": [
+            "pentagon",
+            "weeks",
+            "ground",
+            "operations",
+            "iran"
+          ],
+          "sample": {
+            "title": "Pentagon preparing for weeks of ground operations in Iran, Washington Post reports - Reuters",
+            "source": "Reuters",
+            "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQMFFvVHdDWHVRdFAwSVRTU3VvYmM3cm82QkRnRXl6OWdYRzlHZW5neGhyUG8wdHdveFJncGlxcnBUd21JWFNvTFpSWGpNUzYzVHZhRmg2dk1YaXcyVlZ3S1k0Z19DRnlMZDFMcVRxc21aeHdlaDc4dzI3dGItcHhWTDNTUXdRNlllRVJUVVZqRS1WdklJVmd3UFE5bU55YjlCa2xrVVQxZ2NyY1pGVGNKMVhMR3BLem11NEhTWlFvMnRxT0k?oc=5",
+            "context": "Owned by Thomson Reuters. Major international wire service. Generally regarded as centrist."
+          }
+        },
+        "international": {
+          "count": 4,
+          "keywords": [
+            "iran",
+            "israel",
+            "israeli",
+            "strikes",
+            "port"
+          ],
+          "sample": {
+            "title": "Iran-Israel war LIVE: U.S., Israeli strikes hit Iran port city near Hormuz strait",
+            "source": "The Hindu",
+            "url": "https://www.thehindu.com/news/international/iran-israel-us-war-updates-live-march-29-2026/article70798605.ece",
+            "context": ""
+          }
+        }
+      },
+      "articles": [
+        {
+          "title": "Pentagon preparing for weeks of ground operations in Iran, Washington Post reports - Reuters",
+          "source": "Reuters",
+          "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQMFFvVHdDWHVRdFAwSVRTU3VvYmM3cm82QkRnRXl6OWdYRzlHZW5neGhyUG8wdHdveFJncGlxcnBUd21JWFNvTFpSWGpNUzYzVHZhRmg2dk1YaXcyVlZ3S1k0Z19DRnlMZDFMcVRxc21aeHdlaDc4dzI3dGItcHhWTDNTUXdRNlllRVJUVVZqRS1WdklJVmd3UFE5bU55YjlCa2xrVVQxZ2NyY1pGVGNKMVhMR3BLem11NEhTWlFvMnRxT0k?oc=5",
+          "tier": "national",
+          "paywall": false,
+          "context": "Owned by Thomson Reuters. Major international wire service. Generally regarded as centrist.",
+          "connection": "U.S. military escalation in Iran theater signals shift from deterrence to potential ground intervention.",
+          "force_tag": "military escalation"
+        },
+        {
+          "title": "Pentagon prepares for weeks of ground operations in Iran",
+          "source": "Washington Post",
+          "url": "https://www.washingtonpost.com/national-security/2026/03/28/trump-iran-ground-troops-marines/",
+          "tier": "national",
+          "paywall": true,
+          "context": "Owned by Jeff Bezos since 2013. Major national newspaper. Generally regarded as center-left.",
+          "connection": "U.S. military planning escalates ground operations in foreign territory contingent on presidential authorization.",
+          "force_tag": "military escalation in regional conflict"
+        },
+        {
+          "title": "Iran-Israel war LIVE: U.S., Israeli strikes hit Iran port city near Hormuz strait",
+          "source": "The Hindu",
+          "url": "https://www.thehindu.com/news/international/iran-israel-us-war-updates-live-march-29-2026/article70798605.ece",
+          "tier": "international",
+          "paywall": false,
+          "context": "",
+          "connection": "Regional military escalation drives multilateral diplomatic intervention as neighboring powers attempt to contain conflict spread.",
+          "force_tag": "military escalation and diplomatic containment"
+        },
+        {
+          "title": "Iran war: IRGC says US campuses in Middle East at risk",
+          "source": "Deutsche Welle",
+          "url": "https://www.dw.com/en/iran-war-irgc-says-us-campuses-in-middle-east-at-risk/live-76581165?maca=en-rss-en-all-1573-rdf",
+          "tier": "international",
+          "paywall": false,
+          "context": "",
+          "connection": "Iran security threat to US educational institutions abroad reflects escalating military brinkmanship and institutional vulnerability.",
+          "force_tag": "military escalation and civilian exposure"
+        },
+        {
+          "title": "Houthis join fray by firing ballistic missiles at Israel",
+          "source": "Dawn",
+          "url": "https://www.dawn.com/news/1986444/houthis-join-fray-by-firing-ballistic-missiles-at-israel",
+          "tier": "international",
+          "paywall": false,
+          "context": "",
+          "connection": "Regional powers escalate military strikes targeting both civilian infrastructure and adversary forces.",
+          "force_tag": "military escalation and infrastructure targeting"
+        }
+      ]
+    },
+    {
+      "headline": "Air strikes on Iraqi militia forces reflect broader regional military operations and proxy conflicts.",
+      "structural_force": "regional proxy conflict",
+      "all_forces": [
+        "regional proxy conflict",
+        "great power proxy conflict",
+        "regional conflict escalation",
+        "regional conflict de-escalation",
+        "proxy conflict escalation"
+      ],
+      "source_count": 5,
+      "tier_count": 2,
+      "tiers": [
+        "specialist",
+        "international"
+      ],
+      "domains": [
+        "Geopolitics",
+        "Security"
+      ],
+      "domain_keys": [
+        "geopolitics",
+        "security"
+      ],
+      "article_count": 6,
+      "connections": [
+        {
+          "text": "Air strikes on Iraqi militia forces reflect broader regional military operations and proxy conflicts.",
+          "source": "Al Jazeera",
+          "title": "Thick plumes of smoke rise over Iraq’s Mosul after strikes",
+          "domains": [
+            "security",
+            "geopolitics"
+          ]
+        },
+        {
+          "text": "U.S. military targeting by Iran depends on Russian intelligence sharing, making Middle East conflict resolution inseparable from great-power competition.",
+          "source": "War on the Rocks",
+          "title": "Punish Russia for Helping Iran Target the U.S. Military",
+          "domains": [
+            "security",
+            "geopolitics"
+          ]
+        },
+        {
+          "text": "Regional proxy conflict escalates directly as state actors test limits of conflict expansion across Middle East.",
+          "source": "The Globe and Mail",
+          "title": "Yemen's Houthis hit Israel in their first attack during Iran war",
+          "domains": [
+            "geopolitics",
+            "security"
+          ]
+        },
+        {
+          "text": "Military escalation in the Persian Gulf creates diplomatic opportunity for regional mediators to negotiate ceasefire.",
+          "source": "Dawn",
+          "title": "Will defiant Iran win peace?",
+          "domains": [
+            "geopolitics",
+            "security"
+          ]
+        },
+        {
+          "text": "Regional proxy conflict escalates as non-state actors directly engage U.S. military presence expands in response.",
+          "source": "Bangkok Post",
+          "title": "Yemen's Houthis enter Iran war with attacks on Israel, while US Marines arrive i",
+          "domains": [
+            "geopolitics",
+            "security"
+          ]
+        }
+      ],
+      "tier_framing": {
+        "international": {
+          "count": 5,
+          "keywords": [
+            "iran",
+            "yemen",
+            "houthis",
+            "israel",
+            "peace"
+          ],
+          "sample": {
+            "title": "Thick plumes of smoke rise over Iraq’s Mosul after strikes",
+            "source": "Al Jazeera",
+            "url": "https://www.aljazeera.com/video/newsfeed/2026/3/29/thick-plumes-of-smoke-rise-over-iraqs-mosul-after-strikes?traffic_source=rss",
+            "context": "Funded by the government of Qatar. Major international news network. Significant coverage of Middle East and Global South."
+          }
+        },
+        "specialist": {
+          "count": 1,
+          "keywords": [
+            "punish",
+            "russia",
+            "helping",
+            "iran",
+            "target"
+          ],
+          "sample": {
+            "title": "Punish Russia for Helping Iran Target the U.S. Military",
+            "source": "War on the Rocks",
+            "url": "https://warontherocks.com/2026/03/punish-russia-for-helping-iran-target-the-u-s-military/",
+            "context": ""
+          }
+        }
+      },
+      "articles": [
+        {
+          "title": "Thick plumes of smoke rise over Iraq’s Mosul after strikes",
+          "source": "Al Jazeera",
+          "url": "https://www.aljazeera.com/video/newsfeed/2026/3/29/thick-plumes-of-smoke-rise-over-iraqs-mosul-after-strikes?traffic_source=rss",
+          "tier": "international",
+          "paywall": false,
+          "context": "Funded by the government of Qatar. Major international news network. Significant coverage of Middle East and Global South.",
+          "connection": "Air strikes on Iraqi militia forces reflect broader regional military operations and proxy conflicts.",
+          "force_tag": "regional proxy conflict"
+        },
+        {
+          "title": "Yemen's Houthis hit Israel in their first attack during Iran war",
+          "source": "The Globe and Mail",
+          "url": "https://www.theglobeandmail.com/world/video-yemens-houthis-hit-israel-in-their-first-attack-during-iran-war/",
+          "tier": "international",
+          "paywall": false,
+          "context": "",
+          "connection": "Regional proxy conflict escalates directly as state actors test limits of conflict expansion across Middle East.",
+          "force_tag": "regional conflict escalation"
+        },
+        {
+          "title": "Will defiant Iran win peace?",
+          "source": "Dawn",
+          "url": "https://www.dawn.com/news/1986483/will-defiant-iran-win-peace",
+          "tier": "international",
+          "paywall": false,
+          "context": "",
+          "connection": "Military escalation in the Persian Gulf creates diplomatic opportunity for regional mediators to negotiate ceasefire.",
+          "force_tag": "proxy conflict escalation"
+        },
+        {
+          "title": "Yemen's Houthis enter Iran war with attacks on Israel, while US Marines arrive in region",
+          "source": "Bangkok Post",
+          "url": "https://www.bangkokpost.com/world/3226473/yemens-houthis-enter-iran-war-with-attacks-on-israel-while-us-marines-arrive-in-region",
+          "tier": "international",
+          "paywall": false,
+          "context": "",
+          "connection": "Regional proxy conflict escalates as non-state actors directly engage U.S. military presence expands in response.",
+          "force_tag": "regional proxy war escalation"
+        },
+        {
+          "title": "Punish Russia for Helping Iran Target the U.S. Military",
+          "source": "War on the Rocks",
+          "url": "https://warontherocks.com/2026/03/punish-russia-for-helping-iran-target-the-u-s-military/",
+          "tier": "specialist",
+          "paywall": false,
+          "context": "",
+          "connection": "U.S. military targeting by Iran depends on Russian intelligence sharing, making Middle East conflict resolution inseparable from great-power competition.",
+          "force_tag": "great power proxy conflict"
+        }
+      ]
+    },
+    {
+      "headline": "Whistleblower challenges foreign policy direction shaped by lobbying influence on national security decision-making.",
+      "structural_force": "institutional accountability within security state",
+      "all_forces": [
+        "institutional accountability within security state",
+        "institutional accountability"
+      ],
+      "source_count": 2,
+      "tier_count": 2,
+      "tiers": [
+        "local-regional",
+        "international"
+      ],
+      "domains": [
+        "Security",
+        "Geopolitics",
+        "Politics",
+        "Governance"
+      ],
+      "domain_keys": [
+        "security",
+        "geopolitics",
+        "domestic_politics",
+        "governance"
+      ],
+      "article_count": 2,
+      "connections": [
+        {
+          "text": "Whistleblower challenges foreign policy direction shaped by lobbying influence on national security decision-making.",
+          "source": "The Hindu",
+          "title": "Joe Kent | The rebel within",
+          "domains": [
+            "security",
+            "geopolitics",
+            "domestic_politics"
+          ]
+        },
+        {
+          "text": "Cross-database coordination reveals administrative capacity to locate missing persons previously assumed dead.",
+          "source": "Post and Courier",
+          "title": "Mexico: Many of 130,000 disappeared may be alive",
+          "domains": [
+            "governance",
+            "legal"
+          ]
+        }
+      ],
+      "tier_framing": {
+        "international": {
+          "count": 1,
+          "keywords": [
+            "kent",
+            "rebel",
+            "within"
+          ],
+          "sample": {
+            "title": "Joe Kent | The rebel within",
+            "source": "The Hindu",
+            "url": "https://www.thehindu.com/news/international/joe-kent-the-rebel-within/article70797267.ece",
+            "context": ""
+          }
+        },
+        "local-regional": {
+          "count": 1,
+          "keywords": [
+            "mexico",
+            "many",
+            "disappeared",
+            "alive"
+          ],
+          "sample": {
+            "title": "Mexico: Many of 130,000 disappeared may be alive",
+            "source": "Post and Courier",
+            "url": "https://www.postandcourier.com/nation-world/mexico-many-of-130-000-disappeared-may-be-alive/article_54ee2e4a-88d1-4503-9f82-48a60516bb58.html",
+            "context": ""
+          }
+        }
+      },
+      "articles": [
+        {
+          "title": "Joe Kent | The rebel within",
+          "source": "The Hindu",
+          "url": "https://www.thehindu.com/news/international/joe-kent-the-rebel-within/article70797267.ece",
+          "tier": "international",
+          "paywall": false,
+          "context": "",
+          "connection": "Whistleblower challenges foreign policy direction shaped by lobbying influence on national security decision-making.",
+          "force_tag": "institutional accountability within security state"
+        },
+        {
+          "title": "Mexico: Many of 130,000 disappeared may be alive",
+          "source": "Post and Courier",
+          "url": "https://www.postandcourier.com/nation-world/mexico-many-of-130-000-disappeared-may-be-alive/article_54ee2e4a-88d1-4503-9f82-48a60516bb58.html",
+          "tier": "local-regional",
+          "paywall": false,
+          "context": "",
+          "connection": "Cross-database coordination reveals administrative capacity to locate missing persons previously assumed dead.",
+          "force_tag": "institutional accountability"
+        }
+      ]
+    },
+    {
+      "headline": "AI automation is replacing engineering work, forcing coders to manage rather than write code while maintaining employmen",
+      "structural_force": "automation displacing workers",
+      "all_forces": [
+        "automation displacing workers",
+        "conflict displacing workers"
+      ],
+      "source_count": 2,
+      "tier_count": 1,
+      "tiers": [
+        "international"
+      ],
+      "domains": [
+        "Labor",
+        "AI",
+        "Security",
+        "Geopolitics"
+      ],
+      "domain_keys": [
+        "labor",
+        "ai",
+        "security",
+        "geopolitics"
+      ],
+      "article_count": 3,
+      "connections": [
+        {
+          "text": "AI automation is replacing engineering work, forcing coders to manage rather than write code while maintaining employment.",
+          "source": "Times of India",
+          "title": "Amid layoffs, Mark Zuckerberg's Meta is asking engineers to use AI for…",
+          "domains": [
+            "ai",
+            "labor"
+          ]
+        },
+        {
+          "text": "AI commodifies programmer labor by eliminating coding as a skill, replacing human engineers with automated systems.",
+          "source": "Times of India",
+          "title": "Google ex-CEO Eric Schmidt says coding is no longer a key skill",
+          "domains": [
+            "ai",
+            "labor"
+          ]
+        },
+        {
+          "text": "War in the Strait of Hormuz traps seafarers, collapsing the labor protections and freedom of movement that shipping depends on.",
+          "source": "Straits Times",
+          "title": "Helplines buzz with alerts from seafarers trapped in war",
+          "domains": [
+            "security",
+            "geopolitics",
+            "labor"
+          ]
+        }
+      ],
+      "tier_framing": {
+        "international": {
+          "count": 3,
+          "keywords": [
+            "amid",
+            "layoffs",
+            "mark",
+            "zuckerberg",
+            "meta"
+          ],
+          "sample": {
+            "title": "Amid layoffs, Mark Zuckerberg's Meta is asking engineers to use AI for…",
+            "source": "Times of India",
+            "url": "https://timesofindia.indiatimes.com/technology/tech-news/amid-layoffs-mark-zuckerbergs-meta-is-asking-engineers-to-use-ai-for/articleshow/129876653.cms",
+            "context": ""
+          }
+        }
+      },
+      "articles": [
+        {
+          "title": "Amid layoffs, Mark Zuckerberg's Meta is asking engineers to use AI for…",
+          "source": "Times of India",
+          "url": "https://timesofindia.indiatimes.com/technology/tech-news/amid-layoffs-mark-zuckerbergs-meta-is-asking-engineers-to-use-ai-for/articleshow/129876653.cms",
+          "tier": "international",
+          "paywall": false,
+          "context": "",
+          "connection": "AI automation is replacing engineering work, forcing coders to manage rather than write code while maintaining employment.",
+          "force_tag": "automation displacing workers"
+        },
+        {
+          "title": "Helplines buzz with alerts from seafarers trapped in war",
+          "source": "Straits Times",
+          "url": "https://www.straitstimes.com/world/europe/helplines-buzz-with-alerts-from-seafarers-trapped-in-war",
+          "tier": "international",
+          "paywall": false,
+          "context": "",
+          "connection": "War in the Strait of Hormuz traps seafarers, collapsing the labor protections and freedom of movement that shipping depends on.",
+          "force_tag": "conflict displacing workers"
+        }
+      ]
+    },
+    {
+      "headline": "Unilateral military decisions without institutional coordination undermine diplomatic resolution and regional stability.",
+      "structural_force": "erosion of institutional foreign policy",
+      "all_forces": [
+        "erosion of institutional foreign policy",
+        "institutional erosion"
+      ],
+      "source_count": 2,
+      "tier_count": 1,
+      "tiers": [
+        "international"
+      ],
+      "domains": [
+        "Geopolitics",
+        "Security",
+        "Politics",
+        "Governance"
+      ],
+      "domain_keys": [
+        "geopolitics",
+        "security",
+        "domestic_politics",
+        "governance"
+      ],
+      "article_count": 2,
+      "connections": [
+        {
+          "text": "Unilateral military decisions without institutional coordination undermine diplomatic resolution and regional stability.",
+          "source": "BBC World",
+          "title": "Trump is waging war based on instinct and it isn't working",
+          "domains": [
+            "geopolitics",
+            "security"
+          ]
+        },
+        {
+          "text": "Trump's shifting policy goals create institutional instability and undermine coherent executive decision-making.",
+          "source": "Straits Times",
+          "title": "Wild ultimatums and ‘bombing our little hearts out’: A portrait of Trump at war",
+          "domains": [
+            "domestic_politics",
+            "governance"
+          ]
+        }
+      ],
+      "tier_framing": {
+        "international": {
+          "count": 2,
+          "keywords": [
+            "waging",
+            "instinct",
+            "working",
+            "wild",
+            "ultimatums"
+          ],
+          "sample": {
+            "title": "Trump is waging war based on instinct and it isn't working",
+            "source": "BBC World",
+            "url": "https://www.bbc.com/news/articles/c5y969pnxgvo?at_medium=RSS&at_campaign=rss",
+            "context": "Funded by the UK license fee. British public broadcaster. Generally regarded as centrist by international standards."
+          }
+        }
+      },
+      "articles": [
+        {
+          "title": "Trump is waging war based on instinct and it isn't working",
+          "source": "BBC World",
+          "url": "https://www.bbc.com/news/articles/c5y969pnxgvo?at_medium=RSS&at_campaign=rss",
+          "tier": "international",
+          "paywall": false,
+          "context": "Funded by the UK license fee. British public broadcaster. Generally regarded as centrist by international standards.",
+          "connection": "Unilateral military decisions without institutional coordination undermine diplomatic resolution and regional stability.",
+          "force_tag": "erosion of institutional foreign policy"
+        },
+        {
+          "title": "Wild ultimatums and ‘bombing our little hearts out’: A portrait of Trump at war",
+          "source": "Straits Times",
+          "url": "https://www.straitstimes.com/world/united-states/wild-ultimatums-and-bombing-our-little-hearts-out-a-portrait-of-trump-at-war",
+          "tier": "international",
+          "paywall": false,
+          "context": "",
+          "connection": "Trump's shifting policy goals create institutional instability and undermine coherent executive decision-making.",
+          "force_tag": "institutional erosion"
+        }
+      ]
+    },
+    {
+      "headline": "Mass protest against immigration enforcement reflects political opposition to Trump's ICE policies and security apparatu",
+      "structural_force": "civic mobilization against enforcement",
+      "all_forces": [
+        "civic mobilization against enforcement",
+        "civic mobilization"
+      ],
+      "source_count": 3,
+      "tier_count": 2,
+      "tiers": [
+        "international",
+        "local-regional"
+      ],
+      "domains": [
+        "Politics",
+        "Security"
+      ],
+      "domain_keys": [
+        "domestic_politics",
+        "security"
+      ],
+      "article_count": 3,
+      "connections": [
+        {
+          "text": "Mass protest against immigration enforcement reflects political opposition to Trump's ICE policies and security apparatus priorities.",
+          "source": "MinnPost",
+          "title": "Whistles, monarch butterflies and other anti-ICE symbols join thousands at ‘No K",
+          "domains": [
+            "domestic_politics",
+            "security"
+          ]
+        },
+        {
+          "text": "Direct action protest against ICE reflects political conflict over immigration enforcement and security policy implementation.",
+          "source": "Oregon Public Broadcasting",
+          "title": "Protesters clash with federal officers at the ICE building after the No Kings ra",
+          "domains": [
+            "domestic_politics",
+            "security"
+          ]
+        }
+      ],
+      "tier_framing": {
+        "international": {
+          "count": 1,
+          "keywords": [
+            "huge",
+            "turnout",
+            "protests",
+            "across",
+            "kings"
+          ],
+          "sample": {
+            "title": "Huge turnout for protests against Trump across U.S. on 'No Kings' day",
+            "source": "The Japan Times",
+            "url": "https://www.japantimes.co.jp/news/2026/03/29/world/politics/us-trump-no-kings-protest/",
+            "context": ""
+          }
+        },
+        "local-regional": {
+          "count": 2,
+          "keywords": [
+            "kings",
+            "rally",
+            "whistles",
+            "monarch",
+            "butterflies"
+          ],
+          "sample": {
+            "title": "Whistles, monarch butterflies and other anti-ICE symbols join thousands at ‘No Kings’ Minnesota rally",
+            "source": "MinnPost",
+            "url": "https://www.minnpost.com/news/2026/03/whistles-monarch-butterflies-and-other-anti-ice-symbols-join-thousands-at-no-kings-minnesota-rally/",
+            "context": ""
+          }
+        }
+      },
+      "articles": [
+        {
+          "title": "Whistles, monarch butterflies and other anti-ICE symbols join thousands at ‘No Kings’ Minnesota rally",
+          "source": "MinnPost",
+          "url": "https://www.minnpost.com/news/2026/03/whistles-monarch-butterflies-and-other-anti-ice-symbols-join-thousands-at-no-kings-minnesota-rally/",
+          "tier": "local-regional",
+          "paywall": false,
+          "context": "",
+          "connection": "Mass protest against immigration enforcement reflects political opposition to Trump's ICE policies and security apparatus priorities.",
+          "force_tag": "civic mobilization against enforcement"
+        },
+        {
+          "title": "Protesters clash with federal officers at the ICE building after the No Kings rally - Oregon Public Broadcasting - OPB",
+          "source": "Oregon Public Broadcasting",
+          "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPUXZCMlY4eTJsQjNzYWZzWWNWTHRqQ0ptdVJFSHc2bDRYbDlrNElXVHRPZ29aeFR2QW9iU09ObzF4VlN1QnlOTHFmSlljMG90dW5TcG5MY2g1d1hTT1VONUh1MFQ3aHNKWGxqNlZ2VHIzME1fSVV3NkltNGJWV1E1UUctMUdkZnlhakRGMjBLWXVLdDVwUW55bEpLaEJsMllEUmxid1pJR3dMZkVyRmVpbUpxcEd2bjl1aEZKX3NB?oc=5",
+          "tier": "local-regional",
+          "paywall": false,
+          "context": "",
+          "connection": "Direct action protest against ICE reflects political conflict over immigration enforcement and security policy implementation.",
+          "force_tag": "civic mobilization against enforcement"
+        },
+        {
+          "title": "Huge turnout for protests against Trump across U.S. on 'No Kings' day",
+          "source": "The Japan Times",
+          "url": "https://www.japantimes.co.jp/news/2026/03/29/world/politics/us-trump-no-kings-protest/",
+          "tier": "international",
+          "paywall": false,
+          "context": "",
+          "connection": "",
+          "force_tag": "civic mobilization"
+        }
+      ]
+    },
+    {
+      "headline": "Geopolitical instability in Middle East raises fossil fuel prices, prompting local governments to subsidize public trans",
+      "structural_force": "supply shock response",
+      "all_forces": [
+        "supply shock response",
+        "supply shock cascades"
+      ],
+      "source_count": 2,
+      "tier_count": 2,
+      "tiers": [
+        "national",
+        "international"
+      ],
+      "domains": [
+        "Economics",
+        "Climate",
+        "Geopolitics"
+      ],
+      "domain_keys": [
+        "economics",
+        "climate",
+        "geopolitics"
+      ],
+      "article_count": 2,
+      "connections": [
+        {
+          "text": "Geopolitical instability in Middle East raises fossil fuel prices, prompting local governments to subsidize public transit temporarily.",
+          "source": "Bloomberg",
+          "title": "Two Australia States to Offer Free Transport as Fuel Prices Rise",
+          "domains": [
+            "economics",
+            "climate"
+          ]
+        },
+        {
+          "text": "Geopolitical conflict disrupts energy markets, forcing nations into economically damaging fuel rationing and forcing shift toward dirtier energy sources.",
+          "source": "Times of India",
+          "title": "From office to dark streets: How oil crunch is reshaping daily life in different",
+          "domains": [
+            "economics",
+            "geopolitics",
+            "climate"
+          ]
+        }
+      ],
+      "tier_framing": {
+        "national": {
+          "count": 1,
+          "keywords": [
+            "australia",
+            "offer",
+            "free",
+            "transport",
+            "fuel"
+          ],
+          "sample": {
+            "title": "Two Australia States to Offer Free Transport as Fuel Prices Rise",
+            "source": "Bloomberg",
+            "url": "https://www.bloomberg.com/news/articles/2026-03-29/two-australia-states-to-offer-free-transport-as-fuel-prices-rise",
+            "context": "Founded and majority-owned by Michael Bloomberg. Dominant source for financial professionals."
+          }
+        },
+        "international": {
+          "count": 1,
+          "keywords": [
+            "from",
+            "office",
+            "dark",
+            "streets",
+            "crunch"
+          ],
+          "sample": {
+            "title": "From office to dark streets: How oil crunch is reshaping daily life in different nations",
+            "source": "Times of India",
+            "url": "https://timesofindia.indiatimes.com/business/international-business/from-office-desks-to-dark-streets-how-the-oil-crunch-is-reshaping-daily-life-in-different-nations/articleshow/129875135.cms",
+            "context": ""
+          }
+        }
+      },
+      "articles": [
+        {
+          "title": "Two Australia States to Offer Free Transport as Fuel Prices Rise",
+          "source": "Bloomberg",
+          "url": "https://www.bloomberg.com/news/articles/2026-03-29/two-australia-states-to-offer-free-transport-as-fuel-prices-rise",
+          "tier": "national",
+          "paywall": true,
+          "context": "Founded and majority-owned by Michael Bloomberg. Dominant source for financial professionals.",
+          "connection": "Geopolitical instability in Middle East raises fossil fuel prices, prompting local governments to subsidize public transit temporarily.",
+          "force_tag": "supply shock response"
+        },
+        {
+          "title": "From office to dark streets: How oil crunch is reshaping daily life in different nations",
+          "source": "Times of India",
+          "url": "https://timesofindia.indiatimes.com/business/international-business/from-office-desks-to-dark-streets-how-the-oil-crunch-is-reshaping-daily-life-in-different-nations/articleshow/129875135.cms",
+          "tier": "international",
+          "paywall": false,
+          "context": "",
+          "connection": "Geopolitical conflict disrupts energy markets, forcing nations into economically damaging fuel rationing and forcing shift toward dirtier energy sources.",
+          "force_tag": "supply shock cascades"
+        }
+      ]
+    }
+  ],
+  "structural_forces": [
+    {
+      "force": "civic participation",
+      "related_forces": [
+        "civic participation as justice-seeking"
+      ],
+      "article_count": 10,
+      "source_count": 8,
+      "domains": [
+        "Politics",
+        "Governance",
+        "Legal"
+      ],
+      "domain_keys": [
+        "domestic_politics",
+        "governance",
+        "legal"
+      ],
+      "sample_title": "‘No Kings’ flagship protest brings spotlight back to Minneapolis"
+    },
+    {
+      "force": "arms race escalation",
+      "related_forces": [
+        "arms escalation spiral",
+        "arms race and deterrence escalation"
+      ],
+      "article_count": 8,
+      "source_count": 8,
+      "domains": [
+        "Geopolitics",
+        "Security"
+      ],
+      "domain_keys": [
+        "geopolitics",
+        "security"
+      ],
+      "sample_title": "North Korea conducts engine test for missile capable of targeting U.S. mainland"
+    },
+    {
+      "force": "supply chain weaponization",
+      "related_forces": [
+        "supply chain vulnerability"
+      ],
+      "article_count": 4,
+      "source_count": 3,
+      "domains": [
+        "Economics",
+        "Geopolitics",
+        "Governance",
+        "Security"
+      ],
+      "domain_keys": [
+        "economics",
+        "geopolitics",
+        "governance",
+        "security"
+      ],
+      "sample_title": "Russia's Ust-Luga port damaged by Ukrainian drones, fire breaks out"
+    },
+    {
+      "force": "automation displacing workers",
+      "related_forces": [
+        "conflict displacing workers"
+      ],
+      "article_count": 3,
+      "source_count": 2,
+      "domains": [
+        "AI",
+        "Geopolitics",
+        "Labor",
+        "Security"
+      ],
+      "domain_keys": [
+        "ai",
+        "geopolitics",
+        "labor",
+        "security"
+      ],
+      "sample_title": "Amid layoffs, Mark Zuckerberg's Meta is asking engineers to use AI for…"
+    },
+    {
+      "force": "military escalation",
+      "related_forces": [
+        "military escalation and diplomatic containment",
+        "military escalation in middle east",
+        "military escalation and civilian exposure",
+        "military escalation in regional conflict",
+        "military escalation and infrastructure targeting"
+      ],
+      "article_count": 6,
+      "source_count": 5,
+      "domains": [
+        "Geopolitics",
+        "Security"
+      ],
+      "domain_keys": [
+        "geopolitics",
+        "security"
+      ],
+      "sample_title": "Pentagon preparing for weeks of ground operations in Iran, Washington Post reports - Reuters"
+    },
+    {
+      "force": "regional proxy conflict",
+      "related_forces": [
+        "great power proxy conflict",
+        "regional conflict escalation",
+        "regional conflict de-escalation",
+        "proxy conflict escalation",
+        "regional proxy war escalation"
+      ],
+      "article_count": 6,
+      "source_count": 5,
+      "domains": [
+        "Geopolitics",
+        "Security"
+      ],
+      "domain_keys": [
+        "geopolitics",
+        "security"
+      ],
+      "sample_title": "Thick plumes of smoke rise over Iraq’s Mosul after strikes"
+    },
+    {
+      "force": "institutional accountability within security state",
+      "related_forces": [
+        "institutional accountability"
+      ],
+      "article_count": 2,
+      "source_count": 2,
+      "domains": [
+        "Politics",
+        "Geopolitics",
+        "Governance",
+        "Legal",
+        "Security"
+      ],
+      "domain_keys": [
+        "domestic_politics",
+        "geopolitics",
+        "governance",
+        "legal",
+        "security"
+      ],
+      "sample_title": "Joe Kent | The rebel within"
+    },
+    {
+      "force": "erosion of institutional foreign policy",
+      "related_forces": [
+        "institutional erosion"
+      ],
+      "article_count": 2,
+      "source_count": 2,
+      "domains": [
+        "Politics",
+        "Geopolitics",
+        "Governance",
+        "Security"
+      ],
+      "domain_keys": [
+        "domestic_politics",
+        "geopolitics",
+        "governance",
+        "security"
+      ],
+      "sample_title": "Trump is waging war based on instinct and it isn't working"
+    },
+    {
+      "force": "civic mobilization against enforcement",
+      "related_forces": [
+        "civic mobilization"
+      ],
+      "article_count": 3,
+      "source_count": 3,
+      "domains": [
+        "Politics",
+        "Security"
+      ],
+      "domain_keys": [
+        "domestic_politics",
+        "security"
+      ],
+      "sample_title": "Whistles, monarch butterflies and other anti-ICE symbols join thousands at ‘No Kings’ Minnesota rall"
+    },
+    {
+      "force": "politicization of criminal justice",
+      "related_forces": [
+        "politicization of intelligence"
+      ],
+      "article_count": 2,
+      "source_count": 2,
+      "domains": [
+        "Politics",
+        "Legal",
+        "Security"
+      ],
+      "domain_keys": [
+        "domestic_politics",
+        "legal",
+        "security"
+      ],
+      "sample_title": "Trump pleads not guilty to 34 felony counts"
+    },
+    {
+      "force": "political accountability through law",
+      "related_forces": [
+        "political accountability messaging"
+      ],
+      "article_count": 2,
+      "source_count": 2,
+      "domains": [
+        "Politics",
+        "Governance",
+        "Legal"
+      ],
+      "domain_keys": [
+        "domestic_politics",
+        "governance",
+        "legal"
+      ],
+      "sample_title": "Former Nepalese prime minister Oli charged over deaths"
+    },
+    {
+      "force": "supply shock response",
+      "related_forces": [
+        "supply shock cascades"
+      ],
+      "article_count": 2,
+      "source_count": 2,
+      "domains": [
+        "Climate",
+        "Economics",
+        "Geopolitics"
+      ],
+      "domain_keys": [
+        "climate",
+        "economics",
+        "geopolitics"
+      ],
+      "sample_title": "Two Australia States to Offer Free Transport as Fuel Prices Rise"
+    },
+    {
+      "force": "regulatory failure enabling trafficking",
+      "related_forces": [
+        "regulatory communication failure"
+      ],
+      "article_count": 2,
+      "source_count": 2,
+      "domains": [
+        "Governance",
+        "Information",
+        "Security"
+      ],
+      "domain_keys": [
+        "governance",
+        "information",
+        "security"
+      ],
+      "sample_title": "One ant for $220: the new frontier of wildlife trafficking"
+    },
+    {
+      "force": "legislative gridlock",
+      "related_forces": [],
+      "article_count": 2,
+      "source_count": 2,
+      "domains": [
+        "Politics",
+        "Governance"
+      ],
+      "domain_keys": [
+        "domestic_politics",
+        "governance"
+      ],
+      "sample_title": "DHS funding lapse is now the longest government shutdown in U.S. history"
+    },
+    {
+      "force": "energy cost inflation",
+      "related_forces": [
+        "energy cost inflation cascading through real estate"
+      ],
+      "article_count": 2,
+      "source_count": 2,
+      "domains": [
+        "Climate",
+        "Economics"
+      ],
+      "domain_keys": [
+        "climate",
+        "economics"
+      ],
+      "sample_title": "New Delhi Street Stalls Show the Cost of India’s Energy Crunch"
+    },
+    {
+      "force": "regional military expansion",
+      "related_forces": [
+        "regional proxy expansion"
+      ],
+      "article_count": 2,
+      "source_count": 2,
+      "domains": [
+        "Geopolitics",
+        "Security"
+      ],
+      "domain_keys": [
+        "geopolitics",
+        "security"
+      ],
+      "sample_title": "Iraqi Kurdistan president’s house targeted in drone attack"
+    },
+    {
+      "force": "international alliance deepening",
+      "related_forces": [
+        "alliance deepening"
+      ],
+      "article_count": 2,
+      "source_count": 2,
+      "domains": [
+        "Geopolitics",
+        "Security"
+      ],
+      "domain_keys": [
+        "geopolitics",
+        "security"
+      ],
+      "sample_title": "Australia aids Artemis II as NASA astronauts return to the Moon"
+    },
+    {
+      "force": "partisan conflict over legislative process",
+      "related_forces": [
+        "partisan conflict"
+      ],
+      "article_count": 2,
+      "source_count": 2,
+      "domains": [
+        "Politics",
+        "Governance"
+      ],
+      "domain_keys": [
+        "domestic_politics",
+        "governance"
+      ],
+      "sample_title": "新年度予算案 与党“一日も早い成立” 野党“審議充実を”"
+    },
+    {
+      "force": "geopolitical trade route weaponization",
+      "related_forces": [
+        "trade weaponization"
+      ],
+      "article_count": 2,
+      "source_count": 2,
+      "domains": [
+        "Economics",
+        "Geopolitics"
+      ],
+      "domain_keys": [
+        "economics",
+        "geopolitics"
+      ],
+      "sample_title": "Petroleum cargo handling rises at Karachi’s Port Qasim Authority"
+    },
+    {
+      "force": "climate adaptation financing",
+      "related_forces": [
+        "climate adaptation policy shift"
+      ],
+      "article_count": 2,
+      "source_count": 1,
+      "domains": [
+        "Climate",
+        "Governance"
+      ],
+      "domain_keys": [
+        "climate",
+        "governance"
+      ],
+      "sample_title": "World Bank to provide $250m for KP resilience, disaster readiness"
+    },
+    {
+      "force": "extreme weather",
+      "related_forces": [
+        "extreme weather impact"
+      ],
+      "article_count": 2,
+      "source_count": 2,
+      "domains": [
+        "Climate"
+      ],
+      "domain_keys": [
+        "climate"
+      ],
+      "sample_title": "Sky turns bright red in Western Australia ahead of Tropical Cyclone Narelle"
+    },
+    {
+      "force": "electoral competition",
+      "related_forces": [
+        "new party electoral competition"
+      ],
+      "article_count": 2,
+      "source_count": 1,
+      "domains": [
+        "Politics"
+      ],
+      "domain_keys": [
+        "domestic_politics"
+      ],
+      "sample_title": "Assembly Elections LIVE: Vijay to make his electoral debut from Perambur in Chennai and Tiruchi East"
+    },
+    {
+      "force": "electoral candidate selection",
+      "related_forces": [
+        "electoral cycle candidate selection"
+      ],
+      "article_count": 2,
+      "source_count": 1,
+      "domains": [
+        "Politics"
+      ],
+      "domain_keys": [
+        "domestic_politics"
+      ],
+      "sample_title": "AMMK fields former GH Dean for  Periyakulam Assembly seat in Theni"
+    }
+  ],
+  "what_connects": [
+    {
+      "headline": "Trump pleads not guilty to 34 felony counts",
+      "structural_force": "politicization of criminal justice",
+      "total_sources": 7,
+      "spectrum_segments": 4,
+      "left_sources": [
+        "CNN"
+      ],
+      "right_sources": [
+        "Washington Examiner"
+      ],
+      "international_sources": [
+        "Times of India",
+        "South China Morning Post",
+        "Rappler"
+      ],
+      "local_regional_sources": [
+        "El Diario NY"
+      ],
+      "article_count": 10,
+      "domains": [
+        "legal",
+        "climate",
+        "security"
+      ],
+      "sample_connection": "Criminal indictment of political candidate raises questions about whether legal processes can function independently during election cycles."
+    },
+    {
+      "headline": "Sky turns bright red in Western Australia ahead of Tropical Cyclone Narelle",
+      "structural_force": "extreme weather",
+      "total_sources": 7,
+      "spectrum_segments": 4,
+      "left_sources": [
+        "NBC News"
+      ],
+      "right_sources": [
+        "The Dispatch"
+      ],
+      "international_sources": [
+        "The Japan Times",
+        "Times of India",
+        "ABC Australia"
+      ],
+      "local_regional_sources": [
+        "Post and Courier",
+        "El Diario NY"
+      ],
+      "article_count": 10,
+      "domains": [
+        "climate"
+      ],
+      "sample_connection": ""
+    },
+    {
+      "headline": "North Korea conducts engine test for missile capable of targeting U.S. mainland",
+      "structural_force": "arms race escalation",
+      "total_sources": 12,
+      "spectrum_segments": 3,
+      "left_sources": [
+        "New York Times"
+      ],
+      "right_sources": [],
+      "international_sources": [
+        "The Japan Times",
+        "Dawn",
+        "Taipei Times"
+      ],
+      "local_regional_sources": [
+        "Colorado Sun"
+      ],
+      "article_count": 15,
+      "domains": [
+        "geopolitics",
+        "security"
+      ],
+      "sample_connection": "Nuclear-armed state accelerates weapons capability specifically designed to threaten US homeland."
+    },
+    {
+      "headline": "Former Nepalese prime minister Oli charged over deaths",
+      "structural_force": "political accountability through law",
+      "total_sources": 5,
+      "spectrum_segments": 3,
+      "left_sources": [],
+      "right_sources": [
+        "Fox News"
+      ],
+      "international_sources": [
+        "Taipei Times",
+        "Rappler"
+      ],
+      "local_regional_sources": [
+        "Muslim Matters",
+        "InForum"
+      ],
+      "article_count": 5,
+      "domains": [
+        "legal",
+        "governance",
+        "security"
+      ],
+      "sample_connection": "Criminal charges against former prime minister test whether judicial systems can hold political leaders accountable."
+    },
+    {
+      "headline": "One ant for $220: the new frontier of wildlife trafficking",
+      "structural_force": "regulatory failure enabling trafficking",
+      "total_sources": 5,
+      "spectrum_segments": 3,
+      "left_sources": [],
+      "right_sources": [
+        "Fox News"
+      ],
+      "international_sources": [
+        "South China Morning Post",
+        "Rappler",
+        "BBC World"
+      ],
+      "local_regional_sources": [
+        "El Diario NY"
+      ],
+      "article_count": 7,
+      "domains": [
+        "information",
+        "security",
+        "governance"
+      ],
+      "sample_connection": "Weak environmental enforcement and demand from wealthy collectors enable transnational wildlife smuggling networks."
+    },
+    {
+      "headline": "Mexican protesters turn highway into football pitch to slam World Cup 'dispossession'",
+      "structural_force": "civic participation",
+      "total_sources": 10,
+      "spectrum_segments": 2,
+      "left_sources": [],
+      "right_sources": [],
+      "international_sources": [
+        "The Hindu",
+        "Times of India",
+        "Straits Times"
+      ],
+      "local_regional_sources": [
+        "Arizona Mirror",
+        "InForum",
+        "Atlanta Black Star"
+      ],
+      "article_count": 12,
+      "domains": [
+        "domestic_politics",
+        "governance",
+        "legal"
+      ],
+      "sample_connection": "Protesters use creative civic action to challenge state priorities, arguing World Cup spending displaces investment in basic urban needs."
+    },
+    {
+      "headline": "Pentagon preparing for weeks of ground operations in Iran, Washington Post reports - Reuters",
+      "structural_force": "military escalation",
+      "total_sources": 7,
+      "spectrum_segments": 2,
+      "left_sources": [
+        "Washington Post"
+      ],
+      "right_sources": [],
+      "international_sources": [
+        "Dawn",
+        "Straits Times",
+        "ABC Australia"
+      ],
+      "local_regional_sources": [],
+      "article_count": 8,
+      "domains": [
+        "security",
+        "geopolitics"
+      ],
+      "sample_connection": "U.S. military escalation in Iran theater signals shift from deterrence to potential ground intervention."
+    }
+  ],
+  "cooperation": {
+    "total_cooperation_stories": 71,
+    "cooperation_rate": 23,
+    "by_type": [
+      {
+        "type": "civic participation",
+        "count": 21,
+        "sources": [
+          "MinnPost",
+          "Dawn",
+          "The Japan Times",
+          "Arizona Mirror",
+          "Straits Times"
+        ],
+        "domains": [
+          "Politics",
+          "Governance",
+          "Legal"
+        ],
+        "sample": {
+          "title": "Nepal's former Energy Minister arrested in money laundering probe",
+          "source": "The Hindu",
+          "url": "https://www.thehindu.com/news/international/nepals-former-energy-minister-arrested-in-money-laundering-probe/article70798988.ece",
+          "connection": "Anti-corruption enforcement intersects with legal accountability when officials face prosecution for both financial crimes and violent suppression of dissent."
+        }
+      },
+      {
+        "type": "institutional reform",
+        "count": 5,
+        "sources": [
+          "Dawn",
+          "Post and Courier",
+          "ABC Australia",
+          "NPR Up First",
+          "The Hindu"
+        ],
+        "domains": [
+          "Governance",
+          "Legal",
+          "Climate"
+        ],
+        "sample": {
+          "title": "Carroll College to overturn 32-year ban on students walking to school",
+          "source": "ABC Australia",
+          "url": "https://www.abc.net.au/news/2026-03-29/secondary-students-carroll-college-walk-to-school-ban-overturned/106502988",
+          "connection": ""
+        }
+      },
+      {
+        "type": "cross-party collaboration",
+        "count": 3,
+        "sources": [
+          "The Japan Times",
+          "The Hindu",
+          "Straits Times"
+        ],
+        "domains": [
+          "Security",
+          "Geopolitics",
+          "Economics"
+        ],
+        "sample": {
+          "title": "Iran-Israel war LIVE: U.S., Israeli strikes hit Iran port city near Hormuz strait",
+          "source": "The Hindu",
+          "url": "https://www.thehindu.com/news/international/iran-israel-us-war-updates-live-march-29-2026/article70798605.ece",
+          "connection": "Regional military escalation drives multilateral diplomatic intervention as neighboring powers attempt to contain conflict spread."
+        }
+      },
+      {
+        "type": "institutional integrity",
+        "count": 2,
+        "sources": [
+          "El Diario NY",
+          "ABC Australia"
+        ],
+        "domains": [
+          "Governance",
+          "Security"
+        ],
+        "sample": {
+          "title": "Vital Aboriginal records saved in the 70s by an astute WA archivist",
+          "source": "ABC Australia",
+          "url": "https://www.abc.net.au/news/2026-03-29/archivists-life-work-celebrated-western-australia/106504878",
+          "connection": ""
+        }
+      },
+      {
+        "type": "diplomatic mediation",
+        "count": 2,
+        "sources": [
+          "Dawn"
+        ],
+        "domains": [
+          "Geopolitics",
+          "Security"
+        ],
+        "sample": {
+          "title": "Will defiant Iran win peace?",
+          "source": "Dawn",
+          "url": "https://www.dawn.com/news/1986483/will-defiant-iran-win-peace",
+          "connection": "Military escalation in the Persian Gulf creates diplomatic opportunity for regional mediators to negotiate ceasefire."
+        }
+      },
+      {
+        "type": "labor advocacy",
+        "count": 1,
+        "sources": [
+          "New York Times"
+        ],
+        "domains": [
+          "Labor",
+          "Governance"
+        ],
+        "sample": {
+          "title": "Record Number of T.S.A. Employees Called Out on Friday",
+          "source": "New York Times",
+          "url": "https://www.nytimes.com/2026/03/28/us/tsa-employees-airports-wait-times.html",
+          "connection": "Executive wage restoration overrides labor cost-cutting, reversing agency budget pressure on worker compensation."
+        }
+      },
+      {
+        "type": "community organizing",
+        "count": 1,
+        "sources": [
+          "New York Times"
+        ],
+        "domains": [
+          "Economics",
+          "Governance"
+        ],
+        "sample": {
+          "title": "The Slum in Gangnam, the Richest Part of Seoul",
+          "source": "New York Times",
+          "url": "https://www.nytimes.com/2026/03/29/world/asia/korea-seoul-gangnam-slum.html",
+          "connection": "Housing affordability crisis drives conflict between municipal redevelopment plans and residents' rights to stay in gentrifying districts."
+        }
+      },
+      {
+        "type": "government intervention",
+        "count": 1,
+        "sources": [
+          "Bloomberg"
+        ],
+        "domains": [
+          "Economics",
+          "Climate"
+        ],
+        "sample": {
+          "title": "Two Australia States to Offer Free Transport as Fuel Prices Rise",
+          "source": "Bloomberg",
+          "url": "https://www.bloomberg.com/news/articles/2026-03-29/two-australia-states-to-offer-free-transport-as-fuel-prices-rise",
+          "connection": "Geopolitical instability in Middle East raises fossil fuel prices, prompting local governments to subsidize public transit temporarily."
+        }
+      },
+      {
+        "type": "institutional accountability",
+        "count": 1,
+        "sources": [
+          "NBC News"
+        ],
+        "domains": [
+          "Legal",
+          "Security",
+          "Politics"
+        ],
+        "sample": {
+          "title": "Pro-Palestinian activist filed lawsuit alleging threats weeks before foiled firebomb plot",
+          "source": "NBC News",
+          "url": "https://www.nbcnews.com/news/us-news/palestinian-activist-foiled-terror-attack-rcna265591",
+          "connection": "Activist pursued legal remedy after documented threats, then became target of violence, exposing enforcement gaps in protection."
+        }
+      },
+      {
+        "type": "humanitarian response",
+        "count": 1,
+        "sources": [
+          "Al Jazeera"
+        ],
+        "domains": [
+          "Security",
+          "Geopolitics"
+        ],
+        "sample": {
+          "title": "Toddler rescued after US-Israeli strike on Iran",
+          "source": "Al Jazeera",
+          "url": "https://www.aljazeera.com/video/newsfeed/2026/3/29/toddler-rescued-after-us-israeli-strike-on-iran?traffic_source=rss",
+          "connection": "Civilian rescue amid military strikes highlights humanitarian consequences of regional warfare."
+        }
+      }
+    ],
+    "by_force": [
+      {
+        "force": "civic participation",
+        "cooperation_count": 9,
+        "cooperation_types": [
+          "civic participation"
+        ],
+        "sample_title": "‘No Kings’ flagship protest brings spotlight back to Minneapolis",
+        "sample_source": "Straits Times"
+      },
+      {
+        "force": "civic mobilization against enforcement",
+        "cooperation_count": 2,
+        "cooperation_types": [
+          "civic participation"
+        ],
+        "sample_title": "Whistles, monarch butterflies and other anti-ICE symbols join thousands at ‘No Kings’ Minnesota rally",
+        "sample_source": "MinnPost"
+      },
+      {
+        "force": "executive override of agency autonomy",
+        "cooperation_count": 1,
+        "cooperation_types": [
+          "labor advocacy"
+        ],
+        "sample_title": "Record Number of T.S.A. Employees Called Out on Friday",
+        "sample_source": "New York Times"
+      },
+      {
+        "force": "displacement by market forces",
+        "cooperation_count": 1,
+        "cooperation_types": [
+          "community organizing"
+        ],
+        "sample_title": "The Slum in Gangnam, the Richest Part of Seoul",
+        "sample_source": "New York Times"
+      },
+      {
+        "force": "supply shock response",
+        "cooperation_count": 1,
+        "cooperation_types": [
+          "government intervention"
+        ],
+        "sample_title": "Two Australia States to Offer Free Transport as Fuel Prices Rise",
+        "sample_source": "Bloomberg"
+      },
+      {
+        "force": "institutional failure to protect dissent",
+        "cooperation_count": 1,
+        "cooperation_types": [
+          "institutional accountability"
+        ],
+        "sample_title": "Pro-Palestinian activist filed lawsuit alleging threats weeks before foiled firebomb plot",
+        "sample_source": "NBC News"
+      },
+      {
+        "force": "civilian casualty exposure",
+        "cooperation_count": 1,
+        "cooperation_types": [
+          "humanitarian response"
+        ],
+        "sample_title": "Toddler rescued after US-Israeli strike on Iran",
+        "sample_source": "Al Jazeera"
+      },
+      {
+        "force": "diplomatic containment attempt",
+        "cooperation_count": 1,
+        "cooperation_types": [
+          "cross-party diplomacy"
+        ],
+        "sample_title": "Iran war live: Pakistan, Egypt, Turkiye, Saudi diplomats meet in Islamabad",
+        "sample_source": "Al Jazeera"
+      }
+    ],
+    "highlights": [
+      {
+        "title": "‘Like The Walking Dead’: Smuggled Drugs Fuel Chaos Inside Ohio Prisons - The Marshall Project",
+        "source": "The Marshall Project",
+        "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPUTBBR01icFhNbTNBdjJhOGFPQmhkRmMwS043OEMyY1BSbzBoMkdUcGV6MWRIZnV4bWF1dG1TaHlRWV9TX0taQWhIQzlrdVZfMVRZUGZUSGVSSmUyaEtORWgyeXp0c2lvNkFrbkphWTJiOU1ZRFE3Y2puc2hzQ2pJYlVxbW9YU1hKVDM3R1l4ZzFzemQ0UlZLMzQ5TjFhaUtPTVY4?oc=5",
+        "tier": "local-regional",
+        "cooperation_type": "investigative journalism",
+        "force_tag": "carceral system dysfunction",
+        "connection": "Prison labor systems create conditions where smuggled contraband becomes survival currency, exposing state custody failure.",
+        "context": ""
+      },
+      {
+        "title": "Did New York blow $10 million on reading instruction that doesn’t work?",
+        "source": "Hechinger Report",
+        "url": "https://hechingerreport.org/new-york-ten-million-reading-instruction/",
+        "tier": "local-regional",
+        "cooperation_type": "investigative journalism accountability",
+        "force_tag": "regulatory capture / vendor dependency",
+        "connection": "State education spending on unproven literacy programs reveals misallocation of public funds without evidence-based oversight.",
+        "context": ""
+      },
+      {
+        "title": "Advocates call for protections for traveling green card holders",
+        "source": "AsAmNews",
+        "url": "https://asamnews.com/2026/03/28/bondi-lau-green-card-holder-travel-rights/",
+        "tier": "local-regional",
+        "cooperation_type": "cross-organizational advocacy",
+        "force_tag": "civil rights litigation",
+        "connection": "Immigrant rights groups seek judicial protection for green card holders' freedom of movement against potential executive restrictions.",
+        "context": ""
+      },
+      {
+        "title": "La Casa Blanca se burla de protestas y las tilda de terapias por “el trastorno Trump”",
+        "source": "El Diario NY",
+        "url": "https://eldiariony.com/2026/03/28/la-casa-blanca-se-burla-de-protestas-y-las-tilda-de-terapias-por-el-trastorno-trump/",
+        "tier": "local-regional",
+        "cooperation_type": "civic participation",
+        "force_tag": "narrative control and delegitimization",
+        "connection": "White House uses media framing to delegitimize political protest, controlling narrative rather than engaging substantive grievance.",
+        "context": "Spanish-language daily serving Latino communities in New York metro area."
+      },
+      {
+        "title": "Pam Bondi reconoce a policías de Nueva York por frustrar ataque vinculado a ISIS cerca de Gracie Mansion",
+        "source": "El Diario NY",
+        "url": "https://eldiariony.com/2026/03/28/pam-bondi-reconoce-a-policias-de-nueva-york-por-frustrar-ataque-vinculado-a-isis-cerca-de-gracie-mansion/",
+        "tier": "local-regional",
+        "cooperation_type": "institutional integrity",
+        "force_tag": "counterterrorism effectiveness",
+        "connection": "Local police coordination prevents terror attack, illustrating effective institutional security response within city governance structure.",
+        "context": "Spanish-language daily serving Latino communities in New York metro area."
+      },
+      {
+        "title": "Whistles, monarch butterflies and other anti-ICE symbols join thousands at ‘No Kings’ Minnesota rally",
+        "source": "MinnPost",
+        "url": "https://www.minnpost.com/news/2026/03/whistles-monarch-butterflies-and-other-anti-ice-symbols-join-thousands-at-no-kings-minnesota-rally/",
+        "tier": "local-regional",
+        "cooperation_type": "civic participation",
+        "force_tag": "civic mobilization against enforcement",
+        "connection": "Mass protest against immigration enforcement reflects political opposition to Trump's ICE policies and security apparatus priorities.",
+        "context": ""
+      },
+      {
+        "title": "Protesters clash with federal officers at the ICE building after the No Kings rally - Oregon Public Broadcasting - OPB",
+        "source": "Oregon Public Broadcasting",
+        "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPUXZCMlY4eTJsQjNzYWZzWWNWTHRqQ0ptdVJFSHc2bDRYbDlrNElXVHRPZ29aeFR2QW9iU09ObzF4VlN1QnlOTHFmSlljMG90dW5TcG5MY2g1d1hTT1VONUh1MFQ3aHNKWGxqNlZ2VHIzME1fSVV3NkltNGJWV1E1UUctMUdkZnlhakRGMjBLWXVLdDVwUW55bEpLaEJsMllEUmxid1pJR3dMZkVyRmVpbUpxcEd2bjl1aEZKX3NB?oc=5",
+        "tier": "local-regional",
+        "cooperation_type": "civic participation",
+        "force_tag": "civic mobilization against enforcement",
+        "connection": "Direct action protest against ICE reflects political conflict over immigration enforcement and security policy implementation.",
+        "context": ""
+      },
+      {
+        "title": "No Kings rallies across Wisconsin draw thousands",
+        "source": "Wisconsin Examiner",
+        "url": "https://wisconsinexaminer.com/2026/03/28/no-kings-rallies-across-wisconsin-draw-thousands/",
+        "tier": "local-regional",
+        "cooperation_type": "civic participation",
+        "force_tag": "civic participation",
+        "connection": "",
+        "context": ""
+      }
+    ],
+    "coverage_gap": [
+      {
+        "force": "arms race escalation",
+        "article_count": 6,
+        "note": "No cooperation signals detected. Is goodness happening here that the coverage isn't showing?"
+      }
+    ]
+  },
   "local_regional_exclusive": [
     {
       "title": "Yailin La Más Viral da sus primeras declaraciones tras salir de prisión",
@@ -192,6 +2460,160 @@
       "connection": "",
       "force_tag": "",
       "context": "Spanish-language daily serving Latino communities in New York metro area."
+    },
+    {
+      "title": "‘Like The Walking Dead’: Smuggled Drugs Fuel Chaos Inside Ohio Prisons - The Marshall Project",
+      "source": "The Marshall Project",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPUTBBR01icFhNbTNBdjJhOGFPQmhkRmMwS043OEMyY1BSbzBoMkdUcGV6MWRIZnV4bWF1dG1TaHlRWV9TX0taQWhIQzlrdVZfMVRZUGZUSGVSSmUyaEtORWgyeXp0c2lvNkFrbkphWTJiOU1ZRFE3Y2puc2hzQ2pJYlVxbW9YU1hKVDM3R1l4ZzFzemQ0UlZLMzQ5TjFhaUtPTVY4?oc=5",
+      "tier": "local-regional",
+      "text_preview": "‘Like The Walking Dead’: Smuggled Drugs Fuel Chaos Inside Ohio Prisons &nbsp;&nbsp; The Marshall Project",
+      "domains": [
+        "governance",
+        "security",
+        "labor"
+      ],
+      "connection": "Prison labor systems create conditions where smuggled contraband becomes survival currency, exposing state custody failure.",
+      "force_tag": "carceral system dysfunction",
+      "context": ""
+    },
+    {
+      "title": "Did New York blow $10 million on reading instruction that doesn’t work?",
+      "source": "Hechinger Report",
+      "url": "https://hechingerreport.org/new-york-ten-million-reading-instruction/",
+      "tier": "local-regional",
+      "text_preview": "In April 2024, New York Gov. Kathy Hochul made a bold promise: The state would revamp its approach to literacy and boost state reading scores by double digits. “We&#8217;re turning the page on how we teach students how to read,” she said in front of ",
+      "domains": [
+        "governance",
+        "economics"
+      ],
+      "connection": "State education spending on unproven literacy programs reveals misallocation of public funds without evidence-based oversight.",
+      "force_tag": "regulatory capture / vendor dependency",
+      "context": ""
+    },
+    {
+      "title": "Advocates call for protections for traveling green card holders",
+      "source": "AsAmNews",
+      "url": "https://asamnews.com/2026/03/28/bondi-lau-green-card-holder-travel-rights/",
+      "tier": "local-regional",
+      "text_preview": "Immigrant rights organizations are urging the Supreme Court to protect green card holders&#8217; right to travel. According to a press release, LatinoJustice PRLDEF, the Asian American Legal Defense and Education Fund, Asian Americans Advancing Justi",
+      "domains": [
+        "legal",
+        "governance"
+      ],
+      "connection": "Immigrant rights groups seek judicial protection for green card holders' freedom of movement against potential executive restrictions.",
+      "force_tag": "civil rights litigation",
+      "context": ""
+    },
+    {
+      "title": "Punish Russia for Helping Iran Target the U.S. Military",
+      "source": "War on the Rocks",
+      "url": "https://warontherocks.com/2026/03/punish-russia-for-helping-iran-target-the-u-s-military/",
+      "tier": "specialist",
+      "text_preview": "In the second week of March, U.S. President Donald Trump insisted that Russian President Vladimir Putin wants to be &#8220;helpful&#8221; in the Middle East. More recently, in a spat with the E.U. foreign policy chief over America&#8217;s diplomatic ",
+      "domains": [
+        "security",
+        "geopolitics"
+      ],
+      "connection": "U.S. military targeting by Iran depends on Russian intelligence sharing, making Middle East conflict resolution inseparable from great-power competition.",
+      "force_tag": "great power proxy conflict",
+      "context": ""
+    },
+    {
+      "title": "‘Trump Knew’: Tiger Woods Back Home After Arrest and Trump’s Comeback Dig, Fans Scramble Over Whether the President Saw ",
+      "source": "Atlanta Black Star",
+      "url": "https://atlantablackstar.com/2026/03/28/tiger-woods-arrested-one-day-after-trumps-dig-at-his-comeback/",
+      "tier": "local-regional",
+      "text_preview": "Tiger Woods ’ comeback plans just hit a major bunker—literally and figuratively. Days after President Trump publicly knocked the golfer’s return, Woods found himself in the headlines again for an entirely different reason: an arrest that went viral w",
+      "domains": [
+        "governance",
+        "information",
+        "domestic_politics"
+      ],
+      "connection": "",
+      "force_tag": "",
+      "context": ""
+    },
+    {
+      "title": "Economic Value of Family Caregiving Reaches $4.9 B Annually - AARP",
+      "source": "AARP",
+      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPaHpaTGwyU09RSlIyYTIzVTRWVlVoUTFDVWlHbVplSDhOdXpoeTRQSE05Z09XYnJqbXV4Zjc0ajJmOWkta2xUck40QldaaFFiZi1aQlFKTXdlZTJKbHhGVk9JTWxNMDRZaloteHJfaFNJSTlNdEhNbGFaX0s4ZnE2ZDF3MFMxWU9ndFNDTV81cGMtTXBab3QyVVhzM1lYUHFJSUhOOHE4ZDZaQ0txLVRWaXZXQU1YOFNlY1VBWjczMUgyOEJ4ZEN2S2VjNnQ?oc=5",
+      "tier": "local-regional",
+      "text_preview": "Economic Value of Family Caregiving Reaches $4.9 B Annually &nbsp;&nbsp; AARP",
+      "domains": [
+        "economics",
+        "labor"
+      ],
+      "connection": "Unpaid family caregiving performs economic labor valued at billions, exposing how markets externalize care work onto households.",
+      "force_tag": "invisible labor undervaluation",
+      "context": ""
+    },
+    {
+      "title": "Whistles, monarch butterflies and other anti-ICE symbols join thousands at ‘No Kings’ Minnesota rally",
+      "source": "MinnPost",
+      "url": "https://www.minnpost.com/news/2026/03/whistles-monarch-butterflies-and-other-anti-ice-symbols-join-thousands-at-no-kings-minnesota-rally/",
+      "tier": "local-regional",
+      "text_preview": "Being the center of attention isn’t a Minnesota specialty. But Minnesotans clearly embraced having the nation’s attention at the “No Kings” rally on Saturday as thousands of them stood unified in opposition to President Donald Trump. Those in attenda",
+      "domains": [
+        "domestic_politics",
+        "security"
+      ],
+      "connection": "Mass protest against immigration enforcement reflects political opposition to Trump's ICE policies and security apparatus priorities.",
+      "force_tag": "civic mobilization against enforcement",
+      "context": ""
+    },
+    {
+      "title": "Facilities jobs in Hallam - jobs.chronicle.com",
+      "source": "The Chronicle of Higher Education",
+      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1sSkVaSWpQNzlUamhMZFhNWGJ3d2J2Z2dDU1RONVhXbllXMGZ1ZjEyTEFoTXdiZFN0dHFDdV9LZlRnSExOSzl4QVpybEZzN0VZNXQtTmhwM2hLdmpXUHAw?oc=5",
+      "tier": "specialist",
+      "text_preview": "Facilities jobs in Hallam &nbsp;&nbsp; jobs.chronicle.com",
+      "domains": [],
+      "connection": "",
+      "force_tag": "",
+      "context": ""
+    },
+    {
+      "title": "Protesters clash with federal officers at the ICE building after the No Kings rally - Oregon Public Broadcasting - OPB",
+      "source": "Oregon Public Broadcasting",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPUXZCMlY4eTJsQjNzYWZzWWNWTHRqQ0ptdVJFSHc2bDRYbDlrNElXVHRPZ29aeFR2QW9iU09ObzF4VlN1QnlOTHFmSlljMG90dW5TcG5MY2g1d1hTT1VONUh1MFQ3aHNKWGxqNlZ2VHIzME1fSVV3NkltNGJWV1E1UUctMUdkZnlhakRGMjBLWXVLdDVwUW55bEpLaEJsMllEUmxid1pJR3dMZkVyRmVpbUpxcEd2bjl1aEZKX3NB?oc=5",
+      "tier": "local-regional",
+      "text_preview": "Protesters clash with federal officers at the ICE building after the No Kings rally &nbsp;&nbsp; Oregon Public Broadcasting - OPB",
+      "domains": [
+        "domestic_politics",
+        "security"
+      ],
+      "connection": "Direct action protest against ICE reflects political conflict over immigration enforcement and security policy implementation.",
+      "force_tag": "civic mobilization against enforcement",
+      "context": ""
+    },
+    {
+      "title": "No Kings rallies across Wisconsin draw thousands",
+      "source": "Wisconsin Examiner",
+      "url": "https://wisconsinexaminer.com/2026/03/28/no-kings-rallies-across-wisconsin-draw-thousands/",
+      "tier": "local-regional",
+      "text_preview": "Madison protestors met at Brittingham Park, a public park that sits on Monona Bay, around 12:30 p.m. and, led by a group of women in Statue of Liberty costumes, marched more than a mile to the Wisconsin State Capitol. (Baylor Spears/Wisconsin Examine",
+      "domains": [
+        "domestic_politics"
+      ],
+      "connection": "",
+      "force_tag": "civic participation",
+      "context": ""
+    },
+    {
+      "title": "15 Things You Didn’t Know About Makkah and the Ka’bah [Part 2]",
+      "source": "Muslim Matters",
+      "url": "https://muslimmatters.org/2026/03/29/15-things-you-didnt-know-about-makkah-part2/?utm_source=rss&utm_medium=rss&utm_campaign=15-things-you-didnt-know-about-makkah-part2",
+      "tier": "local-regional",
+      "text_preview": "Explore lesser known facts about Makkah, from the 1979 uprising and global migrant workforce to the loss of historic sites and the miraculous flow of Zamzam. Read Part 1 6. The Ka’bah Was Seized in a Modern Armed Uprising People sometimes imagine Mak",
+      "domains": [
+        "labor",
+        "information",
+        "security",
+        "legal"
+      ],
+      "connection": "",
+      "force_tag": "",
+      "context": ""
     }
   ],
   "active_threads": [
@@ -202,8 +2624,8 @@
       ],
       "label": "Geopolitics + Security",
       "explanation": "Military tensions between nations",
-      "today_count": 9,
-      "trend": "falling",
+      "today_count": 62,
+      "trend": "rising",
       "sample_articles": [
         {
           "title": "Russian authorities detain suspect over St. Petersburg cafe blast",
@@ -228,13 +2650,230 @@
     },
     {
       "pair": [
+        "economics",
+        "geopolitics"
+      ],
+      "label": "Economics + Geopolitics",
+      "explanation": "Trade, sanctions, and global economic competition",
+      "today_count": 19,
+      "trend": "rising",
+      "sample_articles": [
+        {
+          "title": "Houthis enter war as Iran strikes disrupt shipping",
+          "source": "Taipei Times",
+          "url": "https://www.taipeitimes.com/News/front/archives/2026/03/29/2003854648"
+        },
+        {
+          "title": "Houthi attacks on Israel open new front in Mideast war, threaten Red Sea shippin",
+          "source": "France 24",
+          "url": "https://www.france24.com/en/middle-east/20260329-yemen-houthi-attacks-on-israel-open-new-front-mideast-war-threaten-red-sea-shipping"
+        },
+        {
+          "title": "At the 'Gate of Tears', a new threat to global energy emerges",
+          "source": "ABC Australia",
+          "url": "https://www.abc.net.au/news/2026-03-29/gate-of-tears-at-risk-of-becoming-second-major-oil-bottleneck/106508316"
+        }
+      ],
+      "ai_connections": [
+        "Non-state actor entry into regional conflict disrupts maritime commerce; military escalation creates economic externalities.",
+        "Houthi military actions threaten both Israeli targets and critical global trade chokepoint, linking regional war to economic disruption."
+      ]
+    },
+    {
+      "pair": [
+        "governance",
+        "security"
+      ],
+      "label": "Governance + Security",
+      "explanation": "Defense policy and military strategy",
+      "today_count": 15,
+      "trend": "stable",
+      "sample_articles": [
+        {
+          "title": "Cabinet defense budget good for regional security contribution: Greene",
+          "source": "Taipei Times",
+          "url": "https://www.taipeitimes.com/News/taiwan/archives/2026/03/29/2003854656"
+        },
+        {
+          "title": "Slain college student’s mother vows ‘fight for justice’ after illegal immigrant ",
+          "source": "Fox News",
+          "url": "https://www.foxnews.com/us/slain-college-freshmans-mother-vows-fight-justice-illegal-immigrant-charged-chicago-killing"
+        },
+        {
+          "title": "Stephen A Smith says there is 'no excuse' for 'biological men' competing in wome",
+          "source": "Fox News",
+          "url": "https://www.foxnews.com/sports/stephen-smith-says-no-excuse-biological-men-competing-womens-sports"
+        }
+      ],
+      "ai_connections": [
+        "Defense spending allocation reflects government policy prioritizing military capability for regional stability.",
+        "Weak environmental enforcement and demand from wealthy collectors enable transnational wildlife smuggling networks."
+      ]
+    },
+    {
+      "pair": [
+        "legal",
+        "security"
+      ],
+      "label": "Legal + Security",
+      "explanation": "Legal and Security",
+      "today_count": 13,
+      "trend": "rising",
+      "sample_articles": [
+        {
+          "title": "Bélgica exhibe las carencias de Estados Unidos con goleada 5-2 en Atlanta",
+          "source": "El Diario NY",
+          "url": "https://eldiariony.com/2026/03/28/belgica-exhibe-las-carencias-de-estados-unidos-con-goleada-5-2-en-atlanta/"
+        },
+        {
+          "title": "Slain college student’s mother vows ‘fight for justice’ after illegal immigrant ",
+          "source": "Fox News",
+          "url": "https://www.foxnews.com/us/slain-college-freshmans-mother-vows-fight-justice-illegal-immigrant-charged-chicago-killing"
+        },
+        {
+          "title": "Stephen A Smith says there is 'no excuse' for 'biological men' competing in wome",
+          "source": "Fox News",
+          "url": "https://www.foxnews.com/sports/stephen-smith-says-no-excuse-biological-men-competing-womens-sports"
+        }
+      ],
+      "ai_connections": [
+        "Activist pursued legal remedy after documented threats, then became target of violence, exposing enforcement gaps in protection.",
+        "Selective nuclear non-proliferation enforcement erodes international legal norms and destabilizes global order."
+      ]
+    },
+    {
+      "pair": [
+        "governance",
+        "legal"
+      ],
+      "label": "Governance + Legal",
+      "explanation": "Government actions challenged or upheld in courts",
+      "today_count": 13,
+      "trend": "falling",
+      "sample_articles": [
+        {
+          "title": "Former Nepalese prime minister Oli charged over deaths",
+          "source": "Taipei Times",
+          "url": "https://www.taipeitimes.com/News/front/archives/2026/03/29/2003854649"
+        },
+        {
+          "title": "Slain college student’s mother vows ‘fight for justice’ after illegal immigrant ",
+          "source": "Fox News",
+          "url": "https://www.foxnews.com/us/slain-college-freshmans-mother-vows-fight-justice-illegal-immigrant-charged-chicago-killing"
+        },
+        {
+          "title": "Stephen A Smith says there is 'no excuse' for 'biological men' competing in wome",
+          "source": "Fox News",
+          "url": "https://www.foxnews.com/sports/stephen-smith-says-no-excuse-biological-men-competing-womens-sports"
+        }
+      ],
+      "ai_connections": [
+        "Criminal charges against former prime minister test whether judicial systems can hold political leaders accountable.",
+        "Anti-corruption enforcement intersects with legal accountability when officials face prosecution for both financial crimes and violent suppression of dissent."
+      ]
+    },
+    {
+      "pair": [
+        "economics",
+        "governance"
+      ],
+      "label": "Economics + Governance",
+      "explanation": "Tax policy, trade agreements, and government spending",
+      "today_count": 11,
+      "trend": "stable",
+      "sample_articles": [
+        {
+          "title": "Kyoto is eyeing taller buildings. Critics warn it will look like ‘every other ci",
+          "source": "South China Morning Post",
+          "url": "https://www.scmp.com/week-asia/lifestyle-culture/article/3348197/kyoto-eyeing-taller-buildings-critics-warn-it-will-look-every-other-city-japan?utm_source=rss_feed"
+        },
+        {
+          "title": "The Slum in Gangnam, the Richest Part of Seoul",
+          "source": "New York Times",
+          "url": "https://www.nytimes.com/2026/03/29/world/asia/korea-seoul-gangnam-slum.html"
+        },
+        {
+          "title": "Slain college student’s mother vows ‘fight for justice’ after illegal immigrant ",
+          "source": "Fox News",
+          "url": "https://www.foxnews.com/us/slain-college-freshmans-mother-vows-fight-justice-illegal-immigrant-charged-chicago-killing"
+        }
+      ],
+      "ai_connections": [
+        "Local zoning policy change directly affects tourism revenue and urban development investment in historic city.",
+        "Housing affordability crisis drives conflict between municipal redevelopment plans and residents' rights to stay in gentrifying districts."
+      ]
+    },
+    {
+      "pair": [
+        "economics",
+        "security"
+      ],
+      "label": "Economics + Security",
+      "explanation": "Military spending and conflict affecting markets",
+      "today_count": 11,
+      "trend": "falling",
+      "sample_articles": [
+        {
+          "title": "Adani Defence delivers first batch of 2,000 LMGs to Army ahead of schedule",
+          "source": "Times of India",
+          "url": "https://timesofindia.indiatimes.com/defence/news/adani-defence-delivers-first-batch-of-2000-lmgs-to-army-ahead-of-schedule/articleshow/129874252.cms"
+        },
+        {
+          "title": "Houthis enter war as Iran strikes disrupt shipping",
+          "source": "Taipei Times",
+          "url": "https://www.taipeitimes.com/News/front/archives/2026/03/29/2003854648"
+        },
+        {
+          "title": "Slain college student’s mother vows ‘fight for justice’ after illegal immigrant ",
+          "source": "Fox News",
+          "url": "https://www.foxnews.com/us/slain-college-freshmans-mother-vows-fight-justice-illegal-immigrant-charged-chicago-killing"
+        }
+      ],
+      "ai_connections": [
+        "Private defense contractor accelerates weapons manufacturing to meet military procurement timelines, integrating commercial efficiency into national security supply.",
+        "Non-state actor entry into regional conflict disrupts maritime commerce; military escalation creates economic externalities."
+      ]
+    },
+    {
+      "pair": [
+        "domestic_politics",
+        "governance"
+      ],
+      "label": "Politics + Governance",
+      "explanation": "Political conflict over how government agencies operate",
+      "today_count": 11,
+      "trend": "falling",
+      "sample_articles": [
+        {
+          "title": "Slain college student’s mother vows ‘fight for justice’ after illegal immigrant ",
+          "source": "Fox News",
+          "url": "https://www.foxnews.com/us/slain-college-freshmans-mother-vows-fight-justice-illegal-immigrant-charged-chicago-killing"
+        },
+        {
+          "title": "Stephen A Smith says there is 'no excuse' for 'biological men' competing in wome",
+          "source": "Fox News",
+          "url": "https://www.foxnews.com/sports/stephen-smith-says-no-excuse-biological-men-competing-womens-sports"
+        },
+        {
+          "title": "Goodbye Graaff-Reinet: South African town’s name change stirs racial tensions",
+          "source": "The Guardian World",
+          "url": "https://www.theguardian.com/world/2026/mar/29/graaff-reinet-robert-sobukwe-south-african-town-name-change-stirs-racial-tensions"
+        }
+      ],
+      "ai_connections": [
+        "Symbolic decolonization effort triggers racial divide, revealing persistent resistance to acknowledging historical injustice.",
+        "Political fragmentation in legislature blocks infrastructure delivery because development requires cross-party consensus."
+      ]
+    },
+    {
+      "pair": [
         "information",
         "security"
       ],
       "label": "Information + Security",
       "explanation": "Information and Security",
-      "today_count": 4,
-      "trend": "falling",
+      "today_count": 10,
+      "trend": "stable",
       "sample_articles": [
         {
           "title": "Hundreds of millions at risk from Chinese shopping app malware",
@@ -259,77 +2898,95 @@
     },
     {
       "pair": [
-        "economics",
-        "security"
+        "geopolitics",
+        "legal"
       ],
-      "label": "Economics + Security",
-      "explanation": "Military spending and conflict affecting markets",
-      "today_count": 2,
-      "trend": "falling",
+      "label": "Geopolitics + Legal",
+      "explanation": "International law, treaties, and war crimes",
+      "today_count": 9,
+      "trend": "rising",
       "sample_articles": [
         {
-          "title": "Adani Defence delivers first batch of 2,000 LMGs to Army ahead of schedule",
-          "source": "Times of India",
-          "url": "https://timesofindia.indiatimes.com/defence/news/adani-defence-delivers-first-batch-of-2000-lmgs-to-army-ahead-of-schedule/articleshow/129874252.cms"
+          "title": "Taiwan defines key industries: sources",
+          "source": "Taipei Times",
+          "url": "https://www.taipeitimes.com/News/front/archives/2026/03/29/2003854644"
         },
         {
-          "title": "Houthis enter war as Iran strikes disrupt shipping",
-          "source": "Taipei Times",
-          "url": "https://www.taipeitimes.com/News/front/archives/2026/03/29/2003854648"
+          "title": "China Summons US Envoy to HK Over Alert on Security Law Changes",
+          "source": "Bloomberg",
+          "url": "https://www.bloomberg.com/news/articles/2026-03-29/china-summons-us-envoy-to-hk-over-alert-on-security-law-changes"
+        },
+        {
+          "title": "Kimi Antonelli wins Japanese GP to become youngest F1 title leader",
+          "source": "Al Jazeera",
+          "url": "https://www.aljazeera.com/sports/2026/3/29/kimi-antonelli-wins-japanese-gp-to-become-youngest-f1-title-leader?traffic_source=rss"
         }
       ],
       "ai_connections": [
-        "Private defense contractor accelerates weapons manufacturing to meet military procurement timelines, integrating commercial efficiency into national security supply.",
-        "Non-state actor entry into regional conflict disrupts maritime commerce; military escalation creates economic externalities."
+        "US challenges China's new security law procedures as expansion of state surveillance power over individuals' digital devices.",
+        "Selective nuclear non-proliferation enforcement erodes international legal norms and destabilizes global order."
       ]
     },
     {
       "pair": [
-        "climate",
-        "security"
-      ],
-      "label": "Climate + Security",
-      "explanation": "Environmental change creating security challenges",
-      "today_count": 2,
-      "trend": "falling",
-      "sample_articles": [
-        {
-          "title": "Yailin La Más Viral da sus primeras declaraciones tras salir de prisión",
-          "source": "El Diario NY",
-          "url": "https://eldiariony.com/2026/03/28/yailin-la-mas-viral-da-sus-primeras-declaraciones-tras-salir-de-prision/"
-        },
-        {
-          "title": "Bélgica exhibe las carencias de Estados Unidos con goleada 5-2 en Atlanta",
-          "source": "El Diario NY",
-          "url": "https://eldiariony.com/2026/03/28/belgica-exhibe-las-carencias-de-estados-unidos-con-goleada-5-2-en-atlanta/"
-        }
-      ],
-      "ai_connections": []
-    },
-    {
-      "pair": [
-        "geopolitics",
+        "governance",
         "information"
       ],
-      "label": "Geopolitics + Information",
-      "explanation": "Geopolitics and Information",
-      "today_count": 2,
+      "label": "Governance + Information",
+      "explanation": "Government regulation of media and information platforms",
+      "today_count": 9,
       "trend": "new",
       "sample_articles": [
         {
-          "title": "China used fake profiles to spy on NATO, EU: source",
-          "source": "Taipei Times",
-          "url": "https://www.taipeitimes.com/News/front/archives/2026/03/29/2003854647"
+          "title": "Leadership Row Erupts at Philippine Conglomerate Over ABS-CBN Capital Infusion",
+          "source": "Bloomberg",
+          "url": "https://www.bloomberg.com/news/articles/2026-03-29/leadership-row-erupts-at-philippine-conglomerate-over-abs-cbn-capital-infusion"
         },
         {
-          "title": "Disinformation targets Taiwan LNG supply",
-          "source": "Taipei Times",
-          "url": "https://www.taipeitimes.com/News/taiwan/archives/2026/03/29/2003854659"
+          "title": "Stephen A Smith says there is 'no excuse' for 'biological men' competing in wome",
+          "source": "Fox News",
+          "url": "https://www.foxnews.com/sports/stephen-smith-says-no-excuse-biological-men-competing-womens-sports"
+        },
+        {
+          "title": "Paralysed Hong Kong dancer Mo Li shares video of himself steering wheelchair",
+          "source": "South China Morning Post",
+          "url": "https://www.scmp.com/news/hong-kong/society/article/3348282/paralysed-hong-kong-dancer-mo-li-shares-video-himself-steering-wheelchair?utm_source=rss_feed"
         }
       ],
       "ai_connections": [
-        "State-sponsored disinformation operations target alliance institutions; information warfare blurs intelligence and diplomatic competition.",
-        "Coordinated disinformation attacks target critical infrastructure to destabilize adversary's economy and security."
+        "Family leadership conflict over media company funding reveals tensions between corporate governance and editorial independence in conglomerate structure.",
+        "New aviation safety rules lack adequate public communication, leaving travelers unaware of enforcement."
+      ]
+    },
+    {
+      "pair": [
+        "domestic_politics",
+        "security"
+      ],
+      "label": "Politics + Security",
+      "explanation": "Defense and public safety as political issues",
+      "today_count": 9,
+      "trend": "falling",
+      "sample_articles": [
+        {
+          "title": "Slain college student’s mother vows ‘fight for justice’ after illegal immigrant ",
+          "source": "Fox News",
+          "url": "https://www.foxnews.com/us/slain-college-freshmans-mother-vows-fight-justice-illegal-immigrant-charged-chicago-killing"
+        },
+        {
+          "title": "Stephen A Smith says there is 'no excuse' for 'biological men' competing in wome",
+          "source": "Fox News",
+          "url": "https://www.foxnews.com/sports/stephen-smith-says-no-excuse-biological-men-competing-womens-sports"
+        },
+        {
+          "title": "FBI director pushes to release investigative files on Rep. Eric Swalwell: Report",
+          "source": "The Hill",
+          "url": "https://thehill.com/homenews/administration/5806190-fbi-director-pushes-to-release-investigative-files-on-rep-eric-swalwell-reports/"
+        }
+      ],
+      "ai_connections": [
+        "FBI director's prosecutorial discretion over classified files weaponizes investigative power in partisan conflict.",
+        "Activist pursued legal remedy after documented threats, then became target of violence, exposing enforcement gaps in protection."
       ]
     },
     {
@@ -339,53 +2996,54 @@
       ],
       "label": "Politics + Legal",
       "explanation": "Political disputes reaching the courts",
-      "today_count": 1,
+      "today_count": 7,
       "trend": "falling",
       "sample_articles": [
         {
           "title": "Trump pleads not guilty to 34 felony counts",
           "source": "CNN",
           "url": "https://edition.cnn.com/webview/politics/live-news/trump-indictment-stormy-daniels-news-04-03-23/index.html"
-        }
-      ],
-      "ai_connections": [
-        "Criminal indictment of political candidate raises questions about whether legal processes can function independently during election cycles."
-      ]
-    },
-    {
-      "pair": [
-        "economics",
-        "governance"
-      ],
-      "label": "Economics + Governance",
-      "explanation": "Tax policy, trade agreements, and government spending",
-      "today_count": 1,
-      "trend": "falling",
-      "sample_articles": [
+        },
         {
-          "title": "Kyoto is eyeing taller buildings. Critics warn it will look like ‘every other ci",
-          "source": "South China Morning Post",
-          "url": "https://www.scmp.com/week-asia/lifestyle-culture/article/3348197/kyoto-eyeing-taller-buildings-critics-warn-it-will-look-every-other-city-japan?utm_source=rss_feed"
+          "title": "Slain college student’s mother vows ‘fight for justice’ after illegal immigrant ",
+          "source": "Fox News",
+          "url": "https://www.foxnews.com/us/slain-college-freshmans-mother-vows-fight-justice-illegal-immigrant-charged-chicago-killing"
+        },
+        {
+          "title": "Stephen A Smith says there is 'no excuse' for 'biological men' competing in wome",
+          "source": "Fox News",
+          "url": "https://www.foxnews.com/sports/stephen-smith-says-no-excuse-biological-men-competing-womens-sports"
         }
       ],
       "ai_connections": [
-        "Local zoning policy change directly affects tourism revenue and urban development investment in historic city."
+        "Criminal indictment of political candidate raises questions about whether legal processes can function independently during election cycles.",
+        "Activist pursued legal remedy after documented threats, then became target of violence, exposing enforcement gaps in protection."
       ]
     },
     {
       "pair": [
         "climate",
-        "information"
+        "security"
       ],
-      "label": "Climate + Information",
-      "explanation": "Climate and Information",
-      "today_count": 1,
-      "trend": "new",
+      "label": "Climate + Security",
+      "explanation": "Environmental change creating security challenges",
+      "today_count": 7,
+      "trend": "falling",
       "sample_articles": [
         {
           "title": "Yailin La Más Viral da sus primeras declaraciones tras salir de prisión",
           "source": "El Diario NY",
           "url": "https://eldiariony.com/2026/03/28/yailin-la-mas-viral-da-sus-primeras-declaraciones-tras-salir-de-prision/"
+        },
+        {
+          "title": "Bélgica exhibe las carencias de Estados Unidos con goleada 5-2 en Atlanta",
+          "source": "El Diario NY",
+          "url": "https://eldiariony.com/2026/03/28/belgica-exhibe-las-carencias-de-estados-unidos-con-goleada-5-2-en-atlanta/"
+        },
+        {
+          "title": "The Philippines loves Jollibee. Overseas Filipinos love it even more",
+          "source": "South China Morning Post",
+          "url": "https://www.scmp.com/week-asia/lifestyle-culture/article/3348191/philippines-loves-jollibee-overseas-filipinos-love-it-even-more?utm_source=rss_feed"
         }
       ],
       "ai_connections": []
@@ -393,148 +3051,49 @@
     {
       "pair": [
         "climate",
-        "legal"
+        "economics"
       ],
-      "label": "Climate + Legal",
-      "explanation": "Environmental lawsuits and climate litigation",
-      "today_count": 1,
-      "trend": "new",
+      "label": "Climate + Economics",
+      "explanation": "Energy costs, food prices, and insurance rates linked to environmental change",
+      "today_count": 7,
+      "trend": "stable",
       "sample_articles": [
         {
-          "title": "Bélgica exhibe las carencias de Estados Unidos con goleada 5-2 en Atlanta",
-          "source": "El Diario NY",
-          "url": "https://eldiariony.com/2026/03/28/belgica-exhibe-las-carencias-de-estados-unidos-con-goleada-5-2-en-atlanta/"
-        }
-      ],
-      "ai_connections": []
-    },
-    {
-      "pair": [
-        "legal",
-        "security"
-      ],
-      "label": "Legal + Security",
-      "explanation": "Legal and Security",
-      "today_count": 1,
-      "trend": "falling",
-      "sample_articles": [
+          "title": "Two Australia States to Offer Free Transport as Fuel Prices Rise",
+          "source": "Bloomberg",
+          "url": "https://www.bloomberg.com/news/articles/2026-03-29/two-australia-states-to-offer-free-transport-as-fuel-prices-rise"
+        },
         {
-          "title": "Bélgica exhibe las carencias de Estados Unidos con goleada 5-2 en Atlanta",
-          "source": "El Diario NY",
-          "url": "https://eldiariony.com/2026/03/28/belgica-exhibe-las-carencias-de-estados-unidos-con-goleada-5-2-en-atlanta/"
-        }
-      ],
-      "ai_connections": []
-    },
-    {
-      "pair": [
-        "geopolitics",
-        "legal"
-      ],
-      "label": "Geopolitics + Legal",
-      "explanation": "International law, treaties, and war crimes",
-      "today_count": 1,
-      "trend": "new",
-      "sample_articles": [
+          "title": "Exmouth isolated and inundated in wake of Cyclone Narelle as Chevron works to re",
+          "source": "The Guardian World",
+          "url": "https://www.theguardian.com/australia-news/2026/mar/29/exmouth-isolated-and-inundated-in-wake-of-cyclone-narelle-as-chevron-works-to-restart-stalled-gas-plants"
+        },
         {
-          "title": "Taiwan defines key industries: sources",
-          "source": "Taipei Times",
-          "url": "https://www.taipeitimes.com/News/front/archives/2026/03/29/2003854644"
-        }
-      ],
-      "ai_connections": []
-    },
-    {
-      "pair": [
-        "economics",
-        "geopolitics"
-      ],
-      "label": "Economics + Geopolitics",
-      "explanation": "Trade, sanctions, and global economic competition",
-      "today_count": 1,
-      "trend": "new",
-      "sample_articles": [
-        {
-          "title": "Houthis enter war as Iran strikes disrupt shipping",
-          "source": "Taipei Times",
-          "url": "https://www.taipeitimes.com/News/front/archives/2026/03/29/2003854648"
+          "title": "Energy price surge poses new challenges for India’s real estate sector",
+          "source": "The Hindu",
+          "url": "https://www.thehindu.com/business/energy-price-surge-poses-new-challenges-for-indias-real-estate-sector/article70798659.ece"
         }
       ],
       "ai_connections": [
-        "Non-state actor entry into regional conflict disrupts maritime commerce; military escalation creates economic externalities."
-      ]
-    },
-    {
-      "pair": [
-        "governance",
-        "legal"
-      ],
-      "label": "Governance + Legal",
-      "explanation": "Government actions challenged or upheld in courts",
-      "today_count": 1,
-      "trend": "falling",
-      "sample_articles": [
-        {
-          "title": "Former Nepalese prime minister Oli charged over deaths",
-          "source": "Taipei Times",
-          "url": "https://www.taipeitimes.com/News/front/archives/2026/03/29/2003854649"
-        }
-      ],
-      "ai_connections": [
-        "Criminal charges against former prime minister test whether judicial systems can hold political leaders accountable."
-      ]
-    },
-    {
-      "pair": [
-        "governance",
-        "security"
-      ],
-      "label": "Governance + Security",
-      "explanation": "Defense policy and military strategy",
-      "today_count": 1,
-      "trend": "falling",
-      "sample_articles": [
-        {
-          "title": "Cabinet defense budget good for regional security contribution: Greene",
-          "source": "Taipei Times",
-          "url": "https://www.taipeitimes.com/News/taiwan/archives/2026/03/29/2003854656"
-        }
-      ],
-      "ai_connections": [
-        "Defense spending allocation reflects government policy prioritizing military capability for regional stability."
-      ]
-    },
-    {
-      "pair": [
-        "information",
-        "legal"
-      ],
-      "label": "Information + Legal",
-      "explanation": "Free speech, media law, and platform regulation",
-      "today_count": 1,
-      "trend": "new",
-      "sample_articles": [
-        {
-          "title": "Court convicts pair over sale of data of Chinese",
-          "source": "Taipei Times",
-          "url": "https://www.taipeitimes.com/News/taiwan/archives/2026/03/29/2003854665"
-        }
-      ],
-      "ai_connections": [
-        "Data sale prosecution enforces privacy law against unauthorized collection and monetization of personal information."
+        "Geopolitical instability in Middle East raises fossil fuel prices, prompting local governments to subsidize public transit temporarily.",
+        "Tropical cyclone destroys infrastructure and isolates communities while energy company prioritizes corporate asset recovery."
       ]
     }
   ],
   "source_spectrum": {
-    "international": 30,
-    "national": 6,
-    "local-regional": 2,
-    "government": 1
+    "international": 222,
+    "local-regional": 47,
+    "national": 36,
+    "specialist": 3,
+    "analysis": 2,
+    "government": 1,
+    "podcast": 1,
+    "research": 1
   },
   "questions": [
     {
       "question": "What is the current state of international military tensions?",
-      "article_count": 9,
+      "article_count": 62,
       "domains": [
         "Geopolitics",
         "Security"
@@ -580,8 +3139,144 @@
       ]
     },
     {
+      "question": "How are trade and global power shifts affecting the US economy?",
+      "article_count": 19,
+      "domains": [
+        "Economics",
+        "Geopolitics"
+      ],
+      "sources_by_tier": {
+        "international": [
+          {
+            "source": "Taipei Times",
+            "title": "Houthis enter war as Iran strikes disrupt shipping",
+            "url": "https://www.taipeitimes.com/News/front/archives/2026/03/29/2003854648",
+            "context": "",
+            "connection": "Non-state actor entry into regional conflict disrupts maritime commerce; military escalation creates economic externalities."
+          },
+          {
+            "source": "France 24",
+            "title": "Houthi attacks on Israel open new front in Mideast war, threaten Red Sea shipping",
+            "url": "https://www.france24.com/en/middle-east/20260329-yemen-houthi-attacks-on-israel-open-new-front-mideast-war-threaten-red-sea-shipping",
+            "context": "",
+            "connection": "Houthi military actions threaten both Israeli targets and critical global trade chokepoint, linking regional war to economic disruption."
+          }
+        ]
+      },
+      "ai_insights": [
+        "Non-state actor entry into regional conflict disrupts maritime commerce; military escalation creates economic externalities.",
+        "Houthi military actions threaten both Israeli targets and critical global trade chokepoint, linking regional war to economic disruption.",
+        "Regional conflict threatens a critical global shipping chokepoint, risking energy supplies and trade flows worldwide."
+      ]
+    },
+    {
+      "question": "What military and defense policy decisions are being made?",
+      "article_count": 15,
+      "domains": [
+        "Governance",
+        "Security"
+      ],
+      "sources_by_tier": {
+        "international": [
+          {
+            "source": "Taipei Times",
+            "title": "Cabinet defense budget good for regional security contribution: Greene",
+            "url": "https://www.taipeitimes.com/News/taiwan/archives/2026/03/29/2003854656",
+            "context": "",
+            "connection": "Defense spending allocation reflects government policy prioritizing military capability for regional stability."
+          },
+          {
+            "source": "BBC World",
+            "title": "One ant for $220: the new frontier of wildlife trafficking",
+            "url": "https://www.bbc.com/news/articles/cg4g44zv37qo?at_medium=RSS&at_campaign=rss",
+            "context": "Funded by the UK license fee. British public broadcaster. Generally regarded as centrist by international standards.",
+            "connection": "Weak environmental enforcement and demand from wealthy collectors enable transnational wildlife smuggling networks."
+          }
+        ],
+        "national": [
+          {
+            "source": "Fox News",
+            "title": "Slain college student’s mother vows ‘fight for justice’ after illegal immigrant charged in Chicago k",
+            "url": "https://www.foxnews.com/us/slain-college-freshmans-mother-vows-fight-justice-illegal-immigrant-charged-chicago-killing",
+            "context": "Owned by Fox Corporation (Murdoch family). Largest cable news network by viewership. Generally regarded as right-leaning.",
+            "connection": ""
+          }
+        ],
+        "local-regional": [
+          {
+            "source": "The Marshall Project",
+            "title": "‘Like The Walking Dead’: Smuggled Drugs Fuel Chaos Inside Ohio Prisons - The Marshall Project",
+            "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPUTBBR01icFhNbTNBdjJhOGFPQmhkRmMwS043OEMyY1BSbzBoMkdUcGV6MWRIZnV4bWF1dG1TaHlRWV9TX0taQWhIQzlrdVZfMVRZUGZUSGVSSmUyaEtORWgyeXp0c2lvNkFrbkphWTJiOU1ZRFE3Y2puc2hzQ2pJYlVxbW9YU1hKVDM3R1l4ZzFzemQ0UlZLMzQ5TjFhaUtPTVY4?oc=5",
+            "context": "",
+            "connection": "Prison labor systems create conditions where smuggled contraband becomes survival currency, exposing state custody failure."
+          },
+          {
+            "source": "El Diario NY",
+            "title": "Pam Bondi reconoce a policías de Nueva York por frustrar ataque vinculado a ISIS cerca de Gracie Man",
+            "url": "https://eldiariony.com/2026/03/28/pam-bondi-reconoce-a-policias-de-nueva-york-por-frustrar-ataque-vinculado-a-isis-cerca-de-gracie-mansion/",
+            "context": "Spanish-language daily serving Latino communities in New York metro area.",
+            "connection": "Local police coordination prevents terror attack, illustrating effective institutional security response within city governance structure."
+          }
+        ]
+      },
+      "ai_insights": [
+        "Defense spending allocation reflects government policy prioritizing military capability for regional stability.",
+        "Weak environmental enforcement and demand from wealthy collectors enable transnational wildlife smuggling networks.",
+        "Emergency services test interagency coordination protocols to improve crisis response across institutional boundaries."
+      ]
+    },
+    {
+      "question": "Which government actions are being challenged in court?",
+      "article_count": 13,
+      "domains": [
+        "Governance",
+        "Legal"
+      ],
+      "sources_by_tier": {
+        "international": [
+          {
+            "source": "Taipei Times",
+            "title": "Former Nepalese prime minister Oli charged over deaths",
+            "url": "https://www.taipeitimes.com/News/front/archives/2026/03/29/2003854649",
+            "context": "",
+            "connection": "Criminal charges against former prime minister test whether judicial systems can hold political leaders accountable."
+          },
+          {
+            "source": "The Hindu",
+            "title": "Nepal's former Energy Minister arrested in money laundering probe",
+            "url": "https://www.thehindu.com/news/international/nepals-former-energy-minister-arrested-in-money-laundering-probe/article70798988.ece",
+            "context": "",
+            "connection": "Anti-corruption enforcement intersects with legal accountability when officials face prosecution for both financial crimes and violent suppression of dissent."
+          }
+        ],
+        "national": [
+          {
+            "source": "Fox News",
+            "title": "Slain college student’s mother vows ‘fight for justice’ after illegal immigrant charged in Chicago k",
+            "url": "https://www.foxnews.com/us/slain-college-freshmans-mother-vows-fight-justice-illegal-immigrant-charged-chicago-killing",
+            "context": "Owned by Fox Corporation (Murdoch family). Largest cable news network by viewership. Generally regarded as right-leaning.",
+            "connection": ""
+          }
+        ],
+        "local-regional": [
+          {
+            "source": "AsAmNews",
+            "title": "Advocates call for protections for traveling green card holders",
+            "url": "https://asamnews.com/2026/03/28/bondi-lau-green-card-holder-travel-rights/",
+            "context": "",
+            "connection": "Immigrant rights groups seek judicial protection for green card holders' freedom of movement against potential executive restrictions."
+          }
+        ]
+      },
+      "ai_insights": [
+        "Criminal charges against former prime minister test whether judicial systems can hold political leaders accountable.",
+        "Anti-corruption enforcement intersects with legal accountability when officials face prosecution for both financial crimes and violent suppression of dissent.",
+        "Anti-corruption enforcement agency catches government officials extracting bribes from public infrastructure funds."
+      ]
+    },
+    {
       "question": "How is the conflict affecting prices and the economy?",
-      "article_count": 2,
+      "article_count": 11,
       "domains": [
         "Economics",
         "Security"
@@ -602,33 +3297,359 @@
             "context": "",
             "connection": "Non-state actor entry into regional conflict disrupts maritime commerce; military escalation creates economic externalities."
           }
-        ]
-      },
-      "ai_insights": [
-        "Private defense contractor accelerates weapons manufacturing to meet military procurement timelines, integrating commercial efficiency into national security supply.",
-        "Non-state actor entry into regional conflict disrupts maritime commerce; military escalation creates economic externalities."
-      ]
-    },
-    {
-      "question": "How is environmental change creating security risks?",
-      "article_count": 2,
-      "domains": [
-        "Climate",
-        "Security"
-      ],
-      "sources_by_tier": {
-        "local-regional": [
+        ],
+        "national": [
           {
-            "source": "El Diario NY",
-            "title": "Yailin La Más Viral da sus primeras declaraciones tras salir de prisión",
-            "url": "https://eldiariony.com/2026/03/28/yailin-la-mas-viral-da-sus-primeras-declaraciones-tras-salir-de-prision/",
-            "context": "Spanish-language daily serving Latino communities in New York metro area.",
+            "source": "Fox News",
+            "title": "Slain college student’s mother vows ‘fight for justice’ after illegal immigrant charged in Chicago k",
+            "url": "https://www.foxnews.com/us/slain-college-freshmans-mother-vows-fight-justice-illegal-immigrant-charged-chicago-killing",
+            "context": "Owned by Fox Corporation (Murdoch family). Largest cable news network by viewership. Generally regarded as right-leaning.",
             "connection": ""
           }
         ]
       },
-      "ai_insights": []
+      "ai_insights": [
+        "Private defense contractor accelerates weapons manufacturing to meet military procurement timelines, integrating commercial efficiency into national security supply.",
+        "Non-state actor entry into regional conflict disrupts maritime commerce; military escalation creates economic externalities.",
+        "Houthi military actions threaten both Israeli targets and critical global trade chokepoint, linking regional war to economic disruption."
+      ]
+    },
+    {
+      "question": "What is the government actually doing right now?",
+      "article_count": 11,
+      "domains": [
+        "Politics",
+        "Governance"
+      ],
+      "sources_by_tier": {
+        "national": [
+          {
+            "source": "Fox News",
+            "title": "Slain college student’s mother vows ‘fight for justice’ after illegal immigrant charged in Chicago k",
+            "url": "https://www.foxnews.com/us/slain-college-freshmans-mother-vows-fight-justice-illegal-immigrant-charged-chicago-killing",
+            "context": "Owned by Fox Corporation (Murdoch family). Largest cable news network by viewership. Generally regarded as right-leaning.",
+            "connection": ""
+          }
+        ],
+        "international": [
+          {
+            "source": "The Guardian World",
+            "title": "Goodbye Graaff-Reinet: South African town’s name change stirs racial tensions",
+            "url": "https://www.theguardian.com/world/2026/mar/29/graaff-reinet-robert-sobukwe-south-african-town-name-change-stirs-racial-tensions",
+            "context": "Owned by the Scott Trust, a nonprofit. British newspaper. Generally regarded as left-leaning. No paywall.",
+            "connection": "Symbolic decolonization effort triggers racial divide, revealing persistent resistance to acknowledging historical injustice."
+          },
+          {
+            "source": "The Hindu",
+            "title": "N.R. Congress pitches ‘united MLAs’ plank for Karaikal development",
+            "url": "https://www.thehindu.com/elections/puducherry-assembly/nr-congress-pitches-united-mlas-plank-for-karaikal-development/article70792244.ece",
+            "context": "",
+            "connection": "Political fragmentation in legislature blocks infrastructure delivery because development requires cross-party consensus."
+          }
+        ],
+        "local-regional": [
+          {
+            "source": "Atlanta Black Star",
+            "title": "‘Trump Knew’: Tiger Woods Back Home After Arrest and Trump’s Comeback Dig, Fans Scramble Over Whethe",
+            "url": "https://atlantablackstar.com/2026/03/28/tiger-woods-arrested-one-day-after-trumps-dig-at-his-comeback/",
+            "context": "",
+            "connection": ""
+          }
+        ]
+      },
+      "ai_insights": [
+        "Symbolic decolonization effort triggers racial divide, revealing persistent resistance to acknowledging historical injustice.",
+        "Political fragmentation in legislature blocks infrastructure delivery because development requires cross-party consensus.",
+        "Ruling coalition pushes for rapid budget passage while opposition demands deliberate scrutiny before fiscal year deadline."
+      ]
+    },
+    {
+      "question": "How is the government shaping what information reaches you?",
+      "article_count": 9,
+      "domains": [
+        "Governance",
+        "Information"
+      ],
+      "sources_by_tier": {
+        "national": [
+          {
+            "source": "Bloomberg",
+            "title": "Leadership Row Erupts at Philippine Conglomerate Over ABS-CBN Capital Infusion",
+            "url": "https://www.bloomberg.com/news/articles/2026-03-29/leadership-row-erupts-at-philippine-conglomerate-over-abs-cbn-capital-infusion",
+            "context": "Founded and majority-owned by Michael Bloomberg. Dominant source for financial professionals.",
+            "connection": "Family leadership conflict over media company funding reveals tensions between corporate governance and editorial independence in conglomerate structure."
+          },
+          {
+            "source": "Fox News",
+            "title": "Stephen A Smith says there is 'no excuse' for 'biological men' competing in women's sports",
+            "url": "https://www.foxnews.com/sports/stephen-smith-says-no-excuse-biological-men-competing-womens-sports",
+            "context": "Owned by Fox Corporation (Murdoch family). Largest cable news network by viewership. Generally regarded as right-leaning.",
+            "connection": ""
+          }
+        ],
+        "international": [
+          {
+            "source": "South China Morning Post",
+            "title": "Paralysed Hong Kong dancer Mo Li shares video of himself steering wheelchair",
+            "url": "https://www.scmp.com/news/hong-kong/society/article/3348282/paralysed-hong-kong-dancer-mo-li-shares-video-himself-steering-wheelchair?utm_source=rss_feed",
+            "context": "",
+            "connection": ""
+          },
+          {
+            "source": "The Japan Times",
+            "title": "Sakura Internet formally selected as government cloud provider",
+            "url": "https://www.japantimes.co.jp/business/2026/03/29/sakura-internet-govt-cloud/",
+            "context": "",
+            "connection": "Government selects domestic cloud provider to reduce dependency on foreign tech platforms for sensitive data storage."
+          }
+        ],
+        "local-regional": [
+          {
+            "source": "Atlanta Black Star",
+            "title": "‘Trump Knew’: Tiger Woods Back Home After Arrest and Trump’s Comeback Dig, Fans Scramble Over Whethe",
+            "url": "https://atlantablackstar.com/2026/03/28/tiger-woods-arrested-one-day-after-trumps-dig-at-his-comeback/",
+            "context": "",
+            "connection": ""
+          }
+        ]
+      },
+      "ai_insights": [
+        "Family leadership conflict over media company funding reveals tensions between corporate governance and editorial independence in conglomerate structure.",
+        "New aviation safety rules lack adequate public communication, leaving travelers unaware of enforcement.",
+        "China challenges Western-dominated academic metrics to expand influence over global knowledge evaluation standards."
+      ]
+    },
+    {
+      "question": "How are defense and security decisions being shaped by politics?",
+      "article_count": 9,
+      "domains": [
+        "Politics",
+        "Security"
+      ],
+      "sources_by_tier": {
+        "national": [
+          {
+            "source": "Fox News",
+            "title": "Slain college student’s mother vows ‘fight for justice’ after illegal immigrant charged in Chicago k",
+            "url": "https://www.foxnews.com/us/slain-college-freshmans-mother-vows-fight-justice-illegal-immigrant-charged-chicago-killing",
+            "context": "Owned by Fox Corporation (Murdoch family). Largest cable news network by viewership. Generally regarded as right-leaning.",
+            "connection": ""
+          },
+          {
+            "source": "The Hill",
+            "title": "FBI director pushes to release investigative files on Rep. Eric Swalwell: Reports",
+            "url": "https://thehill.com/homenews/administration/5806190-fbi-director-pushes-to-release-investigative-files-on-rep-eric-swalwell-reports/",
+            "context": "",
+            "connection": "FBI director's prosecutorial discretion over classified files weaponizes investigative power in partisan conflict."
+          }
+        ],
+        "international": [
+          {
+            "source": "The Hindu",
+            "title": "Joe Kent | The rebel within",
+            "url": "https://www.thehindu.com/news/international/joe-kent-the-rebel-within/article70797267.ece",
+            "context": "",
+            "connection": "Whistleblower challenges foreign policy direction shaped by lobbying influence on national security decision-making."
+          }
+        ],
+        "local-regional": [
+          {
+            "source": "MinnPost",
+            "title": "Whistles, monarch butterflies and other anti-ICE symbols join thousands at ‘No Kings’ Minnesota rall",
+            "url": "https://www.minnpost.com/news/2026/03/whistles-monarch-butterflies-and-other-anti-ice-symbols-join-thousands-at-no-kings-minnesota-rally/",
+            "context": "",
+            "connection": "Mass protest against immigration enforcement reflects political opposition to Trump's ICE policies and security apparatus priorities."
+          },
+          {
+            "source": "Oregon Public Broadcasting",
+            "title": "Protesters clash with federal officers at the ICE building after the No Kings rally - Oregon Public ",
+            "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPUXZCMlY4eTJsQjNzYWZzWWNWTHRqQ0ptdVJFSHc2bDRYbDlrNElXVHRPZ29aeFR2QW9iU09ObzF4VlN1QnlOTHFmSlljMG90dW5TcG5MY2g1d1hTT1VONUh1MFQ3aHNKWGxqNlZ2VHIzME1fSVV3NkltNGJWV1E1UUctMUdkZnlhakRGMjBLWXVLdDVwUW55bEpLaEJsMllEUmxid1pJR3dMZkVyRmVpbUpxcEd2bjl1aEZKX3NB?oc=5",
+            "context": "",
+            "connection": "Direct action protest against ICE reflects political conflict over immigration enforcement and security policy implementation."
+          }
+        ]
+      },
+      "ai_insights": [
+        "FBI director's prosecutorial discretion over classified files weaponizes investigative power in partisan conflict.",
+        "Activist pursued legal remedy after documented threats, then became target of violence, exposing enforcement gaps in protection.",
+        "Political appointee weaponizes intelligence agency to release classified files targeting opposition congressman."
+      ]
     }
   ],
-  "narrative_divergence": []
+  "narrative_divergence": [
+    {
+      "topic": "Politics + Governance",
+      "theme": "Protesters use creative civic action to challenge state priorities, arguing World Cup spending displaces investment in b",
+      "source_count": 8,
+      "structural_force": "civic participation",
+      "articles": [
+        {
+          "title": "Mexican protesters turn highway into football pitch to slam World Cup 'dispossession'",
+          "source": "Straits Times",
+          "url": "https://www.straitstimes.com/world/mexican-protesters-turn-highway-into-football-pitch-to-slam-world-cup-dispossession",
+          "tier": "international",
+          "paywall": false,
+          "context": "",
+          "connection": "Protesters use creative civic action to challenge state priorities, arguing World Cup spending displaces investment in basic urban needs.",
+          "force_tag": "civic participation"
+        },
+        {
+          "title": "Armstrong’s wife and AIADMK candidate A. Porkodi hopes to win Thiru.Vi.Ka. Nagar constituency",
+          "source": "The Hindu",
+          "url": "https://www.thehindu.com/elections/tamil-nadu-assembly/armstrongs-wife-and-aiadmk-candidate-a-porkodi-hopes-to-win-thiruvika-nagar-constituency/article70798786.ece",
+          "tier": "international",
+          "paywall": false,
+          "context": "",
+          "connection": "Widow running for office to seek justice for spouse's murder through electoral accountability mechanism.",
+          "force_tag": "civic participation as justice-seeking"
+        },
+        {
+          "title": "‘Put down the crown, clown’: Thousands rally against Trump in 'No Kings' protests",
+          "source": "Times of India",
+          "url": "https://timesofindia.indiatimes.com/world/us/put-down-the-crown-clown-no-kings-protests-see-thousands-across-us-rallying-against-trump/articleshow/129874606.cms",
+          "tier": "international",
+          "paywall": false,
+          "context": "",
+          "connection": "",
+          "force_tag": "civic participation"
+        },
+        {
+          "title": "No Kings rallies across Wisconsin draw thousands",
+          "source": "Wisconsin Examiner",
+          "url": "https://wisconsinexaminer.com/2026/03/28/no-kings-rallies-across-wisconsin-draw-thousands/",
+          "tier": "local-regional",
+          "paywall": false,
+          "context": "",
+          "connection": "",
+          "force_tag": "civic participation"
+        },
+        {
+          "title": "Thousands protest Trump agenda at “No Kings” rallies in Helena, Missoula and dozens of other locations in Montana",
+          "source": "Montana Free Press",
+          "url": "https://montanafreepress.org/2026/03/28/no-kings-protests-montana-helena-missoula/",
+          "tier": "local-regional",
+          "paywall": false,
+          "context": "",
+          "connection": "",
+          "force_tag": "civic participation"
+        },
+        {
+          "title": "‘Without those checks, he’s a king’: Thousands rally across Arizona against Trump for No Kings",
+          "source": "Arizona Mirror",
+          "url": "https://azmirror.com/2026/03/28/without-those-checks-hes-a-king-thousands-rally-across-arizona-against-trump-for-no-kings/",
+          "tier": "local-regional",
+          "paywall": false,
+          "context": "",
+          "connection": "",
+          "force_tag": "civic participation"
+        }
+      ]
+    },
+    {
+      "topic": "Security + Geopolitics",
+      "theme": "Iran's military capacity directly shapes regional escalation dynamics and U.S. deterrence calculations.",
+      "source_count": 8,
+      "structural_force": "arms race escalation",
+      "articles": [
+        {
+          "title": "A Toothless Iran? Missile and Drone Strikes Show It Can Still Inflict Pain.",
+          "source": "New York Times",
+          "url": "https://www.nytimes.com/2026/03/29/world/middleeast/iran-missiles-war.html",
+          "tier": "national",
+          "paywall": true,
+          "context": "Publicly traded, headquartered in New York. Largest US newspaper by circulation. Generally regarded as center-left in editorial stance.",
+          "connection": "Iran's military capacity directly shapes regional escalation dynamics and U.S. deterrence calculations.",
+          "force_tag": "arms escalation spiral"
+        },
+        {
+          "title": "North Korea conducts engine test for missile capable of targeting U.S. mainland",
+          "source": "The Hindu",
+          "url": "https://www.thehindu.com/news/international/north-korea-conducts-engine-test-for-missile-capable-of-targeting-us-mainland/article70798788.ece",
+          "tier": "international",
+          "paywall": false,
+          "context": "",
+          "connection": "Nuclear-armed state accelerates weapons capability specifically designed to threaten US homeland.",
+          "force_tag": "arms race escalation"
+        },
+        {
+          "title": "North Korea tests powerful missile engine. Will an ICBM launch follow?",
+          "source": "South China Morning Post",
+          "url": "https://www.scmp.com/week-asia/politics/article/3348280/north-tests-powerful-missile-engine-will-icbm-launch-follow?utm_source=rss_feed",
+          "tier": "international",
+          "paywall": true,
+          "context": "",
+          "connection": "Military weapons development accelerates regional instability and nuclear proliferation risks.",
+          "force_tag": "arms race escalation"
+        },
+        {
+          "title": "‘Targets around globe’: North Korea’s Kim Jong Un oversees high-thrust solid-fuel rocket engine test",
+          "source": "Times of India",
+          "url": "https://timesofindia.indiatimes.com/defence/international/targets-around-globe-north-koreas-kim-jong-un-oversees-high-thrust-solid-fuel-rocket-engine-test/articleshow/129875131.cms",
+          "tier": "international",
+          "paywall": false,
+          "context": "",
+          "connection": "North Korea's missile development is a direct challenge to regional and global security architecture, escalating military brinkmanship.",
+          "force_tag": "arms race escalation"
+        },
+        {
+          "title": "North Korea’s Kim Jong Un oversees test of high-thrust engine: state media",
+          "source": "Dawn",
+          "url": "https://www.dawn.com/news/1986533/north-koreas-kim-jong-un-oversees-test-of-high-thrust-engine-state-media",
+          "tier": "international",
+          "paywall": false,
+          "context": "",
+          "connection": "Nuclear-armed state advances ballistic missile capability, increasing regional security threat and strategic unpredictability.",
+          "force_tag": "arms race escalation"
+        },
+        {
+          "title": "North Korea’s Kim oversees test of high-thrust engine: KCNA",
+          "source": "Channel News Asia",
+          "url": "https://www.channelnewsasia.com/east-asia/north-korea-kim-ground-test-solid-fuel-rocket-engine-kcna-6023886",
+          "tier": "international",
+          "paywall": false,
+          "context": "",
+          "connection": "North Korea's weapons development advances within broader strategic competition and deterrence posture.",
+          "force_tag": "arms race escalation"
+        }
+      ]
+    },
+    {
+      "topic": "Geopolitics + Economics",
+      "theme": "Ukraine's drone strikes on Russian energy infrastructure weaponize supply chains, threatening global oil markets and for",
+      "source_count": 3,
+      "structural_force": "supply chain weaponization",
+      "articles": [
+        {
+          "title": "Russia's Ust-Luga port damaged by Ukrainian drones, fire breaks out",
+          "source": "Straits Times",
+          "url": "https://www.straitstimes.com/world/europe/russias-ust-luga-port-damaged-by-ukrainian-drones-fire-breaks-out",
+          "tier": "international",
+          "paywall": false,
+          "context": "",
+          "connection": "Ukraine's drone strikes on Russian energy infrastructure weaponize supply chains, threatening global oil markets and forcing NATO allies to absorb economic shocks.",
+          "force_tag": "supply chain weaponization"
+        },
+        {
+          "title": "Saudi Arabia pumps 7 million bpd via east-west pipeline amid Hormuz disruption",
+          "source": "Times of India",
+          "url": "https://timesofindia.indiatimes.com/business/international-business/saudi-arabia-pumps-7-million-bpd-via-east-west-pipeline-amid-hormuz-disruption/articleshow/129875927.cms",
+          "tier": "international",
+          "paywall": false,
+          "context": "",
+          "connection": "Saudi Arabia's pipeline circumvents geopolitical chokepoint vulnerability, using infrastructure as strategic hedge against regional military disruption.",
+          "force_tag": "supply chain weaponization"
+        },
+        {
+          "title": "One month on, Iran conflict fuels worries for Japanese firms and households",
+          "source": "The Japan Times",
+          "url": "https://www.japantimes.co.jp/business/2026/03/29/companies/one-month-iran-conflict/",
+          "tier": "international",
+          "paywall": false,
+          "context": "",
+          "connection": "Regional military conflict directly transmits price shocks through global supply chains to household utility costs and farm operations.",
+          "force_tag": "supply chain vulnerability"
+        }
+      ]
+    }
+  ]
 }
