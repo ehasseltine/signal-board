@@ -267,7 +267,7 @@ function dotCount(articles: number): number {
   <div style="padding: 40px 0 0;">
     {threadStory.synthesis && (
       <div class="r">
-        <p class="body r d2" style="font-size: clamp(17px, 1.8vw, 20px); line-height: 1.8;" set:html={escapeHtml(threadStory.synthesis)} />
+        <p class="body r d2" style="font-size: clamp(17px, 1.8vw, 20px); line-height: 1.8; margin-bottom: 24px;" set:html={escapeHtml(threadStory.synthesis)} />
       </div>
     )}
   </div>
@@ -277,11 +277,13 @@ function dotCount(articles: number): number {
 {threadStory.crossSpectrum && (
 <div class="wrap">
   <div style="padding: 32px 0 0;">
-    <div class="r">
-      <span class="section-label" style="font-size: 13px; margin-bottom: 12px; display: block;">Across the spectrum</span>
-      <div style="border-left: 4px solid var(--red); padding: 20px 24px; background: rgba(27, 42, 74, 0.04); border-radius: 0 8px 8px 0;">
-        <p class="body" style="font-size: clamp(15px, 1.5vw, 17px); line-height: 1.8; color: var(--ink);" set:html={escapeHtml(threadStory.crossSpectrum)} />
-      </div>
+    <span class="section-label r" style="font-size: 13px; margin-bottom: 16px; display: block;">How outlets told it differently</span>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px;" class="r">
+      {threadStory.crossSpectrum.split(/(?<=\.)\s+/).filter((s: string) => s.trim().length > 10).map((sentence: string) => (
+        <div style="border-left: 4px solid var(--red); padding: 14px 18px; background: rgba(27, 42, 74, 0.04); border-radius: 0 8px 8px 0;">
+          <p class="body" style="font-size: clamp(14px, 1.4vw, 16px); line-height: 1.7; color: var(--ink); margin: 0;">{sentence.trim()}</p>
+        </div>
+      ))}
     </div>
   </div>
 </div>
@@ -292,8 +294,11 @@ function dotCount(articles: number): number {
 <div class="wrap">
   <div style="padding: 32px 0 0;">
     <div class="r">
-      <span class="section-label" style="font-size: 13px; margin-bottom: 12px; display: block; color: var(--red);">Why this matters to you</span>
-      <p class="body" style="font-size: clamp(16px, 1.7vw, 19px); line-height: 1.8; font-style: italic;" set:html={escapeHtml(threadStory.whyThisMatters)} />
+      <div style="text-align: center; max-width: 600px; margin: 40px auto; padding: 24px 0;">
+        <div style="width: 40px; height: 2px; background: var(--red); margin: 0 auto 20px;"></div>
+        <p style="font-family: 'Lora', serif; font-style: italic; font-size: clamp(18px, 2vw, 22px); line-height: 1.7; color: var(--ink);" set:html={escapeHtml(threadStory.whyThisMatters)} />
+        <div style="width: 40px; height: 2px; background: var(--red); margin: 20px auto 0;"></div>
+      </div>
     </div>
   </div>
 </div>
@@ -304,8 +309,10 @@ function dotCount(articles: number): number {
 <div class="wrap">
   <div style="padding: 32px 0 0;">
     <div class="r">
-      <span class="section-label" style="font-size: 13px; margin-bottom: 12px; display: block; color: var(--green);">What to watch for</span>
-      <p class="body" style="font-size: clamp(15px, 1.5vw, 17px); line-height: 1.8;" set:html={escapeHtml(threadStory.watchFor)} />
+      <div style="border-left: 4px solid var(--green); padding: 14px 18px; background: rgba(45, 138, 78, 0.06); border-radius: 0 8px 8px 0;">
+        <span class="section-label" style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--green); font-weight: 600; display: block; margin-bottom: 8px;">What to watch for</span>
+        <p class="body" style="font-size: clamp(15px, 1.5vw, 17px); line-height: 1.8; color: var(--ink); margin: 0;" set:html={escapeHtml(threadStory.watchFor)} />
+      </div>
     </div>
   </div>
 </div>
@@ -366,7 +373,7 @@ function dotCount(articles: number): number {
 <div class="wrap">
   <div style="padding: 32px 0 0;">
     <div class="r">
-      <p class="body" style="font-size: clamp(17px, 1.8vw, 20px); line-height: 1.8; color: var(--on-navy-dim);" set:html={escapeHtml(gapStory.synthesis)} />
+      <p class="body" style="font-size: clamp(17px, 1.8vw, 20px); line-height: 1.8; color: var(--on-navy-dim); margin-bottom: 24px;" set:html={escapeHtml(gapStory.synthesis)} />
     </div>
   </div>
 </div>
@@ -377,11 +384,13 @@ function dotCount(articles: number): number {
 <div class="wrap">
   <div style="padding: 32px 0 0;">
     <span class="section-label r" style="font-size: 13px; margin-bottom: 16px; display: block; color: var(--red);">How outlets framed it</span>
-    {gapStory.insights.slice(0, 4).map((insight: string) => (
-      <div class="r" style="margin-bottom: 16px; padding: 16px 20px; background: rgba(255, 255, 255, 0.06); border-radius: 0 8px 8px 0; border-left: 4px solid var(--red);">
-        <p class="body" style="font-size: clamp(15px, 1.5vw, 17px); line-height: 1.7; color: var(--on-navy-dim);" set:html={escapeHtml(insight)} />
-      </div>
-    ))}
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px;" class="r">
+      {gapStory.insights.slice(0, 4).map((insight: string) => (
+        <div style="border-left: 4px solid var(--red); padding: 14px 18px; background: rgba(255, 255, 255, 0.06); border-radius: 0 8px 8px 0;">
+          <p class="body" style="font-size: clamp(14px, 1.4vw, 16px); line-height: 1.7; color: var(--on-navy-dim); margin: 0;" set:html={escapeHtml(insight)} />
+        </div>
+      ))}
+    </div>
   </div>
 </div>
 )}
@@ -391,7 +400,11 @@ function dotCount(articles: number): number {
 <div class="wrap">
   <div style="padding: 32px 0 0;">
     <div class="r">
-      <p class="body" style="font-size: clamp(16px, 1.7vw, 19px); line-height: 1.8; font-style: italic; color: var(--cream);" set:html={escapeHtml(gapStory.whyThisMatters)} />
+      <div style="text-align: center; max-width: 600px; margin: 40px auto; padding: 24px 0;">
+        <div style="width: 40px; height: 2px; background: var(--red); margin: 0 auto 20px;"></div>
+        <p style="font-family: 'Lora', serif; font-style: italic; font-size: clamp(18px, 2vw, 22px); line-height: 1.7; color: var(--cream);" set:html={escapeHtml(gapStory.whyThisMatters)} />
+        <div style="width: 40px; height: 2px; background: var(--red); margin: 20px auto 0;"></div>
+      </div>
     </div>
   </div>
 </div>
@@ -438,7 +451,7 @@ function dotCount(articles: number): number {
 <div class="wrap">
   <div style="padding: 24px 0 0;">
     <div class="r">
-      <p class="body r d2" style="font-size: clamp(17px, 1.8vw, 20px); line-height: 1.8;" set:html={escapeHtml(meanwhileStory.synthesis)} />
+      <p class="body r d2" style="font-size: clamp(17px, 1.8vw, 20px); line-height: 1.8; margin-bottom: 24px;" set:html={escapeHtml(meanwhileStory.synthesis)} />
     </div>
   </div>
 </div>
@@ -448,11 +461,14 @@ function dotCount(articles: number): number {
 {meanwhileStory.insights && meanwhileStory.insights.length > 0 && (
 <div class="wrap">
   <div style="padding: 32px 0 0;">
-    {meanwhileStory.insights.slice(0, 3).map((insight: string) => (
-      <div class="r" style="margin-bottom: 24px; padding: 20px 24px; background: rgba(45, 138, 78, 0.06); border-radius: 8px; border-left: 4px solid var(--green);">
-        <p class="body" style="font-size: clamp(15px, 1.5vw, 17px); line-height: 1.8;" set:html={escapeHtml(insight)} />
-      </div>
-    ))}
+    <span class="section-label section-label-green r" style="font-size: 13px; margin-bottom: 16px; display: block;">Stories people showed up for</span>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;" class="r">
+      {meanwhileStory.insights.slice(0, 3).map((insight: string) => (
+        <div style="padding: 20px 24px; background: rgba(45, 138, 78, 0.06); border-radius: 8px; border-left: 4px solid var(--green);">
+          <p class="body" style="font-size: clamp(15px, 1.5vw, 17px); line-height: 1.8; color: var(--ink); margin: 0;" set:html={escapeHtml(insight)} />
+        </div>
+      ))}
+    </div>
   </div>
 </div>
 )}
@@ -462,7 +478,11 @@ function dotCount(articles: number): number {
 <div class="wrap">
   <div style="padding: 24px 0 0;">
     <div class="r">
-      <p class="body" style="font-size: clamp(15px, 1.5vw, 17px); line-height: 1.8; font-style: italic; color: var(--ink-mid);" set:html={escapeHtml(meanwhileStory.whyThisMatters)} />
+      <div style="text-align: center; max-width: 600px; margin: 40px auto; padding: 24px 0;">
+        <div style="width: 40px; height: 2px; background: var(--green); margin: 0 auto 20px;"></div>
+        <p style="font-family: 'Lora', serif; font-style: italic; font-size: clamp(18px, 2vw, 22px); line-height: 1.7; color: var(--ink);" set:html={escapeHtml(meanwhileStory.whyThisMatters)} />
+        <div style="width: 40px; height: 2px; background: var(--green); margin: 20px auto 0;"></div>
+      </div>
     </div>
   </div>
 </div>

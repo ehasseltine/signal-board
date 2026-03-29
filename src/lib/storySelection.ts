@@ -169,19 +169,20 @@ function topStoryToSection(
     }
   }
 
-  // If we have a matching what_connects, use its spectrum sources for the sourcesSample
-  let sourcesSample: string[] = [];
-  if (wc) {
-    sourcesSample = [
+  // PRIMARY: actual article sources from this story
+  let sourcesSample = [...new Set((ts.articles || []).map(a => a.source))];
+
+  // SUPPLEMENT: if we have few article sources but what_connects has more, add them
+  if (sourcesSample.length < 4 && wc) {
+    const wcSources = [
       ...(wc.left_sources || []),
       ...(wc.right_sources || []),
       ...(wc.international_sources || []),
       ...(wc.local_regional_sources || []),
     ];
-  }
-  if (sourcesSample.length === 0) {
-    sourcesSample = (ts.articles || []).map(a => a.source);
-    sourcesSample = [...new Set(sourcesSample)];
+    for (const s of wcSources) {
+      if (!sourcesSample.includes(s)) sourcesSample.push(s);
+    }
   }
 
   // Build tier counts from articles
