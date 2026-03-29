@@ -1,15 +1,11 @@
 name: Generate Today Page
 
 on:
-  push:
-    paths:
-      - "docs/data/daily/latest.json"
-      - "docs/data/daily/*.json"
-  workflow_dispatch:
   workflow_run:
-    workflows: ["Daily Ingest Pipeline", "Daily Pipeline", "Ingest"]
+    workflows: ["Daily Pipeline"]
     types:
       - completed
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -17,40 +13,62 @@ permissions:
 jobs:
   generate:
     runs-on: ubuntu-latest
-    if: >
-      github.event_name == 'workflow_dispatch' ||
-      github.event_name == 'push' ||
-      (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success')
-    
+    if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name == 'workflow_dispatch' }}
+
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
         with:
-          python-version: '3.11'
+          node-version: "20"
 
-      - name: Verify pipeline data exists
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Sync pipeline data to public/
         run: |
-          if [ ! -f docs/data/daily/latest.json ]; then
-            echo 'No pipeline data found'
+          # The pipeline writes to docs/data/daily/.
+          # Astro reads from public/data/daily/ at build time.
+          mkdir -p public/data/daily
+          if [ -f docs/data/daily/latest.json ]; then
+            cp docs/data/daily/latest.json public/data/daily/latest.json
+            echo "Copied latest.json to public/"
+          else
+            echo "No pipeline data found. Skipping build."
             exit 1
           fi
-          echo 'Pipeline data:' && ls -la docs/data/daily/latest.json
+          # Copy all dated archives too
+          for f in docs/data/daily/2*.json; do
+            [ -f "$f" ] && cp "$f" public/data/daily/
+          done
+          echo "Data synced:"
+          ls -la public/data/daily/
 
-      - name: Generate today page
-        run: python3 actions/generate_today.py
+      - name: Build with Astro
+        run: npx astro build
 
       - name: Verify output
         run: |
-          test -f docs/today/index.html || exit 1
-          size=$(wc -c < docs/today/index.html)
-          echo "Generated: ${size} bytes"
-          test "$size" -gt 1000
+          if [ ! -f docs/today/index.html ]; then
+            echo "Build failed - no today page generated"
+            exit 1
+          fi
+          echo "Build output:"
+          ls -la docs/today/index.html
+          head -5 docs/today/index.html
+          echo "---"
+          echo "All generated pages:"
+          find docs -name "index.html" | head -20
 
       - name: Commit and push
         run: |
-          git config user.name 'Signal Board Bot'
-          git config user.email 'bot@signalboard.org'
-          git add docs/today/index.html
-          git diff --staged --quiet || (git commit -m "Update today page for $(date +%Y-%m-%d)" && git push)
+          git config user.name "Signal Board Bot"
+          git config user.email "bot@signalboard.org"
+          git add docs/
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Build today page for $(date +%Y-%m-%d)"
+            git push
+          fi
