@@ -333,10 +333,10 @@ function tierLabel(tier: string): string {
 {threadStory.crossSpectrum && (
 <div class="wrap">
   <div style="padding: 32px 0 0;">
-    <span class="section-label r" style="font-size: 13px; margin-bottom: 16px; display: block;">How outlets told it differently</span>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px;" class="r">
+    <span class="section-label r" style="font-size: clamp(18px, 2.2vw, 24px); margin-bottom: 20px; display: block;">How outlets told it differently</span>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1px; background: var(--ink-faint);" class="r">
       {threadStory.crossSpectrum.split(/(?<=\.)\s+/).filter((s: string) => s.trim().length > 10).map((sentence: string) => (
-        <div style="border-left: 4px solid var(--red); padding: 14px 18px; background: rgba(27, 42, 74, 0.04); border-radius: 0 8px 8px 0;">
+        <div style="padding: 18px 22px; background: var(--cream);">
           <p class="body" style="font-size: clamp(14px, 1.4vw, 16px); line-height: 1.7; color: var(--ink); margin: 0;">{sentence.trim()}</p>
         </div>
       ))}
@@ -439,10 +439,10 @@ function tierLabel(tier: string): string {
 {gapStory.insights && gapStory.insights.length > 0 && (
 <div class="wrap">
   <div style="padding: 32px 0 0;">
-    <span class="section-label r" style="font-size: 13px; margin-bottom: 16px; display: block; color: var(--red);">How outlets framed it</span>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px;" class="r">
+    <span class="section-label r" style="font-size: clamp(18px, 2.2vw, 24px); margin-bottom: 20px; display: block; color: var(--red);">How outlets framed it</span>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1px; background: var(--on-navy-faint);" class="r">
       {gapStory.insights.slice(0, 4).map((insight: string) => (
-        <div style="border-left: 4px solid var(--red); padding: 14px 18px; background: rgba(255, 255, 255, 0.06); border-radius: 0 8px 8px 0;">
+        <div style="padding: 18px 22px; background: var(--ink);">
           <p class="body" style="font-size: clamp(14px, 1.4vw, 16px); line-height: 1.7; color: var(--on-navy-dim); margin: 0;" set:html={escapeHtml(insight)} />
         </div>
       ))}
@@ -524,45 +524,68 @@ function tierLabel(tier: string): string {
 </div>
 )}
 
-<!-- COOPERATION HIGHLIGHTS — Specific stories as engaging cards -->
-{cooperation && cooperation.highlights && cooperation.highlights.length > 0 && (
+<!-- COOPERATION HIGHLIGHTS — Editorial card layout with featured first story -->
+{cooperation && cooperation.highlights && cooperation.highlights.length > 0 && (() => {
+  const featured = cooperation.highlights[0];
+  const rest = cooperation.highlights.slice(1, 6);
+  return (
 <div class="wrap">
   <div style="padding: 32px 0 0;">
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;" class="r">
-      {cooperation.highlights.slice(0, 6).map((h: any) => (
+
+    {/* Featured cooperation story — full width */}
+    <a href={featured.url || '#'} target="_blank" rel="noopener" class="r" style="text-decoration: none; color: inherit; display: block; margin-bottom: 20px;">
+      <div style="padding: 28px 32px; background: white; border-top: 3px solid var(--green); transition: border-color 0.2s;">
+        <div style="display: flex; align-items: baseline; gap: 12px; margin-bottom: 12px;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--green); font-weight: 600;">
+            {featured.cooperation_type || featured.force_tag || 'cooperation'}
+          </span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 11px; color: var(--ink-light);">{featured.source}</span>
+          {getSourceContext(featured.source) && (
+            <span style="font-family: 'Inter', sans-serif; font-size: 11px; color: var(--ink-light);">· {getSourceContext(featured.source)}</span>
+          )}
+        </div>
+        <div style="font-family: 'Lora', serif; font-size: clamp(18px, 2vw, 22px); line-height: 1.4; color: var(--ink); font-weight: 600; max-width: 720px;">
+          {featured.title}
+        </div>
+        {featured.connection && (
+          <p style="font-family: 'Lora', serif; font-size: clamp(15px, 1.5vw, 17px); line-height: 1.65; color: var(--ink-mid); margin: 12px 0 0; max-width: 720px;">{featured.connection}</p>
+        )}
+      </div>
+    </a>
+
+    {/* Remaining cooperation stories — compact grid */}
+    {rest.length > 0 && (
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1px; background: var(--ink-faint);" class="r">
+      {rest.map((h: any) => (
         <a href={h.url || '#'} target="_blank" rel="noopener" style="text-decoration: none; color: inherit; display: block;">
-          <div style="padding: 20px 24px; background: white; border-radius: 12px; border-left: 4px solid var(--green); box-shadow: 0 2px 8px rgba(0,0,0,0.06); transition: transform 0.15s ease; height: 100%;">
-            <div style="font-family: 'Inter', sans-serif; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--green); font-weight: 600; margin-bottom: 8px;">
+          <div style="padding: 20px 24px; background: white; height: 100%; transition: background 0.2s;">
+            <span style="font-family: 'Inter', sans-serif; font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--green); font-weight: 600;">
               {h.cooperation_type || h.force_tag || 'cooperation'}
-            </div>
-            <div style="font-family: 'Lora', serif; font-size: clamp(15px, 1.5vw, 17px); line-height: 1.5; color: var(--ink); font-weight: 600; margin-bottom: 8px;">
+            </span>
+            <div style="font-family: 'Lora', serif; font-size: clamp(15px, 1.5vw, 17px); line-height: 1.45; color: var(--ink); font-weight: 600; margin: 6px 0;">
               {h.title}
             </div>
-            <div style="display: flex; align-items: center; gap: 8px;">
-              <span style="font-family: 'Inter', sans-serif; font-size: 12px; color: var(--ink-mid); font-weight: 500;">{h.source}</span>
-              {getSourceContext(h.source) && (
-                <span style="font-family: 'Inter', sans-serif; font-size: 11px; color: var(--ink-light);">· {getSourceContext(h.source)}</span>
-              )}
-            </div>
-            {h.connection && (
-              <p style="font-family: 'Lora', serif; font-size: 14px; line-height: 1.6; color: var(--ink-mid); margin: 10px 0 0;">{h.connection}</p>
-            )}
+            <span style="font-family: 'Inter', sans-serif; font-size: 11px; color: var(--ink-light);">
+              {h.source}{getSourceContext(h.source) ? ` · ${getSourceContext(h.source)}` : ''}
+            </span>
           </div>
         </a>
       ))}
     </div>
+    )}
   </div>
 </div>
-)}
+  );
+})()}
 
 <!-- CROSS-SPECTRUM — How local vs national cover the same events -->
 {meanwhileStory.crossSpectrum && (
 <div class="wrap">
   <div style="padding: 32px 0 0;">
-    <span class="section-label section-label-green r" style="font-size: 13px; margin-bottom: 16px; display: block;">Same story, different lens</span>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px;" class="r">
+    <span class="section-label section-label-green r" style="font-size: clamp(18px, 2.2vw, 24px); margin-bottom: 20px; display: block;">Same story, different lens</span>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1px; background: var(--ink-faint);" class="r">
       {meanwhileStory.crossSpectrum.split(/(?<=\.)\s+/).filter((s: string) => s.trim().length > 10).map((sentence: string) => (
-        <div style="border-left: 4px solid var(--green); padding: 14px 18px; background: rgba(45, 138, 78, 0.04); border-radius: 0 8px 8px 0;">
+        <div style="padding: 18px 22px; background: white;">
           <p class="body" style="font-size: clamp(14px, 1.4vw, 16px); line-height: 1.7; color: var(--ink); margin: 0;">{sentence.trim()}</p>
         </div>
       ))}
@@ -608,17 +631,17 @@ function tierLabel(tier: string): string {
 <div class="wrap">
   <div style="padding: 32px 0 0;">
     <span class="section-label section-label-green r" style="font-size: 13px; margin-bottom: 16px; display: block;">What cooperation looked like today</span>
-    <div style="display: flex; flex-wrap: wrap; gap: 10px;" class="r">
+    <div style="display: flex; flex-wrap: wrap; gap: 8px;" class="r">
       {cooperation.by_type.map((t: any) => (
-        <div style="background: white; border-radius: 20px; padding: 8px 16px; display: flex; align-items: center; gap: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.05);">
-          <span style="font-family: 'Lora', serif; font-size: 18px; font-weight: 700; color: var(--green);">{t.count}</span>
-          <span style="font-family: 'Inter', sans-serif; font-size: 13px; color: var(--ink-mid);">{t.type}</span>
+        <div style="background: white; padding: 6px 14px; display: flex; align-items: center; gap: 6px; border: 1px solid var(--ink-faint);">
+          <span style="font-family: 'Abril Fatface', serif; font-size: 16px; color: var(--green);">{t.count}</span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 12px; color: var(--ink-mid);">{t.type}</span>
         </div>
       ))}
       {uncategorized > 0 && (
-        <div style="background: white; border-radius: 20px; padding: 8px 16px; display: flex; align-items: center; gap: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.05); opacity: 0.7;">
-          <span style="font-family: 'Lora', serif; font-size: 18px; font-weight: 700; color: var(--green);">+{uncategorized}</span>
-          <span style="font-family: 'Inter', sans-serif; font-size: 13px; color: var(--ink-mid);">more</span>
+        <div style="background: white; padding: 6px 14px; display: flex; align-items: center; gap: 6px; border: 1px solid var(--ink-faint); opacity: 0.6;">
+          <span style="font-family: 'Abril Fatface', serif; font-size: 16px; color: var(--green);">+{uncategorized}</span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 12px; color: var(--ink-mid);">more</span>
         </div>
       )}
     </div>
