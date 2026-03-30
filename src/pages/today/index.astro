@@ -265,7 +265,7 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
         {editorial?.accessible_headline || editorial?.headline || `Today, ${totalMonitoredSources} sources published ${totalStories} stories. When you see them together, a picture emerges.`}
       </h1>
       <p class="masthead-sub r d3">
-        {editorial?.subheadline || `${crossDomain} stories crossed domain boundaries — ${crossDomainPct}% of everything we read. That's where the connections live.`}
+        {editorial?.subheadline || `${crossDomain} stories crossed domain boundaries, ${crossDomainPct}% of everything we read. That's where the connections live.`}
       </p>
       <div class="scroll-cue" aria-hidden="true">
         <span>scroll</span>
@@ -627,7 +627,7 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
       <div style="display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap;">
         <div class="display" style="font-size: clamp(40px, 6vw, 64px); line-height: 1; color: var(--green);">{cooperation?.total_cooperation_stories || meanwhileStory.articleCount}</div>
         <div class="stat-annotation stat-annotation-green">
-          stories of cooperation — {cooperation?.cooperation_rate || 25}% of everything we read
+          stories of cooperation, {cooperation?.cooperation_rate || 25}% of everything we read
         </div>
       </div>
       {cooperation && cooperation.by_type && cooperation.by_type.length > 0 && (

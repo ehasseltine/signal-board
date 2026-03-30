@@ -384,7 +384,7 @@ export function selectDailyGap(
                     tier === 'specialist' ? 'Specialist outlets' : tier;
       const best = arts[0];
       if (best?.title) {
-        framingInsights.push(`${label}: "${best.title}" — ${best.source}`);
+        framingInsights.push(`${label}: "${best.title}" (${best.source})`);
       }
     }
 
@@ -510,7 +510,7 @@ export function selectMeanwhile(
       if (highlightsWithText.length >= 2) {
         // Lead with the count, then immediately go to specific stories
         storyParts.push(
-          `While the national cycle focused elsewhere, ${cooperation.total_cooperation_stories} stories — a ${cooperation.cooperation_rate}% cooperation signal across everything we read — showed people building, fixing, and showing up.`
+          `While the national cycle focused elsewhere, ${cooperation.total_cooperation_stories} stories across everything we read, a ${cooperation.cooperation_rate}% cooperation signal, showed people building, fixing, and showing up.`
         );
         // Add 2-3 specific stories with source attribution
         for (const h of highlightsWithText.slice(0, 3)) {
@@ -519,7 +519,7 @@ export function selectMeanwhile(
       } else {
         // Even without good connection text, build from types rather than generic stats
         storyParts.push(
-          `${cooperation.total_cooperation_stories} stories today showed cooperation at work — ${cooperation.cooperation_rate}% of everything we read.`
+          `${cooperation.total_cooperation_stories} stories today showed cooperation at work, ${cooperation.cooperation_rate}% of everything we read.`
         );
         if (typeBreakdown.length > 0) {
           storyParts.push(`The biggest patterns: ${typeBreakdown.slice(0, 2).join('; ')}.`);
@@ -527,7 +527,7 @@ export function selectMeanwhile(
         // Name specific sources even if we lack connection text
         const namedSources = highlights.slice(0, 3).map(h => h.source).filter(Boolean);
         if (namedSources.length > 0) {
-          storyParts.push(`Stories came from outlets like ${namedSources.join(', ')} — the kind of coverage that rarely breaks through to national attention.`);
+          storyParts.push(`Stories came from outlets like ${namedSources.join(', ')}, the kind of coverage that rarely breaks through to national attention.`);
         }
       }
       synthesis = storyParts.join('\n\n');
@@ -538,9 +538,9 @@ export function selectMeanwhile(
       // Build a specific whyThisMatters from cooperation types rather than a platitude
       const topTypes = (cooperation.by_type || []).slice(0, 2).map(t => t.type);
       if (topTypes.length > 0) {
-        whyThisMatters = `Today's biggest cooperation patterns were ${topTypes.join(' and ')}. These are the stories about whether the systems around you — schools, courts, local government — are actually working. They don't make national news because they're slow and local, but they're the ones most likely to change your daily life.`;
+        whyThisMatters = `Today's biggest cooperation patterns were ${topTypes.join(' and ')}. These are the stories about whether the systems around you, from schools to courts to local government, are actually working. They don't make national news because they're slow and local, but they're the ones most likely to change your daily life.`;
       } else {
-        whyThisMatters = 'These are the stories about whether the systems closest to your life are working. Local and specialist outlets tell the stories that national coverage skips — the ones most likely to show up in your school, your neighborhood, or your next bill.';
+        whyThisMatters = 'These are the stories about whether the systems closest to your life are working. Local and specialist outlets tell the stories that national coverage skips, the ones most likely to show up in your school, your neighborhood, or your next bill.';
       }
     }
 
@@ -574,7 +574,7 @@ export function selectMeanwhile(
       title: 'Who Showed Up Today',
       synthesis: localRegionalSynthesis,
       crossSpectrum: '',
-      whyThisMatters: 'The stories that local and specialist outlets tell are the stories most likely to affect your daily life — and most likely to be missing from the national cycle.',
+      whyThisMatters: 'The stories that local and specialist outlets tell are the stories most likely to affect your daily life, and most likely to be missing from the national cycle.',
       watchFor: '',
       articleCount: 0,
       sourceCount: 0,
