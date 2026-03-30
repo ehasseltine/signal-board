@@ -448,9 +448,11 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
         {editorial?.subheadline || `${crossDomain} stories crossed domain boundaries, ${crossDomainPct}% of everything we read. That's where the connections live.`}
       </p>
       <div class="scroll-cue" aria-hidden="true">
-        <span>scroll</span>
-        <svg width="18" height="10" viewBox="0 0 18 10" fill="none">
-          <path d="M2,2 L9,8 L16,2" stroke="var(--cream)" stroke-width="1.5" stroke-linecap="round" opacity="0.35"/>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M7,8 L12,14 L17,8" stroke="var(--cream)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/>
+        </svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="margin-top: -10px;">
+          <path d="M7,8 L12,14 L17,8" stroke="var(--cream)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.25"/>
         </svg>
       </div>
     </div>
@@ -558,14 +560,14 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
         <div class="stat-annotation stat-annotation-red" style="margin-top: 6px;">articles across {threadStory.sourceCount} sources</div>
       </div>
       <div style="flex: 1; min-width: min(200px, 100%);">
-        <div style="height: 12px; background: rgba(27,42,74,0.08); border-radius: 6px; overflow: hidden;">
-          <div style={`height: 100%; width: ${Math.min(100, Math.round((threadStory.articleCount / Math.max(totalStories, 1)) * 100))}%; background: var(--yellow); border-radius: 6px;`}></div>
+        <div style="height: 16px; background: rgba(27,42,74,0.08); border-radius: 8px; overflow: hidden;">
+          <div style={`height: 100%; width: ${Math.min(100, Math.round((threadStory.articleCount / Math.max(totalStories, 1)) * 100))}%; background: var(--yellow); border-radius: 8px; transition: width 0.6s var(--ease-out-expo);`}></div>
         </div>
-        <div style="display: flex; justify-content: space-between; margin-top: 6px;">
-          <span style="font-family: 'Inter', sans-serif; font-size: 12px; color: var(--ink-mid); font-weight: 500;">
+        <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 13px; color: var(--ink-mid); font-weight: 600;">
             {Math.round((threadStory.articleCount / Math.max(totalStories, 1)) * 100)}% of today's coverage
           </span>
-          <span style="font-family: 'Inter', sans-serif; font-size: 12px; color: var(--ink-light);">
+          <span style="font-family: 'Inter', sans-serif; font-size: 13px; color: var(--ink-light);">
             {threadStory.sourceCount} sources &middot; {totalStories} total stories
           </span>
         </div>
@@ -962,8 +964,9 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
     <h2 class="section-label r" style="margin: 0;">Today's Sources</h2>
 
     <div class="r d1" style="position: relative; display: inline-block; margin-top: 4px;">
-      <svg style="position: absolute; top: -18px; left: -24px; width: calc(100% + 48px); height: calc(100% + 36px);" viewBox="0 0 200 120" fill="none" preserveAspectRatio="none" aria-hidden="true">
-        <ellipse cx="100" cy="60" rx="90" ry="52" stroke="var(--ink)" stroke-width="2.5" fill="none" opacity="0.3" transform="rotate(-2, 100, 60)" stroke-dasharray="5,4"/>
+      <svg style="position: absolute; top: -22px; left: -28px; width: calc(100% + 56px); height: calc(100% + 44px);" viewBox="0 0 200 120" fill="none" preserveAspectRatio="none" aria-hidden="true">
+        <ellipse cx="100" cy="60" rx="92" ry="54" stroke="var(--ink)" stroke-width="1.5" fill="none" opacity="0.18" transform="rotate(-2, 100, 60)"/>
+        <ellipse cx="100" cy="60" rx="88" ry="50" stroke="var(--red)" stroke-width="2" fill="none" opacity="0.12" transform="rotate(1, 100, 60)" stroke-dasharray="6,8" stroke-linecap="round"/>
       </svg>
       <svg aria-hidden="true" style="position: absolute; top: -30px; right: -50px; width: 120px; height: 100px; pointer-events: none;">
         <circle cx="15" cy="20" r="6" fill="#1789FC" opacity="0.15"/>
@@ -982,17 +985,17 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
     <p class="stat-annotation r d2" style="font-size: 22px; margin-top: 4px;">articles analyzed today</p>
 
     <div class="r d3" style="margin-top: 20px; max-width: 500px;">
-      <div style="height: 10px; border-radius: 5px; overflow: hidden; display: flex;" role="progressbar" aria-valuenow={crossDomainPct} aria-valuemin="0" aria-valuemax="100" aria-label={`${crossDomainPct}% of stories crossed domain boundaries`}>
-        <div style={`width: ${crossDomainPct * 0.22}%; background: var(--red);`}></div>
+      <div style="height: 14px; border-radius: 7px; overflow: hidden; display: flex; gap: 2px;" role="progressbar" aria-valuenow={crossDomainPct} aria-valuemin="0" aria-valuemax="100" aria-label={`${crossDomainPct}% of stories crossed domain boundaries`}>
+        <div style={`width: ${crossDomainPct * 0.22}%; background: var(--red); border-radius: 7px 0 0 7px;`}></div>
         <div style={`width: ${crossDomainPct * 0.20}%; background: var(--green);`}></div>
         <div style={`width: ${crossDomainPct * 0.20}%; background: var(--color-bright-blue);`}></div>
         <div style={`width: ${crossDomainPct * 0.20}%; background: var(--color-amber-gold);`}></div>
         <div style={`width: ${crossDomainPct * 0.18}%; background: var(--color-dusty-purple);`}></div>
-        <div style={`flex: 1; background: var(--color-steel-blue);`}></div>
+        <div style={`flex: 1; background: var(--color-steel-blue); border-radius: 0 7px 7px 0;`}></div>
       </div>
-      <div style="display: flex; justify-content: space-between; margin-top: 6px;">
-        <span style="font-family: 'Inter', sans-serif; font-size: 11px; color: var(--ink-light);">{crossDomain} cross-domain</span>
-        <span style="font-family: 'Inter', sans-serif; font-size: 11px; color: var(--ink-light);">{totalStories} total</span>
+      <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+        <span style="font-family: 'Inter', sans-serif; font-size: 12px; color: var(--ink-mid); font-weight: 500;">{crossDomain} cross-domain</span>
+        <span style="font-family: 'Inter', sans-serif; font-size: 12px; color: var(--ink-light);">{totalStories} total</span>
       </div>
     </div>
 
