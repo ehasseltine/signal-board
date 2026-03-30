@@ -466,34 +466,90 @@ export function selectMeanwhile(
   if (cooperation && cooperation.highlights && cooperation.highlights.length > 0) {
     const highlights = cooperation.highlights;
 
-    // Build a narrative from the cooperation data, not just stats
-    const cooperationNarrative = editorial?.cooperation_highlight
-      || `Today, ${cooperation.total_cooperation_stories} stories showed people cooperating — a ${cooperation.cooperation_rate}% cooperation signal across everything we read.`;
-
-    // Build richer insight cards from highlights (with connection text when available)
+    // ── INSIGHT CARDS: Only use connection text (analysis), NEVER raw titles ──
+    // If a highlight has no connection text, it has no analytical value — skip it.
     const insightCards: string[] = [];
-    for (const h of highlights.slice(0, 5)) {
-      if (h.connection) {
+    for (const h of highlights.slice(0, 8)) {
+      if (h.connection && h.connection.length > 20) {
         insightCards.push(`${h.source}: ${h.connection}`);
-      } else {
-        insightCards.push(`${h.source}: ${h.title}`);
+      }
+      if (insightCards.length >= 5) break;
+    }
+
+    // ── COOPERATION TYPES: Build analytical breakdown ──
+    const typeBreakdown: string[] = [];
+    if (cooperation.by_type) {
+      for (const t of cooperation.by_type.slice(0, 4)) {
+        typeBreakdown.push(`${t.type}: ${t.count} stories from ${t.sources.slice(0, 3).join(', ')}`);
       }
     }
 
-    // Cooperation types breakdown
-    const typeBreakdown: string[] = [];
-    if (cooperation.by_type) {
-      for (const t of cooperation.by_type.slice(0, 3)) {
-        typeBreakdown.push(`${t.type}: ${t.count} stories from ${t.sources.slice(0, 3).join(', ')}`);
+    // ── SYNTHESIS: Rich narrative, never a generic stats template ──
+    // Priority: Pass 2 synthesis → editorial cooperation_highlight → constructed narrative from data
+    const meanwhileSynth = storySyntheses?.find(s => s.role === 'meanwhile');
+    let synthesis: string;
+    let crossSpectrum = '';
+    let whyThisMatters = '';
+    let watchFor = '';
+
+    if (meanwhileSynth?.synthesis) {
+      // Best case: Pass 2 ran and produced rich editorial content
+      synthesis = meanwhileSynth.synthesis;
+      crossSpectrum = meanwhileSynth.cross_spectrum || '';
+      whyThisMatters = meanwhileSynth.why_this_matters || '';
+      watchFor = meanwhileSynth.watch_for || '';
+    } else if (editorial?.cooperation_highlight && editorial.cooperation_highlight.length > 80) {
+      // Good case: Pass 1 editorial has a substantive cooperation highlight
+      synthesis = editorial.cooperation_highlight;
+    } else {
+      // Fallback: construct a real narrative from the cooperation data itself.
+      // NEVER use a generic stats template. Build from specific stories and sources.
+      const storyParts: string[] = [];
+      const highlightsWithText = highlights.filter(h => h.connection && h.connection.length > 20);
+
+      if (highlightsWithText.length >= 2) {
+        // Lead with the count, then immediately go to specific stories
+        storyParts.push(
+          `While the national cycle focused elsewhere, ${cooperation.total_cooperation_stories} stories — a ${cooperation.cooperation_rate}% cooperation signal across everything we read — showed people building, fixing, and showing up.`
+        );
+        // Add 2-3 specific stories with source attribution
+        for (const h of highlightsWithText.slice(0, 3)) {
+          storyParts.push(`${h.source} reported: ${h.connection}`);
+        }
+      } else {
+        // Even without good connection text, build from types rather than generic stats
+        storyParts.push(
+          `${cooperation.total_cooperation_stories} stories today showed cooperation at work — ${cooperation.cooperation_rate}% of everything we read.`
+        );
+        if (typeBreakdown.length > 0) {
+          storyParts.push(`The biggest patterns: ${typeBreakdown.slice(0, 2).join('; ')}.`);
+        }
+        // Name specific sources even if we lack connection text
+        const namedSources = highlights.slice(0, 3).map(h => h.source).filter(Boolean);
+        if (namedSources.length > 0) {
+          storyParts.push(`Stories came from outlets like ${namedSources.join(', ')} — the kind of coverage that rarely breaks through to national attention.`);
+        }
+      }
+      synthesis = storyParts.join('\n\n');
+    }
+
+    // ── WHY THIS MATTERS: Construct from data if Pass 2 didn't provide it ──
+    if (!whyThisMatters) {
+      // Build a specific whyThisMatters from cooperation types rather than a platitude
+      const topTypes = (cooperation.by_type || []).slice(0, 2).map(t => t.type);
+      if (topTypes.length > 0) {
+        whyThisMatters = `Today's biggest cooperation patterns were ${topTypes.join(' and ')}. These are the stories about whether the systems around you — schools, courts, local government — are actually working. They don't make national news because they're slow and local, but they're the ones most likely to change your daily life.`;
+      } else {
+        whyThisMatters = 'These are the stories about whether the systems closest to your life are working. Local and specialist outlets tell the stories that national coverage skips — the ones most likely to show up in your school, your neighborhood, or your next bill.';
       }
     }
 
     const meanwhileSection: SectionStory = {
       title: 'Who Showed Up Today',
-      synthesis: cooperationNarrative,
-      crossSpectrum: '',
-      whyThisMatters: 'The stories that local and specialist outlets tell are the stories most likely to affect your daily life, and most likely to be missing from the national cycle.',
-      watchFor: '',
+      synthesis,
+      crossSpectrum,
+      whyThisMatters,
+      watchFor,
       articleCount: cooperation.total_cooperation_stories || 0,
       sourceCount: highlights.length,
       sourcesSample: highlights.slice(0, 8).map(h => h.source),
@@ -504,15 +560,6 @@ export function selectMeanwhile(
       insights: insightCards,
       yesterdayCount: 0,
     };
-
-    // Merge per-story synthesis if available
-    const meanwhileSynth = storySyntheses?.find(s => s.role === 'meanwhile');
-    if (meanwhileSynth) {
-      if (meanwhileSynth.synthesis) meanwhileSection.synthesis = meanwhileSynth.synthesis;
-      if (meanwhileSynth.cross_spectrum) meanwhileSection.crossSpectrum = meanwhileSynth.cross_spectrum;
-      if (meanwhileSynth.why_this_matters) meanwhileSection.whyThisMatters = meanwhileSynth.why_this_matters;
-      if (meanwhileSynth.watch_for) meanwhileSection.watchFor = meanwhileSynth.watch_for;
-    }
 
     return meanwhileSection;
   }

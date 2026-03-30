@@ -477,7 +477,7 @@
           "force_tag": "military escalation"
         },
         {
-          "title": "Sen. Lankford says U.S. is winning Iran war but ‘there’s still work to be done’: Full interview",
+          "title": "Sen. Lankford says U.S. is winning Iran war but \u2018there\u2019s still work to be done\u2019: Full interview",
           "source": "NBC News",
           "url": "https://www.nbcnews.com/meet-the-press/video/sen-lankford-says-u-s-is-winning-iran-war-but-there-s-still-work-to-be-done-full-interview-260278853766",
           "tier": "national",
@@ -497,7 +497,7 @@
           "force_tag": "military escalation in regional conflict"
         },
         {
-          "title": "Americans ‘paying’ for Iran war with higher costs: Senate Democrat",
+          "title": "Americans \u2018paying\u2019 for Iran war with higher costs: Senate Democrat",
           "source": "The Hill",
           "url": "https://thehill.com/homenews/senate/5806431-kim-trump-iran-war-costs/",
           "tier": "national",
@@ -561,7 +561,7 @@
         {
           "text": "Middle East military escalation forces Japan to secure crude via alternative routes, exposing energy supply vulnerability to geopolitical conflict.",
           "source": "NHK World",
-          "title": "中東産原油 愛媛の製油所に到着 ホルムズ海峡通らないルートで",
+          "title": "\u4e2d\u6771\u7523\u539f\u6cb9 \u611b\u5a9b\u306e\u88fd\u6cb9\u6240\u306b\u5230\u7740 \u30db\u30eb\u30e0\u30ba\u6d77\u5ce1\u901a\u3089\u306a\u3044\u30eb\u30fc\u30c8\u3067",
           "domains": [
             "economics",
             "geopolitics",
@@ -674,7 +674,7 @@
           "force_tag": "supply chain weaponization"
         },
         {
-          "title": "中東産原油 愛媛の製油所に到着 ホルムズ海峡通らないルートで",
+          "title": "\u4e2d\u6771\u7523\u539f\u6cb9 \u611b\u5a9b\u306e\u88fd\u6cb9\u6240\u306b\u5230\u7740 \u30db\u30eb\u30e0\u30ba\u6d77\u5ce1\u901a\u3089\u306a\u3044\u30eb\u30fc\u30c8\u3067",
           "source": "NHK World",
           "url": "http://www3.nhk.or.jp/news/html/20260329/k10015087051000.html",
           "tier": "international",
@@ -726,7 +726,7 @@
         {
           "text": "Widow running for office to seek justice for spouse's murder through electoral accountability mechanism.",
           "source": "The Hindu",
-          "title": "Armstrong’s wife and AIADMK candidate A. Porkodi hopes to win Thiru.Vi.Ka. Nagar",
+          "title": "Armstrong\u2019s wife and AIADMK candidate A. Porkodi hopes to win Thiru.Vi.Ka. Nagar",
           "domains": [
             "domestic_politics",
             "legal"
@@ -735,7 +735,7 @@
         {
           "text": "Young writer advocates for ending ICE, reflecting civic participation and youth engagement in immigration policy debate.",
           "source": "VTDigger",
-          "title": "​​Young Writers Project: ‘End the ICE Age’",
+          "title": "\u200b\u200bYoung Writers Project: \u2018End the ICE Age\u2019",
           "domains": [
             "governance",
             "domestic_politics"
@@ -753,7 +753,7 @@
             "nationwide"
           ],
           "sample": {
-            "title": "Photos From the Third Nationwide ‘No Kings’ Protest",
+            "title": "Photos From the Third Nationwide \u2018No Kings\u2019 Protest",
             "source": "The Atlantic",
             "url": "https://www.theatlantic.com/photography/2026/03/photos-from-the-third-nationwide-no-kings-protest/686609/?utm_source=feed",
             "context": ""
@@ -769,7 +769,7 @@
             "spotlight"
           ],
           "sample": {
-            "title": "‘No Kings’ flagship protest brings spotlight back to Minneapolis",
+            "title": "\u2018No Kings\u2019 flagship protest brings spotlight back to Minneapolis",
             "source": "Straits Times",
             "url": "https://www.straitstimes.com/world/united-states/no-kings-flagship-protest-brings-spotlight-back-to-minneapolis",
             "context": ""
@@ -804,7 +804,7 @@
           "force_tag": "civic participation"
         },
         {
-          "title": "Armstrong’s wife and AIADMK candidate A. Porkodi hopes to win Thiru.Vi.Ka. Nagar constituency",
+          "title": "Armstrong\u2019s wife and AIADMK candidate A. Porkodi hopes to win Thiru.Vi.Ka. Nagar constituency",
           "source": "The Hindu",
           "url": "https://www.thehindu.com/elections/tamil-nadu-assembly/armstrongs-wife-and-aiadmk-candidate-a-porkodi-hopes-to-win-thiruvika-nagar-constituency/article70798786.ece",
           "tier": "international",
@@ -814,7 +814,7 @@
           "force_tag": "civic participation as justice-seeking"
         },
         {
-          "title": "​​Young Writers Project: ‘End the ICE Age’",
+          "title": "\u200b\u200bYoung Writers Project: \u2018End the ICE Age\u2019",
           "source": "VTDigger",
           "url": "https://vtdigger.org/2026/03/29/young-writers-project-end-the-ice-age/",
           "tier": "local-regional",
@@ -824,7 +824,7 @@
           "force_tag": "youth civic participation"
         },
         {
-          "title": "Photos From the Third Nationwide ‘No Kings’ Protest",
+          "title": "Photos From the Third Nationwide \u2018No Kings\u2019 Protest",
           "source": "The Atlantic",
           "url": "https://www.theatlantic.com/photography/2026/03/photos-from-the-third-nationwide-no-kings-protest/686609/?utm_source=feed",
           "tier": "national",
@@ -844,7 +844,7 @@
           "force_tag": "civic participation models"
         },
         {
-          "title": "‘Put down the crown, clown’: Thousands rally against Trump in 'No Kings' protests",
+          "title": "\u2018Put down the crown, clown\u2019: Thousands rally against Trump in 'No Kings' protests",
           "source": "Times of India",
           "url": "https://timesofindia.indiatimes.com/world/us/put-down-the-crown-clown-no-kings-protests-see-thousands-across-us-rallying-against-trump/articleshow/129874606.cms",
           "tier": "international",
@@ -897,7 +897,7 @@
         {
           "text": "Underreported institutional abuse reveals gaps in both enforcement mechanisms and data collection systems designed to protect children.",
           "source": "Breitbart",
-          "title": "Exclusive: Teacher Sexual Misconduct Is ‘Rampant’ in U.S. Schools, Leading Exper",
+          "title": "Exclusive: Teacher Sexual Misconduct Is \u2018Rampant\u2019 in U.S. Schools, Leading Exper",
           "domains": [
             "governance",
             "legal"
@@ -993,7 +993,7 @@
           "force_tag": "institutional accountability failure"
         },
         {
-          "title": "Exclusive: Teacher Sexual Misconduct Is ‘Rampant’ in U.S. Schools, Leading Experts Find",
+          "title": "Exclusive: Teacher Sexual Misconduct Is \u2018Rampant\u2019 in U.S. Schools, Leading Experts Find",
           "source": "Breitbart",
           "url": "https://www.breitbart.com/crime/2026/03/29/exclusive-teacher-sexual-misconduct-is-rampant-in-u-s-schools-leading-experts-find/",
           "tier": "national",
@@ -1077,7 +1077,7 @@
         {
           "text": "A domestic manufacturer lobbies for tariffs against competitors, using trade policy to protect market share rather than address systemic manufacturing capacity.",
           "source": "NPR",
-          "title": "He wants children's bikes made in the U.S.A. — and tariffs against his rivals",
+          "title": "He wants children's bikes made in the U.S.A. \u2014 and tariffs against his rivals",
           "domains": [
             "economics",
             "governance"
@@ -1086,7 +1086,7 @@
         {
           "text": "A congresswoman's defeat by a lobbying group's spending reveals how organized money shapes electoral outcomes through media and messaging dominance.",
           "source": "Politico",
-          "title": "Cori Bush wants her seat back — and a rematch over AIPAC",
+          "title": "Cori Bush wants her seat back \u2014 and a rematch over AIPAC",
           "domains": [
             "domestic_politics",
             "information"
@@ -1123,7 +1123,7 @@
             "tariffs"
           ],
           "sample": {
-            "title": "He wants children's bikes made in the U.S.A. — and tariffs against his rivals",
+            "title": "He wants children's bikes made in the U.S.A. \u2014 and tariffs against his rivals",
             "source": "NPR",
             "url": "https://www.npr.org/2026/03/29/nx-s1-5746807/trump-bike-children-competition-tariffs-opposition",
             "context": "Nonprofit public media funded by member stations, sponsors, and foundations. Generally regarded as center-left."
@@ -1163,7 +1163,7 @@
       },
       "articles": [
         {
-          "title": "He wants children's bikes made in the U.S.A. — and tariffs against his rivals",
+          "title": "He wants children's bikes made in the U.S.A. \u2014 and tariffs against his rivals",
           "source": "NPR",
           "url": "https://www.npr.org/2026/03/29/nx-s1-5746807/trump-bike-children-competition-tariffs-opposition",
           "tier": "national",
@@ -1173,7 +1173,7 @@
           "force_tag": "regulatory capture via protectionism"
         },
         {
-          "title": "Cori Bush wants her seat back — and a rematch over AIPAC",
+          "title": "Cori Bush wants her seat back \u2014 and a rematch over AIPAC",
           "source": "Politico",
           "url": "https://www.politico.com/news/2026/03/29/aipac-2026-elections-cori-bush-00846126",
           "tier": "national",
@@ -1250,7 +1250,7 @@
         {
           "text": "North Korea's missile development is a direct challenge to regional and global security architecture, escalating military brinkmanship.",
           "source": "Times of India",
-          "title": "‘Targets around globe’: North Korea’s Kim Jong Un oversees high-thrust solid-fue",
+          "title": "\u2018Targets around globe\u2019: North Korea\u2019s Kim Jong Un oversees high-thrust solid-fue",
           "domains": [
             "security",
             "geopolitics"
@@ -1259,7 +1259,7 @@
         {
           "text": "Nuclear-armed state advances ballistic missile capability, increasing regional security threat and strategic unpredictability.",
           "source": "Dawn",
-          "title": "North Korea’s Kim Jong Un oversees test of high-thrust engine: state media",
+          "title": "North Korea\u2019s Kim Jong Un oversees test of high-thrust engine: state media",
           "domains": [
             "security",
             "geopolitics"
@@ -1268,7 +1268,7 @@
         {
           "text": "North Korea's weapons development advances within broader strategic competition and deterrence posture.",
           "source": "Channel News Asia",
-          "title": "North Korea’s Kim oversees test of high-thrust engine: KCNA",
+          "title": "North Korea\u2019s Kim oversees test of high-thrust engine: KCNA",
           "domains": [
             "security",
             "geopolitics"
@@ -1341,7 +1341,7 @@
           "force_tag": "arms race escalation"
         },
         {
-          "title": "‘Targets around globe’: North Korea’s Kim Jong Un oversees high-thrust solid-fuel rocket engine test",
+          "title": "\u2018Targets around globe\u2019: North Korea\u2019s Kim Jong Un oversees high-thrust solid-fuel rocket engine test",
           "source": "Times of India",
           "url": "https://timesofindia.indiatimes.com/defence/international/targets-around-globe-north-koreas-kim-jong-un-oversees-high-thrust-solid-fuel-rocket-engine-test/articleshow/129875131.cms",
           "tier": "international",
@@ -1351,7 +1351,7 @@
           "force_tag": "arms race escalation"
         },
         {
-          "title": "North Korea’s Kim Jong Un oversees test of high-thrust engine: state media",
+          "title": "North Korea\u2019s Kim Jong Un oversees test of high-thrust engine: state media",
           "source": "Dawn",
           "url": "https://www.dawn.com/news/1986533/north-koreas-kim-jong-un-oversees-test-of-high-thrust-engine-state-media",
           "tier": "international",
@@ -1361,7 +1361,7 @@
           "force_tag": "arms race escalation"
         },
         {
-          "title": "North Korea’s Kim oversees test of high-thrust engine: KCNA",
+          "title": "North Korea\u2019s Kim oversees test of high-thrust engine: KCNA",
           "source": "Channel News Asia",
           "url": "https://www.channelnewsasia.com/east-asia/north-korea-kim-ground-test-solid-fuel-rocket-engine-kcna-6023886",
           "tier": "international",
@@ -1573,7 +1573,7 @@
         {
           "text": "Trump's shifting policy goals create institutional instability and undermine coherent executive decision-making.",
           "source": "Straits Times",
-          "title": "Wild ultimatums and ‘bombing our little hearts out’: A portrait of Trump at war",
+          "title": "Wild ultimatums and \u2018bombing our little hearts out\u2019: A portrait of Trump at war",
           "domains": [
             "domestic_politics",
             "governance"
@@ -1582,7 +1582,7 @@
         {
           "text": "Political opposition to incumbent uses redistricting mechanism while abandoning previous principled stance on gerrymandering.",
           "source": "Washington Examiner",
-          "title": "Virginia Democrats turn themselves into pretzels to ‘stop Donald Trump’ with ger",
+          "title": "Virginia Democrats turn themselves into pretzels to \u2018stop Donald Trump\u2019 with ger",
           "domains": [
             "domestic_politics",
             "legal"
@@ -1600,7 +1600,7 @@
             "into"
           ],
           "sample": {
-            "title": "Virginia Democrats turn themselves into pretzels to ‘stop Donald Trump’ with gerrymander",
+            "title": "Virginia Democrats turn themselves into pretzels to \u2018stop Donald Trump\u2019 with gerrymander",
             "source": "Washington Examiner",
             "url": "https://www.washingtonexaminer.com/restoring-america/fairness-justice/4506876/virginia-democrats-pretzel-contort-gerrymander/",
             "context": ""
@@ -1625,7 +1625,7 @@
       },
       "articles": [
         {
-          "title": "Virginia Democrats turn themselves into pretzels to ‘stop Donald Trump’ with gerrymander",
+          "title": "Virginia Democrats turn themselves into pretzels to \u2018stop Donald Trump\u2019 with gerrymander",
           "source": "Washington Examiner",
           "url": "https://www.washingtonexaminer.com/restoring-america/fairness-justice/4506876/virginia-democrats-pretzel-contort-gerrymander/",
           "tier": "national",
@@ -1645,7 +1645,7 @@
           "force_tag": "erosion of institutional foreign policy"
         },
         {
-          "title": "Wild ultimatums and ‘bombing our little hearts out’: A portrait of Trump at war",
+          "title": "Wild ultimatums and \u2018bombing our little hearts out\u2019: A portrait of Trump at war",
           "source": "Straits Times",
           "url": "https://www.straitstimes.com/world/united-states/wild-ultimatums-and-bombing-our-little-hearts-out-a-portrait-of-trump-at-war",
           "tier": "international",
@@ -1826,7 +1826,7 @@
         {
           "text": "AI automation is replacing engineering work, forcing coders to manage rather than write code while maintaining employment.",
           "source": "Times of India",
-          "title": "Amid layoffs, Mark Zuckerberg's Meta is asking engineers to use AI for…",
+          "title": "Amid layoffs, Mark Zuckerberg's Meta is asking engineers to use AI for\u2026",
           "domains": [
             "ai",
             "labor"
@@ -1887,7 +1887,7 @@
             "meta"
           ],
           "sample": {
-            "title": "Amid layoffs, Mark Zuckerberg's Meta is asking engineers to use AI for…",
+            "title": "Amid layoffs, Mark Zuckerberg's Meta is asking engineers to use AI for\u2026",
             "source": "Times of India",
             "url": "https://timesofindia.indiatimes.com/technology/tech-news/amid-layoffs-mark-zuckerbergs-meta-is-asking-engineers-to-use-ai-for/articleshow/129876653.cms",
             "context": ""
@@ -1906,7 +1906,7 @@
           "force_tag": "automation displacing workers"
         },
         {
-          "title": "Amid layoffs, Mark Zuckerberg's Meta is asking engineers to use AI for…",
+          "title": "Amid layoffs, Mark Zuckerberg's Meta is asking engineers to use AI for\u2026",
           "source": "Times of India",
           "url": "https://timesofindia.indiatimes.com/technology/tech-news/amid-layoffs-mark-zuckerbergs-meta-is-asking-engineers-to-use-ai-for/articleshow/129876653.cms",
           "tier": "international",
@@ -2016,7 +2016,7 @@
         "governance",
         "legal"
       ],
-      "sample_title": "‘No Kings’ flagship protest brings spotlight back to Minneapolis"
+      "sample_title": "\u2018No Kings\u2019 flagship protest brings spotlight back to Minneapolis"
     },
     {
       "force": "institutional accountability failure",
@@ -2068,7 +2068,7 @@
         "legal",
         "security"
       ],
-      "sample_title": "He wants children's bikes made in the U.S.A. — and tariffs against his rivals"
+      "sample_title": "He wants children's bikes made in the U.S.A. \u2014 and tariffs against his rivals"
     },
     {
       "force": "arms race escalation",
@@ -2108,7 +2108,7 @@
         "labor",
         "security"
       ],
-      "sample_title": "Amid layoffs, Mark Zuckerberg's Meta is asking engineers to use AI for…"
+      "sample_title": "Amid layoffs, Mark Zuckerberg's Meta is asking engineers to use AI for\u2026"
     },
     {
       "force": "religious freedom restriction",
@@ -2383,7 +2383,7 @@
         "economics",
         "governance"
       ],
-      "sample_title": "New Delhi Street Stalls Show the Cost of India’s Energy Crunch"
+      "sample_title": "New Delhi Street Stalls Show the Cost of India\u2019s Energy Crunch"
     },
     {
       "force": "institutional moral pushback",
@@ -2882,7 +2882,7 @@
           "Economics"
         ],
         "sample": {
-          "title": "PH, China make ‘initial exchanges’ on South China Sea energy cooperation",
+          "title": "PH, China make \u2018initial exchanges\u2019 on South China Sea energy cooperation",
           "source": "Rappler",
           "url": "https://www.rappler.com/philippines/china-initial-exchanges-oil-gas-cooperation-west-sea/",
           "connection": "Energy cooperation negotiations occur alongside territorial disputes, tying resource access to maritime sovereignty claims."
@@ -2933,7 +2933,7 @@
         "cooperation_types": [
           "civic participation"
         ],
-        "sample_title": "‘No Kings’ flagship protest brings spotlight back to Minneapolis",
+        "sample_title": "\u2018No Kings\u2019 flagship protest brings spotlight back to Minneapolis",
         "sample_source": "Straits Times"
       },
       {
@@ -2951,7 +2951,7 @@
         "cooperation_types": [
           "civic participation"
         ],
-        "sample_title": "Whistles, monarch butterflies and other anti-ICE symbols join thousands at ‘No Kings’ Minnesota rally",
+        "sample_title": "Whistles, monarch butterflies and other anti-ICE symbols join thousands at \u2018No Kings\u2019 Minnesota rally",
         "sample_source": "MinnPost"
       },
       {
@@ -3003,7 +3003,7 @@
     ],
     "highlights": [
       {
-        "title": "‘Like The Walking Dead’: Smuggled Drugs Fuel Chaos Inside Ohio Prisons - The Marshall Project",
+        "title": "\u2018Like The Walking Dead\u2019: Smuggled Drugs Fuel Chaos Inside Ohio Prisons - The Marshall Project",
         "source": "The Marshall Project",
         "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPUTBBR01icFhNbTNBdjJhOGFPQmhkRmMwS043OEMyY1BSbzBoMkdUcGV6MWRIZnV4bWF1dG1TaHlRWV9TX0taQWhIQzlrdVZfMVRZUGZUSGVSSmUyaEtORWgyeXp0c2lvNkFrbkphWTJiOU1ZRFE3Y2puc2hzQ2pJYlVxbW9YU1hKVDM3R1l4ZzFzemQ0UlZLMzQ5TjFhaUtPTVY4?oc=5",
         "tier": "local-regional",
@@ -3013,7 +3013,7 @@
         "context": ""
       },
       {
-        "title": "Did New York blow $10 million on reading instruction that doesn’t work?",
+        "title": "Did New York blow $10 million on reading instruction that doesn\u2019t work?",
         "source": "Hechinger Report",
         "url": "https://hechingerreport.org/new-york-ten-million-reading-instruction/",
         "tier": "local-regional",
@@ -3033,7 +3033,7 @@
         "context": ""
       },
       {
-        "title": "La Casa Blanca se burla de protestas y las tilda de terapias por “el trastorno Trump”",
+        "title": "La Casa Blanca se burla de protestas y las tilda de terapias por \u201cel trastorno Trump\u201d",
         "source": "El Diario NY",
         "url": "https://eldiariony.com/2026/03/28/la-casa-blanca-se-burla-de-protestas-y-las-tilda-de-terapias-por-el-trastorno-trump/",
         "tier": "local-regional",
@@ -3043,7 +3043,7 @@
         "context": "Spanish-language daily serving Latino communities in New York metro area."
       },
       {
-        "title": "Pam Bondi reconoce a policías de Nueva York por frustrar ataque vinculado a ISIS cerca de Gracie Mansion",
+        "title": "Pam Bondi reconoce a polic\u00edas de Nueva York por frustrar ataque vinculado a ISIS cerca de Gracie Mansion",
         "source": "El Diario NY",
         "url": "https://eldiariony.com/2026/03/28/pam-bondi-reconoce-a-policias-de-nueva-york-por-frustrar-ataque-vinculado-a-isis-cerca-de-gracie-mansion/",
         "tier": "local-regional",
@@ -3053,7 +3053,7 @@
         "context": "Spanish-language daily serving Latino communities in New York metro area."
       },
       {
-        "title": "Whistles, monarch butterflies and other anti-ICE symbols join thousands at ‘No Kings’ Minnesota rally",
+        "title": "Whistles, monarch butterflies and other anti-ICE symbols join thousands at \u2018No Kings\u2019 Minnesota rally",
         "source": "MinnPost",
         "url": "https://www.minnpost.com/news/2026/03/whistles-monarch-butterflies-and-other-anti-ice-symbols-join-thousands-at-no-kings-minnesota-rally/",
         "tier": "local-regional",
@@ -3103,11 +3103,11 @@
   },
   "local_regional_exclusive": [
     {
-      "title": "Yailin La Más Viral da sus primeras declaraciones tras salir de prisión",
+      "title": "Yailin La M\u00e1s Viral da sus primeras declaraciones tras salir de prisi\u00f3n",
       "source": "El Diario NY",
       "url": "https://eldiariony.com/2026/03/28/yailin-la-mas-viral-da-sus-primeras-declaraciones-tras-salir-de-prision/",
       "tier": "local-regional",
-      "text_preview": "La cantante dominicana habló sobre el impacto que le causó ese proceso judicial, aunque intentó evadir las cámaras",
+      "text_preview": "La cantante dominicana habl\u00f3 sobre el impacto que le caus\u00f3 ese proceso judicial, aunque intent\u00f3 evadir las c\u00e1maras",
       "domains": [
         "information",
         "climate",
@@ -3118,11 +3118,11 @@
       "context": "Spanish-language daily serving Latino communities in New York metro area."
     },
     {
-      "title": "‘Like The Walking Dead’: Smuggled Drugs Fuel Chaos Inside Ohio Prisons - The Marshall Project",
+      "title": "\u2018Like The Walking Dead\u2019: Smuggled Drugs Fuel Chaos Inside Ohio Prisons - The Marshall Project",
       "source": "The Marshall Project",
       "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPUTBBR01icFhNbTNBdjJhOGFPQmhkRmMwS043OEMyY1BSbzBoMkdUcGV6MWRIZnV4bWF1dG1TaHlRWV9TX0taQWhIQzlrdVZfMVRZUGZUSGVSSmUyaEtORWgyeXp0c2lvNkFrbkphWTJiOU1ZRFE3Y2puc2hzQ2pJYlVxbW9YU1hKVDM3R1l4ZzFzemQ0UlZLMzQ5TjFhaUtPTVY4?oc=5",
       "tier": "local-regional",
-      "text_preview": "‘Like The Walking Dead’: Smuggled Drugs Fuel Chaos Inside Ohio Prisons &nbsp;&nbsp; The Marshall Project",
+      "text_preview": "\u2018Like The Walking Dead\u2019: Smuggled Drugs Fuel Chaos Inside Ohio Prisons &nbsp;&nbsp; The Marshall Project",
       "domains": [
         "governance",
         "security",
@@ -3133,11 +3133,11 @@
       "context": ""
     },
     {
-      "title": "Did New York blow $10 million on reading instruction that doesn’t work?",
+      "title": "Did New York blow $10 million on reading instruction that doesn\u2019t work?",
       "source": "Hechinger Report",
       "url": "https://hechingerreport.org/new-york-ten-million-reading-instruction/",
       "tier": "local-regional",
-      "text_preview": "In April 2024, New York Gov. Kathy Hochul made a bold promise: The state would revamp its approach to literacy and boost state reading scores by double digits. “We&#8217;re turning the page on how we teach students how to read,” she said in front of ",
+      "text_preview": "In April 2024, New York Gov. Kathy Hochul made a bold promise: The state would revamp its approach to literacy and boost state reading scores by double digits. \u201cWe&#8217;re turning the page on how we teach students how to read,\u201d she said in front of ",
       "domains": [
         "governance",
         "economics"
@@ -3161,11 +3161,11 @@
       "context": ""
     },
     {
-      "title": "‘Trump Knew’: Tiger Woods Back Home After Arrest and Trump’s Comeback Dig, Fans Scramble Over Whether the President Saw ",
+      "title": "\u2018Trump Knew\u2019: Tiger Woods Back Home After Arrest and Trump\u2019s Comeback Dig, Fans Scramble Over Whether the President Saw ",
       "source": "Atlanta Black Star",
       "url": "https://atlantablackstar.com/2026/03/28/tiger-woods-arrested-one-day-after-trumps-dig-at-his-comeback/",
       "tier": "local-regional",
-      "text_preview": "Tiger Woods ’ comeback plans just hit a major bunker—literally and figuratively. Days after President Trump publicly knocked the golfer’s return, Woods found himself in the headlines again for an entirely different reason: an arrest that went viral w",
+      "text_preview": "Tiger Woods \u2019 comeback plans just hit a major bunker\u2014literally and figuratively. Days after President Trump publicly knocked the golfer\u2019s return, Woods found himself in the headlines again for an entirely different reason: an arrest that went viral w",
       "domains": [
         "governance",
         "information",
@@ -3176,11 +3176,11 @@
       "context": ""
     },
     {
-      "title": "Whistles, monarch butterflies and other anti-ICE symbols join thousands at ‘No Kings’ Minnesota rally",
+      "title": "Whistles, monarch butterflies and other anti-ICE symbols join thousands at \u2018No Kings\u2019 Minnesota rally",
       "source": "MinnPost",
       "url": "https://www.minnpost.com/news/2026/03/whistles-monarch-butterflies-and-other-anti-ice-symbols-join-thousands-at-no-kings-minnesota-rally/",
       "tier": "local-regional",
-      "text_preview": "Being the center of attention isn’t a Minnesota specialty. But Minnesotans clearly embraced having the nation’s attention at the “No Kings” rally on Saturday as thousands of them stood unified in opposition to President Donald Trump. Those in attenda",
+      "text_preview": "Being the center of attention isn\u2019t a Minnesota specialty. But Minnesotans clearly embraced having the nation\u2019s attention at the \u201cNo Kings\u201d rally on Saturday as thousands of them stood unified in opposition to President Donald Trump. Those in attenda",
       "domains": [
         "domestic_politics",
         "security"
@@ -3205,7 +3205,7 @@
       "source": "Colorado Sun",
       "url": "https://coloradosun.com/2026/03/28/denver-summit-fc-home-opener-nwsl-attendance-record/",
       "tier": "local-regional",
-      "text_preview": "Denver is officially a women&#8217;s pro sports city. On Saturday, Denver Summit FC broke the National Women&#8217;s Soccer League record for single-game attendance in a 0-0 tie against the Washington Spirit. The team — and its fans — did so by a mar",
+      "text_preview": "Denver is officially a women&#8217;s pro sports city. On Saturday, Denver Summit FC broke the National Women&#8217;s Soccer League record for single-game attendance in a 0-0 tie against the Washington Spirit. The team \u2014 and its fans \u2014 did so by a mar",
       "domains": [
         "security"
       ],
@@ -3214,7 +3214,7 @@
       "context": ""
     },
     {
-      "title": "Thousands protest Trump agenda at “No Kings” rallies in Helena, Missoula and dozens of other locations in Montana",
+      "title": "Thousands protest Trump agenda at \u201cNo Kings\u201d rallies in Helena, Missoula and dozens of other locations in Montana",
       "source": "Montana Free Press",
       "url": "https://montanafreepress.org/2026/03/28/no-kings-protests-montana-helena-missoula/",
       "tier": "local-regional",
@@ -3343,7 +3343,7 @@
           "url": "https://www.taipeitimes.com/News/front/archives/2026/03/29/2003854649"
         },
         {
-          "title": "Slain college student’s mother vows ‘fight for justice’ after illegal immigrant ",
+          "title": "Slain college student\u2019s mother vows \u2018fight for justice\u2019 after illegal immigrant ",
           "source": "Fox News",
           "url": "https://www.foxnews.com/us/slain-college-freshmans-mother-vows-fight-justice-illegal-immigrant-charged-chicago-killing"
         },
@@ -3369,12 +3369,12 @@
       "trend": "rising",
       "sample_articles": [
         {
-          "title": "Bélgica exhibe las carencias de Estados Unidos con goleada 5-2 en Atlanta",
+          "title": "B\u00e9lgica exhibe las carencias de Estados Unidos con goleada 5-2 en Atlanta",
           "source": "El Diario NY",
           "url": "https://eldiariony.com/2026/03/28/belgica-exhibe-las-carencias-de-estados-unidos-con-goleada-5-2-en-atlanta/"
         },
         {
-          "title": "Slain college student’s mother vows ‘fight for justice’ after illegal immigrant ",
+          "title": "Slain college student\u2019s mother vows \u2018fight for justice\u2019 after illegal immigrant ",
           "source": "Fox News",
           "url": "https://www.foxnews.com/us/slain-college-freshmans-mother-vows-fight-justice-illegal-immigrant-charged-chicago-killing"
         },
@@ -3405,12 +3405,12 @@
           "url": "https://cnn.it/40OSomK"
         },
         {
-          "title": "Writer Andrea Panaligan on ‘Regla Dust’ and centering feminism",
+          "title": "Writer Andrea Panaligan on \u2018Regla Dust\u2019 and centering feminism",
           "source": "Rappler",
           "url": "https://www.rappler.com/people/artists/writer-andrea-panaligan-regla-dust-feminism/"
         },
         {
-          "title": "Yailin La Más Viral da sus primeras declaraciones tras salir de prisión",
+          "title": "Yailin La M\u00e1s Viral da sus primeras declaraciones tras salir de prisi\u00f3n",
           "source": "El Diario NY",
           "url": "https://eldiariony.com/2026/03/28/yailin-la-mas-viral-da-sus-primeras-declaraciones-tras-salir-de-prision/"
         }
@@ -3431,7 +3431,7 @@
       "trend": "rising",
       "sample_articles": [
         {
-          "title": "Kyoto is eyeing taller buildings. Critics warn it will look like ‘every other ci",
+          "title": "Kyoto is eyeing taller buildings. Critics warn it will look like \u2018every other ci",
           "source": "South China Morning Post",
           "url": "https://www.scmp.com/week-asia/lifestyle-culture/article/3348197/kyoto-eyeing-taller-buildings-critics-warn-it-will-look-every-other-city-japan?utm_source=rss_feed"
         },
@@ -3441,7 +3441,7 @@
           "url": "https://www.nytimes.com/2026/03/29/world/asia/korea-seoul-gangnam-slum.html"
         },
         {
-          "title": "Slain college student’s mother vows ‘fight for justice’ after illegal immigrant ",
+          "title": "Slain college student\u2019s mother vows \u2018fight for justice\u2019 after illegal immigrant ",
           "source": "Fox News",
           "url": "https://www.foxnews.com/us/slain-college-freshmans-mother-vows-fight-justice-illegal-immigrant-charged-chicago-killing"
         }
@@ -3467,7 +3467,7 @@
           "url": "https://www.taipeitimes.com/News/taiwan/archives/2026/03/29/2003854656"
         },
         {
-          "title": "Slain college student’s mother vows ‘fight for justice’ after illegal immigrant ",
+          "title": "Slain college student\u2019s mother vows \u2018fight for justice\u2019 after illegal immigrant ",
           "source": "Fox News",
           "url": "https://www.foxnews.com/us/slain-college-freshmans-mother-vows-fight-justice-illegal-immigrant-charged-chicago-killing"
         },
@@ -3493,7 +3493,7 @@
       "trend": "stable",
       "sample_articles": [
         {
-          "title": "Slain college student’s mother vows ‘fight for justice’ after illegal immigrant ",
+          "title": "Slain college student\u2019s mother vows \u2018fight for justice\u2019 after illegal immigrant ",
           "source": "Fox News",
           "url": "https://www.foxnews.com/us/slain-college-freshmans-mother-vows-fight-justice-illegal-immigrant-charged-chicago-killing"
         },
@@ -3503,7 +3503,7 @@
           "url": "https://www.foxnews.com/sports/stephen-smith-says-no-excuse-biological-men-competing-womens-sports"
         },
         {
-          "title": "Goodbye Graaff-Reinet: South African town’s name change stirs racial tensions",
+          "title": "Goodbye Graaff-Reinet: South African town\u2019s name change stirs racial tensions",
           "source": "The Guardian World",
           "url": "https://www.theguardian.com/world/2026/mar/29/graaff-reinet-robert-sobukwe-south-african-town-name-change-stirs-racial-tensions"
         }
@@ -3534,7 +3534,7 @@
           "url": "https://www.taipeitimes.com/News/front/archives/2026/03/29/2003854648"
         },
         {
-          "title": "Slain college student’s mother vows ‘fight for justice’ after illegal immigrant ",
+          "title": "Slain college student\u2019s mother vows \u2018fight for justice\u2019 after illegal immigrant ",
           "source": "Fox News",
           "url": "https://www.foxnews.com/us/slain-college-freshmans-mother-vows-fight-justice-illegal-immigrant-charged-chicago-killing"
         }
@@ -3555,7 +3555,7 @@
       "trend": "stable",
       "sample_articles": [
         {
-          "title": "Slain college student’s mother vows ‘fight for justice’ after illegal immigrant ",
+          "title": "Slain college student\u2019s mother vows \u2018fight for justice\u2019 after illegal immigrant ",
           "source": "Fox News",
           "url": "https://www.foxnews.com/us/slain-college-freshmans-mother-vows-fight-justice-illegal-immigrant-charged-chicago-killing"
         },
@@ -3591,7 +3591,7 @@
           "url": "https://edition.cnn.com/webview/politics/live-news/trump-indictment-stormy-daniels-news-04-03-23/index.html"
         },
         {
-          "title": "Slain college student’s mother vows ‘fight for justice’ after illegal immigrant ",
+          "title": "Slain college student\u2019s mother vows \u2018fight for justice\u2019 after illegal immigrant ",
           "source": "Fox News",
           "url": "https://www.foxnews.com/us/slain-college-freshmans-mother-vows-fight-justice-illegal-immigrant-charged-chicago-killing"
         },
@@ -3622,7 +3622,7 @@
           "url": "https://www.abc.net.au/news/2026-03-29/wa-premier-announces-emergency-relief-as-cleanup-begins/106508692"
         },
         {
-          "title": "Tamil Nadu Assembly election 2026: Tiruvallur constituency grapples with connect",
+          "title": "Tamil Nadu Assembly election 2026: Tiruvallur\u00a0constituency grapples with connect",
           "source": "The Hindu",
           "url": "https://www.thehindu.com/elections/tamil-nadu-assembly/tiruvallurgrapples-with-connectivity-and-traffic-issues/article70796213.ece"
         },
@@ -3720,7 +3720,7 @@
           "url": "https://www.theguardian.com/australia-news/2026/mar/29/exmouth-isolated-and-inundated-in-wake-of-cyclone-narelle-as-chevron-works-to-restart-stalled-gas-plants"
         },
         {
-          "title": "Energy price surge poses new challenges for India’s real estate sector",
+          "title": "Energy price surge poses new challenges for India\u2019s real estate sector",
           "source": "The Hindu",
           "url": "https://www.thehindu.com/business/energy-price-surge-poses-new-challenges-for-indias-real-estate-sector/article70798659.ece"
         }
@@ -3849,7 +3849,7 @@
         "national": [
           {
             "source": "Fox News",
-            "title": "Slain college student’s mother vows ‘fight for justice’ after illegal immigrant charged in Chicago k",
+            "title": "Slain college student\u2019s mother vows \u2018fight for justice\u2019 after illegal immigrant charged in Chicago k",
             "url": "https://www.foxnews.com/us/slain-college-freshmans-mother-vows-fight-justice-illegal-immigrant-charged-chicago-killing",
             "context": "Owned by Fox Corporation (Murdoch family). Largest cable news network by viewership. Generally regarded as right-leaning.",
             "connection": ""
@@ -3898,7 +3898,7 @@
         "national": [
           {
             "source": "Fox News",
-            "title": "Slain college student’s mother vows ‘fight for justice’ after illegal immigrant charged in Chicago k",
+            "title": "Slain college student\u2019s mother vows \u2018fight for justice\u2019 after illegal immigrant charged in Chicago k",
             "url": "https://www.foxnews.com/us/slain-college-freshmans-mother-vows-fight-justice-illegal-immigrant-charged-chicago-killing",
             "context": "Owned by Fox Corporation (Murdoch family). Largest cable news network by viewership. Generally regarded as right-leaning.",
             "connection": ""
@@ -3907,14 +3907,14 @@
         "local-regional": [
           {
             "source": "The Marshall Project",
-            "title": "‘Like The Walking Dead’: Smuggled Drugs Fuel Chaos Inside Ohio Prisons - The Marshall Project",
+            "title": "\u2018Like The Walking Dead\u2019: Smuggled Drugs Fuel Chaos Inside Ohio Prisons - The Marshall Project",
             "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPUTBBR01icFhNbTNBdjJhOGFPQmhkRmMwS043OEMyY1BSbzBoMkdUcGV6MWRIZnV4bWF1dG1TaHlRWV9TX0taQWhIQzlrdVZfMVRZUGZUSGVSSmUyaEtORWgyeXp0c2lvNkFrbkphWTJiOU1ZRFE3Y2puc2hzQ2pJYlVxbW9YU1hKVDM3R1l4ZzFzemQ0UlZLMzQ5TjFhaUtPTVY4?oc=5",
             "context": "",
             "connection": "Prison labor systems create conditions where smuggled contraband becomes survival currency, exposing state custody failure."
           },
           {
             "source": "El Diario NY",
-            "title": "Pam Bondi reconoce a policías de Nueva York por frustrar ataque vinculado a ISIS cerca de Gracie Man",
+            "title": "Pam Bondi reconoce a polic\u00edas de Nueva York por frustrar ataque vinculado a ISIS cerca de Gracie Man",
             "url": "https://eldiariony.com/2026/03/28/pam-bondi-reconoce-a-policias-de-nueva-york-por-frustrar-ataque-vinculado-a-isis-cerca-de-gracie-mansion/",
             "context": "Spanish-language daily serving Latino communities in New York metro area.",
             "connection": "Local police coordination prevents terror attack, illustrating effective institutional security response within city governance structure."
@@ -3938,7 +3938,7 @@
         "national": [
           {
             "source": "Fox News",
-            "title": "Slain college student’s mother vows ‘fight for justice’ after illegal immigrant charged in Chicago k",
+            "title": "Slain college student\u2019s mother vows \u2018fight for justice\u2019 after illegal immigrant charged in Chicago k",
             "url": "https://www.foxnews.com/us/slain-college-freshmans-mother-vows-fight-justice-illegal-immigrant-charged-chicago-killing",
             "context": "Owned by Fox Corporation (Murdoch family). Largest cable news network by viewership. Generally regarded as right-leaning.",
             "connection": ""
@@ -3947,14 +3947,14 @@
         "international": [
           {
             "source": "The Guardian World",
-            "title": "Goodbye Graaff-Reinet: South African town’s name change stirs racial tensions",
+            "title": "Goodbye Graaff-Reinet: South African town\u2019s name change stirs racial tensions",
             "url": "https://www.theguardian.com/world/2026/mar/29/graaff-reinet-robert-sobukwe-south-african-town-name-change-stirs-racial-tensions",
             "context": "Owned by the Scott Trust, a nonprofit. British newspaper. Generally regarded as left-leaning. No paywall.",
             "connection": "Symbolic decolonization effort triggers racial divide, revealing persistent resistance to acknowledging historical injustice."
           },
           {
             "source": "The Hindu",
-            "title": "N.R. Congress pitches ‘united MLAs’ plank for Karaikal development",
+            "title": "N.R. Congress pitches \u2018united MLAs\u2019 plank for Karaikal development",
             "url": "https://www.thehindu.com/elections/puducherry-assembly/nr-congress-pitches-united-mlas-plank-for-karaikal-development/article70792244.ece",
             "context": "",
             "connection": "Political fragmentation in legislature blocks infrastructure delivery because development requires cross-party consensus."
@@ -3963,7 +3963,7 @@
         "local-regional": [
           {
             "source": "Atlanta Black Star",
-            "title": "‘Trump Knew’: Tiger Woods Back Home After Arrest and Trump’s Comeback Dig, Fans Scramble Over Whethe",
+            "title": "\u2018Trump Knew\u2019: Tiger Woods Back Home After Arrest and Trump\u2019s Comeback Dig, Fans Scramble Over Whethe",
             "url": "https://atlantablackstar.com/2026/03/28/tiger-woods-arrested-one-day-after-trumps-dig-at-his-comeback/",
             "context": "",
             "connection": ""
@@ -4003,7 +4003,7 @@
         "national": [
           {
             "source": "Fox News",
-            "title": "Slain college student’s mother vows ‘fight for justice’ after illegal immigrant charged in Chicago k",
+            "title": "Slain college student\u2019s mother vows \u2018fight for justice\u2019 after illegal immigrant charged in Chicago k",
             "url": "https://www.foxnews.com/us/slain-college-freshmans-mother-vows-fight-justice-illegal-immigrant-charged-chicago-killing",
             "context": "Owned by Fox Corporation (Murdoch family). Largest cable news network by viewership. Generally regarded as right-leaning.",
             "connection": ""
@@ -4027,7 +4027,7 @@
         "national": [
           {
             "source": "Fox News",
-            "title": "Slain college student’s mother vows ‘fight for justice’ after illegal immigrant charged in Chicago k",
+            "title": "Slain college student\u2019s mother vows \u2018fight for justice\u2019 after illegal immigrant charged in Chicago k",
             "url": "https://www.foxnews.com/us/slain-college-freshmans-mother-vows-fight-justice-illegal-immigrant-charged-chicago-killing",
             "context": "Owned by Fox Corporation (Murdoch family). Largest cable news network by viewership. Generally regarded as right-leaning.",
             "connection": ""
@@ -4052,7 +4052,7 @@
         "local-regional": [
           {
             "source": "MinnPost",
-            "title": "Whistles, monarch butterflies and other anti-ICE symbols join thousands at ‘No Kings’ Minnesota rall",
+            "title": "Whistles, monarch butterflies and other anti-ICE symbols join thousands at \u2018No Kings\u2019 Minnesota rall",
             "url": "https://www.minnpost.com/news/2026/03/whistles-monarch-butterflies-and-other-anti-ice-symbols-join-thousands-at-no-kings-minnesota-rally/",
             "context": "",
             "connection": "Mass protest against immigration enforcement reflects political opposition to Trump's ICE policies and security apparatus priorities."
@@ -4090,7 +4090,7 @@
           },
           {
             "source": "Fox News",
-            "title": "Slain college student’s mother vows ‘fight for justice’ after illegal immigrant charged in Chicago k",
+            "title": "Slain college student\u2019s mother vows \u2018fight for justice\u2019 after illegal immigrant charged in Chicago k",
             "url": "https://www.foxnews.com/us/slain-college-freshmans-mother-vows-fight-justice-illegal-immigrant-charged-chicago-killing",
             "context": "Owned by Fox Corporation (Murdoch family). Largest cable news network by viewership. Generally regarded as right-leaning.",
             "connection": ""
@@ -4099,7 +4099,7 @@
         "international": [
           {
             "source": "The Hindu",
-            "title": "Armstrong’s wife and AIADMK candidate A. Porkodi hopes to win Thiru.Vi.Ka. Nagar constituency",
+            "title": "Armstrong\u2019s wife and AIADMK candidate A. Porkodi hopes to win Thiru.Vi.Ka. Nagar constituency",
             "url": "https://www.thehindu.com/elections/tamil-nadu-assembly/armstrongs-wife-and-aiadmk-candidate-a-porkodi-hopes-to-win-thiruvika-nagar-constituency/article70798786.ece",
             "context": "",
             "connection": "Widow running for office to seek justice for spouse's murder through electoral accountability mechanism."
@@ -4158,7 +4158,7 @@
           "force_tag": "military escalation"
         },
         {
-          "title": "Sen. Lankford says U.S. is winning Iran war but ‘there’s still work to be done’: Full interview",
+          "title": "Sen. Lankford says U.S. is winning Iran war but \u2018there\u2019s still work to be done\u2019: Full interview",
           "source": "NBC News",
           "url": "https://www.nbcnews.com/meet-the-press/video/sen-lankford-says-u-s-is-winning-iran-war-but-there-s-still-work-to-be-done-full-interview-260278853766",
           "tier": "national",
@@ -4178,7 +4178,7 @@
           "force_tag": "military escalation in regional conflict"
         },
         {
-          "title": "Americans ‘paying’ for Iran war with higher costs: Senate Democrat",
+          "title": "Americans \u2018paying\u2019 for Iran war with higher costs: Senate Democrat",
           "source": "The Hill",
           "url": "https://thehill.com/homenews/senate/5806431-kim-trump-iran-war-costs/",
           "tier": "national",
@@ -4246,7 +4246,7 @@
           "force_tag": "supply chain weaponization"
         },
         {
-          "title": "中東産原油 愛媛の製油所に到着 ホルムズ海峡通らないルートで",
+          "title": "\u4e2d\u6771\u7523\u539f\u6cb9 \u611b\u5a9b\u306e\u88fd\u6cb9\u6240\u306b\u5230\u7740 \u30db\u30eb\u30e0\u30ba\u6d77\u5ce1\u901a\u3089\u306a\u3044\u30eb\u30fc\u30c8\u3067",
           "source": "NHK World",
           "url": "http://www3.nhk.or.jp/news/html/20260329/k10015087051000.html",
           "tier": "international",
@@ -4274,7 +4274,7 @@
           "force_tag": "civic participation"
         },
         {
-          "title": "Armstrong’s wife and AIADMK candidate A. Porkodi hopes to win Thiru.Vi.Ka. Nagar constituency",
+          "title": "Armstrong\u2019s wife and AIADMK candidate A. Porkodi hopes to win Thiru.Vi.Ka. Nagar constituency",
           "source": "The Hindu",
           "url": "https://www.thehindu.com/elections/tamil-nadu-assembly/armstrongs-wife-and-aiadmk-candidate-a-porkodi-hopes-to-win-thiruvika-nagar-constituency/article70798786.ece",
           "tier": "international",
@@ -4284,7 +4284,7 @@
           "force_tag": "civic participation as justice-seeking"
         },
         {
-          "title": "​​Young Writers Project: ‘End the ICE Age’",
+          "title": "\u200b\u200bYoung Writers Project: \u2018End the ICE Age\u2019",
           "source": "VTDigger",
           "url": "https://vtdigger.org/2026/03/29/young-writers-project-end-the-ice-age/",
           "tier": "local-regional",
@@ -4294,7 +4294,7 @@
           "force_tag": "youth civic participation"
         },
         {
-          "title": "Photos From the Third Nationwide ‘No Kings’ Protest",
+          "title": "Photos From the Third Nationwide \u2018No Kings\u2019 Protest",
           "source": "The Atlantic",
           "url": "https://www.theatlantic.com/photography/2026/03/photos-from-the-third-nationwide-no-kings-protest/686609/?utm_source=feed",
           "tier": "national",
@@ -4314,7 +4314,7 @@
           "force_tag": "civic participation models"
         },
         {
-          "title": "‘Put down the crown, clown’: Thousands rally against Trump in 'No Kings' protests",
+          "title": "\u2018Put down the crown, clown\u2019: Thousands rally against Trump in 'No Kings' protests",
           "source": "Times of India",
           "url": "https://timesofindia.indiatimes.com/world/us/put-down-the-crown-clown-no-kings-protests-see-thousands-across-us-rallying-against-trump/articleshow/129874606.cms",
           "tier": "international",
@@ -4340,27 +4340,26 @@
     {
       "role": "thread",
       "structural_force": "military escalation",
-      "synthesis": "The Pentagon is preparing for weeks of ground operations in Iran. Eighteen sources across three tiers are covering this, and the story they tell depends on where they sit. Reuters and the Washington Post broke the planning story. Military Times focused on troop readiness and what deployment actually looks like for service members. France 24 reported Tehran threatening to target American universities in the region, a detail that barely appeared in U.S. outlets. Senator Lankford told NBC the U.S. is winning but 'there's still work to be done.' The Hill reported a Senate Democrat warning Americans are already paying for this war through higher costs at home.",
-      "cross_spectrum": "National outlets frame this as Pentagon planning and political debate. International outlets frame it as mutual escalation with consequences spreading across the region. Military-focused outlets frame it through the people who will be deployed and what it means for their families.",
-      "why_this_matters": "The Strait of Hormuz carries roughly 20% of the world's oil. If you heat a home, drive a car, or buy groceries, this story will reach your household budget through energy prices before it reaches cable news.",
-      "watch_for": "Watch for energy price changes this week. Saudi Arabia is already moving 7 million barrels a day through an alternate pipeline to avoid the Strait. If other countries start making similar moves, it signals this conflict is expected to last."
+      "synthesis": "The Pentagon is preparing for weeks of ground operations in Iran \u2014 and the way that story landed across 18 outlets today tells you something no single article can.\n\nReuters and the Washington Post broke the news as a military planning story: troop movements, operational timelines, logistics. Bloomberg reframed it entirely \u2014 not as a war story but as a risk story, focused on what a prolonged Middle East conflict means for markets and energy prices. The Hill took a domestic angle: a Senate Democrat warning that Americans are already paying for this war through higher gas and grocery costs. France 24 reported from Tehran's perspective, leading with Iran's threat to target American universities in the region \u2014 a detail that barely registered in U.S. coverage.\n\nMilitary Times, one of only two local-regional outlets covering this, framed it through the people who will deploy \u2014 service members and their families preparing for an open-ended mission with no clear exit. That's a story 11 national outlets didn't tell.",
+      "cross_spectrum": "Reuters sees a Pentagon logistics story. Bloomberg sees a market risk. The Hill sees a kitchen-table cost. France 24 sees Tehran's counter-threat. Military Times sees the families who will bear it. NBC's interview with Senator Lankford frames it as a winnable mission. Same war, six completely different stories for six different audiences \u2014 and which one you read shapes whether you think this is a crisis or a strategy.",
+      "why_this_matters": "If you drive a car, buy groceries, or have anyone in your life connected to the military, this story is already in your budget and your household. Ground operations mean months, not weeks \u2014 and every week extends the disruption to oil markets that shows up at your gas pump.",
+      "watch_for": "Watch for whether Congress votes to authorize this operation or whether the administration proceeds under existing war powers. If you see troop deployment numbers climb past 10,000, that signals a commitment level that historically takes years to unwind. Watch your gas prices \u2014 they're the fastest indicator of how markets read the situation."
     },
     {
       "role": "gap",
       "structural_force": "supply chain weaponization",
-      "synthesis": "Nine sources covered the same story today and none of them knew it. Bloomberg reported a Philippine oil company buying Russian crude because Middle Eastern supply became too risky. The Straits Times reported Ukrainian drones hitting a Russian fuel port. AP reported Houthi missiles threatening Red Sea shipping lanes. NHK World in Japan reported refiners rerouting tankers to avoid the Strait of Hormuz entirely. Read any one of these and you see a regional event. Read all nine and you see something bigger: energy supply chains are being used as weapons on every side of multiple conflicts at the same time.",
-      "cross_spectrum": "Bloomberg frames it as a business decision by one company. The Straits Times frames it as an act of war. AP frames it as a shipping risk. NHK frames it as a national security problem for Japan. Same force, four completely different stories for four different audiences.",
-      "why_this_matters": "When oil has to travel longer routes to avoid conflict zones, that cost gets added to everything that moves by truck, ship, or plane. These four stories are the early signal of price increases that will be obvious in a few weeks.",
-      "watch_for": "If Saudi Arabia's alternate pipeline and non-traditional crude sourcing continue past this month, the global energy map is being redrawn, not temporarily disrupted."
+      "synthesis": "Nine outlets covered the same structural force today and none of them knew it. Bloomberg reported that a Philippine refiner, Petron, started buying Russian crude oil as a backup plan because the Iran conflict is disrupting its usual suppliers. The Straits Times reported Ukrainian drones hitting Russia's Ust-Luga port, setting fires at a key energy terminal. AP reported Houthi missiles threatening Red Sea shipping lanes. Reuters reported Chevron's Wheatstone gas facility in Australia needing weeks of repairs. Times of India reported Saudi Arabia pumping oil through an east-west pipeline to avoid the Strait of Hormuz. NHK reported Japanese crude tankers rerouting to avoid the conflict zone entirely.\n\nSix different stories from six different outlets, and every single one is about the same thing: the global energy system is being pulled apart by war, and every country is scrambling to find a workaround before the lights go out. The gap between these frames is the real story \u2014 there is no single energy crisis. There are dozens of small ones, each invisible to the outlet covering it.",
+      "cross_spectrum": "Bloomberg sees a Philippine business decision. The Straits Times sees a Ukrainian military strike. AP sees a shipping threat. Times of India sees Saudi infrastructure strategy. NHK sees a Japanese national security problem. Reuters sees an Australian maintenance issue. Put them together and you see one force \u2014 energy supply chains breaking apart under the weight of three simultaneous conflicts \u2014 that no single outlet can name because each one only sees its own piece.",
+      "why_this_matters": "If you heat your home, charge your car, or buy anything that traveled on a ship, these six stories are one story about your cost of living. When a Philippine refiner switches to Russian crude and a Japanese tanker reroutes around a war zone, those costs land in the price of everything you buy within weeks.",
+      "watch_for": "Watch for diesel prices specifically \u2014 diesel moves goods, and when shipping routes get longer, diesel demand spikes first. If Saudi Arabia's east-west pipeline starts running at full capacity, it means the Strait of Hormuz is effectively closed for business. Watch for any country announcing strategic petroleum reserve releases \u2014 that's the signal that backup plans are running out."
     },
     {
       "role": "meanwhile",
       "structural_force": "cooperation",
-      "synthesis": "Two hundred and twenty stories today contained people cooperating, organizing, and doing the work that keeps communities running. That is one out of every four stories Signal Board read. Here is what that looks like up close.",
-      "cross_spectrum": "National outlets covered the No Kings rallies as crowd counts and political theater. MinnPost covered the same rally through the symbols people carried: whistles, monarch butterflies, hand-painted signs about ICE enforcement in their neighborhoods. Wisconsin Examiner counted specific rallies across specific towns. The story looks different when the reporter lives there.",
-      "why_this_matters": "The Marshall Project investigated Ohio prisons where drugs have become survival currency because the state failed to keep people safe. The Hechinger Report asked whether New York wasted $10 million on reading programs that do not work. These investigations affect families directly, and they come from outlets most people have never heard of.",
-      "watch_for": "Watch whether this weekend's protest energy in Minnesota, Wisconsin, and Oregon translates into local organizing this week, or whether it fades when national cameras leave."
+      "synthesis": "While the national cycle spent the day on Iran and energy markets, 220 stories \u2014 a 25% cooperation signal across everything we read \u2014 showed people building, fixing, and showing up.\n\nThe Marshall Project investigated Ohio prisons where smuggled drugs have become survival currency, exposing how state custody systems fail the people inside them. ABC Australia reported that Carroll College overturned a 32-year ban on students walking to school after sustained community advocacy finally broke through institutional inertia. In Mexico, the Straits Times covered protesters who turned a highway into a football pitch to challenge World Cup spending that displaces investment in basic urban needs. The Hindu reported a widow in India running for office to seek justice for her spouse's murder through the ballot box rather than the courts. VTDigger published a young Vermont writer's case for ending ICE \u2014 a voice that wouldn't exist in any national outlet's coverage.\n\nThese stories share something: people using the tools they have \u2014 courts, elections, protests, journalism \u2014 to push institutions toward accountability.",
+      "cross_spectrum": "National outlets covered the 'No Kings' rallies as a protest count story \u2014 The Atlantic ran photos, NBC tallied numbers. But Honolulu Civil Beat, Oregon Public Broadcasting, and Wisconsin local outlets covered the same rallies through the people who showed up and why: parents bringing children, veterans carrying flags, teachers organizing buses. The national frame was spectacle. The local frame was community. Same event, completely different story about what civic participation looks like from the inside versus the outside.",
+      "why_this_matters": "If you live in a state with a prison system, send your kids to a public school, or wonder whether your local government listens \u2014 these are the stories about whether the systems around you are working. They don't make the national news because they're slow and local, but they're the ones most likely to change your daily life.",
+      "watch_for": "Watch for whether the Carroll College walking-to-school decision spreads to other districts \u2014 institutional reforms like this tend to cascade once one school proves it works. Watch for The Marshall Project's Ohio prison investigation to trigger legislative hearings. If it doesn't get picked up by national outlets within a week, that silence is the coverage gap in action."
     }
   ]
-
 }
