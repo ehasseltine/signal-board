@@ -2,7 +2,7 @@
 
 ## What this is
 
-Signal Board is a daily news analysis system that reads 275 sources, classifies articles across 10 structural domains using AI, clusters them into stories by structural force, and publishes a daily synthesis showing how the forces reshaping the world are connected. It lives at elisehasseltine.com/signal-board.
+Signal Board is a daily news analysis system that reads 300 sources, classifies articles across 10 structural domains using AI, clusters them into stories by structural force, and publishes a daily synthesis showing how the forces reshaping the world are connected. It lives at elisehasseltine.com/signal-board.
 
 This is Elise Hasseltine's personal project. She builds it because the current information architecture degrades people's ability to think well together, and she believes building the alternative is worth doing.
 
@@ -11,7 +11,7 @@ This is Elise Hasseltine's personal project. She builds it because the current i
 Tech oligarchs are capturing America's information ecosystem through three interlocking strategies: buying media companies outright, building financial dependency with the newsrooms that are supposed to hold them accountable, and controlling the platforms where most people get their information. Ownership, influence, and distribution work as a single system. Signal Board exists to counter that system.
 
 Signal Board is the structural inverse of media capture:
-- **Democratic sourcing** (275 outlets, 10 tiers, 79 local-regional + 31 state/ethnic media) means no single owner shapes the picture.
+- **Democratic sourcing** (300 outlets, 10 tiers, 79 local-regional + 31 state/ethnic media) means no single owner shapes the picture.
 - **Independent AI classification** that asks "where are people being decent" means the analysis isn't beholden to the companies it covers.
 - **Direct-to-reader delivery** with no algorithmic intermediary means the information architecture itself refuses to be captured.
 
@@ -98,7 +98,7 @@ Sections are separated by angled SVG dividers with background color transitions.
 
 ## Source base
 
-275 sources across 10 tiers: national (28), international (40), specialist (38), local-regional (79 + 31 state/ethnic media), analysis/think tank (18), podcast (12), explainer (9), newsletter (7), government (5), research (3), solutions journalism (5).
+300 sources across 10 tiers: national (28), international (40), specialist (38), local-regional (79 + 31 state/ethnic media), analysis/think tank (18), podcast (12), explainer (9), newsletter (7), government (5), research (3), solutions journalism (5).
 
 Sources are defined in `data/feeds.csv`. The pipeline reads this file on every run.
 
@@ -181,7 +181,7 @@ ai, labor, governance, information, economics, climate, security, geopolitics, d
 - `actions/reclassify_today.py` — Re-classification utility (manual, not in pipeline)
 
 ### Data
-- `data/feeds.csv` — all 275 source definitions (name, URL, tier, region, type, description, why)
+- `data/feeds.csv` — all 300 source definitions (name, URL, tier, region, type, description, why)
 - `data/articles.json` — full article corpus
 - `data/daily/latest.json` — today's analysis (output of analyze + synthesize)
 - `data/bias_ratings.json` — AllSides bias ratings (output of fetch_bias.py)

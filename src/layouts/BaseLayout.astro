@@ -9,7 +9,7 @@ interface Props {
   sourcesReporting?: number;
 }
 
-const { title, description = 'Daily news analysis from 275 sources across the political spectrum, across borders, and across languages. See what no single outlet can show you.', dateStr, totalStories, sourcesReporting } = Astro.props;
+const { title, description = 'Daily news analysis from 300 sources across the political spectrum, across borders, and across languages. See what no single outlet can show you.', dateStr, totalStories, sourcesReporting } = Astro.props;
 
 const siteUrl = 'https://www.elisehasseltine.com/signal-board';
 const ogImage = `${siteUrl}/og-image.png`;
@@ -76,7 +76,7 @@ const canonicalUrl = `${siteUrl}/${title === 'Today' ? 'today/' : title === 'Abo
         "@id": canonicalUrl
       },
       "isAccessibleForFree": true,
-      ...(totalStories ? { "about": `Analysis of ${totalStories} articles from ${sourcesReporting || 275} sources` } : {})
+      ...(totalStories ? { "about": `Analysis of ${totalStories} articles from ${sourcesReporting || 300} sources` } : {})
     })} />
   )}
   {title === 'About' && (
@@ -91,7 +91,7 @@ const canonicalUrl = `${siteUrl}/${title === 'Today' ? 'today/' : title === 'Abo
         "name": "Signal Board",
         "applicationCategory": "News Analysis",
         "operatingSystem": "Web",
-        "description": "Daily news analysis from 275 sources across the political spectrum, across borders, and across languages.",
+        "description": "Daily news analysis from 300 sources across the political spectrum, across borders, and across languages.",
         "author": {
           "@type": "Person",
           "name": "Elise Hasseltine",
