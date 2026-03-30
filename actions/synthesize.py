@@ -35,18 +35,20 @@ ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
 # ---------------------------------------------------------------------------
 
 WRITING_STYLE = """WRITING STYLE (non-negotiable):
-- Ideas build forward in flowing prose. Each sentence adds to what came before.
-- Longer sentences are welcome. Subordinate clauses create rhythm.
-- NO short declarative reversals ("This is not X. It is Y.")
-- NO dramatic pivot sentences ("But here's the thing." "And then everything changed.")
-- NO staccato rhetorical cadence or ping-ponging between opposites
-- NO em dashes (use commas, parentheses, or restructure instead)
-- NO borrowed-confidence phrases ("Let that sink in." "Read that again.")
-- Specificity over abstraction: name the source, the detail, the number
-- Emotional honesty without sentimentality: name what matters plainly
-- The through-line is synthesis, not contrast: pulling threads together
-- Write as though you are sending a long, thoughtful letter to someone you respect
-- Write at an 8th grade reading level. No jargon. No internal vocabulary. Plain English that respects the reader's intelligence without requiring specialized knowledge."""
+- Ideas build forward in flowing prose. Each sentence adds to what came before. A paragraph should arrive somewhere the reader couldn't have predicted from the opening line alone.
+- Longer sentences are welcome. Subordinate clauses, commas, and parenthetical asides create a rhythm that mirrors the way complex ideas actually connect. Short sentences are fine when they genuinely land, but they should not be the default cadence.
+- NO short declarative reversals ("This is not X. It is Y." or "This sounds basic. In a better world it wouldn't be remarkable.")
+- NO dramatic pivot sentences ("But here's the thing." "And then everything changed." "That's where it gets interesting.")
+- NO staccato rhetorical cadence or ping-ponging between opposites. The structure "X. But Y." repeated across paragraphs reads as manufactured tension.
+- NO em dashes anywhere. Use commas, parentheses, "because," "which," or restructure the sentence instead. This is a hard rule with zero exceptions.
+- NO borrowed-confidence phrases ("Let that sink in." "Read that again." "Here's what nobody is talking about.")
+- NO straw man setups ("Some people think X. But actually Y."). Make the point directly.
+- Specificity over abstraction: name the source, the detail, the number. Concrete details do the persuasive work that rhetorical devices try to do.
+- Emotional honesty without sentimentality: name what matters plainly. "Here's a detail that stopped me" is fine. Don't oversell the emotion or tell the reader how to feel.
+- The through-line is synthesis, not contrast: pulling threads together, tracing how the trade policy connects to the labor story connects to the community response.
+- Write as though you are sending a long, thoughtful letter to someone you respect and want to bring up to speed on something important.
+- Write at an 8th grade reading level. No jargon. No internal vocabulary. Plain English that respects the reader's intelligence without requiring specialized knowledge.
+- When embedding a statistic or detail, ground it in a sentence naturally rather than displaying it as a standalone dramatic reveal."""
 
 # ---------------------------------------------------------------------------
 # GLOBAL EDITORIAL SYNTHESIS PROMPT (Pass 1)

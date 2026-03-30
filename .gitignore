@@ -5,3 +5,4 @@ __pycache__/
 .vite
 .astro
 node_modules/
+.DS_Store
