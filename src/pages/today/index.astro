@@ -446,8 +446,8 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
 <!-- THE DAILY THREAD — CREAM BACKGROUND                              -->
 <!-- ================================================================ -->
 <div class="section-divider" aria-hidden="true" style="background: var(--cream);">
-  <svg viewBox="0 0 1440 48" preserveAspectRatio="none" fill="none">
-    <polygon points="0,0 1440,0 1440,48 0,16" fill="var(--cream)"/>
+  <svg viewBox="0 0 1440 32" preserveAspectRatio="none">
+    <polygon points="0,0 1440,0 1440,32 0,8" fill="var(--cream)"/>
   </svg>
 </div>
 {threadStory && (
@@ -620,10 +620,10 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
 )}
 
 <!-- Angled divider: cream → navy -->
-<div class="section-divider" aria-hidden="true" style="background: var(--cream);">
-  <svg viewBox="0 0 1440 72" preserveAspectRatio="none" fill="none">
-    <polygon points="0,0 1440,0 1440,24 0,0" fill="var(--cream)"/>
-    <polygon points="0,0 1440,24 1440,72 0,72" fill="var(--ink)"/>
+<div class="section-divider" aria-hidden="true" style="background: var(--ink);">
+  <svg viewBox="0 0 1440 48" preserveAspectRatio="none">
+    <polygon points="0,0 1440,0 1440,48 0,48" fill="var(--ink)"/>
+    <polygon points="0,0 1440,0 1440,12 0,48" fill="var(--cream)"/>
   </svg>
 </div>
 
@@ -646,8 +646,9 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
 
 <!-- Angled divider: navy → teal wash -->
 <div class="section-divider" aria-hidden="true" style="background: var(--teal-wash);">
-  <svg viewBox="0 0 1440 72" preserveAspectRatio="none" fill="none">
-    <polygon points="0,0 1440,0 1440,48 0,72" fill="var(--ink)"/>
+  <svg viewBox="0 0 1440 48" preserveAspectRatio="none">
+    <polygon points="0,0 1440,0 1440,48 0,48" fill="var(--teal-wash)"/>
+    <polygon points="0,0 1440,0 0,48" fill="var(--ink)"/>
   </svg>
 </div>
 
@@ -773,12 +774,11 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
 </article>
 )}
 
-<!-- Angled divider: teal wash gap → meanwhile teal wash (subtle wave boundary) -->
-<div class="section-divider" aria-hidden="true" style="background: var(--teal-wash);">
-  <svg viewBox="0 0 1440 72" preserveAspectRatio="none" fill="none">
-    <rect x="0" y="0" width="1440" height="72" fill="var(--teal-wash)"/>
-    <path d="M0,0 L0,48 Q360,72 720,36 Q1080,0 1440,48 L1440,0 Z" fill="var(--teal-wash)" opacity="0.5"/>
-    <line x1="0" y1="36" x2="1440" y2="36" stroke="var(--green)" stroke-width="1.5" opacity="0.2"/>
+<!-- Divider: teal wash gap → meanwhile green tint -->
+<div class="section-divider" aria-hidden="true" style="background: rgba(66,240,165,0.11);">
+  <svg viewBox="0 0 1440 32" preserveAspectRatio="none">
+    <polygon points="0,0 1440,0 1440,32 0,32" fill="rgba(66,240,165,0.11)"/>
+    <polygon points="0,0 1440,0 1440,8 0,32" fill="var(--teal-wash)"/>
   </svg>
 </div>
 
@@ -871,10 +871,10 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
 <!-- ================================================================ -->
 <!-- FOOTER — CREAM                                                   -->
 <!-- ================================================================ -->
-<div class="section-divider" aria-hidden="true" style="background: rgba(66,240,165,0.11);">
-  <svg viewBox="0 0 1440 56" preserveAspectRatio="none" fill="none">
-    <polygon points="0,0 1440,0 1440,20 0,0" fill="rgba(66,240,165,0.11)"/>
-    <polygon points="0,0 1440,20 1440,56 0,56" fill="rgba(255,208,123,0.08)"/>
+<div class="section-divider" aria-hidden="true" style="background: rgba(255,208,123,0.08);">
+  <svg viewBox="0 0 1440 40" preserveAspectRatio="none">
+    <polygon points="0,0 1440,0 1440,40 0,40" fill="rgba(255,208,123,0.08)"/>
+    <polygon points="0,0 1440,0 1440,10 0,40" fill="rgba(66,240,165,0.11)"/>
   </svg>
 </div>
 <footer role="contentinfo" style="background: rgba(255,208,123,0.08); content-visibility: auto; contain-intrinsic-size: auto 600px;">
