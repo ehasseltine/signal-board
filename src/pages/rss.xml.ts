@@ -2,7 +2,7 @@ import type { APIContext } from 'astro';
 import { listDailyDates, loadDailyData } from '../lib/data';
 
 export async function GET(context: APIContext) {
-  const siteUrl = 'https://www.elisehasseltine.com/signal-board';
+  const siteUrl = 'https://signal-board.org';
   const dates = listDailyDates().slice(0, 30); // Last 30 days
 
   const items = dates.map(date => {
@@ -36,7 +36,7 @@ export async function GET(context: APIContext) {
 <rss version="2.0"
   xmlns:atom="http://www.w3.org/2005/Atom"
   xmlns:dc="http://purl.org/dc/elements/1.1/"
-  xmlns:signal="https://www.elisehasseltine.com/signal-board/ns">
+  xmlns:signal="https://signal-board.org/ns">
   <channel>
     <title>Signal Board</title>
     <link>${siteUrl}</link>

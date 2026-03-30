@@ -23,7 +23,7 @@ const { date } = Astro.params;
 const pipelineData = loadDailyData(date!);
 
 if (!pipelineData) {
-  return Astro.redirect('/signal-board/archive/');
+  return Astro.redirect('/archive/');
 }
 
 // Extract ALL data — supports both formats
@@ -156,7 +156,7 @@ function escapeHtml(text: string): string {
 <div class="close-section">
   <div class="wrap">
     <p class="body r" style="color: var(--on-navy-dim);">
-      <a href="/signal-board/archive/" style="color: var(--red); text-decoration: underline;">Back to archive</a>
+      <a href="/archive/" style="color: var(--red); text-decoration: underline;">Back to archive</a>
     </p>
   </div>
 </div>

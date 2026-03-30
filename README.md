@@ -2,7 +2,7 @@
 
 Signal Board is a daily AI-powered news analysis engine that reads and synthesizes articles from 300+ news sources, powered by Claude. Built by Elise Hasseltine, Signal Board identifies structural forces across the news landscape, connects disparate stories, and delivers a human-readable narrative on what's really happening.
 
-Live site: https://www.elisehasseltine.com/signal-board/today/
+Live site: https://signal-board.org/today/
 
 ## How It Works
 
@@ -203,7 +203,7 @@ python synthesize.py --date 2026-03-28
 1. Verify the `docs/today/index.html` file exists and has today's date
 2. Hard-refresh your browser (Cmd+Shift+R or Ctrl+Shift+R)
 3. Wait 1-2 minutes for GitHub Pages to deploy
-4. Check `https://www.elisehasseltine.com/signal-board/today/` in an incognito window
+4. Check `https://signal-board.org/today/` in an incognito window
 
 ## Rolling Back
 

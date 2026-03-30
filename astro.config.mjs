@@ -2,8 +2,8 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://www.elisehasseltine.com',
-  base: '/signal-board',
+  site: 'https://signal-board.org',
+  base: '/',
   outDir: './docs',
   integrations: [sitemap()],
   build: {

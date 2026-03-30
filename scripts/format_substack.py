@@ -99,7 +99,7 @@ def format_html_body(fields):
 
 <hr>
 
-<p><a href="https://www.elisehasseltine.com/signal-board/today/">Read full analysis at Signal Board</a></p>
+<p><a href="https://signal-board.org/today/">Read full analysis at Signal Board</a></p>
 
 </body>
 </html>"""

@@ -2,26 +2,26 @@
 <rss version="2.0"
   xmlns:atom="http://www.w3.org/2005/Atom"
   xmlns:dc="http://purl.org/dc/elements/1.1/"
-  xmlns:signal="https://www.elisehasseltine.com/signal-board/ns">
+  xmlns:signal="https://signal-board.org/ns">
   <channel>
     <title>Signal Board</title>
-    <link>https://www.elisehasseltine.com/signal-board</link>
+    <link>https://signal-board.org</link>
     <description>Daily news analysis from 300 sources across the political spectrum, across borders, and across languages. See what no single outlet can show you.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 30 Mar 2026 17:31:57 GMT</lastBuildDate>
-    <atom:link href="https://www.elisehasseltine.com/signal-board/rss.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 30 Mar 2026 17:35:25 GMT</lastBuildDate>
+    <atom:link href="https://signal-board.org/rss.xml" rel="self" type="application/rss+xml" />
     <copyright>Elise Hasseltine</copyright>
     <managingEditor>elise@elisehasseltine.com (Elise Hasseltine)</managingEditor>
     <ttl>1440</ttl>
     <image>
-      <url>https://www.elisehasseltine.com/signal-board/favicon-192.png</url>
+      <url>https://signal-board.org/favicon-192.png</url>
       <title>Signal Board</title>
-      <link>https://www.elisehasseltine.com/signal-board</link>
+      <link>https://signal-board.org</link>
     </image>
     <item>
       <title>New nuclear rules cut worker safety as Iran war hits oil markets</title>
-      <link>https://www.elisehasseltine.com/signal-board/archive/2026-03-30/</link>
-      <guid isPermaLink="true">https://www.elisehasseltine.com/signal-board/archive/2026-03-30/</guid>
+      <link>https://signal-board.org/archive/2026-03-30/</link>
+      <guid isPermaLink="true">https://signal-board.org/archive/2026-03-30/</guid>
       <pubDate>Mon, 30 Mar 2026 07:00:00 GMT</pubDate>
       <description>The Labor Department&apos;s rollback of nuclear industry safety standards, reported primarily by High Country News while national outlets focused on 401(k) investment rules, reveals how regulatory capture operates in plain sight during periods of international crisis. The timing matters because geopolitical instability creates the perfect cover for weakening worker protections when public attention is elsewhere, and the combination produces compound vulnerabilities that neither story captures alone. When nuclear safety regulations are loosened at the same moment that Middle East conflict threatens energy supply chains, the result is a double exposure to systemic risk that affects both the workers inside nuclear facilities and the communities that depend on stable energy systems.</description>
       <dc:creator>Elise Hasseltine</dc:creator>
@@ -30,8 +30,8 @@
     </item>
     <item>
       <title>Military escalation clusters with supply chain attacks as conflict weaponizes commerce itself</title>
-      <link>https://www.elisehasseltine.com/signal-board/archive/2026-03-29/</link>
-      <guid isPermaLink="true">https://www.elisehasseltine.com/signal-board/archive/2026-03-29/</guid>
+      <link>https://signal-board.org/archive/2026-03-29/</link>
+      <guid isPermaLink="true">https://signal-board.org/archive/2026-03-29/</guid>
       <pubDate>Sun, 29 Mar 2026 07:00:00 GMT</pubDate>
       <description>Today&apos;s coverage reveals something fundamental about how conflict operates in an interconnected world: the distinction between military action and economic warfare has collapsed entirely. Ukraine&apos;s drone strikes on Russian energy infrastructure, Pentagon preparations for weeks of ground operations in Iran, and the resulting scramble by refiners to reroute supply chains show how warfare now targets the commercial systems that sustain civilian life across continents. When Philippine refiner Petron shifts to Russian crude specifically because of Iran conflict escalation, or when Saudi Arabia&apos;s pipeline infrastructure becomes a strategic hedge against chokepoint vulnerability, we&apos;re witnessing supply chains themselves become weapons and targets simultaneously.</description>
       <dc:creator>Elise Hasseltine</dc:creator>
@@ -40,8 +40,8 @@
     </item>
     <item>
       <title>Signal Board - 2026-03-28</title>
-      <link>https://www.elisehasseltine.com/signal-board/archive/2026-03-28/</link>
-      <guid isPermaLink="true">https://www.elisehasseltine.com/signal-board/archive/2026-03-28/</guid>
+      <link>https://signal-board.org/archive/2026-03-28/</link>
+      <guid isPermaLink="true">https://signal-board.org/archive/2026-03-28/</guid>
       <pubDate>Sat, 28 Mar 2026 07:00:00 GMT</pubDate>
       <description>Daily news analysis from 300 sources for 2026-03-28</description>
       <dc:creator>Elise Hasseltine</dc:creator>

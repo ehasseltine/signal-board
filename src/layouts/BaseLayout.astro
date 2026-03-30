@@ -11,7 +11,7 @@ interface Props {
 
 const { title, description = 'Daily news analysis from 300 sources across the political spectrum, across borders, and across languages. See what no single outlet can show you.', dateStr, totalStories, sourcesReporting } = Astro.props;
 
-const siteUrl = 'https://www.elisehasseltine.com/signal-board';
+const siteUrl = 'https://signal-board.org';
 const ogImage = `${siteUrl}/og-image.png`;
 const pageTitle = `Signal Board - ${title}`;
 const canonicalUrl = `${siteUrl}/${title === 'Today' ? 'today/' : title === 'About' ? 'about/' : title === 'Archive' ? 'archive/' : ''}`;
@@ -26,12 +26,12 @@ const canonicalUrl = `${siteUrl}/${title === 'Today' ? 'today/' : title === 'Abo
   <meta name="description" content={description}>
 
   <!-- Favicons & Web App -->
-  <link rel="icon" type="image/svg+xml" href="/signal-board/favicon.svg">
-  <link rel="icon" type="image/x-icon" href="/signal-board/favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="/signal-board/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/signal-board/favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/signal-board/apple-touch-icon.png">
-  <link rel="manifest" href="/signal-board/manifest.json">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
   <meta name="theme-color" content="#1B2A4B">
 
   <!-- Open Graph -->

@@ -17,7 +17,7 @@ const formatDate = (d: string) => {
 <nav aria-label="Breadcrumb" style="padding: 16px clamp(24px, 4vw, 48px) 0;">
   <div class="wrap">
     <ol style="list-style: none; padding: 0; margin: 0; font-family: 'Inter', sans-serif; font-size: 13px; color: var(--ink-light); display: flex; gap: 8px; align-items: center;">
-      <li><a href="/signal-board/today/" style="color: var(--ink-light);">Signal Board</a></li>
+      <li><a href="/today/" style="color: var(--ink-light);">Signal Board</a></li>
       <li aria-hidden="true" style="color: var(--ink-faint);">/</li>
       <li aria-current="page">Archive</li>
     </ol>
@@ -41,7 +41,7 @@ const formatDate = (d: string) => {
   <div class="section" style="padding: 0;">
     <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: clamp(16px, 2vw, 24px);">
       {dates.map(date => (
-        <a href={`/signal-board/archive/${date}/`} style="text-decoration: none; color: inherit;">
+        <a href={`/archive/${date}/`} style="text-decoration: none; color: inherit;">
           <article class="summary-card r" style="height: 100%; display: flex; flex-direction: column;">
             <h2 class="card-label" style="margin-bottom: 16px; font-size: inherit;">
               <time datetime={date}>{formatDate(date)}</time>
@@ -68,7 +68,7 @@ const formatDate = (d: string) => {
 <footer role="contentinfo">
 <div class="wrap">
   <nav aria-label="Footer navigation" style="padding: 40px 0; font-family: 'Inter', sans-serif; font-size: 13px; color: var(--ink-light); border-top: 1px solid var(--ink-faint);">
-    <a href="/signal-board/today/" style="color: var(--ink-light);">Today's Analysis</a>&ensp;·&ensp;<a href="/signal-board/about/" style="color: var(--ink-light);">About</a>&ensp;·&ensp;<a href="https://substack.com/@elisehasseltine" target="_blank" rel="noopener" style="color: var(--ink-light);">Subscribe</a>
+    <a href="/today/" style="color: var(--ink-light);">Today's Analysis</a>&ensp;·&ensp;<a href="/about/" style="color: var(--ink-light);">About</a>&ensp;·&ensp;<a href="https://substack.com/@elisehasseltine" target="_blank" rel="noopener" style="color: var(--ink-light);">Subscribe</a>
   </nav>
 </div>
 </footer>
