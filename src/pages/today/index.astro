@@ -92,6 +92,12 @@ for (const story of topStories) {
       outletContextMap.set(article.source, article.context);
     }
   }
+  // Also pull context from connections (pipeline now includes context field)
+  for (const conn of (story.connections || [])) {
+    if (conn.source && conn.context && !outletContextMap.has(conn.source)) {
+      outletContextMap.set(conn.source, conn.context);
+    }
+  }
   // Also pull context from tier_framing samples (covers sources in sourcesSample)
   if (story.tier_framing) {
     for (const [, data] of Object.entries(story.tier_framing)) {
@@ -137,6 +143,25 @@ function getSourceContext(sourceName: string): string | null {
   // Primary: use pipeline-generated context from analyze.py's SOURCE_CONTEXT (300 entries)
   // This is populated from article.context fields in the daily JSON
   return outletContextMap.get(sourceName) || null;
+}
+
+// Split cross_spectrum text into sentences, handling abbreviations like U.S., U.K., D.C.
+function splitSentences(text: string): string[] {
+  // Replace common abbreviations with placeholder (no periods)
+  const abbrevs = ['U.S.', 'U.K.', 'U.N.', 'E.U.', 'D.C.', 'U.S.A.'];
+  let safe = text;
+  for (const abbr of abbrevs) {
+    safe = safe.split(abbr).join(abbr.replace(/\./g, '\u200B'));
+  }
+  // Split on sentence boundaries: period followed by whitespace
+  const parts = safe.split(/(?<=\.)\s+/).filter((s: string) => s.trim().length > 10);
+  // Restore abbreviations
+  return parts.map(s => {
+    for (const abbr of abbrevs) {
+      s = s.split(abbr.replace(/\./g, '\u200B')).join(abbr);
+    }
+    return s;
+  });
 }
 
 function tierLabel(tier: string): string {
@@ -437,7 +462,7 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
   <div style="padding: 32px 0 0;">
     <span class="section-label r" style="font-size: 13px; margin-bottom: 20px; display: block;">How outlets told it differently</span>
     <div class="r cascade-parent" style="display: flex; flex-direction: column; gap: 0;">
-      {threadStory.crossSpectrum.split(/(?<=\.)\s+/).filter((s: string) => s.trim().length > 10).map((sentence: string, i: number) => {
+      {splitSentences(threadStory.crossSpectrum).map((sentence: string, i: number) => {
         // Extract outlet name: "Reuters sees...", "France 24 sees...", "NBC's interview..."
         const outletMatch = sentence.match(/^([A-Z][A-Za-z0-9\s'.]+?)\s+(?:sees?|frames?|reports?|covered|interview|ran|tallied|leads?)/);
         // Also try tier-based labels for fallback
@@ -624,7 +649,7 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
       {(() => {
         // Prefer crossSpectrum (outlet-by-outlet from Pass 2) over insights (tier-based)
         const sentences = gapStory.crossSpectrum
-          ? gapStory.crossSpectrum.split(/(?<=\.)\s+/).filter((s: string) => s.trim().length > 10)
+          ? splitSentences(gapStory.crossSpectrum)
           : gapStory.insights.slice(0, 6);
         const intlOutlets = ['Reuters', 'AP', 'France 24', 'Al Jazeera', 'BBC', 'Straits Times', 'NHK', 'Times of India', 'The Hindu', 'South China Morning Post', 'Channel News Asia', 'Dawn'];
         const localOutlets = ['Military Times', 'Honolulu Civil Beat', 'Oregon Public Broadcasting', 'VTDigger'];

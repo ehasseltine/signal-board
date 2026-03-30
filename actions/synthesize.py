@@ -42,6 +42,7 @@ WRITING_STYLE = """WRITING STYLE (non-negotiable):
 - NO staccato rhetorical cadence or ping-ponging between opposites. The structure "X. But Y." repeated across paragraphs reads as manufactured tension.
 - Never begin a sentence with "But" as a rhetorical pivot. If two ideas contrast, embed the contrast within a single flowing sentence rather than creating a setup-and-reversal with "But." This is a hard rule.
 - NO em dashes anywhere. Use commas, parentheses, "because," "which," or restructure the sentence instead. This is a hard rule with zero exceptions.
+- Never use periods in abbreviations. Write US, UK, UN, EU, DC, not U.S., U.K., U.N., E.U., D.C. This is a hard formatting rule because the template splits on periods to create individual framing rows.
 - NO borrowed-confidence phrases ("Let that sink in." "Read that again." "Here's what nobody is talking about.")
 - NO straw man setups ("Some people think X. But actually Y."). Make the point directly.
 - Specificity over abstraction: name the source, the detail, the number. Concrete details do the persuasive work that rhetorical devices try to do.
