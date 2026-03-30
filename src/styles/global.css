@@ -545,7 +545,7 @@
   }
 
   /* Thread — cream bg, red accent bar */
-  .thread-world { background: linear-gradient(to bottom, var(--cream), rgba(248,117,117,0.05) 40%, var(--cream) 100%); }
+  .thread-world { background: linear-gradient(to bottom, var(--cream), rgba(248,117,117,0.02) 40%, var(--cream) 100%); }
   .thread-world::before { background: var(--red); }
   .thread-world .section-label { color: var(--red-accessible); }
 
