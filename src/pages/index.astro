@@ -1,4 +1,17 @@
 ---
-// Redirect to /today/
-return Astro.redirect('/today/');
+// Root URL redirects to /today/ via meta refresh + JS fallback
+// Astro.redirect() doesn't work on static hosts (no server), so we use HTML
 ---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="refresh" content="0;url=/today/">
+  <link rel="canonical" href="https://signal-board.org/today/">
+  <title>Redirecting to Signal Board</title>
+  <script>window.location.replace('/today/');</script>
+</head>
+<body>
+  <p>Redirecting to <a href="/today/">today's analysis</a>...</p>
+</body>
+</html>
