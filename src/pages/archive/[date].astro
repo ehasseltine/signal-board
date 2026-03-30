@@ -26,6 +26,12 @@ if (!pipelineData) {
   return Astro.redirect('/archive/');
 }
 
+// Navigation: previous and next dates
+const allDates = listDailyDates(); // reverse chronological
+const currentIndex = allDates.indexOf(date!);
+const newerDate = currentIndex > 0 ? allDates[currentIndex - 1] : null;
+const olderDate = currentIndex < allDates.length - 1 ? allDates[currentIndex + 1] : null;
+
 // Extract ALL data — supports both formats
 const megaStories: MegaStory[] = pipelineData.mega_stories || [];
 const whatConnects = pipelineData.what_connects || [];
@@ -35,6 +41,7 @@ const cooperation: Cooperation | null = pipelineData.cooperation || null;
 const editorial: Editorial | undefined = pipelineData.editorial || undefined;
 const localRegionalSynthesis: string = pipelineData.local_regional_synthesis || '';
 const localRegionalExamples: any[] = pipelineData.local_regional_examples || [];
+const storySyntheses = pipelineData.story_syntheses || [];
 
 // Select stories
 const threadStory = selectDailyThread(megaStories, whatConnects, topStories, editorial);
@@ -54,7 +61,14 @@ const summary = pipelineData.summary || {};
 const totalStories = summary.total_stories || 0;
 const sourcesReporting = summary.sources_reporting || 0;
 const crossDomain = summary.cross_domain || 0;
-const crossDomainPct = summary.cross_domain_pct || 0;
+
+const formatDate = (d: string) => {
+  const [y, m, day] = d.split('-');
+  const dt = new Date(+y, +m - 1, +day);
+  return dt.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+};
+
+const formattedDate = formatDate(dateStr);
 
 function escapeHtml(text: string): string {
   return text
@@ -64,9 +78,96 @@ function escapeHtml(text: string): string {
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&#39;');
 }
+
+// Build URL maps for linkification (same approach as today page)
+const threadUrlMap = new Map<string, string>();
+const gapUrlMap = new Map<string, string>();
+const meanwhileUrlMap = new Map<string, string>();
+
+// Thread URLs from top_stories[0] articles
+if (topStories[0]?.articles) {
+  for (const a of topStories[0].articles) {
+    if (a.source && a.url) threadUrlMap.set(a.source, a.url);
+  }
+}
+
+// Gap URLs from narrative_divergence or top_stories[1]
+const gapND = narrativeDivergence.find((nd: any) =>
+  nd.structural_force?.toLowerCase() === gapStory?.structuralForce?.toLowerCase()
+);
+if (gapND?.perspectives) {
+  for (const p of gapND.perspectives) {
+    if (p.source && p.url) gapUrlMap.set(p.source, p.url);
+  }
+}
+if (topStories[1]?.articles) {
+  for (const a of topStories[1].articles) {
+    if (a.source && a.url && !gapUrlMap.has(a.source)) gapUrlMap.set(a.source, a.url);
+  }
+}
+
+// Meanwhile URLs from cooperation
+if (cooperation) {
+  const allUrls = (cooperation as any).all_source_urls || {};
+  for (const [src, url] of Object.entries(allUrls)) {
+    if (src && url) meanwhileUrlMap.set(src, url as string);
+  }
+  for (const h of (cooperation.highlights || [])) {
+    if (h.source && h.url && !meanwhileUrlMap.has(h.source)) {
+      meanwhileUrlMap.set(h.source, h.url);
+    }
+  }
+}
+
+// Global fallback URL map
+const globalUrlMap = new Map<string, string>();
+for (const story of topStories) {
+  for (const a of (story.articles || [])) {
+    if (a.source && a.url && !globalUrlMap.has(a.source)) {
+      globalUrlMap.set(a.source, a.url);
+    }
+  }
+}
+
+function linkifyText(text: string, sectionMap: Map<string, string>): string {
+  if (!text) return '';
+  let result = escapeHtml(text);
+  const combined = new Map([...globalUrlMap, ...sectionMap]);
+  const sortedSources = [...combined.keys()].sort((a, b) => b.length - a.length);
+  for (const source of sortedSources) {
+    const url = combined.get(source)!;
+    const escaped = escapeHtml(source);
+    const regex = new RegExp(`(?<!<[^>]*)\\b${escaped.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'g');
+    result = result.replace(regex, `<a href="${url}" target="_blank" rel="noopener" class="source-link">${escaped}</a>`);
+  }
+  return result;
+}
 ---
 
-<BaseLayout title={`Archive - ${dateStr}`}>
+<BaseLayout title={`${formattedDate} — Signal Board`}>
+
+<main id="main-content">
+
+{/* Breadcrumb + date nav */}
+<nav aria-label="Breadcrumb" style="padding: 16px clamp(24px, 4vw, 48px) 0;">
+  <div class="wrap" style="display: flex; justify-content: space-between; align-items: center;">
+    <ol style="list-style: none; padding: 0; margin: 0; font-family: 'Inter', sans-serif; font-size: 13px; color: var(--ink-light); display: flex; gap: 8px; align-items: center;">
+      <li><a href="/today/" style="color: var(--ink-light);">Signal Board</a></li>
+      <li aria-hidden="true" style="color: var(--ink-faint);">/</li>
+      <li><a href="/archive/" style="color: var(--ink-light);">Archive</a></li>
+      <li aria-hidden="true" style="color: var(--ink-faint);">/</li>
+      <li aria-current="page">{dateStr}</li>
+    </ol>
+    <div style="font-family: 'Inter', sans-serif; font-size: 13px; display: flex; gap: 16px;">
+      {olderDate && (
+        <a href={`/archive/${olderDate}/`} style="color: var(--ink-light);">&larr; Older</a>
+      )}
+      {newerDate && (
+        <a href={`/archive/${newerDate}/`} style="color: var(--ink-light);">Newer &rarr;</a>
+      )}
+    </div>
+  </div>
+</nav>
 
 <div class="masthead-wrap">
   <div class="wrap">
@@ -75,7 +176,9 @@ function escapeHtml(text: string): string {
         <div class="display masthead-title">SIGNAL</div>
         <div class="display masthead-title">BOARD</div>
       </div>
-      <span class="masthead-date r d1">{dateStr}</span>
+      <span class="masthead-date r d1">
+        <time datetime={dateStr}>{formattedDate}</time>
+      </span>
       <h1 class="masthead-hook r d2">
         {sourcesReporting} sources published {totalStories} stories this day.
       </h1>
@@ -86,7 +189,7 @@ function escapeHtml(text: string): string {
   </div>
 </div>
 
-<!-- DAILY THREAD -->
+{/* DAILY THREAD */}
 {threadStory && (
 <div id="thread">
 <div class="wrap">
@@ -94,22 +197,22 @@ function escapeHtml(text: string): string {
     <span class="section-label r">The Daily Thread</span>
     <h2 class="headline r d1">{threadStory.title}</h2>
     {threadStory.synthesis && (
-      <p class="body r d2" style="margin-top: 28px; font-size: clamp(17px, 1.8vw, 20px); line-height: 1.8;" set:html={escapeHtml(threadStory.synthesis)} />
+      <p class="body r d2" style="margin-top: 28px; font-size: clamp(17px, 1.8vw, 20px); line-height: 1.8;" set:html={linkifyText(threadStory.synthesis, threadUrlMap)} />
     )}
     {threadStory.crossSpectrum && (
       <div class="r" style="margin-top: 24px; border-left: 4px solid var(--red); padding: 16px 20px; background: rgba(27, 42, 74, 0.04); border-radius: 0 8px 8px 0;">
-        <p class="body" style="font-size: clamp(15px, 1.5vw, 17px); line-height: 1.8;" set:html={escapeHtml(threadStory.crossSpectrum)} />
+        <p class="body" style="font-size: clamp(15px, 1.5vw, 17px); line-height: 1.8;" set:html={linkifyText(threadStory.crossSpectrum, threadUrlMap)} />
       </div>
     )}
     {threadStory.whyThisMatters && (
-      <p class="body r" style="margin-top: 24px; font-style: italic;" set:html={escapeHtml(threadStory.whyThisMatters)} />
+      <p class="body r" style="margin-top: 24px; font-style: italic;" set:html={linkifyText(threadStory.whyThisMatters, threadUrlMap)} />
     )}
   </div>
 </div>
 </div>
 )}
 
-<!-- DAILY GAP -->
+{/* DAILY GAP */}
 {gapStory && (
 <div id="gap" class="navy">
 <div class="wrap">
@@ -117,22 +220,22 @@ function escapeHtml(text: string): string {
     <span class="section-label r">The Daily Gap</span>
     <h2 class="headline r d1">{gapStory.title}</h2>
     {gapStory.synthesis && (
-      <p class="body r d2" style="margin-top: 28px; font-size: clamp(17px, 1.8vw, 20px); line-height: 1.8; color: var(--on-navy-dim);" set:html={escapeHtml(gapStory.synthesis)} />
+      <p class="body r d2" style="margin-top: 28px; font-size: clamp(17px, 1.8vw, 20px); line-height: 1.8; color: var(--on-navy-dim);" set:html={linkifyText(gapStory.synthesis, gapUrlMap)} />
     )}
     {gapStory.crossSpectrum && (
       <div class="r" style="margin-top: 24px; border-left: 4px solid var(--red); padding: 16px 20px; background: rgba(255, 255, 255, 0.06); border-radius: 0 8px 8px 0;">
-        <p class="body" style="font-size: clamp(15px, 1.5vw, 17px); line-height: 1.8; color: var(--on-navy-dim);" set:html={escapeHtml(gapStory.crossSpectrum)} />
+        <p class="body" style="font-size: clamp(15px, 1.5vw, 17px); line-height: 1.8; color: var(--on-navy-dim);" set:html={linkifyText(gapStory.crossSpectrum, gapUrlMap)} />
       </div>
     )}
     {gapStory.whyThisMatters && (
-      <p class="body r" style="margin-top: 24px; font-style: italic; color: var(--cream);" set:html={escapeHtml(gapStory.whyThisMatters)} />
+      <p class="body r" style="margin-top: 24px; font-style: italic; color: var(--cream);" set:html={linkifyText(gapStory.whyThisMatters, gapUrlMap)} />
     )}
   </div>
 </div>
 </div>
 )}
 
-<!-- MEANWHILE -->
+{/* MEANWHILE */}
 {meanwhileStory && (
 <div id="meanwhile" style="background: #EFF5EE;">
 <div class="wrap">
@@ -140,11 +243,11 @@ function escapeHtml(text: string): string {
     <span class="section-label section-label-green r">Meanwhile</span>
     <h2 class="headline r d1">{meanwhileStory.title}</h2>
     {meanwhileStory.synthesis && (
-      <p class="body r d2" style="margin-top: 28px; font-size: clamp(17px, 1.8vw, 20px); line-height: 1.8;" set:html={escapeHtml(meanwhileStory.synthesis)} />
+      <p class="body r d2" style="margin-top: 28px; font-size: clamp(17px, 1.8vw, 20px); line-height: 1.8;" set:html={linkifyText(meanwhileStory.synthesis, meanwhileUrlMap)} />
     )}
     {meanwhileStory.insights && meanwhileStory.insights.length > 0 && meanwhileStory.insights.map((insight: string) => (
       <div class="r" style="margin-top: 20px; padding: 16px 20px; background: rgba(45, 138, 78, 0.06); border-radius: 8px; border-left: 4px solid var(--green);">
-        <p class="body" style="font-size: clamp(15px, 1.5vw, 17px); line-height: 1.8;" set:html={escapeHtml(insight)} />
+        <p class="body" style="font-size: clamp(15px, 1.5vw, 17px); line-height: 1.8;" set:html={linkifyText(insight, meanwhileUrlMap)} />
       </div>
     ))}
   </div>
@@ -152,13 +255,23 @@ function escapeHtml(text: string): string {
 </div>
 )}
 
-<!-- CLOSE -->
+{/* FOOTER NAV */}
 <div class="close-section">
-  <div class="wrap">
-    <p class="body r" style="color: var(--on-navy-dim);">
+  <div class="wrap" style="display: flex; justify-content: space-between; align-items: center;">
+    <p class="body r" style="color: var(--on-navy-dim); margin: 0;">
       <a href="/archive/" style="color: var(--red); text-decoration: underline;">Back to archive</a>
     </p>
+    <div style="font-family: 'Inter', sans-serif; font-size: 14px; display: flex; gap: 20px;">
+      {olderDate && (
+        <a href={`/archive/${olderDate}/`} style="color: var(--cream); text-decoration: none;">&larr; Older</a>
+      )}
+      {newerDate && (
+        <a href={`/archive/${newerDate}/`} style="color: var(--cream); text-decoration: none;">Newer &rarr;</a>
+      )}
+    </div>
   </div>
 </div>
+
+</main>
 
 </BaseLayout>

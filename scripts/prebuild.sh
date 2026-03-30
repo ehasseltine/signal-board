@@ -1,7 +1,30 @@
 #!/usr/bin/env bash
-# Pre-build script: syncs daily JSON from data/daily/ to public/data/daily/
-# This prevents the recurring bug where Astro builds serve stale content
-# because public/data/daily/ was not updated before the build.
+# ─────────────────────────────────────────────────────────────────────────────
+# PREBUILD DATA SYNC
+# ─────────────────────────────────────────────────────────────────────────────
+#
+# DATA FLOW (single source of truth):
+#
+#   Pipeline (GitHub Actions)
+#     → writes to: data/daily/{date}.json + data/daily/latest.json   [CANONICAL]
+#     → prebuild.sh copies to: public/data/daily/                    [build input]
+#     → Astro reads from: public/data/daily/ at build time
+#     → Astro outputs to: docs/                                      [deployed]
+#
+# WHY THIS EXISTS:
+#   Astro reads data from public/ during the build. If public/data/daily/ is
+#   stale, the build will render yesterday's content even if data/daily/ has
+#   today's data. This script ensures the build always uses the latest pipeline
+#   output.
+#
+# PATCHING RULE:
+#   If you need to patch JSON data (fix a field, add a key), ALWAYS patch the
+#   canonical file in data/daily/ FIRST, then run `npm run build`. The prebuild
+#   step will copy your patched file into public/data/daily/ automatically.
+#   Never patch public/data/daily/ or docs/data/daily/ directly — those files
+#   will be overwritten.
+#
+# ─────────────────────────────────────────────────────────────────────────────
 
 set -euo pipefail
 
@@ -47,5 +70,15 @@ for f in "$DATA_DIR"/20*.json; do
     echo "Synced $basename to public/data/daily/"
   fi
 done
+
+# Safety check: warn if public/ files are newer than data/ files
+# (indicates someone patched the wrong location)
+if [ -f "$PUBLIC_DIR/latest.json" ]; then
+  if [ "$PUBLIC_DIR/latest.json" -nt "$DATA_DIR/latest.json" ]; then
+    echo "⚠ WARNING: public/data/daily/latest.json was newer than data/daily/latest.json"
+    echo "  This suggests a manual patch was applied to the wrong location."
+    echo "  The canonical source (data/daily/) has been copied over it."
+  fi
+fi
 
 echo "Pre-build sync complete."

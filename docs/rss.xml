@@ -8,7 +8,7 @@
     <link>https://signal-board.org</link>
     <description>Daily news analysis from 300 sources across the political spectrum, across borders, and across languages. See what no single outlet can show you.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 30 Mar 2026 20:13:51 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 30 Mar 2026 20:56:28 GMT</lastBuildDate>
     <atom:link href="https://signal-board.org/rss.xml" rel="self" type="application/rss+xml" />
     <copyright>Elise Hasseltine</copyright>
     <managingEditor>elise@elisehasseltine.com (Elise Hasseltine)</managingEditor>
@@ -27,26 +27,6 @@
       <dc:creator>Elise Hasseltine</dc:creator>
       <signal:sources>186</signal:sources>
       <signal:articles>1497</signal:articles>
-    </item>
-    <item>
-      <title>Military escalation clusters with supply chain attacks as conflict weaponizes commerce itself</title>
-      <link>https://signal-board.org/archive/2026-03-29/</link>
-      <guid isPermaLink="true">https://signal-board.org/archive/2026-03-29/</guid>
-      <pubDate>Sun, 29 Mar 2026 07:00:00 GMT</pubDate>
-      <description>Today&apos;s coverage reveals something fundamental about how conflict operates in an interconnected world: the distinction between military action and economic warfare has collapsed entirely. Ukraine&apos;s drone strikes on Russian energy infrastructure, Pentagon preparations for weeks of ground operations in Iran, and the resulting scramble by refiners to reroute supply chains show how warfare now targets the commercial systems that sustain civilian life across continents. When Philippine refiner Petron shifts to Russian crude specifically because of Iran conflict escalation, or when Saudi Arabia&apos;s pipeline infrastructure becomes a strategic hedge against chokepoint vulnerability, we&apos;re witnessing supply chains themselves become weapons and targets simultaneously.</description>
-      <dc:creator>Elise Hasseltine</dc:creator>
-      <signal:sources>104</signal:sources>
-      <signal:articles>879</signal:articles>
-    </item>
-    <item>
-      <title>Signal Board - 2026-03-28</title>
-      <link>https://signal-board.org/archive/2026-03-28/</link>
-      <guid isPermaLink="true">https://signal-board.org/archive/2026-03-28/</guid>
-      <pubDate>Sat, 28 Mar 2026 07:00:00 GMT</pubDate>
-      <description>Daily news analysis from 300 sources for 2026-03-28</description>
-      <dc:creator>Elise Hasseltine</dc:creator>
-      <signal:sources>129</signal:sources>
-      <signal:articles>1201</signal:articles>
     </item>
   </channel>
 </rss>

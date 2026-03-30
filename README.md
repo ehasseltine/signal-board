@@ -54,7 +54,7 @@ git checkout staging
 
 # Make changes, then test locally
 npm run dev          # preview at http://localhost:3000
-npm run build        # full build with validation (13 checks)
+npm run build        # full build with validation (20 checks)
 
 # When satisfied, merge to main and push
 git checkout main
@@ -153,10 +153,10 @@ python ingest.py --dry-run  # fetch but don't write
 python ingest.py --stats    # print domain stats
 
 # Test analyze for a specific date
-python analyze.py --date 2026-03-28
+python analyze.py --date 2026-03-30
 
 # Test synthesize for a specific date
-python synthesize.py --date 2026-03-28
+python synthesize.py --date 2026-03-30
 ```
 
 ## File Structure
@@ -186,7 +186,7 @@ python synthesize.py --date 2026-03-28
 - **docs/** - Built static site (GitHub Pages output)
 - **scripts/** - Build and validation scripts
   - `prebuild.sh` - Sync data from `data/daily/` to `public/data/daily/`
-  - `validate.js` - Post-build checks (13 automated validations)
+  - `validate.js` - Post-build checks (20 automated validations)
   - `format_substack.py` - Format daily analysis as HTML email for Substack
 - **.github/workflows/** - GitHub Actions CI/CD
   - `ingest.yml` - Daily Pipeline (cron 7 AM UTC, or manual trigger)

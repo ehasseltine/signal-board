@@ -10,7 +10,7 @@
  * Run: node scripts/validate.js
  */
 
-import { readFileSync, existsSync } from 'fs';
+import { readFileSync, existsSync, readdirSync } from 'fs';
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
@@ -302,6 +302,44 @@ if (meanwhileSynth) {
     console.log(`    → This is a synthesis model accuracy issue. Consider tightening the prompt.`);
   } else {
     check('Meanwhile synthesis only names cooperation sources', true);
+  }
+}
+
+// ---------------------------------------------------------------------------
+// 10. Archive consistency
+// ---------------------------------------------------------------------------
+
+console.log('Archive:');
+
+// Every dated JSON in docs/data/daily/ should have a matching archive page
+const docsDataDir = resolve(ROOT, 'docs/data/daily');
+const archiveDir = resolve(ROOT, 'docs/archive');
+
+if (existsSync(docsDataDir) && existsSync(archiveDir)) {
+  const dataFiles = readdirSync(docsDataDir)
+    .filter(f => /^\d{4}-\d{2}-\d{2}\.json$/.test(f))
+    .map(f => f.replace('.json', ''));
+
+  const archiveDirs = readdirSync(archiveDir)
+    .filter(f => /^\d{4}-\d{2}-\d{2}$/.test(f));
+
+  const missingArchive = dataFiles.filter(d => !archiveDirs.includes(d));
+  check('Every data date has an archive page', missingArchive.length === 0,
+    missingArchive.length > 0 ? `Missing archive pages for: ${missingArchive.join(', ')}` : null);
+
+  const missingData = archiveDirs.filter(d => !dataFiles.includes(d));
+  check('Every archive page has data', missingData.length === 0,
+    missingData.length > 0 ? `Archive pages without data: ${missingData.join(', ')}` : null);
+
+  // Check archive index exists and contains links for each date
+  const archiveIndexPath = resolve(archiveDir, 'index.html');
+  if (existsSync(archiveIndexPath)) {
+    const archiveIndex = readFileSync(archiveIndexPath, 'utf-8');
+    for (const date of dataFiles) {
+      const linked = archiveIndex.includes(`/archive/${date}/`);
+      check(`Archive index links to ${date}`, linked,
+        linked ? null : `${date} not found in archive/index.html`);
+    }
   }
 }
 
