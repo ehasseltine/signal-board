@@ -4,7 +4,9 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "prebuild": "bash scripts/prebuild.sh",
+    "build": "bash scripts/prebuild.sh && astro build && node scripts/validate.js",
+    "build:only": "astro build",
     "preview": "astro preview"
   },
   "dependencies": {

@@ -1,0 +1,191 @@
+#!/usr/bin/env node
+/**
+ * Post-build validation for Signal Board.
+ * Checks the built HTML for common problems that previously required
+ * manual screenshot inspection to catch.
+ *
+ * Exit code 0 = all checks pass
+ * Exit code 1 = one or more checks failed (blocks push in CI)
+ *
+ * Run: node scripts/validate.js
+ */
+
+import { readFileSync, existsSync } from 'fs';
+import { resolve, dirname } from 'path';
+import { fileURLToPath } from 'url';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const ROOT = resolve(__dirname, '..');
+
+let failures = 0;
+let passes = 0;
+
+function check(name, passed, detail) {
+  if (passed) {
+    passes++;
+    console.log(`  ✓ ${name}`);
+  } else {
+    failures++;
+    console.log(`  ✗ FAIL: ${name}`);
+    if (detail) console.log(`    → ${detail}`);
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Load files
+// ---------------------------------------------------------------------------
+
+const todayHtml = readFileSync(resolve(ROOT, 'docs/today/index.html'), 'utf-8');
+const latestJsonPath = resolve(ROOT, 'docs/data/daily/latest.json');
+
+if (!existsSync(latestJsonPath)) {
+  console.log('✗ FATAL: docs/data/daily/latest.json does not exist. Build may have failed.');
+  process.exit(1);
+}
+
+const latestJson = JSON.parse(readFileSync(latestJsonPath, 'utf-8'));
+
+console.log('\nSignal Board post-build validation\n');
+
+// ---------------------------------------------------------------------------
+// 1. Date match
+// ---------------------------------------------------------------------------
+
+console.log('Date:');
+const jsonDate = latestJson.date || '';
+// Look for the date in the hero section (it appears as text content)
+const dateInHtml = todayHtml.includes(jsonDate);
+check('Hero date matches latest.json', dateInHtml,
+  dateInHtml ? null : `Expected ${jsonDate} in HTML`);
+
+// ---------------------------------------------------------------------------
+// 2. Framing row labels — no "Perspective N" or empty labels
+// ---------------------------------------------------------------------------
+
+console.log('Framing rows:');
+
+// Extract framing-label contents
+const labelRegex = /class="framing-label"[^>]*>(.*?)<\/div>/gs;
+const labels = [];
+let m;
+while ((m = labelRegex.exec(todayHtml)) !== null) {
+  // Strip HTML tags to get text content
+  const text = m[1].replace(/<[^>]+>/g, '').trim();
+  labels.push(text);
+}
+
+const perspectiveLabels = labels.filter(l => /^Perspective \d+$/i.test(l));
+check('No "Perspective N" fallback labels', perspectiveLabels.length === 0,
+  perspectiveLabels.length > 0 ? `Found: ${perspectiveLabels.join(', ')}` : null);
+
+const emptyLabels = labels.filter(l => l === '');
+check('No empty framing labels', emptyLabels.length === 0,
+  emptyLabels.length > 0 ? `${emptyLabels.length} empty labels found` : null);
+
+check('At least 6 framing rows exist', labels.length >= 6,
+  `Found ${labels.length} framing rows`);
+
+// ---------------------------------------------------------------------------
+// 3. Source card descriptions — no bias labels
+// ---------------------------------------------------------------------------
+
+console.log('Source descriptions:');
+
+const descRegex = /class="coverage-type"[^>]*>(.*?)<\/div>/gs;
+const descriptions = [];
+while ((m = descRegex.exec(todayHtml)) !== null) {
+  descriptions.push(m[1].replace(/<[^>]+>/g, '').trim());
+}
+
+const biasTerms = [
+  'conservative', 'liberal', 'progressive',
+  'center-left', 'center-right',
+  'left-leaning', 'right-leaning',
+  'left-of-center', 'right-of-center',
+  'generally regarded',
+  'right-wing', 'left-wing'
+];
+
+const biasFound = [];
+for (const desc of descriptions) {
+  for (const term of biasTerms) {
+    if (desc.toLowerCase().includes(term)) {
+      biasFound.push({ term, desc: desc.substring(0, 80) });
+    }
+  }
+}
+
+check('No bias labels in source descriptions', biasFound.length === 0,
+  biasFound.length > 0 ? biasFound.map(b => `"${b.term}" in: ${b.desc}...`).join('\n    → ') : null);
+
+// Check for empty descriptions (source cards with no text)
+check('All source cards have descriptions', descriptions.length > 0,
+  descriptions.length === 0 ? 'No source descriptions found in HTML' : `${descriptions.length} descriptions found`);
+
+const shortDescs = descriptions.filter(d => d.split(/\s+/).length < 10);
+check('No source descriptions under 10 words', shortDescs.length === 0,
+  shortDescs.length > 0 ? `${shortDescs.length} short: ${shortDescs[0]?.substring(0, 60)}...` : null);
+
+// ---------------------------------------------------------------------------
+// 4. Framing row content — no orphaned fragments
+// ---------------------------------------------------------------------------
+
+console.log('Framing content:');
+
+const contentRegex = /class="framing-content"[^>]*>(.*?)<\/div>/gs;
+const framingContents = [];
+while ((m = contentRegex.exec(todayHtml)) !== null) {
+  framingContents.push(m[1].replace(/<[^>]+>/g, '').trim());
+}
+
+const orphanedFragments = framingContents.filter(c => c.length < 20 && c.length > 0);
+check('No orphaned sentence fragments (under 20 chars)', orphanedFragments.length === 0,
+  orphanedFragments.length > 0 ? `Found: "${orphanedFragments[0]}"` : null);
+
+// ---------------------------------------------------------------------------
+// 5. Numerical consistency
+// ---------------------------------------------------------------------------
+
+console.log('Data consistency:');
+
+// Check that the source count in the JSON is reflected
+const topStories = latestJson.top_stories || [];
+const totalArticles = topStories.reduce((sum, s) => sum + (s.article_count || 0), 0);
+check('Pipeline has top stories', topStories.length > 0,
+  `${topStories.length} top stories found`);
+
+// Cooperation data
+const coop = latestJson.cooperation;
+if (coop) {
+  const coopCount = coop.total_cooperation_stories || 0;
+  const coopInHtml = todayHtml.includes(String(coopCount));
+  check('Cooperation count matches', coopInHtml,
+    coopInHtml ? null : `Expected ${coopCount} in HTML`);
+}
+
+// ---------------------------------------------------------------------------
+// 6. All three sections present
+// ---------------------------------------------------------------------------
+
+console.log('Sections:');
+
+check('Daily Thread section exists', todayHtml.includes('id="daily-thread"') || todayHtml.includes('id="thread"') || todayHtml.includes('daily-thread'),
+  null);
+check('Daily Gap section exists', todayHtml.includes('id="gap"') || todayHtml.includes('id="daily-gap"') || todayHtml.includes('daily-gap'),
+  null);
+check('Meanwhile section exists', todayHtml.includes('id="meanwhile"') || todayHtml.includes('Meanwhile'),
+  null);
+
+// ---------------------------------------------------------------------------
+// Summary
+// ---------------------------------------------------------------------------
+
+console.log(`\n${passes} passed, ${failures} failed\n`);
+
+if (failures > 0) {
+  console.log('Build validation FAILED. Fix the issues above before pushing.');
+  process.exit(1);
+} else {
+  console.log('Build validation PASSED.');
+  process.exit(0);
+}

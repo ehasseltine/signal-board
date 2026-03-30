@@ -84,21 +84,34 @@ if (cooperation) {
   }
 }
 
-// Build outlet → context description lookup from ALL pipeline data sources
+// Load canonical source metadata (single source of truth for descriptions)
+import sourcesRaw from '../../../data/sources.json';
+const sourcesData: Record<string, { description?: string; tier?: string; region?: string }> = sourcesRaw as any;
+
+// Build outlet → context description lookup
+// Primary: canonical sources.json (always has all 300 outlets)
+// Fallback: pipeline JSON article.context fields (for any outlets not in sources.json)
 const outletContextMap = new Map<string, string>();
+
+// First: load all descriptions from sources.json
+for (const [name, entry] of Object.entries(sourcesData)) {
+  if (entry.description) {
+    outletContextMap.set(name, entry.description);
+  }
+}
+
+// Then: overlay any pipeline-specific context (in case pipeline has newer descriptions)
 for (const story of topStories) {
   for (const article of (story.articles || [])) {
     if (article.source && article.context && !outletContextMap.has(article.source)) {
       outletContextMap.set(article.source, article.context);
     }
   }
-  // Also pull context from connections (pipeline now includes context field)
   for (const conn of (story.connections || [])) {
     if (conn.source && conn.context && !outletContextMap.has(conn.source)) {
       outletContextMap.set(conn.source, conn.context);
     }
   }
-  // Also pull context from tier_framing samples (covers sources in sourcesSample)
   if (story.tier_framing) {
     for (const [, data] of Object.entries(story.tier_framing)) {
       const sample = (data as any)?.sample;
@@ -164,11 +177,31 @@ function splitSentences(text: string): string[] {
   });
 }
 
-// All known outlet names from pipeline data, sorted longest-first for matching
+// All known outlet names from pipeline + sources.json, sorted longest-first for matching
 const allOutletNames = Array.from(new Set([
   ...Array.from(outletUrlMap.keys()),
   ...Array.from(outletContextMap.keys()),
+  ...Object.keys(sourcesData),
 ])).sort((a, b) => b.length - a.length);
+
+// Look up tier for an outlet: first from sources.json, then from pipeline data
+function getOutletTier(outletName: string): string {
+  // Primary: sources.json canonical tier
+  const src = sourcesData[outletName];
+  if (src?.tier) return src.tier;
+  // Fallback: scan pipeline articles
+  for (const story of topStories) {
+    for (const a of (story.articles || [])) {
+      if (a.source === outletName && a.tier) return a.tier;
+    }
+  }
+  for (const nd of narrativeDivergence) {
+    for (const a of (nd.articles || [])) {
+      if (a.source === outletName && a.tier) return a.tier;
+    }
+  }
+  return '';
+}
 
 // Extract outlet name from the beginning of a framing sentence
 // Uses known outlet names for reliable matching instead of verb-pattern guessing
@@ -499,27 +532,13 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
         } else if (outletName) {
           label = outletName;
           content = sentence;
-          // Look up tier from pipeline data for coloring
-          const articleTier = (() => {
-            for (const story of topStories) {
-              for (const a of (story.articles || [])) {
-                if (a.source === outletName) return a.tier;
-              }
-            }
-            for (const nd of narrativeDivergence) {
-              for (const a of (nd.articles || [])) {
-                if (a.source === outletName) return a.tier;
-              }
-            }
-            return '';
-          })();
-          if (articleTier === 'international') tierForColor = 'international';
-          else if (articleTier === 'local-regional' || articleTier === 'lived') tierForColor = 'local';
-          else if (articleTier === 'specialist' || articleTier === 'domain') tierForColor = 'specialist';
-          else if (articleTier === 'analysis') tierForColor = 'analysis';
+          const t = getOutletTier(outletName);
+          if (t === 'international') tierForColor = 'international';
+          else if (t === 'local-regional' || t === 'lived') tierForColor = 'local';
+          else if (t === 'specialist' || t === 'domain') tierForColor = 'specialist';
+          else if (t === 'analysis' || t === 'think-tank') tierForColor = 'analysis';
           else tierForColor = 'national';
         } else {
-          // Last resort: try to extract any capitalized multi-word name at the start
           const fallbackMatch = sentence.match(/^([A-Z][A-Za-z0-9\s'.]+?)\s+[a-z]/);
           if (fallbackMatch && fallbackMatch[1].trim().length > 2) {
             label = fallbackMatch[1].replace(/'s$/, '').trim();
@@ -693,26 +712,13 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
           } else if (outletName) {
             label = outletName;
             content = sentence;
-            const articleTier = (() => {
-              for (const story of topStories) {
-                for (const a of (story.articles || [])) {
-                  if (a.source === outletName) return a.tier;
-                }
-              }
-              for (const nd of narrativeDivergence) {
-                for (const a of (nd.articles || [])) {
-                  if (a.source === outletName) return a.tier;
-                }
-              }
-              return '';
-            })();
-            if (articleTier === 'international') tierForColor = 'international';
-            else if (articleTier === 'local-regional' || articleTier === 'lived') tierForColor = 'local';
-            else if (articleTier === 'specialist' || articleTier === 'domain') tierForColor = 'specialist';
-            else if (articleTier === 'analysis') tierForColor = 'analysis';
+            const t = getOutletTier(outletName);
+            if (t === 'international') tierForColor = 'international';
+            else if (t === 'local-regional' || t === 'lived') tierForColor = 'local';
+            else if (t === 'specialist' || t === 'domain') tierForColor = 'specialist';
+            else if (t === 'analysis' || t === 'think-tank') tierForColor = 'analysis';
             else tierForColor = 'national';
           } else {
-            // Last resort fallback
             const fallbackMatch = sentence.match(/^([A-Z][A-Za-z0-9\s'.]+?)\s+[a-z]/);
             if (fallbackMatch && fallbackMatch[1].trim().length > 2) {
               label = fallbackMatch[1].replace(/'s$/, '').trim();

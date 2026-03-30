@@ -134,6 +134,8 @@ FOR EACH STORY, PRODUCE:
 
 **cross_spectrum** (5-8 sentences, 150-250 words): How different outlets frame this story, and what each framing reveals or hides.
 
+FRAMING SENTENCE FORMAT (hard rule): Begin every framing sentence with the outlet's full name exactly as it appears in the source data, followed by a past-tense verb describing how they covered the story (e.g. "reported," "framed," "covered," "centered," "examined," "traced," "connected," "investigated," "highlighted," "presented"). The template parses outlet names from the start of each sentence to build interactive source cards. If a sentence does not begin with a recognized outlet name, it will display as "Perspective N" instead of the outlet name, which is a broken user experience.
+
 Each framing description must be 15-30 words and answer three questions in a single flowing sentence: what did this outlet emphasize, who does that framing center, and what does it make invisible or secondary? Do not write labels like "[Outlet] sees [topic]." Write analytical observations that reveal what the framing choice tells the reader about how the information system works.
 
 BAD (too short, just a label): "The Dispatch sees a Republican Party split over AI policy."
