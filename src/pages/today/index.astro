@@ -202,6 +202,14 @@ for (const nd of narrativeDivergence) {
   }
 }
 
+// Source names that collide with common English phrases and should not be auto-linked
+// in editorial text. These are valid sources in the pipeline but their names appear
+// naturally in prose (e.g. "Drug pricing emerged from White House meetings").
+const LINKIFY_BLOCKLIST = new Set([
+  'White House', 'Congress', 'Pentagon', 'State Department',
+  'Treasury', 'Senate', 'House',
+]);
+
 // Escape text then wrap known outlet names with hyperlinks.
 // sectionMap takes priority — it has the correct URL for this section.
 // Falls back to the global outletUrlMap for outlets not in the section's own data.
@@ -213,6 +221,10 @@ function linkifyText(text: string, sectionMap?: Map<string, string>): string {
     for (const [k, v] of sectionMap) {
       mergedMap.set(k, v);
     }
+  }
+  // Remove blocklisted names that collide with common English
+  for (const blocked of LINKIFY_BLOCKLIST) {
+    mergedMap.delete(blocked);
   }
   // Sort outlet names longest-first to avoid partial matches
   const outlets = Array.from(mergedMap.keys()).sort((a, b) => b.length - a.length);

@@ -96,7 +96,7 @@ Return valid JSON with these fields:
   "synthesis": "The full 4-6 paragraph editorial narrative",
   "cooperation_highlight": "One specific cooperation story (2-3 sentences) drawn from the data, with source attribution",
   "coverage_gap_note": "One specific observation (1-2 sentences) about what national coverage missed that local/regional sources caught",
-  "thread_to_watch": "One structural force or pattern (1-2 sentences) that the data suggests is worth watching in coming days",
+  "thread_to_watch": "One structural force or pattern (1-2 sentences) worth watching in coming days. MUST name a specific institution, regulation, deadline, or measurable threshold. If you cannot name something concrete, omit this field. Abstract observations like 'information asymmetry is operating as a structural barrier' waste the reader's time. The reader should be able to check a specific source or set a calendar reminder.",
   "newsletter_lead": "2-3 sentences. Conversational opening for the email newsletter. First person. Name the single most striking thing you found reading across all sources today. Write it the way you'd start a message to a smart friend: 'The thing that stopped me today was...' or 'I read [article_count] articles and the pattern that kept showing up was...' Not a headline. An observation. This should make a subscriber want to click through to the full analysis."
 }}"""
 

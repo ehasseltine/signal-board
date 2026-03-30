@@ -69,7 +69,9 @@ def format_newsletter(data):
         formatted_date = date_str
 
     total_stories = summary.get("total_stories", 0)
-    sources_reporting = summary.get("sources_reporting", 0)
+    # Brand claim is "300 sources" (the full source list). sources_reporting is the
+    # number that returned articles today, which varies. Reader-facing copy uses 300.
+    sources_reporting = 300
     coop_count = cooperation.get("total_cooperation_stories", 0)
 
     # Find story syntheses by role
