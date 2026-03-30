@@ -656,7 +656,7 @@
     box-shadow: var(--shadow-card-hover);
   }
   .summary-card-teal { background: rgba(66,240,165,0.25); }
-  .summary-card-green { background: rgba(23,137,252,0.20); }
+  .summary-card-green { background: rgba(14,173,105,0.15); }
   .summary-card-green:hover { border-color: var(--green); }
 
   .card-label {

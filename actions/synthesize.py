@@ -128,36 +128,58 @@ JARGON REPLACEMENT (8th grade reading level means REPLACING financial and policy
 - Instead of "market volatility" write "prices swinging up and down"
 If you must use a technical term because no plain alternative exists, immediately explain it in the same sentence.
 
+STRUCTURAL RULES FOR SECTION SYNTHESIS:
+
+The synthesis paragraph, framing rows, and pattern callout each do DIFFERENT work.
+No element should repeat information from another element.
+
+- SYNTHESIS PARAGRAPH: Name the structural force. Explain the mechanism (how is this force actually operating today?). Give ONE concrete example that makes the force tangible. State what cross-source reading reveals that reading any single outlet cannot. Do NOT preview individual outlet framings. That is what the framing rows do. If you mention an outlet name in the synthesis, you are previewing framings. Stop. The synthesis should make the reader understand the FORCE, not the coverage of the force.
+
+- FRAMING ROWS (cross_spectrum): Show how each outlet framed the same force. Vary the sentence structure. Do not use "centering X while treating Y as Z" for every row. Name what the outlet actually did: Did they bury the regulatory angle? Lead with market opportunity? Interview the workers? Frame it as partisan? Be specific about the editorial choice, not just the abstract "centering."
+
+- PATTERN CALLOUT: One sentence. What does the pattern mean for the reader? Not a restatement of the framing rows. The insight that only becomes visible after seeing all the frames side by side. Example: "If you read only CNBC, regulatory capture looks like investment opportunity. If you read only High Country News, it looks like a safety crisis. Both are true. Neither is the whole picture."
+
+LENGTH RULES (hard constraints):
+
+- Thread synthesis paragraph: 80-120 words maximum
+- Gap synthesis paragraph: 60-100 words maximum
+- Meanwhile synthesis paragraph: 80-120 words maximum
+- Each framing row: 20-30 words maximum (one sentence, not two)
+- Pattern callout (last sentence of cross_spectrum): 15-30 words maximum
+- "What to Watch For": 30-50 words maximum per item
+- Personal relevance paragraph: 40-60 words maximum
+
+If you cannot say it in these limits, you have not found the insight yet.
+Every sentence must add something the previous sentence did not say.
+If a sentence restates, summarizes, or rephrases a previous sentence, cut it.
+
 FOR EACH STORY, PRODUCE:
 
-**synthesis** (2-3 paragraphs, 150-250 words — keep it tight): A narrative analysis of this specific story. What does it reveal when you read it across multiple outlets? Name specific outlets and what they reported. Connect details across sources to show something the reader could not see from any single article alone. Keep paragraphs short (3-4 sentences max).
+**synthesis** (80-120 words for Thread/Meanwhile, 60-100 words for Gap): Name the structural force. Explain the mechanism. Give one concrete example. State the editorial thesis. Do NOT preview individual outlet framings.
 
-**cross_spectrum** (5-8 sentences, 150-250 words): How different outlets frame this story, and what each framing reveals or hides.
+**cross_spectrum** (5-8 sentences, 20-30 words each, plus one pattern sentence at the end):
 
-FRAMING SENTENCE FORMAT (hard rule): Begin every framing sentence with the outlet's full name exactly as it appears in the source data, followed by a past-tense verb describing how they covered the story (e.g. "reported," "framed," "covered," "centered," "examined," "traced," "connected," "investigated," "highlighted," "presented"). The template parses outlet names from the start of each sentence to build interactive source cards. If a sentence does not begin with a recognized outlet name, it will display as "Perspective N" instead of the outlet name, which is a broken user experience.
+FRAMING SENTENCE FORMAT (hard rule): Begin every framing sentence with the outlet's full name exactly as it appears in the source data, followed by a past-tense verb describing how they covered the story (e.g. "reported," "framed," "covered," "led with," "buried," "investigated," "highlighted," "skipped"). The template parses outlet names from the start of each sentence to build interactive source cards. If a sentence does not begin with a recognized outlet name, it will display as "Perspective N" instead of the outlet name, which is a broken user experience.
 
-Each framing description must be 15-30 words and answer three questions in a single flowing sentence: what did this outlet emphasize, who does that framing center, and what does it make invisible or secondary? Do not write labels like "[Outlet] sees [topic]." Write analytical observations that reveal what the framing choice tells the reader about how the information system works.
+Each framing description must be 20-30 words and name what the outlet actually DID, not just what it "centered." Did they lead with the human story? Bury the policy angle? Interview industry rather than workers? Frame it as a market opportunity? Be concrete about the editorial choice.
 
-BAD (too short, just a label): "The Dispatch sees a Republican Party split over AI policy."
-GOOD: "The Dispatch framed AI deregulation as an intraparty fight over consumer protection, centering Republican Congressional politics while treating the actual regulatory consequences for consumers as background context."
+BAD: "The Dispatch framed AI deregulation as an intraparty fight over consumer protection, centering Republican Congressional politics while treating the actual regulatory consequences for consumers as background context."
+GOOD: "The Dispatch led with the Republican split over AI policy and interviewed three lobbyists before mentioning a single consumer who would be affected by the rule change."
 
-BAD: "High Country News sees worker safety under attack."
-GOOD: "High Country News covered the nuclear safety rollback through the workers who will absorb the risk, centering the human cost of regulatory capture rather than the policy debate in Washington."
+BAD: "High Country News covered the nuclear safety rollback through the workers who will absorb the risk, centering the human cost rather than the policy debate."
+GOOD: "High Country News opened with a uranium processor in New Mexico who learned about the safety rollback from a coworker, not from any official announcement."
 
-BAD: "Deutsche Welle sees international trade negotiations failing."
-GOOD: "Deutsche Welle reported the WTO e-commerce collapse as a breakdown in multilateral cooperation, framing it as a governance failure visible from Europe that American outlets treated as a trade story."
+End with ONE pattern sentence (15-30 words) that delivers the editorial punchline: what does the pattern mean for the reader's understanding?
 
-End with ONE full pattern sentence that synthesizes across all the framings into one analytical observation about what the framing landscape reveals. Not a label like "Same force, different victims" but a complete thought like: "Six outlets covered the same structural force and produced six different stories, each one shaped by who their audience is and what that audience is positioned to do about it, which means the frame you encounter first determines whether you see this as a policy fight, a market signal, a worker safety crisis, or someone else's problem."
+SPECIFIC GAP SECTION INSTRUCTIONS: The Gap synthesis paragraph should: (1) State what the story is (one sentence). (2) State why the framing divergence matters, what is LOST when audiences get different versions (one to two sentences). (3) Name the most striking single divergence, the one pair of framings most different from each other (one sentence). Do NOT list every outlet's framing in the synthesis paragraph. The framing rows do that. The Gap exists to show that the SAME events get packaged into DIFFERENT realities for different audiences. The synthesis should make the reader feel the stakes of that divergence, not catalog it.
 
-SPECIFIC GAP SECTION INSTRUCTIONS: The Daily Gap is NOT "another big story." It exists to show how the SAME underlying force gets told as completely different stories by different outlets. Lead with something like "X sources covered the same story today and none of them knew it" or "The same force showed up in X different headlines." The synthesis should trace HOW the outlets connect, not just THAT they connect. The cross_spectrum should name outlet after outlet, each in its own 15-30 word sentence explaining what that outlet emphasized, who it centered, and what it left out. Build the picture piece by piece so the reader feels the gap widening with each sentence.
-
-SPECIFIC MEANWHILE SECTION INSTRUCTIONS: The Meanwhile section must feel warm and specific, not statistical. Open with the cooperation count and rate, then immediately go to specific stories from specific outlets. Name the outlet, name the story, say what happened in one sentence. The cross_spectrum should contrast how national outlets covered an event versus how local outlets covered the same event, with specific outlet names and specific differences. Each framing row should be a full 15-30 word sentence, not a label. Make the reader feel like they are discovering outlets they have never heard of.
+SPECIFIC MEANWHILE SECTION INSTRUCTIONS: The Meanwhile section must feel warm and specific, not statistical. Open with the cooperation count and rate, then immediately go to specific stories from specific outlets. Name the outlet, name the story, say what happened in one sentence. The cross_spectrum should contrast how national outlets covered an event versus how local outlets covered the same event, with specific outlet names and specific differences. Each framing row should be a full 20-30 word sentence, not a label. Make the reader feel like they are discovering outlets they have never heard of.
 
 CRITICAL ACCURACY RULE FOR MEANWHILE: In the "synthesis" field, you may ONLY name outlets that appear in the cooperation data provided to you (the highlights, by_type sources, or cooperation articles). Do not infer or assume that an outlet covered cooperation stories just because it appears elsewhere in the pipeline. If an outlet is not explicitly tagged as covering cooperation, do not name it in the Meanwhile synthesis. The cross_spectrum field may reference non-cooperation outlets for framing contrast (e.g. "while [national outlet] focused on X, [local outlet] covered Y"), but the synthesis must only name verified cooperation sources.
 
-**why_this_matters** (2-3 sentences): Ground this story in personal relevance. Start with "If you..." — if you drive a car, if you have kids in school, if you live in Ohio. Be specific about whose life this touches and how. No abstractions.
+**why_this_matters** (40-60 words maximum): Ground this story in personal relevance. Be SPECIFIC, not universal. Do not write "if you have a 401(k) or work in a regulated industry" because that is everyone. Instead, name the specific impact: what specific thing changed, what should the reader check, what is different about their life because of this story? The reader should learn ONE specific thing they did not know before reading this paragraph. If the paragraph could appear on any day about any topic, it is too vague. Cut it and write something that could only be true today.
 
-**watch_for** (2-3 sentences): What should a reader pay attention to in the coming days? Name specific signals to track. Avoid financial jargon. Write it as: "Watch for X. If Y happens, it means Z."
+**watch_for** (30-50 words maximum): What should a reader pay attention to in the coming days? Every item must include AT LEAST ONE of: a specific date or deadline, a specific bill or regulation number, a specific institution to monitor, or a specific measurable threshold. If you cannot name something specific, do not generate a "What to Watch For" item. Vague watchlist items ("watch for coordination," "watch for implementation timelines") waste the reader's time. The reader should be able to set a calendar reminder or check a specific source next week. If they cannot, cut it.
 
 OUTPUT FORMAT:
 Return valid JSON with this structure:
@@ -166,24 +188,24 @@ Return valid JSON with this structure:
     {{
       "role": "thread",
       "structural_force": "the force tag of the story",
-      "synthesis": "2-3 paragraph narrative analysis (150-250 words)",
-      "cross_spectrum": "5-8 sentences, 15-30 words each. Outlet name + verb + what framing reveals/hides. End with pattern sentence.",
-      "why_this_matters": "If you... specific personal relevance",
-      "watch_for": "Watch for X. If Y happens, it means Z."
+      "synthesis": "80-120 words. Name the force, explain the mechanism, one example, editorial thesis. No outlet framings.",
+      "cross_spectrum": "5-8 framing sentences (20-30 words each) + one pattern sentence (15-30 words). Outlet name + verb + what they actually did.",
+      "why_this_matters": "40-60 words. One specific thing the reader did not know. Not universal.",
+      "watch_for": "30-50 words. Specific date, bill number, institution, or threshold. Or omit entirely."
     }},
     {{
       "role": "gap",
       "structural_force": "...",
-      "synthesis": "Lead with how many outlets covered the same force without knowing it...",
-      "cross_spectrum": "Outlet by outlet, 15-30 words each, what framing reveals/hides. End with pattern sentence.",
+      "synthesis": "60-100 words. What the story is, why the divergence matters, the most striking single divergence.",
+      "cross_spectrum": "5-8 framing sentences + pattern sentence.",
       "why_this_matters": "...",
       "watch_for": "..."
     }},
     {{
       "role": "meanwhile",
       "structural_force": "cooperation",
-      "synthesis": "Count + rate, then specific stories from specific outlets...",
-      "cross_spectrum": "National vs local on the same event, 15-30 words per outlet. End with pattern sentence.",
+      "synthesis": "80-120 words. Count + rate, then specific stories from specific outlets.",
+      "cross_spectrum": "National vs local contrast, 20-30 words per outlet + pattern sentence.",
       "why_this_matters": "...",
       "watch_for": "..."
     }}

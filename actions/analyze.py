@@ -1078,6 +1078,16 @@ def generate_daily_analysis(articles, analysis_date, history):
     # ── Temporal context: compare today vs yesterday ──
     temporal_context = build_temporal_context(articles, analysis_date)
 
+    # ── Article URL index: outlet → URL for every source that published today ──
+    # Used as a fallback by the frontend when synthesis text names an outlet
+    # that is not in the section-specific article array.
+    article_url_index = {}
+    for a in articles:
+        src = a.get("source", "")
+        url = a.get("url", "")
+        if src and url and src not in article_url_index:
+            article_url_index[src] = url
+
     return {
         "date": analysis_date,
         "generated": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
@@ -1104,6 +1114,7 @@ def generate_daily_analysis(articles, analysis_date, history):
         "active_threads": active_threads,
         "source_spectrum": source_spectrum,
         "questions": questions,
+        "article_url_index": article_url_index,
         # Backward compat
         "narrative_divergence": [
             {
