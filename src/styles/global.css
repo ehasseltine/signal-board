@@ -404,6 +404,31 @@
   .framing-row:last-child .framing-label { color: var(--yellow-accessible) !important; }
   .framing-row:last-child .framing-content { border-left-color: var(--yellow) !important; }
 
+  /* ── Outlet hyperlinks — subtle, credibility-building ── */
+  .outlet-link {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-color: rgba(27,42,75,0.25);
+    text-underline-offset: 2px;
+    text-decoration-thickness: 1px;
+    transition: text-decoration-color 0.2s var(--ease-smooth, ease), color 0.2s var(--ease-smooth, ease);
+  }
+  .outlet-link:hover {
+    text-decoration-color: var(--red);
+    color: var(--red-accessible, #A82A1E);
+  }
+  .outlet-link:focus-visible {
+    outline: 2px solid var(--yellow);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+  .framing-label .outlet-link {
+    text-decoration-color: rgba(27,42,75,0.3);
+  }
+  .framing-label .outlet-link:hover {
+    text-decoration-color: currentColor;
+  }
+
   /* ================ SECTION DIVIDERS ================ */
   /* Angled transitions — stories don't stay in their lanes */
   .section-divider {

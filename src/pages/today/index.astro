@@ -60,6 +60,53 @@ function escapeHtml(text: string): string {
     .replace(/'/g, '&#39;');
 }
 
+// Build outlet → article URL lookup from all pipeline data
+const outletUrlMap = new Map<string, string>();
+for (const story of topStories) {
+  for (const article of (story.articles || [])) {
+    if (article.source && article.url && !outletUrlMap.has(article.source)) {
+      outletUrlMap.set(article.source, article.url);
+    }
+  }
+}
+for (const nd of narrativeDivergence) {
+  for (const article of (nd.articles || [])) {
+    if (article.source && article.url && !outletUrlMap.has(article.source)) {
+      outletUrlMap.set(article.source, article.url);
+    }
+  }
+}
+if (cooperation) {
+  for (const h of (cooperation.highlights || [])) {
+    if (h.source && h.url && !outletUrlMap.has(h.source)) {
+      outletUrlMap.set(h.source, h.url);
+    }
+  }
+}
+
+// Escape text then wrap known outlet names with hyperlinks
+function linkifyText(text: string): string {
+  let html = escapeHtml(text);
+  // Sort outlet names longest-first to avoid partial matches
+  const outlets = Array.from(outletUrlMap.keys()).sort((a, b) => b.length - a.length);
+  for (const outlet of outlets) {
+    const url = outletUrlMap.get(outlet)!;
+    // Match the outlet name as a whole word (not inside another word)
+    // Use a simple string replacement — first occurrence only for each outlet per block
+    const escaped = escapeHtml(outlet);
+    const idx = html.indexOf(escaped);
+    if (idx !== -1) {
+      // Make sure we're not inside an existing tag
+      const before = html.substring(0, idx);
+      const after = html.substring(idx + escaped.length);
+      if (!before.match(/<[^>]*$/) && !after.match(/^[^<]*>/)) {
+        html = before + `<a href="${escapeHtml(url)}" target="_blank" rel="noopener" class="outlet-link">${escaped}</a>` + after;
+      }
+    }
+  }
+  return html;
+}
+
 function getSourceContext(sourceName: string): string | null {
   const SOURCE_CONTEXT: Record<string, string> = {
     'Dawn': 'Founded 1941, oldest English-language newspaper in Pakistan',
@@ -394,7 +441,7 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
   {threadStory.synthesis && (
   <div style="padding: 28px 0 0;">
     <div class="r">
-      <p class="body r d2" style="font-size: clamp(17px, 1.8vw, 20px); line-height: 1.8; margin-bottom: 0;" set:html={escapeHtml(threadStory.synthesis)} />
+      <p class="body r d2" style="font-size: clamp(17px, 1.8vw, 20px); line-height: 1.8; margin-bottom: 0;" set:html={linkifyText(threadStory.synthesis)} />
     </div>
   </div>
   )}
@@ -403,14 +450,50 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
   {threadStory.crossSpectrum && (
   <div style="padding: 32px 0 0;">
     <span class="section-label r" style="font-size: 13px; margin-bottom: 20px; display: block;">How outlets told it differently</span>
-    <div class="r" style="display: flex; flex-direction: column; gap: 0;">
+    <div class="r cascade-parent" style="display: flex; flex-direction: column; gap: 0;">
       {threadStory.crossSpectrum.split(/(?<=\.)\s+/).filter((s: string) => s.trim().length > 10).map((sentence: string, i: number) => {
+        // Extract outlet name: "Reuters sees...", "France 24 sees...", "NBC's interview..."
+        const outletMatch = sentence.match(/^([A-Z][A-Za-z0-9\s'.]+?)\s+(?:sees?|frames?|reports?|covered|interview|ran|tallied|leads?)/);
+        // Also try tier-based labels for fallback
         const tierMatch = sentence.match(/^(National|International|Local|Specialist|Military|Conservative|Progressive|Analysis)/i);
-        const tierName = tierMatch ? tierMatch[1] : `Perspective ${i + 1}`;
-        const content = tierMatch ? sentence.replace(tierMatch[0], '').replace(/^[-\s]*(?:focused|oriented|leaning)?\s*(?:outlets?|sources?|media|press|coverage)?\s*/i, '').replace(/^[,.:]\s*/, '') : sentence;
+        // Detect summary/wrap-up sentences (not outlet-specific)
+        const isSummary = /^(Same|Put them|Together|Overall|The gap|What connects|None of|Each one|When you)/i.test(sentence);
+        // Determine label and tier for coloring
+        let label: string;
+        let tierForColor: string;
+        let content: string;
+        if (isSummary) {
+          // Summary sentences get a special "takeaway" treatment
+          label = 'The pattern';
+          tierForColor = 'analysis';
+          content = sentence;
+        } else if (outletMatch) {
+          label = outletMatch[1].replace(/'s$/, '').trim();
+          content = sentence;
+          // Map known outlets to tiers for background coloring
+          const intlOutlets = ['Reuters', 'AP', 'France 24', 'Al Jazeera', 'BBC', 'Straits Times', 'NHK', 'Times of India', 'The Hindu', 'South China Morning Post', 'Channel News Asia', 'Dawn'];
+          const localOutlets = ['Military Times', 'Honolulu Civil Beat', 'Oregon Public Broadcasting', 'VTDigger'];
+          const specialistOutlets = ['Bloomberg', 'The Marshall Project', 'Hechinger Report', 'ProPublica'];
+          const analysisOutlets = ['The Atlantic', 'The Economist', 'Foreign Affairs'];
+          if (intlOutlets.some(o => label.includes(o))) tierForColor = 'international';
+          else if (localOutlets.some(o => label.includes(o))) tierForColor = 'local';
+          else if (specialistOutlets.some(o => label.includes(o))) tierForColor = 'specialist';
+          else if (analysisOutlets.some(o => label.includes(o))) tierForColor = 'analysis';
+          else tierForColor = 'national';
+        } else if (tierMatch) {
+          label = tierMatch[1];
+          tierForColor = tierMatch[1].toLowerCase();
+          content = sentence.replace(tierMatch[0], '').replace(/^[-\s]*(?:focused|oriented|leaning)?\s*(?:outlets?|sources?|media|press|coverage)?\s*/i, '').replace(/^[,.:]\s*/, '');
+        } else {
+          label = `Perspective ${i + 1}`;
+          tierForColor = '';
+          content = sentence;
+        }
+        // Look up outlet URL: try exact, then with " News" / " World" suffix, then without "The " prefix
+        const outletUrl = outletUrlMap.get(label) || outletUrlMap.get(label + ' News') || outletUrlMap.get(label + ' World') || outletUrlMap.get(label.replace(/^The /, '')) || '';
         return (
-        <div class="framing-row" data-tier={tierName}>
-          <div class="framing-label">{tierName}</div>
+        <div class="framing-row cascade" data-tier={tierForColor || undefined}>
+          <div class="framing-label">{outletUrl ? <a href={outletUrl} target="_blank" rel="noopener" class="outlet-link">{label}</a> : label}</div>
           <div class="framing-content">{content.trim()}</div>
         </div>
         );
@@ -424,7 +507,7 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
 {threadStory.whyThisMatters && (
 <div class="editorial-wash r" style="margin-top: 32px; overflow: hidden;">
   <div class="wrap">
-    <p style="font-family: 'Lora', serif; font-style: italic; font-size: clamp(19px, 2.2vw, 26px); line-height: 1.7; color: var(--ink); max-width: 680px;" set:html={escapeHtml(threadStory.whyThisMatters)} />
+    <p style="font-family: 'Lora', serif; font-style: italic; font-size: clamp(19px, 2.2vw, 26px); line-height: 1.7; color: var(--ink); max-width: 680px;" set:html={linkifyText(threadStory.whyThisMatters)} />
   </div>
 </div>
 )}
@@ -436,7 +519,7 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
     <div class="r callout-wash callout-wash-yellow">
       <div class="watch-for-card" style="border-left: 4px solid var(--yellow); padding: 14px 18px; background: rgba(255, 210, 63, 0.13); border-radius: 0 8px 8px 0;">
         <span style="font-family: 'Inter', sans-serif; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--yellow-accessible); font-weight: 600; display: block; margin-bottom: 8px;">What to watch for</span>
-        <p class="body" style="font-size: clamp(15px, 1.5vw, 17px); line-height: 1.8; color: var(--ink); margin: 0;" set:html={escapeHtml(threadStory.watchFor)} />
+        <p class="body" style="font-size: clamp(15px, 1.5vw, 17px); line-height: 1.8; color: var(--ink); margin: 0;" set:html={linkifyText(threadStory.watchFor)} />
       </div>
     </div>
   </div>
@@ -542,29 +625,64 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
   {gapStory.synthesis && (
   <div style="padding: 28px 0 0;">
     <div class="r">
-      <p class="body" style="font-size: clamp(16px, 1.7vw, 19px); line-height: 1.8; margin-bottom: 0;" set:html={escapeHtml(gapStory.synthesis)} />
+      <p class="body" style="font-size: clamp(16px, 1.7vw, 19px); line-height: 1.8; margin-bottom: 0;" set:html={linkifyText(gapStory.synthesis)} />
     </div>
   </div>
   )}
 
-  <!-- FRAMING INSIGHTS — framing exhibit for Gap -->
-  {gapStory.insights && gapStory.insights.length > 0 && (
+  <!-- FRAMING INSIGHTS — framing exhibit for Gap (prefer crossSpectrum from Pass 2) -->
+  {(gapStory.crossSpectrum || (gapStory.insights && gapStory.insights.length > 0)) && (
   <div style="padding: 32px 0 0;">
     <span class="section-label r section-label-teal" style="font-size: 13px; margin-bottom: 20px; display: block;">How outlets framed it</span>
-    <div class="r" style="display: flex; flex-direction: column; gap: 0;">
-      {gapStory.insights.slice(0, 4).map((insight: string, i: number) => {
-        const tierMatch = insight.match(/^(National|International|Local|Specialist|Military|Conservative|Progressive|Analysis)/i);
-        const tierName = tierMatch ? tierMatch[1] : '';
-        const content = tierMatch ? insight.replace(tierMatch[0], '').replace(/^[-\s]*(?:focused|oriented|leaning)?\s*(?:outlets?|sources?|media|press|coverage)?\s*/i, '').replace(/^[,.:]\s*/, '') : insight;
-        return (
-        <div class="framing-row" data-tier={tierName || undefined} style={!tierName ? 'background: rgba(59,206,172,0.06);' : ''}>
-          {tierName && <div class="framing-label">{tierName}</div>}
-          <div class="framing-content" style={`${!tierName ? 'border-left-color: var(--teal);' : ''}`}>
-            <span set:html={escapeHtml(content.trim())} />
+    <div class="r cascade-parent" style="display: flex; flex-direction: column; gap: 0;">
+      {(() => {
+        // Prefer crossSpectrum (outlet-by-outlet from Pass 2) over insights (tier-based)
+        const sentences = gapStory.crossSpectrum
+          ? gapStory.crossSpectrum.split(/(?<=\.)\s+/).filter((s: string) => s.trim().length > 10)
+          : gapStory.insights.slice(0, 6);
+        const intlOutlets = ['Reuters', 'AP', 'France 24', 'Al Jazeera', 'BBC', 'Straits Times', 'NHK', 'Times of India', 'The Hindu', 'South China Morning Post', 'Channel News Asia', 'Dawn'];
+        const localOutlets = ['Military Times', 'Honolulu Civil Beat', 'Oregon Public Broadcasting', 'VTDigger'];
+        const specialistOutlets = ['Bloomberg', 'The Marshall Project', 'Hechinger Report', 'ProPublica'];
+        const analysisOutlets = ['The Atlantic', 'The Economist', 'Foreign Affairs'];
+        return sentences.map((sentence: string, i: number) => {
+          const outletMatch = sentence.match(/^([A-Z][A-Za-z0-9\s'.]+?)\s+(?:sees?|frames?|reports?|covered|interview|ran|tallied|leads?)/);
+          const tierMatch = sentence.match(/^(National|International|Local|Specialist|Military|Conservative|Progressive|Analysis)/i);
+          const isSummary = /^(Same|Put them|Together|Overall|The gap|What connects|None of|Each one|When you)/i.test(sentence);
+          let label: string;
+          let tierForColor: string;
+          let content: string;
+          if (isSummary) {
+            label = 'The pattern';
+            tierForColor = 'analysis';
+            content = sentence;
+          } else if (outletMatch) {
+            label = outletMatch[1].replace(/'s$/, '').trim();
+            content = sentence;
+            if (intlOutlets.some(o => label.includes(o))) tierForColor = 'international';
+            else if (localOutlets.some(o => label.includes(o))) tierForColor = 'local';
+            else if (specialistOutlets.some(o => label.includes(o))) tierForColor = 'specialist';
+            else if (analysisOutlets.some(o => label.includes(o))) tierForColor = 'analysis';
+            else tierForColor = 'national';
+          } else if (tierMatch) {
+            label = tierMatch[1];
+            tierForColor = tierMatch[1].toLowerCase();
+            content = sentence.replace(tierMatch[0], '').replace(/^[-\s]*(?:focused|oriented|leaning)?\s*(?:outlets?|sources?|media|press|coverage)?\s*/i, '').replace(/^[,.:]\s*/, '');
+          } else {
+            label = '';
+            tierForColor = '';
+            content = sentence;
+          }
+          const outletUrl = label ? (outletUrlMap.get(label) || outletUrlMap.get(label + ' News') || outletUrlMap.get(label + ' World') || outletUrlMap.get(label.replace(/^The /, '')) || '') : '';
+          return (
+          <div class="framing-row cascade" data-tier={tierForColor || undefined} style={!tierForColor ? 'background: rgba(59,206,172,0.06);' : ''}>
+            {label && <div class="framing-label">{outletUrl ? <a href={outletUrl} target="_blank" rel="noopener" class="outlet-link">{label}</a> : label}</div>}
+            <div class="framing-content" style={`${!tierForColor ? 'border-left-color: var(--teal);' : ''}`}>
+              <span>{content.trim()}</span>
+            </div>
           </div>
-        </div>
-        );
-      })}
+          );
+        });
+      })()}
     </div>
   </div>
   )}
@@ -572,7 +690,7 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
   <!-- WHY THIS MATTERS — warm editorial wash -->
   {gapStory.whyThisMatters && (
   <div class="editorial-wash r" style="overflow: hidden;">
-    <p class="body" style="font-style: italic; font-size: clamp(17px, 1.9vw, 21px); line-height: 1.7;" set:html={escapeHtml(gapStory.whyThisMatters)} />
+    <p class="body" style="font-style: italic; font-size: clamp(17px, 1.9vw, 21px); line-height: 1.7;" set:html={linkifyText(gapStory.whyThisMatters)} />
   </div>
   )}
 
@@ -645,7 +763,7 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
   {meanwhileStory.synthesis && (
   <div style="padding: 32px 0 0;">
     <div class="r">
-      <p class="body r d2" style="font-size: clamp(19px, 2.2vw, 24px); line-height: 1.75; margin-bottom: 0; color: var(--ink);" set:html={escapeHtml(meanwhileStory.synthesis)} />
+      <p class="body r d2" style="font-size: clamp(19px, 2.2vw, 24px); line-height: 1.75; margin-bottom: 0; color: var(--ink);" set:html={linkifyText(meanwhileStory.synthesis)} />
     </div>
   </div>
   )}
@@ -654,7 +772,7 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
   {meanwhileStory.whyThisMatters && (
   <div style="padding: 24px 0 0;">
     <div class="r">
-      <p class="body" style="font-size: clamp(16px, 1.7vw, 19px); line-height: 1.8; color: var(--ink-mid);" set:html={escapeHtml(meanwhileStory.whyThisMatters)} />
+      <p class="body" style="font-size: clamp(16px, 1.7vw, 19px); line-height: 1.8; color: var(--ink-mid);" set:html={linkifyText(meanwhileStory.whyThisMatters)} />
     </div>
   </div>
   )}
@@ -665,7 +783,7 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
     <div class="r callout-wash callout-wash-yellow">
       <div class="watch-for-card" style="border-left: 4px solid var(--yellow); padding: 14px 18px; background: rgba(255, 210, 63, 0.13); border-radius: 0 8px 8px 0;">
         <span style="font-family: 'Inter', sans-serif; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--yellow-accessible); font-weight: 600; display: block; margin-bottom: 8px;">What to watch for</span>
-        <p class="body" style="font-size: clamp(15px, 1.5vw, 17px); line-height: 1.8; color: var(--ink); margin: 0;" set:html={escapeHtml(meanwhileStory.watchFor)} />
+        <p class="body" style="font-size: clamp(15px, 1.5vw, 17px); line-height: 1.8; color: var(--ink); margin: 0;" set:html={linkifyText(meanwhileStory.watchFor)} />
       </div>
     </div>
   </div>
