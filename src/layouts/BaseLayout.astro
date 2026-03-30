@@ -140,6 +140,21 @@ const canonicalUrl = `${siteUrl}/${title === 'Today' ? 'today/' : title === 'Abo
   }, { threshold: 0.06, rootMargin: '0px 0px -30px 0px' });
   document.querySelectorAll('.r').forEach(el => obs.observe(el));
 
+  // Staggered cascade for grid children (summary cards, coverage cards, framing rows)
+  const gridObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const children = e.target.querySelectorAll('.cascade');
+        children.forEach((child, i) => {
+          child.style.transitionDelay = `${i * 50}ms`;
+          child.classList.add('v');
+        });
+        gridObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.cascade-parent').forEach(el => gridObs.observe(el));
+
   setTimeout(() => {
     document.querySelectorAll('.masthead .r').forEach(el => el.classList.add('v'));
   }, 200);

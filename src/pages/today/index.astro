@@ -289,10 +289,10 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
 
 <!-- SUMMARY CARDS — CREAM -->
 <div class="wrap-wide" style="padding-top: clamp(48px, 7vw, 80px); padding-bottom: clamp(24px, 4vw, 40px);">
-  <div class="summary-grid r">
+  <div class="summary-grid cascade-parent">
 
     {threadStory && (
-    <a href="#thread" class="summary-card" style="text-decoration: none; color: inherit;">
+    <a href="#thread" class="summary-card cascade" style="text-decoration: none; color: inherit;">
       <div class="card-label">
         <svg width="18" height="14" viewBox="0 0 22 18" fill="none" style="vertical-align: -2px; margin-right: 6px;">
           <line x1="1" y1="4" x2="21" y2="4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
@@ -308,7 +308,7 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
     )}
 
     {gapStory && (
-    <a href="#gap" class="summary-card summary-card-teal" style="text-decoration: none; color: inherit;">
+    <a href="#gap" class="summary-card summary-card-teal cascade" style="text-decoration: none; color: inherit;">
       <div class="card-label card-label-teal">
         <svg width="16" height="14" viewBox="0 0 20 18" fill="none" style="vertical-align: -2px; margin-right: 6px;">
           <rect x="1" y="1" width="6" height="16" rx="1" fill="currentColor"/>
@@ -322,7 +322,7 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
     </a>
     )}
 
-    <a href="#meanwhile" class="summary-card summary-card-green" style="text-decoration: none; color: inherit;">
+    <a href="#meanwhile" class="summary-card summary-card-green cascade" style="text-decoration: none; color: inherit;">
       <div class="card-label card-label-green">
         <svg width="16" height="16" viewBox="0 0 20 20" fill="none" style="vertical-align: -2px; margin-right: 6px;">
           <circle cx="10" cy="10" r="4" fill="currentColor"/>
@@ -489,29 +489,15 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
 <!-- THE DAILY GAP — NAVY HEADER + TEAL WASH BODY                     -->
 <!-- ================================================================ -->
 {gapStory && (
-<!-- Gap header strip — navy -->
+<!-- Gap header strip — navy (compact: just label + headline) -->
 <div class="navy" style="padding-bottom: 0; margin-top: -1px;">
 <div class="wrap">
-  <div style="padding: 48px 0 0;">
+  <div style="padding: 48px 0 32px;">
     <span class="section-label r" style="color: var(--teal);">
       <svg class="cat-icon" width="20" height="18" viewBox="0 0 20 18" fill="none"><rect x="1" y="1" width="6" height="16" rx="1" fill="currentColor"/><rect x="13" y="1" width="6" height="16" rx="1" fill="currentColor" opacity="0.25"/></svg>
       The Daily Gap
     </span>
     <h2 class="headline headline-gap r d1" style="color: var(--cream); font-size: clamp(28px, 4.5vw, 52px);">{gapStory.title}</h2>
-
-    {gapStory.changeDescription && (
-      <p class="r d1" style="font-family: 'Caveat', cursive; font-size: clamp(18px, 2vw, 22px); color: var(--teal); margin-top: 8px;">
-        {gapStory.changeDescription}
-      </p>
-    )}
-
-    <!-- Article + source count -->
-    <div class="r d2" style="margin-top: 24px; display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap; padding-bottom: 40px;">
-      <div class="display" style="font-size: clamp(40px, 6vw, 64px); line-height: 1; color: var(--teal);">{gapStory.articleCount}</div>
-      <div class="stat-annotation" style="color: var(--on-navy-dim);">
-        articles from <strong style="color: var(--teal); font-weight: 700;">{gapStory.sourceCount} sources</strong> covering what others missed
-      </div>
-    </div>
   </div>
 </div>
 </div>
@@ -527,11 +513,24 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
 <article id="gap" class="section-world gap-world" aria-label="The Daily Gap" style="background: var(--teal-wash); margin-top: -1px;">
 <div class="wrap">
 
+  <!-- Article + source count — now on teal wash reading surface -->
+  <div class="r" style="display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap; padding-top: 8px;">
+    <div class="display" style="font-size: clamp(40px, 6vw, 64px); line-height: 1; color: var(--teal-accessible);">{gapStory.articleCount}</div>
+    <div class="stat-annotation" style="color: var(--ink-mid);">
+      articles from <strong style="color: var(--teal-accessible); font-weight: 700;">{gapStory.sourceCount} sources</strong> covering what others missed
+    </div>
+  </div>
+  {gapStory.changeDescription && (
+    <p class="r d1" style="font-family: 'Caveat', cursive; font-size: clamp(18px, 2vw, 22px); color: var(--teal-accessible); margin-top: 8px;">
+      {gapStory.changeDescription}
+    </p>
+  )}
+
   <!-- COVERAGE GAP NOTE — hero highlight card on teal wash -->
   {editorial?.coverage_gap_note && (
   <div style="padding: 32px 0 0;">
     <div class="r">
-      <div style="padding: 28px 32px; background: var(--white); border-radius: var(--radius-md); border-left: 4px solid var(--teal); box-shadow: 0 4px 24px rgba(27,42,74,0.06);">
+      <div style="padding: 28px 32px; background: var(--white); border-radius: var(--radius-md); border-left: 4px solid var(--teal); box-shadow: var(--shadow-card);">
         <span style="font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 14px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--teal-accessible); display: block; margin-bottom: 12px;">What national coverage missed</span>
         <p style="font-family: 'Lora', serif; font-size: clamp(17px, 1.9vw, 22px); line-height: 1.75; color: var(--ink); margin: 0;" set:html={escapeHtml(editorial.coverage_gap_note)} />
       </div>
