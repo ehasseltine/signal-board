@@ -260,7 +260,7 @@
   /* Tier washes — color as atmosphere, not decoration */
   .framing-row[data-tier="national"],
   .framing-row[data-tier="National"] {
-    background: rgba(217,64,50,0.06);
+    background: rgba(217,64,50,0.11);
   }
   .framing-row[data-tier="national"] .framing-label,
   .framing-row[data-tier="National"] .framing-label { color: var(--red-accessible); }
@@ -269,7 +269,7 @@
 
   .framing-row[data-tier="international"],
   .framing-row[data-tier="International"] {
-    background: rgba(27,42,74,0.05);
+    background: rgba(59,206,172,0.12);
   }
   .framing-row[data-tier="international"] .framing-label,
   .framing-row[data-tier="International"] .framing-label { color: var(--ink); }
@@ -278,7 +278,7 @@
 
   .framing-row[data-tier="military"],
   .framing-row[data-tier="Military"] {
-    background: rgba(255,210,63,0.08);
+    background: rgba(255,210,63,0.14);
   }
   .framing-row[data-tier="military"] .framing-label,
   .framing-row[data-tier="Military"] .framing-label { color: var(--yellow-accessible); }
@@ -287,7 +287,7 @@
 
   .framing-row[data-tier="local"],
   .framing-row[data-tier="Local"] {
-    background: rgba(255,210,63,0.06);
+    background: rgba(255,210,63,0.11);
   }
   .framing-row[data-tier="local"] .framing-label,
   .framing-row[data-tier="Local"] .framing-label { color: var(--yellow-accessible); }
@@ -296,7 +296,7 @@
 
   .framing-row[data-tier="specialist"],
   .framing-row[data-tier="Specialist"] {
-    background: rgba(59,206,172,0.06);
+    background: rgba(59,206,172,0.12);
   }
   .framing-row[data-tier="specialist"] .framing-label,
   .framing-row[data-tier="Specialist"] .framing-label { color: var(--teal-accessible); }
@@ -305,7 +305,7 @@
 
   .framing-row[data-tier="conservative"],
   .framing-row[data-tier="Conservative"] {
-    background: rgba(217,64,50,0.04);
+    background: rgba(217,64,50,0.10);
   }
   .framing-row[data-tier="conservative"] .framing-label,
   .framing-row[data-tier="Conservative"] .framing-label { color: var(--red-accessible); }
@@ -314,7 +314,7 @@
 
   .framing-row[data-tier="progressive"],
   .framing-row[data-tier="Progressive"] {
-    background: rgba(14,173,105,0.06);
+    background: rgba(14,173,105,0.11);
   }
   .framing-row[data-tier="progressive"] .framing-label,
   .framing-row[data-tier="Progressive"] .framing-label { color: var(--green-accessible); }
@@ -323,7 +323,7 @@
 
   .framing-row[data-tier="analysis"],
   .framing-row[data-tier="Analysis"] {
-    background: rgba(27,42,74,0.04);
+    background: rgba(27,42,74,0.08);
   }
   .framing-row[data-tier="analysis"] .framing-label,
   .framing-row[data-tier="Analysis"] .framing-label { color: var(--ink); }
@@ -332,7 +332,7 @@
 
   /* Default/fallback framing row */
   .framing-row:not([data-tier]) {
-    background: var(--ink-faint);
+    background: rgba(27,42,74,0.06);
   }
   .framing-row:not([data-tier]) .framing-label { color: var(--ink-mid); }
   .framing-row:not([data-tier]) .framing-content { border-left-color: var(--ink-light); }
@@ -533,7 +533,7 @@
     padding: clamp(24px, 3vw, 32px);
     border: 1px solid var(--ink-faint);
     border-radius: var(--radius-md);
-    background: var(--white);
+    background: rgba(217,64,50,0.08);  /* Thread red wash by default */
     transition: transform var(--duration-hover) var(--ease-out),
                 box-shadow var(--duration-hover) var(--ease-out),
                 border-color var(--duration-hover) var(--ease-out);
@@ -545,6 +545,8 @@
     transform: translateY(-4px);
     box-shadow: 0 12px 32px var(--shadow);
   }
+  .summary-card-teal { background: rgba(59,206,172,0.12); }
+  .summary-card-green { background: rgba(14,173,105,0.08); }
   .summary-card-green:hover { border-color: var(--green); }
 
   .card-label {
@@ -646,6 +648,13 @@
   .coverage-card[data-tier="specialist"] { border-left-color: var(--teal); }
   .coverage-card[data-tier="analysis"] { border-left-color: var(--green); }
   /* All source cards stay white for consistency */
+  /* On teal wash backgrounds, override teal borders to navy for visibility */
+  .gap-world .coverage-card { border-left-color: var(--ink); }
+  .gap-world .coverage-card[data-tier="national"] { border-left-color: var(--red); }
+  .gap-world .coverage-card[data-tier="international"] { border-left-color: var(--ink); }
+  .gap-world .coverage-card[data-tier="local-regional"] { border-left-color: var(--yellow-accessible); }
+  .gap-world .coverage-card[data-tier="specialist"] { border-left-color: var(--ink); }
+  .gap-world .coverage-card[data-tier="analysis"] { border-left-color: var(--ink); }
 
   .coverage-country {
     font-family: 'Inter', sans-serif;
