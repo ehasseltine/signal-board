@@ -1,0 +1,1731 @@
+{
+  "date": "2026-03-28",
+  "generated": "2026-03-28T07:48:41Z",
+  "summary": {
+    "total_stories": 1201,
+    "sources_reporting": 129,
+    "cross_domain": 466,
+    "cross_domain_pct": 39,
+    "top_domain": "Security"
+  },
+  "top_stories": [
+    {
+      "headline": "Tiger Woods arrested on suspicion of DUI, authorities say",
+      "source_count": 17,
+      "tier_count": 3,
+      "tiers": [
+        "community",
+        "international",
+        "national"
+      ],
+      "domains": [
+        "Legal"
+      ],
+      "domain_keys": [
+        "legal"
+      ],
+      "article_count": 21,
+      "tier_framing": {
+        "national": {
+          "count": 11,
+          "keywords": [
+            "tiger",
+            "woods",
+            "crash",
+            "rollover",
+            "florida"
+          ],
+          "sample": {
+            "title": "Tiger Woods arrested on suspicion of DUI, authorities say",
+            "source": "NPR",
+            "url": "https://www.npr.org/2026/03/27/g-s1-115540/tiger-woods-arrest-dui-suspicion-masters-golf",
+            "context": "Nonprofit public media organization funded by member stations, corporate sponsors, and foundations. Generally regarded as center-left. Reaches approximately 30 million weekly listeners."
+          }
+        },
+        "international": {
+          "count": 7,
+          "keywords": [
+            "tiger",
+            "woods",
+            "crash",
+            "arrested",
+            "florida"
+          ],
+          "sample": {
+            "title": "Tiger Woods charged with DUI after rollover crash in Florida",
+            "source": "Al Jazeera",
+            "url": "https://www.aljazeera.com/sports/2026/3/27/tiger-woods-charged-with-dui-after-rollover-crash-in-florida?traffic_source=rss",
+            "context": "Funded by the government of Qatar. Major international news network. Provides significant coverage of the Middle East and Global South that US outlets often underreport. Qatar's foreign policy interests can influence editorial priorities."
+          }
+        },
+        "community": {
+          "count": 3,
+          "keywords": [
+            "tiger",
+            "woods",
+            "crash",
+            "arrested",
+            "rollover"
+          ],
+          "sample": {
+            "title": "Breaking: Tiger Woods Arrested, Charged With DUI After Rollover Crash in FL",
+            "source": "The Root",
+            "url": "https://www.theroot.com/breaking-tiger-woods-arrested-charged-with-dui-after-2000097132",
+            "context": "Digital magazine covering African American news and culture. Owned by G/O Media."
+          }
+        }
+      },
+      "articles": [
+        {
+          "title": "Tiger Woods arrested on suspicion of DUI, authorities say",
+          "source": "NPR",
+          "url": "https://www.npr.org/2026/03/27/g-s1-115540/tiger-woods-arrest-dui-suspicion-masters-golf",
+          "tier": "national",
+          "paywall": false,
+          "context": "Nonprofit public media organization funded by member stations, corporate sponsors, and foundations. Generally regarded as center-left. Reaches approximately 30 million weekly listeners."
+        },
+        {
+          "title": "Tiger Woods in Rollover Car Crash in Florida",
+          "source": "Bloomberg",
+          "url": "https://www.bloomberg.com/news/videos/2026-03-27/tiger-woods-in-rollover-car-crash-in-florida",
+          "tier": "national",
+          "paywall": false,
+          "context": "Founded and majority-owned by Michael Bloomberg. Dominant source for financial professionals. Coverage focused on markets and business. Bloomberg ran for president in 2020 as a Democrat."
+        },
+        {
+          "title": "Tiger Woods arrested and charged with DUI after rollover crash",
+          "source": "NBC News",
+          "url": "https://www.nbcnews.com/nightly-news/video/tiger-woods-arrested-and-charged-with-dui-after-rollover-crash-260232773975",
+          "tier": "national",
+          "paywall": false,
+          "context": ""
+        },
+        {
+          "title": "Tiger Woods charged with DUI after rollover crash in Florida: Sheriff",
+          "source": "ABC News",
+          "url": "https://abcnews.com/US/tiger-woods-involved-rollover-crash-florida-sheriff/story?id=131479825",
+          "tier": "national",
+          "paywall": false,
+          "context": ""
+        },
+        {
+          "title": "Tiger Woods arrested on DUI charge after rollover crash in Florida",
+          "source": "The Hill",
+          "url": "https://thehill.com/homenews/state-watch/5804844-tiger-woods-involved-in-rollover-crash-in-florida-reports-say/",
+          "tier": "national",
+          "paywall": false,
+          "context": ""
+        },
+        {
+          "title": "Tiger Woods arrested for DUI after rollover car crash, Florida sheriff says",
+          "source": "CNBC",
+          "url": "https://www.cnbc.com/2026/03/27/tiger-woods-rollover-car-crash-florida.html",
+          "tier": "national",
+          "paywall": true,
+          "context": ""
+        }
+      ]
+    },
+    {
+      "headline": "The Justice Department plans to share sensitive voter data with Homeland Security",
+      "source_count": 7,
+      "tier_count": 2,
+      "tiers": [
+        "community",
+        "national"
+      ],
+      "domains": [
+        "Politics",
+        "Legal",
+        "Governance"
+      ],
+      "domain_keys": [
+        "domestic_politics",
+        "legal",
+        "governance"
+      ],
+      "article_count": 7,
+      "tier_framing": {
+        "national": {
+          "count": 2,
+          "keywords": [
+            "share",
+            "voter",
+            "data",
+            "justice",
+            "department"
+          ],
+          "sample": {
+            "title": "The Justice Department plans to share sensitive voter data with Homeland Security",
+            "source": "NPR",
+            "url": "https://www.npr.org/2026/03/27/nx-s1-5764266/voter-data-trump-doj-dhs",
+            "context": "Nonprofit public media organization funded by member stations, corporate sponsors, and foundations. Generally regarded as center-left. Reaches approximately 30 million weekly listeners."
+          }
+        },
+        "community": {
+          "count": 5,
+          "keywords": [
+            "confirms",
+            "voter",
+            "data",
+            "sharing",
+            "with"
+          ],
+          "sample": {
+            "title": "DOJ confirms voter data sharing with Homeland Security, but denies building national list",
+            "source": "Stateline",
+            "url": "https://stateline.org/2026/03/27/doj-confirms-voter-data-sharing-with-homeland-security-but-denies-building-national-list/",
+            "context": ""
+          }
+        }
+      },
+      "articles": [
+        {
+          "title": "The Justice Department plans to share sensitive voter data with Homeland Security",
+          "source": "NPR",
+          "url": "https://www.npr.org/2026/03/27/nx-s1-5764266/voter-data-trump-doj-dhs",
+          "tier": "national",
+          "paywall": false,
+          "context": "Nonprofit public media organization funded by member stations, corporate sponsors, and foundations. Generally regarded as center-left. Reaches approximately 30 million weekly listeners."
+        },
+        {
+          "title": "DOJ, DHS probing deal to share states’ voter roll data",
+          "source": "The Hill",
+          "url": "https://thehill.com/homenews/administration/5804867-doj-pressures-states-voter-rolls/",
+          "tier": "national",
+          "paywall": false,
+          "context": ""
+        },
+        {
+          "title": "DOJ confirms voter data sharing with Homeland Security, but denies building national list",
+          "source": "Wisconsin Examiner",
+          "url": "https://wisconsinexaminer.com/2026/03/27/repub/doj-confirms-voter-data-sharing-with-homeland-security-but-denies-building-national-list/",
+          "tier": "community",
+          "paywall": false,
+          "context": ""
+        },
+        {
+          "title": "DOJ confirms voter data sharing with Homeland Security, but denies building national list",
+          "source": "Ohio Capital Journal",
+          "url": "https://ohiocapitaljournal.com/2026/03/27/repub/doj-confirms-voter-data-sharing-with-homeland-security-but-denies-building-national-list/",
+          "tier": "community",
+          "paywall": false,
+          "context": ""
+        },
+        {
+          "title": "DOJ confirms voter data sharing with Homeland Security, but denies building national list",
+          "source": "Source NM",
+          "url": "https://sourcenm.com/2026/03/27/repub/doj-confirms-voter-data-sharing-with-homeland-security-but-denies-building-national-list/",
+          "tier": "community",
+          "paywall": false,
+          "context": ""
+        },
+        {
+          "title": "DOJ confirms it is sharing state voter data with DHS in search for noncitizen voters",
+          "source": "Arizona Mirror",
+          "url": "https://azmirror.com/2026/03/27/repub/doj-confirms-it-is-sharing-state-voter-data-with-dhs-in-search-for-noncitizen-voters/",
+          "tier": "community",
+          "paywall": false,
+          "context": ""
+        }
+      ]
+    },
+    {
+      "headline": "Iranian attack injures 10 Americans on base in Saudi Arabia",
+      "source_count": 6,
+      "tier_count": 2,
+      "tiers": [
+        "national",
+        "international"
+      ],
+      "domains": [
+        "Security",
+        "Labor"
+      ],
+      "domain_keys": [
+        "security",
+        "labor"
+      ],
+      "article_count": 6,
+      "tier_framing": {
+        "national": {
+          "count": 2,
+          "keywords": [
+            "iranian",
+            "saudi",
+            "arabia",
+            "attack",
+            "injures"
+          ],
+          "sample": {
+            "title": "Iranian attack injures 10 Americans on base in Saudi Arabia",
+            "source": "The Hill",
+            "url": "https://thehill.com/policy/defense/5805412-iranian-attack-saudi-base-injures-us-troops/",
+            "context": ""
+          }
+        },
+        "international": {
+          "count": 4,
+          "keywords": [
+            "iran",
+            "strike",
+            "troops",
+            "saudi",
+            "israel"
+          ],
+          "sample": {
+            "title": "Iran strike wounds US troops and damages planes at Saudi airbase",
+            "source": "South China Morning Post",
+            "url": "https://www.scmp.com/news/world/middle-east/article/3348220/iran-strike-wounds-us-troops-and-damages-planes-saudi-airbase?utm_source=rss_feed",
+            "context": ""
+          }
+        }
+      },
+      "articles": [
+        {
+          "title": "Iranian attack injures 10 Americans on base in Saudi Arabia",
+          "source": "The Hill",
+          "url": "https://thehill.com/policy/defense/5805412-iranian-attack-saudi-base-injures-us-troops/",
+          "tier": "national",
+          "paywall": false,
+          "context": ""
+        },
+        {
+          "title": "At least 10 US troops wounded in Iranian strike in Saudi Arabia: Report",
+          "source": "Washington Examiner",
+          "url": "https://www.washingtonexaminer.com/news/world/4508105/us-troops-wounded-iran-strike-saudi-arabia/",
+          "tier": "national",
+          "paywall": false,
+          "context": ""
+        },
+        {
+          "title": "Iran strike wounds US troops and damages planes at Saudi airbase",
+          "source": "South China Morning Post",
+          "url": "https://www.scmp.com/news/world/middle-east/article/3348220/iran-strike-wounds-us-troops-and-damages-planes-saudi-airbase?utm_source=rss_feed",
+          "tier": "international",
+          "paywall": false,
+          "context": ""
+        },
+        {
+          "title": "Iran-Israel war LIVE: Israel military says striking 'regime targets' in Tehran; One killed in Tel Aviv amid Iranian miss",
+          "source": "The Hindu",
+          "url": "https://www.thehindu.com/news/international/iran-israel-us-war-west-asia-conflict-strait-of-hormuz-attacks-march-28-2026/article70795241.ece",
+          "tier": "international",
+          "paywall": false,
+          "context": ""
+        },
+        {
+          "title": "Iran war: US troops wounded in strike on Saudi base",
+          "source": "Deutsche Welle",
+          "url": "https://www.dw.com/en/iran-war-us-troops-wounded-in-strike-on-saudi-base/live-76573681?maca=en-rss-en-all-1573-rdf",
+          "tier": "international",
+          "paywall": false,
+          "context": ""
+        },
+        {
+          "title": "Iranian strike on Saudi Arabia base injures 12 US troops, 2 seriously wounded",
+          "source": "Times of India",
+          "url": "https://timesofindia.indiatimes.com/world/us/iranian-strike-on-saudi-arabia-base-injures-12-us-troops-2-seriously-wounded/articleshow/129858060.cms",
+          "tier": "international",
+          "paywall": false,
+          "context": ""
+        }
+      ]
+    },
+    {
+      "headline": "Iran-linked hackers breach FBI director's personal email, publish photos and documents - Reuters",
+      "source_count": 5,
+      "tier_count": 2,
+      "tiers": [
+        "international",
+        "national"
+      ],
+      "domains": [
+        "Security",
+        "Politics"
+      ],
+      "domain_keys": [
+        "security",
+        "domestic_politics"
+      ],
+      "article_count": 5,
+      "tier_framing": {
+        "national": {
+          "count": 2,
+          "keywords": [
+            "hackers",
+            "publish",
+            "iran",
+            "linked",
+            "breach"
+          ],
+          "sample": {
+            "title": "Iran-linked hackers breach FBI director's personal email, publish photos and documents - Reuters",
+            "source": "Reuters",
+            "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOZnl4Mkp5MnI3ZDg3X1RYMk1aX1JpWkhKLUN5czJlUGtoaU9NZE9RM2dQZlJkMXNQMWtfRElSU0tjMTdZaWN2UnNUb0dIcEZLZjB0RThIdEpQMW5WWkxWblMzNmszZElmcjE2WXNnMXBjNHA0NE15V0dYMVZhYmNjcm8ySjlUZkVIaWZURW1aQmhLNEk4TDV6d1g3SXpJV1psSTBxZTViRE5iSU9WYzRXbjhrUDZ2Um93MDFYNkpDUQ?oc=5",
+            "context": "Owned by Thomson Reuters. Major international wire service. Generally regarded as centrist. Core audience includes institutional investors and news organizations."
+          }
+        },
+        "international": {
+          "count": 3,
+          "keywords": [
+            "iran",
+            "director",
+            "kash",
+            "patel",
+            "personal"
+          ],
+          "sample": {
+            "title": "Iran-backed hackers breach FBI director Kash Patel's personal emails",
+            "source": "BBC World",
+            "url": "https://www.bbc.com/news/articles/cvgl4yk7vgpo?at_medium=RSS&at_campaign=rss",
+            "context": "Funded by the UK license fee and UK government grants for international service. British public broadcaster. Generally regarded as centrist by international standards."
+          }
+        }
+      },
+      "articles": [
+        {
+          "title": "Iran-linked hackers breach FBI director's personal email, publish photos and documents - Reuters",
+          "source": "Reuters",
+          "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOZnl4Mkp5MnI3ZDg3X1RYMk1aX1JpWkhKLUN5czJlUGtoaU9NZE9RM2dQZlJkMXNQMWtfRElSU0tjMTdZaWN2UnNUb0dIcEZLZjB0RThIdEpQMW5WWkxWblMzNmszZElmcjE2WXNnMXBjNHA0NE15V0dYMVZhYmNjcm8ySjlUZkVIaWZURW1aQmhLNEk4TDV6d1g3SXpJV1psSTBxZTViRE5iSU9WYzRXbjhrUDZ2Um93MDFYNkpDUQ?oc=5",
+          "tier": "national",
+          "paywall": false,
+          "context": "Owned by Thomson Reuters. Major international wire service. Generally regarded as centrist. Core audience includes institutional investors and news organizations."
+        },
+        {
+          "title": "Iranian hackers publish emails allegedly stolen from Kash Patel",
+          "source": "NBC News",
+          "url": "https://www.nbcnews.com/tech/security/iranian-hackers-publish-emails-allegedly-stolen-kash-patel-rcna265490",
+          "tier": "national",
+          "paywall": false,
+          "context": ""
+        },
+        {
+          "title": "Iran-backed hackers breach FBI director Kash Patel's personal emails",
+          "source": "BBC World",
+          "url": "https://www.bbc.com/news/articles/cvgl4yk7vgpo?at_medium=RSS&at_campaign=rss",
+          "tier": "international",
+          "paywall": false,
+          "context": "Funded by the UK license fee and UK government grants for international service. British public broadcaster. Generally regarded as centrist by international standards."
+        },
+        {
+          "title": "Iran-linked hackers breach FBI director Kash Patel's personal email, publish photos and documents",
+          "source": "The Hindu",
+          "url": "https://www.thehindu.com/news/international/iran-linked-hackers-breach-fbi-director-kash-patels-personal-email-publish-photos-and-documents/article70795233.ece",
+          "tier": "international",
+          "paywall": false,
+          "context": ""
+        },
+        {
+          "title": "FBI responds to Iran-backed group’s hacking of Director Kash Patel’s personal email",
+          "source": "Times of India",
+          "url": "https://timesofindia.indiatimes.com/technology/tech-news/fbi-responds-to-iran-backed-groups-hacking-of-director-kash-patels-personal-email-the-information-in-question-is-/articleshow/129851644.cms",
+          "tier": "international",
+          "paywall": false,
+          "context": ""
+        }
+      ]
+    },
+    {
+      "headline": "Kash Patel’s Emails Circulate Online as Iran Takes Responsibility for Release",
+      "source_count": 5,
+      "tier_count": 3,
+      "tiers": [
+        "international",
+        "explainer",
+        "national"
+      ],
+      "domains": [
+        "Politics",
+        "Security",
+        "Economics"
+      ],
+      "domain_keys": [
+        "domestic_politics",
+        "security",
+        "economics"
+      ],
+      "article_count": 5,
+      "tier_framing": {
+        "national": {
+          "count": 2,
+          "keywords": [
+            "kash",
+            "patel",
+            "emails",
+            "circulate",
+            "online"
+          ],
+          "sample": {
+            "title": "Kash Patel’s Emails Circulate Online as Iran Takes Responsibility for Release",
+            "source": "New York Times",
+            "url": "https://www.nytimes.com/2026/03/27/us/fbi-director-kash-patel-hacked-email-iran.html",
+            "context": "Publicly traded, headquartered in New York. Largest US newspaper by circulation. Generally regarded as center-left in editorial stance. Revenue from subscriptions and advertising."
+          }
+        },
+        "international": {
+          "count": 2,
+          "keywords": [
+            "iran",
+            "hackers",
+            "patel",
+            "email",
+            "personal"
+          ],
+          "sample": {
+            "title": "Pro-Iran hackers say they breached FBI chief Patel’s email account, post personal files",
+            "source": "South China Morning Post",
+            "url": "https://www.scmp.com/news/world/middle-east/article/3348214/pro-iran-hackers-say-they-breached-fbi-chief-patels-email-account-post-personal-files?utm_source=rss_feed",
+            "context": ""
+          }
+        }
+      },
+      "articles": [
+        {
+          "title": "Kash Patel’s Emails Circulate Online as Iran Takes Responsibility for Release",
+          "source": "New York Times",
+          "url": "https://www.nytimes.com/2026/03/27/us/fbi-director-kash-patel-hacked-email-iran.html",
+          "tier": "national",
+          "paywall": false,
+          "context": "Publicly traded, headquartered in New York. Largest US newspaper by circulation. Generally regarded as center-left in editorial stance. Revenue from subscriptions and advertising."
+        },
+        {
+          "title": "Pro-Iranian hacking group claims credit for hack of FBI Director Kash Patel’s personal account",
+          "source": "AP News",
+          "url": "https://apnews.com/article/patel-iran-hacking-cyberscurity-9237ca30d1c85f237d7d83e6798d97f0",
+          "tier": "national",
+          "paywall": false,
+          "context": "Nonprofit cooperative owned by member newspapers and broadcasters. Supplies content to the majority of US newsrooms. Generally regarded as centrist wire service."
+        },
+        {
+          "title": "Pro-Iran hackers say they breached FBI chief Patel’s email account, post personal files",
+          "source": "South China Morning Post",
+          "url": "https://www.scmp.com/news/world/middle-east/article/3348214/pro-iran-hackers-say-they-breached-fbi-chief-patels-email-account-post-personal-files?utm_source=rss_feed",
+          "tier": "international",
+          "paywall": false,
+          "context": ""
+        },
+        {
+          "title": "Iran-linked hackers breach FBI Director Kash Patel’s personal email, publish excerpts online",
+          "source": "Dawn",
+          "url": "https://www.dawn.com/news/1985963/iran-linked-hackers-breach-fbi-director-kash-patels-personal-email-publish-excerpts-online",
+          "tier": "international",
+          "paywall": false,
+          "context": "Pakistani English-language newspaper. Oldest in Pakistan. Generally regarded as liberal by Pakistani standards. Provides South Asian perspective."
+        },
+        {
+          "title": "DOJ confirms FBI Director Kash Patel’s personal email was hacked",
+          "source": "Ars Technica",
+          "url": "https://arstechnica.com/tech-policy/2026/03/doj-confirms-fbi-director-kash-patels-personal-email-was-hacked/",
+          "tier": "explainer",
+          "paywall": false,
+          "context": ""
+        }
+      ]
+    },
+    {
+      "headline": "Nepal: Former PM Oli arrested over deadly protests",
+      "source_count": 5,
+      "tier_count": 1,
+      "tiers": [
+        "international"
+      ],
+      "domains": [
+        "Governance",
+        "Legal"
+      ],
+      "domain_keys": [
+        "governance",
+        "legal"
+      ],
+      "article_count": 5,
+      "tier_framing": {
+        "international": {
+          "count": 5,
+          "keywords": [
+            "nepal",
+            "arrested",
+            "over",
+            "role",
+            "crackdown"
+          ],
+          "sample": {
+            "title": "Nepal: Former PM Oli arrested over deadly protests",
+            "source": "Deutsche Welle",
+            "url": "https://www.dw.com/en/nepal-former-pm-oli-arrested-over-deadly-protests/a-76573671?maca=en-rss-en-all-1573-rdf",
+            "context": ""
+          }
+        }
+      },
+      "articles": [
+        {
+          "title": "Nepal: Former PM Oli arrested over deadly protests",
+          "source": "Deutsche Welle",
+          "url": "https://www.dw.com/en/nepal-former-pm-oli-arrested-over-deadly-protests/a-76573671?maca=en-rss-en-all-1573-rdf",
+          "tier": "international",
+          "paywall": false,
+          "context": ""
+        },
+        {
+          "title": "Ex-Nepal PM KP Sharma Oli arrested over role in Gen Z protest crackdown",
+          "source": "Times of India",
+          "url": "https://timesofindia.indiatimes.com/world/south-asia/nepal-former-prime-minister-kp-sharma-oli-ex-home-minister-arrested-over-gen-z-protest-crackdown/articleshow/129857305.cms",
+          "tier": "international",
+          "paywall": false,
+          "context": ""
+        },
+        {
+          "title": "Nepal's former PM Oli arrested over deaths during Gen Z protests",
+          "source": "The Hindu",
+          "url": "https://www.thehindu.com/news/international/nepals-former-pm-oli-arrested-over-deaths-during-gen-z-protests/article70795245.ece",
+          "tier": "international",
+          "paywall": false,
+          "context": ""
+        },
+        {
+          "title": "Nepal’s ex-PM K.P. Sharma Oli arrested over alleged role in crackdown on protesters",
+          "source": "South China Morning Post",
+          "url": "https://www.scmp.com/news/asia/south-asia/article/3348224/nepals-ex-pm-kp-sharma-oli-arrested-over-alleged-role-crackdown-protesters?utm_source=rss_feed",
+          "tier": "international",
+          "paywall": true,
+          "context": ""
+        },
+        {
+          "title": "Nepal's ex-PM arrested over alleged role in protest crackdown",
+          "source": "Channel News Asia",
+          "url": "https://www.channelnewsasia.com/asia/nepals-ex-pm-arrested-over-alleged-role-in-protest-crackdown-6022676",
+          "tier": "international",
+          "paywall": false,
+          "context": ""
+        }
+      ]
+    },
+    {
+      "headline": "What's next in the DHS funding fight?",
+      "source_count": 4,
+      "tier_count": 1,
+      "tiers": [
+        "national"
+      ],
+      "domains": [
+        "Governance",
+        "Politics",
+        "Legal"
+      ],
+      "domain_keys": [
+        "governance",
+        "domestic_politics",
+        "legal"
+      ],
+      "article_count": 8,
+      "tier_framing": {
+        "national": {
+          "count": 8,
+          "keywords": [
+            "senate",
+            "funding",
+            "bill",
+            "deal",
+            "rejecting"
+          ],
+          "sample": {
+            "title": "What's next in the DHS funding fight?",
+            "source": "NBC News",
+            "url": "https://www.nbcnews.com/video/shorts/what-s-next-in-the-dhs-funding-fight-260239941797",
+            "context": ""
+          }
+        }
+      },
+      "articles": [
+        {
+          "title": "What's next in the DHS funding fight?",
+          "source": "NBC News",
+          "url": "https://www.nbcnews.com/video/shorts/what-s-next-in-the-dhs-funding-fight-260239941797",
+          "tier": "national",
+          "paywall": false,
+          "context": ""
+        },
+        {
+          "title": "Democrats bash Johnson for rejecting Senate DHS bill, urge support for discharge petition",
+          "source": "The Hill",
+          "url": "https://thehill.com/homenews/house/5805180-democrats-jeffries-johnson-dhs-funding/",
+          "tier": "national",
+          "paywall": false,
+          "context": ""
+        },
+        {
+          "title": "House Republicans Block Senate DHS Deal",
+          "source": "Newsmax",
+          "url": "https://www.newsmax.com/politics/house-gop-dhs/2026/03/27/id/1251042",
+          "tier": "national",
+          "paywall": false,
+          "context": "Conservative cable news and digital media company. Grew significantly during and after the 2020 election. Competes with Fox News for conservative audience."
+        },
+        {
+          "title": "House to Pass Short-Term Spending Bill That Funds All of DHS, with ICE and CBP Included",
+          "source": "Breitbart",
+          "url": "https://www.breitbart.com/politics/2026/03/27/house-to-pass-short-term-spending-bill-that-funds-dhs-ice-and-cbp-included/",
+          "tier": "national",
+          "paywall": false,
+          "context": "Right-wing news website founded in 2007. Represents nationalist and populist conservative perspectives. Previously led by Steve Bannon."
+        }
+      ]
+    },
+    {
+      "headline": "When Will TSA Workers Be Paid? Here’s What We Know",
+      "source_count": 4,
+      "tier_count": 2,
+      "tiers": [
+        "community",
+        "national"
+      ],
+      "domains": [
+        "Legal",
+        "Labor",
+        "Politics"
+      ],
+      "domain_keys": [
+        "legal",
+        "labor",
+        "domestic_politics"
+      ],
+      "article_count": 5,
+      "tier_framing": {
+        "national": {
+          "count": 4,
+          "keywords": [
+            "workers",
+            "amid",
+            "shutdown",
+            "trump",
+            "when"
+          ],
+          "sample": {
+            "title": "When Will TSA Workers Be Paid? Here’s What We Know",
+            "source": "New York Times",
+            "url": "https://www.nytimes.com/2026/03/27/us/politics/tsa-pay.html",
+            "context": "Publicly traded, headquartered in New York. Largest US newspaper by circulation. Generally regarded as center-left in editorial stance. Revenue from subscriptions and advertising."
+          }
+        },
+        "community": {
+          "count": 1,
+          "keywords": [
+            "trump",
+            "deploys",
+            "agents",
+            "airports",
+            "amid"
+          ],
+          "sample": {
+            "title": "Trump deploys ICE agents to major U.S. airports amid TSA staffing crisis",
+            "source": "Arab American News",
+            "url": "https://arabamericannews.com/2026/03/27/trump-deploys-ice-agents-to-major-u-s-airports-amid-tsa-staffing-crisis/?utm_source=rss&utm_medium=rss&utm_campaign=trump-deploys-ice-agents-to-major-u-s-airports-amid-tsa-staffing-crisis",
+            "context": "Community newspaper serving Arab American communities, primarily based in Dearborn, Michigan. Provides perspective from approximately 3.7 million Arab Americans."
+          }
+        }
+      },
+      "articles": [
+        {
+          "title": "When Will TSA Workers Be Paid? Here’s What We Know",
+          "source": "New York Times",
+          "url": "https://www.nytimes.com/2026/03/27/us/politics/tsa-pay.html",
+          "tier": "national",
+          "paywall": false,
+          "context": "Publicly traded, headquartered in New York. Largest US newspaper by circulation. Generally regarded as center-left in editorial stance. Revenue from subscriptions and advertising."
+        },
+        {
+          "title": "TMZ wants photos of lawmakers vacationing ‘at your expense’ amid TSA shutdown",
+          "source": "The Hill",
+          "url": "https://thehill.com/media/5804806-tmz-asks-travelers-to-snap-lawmakers/",
+          "tier": "national",
+          "paywall": false,
+          "context": ""
+        },
+        {
+          "title": "Trump Moves to Pay TSA Workers Amid Airport Chaos",
+          "source": "Newsmax",
+          "url": "https://www.newsmax.com/politics/tsa-trump-dhs/2026/03/27/id/1251048",
+          "tier": "national",
+          "paywall": false,
+          "context": "Conservative cable news and digital media company. Grew significantly during and after the 2020 election. Competes with Fox News for conservative audience."
+        },
+        {
+          "title": "Trump deploys ICE agents to major U.S. airports amid TSA staffing crisis",
+          "source": "Arab American News",
+          "url": "https://arabamericannews.com/2026/03/27/trump-deploys-ice-agents-to-major-u-s-airports-amid-tsa-staffing-crisis/?utm_source=rss&utm_medium=rss&utm_campaign=trump-deploys-ice-agents-to-major-u-s-airports-amid-tsa-staffing-crisis",
+          "tier": "community",
+          "paywall": false,
+          "context": "Community newspaper serving Arab American communities, primarily based in Dearborn, Michigan. Provides perspective from approximately 3.7 million Arab Americans."
+        }
+      ]
+    }
+  ],
+  "what_connects": [
+    {
+      "headline": "Tiger Woods arrested on suspicion of DUI, authorities say",
+      "total_sources": 11,
+      "spectrum_segments": 3,
+      "left_sources": [
+        "NBC News",
+        "NPR",
+        "ABC News"
+      ],
+      "right_sources": [
+        "Washington Times"
+      ],
+      "international_sources": [
+        "Deutsche Welle",
+        "South China Morning Post",
+        "Al Jazeera"
+      ],
+      "community_sources": [],
+      "article_count": 13,
+      "domains": []
+    }
+  ],
+  "community_exclusive": [
+    {
+      "title": "Graduate degrees pay—but it’s complicated - Brookings",
+      "source": "Brookings",
+      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPY3VFa2hQbnlwcUoza09HTUs1eWhOYTRYNlFzenowSFp5RTZoTmUyWk1VOU1zd2tEdGc5R0h5YXVDaWlYajBRZjE0VHYtV0RGbjhfUFVQRHZISUlTWFhHTW1BZEFZbEd6WkNzYlN6VVlXN1dHQ0RpWDR5ZmVRaXRod0xB?oc=5",
+      "tier": "domain",
+      "text_preview": "Graduate degrees pay—but it’s complicated &nbsp;&nbsp; Brookings",
+      "domains": [],
+      "context": "Centrist-to-center-left think tank. Largest think tank in the US by budget. Significant influence on Democratic policy. Funded by foundations, corporations, and foreign governments."
+    },
+    {
+      "title": "The Situation: Dominance Play - Lawfare",
+      "source": "Lawfare",
+      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1LQk02ZUF2YUliem9YcVpQV2JmbFZYNTVTVzVLYWItMTlFXzJMOW9QdVdZMzZ6aWtTWHhEZ3hRTzJTclUtTUJQanNJa0NhRXBNZUdLN21HYm9DczdxNWNTamItcjRsRHVLdk5IOGRNVTItaEd4?oc=5",
+      "tier": "domain",
+      "text_preview": "The Situation: Dominance Play &nbsp;&nbsp; Lawfare",
+      "domains": [],
+      "context": ""
+    },
+    {
+      "title": "News diary 30 March – 5 April: Tim Davie exits BBC, Apple turns 50, Easter Sunday",
+      "source": "Press Gazette",
+      "url": "https://pressgazette.co.uk/news/news-diary-30-march-5-april-tim-davie-exits-bbc-apple-turns-50-easter-sunday/",
+      "tier": "domain",
+      "text_preview": "A look ahead at the key events leading the news agenda next week, from the team at Foresight News. The post News diary 30 March – 5 April: Tim Davie exits BBC, Apple turns 50, Easter Sunday appeared first on Press Gazette .",
+      "domains": [
+        "information"
+      ],
+      "context": ""
+    },
+    {
+      "title": "Coffee Break: East Asia and the War in West Asia, RIP Metaverse, Cetacean Doulas, and Social Sycophancy",
+      "source": "Naked Capitalism",
+      "url": "https://www.nakedcapitalism.com/2026/03/coffee-break-east-asia-and-the-war-in-west-asia-rip-metaverse-cetacean-doulas-and-social-sycophancy.html",
+      "tier": "domain",
+      "text_preview": "Part the First: The War in West Asia Viewed from East Asia. The daily updates compiled here have been essential for cutting through the fog of war associated with the current War in West Asia. Many people have marveled at the sheer stupidity of anoth",
+      "domains": [
+        "information",
+        "climate",
+        "security"
+      ],
+      "context": ""
+    },
+    {
+      "title": "Stephenson King - The Marshall Project",
+      "source": "The Marshall Project",
+      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFB0amJ1eXVIMldiajBhb2R2eE1BWWk2MEI2aFhjdWRqTEE1VFFrTU9hdk5DdndkVEpsck4xcEdNSTZwLTR3ZVlhZkVFRU1pNTU5Z29RaWlyMUxzeW1hRVF4S3k2QksyNk1naTFDS0ZhLU1vQQ?oc=5",
+      "tier": "community",
+      "text_preview": "Stephenson King &nbsp;&nbsp; The Marshall Project",
+      "domains": [],
+      "context": ""
+    },
+    {
+      "title": "A Latino Man Breaks Down Hispanic&#8217;s ‘Polite’ Racism Black People Probably Won’t Notice Immediately",
+      "source": "The Root",
+      "url": "https://www.theroot.com/a-latino-man-breaks-down-hispanics-polite-racism-blac-2000097015",
+      "tier": "community",
+      "text_preview": "A Latino TikToker just said the quiet part out loud, explaining how Hispanics are indeed racist towards Black people and exactly how they do it in front of you. Read more...",
+      "domains": [
+        "information"
+      ],
+      "context": "Digital magazine covering African American news and culture. Owned by G/O Media."
+    },
+    {
+      "title": "Indian Health Service is digging out of decades-old construction backlog for medical buildings",
+      "source": "Indian Country Today",
+      "url": "https://ictnews.org/news/indian-health-service-is-digging-out-of-decades-old-construction-backlog-for-medical-buildings/",
+      "tier": "community",
+      "text_preview": "A.C. Locklear, CEO of the nonprofit National Indian Health Board, said the $1 billion is the single largest financial investment by any administration in addressing the aging facilities The post Indian Health Service is digging out of decades-old con",
+      "domains": [],
+      "context": "Nonprofit newsroom covering Native American communities and tribal affairs. Represents the perspective of approximately 9.7 million people who identify as American Indian or Alaska Native."
+    },
+    {
+      "title": "Looksmaxxing, Catholicism and the new discipline of the body",
+      "source": "Religion News Service",
+      "url": "https://religionnews.com/2026/03/27/christians-respond-to-looksmaxxing-influencer-clavicular-and-the-pursuit-of-the-perfect-body/",
+      "tier": "community",
+      "text_preview": "(RNS) — For Braden Peters, known as Clavicular, looksmaxxing, a total devotion to self-optimization, is aimed at improving every aspect of life, from physical appearance to status, often framed in a language of discipline, hierarchy and 'ascension.'",
+      "domains": [],
+      "context": ""
+    },
+    {
+      "title": "Voting rights groups sue Texas over removal of potential noncitizens from the voter roll",
+      "source": "Texas Tribune",
+      "url": "https://feeds.texastribune.org/link/16799/17307937/texas-save-database-voter-rolls-removal-dps-secretary-of-state",
+      "tier": "community",
+      "text_preview": "The lawsuit says officials failed to check for proof of citizenship that voters may have already provided the state.",
+      "domains": [
+        "governance",
+        "domestic_politics"
+      ],
+      "context": ""
+    },
+    {
+      "title": "Cities in Texas and Florida install new rainbow walkways as Republicans crack down on Pride crosswalks",
+      "source": "The Advocate",
+      "url": "https://www.advocate.com/politics/states/rainbow-crosswalk-texas-florida",
+      "tier": "community",
+      "text_preview": "City leaders in San Antonio plans will unveil new rainbow sidewalks as part of a Pride celebration this week. The act comes even as Texas cracks down on other decorated walkways across the Lone Star State. Keep up with the latest in LGBTQ + news and ",
+      "domains": [
+        "domestic_politics"
+      ],
+      "context": "LGBTQ+ news magazine, one of the oldest in the US. Covers issues affecting approximately 20 million LGBTQ+ Americans."
+    },
+    {
+      "title": "NYC Council members host Mahmoud Khalil at Islamophobia briefing, sparking backlash from colleagues",
+      "source": "Jewish Telegraphic Agency",
+      "url": "https://www.jta.org/2026/03/27/ny/nyc-council-members-host-mahmoud-khalil-at-islamophobia-briefing-sparking-backlash-from-colleagues",
+      "tier": "community",
+      "text_preview": "Plus, Touro University launches a new institute to combat antisemitism in academia. -- The post NYC Council members host Mahmoud Khalil at Islamophobia briefing, sparking backlash from colleagues appeared first on Jewish Telegraphic Agency .",
+      "domains": [],
+      "context": ""
+    },
+    {
+      "title": "Yes, Iran is playing chess, but only after rewriting the rules of the game",
+      "source": "Arab American News",
+      "url": "https://arabamericannews.com/2026/03/27/yes-iran-is-playing-chess-but-only-after-rewriting-the-rules-of-the-game/?utm_source=rss&utm_medium=rss&utm_campaign=yes-iran-is-playing-chess-but-only-after-rewriting-the-rules-of-the-game",
+      "tier": "community",
+      "text_preview": "By Ramzy Baroud &#38; Romana Rubeo The origins of chess are contested, but few dispute that while the game began in India, it was the Sassanian Persian Empire that refined it into a recognizable strategic system. It was Persia that codified its langu",
+      "domains": [
+        "security"
+      ],
+      "context": "Community newspaper serving Arab American communities, primarily based in Dearborn, Michigan. Provides perspective from approximately 3.7 million Arab Americans."
+    }
+  ],
+  "active_threads": [
+    {
+      "pair": [
+        "governance",
+        "legal"
+      ],
+      "label": "Governance + Legal",
+      "explanation": "Government actions being challenged or upheld in courts",
+      "today_count": 105,
+      "trend": "rising",
+      "sample_articles": [
+        {
+          "title": "Plot to firebomb Palestinian activist’s home disrupted by FBI and NYPD",
+          "source": "AP News",
+          "url": "https://apnews.com/article/fbi-nypd-nerdeen-kiswani-e8fa38819b4f65f830b26b640d44cd72"
+        },
+        {
+          "title": "Exclusive: US sends subpoenas in Warner-Paramount antitrust review as probe pick",
+          "source": "Reuters",
+          "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNbk5UU21MRVZ2UW9kMENwZ2dBY1NjSzRVbFYxMFlWbkJtUGZGc3U2QWdkZzA0bHJWYXhLWk0wekhRWS00Y0pjRjNHMHJIRExjZ051bkowMGc2RzVreWhBMTNFTjhWeHJXeVNvNjhLLWRQVXV5aFZaVk1VUHVKU0F2dlBoUEJsRngyTUhoQng0RmtxVEpxMTFxREg3V2pKNHZmYUZwQTI0Vkp2QmMtaVVTZWFEN3Q1QQ?oc=5"
+        },
+        {
+          "title": "The Justice Department plans to share sensitive voter data with Homeland Securit",
+          "source": "NPR",
+          "url": "https://www.npr.org/2026/03/27/nx-s1-5764266/voter-data-trump-doj-dhs"
+        }
+      ]
+    },
+    {
+      "pair": [
+        "domestic_politics",
+        "security"
+      ],
+      "label": "Politics + Security",
+      "explanation": "Defense and public safety as political issues",
+      "today_count": 77,
+      "trend": "rising",
+      "sample_articles": [
+        {
+          "title": "At CPAC, the ‘America First’ Crowd Ponders Giving War a Chance",
+          "source": "New York Times",
+          "url": "https://www.nytimes.com/2026/03/27/us/politics/cpac-trump-iran-war.html"
+        },
+        {
+          "title": "Hegseth Strikes Two Black and Two Female Officers From Promotion List",
+          "source": "New York Times",
+          "url": "https://www.nytimes.com/2026/03/27/us/hegseth-promotion-list.html"
+        },
+        {
+          "title": "Kash Patel’s Emails Circulate Online as Iran Takes Responsibility for Release",
+          "source": "New York Times",
+          "url": "https://www.nytimes.com/2026/03/27/us/fbi-director-kash-patel-hacked-email-iran.html"
+        }
+      ]
+    },
+    {
+      "pair": [
+        "domestic_politics",
+        "governance"
+      ],
+      "label": "Politics + Governance",
+      "explanation": "Political conflict over how government agencies operate",
+      "today_count": 70,
+      "trend": "rising",
+      "sample_articles": [
+        {
+          "title": "Hegseth Strikes Two Black and Two Female Officers From Promotion List",
+          "source": "New York Times",
+          "url": "https://www.nytimes.com/2026/03/27/us/hegseth-promotion-list.html"
+        },
+        {
+          "title": "Hasan Piker Rallies Spark Backlash in Michigan’s Democratic Senate Primary",
+          "source": "New York Times",
+          "url": "https://www.nytimes.com/2026/03/27/us/politics/elsayed-piker-michigan-rally-backlash.html"
+        },
+        {
+          "title": "The Justice Department plans to share sensitive voter data with Homeland Securit",
+          "source": "NPR",
+          "url": "https://www.npr.org/2026/03/27/nx-s1-5764266/voter-data-trump-doj-dhs"
+        }
+      ]
+    },
+    {
+      "pair": [
+        "domestic_politics",
+        "legal"
+      ],
+      "label": "Politics + Legal",
+      "explanation": "Political disputes reaching the courts",
+      "today_count": 60,
+      "trend": "rising",
+      "sample_articles": [
+        {
+          "title": "The Justice Department plans to share sensitive voter data with Homeland Securit",
+          "source": "NPR",
+          "url": "https://www.npr.org/2026/03/27/nx-s1-5764266/voter-data-trump-doj-dhs"
+        },
+        {
+          "title": "Defense Secretary Hegseth intervened to stop promotions of Black and female offi",
+          "source": "NPR",
+          "url": "https://www.npr.org/2026/03/27/nx-s1-5763863/hegseth-soldiers-promotions"
+        },
+        {
+          "title": "US Republicans reject Senate bill to end shutdown, fund TSA",
+          "source": "Deutsche Welle",
+          "url": "https://www.dw.com/en/us-republicans-reject-senate-bill-to-end-shutdown-fund-tsa/a-76564649?maca=en-rss-en-all-1573-rdf"
+        }
+      ]
+    },
+    {
+      "pair": [
+        "economics",
+        "security"
+      ],
+      "label": "Economics + Security",
+      "explanation": "Military spending and conflict affecting markets",
+      "today_count": 48,
+      "trend": "rising",
+      "sample_articles": [
+        {
+          "title": "Stocks Keep Falling as Investor Lose Patience With the War in Iran",
+          "source": "New York Times",
+          "url": "https://www.nytimes.com/2026/03/27/business/iran-war-stock-market-investors.html"
+        },
+        {
+          "title": "The Iran War Has Diesel Prices Soaring, and Consumers Could Pay the Price",
+          "source": "New York Times",
+          "url": "https://www.nytimes.com/2026/03/27/business/diesel-prices-inflation-consumer-prices.html"
+        },
+        {
+          "title": "Pro-Iranian hacking group claims credit for hack of FBI Director Kash Patel’s pe",
+          "source": "AP News",
+          "url": "https://apnews.com/article/patel-iran-hacking-cyberscurity-9237ca30d1c85f237d7d83e6798d97f0"
+        }
+      ]
+    },
+    {
+      "pair": [
+        "climate",
+        "security"
+      ],
+      "label": "Climate + Security",
+      "explanation": "Environmental change creating security or military challenges",
+      "today_count": 40,
+      "trend": "rising",
+      "sample_articles": [
+        {
+          "title": "Services firms feel the squeeze as oil rally from Iran war fails to spur drillin",
+          "source": "Reuters",
+          "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNTjJUODdya25tZFRjSm8wVVFPVTlfd1FoeW1hVGdfNFMxMW1lMHIyRkNaM28wRzI3QjhuZWVUSnlNUTIyMGdZSl9DR3dtc1E3VzI2RGxMX2ZJYUxDdXFORGJ4NEgtbnMzYmZnOU9XLVJ6RHI1SjFuQTZDU0JMQlVxRVpLcEQydV9GS2w0YnFLTm9qN2JtU2FvdS1SRnM3THF4eVM2OEpQSnhYOEFIMk9MRW9hYnpYS00tLWc?oc=5"
+        },
+        {
+          "title": "Exclusive: US sends subpoenas in Warner-Paramount antitrust review as probe pick",
+          "source": "Reuters",
+          "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNbk5UU21MRVZ2UW9kMENwZ2dBY1NjSzRVbFYxMFlWbkJtUGZGc3U2QWdkZzA0bHJWYXhLWk0wekhRWS00Y0pjRjNHMHJIRExjZ051bkowMGc2RzVreWhBMTNFTjhWeHJXeVNvNjhLLWRQVXV5aFZaVk1VUHVKU0F2dlBoUEJsRngyTUhoQng0RmtxVEpxMTFxREg3V2pKNHZmYUZwQTI0Vkp2QmMtaVVTZWFEN3Q1QQ?oc=5"
+        },
+        {
+          "title": "How long will the war last? No one knows, and it's making oil prices weird",
+          "source": "NPR",
+          "url": "https://www.npr.org/2026/03/27/nx-s1-5757946/oil-iran-war-markets-uncertainty"
+        }
+      ]
+    },
+    {
+      "pair": [
+        "geopolitics",
+        "security"
+      ],
+      "label": "Geopolitics + Security",
+      "explanation": "Military tensions between nations",
+      "today_count": 40,
+      "trend": "rising",
+      "sample_articles": [
+        {
+          "title": "Wall Street Week | China’s Role in Iran War, Global Fertilizer Disruptions, Matc",
+          "source": "Bloomberg",
+          "url": "https://www.bloomberg.com/news/videos/2026-03-27/wall-street-week-global-fertilizer-supply-disruptions-video"
+        },
+        {
+          "title": "Trump says US-Israeli war on Iran creating a new Middle East",
+          "source": "Al Jazeera",
+          "url": "https://www.aljazeera.com/video/newsfeed/2026/3/28/trump-says-us-israeli-war-on-iran-creating-a-new-middle-east?traffic_source=rss"
+        },
+        {
+          "title": "Iran war live: Trump again slams NATO’s lack of support for war on Tehran",
+          "source": "Al Jazeera",
+          "url": "https://www.aljazeera.com/news/liveblog/2026/3/28/iran-war-live-trump-again-slams-natos-lack-of-support-for-war-on-tehran?traffic_source=rss"
+        }
+      ]
+    },
+    {
+      "pair": [
+        "governance",
+        "security"
+      ],
+      "label": "Governance + Security",
+      "explanation": "Defense policy and military strategy",
+      "today_count": 39,
+      "trend": "rising",
+      "sample_articles": [
+        {
+          "title": "Hegseth Strikes Two Black and Two Female Officers From Promotion List",
+          "source": "New York Times",
+          "url": "https://www.nytimes.com/2026/03/27/us/hegseth-promotion-list.html"
+        },
+        {
+          "title": "California bans officials from using inside knowledge to bet on prediction marke",
+          "source": "Reuters",
+          "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNT3RGc1RlQjRIdkdVRjQyX3VGdXh4clNTTEJQOUktMEN6SlRhYlJhbWlLeXA4TlJFZlVLekRhNDhMMDZublNoWDdUZGZCTjJYbHJBZGFGRUhUcVdINV9MblM3Zk02Q3dJZ0F2MDJURFEyQWFVbDd2YklHZ05FbjdmenRVbzg2d0pRMVIxUWhfV2J0Q1ltMDZtU2p5XzNuTjVjb1pKNGFkZVB4eW9HVXlfMmRTd25yTHdHWUVhMFlQZ2xMQQ?oc=5"
+        },
+        {
+          "title": "US judiciary withdraws new requirements for amicus brief disclosures - Reuters",
+          "source": "Reuters",
+          "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPMjdKZjhaSnhWcjl4MU5JN1dmUHdDSFNPb1lOZWk4UTBSWFB1c0p0c0VybmdmSFRmQ0FCTWVOWHQ4cUVoY0NHT0lza0hqcmExN3NaZlhtWFNBZEdEMi00aGZVanpjd1BtWEM3TnRjWnBkdEUyMzZRbE1aUHktYTFxQTd0cU9oXzgwU01SQTVlTzJPTk5YcnozUHp1c0JfYzhaR3NlV0I2dV9GMjNRWHBsMW1VZzRUTWV4?oc=5"
+        }
+      ]
+    },
+    {
+      "pair": [
+        "domestic_politics",
+        "economics"
+      ],
+      "label": "Politics + Economics",
+      "explanation": "Economic conditions shaping political debate",
+      "today_count": 36,
+      "trend": "rising",
+      "sample_articles": [
+        {
+          "title": "Pro-Iranian hacking group claims credit for hack of FBI Director Kash Patel’s pe",
+          "source": "AP News",
+          "url": "https://apnews.com/article/patel-iran-hacking-cyberscurity-9237ca30d1c85f237d7d83e6798d97f0"
+        },
+        {
+          "title": "Trump tells farmers that tractor companies should lower prices - Reuters",
+          "source": "Reuters",
+          "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNSzlReHJhXzFrTlh4YzByQ2tJQV9IazRvNW1CNl9ScnhUNURnM3hwUE1WOVZFbU1wck9pNlZhanFyNHRGRC1qeHpsSkhocGFrMGRYZ2R2aVpybndEOXJLekUxbF9CeUxpYlRZTGhTVWJlNFAzNGduLU96WVR1WTZnbF85M0IyNTE5MzlzbURMQkMxN2ZjMmxuY3VJSnJSa3lERGI4QkxTbV9QcDVSSWpha0tJSQ?oc=5"
+        },
+        {
+          "title": "Market Priced for Risk, Not Disruption: Fmr. WH Advisor",
+          "source": "Bloomberg",
+          "url": "https://www.bloomberg.com/news/videos/2026-03-27/market-priced-for-risk-not-disruption-fmr-wh-advisor-video"
+        }
+      ]
+    },
+    {
+      "pair": [
+        "economics",
+        "governance"
+      ],
+      "label": "Economics + Governance",
+      "explanation": "Tax policy, trade agreements, and government spending",
+      "today_count": 35,
+      "trend": "rising",
+      "sample_articles": [
+        {
+          "title": "Exclusive: US sends subpoenas in Warner-Paramount antitrust review as probe pick",
+          "source": "Reuters",
+          "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNbk5UU21MRVZ2UW9kMENwZ2dBY1NjSzRVbFYxMFlWbkJtUGZGc3U2QWdkZzA0bHJWYXhLWk0wekhRWS00Y0pjRjNHMHJIRExjZ051bkowMGc2RzVreWhBMTNFTjhWeHJXeVNvNjhLLWRQVXV5aFZaVk1VUHVKU0F2dlBoUEJsRngyTUhoQng0RmtxVEpxMTFxREg3V2pKNHZmYUZwQTI0Vkp2QmMtaVVTZWFEN3Q1QQ?oc=5"
+        },
+        {
+          "title": "US Republicans reject Senate bill to end shutdown, fund TSA",
+          "source": "Deutsche Welle",
+          "url": "https://www.dw.com/en/us-republicans-reject-senate-bill-to-end-shutdown-fund-tsa/a-76564649?maca=en-rss-en-all-1573-rdf"
+        },
+        {
+          "title": "ED charges ex-RCOM executive Punit Garg in ₹40,000-crore bank loan fraud case",
+          "source": "The Hindu",
+          "url": "https://www.thehindu.com/news/national/ed-files-chargesheet-against-ex-rcom-executive-punit-garg-in-40000-crore-bank-loan-fraud-case/article70793806.ece"
+        }
+      ]
+    },
+    {
+      "pair": [
+        "economics",
+        "legal"
+      ],
+      "label": "Economics + Legal",
+      "explanation": "Antitrust enforcement, financial regulation, and corporate law",
+      "today_count": 34,
+      "trend": "rising",
+      "sample_articles": [
+        {
+          "title": "EU and CPTPP agree to progress with \"historic\" digital trade deal, Canada's inte",
+          "source": "Reuters",
+          "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQMlFPa1FBMERsNGVGeEdfQlIxTlZIYTBaSzNJN3JzbzcyWlRTQXR5djFURkpkZHU5NlhtNDhlWGVTeGJzODBpZmd2S0FVZ2pWT0NjVFEzUHBud25WVlZERFIwMkxpcFVRU0JEMFdDek93VnVYbnZaWG85bjZtNFJJUDIwOXFubE52V0RkRFdEVW5Eb3JROE1FcTA4TEhBcmp1UXpEdEViQmFUeE95VGxmNjM5Rmk1OEJ5SDNBNUtYQ1RpVlpNa0NBUg?oc=5"
+        },
+        {
+          "title": "Exclusive: US sends subpoenas in Warner-Paramount antitrust review as probe pick",
+          "source": "Reuters",
+          "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNbk5UU21MRVZ2UW9kMENwZ2dBY1NjSzRVbFYxMFlWbkJtUGZGc3U2QWdkZzA0bHJWYXhLWk0wekhRWS00Y0pjRjNHMHJIRExjZ051bkowMGc2RzVreWhBMTNFTjhWeHJXeVNvNjhLLWRQVXV5aFZaVk1VUHVKU0F2dlBoUEJsRngyTUhoQng0RmtxVEpxMTFxREg3V2pKNHZmYUZwQTI0Vkp2QmMtaVVTZWFEN3Q1QQ?oc=5"
+        },
+        {
+          "title": "Kalshi Secures License to Offer Margin Trading to Pros",
+          "source": "Bloomberg",
+          "url": "https://www.bloomberg.com/news/articles/2026-03-27/kalshi-approved-for-margin-trading-as-it-lures-wall-street-pros"
+        }
+      ]
+    },
+    {
+      "pair": [
+        "climate",
+        "economics"
+      ],
+      "label": "Climate + Economics",
+      "explanation": "Energy costs, food prices, and insurance rates linked to environmental change",
+      "today_count": 26,
+      "trend": "rising",
+      "sample_articles": [
+        {
+          "title": "Trump tells farmers that tractor companies should lower prices - Reuters",
+          "source": "Reuters",
+          "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNSzlReHJhXzFrTlh4YzByQ2tJQV9IazRvNW1CNl9ScnhUNURnM3hwUE1WOVZFbU1wck9pNlZhanFyNHRGRC1qeHpsSkhocGFrMGRYZ2R2aVpybndEOXJLekUxbF9CeUxpYlRZTGhTVWJlNFAzNGduLU96WVR1WTZnbF85M0IyNTE5MzlzbURMQkMxN2ZjMmxuY3VJSnJSa3lERGI4QkxTbV9QcDVSSWpha0tJSQ?oc=5"
+        },
+        {
+          "title": "Exclusive: US sends subpoenas in Warner-Paramount antitrust review as probe pick",
+          "source": "Reuters",
+          "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNbk5UU21MRVZ2UW9kMENwZ2dBY1NjSzRVbFYxMFlWbkJtUGZGc3U2QWdkZzA0bHJWYXhLWk0wekhRWS00Y0pjRjNHMHJIRExjZ051bkowMGc2RzVreWhBMTNFTjhWeHJXeVNvNjhLLWRQVXV5aFZaVk1VUHVKU0F2dlBoUEJsRngyTUhoQng0RmtxVEpxMTFxREg3V2pKNHZmYUZwQTI0Vkp2QmMtaVVTZWFEN3Q1QQ?oc=5"
+        },
+        {
+          "title": "How long will the war last? No one knows, and it's making oil prices weird",
+          "source": "NPR",
+          "url": "https://www.npr.org/2026/03/27/nx-s1-5757946/oil-iran-war-markets-uncertainty"
+        }
+      ]
+    },
+    {
+      "pair": [
+        "information",
+        "security"
+      ],
+      "label": "Information + Security",
+      "explanation": "War coverage and information about military operations",
+      "today_count": 25,
+      "trend": "rising",
+      "sample_articles": [
+        {
+          "title": "Research points to how companies could make social media less addictive for teen",
+          "source": "NPR",
+          "url": "https://www.npr.org/2026/03/27/nx-s1-5763017/social-media-teens-addictive-design"
+        },
+        {
+          "title": "Wall Street Week | China’s Role in Iran War, Global Fertilizer Disruptions, Matc",
+          "source": "Bloomberg",
+          "url": "https://www.bloomberg.com/news/videos/2026-03-27/wall-street-week-global-fertilizer-supply-disruptions-video"
+        },
+        {
+          "title": "US Signals to Allies No Immediate Plans for Iran Invasion",
+          "source": "Bloomberg",
+          "url": "https://www.bloomberg.com/news/videos/2026-03-27/us-signals-to-allies-no-immediate-iran-invasion-plans-video"
+        }
+      ]
+    },
+    {
+      "pair": [
+        "legal",
+        "security"
+      ],
+      "label": "Legal + Security",
+      "explanation": "Legal and Security",
+      "today_count": 23,
+      "trend": "new",
+      "sample_articles": [
+        {
+          "title": "After Being Struck by Air Canada Plane, Last Firefighter Is Released From Hospit",
+          "source": "New York Times",
+          "url": "https://www.nytimes.com/2026/03/27/nyregion/laguardia-firefighters-truck-air-canada.html"
+        },
+        {
+          "title": "Exclusive: US sends subpoenas in Warner-Paramount antitrust review as probe pick",
+          "source": "Reuters",
+          "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNbk5UU21MRVZ2UW9kMENwZ2dBY1NjSzRVbFYxMFlWbkJtUGZGc3U2QWdkZzA0bHJWYXhLWk0wekhRWS00Y0pjRjNHMHJIRExjZ051bkowMGc2RzVreWhBMTNFTjhWeHJXeVNvNjhLLWRQVXV5aFZaVk1VUHVKU0F2dlBoUEJsRngyTUhoQng0RmtxVEpxMTFxREg3V2pKNHZmYUZwQTI0Vkp2QmMtaVVTZWFEN3Q1QQ?oc=5"
+        },
+        {
+          "title": "Defense Secretary Hegseth intervened to stop promotions of Black and female offi",
+          "source": "NPR",
+          "url": "https://www.npr.org/2026/03/27/nx-s1-5763863/hegseth-soldiers-promotions"
+        }
+      ]
+    },
+    {
+      "pair": [
+        "climate",
+        "domestic_politics"
+      ],
+      "label": "Climate + Politics",
+      "explanation": "Environmental policy as a political issue",
+      "today_count": 21,
+      "trend": "rising",
+      "sample_articles": [
+        {
+          "title": "One Republican Farmer in Wisconsin Is Bitter Over Trump’s Deportations",
+          "source": "New York Times",
+          "url": "https://www.nytimes.com/2026/03/27/us/politics/wisconsin-farmer-republicans-immigration-trump.html"
+        },
+        {
+          "title": "Trump tells farmers that tractor companies should lower prices - Reuters",
+          "source": "Reuters",
+          "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNSzlReHJhXzFrTlh4YzByQ2tJQV9IazRvNW1CNl9ScnhUNURnM3hwUE1WOVZFbU1wck9pNlZhanFyNHRGRC1qeHpsSkhocGFrMGRYZ2R2aVpybndEOXJLekUxbF9CeUxpYlRZTGhTVWJlNFAzNGduLU96WVR1WTZnbF85M0IyNTE5MzlzbURMQkMxN2ZjMmxuY3VJSnJSa3lERGI4QkxTbV9QcDVSSWpha0tJSQ?oc=5"
+        },
+        {
+          "title": "AIDS prevention campaign kicks off in France",
+          "source": "France 24",
+          "url": "https://www.france24.com/en/video/20260327-aids-prevention-campaign-kicks-off-in-france"
+        }
+      ]
+    }
+  ],
+  "source_spectrum": {
+    "national": 375,
+    "international": 490,
+    "specialist": 54,
+    "explainer": 28,
+    "community": 234,
+    "analysis": 20
+  },
+  "questions": [
+    {
+      "question": "Which government actions are being challenged in court?",
+      "article_count": 105,
+      "domains": [
+        "Governance",
+        "Legal"
+      ],
+      "sources_by_tier": {
+        "national": [
+          {
+            "source": "AP News",
+            "title": "Plot to firebomb Palestinian activist’s home disrupted by FBI and NYPD",
+            "url": "https://apnews.com/article/fbi-nypd-nerdeen-kiswani-e8fa38819b4f65f830b26b640d44cd72",
+            "context": "Nonprofit cooperative owned by member newspapers and broadcasters. Supplies content to the majority of US newsrooms. Generally regarded as centrist wire service."
+          },
+          {
+            "source": "Reuters",
+            "title": "Exclusive: US sends subpoenas in Warner-Paramount antitrust review as probe picks up steam - Reuters",
+            "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNbk5UU21MRVZ2UW9kMENwZ2dBY1NjSzRVbFYxMFlWbkJtUGZGc3U2QWdkZzA0bHJWYXhLWk0wekhRWS00Y0pjRjNHMHJIRExjZ051bkowMGc2RzVreWhBMTNFTjhWeHJXeVNvNjhLLWRQVXV5aFZaVk1VUHVKU0F2dlBoUEJsRngyTUhoQng0RmtxVEpxMTFxREg3V2pKNHZmYUZwQTI0Vkp2QmMtaVVTZWFEN3Q1QQ?oc=5",
+            "context": "Owned by Thomson Reuters. Major international wire service. Generally regarded as centrist. Core audience includes institutional investors and news organizations."
+          }
+        ],
+        "international": [
+          {
+            "source": "The Guardian World",
+            "title": "Labor to underwrite Australian fuel imports under new security powers to ensure supply",
+            "url": "https://www.theguardian.com/australia-news/2026/mar/28/anthony-albanese-chris-bowen-fuel-security-powers-oil-crisis-petrol-diesel-prices",
+            "context": "Owned by the Scott Trust, a nonprofit. British newspaper. Generally regarded as left-leaning. No paywall, funded by reader contributions."
+          },
+          {
+            "source": "Deutsche Welle",
+            "title": "US Republicans reject Senate bill to end shutdown, fund TSA",
+            "url": "https://www.dw.com/en/us-republicans-reject-senate-bill-to-end-shutdown-fund-tsa/a-76564649?maca=en-rss-en-all-1573-rdf",
+            "context": ""
+          }
+        ]
+      }
+    },
+    {
+      "question": "How are defense and security decisions being shaped by politics?",
+      "article_count": 77,
+      "domains": [
+        "Politics",
+        "Security"
+      ],
+      "sources_by_tier": {
+        "national": [
+          {
+            "source": "New York Times",
+            "title": "At CPAC, the ‘America First’ Crowd Ponders Giving War a Chance",
+            "url": "https://www.nytimes.com/2026/03/27/us/politics/cpac-trump-iran-war.html",
+            "context": "Publicly traded, headquartered in New York. Largest US newspaper by circulation. Generally regarded as center-left in editorial stance. Revenue from subscriptions and advertising."
+          },
+          {
+            "source": "AP News",
+            "title": "Pro-Iranian hacking group claims credit for hack of FBI Director Kash Patel’s personal account",
+            "url": "https://apnews.com/article/patel-iran-hacking-cyberscurity-9237ca30d1c85f237d7d83e6798d97f0",
+            "context": "Nonprofit cooperative owned by member newspapers and broadcasters. Supplies content to the majority of US newsrooms. Generally regarded as centrist wire service."
+          }
+        ],
+        "international": [
+          {
+            "source": "BBC World",
+            "title": "Iran-backed hackers breach FBI director Kash Patel's personal emails",
+            "url": "https://www.bbc.com/news/articles/cvgl4yk7vgpo?at_medium=RSS&at_campaign=rss",
+            "context": "Funded by the UK license fee and UK government grants for international service. British public broadcaster. Generally regarded as centrist by international standards."
+          },
+          {
+            "source": "Al Jazeera",
+            "title": "Trump says US-Israeli war on Iran creating a new Middle East",
+            "url": "https://www.aljazeera.com/video/newsfeed/2026/3/28/trump-says-us-israeli-war-on-iran-creating-a-new-middle-east?traffic_source=rss",
+            "context": "Funded by the government of Qatar. Major international news network. Provides significant coverage of the Middle East and Global South that US outlets often underreport. Qatar's foreign policy interests can influence editorial priorities."
+          }
+        ]
+      }
+    },
+    {
+      "question": "What is the government actually doing right now?",
+      "article_count": 70,
+      "domains": [
+        "Politics",
+        "Governance"
+      ],
+      "sources_by_tier": {
+        "national": [
+          {
+            "source": "New York Times",
+            "title": "Hegseth Strikes Two Black and Two Female Officers From Promotion List",
+            "url": "https://www.nytimes.com/2026/03/27/us/hegseth-promotion-list.html",
+            "context": "Publicly traded, headquartered in New York. Largest US newspaper by circulation. Generally regarded as center-left in editorial stance. Revenue from subscriptions and advertising."
+          },
+          {
+            "source": "NPR",
+            "title": "The Justice Department plans to share sensitive voter data with Homeland Security",
+            "url": "https://www.npr.org/2026/03/27/nx-s1-5764266/voter-data-trump-doj-dhs",
+            "context": "Nonprofit public media organization funded by member stations, corporate sponsors, and foundations. Generally regarded as center-left. Reaches approximately 30 million weekly listeners."
+          }
+        ],
+        "international": [
+          {
+            "source": "BBC World",
+            "title": "Trump orders paycheques for TSA workers as Congress stalls and airport chaos grinds on",
+            "url": "https://www.bbc.com/news/articles/c33l4j03kr3o?at_medium=RSS&at_campaign=rss",
+            "context": "Funded by the UK license fee and UK government grants for international service. British public broadcaster. Generally regarded as centrist by international standards."
+          },
+          {
+            "source": "Deutsche Welle",
+            "title": "US Republicans reject Senate bill to end shutdown, fund TSA",
+            "url": "https://www.dw.com/en/us-republicans-reject-senate-bill-to-end-shutdown-fund-tsa/a-76564649?maca=en-rss-en-all-1573-rdf",
+            "context": ""
+          }
+        ]
+      }
+    },
+    {
+      "question": "What legal challenges are being filed, and what do they mean?",
+      "article_count": 60,
+      "domains": [
+        "Politics",
+        "Legal"
+      ],
+      "sources_by_tier": {
+        "national": [
+          {
+            "source": "NPR",
+            "title": "The Justice Department plans to share sensitive voter data with Homeland Security",
+            "url": "https://www.npr.org/2026/03/27/nx-s1-5764266/voter-data-trump-doj-dhs",
+            "context": "Nonprofit public media organization funded by member stations, corporate sponsors, and foundations. Generally regarded as center-left. Reaches approximately 30 million weekly listeners."
+          },
+          {
+            "source": "NBC News",
+            "title": "Trump signs emergency order to pay TSA",
+            "url": "https://www.nbcnews.com/nightly-news/video/trump-signs-emergency-order-to-pay-tsa-260233797686",
+            "context": ""
+          }
+        ],
+        "international": [
+          {
+            "source": "Deutsche Welle",
+            "title": "US Republicans reject Senate bill to end shutdown, fund TSA",
+            "url": "https://www.dw.com/en/us-republicans-reject-senate-bill-to-end-shutdown-fund-tsa/a-76564649?maca=en-rss-en-all-1573-rdf",
+            "context": ""
+          },
+          {
+            "source": "The Hindu",
+            "title": "ECI suspends police officer for failing to tackle BJP-Trinamool Congress clashes",
+            "url": "https://www.thehindu.com/elections/west-bengal-assembly/eci-suspends-police-officer-for-failing-to-tackle-bjp-trinamool-congress-clashes/article70793669.ece",
+            "context": ""
+          }
+        ],
+        "explainer": [
+          {
+            "source": "Vox",
+            "title": "The sneaky way Trump’s lawyers are supercharging ICE",
+            "url": "https://www.vox.com/politics/484131/trump-ice-mandatory-detention-minneapolis-supreme-court",
+            "context": ""
+          },
+          {
+            "source": "Ars Technica",
+            "title": "DOJ confirms FBI Director Kash Patel’s personal email was hacked",
+            "url": "https://arstechnica.com/tech-policy/2026/03/doj-confirms-fbi-director-kash-patels-personal-email-was-hacked/",
+            "context": ""
+          }
+        ],
+        "community": [
+          {
+            "source": "Stateline",
+            "title": "DOJ confirms voter data sharing with Homeland Security, but denies building national list",
+            "url": "https://stateline.org/2026/03/27/doj-confirms-voter-data-sharing-with-homeland-security-but-denies-building-national-list/",
+            "context": ""
+          }
+        ]
+      }
+    },
+    {
+      "question": "How is the conflict affecting prices and the economy?",
+      "article_count": 48,
+      "domains": [
+        "Economics",
+        "Security"
+      ],
+      "sources_by_tier": {
+        "national": [
+          {
+            "source": "New York Times",
+            "title": "Stocks Keep Falling as Investor Lose Patience With the War in Iran",
+            "url": "https://www.nytimes.com/2026/03/27/business/iran-war-stock-market-investors.html",
+            "context": "Publicly traded, headquartered in New York. Largest US newspaper by circulation. Generally regarded as center-left in editorial stance. Revenue from subscriptions and advertising."
+          },
+          {
+            "source": "AP News",
+            "title": "Pro-Iranian hacking group claims credit for hack of FBI Director Kash Patel’s personal account",
+            "url": "https://apnews.com/article/patel-iran-hacking-cyberscurity-9237ca30d1c85f237d7d83e6798d97f0",
+            "context": "Nonprofit cooperative owned by member newspapers and broadcasters. Supplies content to the majority of US newsrooms. Generally regarded as centrist wire service."
+          }
+        ]
+      }
+    },
+    {
+      "question": "How is environmental change creating security risks?",
+      "article_count": 40,
+      "domains": [
+        "Climate",
+        "Security"
+      ],
+      "sources_by_tier": {
+        "national": [
+          {
+            "source": "Reuters",
+            "title": "Services firms feel the squeeze as oil rally from Iran war fails to spur drilling - Reuters",
+            "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNTjJUODdya25tZFRjSm8wVVFPVTlfd1FoeW1hVGdfNFMxMW1lMHIyRkNaM28wRzI3QjhuZWVUSnlNUTIyMGdZSl9DR3dtc1E3VzI2RGxMX2ZJYUxDdXFORGJ4NEgtbnMzYmZnOU9XLVJ6RHI1SjFuQTZDU0JMQlVxRVpLcEQydV9GS2w0YnFLTm9qN2JtU2FvdS1SRnM3THF4eVM2OEpQSnhYOEFIMk9MRW9hYnpYS00tLWc?oc=5",
+            "context": "Owned by Thomson Reuters. Major international wire service. Generally regarded as centrist. Core audience includes institutional investors and news organizations."
+          },
+          {
+            "source": "NPR",
+            "title": "How long will the war last? No one knows, and it's making oil prices weird",
+            "url": "https://www.npr.org/2026/03/27/nx-s1-5757946/oil-iran-war-markets-uncertainty",
+            "context": "Nonprofit public media organization funded by member stations, corporate sponsors, and foundations. Generally regarded as center-left. Reaches approximately 30 million weekly listeners."
+          }
+        ],
+        "international": [
+          {
+            "source": "Al Jazeera",
+            "title": "Grieving Iranian mother tells UN about children before school attack",
+            "url": "https://www.aljazeera.com/video/newsfeed/2026/3/27/grieving-iranian-mother-tells-un-about-children-before-school-attack?traffic_source=rss",
+            "context": "Funded by the government of Qatar. Major international news network. Provides significant coverage of the Middle East and Global South that US outlets often underreport. Qatar's foreign policy interests can influence editorial priorities."
+          },
+          {
+            "source": "Deutsche Welle",
+            "title": "Iran war: Israel hits Iranian heavy water nuclear reactor",
+            "url": "https://www.dw.com/en/iran-war-israel-hits-iranian-heavy-water-nuclear-reactor/live-76555531?maca=en-rss-en-all-1573-rdf",
+            "context": ""
+          }
+        ]
+      }
+    }
+  ],
+  "narrative_divergence": [
+    {
+      "topic": "Legal",
+      "theme": "Tiger Woods arrested on suspicion of DUI, authorities say",
+      "source_count": 17,
+      "articles": [
+        {
+          "title": "Tiger Woods arrested on suspicion of DUI, authorities say",
+          "source": "NPR",
+          "url": "https://www.npr.org/2026/03/27/g-s1-115540/tiger-woods-arrest-dui-suspicion-masters-golf",
+          "tier": "national",
+          "paywall": false,
+          "context": "Nonprofit public media organization funded by member stations, corporate sponsors, and foundations. Generally regarded as center-left. Reaches approximately 30 million weekly listeners."
+        },
+        {
+          "title": "Tiger Woods in Rollover Car Crash in Florida",
+          "source": "Bloomberg",
+          "url": "https://www.bloomberg.com/news/videos/2026-03-27/tiger-woods-in-rollover-car-crash-in-florida",
+          "tier": "national",
+          "paywall": false,
+          "context": "Founded and majority-owned by Michael Bloomberg. Dominant source for financial professionals. Coverage focused on markets and business. Bloomberg ran for president in 2020 as a Democrat."
+        },
+        {
+          "title": "Tiger Woods arrested and charged with DUI after rollover crash",
+          "source": "NBC News",
+          "url": "https://www.nbcnews.com/nightly-news/video/tiger-woods-arrested-and-charged-with-dui-after-rollover-crash-260232773975",
+          "tier": "national",
+          "paywall": false,
+          "context": ""
+        },
+        {
+          "title": "Tiger Woods charged with DUI after rollover crash in Florida: Sheriff",
+          "source": "ABC News",
+          "url": "https://abcnews.com/US/tiger-woods-involved-rollover-crash-florida-sheriff/story?id=131479825",
+          "tier": "national",
+          "paywall": false,
+          "context": ""
+        },
+        {
+          "title": "Tiger Woods arrested on DUI charge after rollover crash in Florida",
+          "source": "The Hill",
+          "url": "https://thehill.com/homenews/state-watch/5804844-tiger-woods-involved-in-rollover-crash-in-florida-reports-say/",
+          "tier": "national",
+          "paywall": false,
+          "context": ""
+        },
+        {
+          "title": "Tiger Woods arrested for DUI after rollover car crash, Florida sheriff says",
+          "source": "CNBC",
+          "url": "https://www.cnbc.com/2026/03/27/tiger-woods-rollover-car-crash-florida.html",
+          "tier": "national",
+          "paywall": true,
+          "context": ""
+        }
+      ]
+    },
+    {
+      "topic": "Politics + Legal",
+      "theme": "The Justice Department plans to share sensitive voter data with Homeland Security",
+      "source_count": 7,
+      "articles": [
+        {
+          "title": "The Justice Department plans to share sensitive voter data with Homeland Security",
+          "source": "NPR",
+          "url": "https://www.npr.org/2026/03/27/nx-s1-5764266/voter-data-trump-doj-dhs",
+          "tier": "national",
+          "paywall": false,
+          "context": "Nonprofit public media organization funded by member stations, corporate sponsors, and foundations. Generally regarded as center-left. Reaches approximately 30 million weekly listeners."
+        },
+        {
+          "title": "DOJ, DHS probing deal to share states’ voter roll data",
+          "source": "The Hill",
+          "url": "https://thehill.com/homenews/administration/5804867-doj-pressures-states-voter-rolls/",
+          "tier": "national",
+          "paywall": false,
+          "context": ""
+        },
+        {
+          "title": "DOJ confirms voter data sharing with Homeland Security, but denies building national list",
+          "source": "Wisconsin Examiner",
+          "url": "https://wisconsinexaminer.com/2026/03/27/repub/doj-confirms-voter-data-sharing-with-homeland-security-but-denies-building-national-list/",
+          "tier": "community",
+          "paywall": false,
+          "context": ""
+        },
+        {
+          "title": "DOJ confirms voter data sharing with Homeland Security, but denies building national list",
+          "source": "Ohio Capital Journal",
+          "url": "https://ohiocapitaljournal.com/2026/03/27/repub/doj-confirms-voter-data-sharing-with-homeland-security-but-denies-building-national-list/",
+          "tier": "community",
+          "paywall": false,
+          "context": ""
+        },
+        {
+          "title": "DOJ confirms voter data sharing with Homeland Security, but denies building national list",
+          "source": "Source NM",
+          "url": "https://sourcenm.com/2026/03/27/repub/doj-confirms-voter-data-sharing-with-homeland-security-but-denies-building-national-list/",
+          "tier": "community",
+          "paywall": false,
+          "context": ""
+        },
+        {
+          "title": "DOJ confirms it is sharing state voter data with DHS in search for noncitizen voters",
+          "source": "Arizona Mirror",
+          "url": "https://azmirror.com/2026/03/27/repub/doj-confirms-it-is-sharing-state-voter-data-with-dhs-in-search-for-noncitizen-voters/",
+          "tier": "community",
+          "paywall": false,
+          "context": ""
+        }
+      ]
+    },
+    {
+      "topic": "Security + Labor",
+      "theme": "Iranian attack injures 10 Americans on base in Saudi Arabia",
+      "source_count": 6,
+      "articles": [
+        {
+          "title": "Iranian attack injures 10 Americans on base in Saudi Arabia",
+          "source": "The Hill",
+          "url": "https://thehill.com/policy/defense/5805412-iranian-attack-saudi-base-injures-us-troops/",
+          "tier": "national",
+          "paywall": false,
+          "context": ""
+        },
+        {
+          "title": "At least 10 US troops wounded in Iranian strike in Saudi Arabia: Report",
+          "source": "Washington Examiner",
+          "url": "https://www.washingtonexaminer.com/news/world/4508105/us-troops-wounded-iran-strike-saudi-arabia/",
+          "tier": "national",
+          "paywall": false,
+          "context": ""
+        },
+        {
+          "title": "Iran strike wounds US troops and damages planes at Saudi airbase",
+          "source": "South China Morning Post",
+          "url": "https://www.scmp.com/news/world/middle-east/article/3348220/iran-strike-wounds-us-troops-and-damages-planes-saudi-airbase?utm_source=rss_feed",
+          "tier": "international",
+          "paywall": false,
+          "context": ""
+        },
+        {
+          "title": "Iran-Israel war LIVE: Israel military says striking 'regime targets' in Tehran; One killed in Tel Aviv amid Iranian miss",
+          "source": "The Hindu",
+          "url": "https://www.thehindu.com/news/international/iran-israel-us-war-west-asia-conflict-strait-of-hormuz-attacks-march-28-2026/article70795241.ece",
+          "tier": "international",
+          "paywall": false,
+          "context": ""
+        },
+        {
+          "title": "Iran war: US troops wounded in strike on Saudi base",
+          "source": "Deutsche Welle",
+          "url": "https://www.dw.com/en/iran-war-us-troops-wounded-in-strike-on-saudi-base/live-76573681?maca=en-rss-en-all-1573-rdf",
+          "tier": "international",
+          "paywall": false,
+          "context": ""
+        },
+        {
+          "title": "Iranian strike on Saudi Arabia base injures 12 US troops, 2 seriously wounded",
+          "source": "Times of India",
+          "url": "https://timesofindia.indiatimes.com/world/us/iranian-strike-on-saudi-arabia-base-injures-12-us-troops-2-seriously-wounded/articleshow/129858060.cms",
+          "tier": "international",
+          "paywall": false,
+          "context": ""
+        }
+      ]
+    }
+  ]
+}

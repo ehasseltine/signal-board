@@ -1,104 +1,104 @@
 {
   "date": "2026-03-30",
-  "generated": "2026-03-30T15:15:17Z",
+  "generated": "2026-03-30T15:21:23Z",
   "summary": {
-    "total_stories": 1456,
-    "sources_reporting": 184,
-    "cross_domain": 1014,
-    "cross_domain_pct": 70,
-    "ai_classified": 838,
+    "total_stories": 1497,
+    "sources_reporting": 186,
+    "cross_domain": 1037,
+    "cross_domain_pct": 69,
+    "ai_classified": 868,
     "ai_classified_pct": 58,
-    "connection_insights": 644,
+    "connection_insights": 664,
     "top_domain": "Security",
     "domain_distribution": {
-      "Security": 465,
-      "Geopolitics": 434,
-      "Governance": 434,
-      "Economics": 414,
-      "Legal": 297,
-      "Politics": 259,
-      "Climate": 244,
-      "Information": 219,
-      "Labor": 117,
-      "AI": 79
+      "Security": 472,
+      "Governance": 448,
+      "Geopolitics": 442,
+      "Economics": 423,
+      "Legal": 305,
+      "Politics": 263,
+      "Climate": 250,
+      "Information": 223,
+      "Labor": 120,
+      "AI": 83
     }
   },
   "temporal_context": {
     "has_yesterday": true,
     "yesterday_date": "2026-03-29",
-    "yesterday_total": 1237,
-    "today_total": 1456,
-    "volume_change_pct": 18,
+    "yesterday_total": 1239,
+    "today_total": 1497,
+    "volume_change_pct": 21,
     "domain_shifts": [
       {
         "domain": "economics",
         "label": "Economics",
         "yesterday": 186,
-        "today": 414,
-        "change_pct": 123
+        "today": 423,
+        "change_pct": 127
       },
       {
         "domain": "labor",
         "label": "Labor",
         "yesterday": 64,
-        "today": 117,
-        "change_pct": 83
+        "today": 120,
+        "change_pct": 88
       },
       {
         "domain": "climate",
         "label": "Climate",
         "yesterday": 135,
-        "today": 244,
-        "change_pct": 81
+        "today": 250,
+        "change_pct": 85
       },
       {
         "domain": "ai",
         "label": "AI",
         "yesterday": 45,
-        "today": 79,
-        "change_pct": 76
+        "today": 83,
+        "change_pct": 84
       },
       {
         "domain": "governance",
         "label": "Governance",
         "yesterday": 268,
-        "today": 434,
-        "change_pct": 62
+        "today": 448,
+        "change_pct": 67
       },
       {
         "domain": "information",
         "label": "Information",
         "yesterday": 146,
-        "today": 219,
-        "change_pct": 50
+        "today": 223,
+        "change_pct": 53
       },
       {
         "domain": "legal",
         "label": "Legal",
         "yesterday": 200,
-        "today": 297,
-        "change_pct": 48
+        "today": 305,
+        "change_pct": 52
       },
       {
         "domain": "security",
         "label": "Security",
         "yesterday": 354,
-        "today": 465,
-        "change_pct": 31
+        "today": 472,
+        "change_pct": 33
       },
       {
         "domain": "geopolitics",
         "label": "Geopolitics",
         "yesterday": 351,
-        "today": 434,
-        "change_pct": 24
+        "today": 442,
+        "change_pct": 26
       },
       {
         "domain": "domestic_politics",
         "label": "Politics",
         "yesterday": 275,
-        "today": 259,
-        "change_pct": -6
+        "today": 263,
+        "change_pct": -4
       }
     ],
     "surges": [
@@ -106,22 +106,22 @@
         "domain": "economics",
         "label": "Economics",
         "yesterday": 186,
-        "today": 414,
-        "change_pct": 123
+        "today": 423,
+        "change_pct": 127
       },
       {
         "domain": "labor",
         "label": "Labor",
         "yesterday": 64,
-        "today": 117,
-        "change_pct": 83
+        "today": 120,
+        "change_pct": 88
       },
       {
         "domain": "climate",
         "label": "Climate",
         "yesterday": 135,
-        "today": 244,
-        "change_pct": 81
+        "today": 250,
+        "change_pct": 85
       }
     ],
     "drops": [],
@@ -129,7 +129,7 @@
       {
         "force": "supply chain weaponization",
         "yesterday_count": 16,
-        "today_count": 15,
+        "today_count": 16,
         "domains": [
           "economics",
           "geopolitics",
@@ -215,7 +215,7 @@
     "new_forces": [
       {
         "force": "regulatory capture",
-        "count": 22,
+        "count": 23,
         "domains": [
           "governance",
           "economics",
@@ -245,33 +245,13 @@
       },
       {
         "force": "geopolitical risk premium",
-        "count": 8,
+        "count": 9,
         "domains": [
           "geopolitics",
           "economics",
           "security"
         ],
         "insight": "Geopolitical conflict in Iran region directly destabilizes financial markets through uncertainty about oil supply and shipping routes."
-      },
-      {
-        "force": "conflict-driven commodity price shock",
-        "count": 5,
-        "domains": [
-          "economics",
-          "geopolitics",
-          "security"
-        ],
-        "insight": "Military conflict disrupts oil supply, creating global energy crisis and inflation pressure across markets."
-      },
-      {
-        "force": "sanctions evasion",
-        "count": 5,
-        "domains": [
-          "geopolitics",
-          "economics",
-          "security"
-        ],
-        "insight": "China circumvents export restrictions through fuel shipments to align with regional allies despite trade curbs."
       },
       {
         "force": "energy weaponization",
@@ -284,13 +264,34 @@
         "insight": "Energy supply disruption from regional conflict forces EU coordination on fuel markets and strategic reserves."
       },
       {
-        "force": "coercive diplomacy",
-        "count": 4,
+        "force": "sanctions evasion",
+        "count": 5,
         "domains": [
+          "geopolitics",
+          "economics",
+          "security"
+        ],
+        "insight": "China circumvents export restrictions through fuel shipments to align with regional allies despite trade curbs."
+      },
+      {
+        "force": "conflict-driven commodity price shock",
+        "count": 5,
+        "domains": [
+          "economics",
           "geopolitics",
           "security"
         ],
-        "insight": "Simultaneous threats to infrastructure and claims of diplomatic progress create strategic ambiguity in coercive negotiation tactics."
+        "insight": "Military conflict disrupts oil supply, creating global energy crisis and inflation pressure across markets."
+      },
+      {
+        "force": "great power competition for resources",
+        "count": 4,
+        "domains": [
+          "geopolitics",
+          "security",
+          "economics"
+        ],
+        "insight": "Foreign intelligence monitors covert influence operations targeting resource-rich territory, revealing strategic competition disguised as diplomacy."
       }
     ],
     "faded_forces": [
@@ -340,7 +341,7 @@
       }
     ],
     "yesterday_classified": 802,
-    "today_classified": 838
+    "today_classified": 868
   },
   "top_stories": [
     {
@@ -353,14 +354,14 @@
         "regulatory capture through institutional paralysis",
         "regulatory capture vs. platform liability"
       ],
-      "source_count": 20,
+      "source_count": 21,
       "tier_count": 5,
       "tiers": [
         "international",
-        "specialist",
-        "explainer",
         "national",
-        "local-regional"
+        "local-regional",
+        "explainer",
+        "specialist"
       ],
       "domains": [
         "Governance",
@@ -374,7 +375,7 @@
         "information",
         "domestic_politics"
       ],
-      "article_count": 22,
+      "article_count": 23,
       "connections": [
         {
           "text": "Regulatory rollback reduces worker and public protections in nuclear industry safety standards.",
@@ -474,7 +475,7 @@
           }
         },
         "specialist": {
-          "count": 5,
+          "count": 6,
           "keywords": [
             "shaped",
             "fight",
@@ -753,8 +754,8 @@
       "source_count": 11,
       "tier_count": 3,
       "tiers": [
-        "explainer",
         "national",
+        "explainer",
         "international"
       ],
       "domains": [
@@ -769,7 +770,7 @@
         "governance",
         "climate"
       ],
-      "article_count": 15,
+      "article_count": 16,
       "connections": [
         {
           "text": "War disrupts fuel supply, forcing government to ration resources and prioritize emergency services over civilian economy.",
@@ -822,13 +823,13 @@
       ],
       "tier_framing": {
         "national": {
-          "count": 5,
+          "count": 6,
           "keywords": [
             "market",
+            "china",
             "iran",
             "attacks",
-            "aluminum",
-            "producers"
+            "aluminum"
           ],
           "sample": {
             "title": "Iran's attacks on aluminum producers are sending 'shockwaves' through the metals market",
@@ -930,9 +931,9 @@
       "source_count": 10,
       "tier_count": 3,
       "tiers": [
-        "national",
+        "local-regional",
         "international",
-        "local-regional"
+        "national"
       ],
       "domains": [
         "Governance",
@@ -1281,6 +1282,195 @@
       ]
     },
     {
+      "headline": "Geopolitical conflict in Iran region directly destabilizes financial markets through uncertainty about oil supply and shipping routes.",
+      "structural_force": "geopolitical risk premium",
+      "all_forces": [
+        "geopolitical risk premium",
+        "geopolitical risk premium transmission",
+        "geopolitical risk inflation",
+        "geopolitical risk pricing",
+        "geopolitical miscalculation risk"
+      ],
+      "source_count": 7,
+      "tier_count": 3,
+      "tiers": [
+        "specialist",
+        "national",
+        "international"
+      ],
+      "domains": [
+        "Geopolitics",
+        "Economics",
+        "Security"
+      ],
+      "domain_keys": [
+        "geopolitics",
+        "economics",
+        "security"
+      ],
+      "article_count": 9,
+      "connections": [
+        {
+          "text": "Geopolitical conflict in Iran region directly destabilizes financial markets through uncertainty about oil supply and shipping routes.",
+          "source": "Reuters",
+          "title": "Iran war volatility strains trading in world's biggest markets - Reuters",
+          "domains": [
+            "geopolitics",
+            "economics"
+          ]
+        },
+        {
+          "text": "Middle East regional instability drives currency markets as investors seek safe-haven assets amid geopolitical risk.",
+          "source": "Channel News Asia",
+          "title": "Dollar near 10‑month high on Middle East escalation concerns",
+          "domains": [
+            "economics",
+            "geopolitics"
+          ]
+        },
+        {
+          "text": "Regional conflict drives market risk reassessment and capital flow decisions.",
+          "source": "Reuters",
+          "title": "Morgan Stanley downgrades global equities; sees US as 'defensive' market amid Mi",
+          "domains": [
+            "economics",
+            "geopolitics"
+          ]
+        },
+        {
+          "text": "Central bank credibility depends on distinguishing policy-controllable inflation from geopolitical supply shocks beyond its reach.",
+          "source": "Bloomberg",
+          "title": "Treasuries Rally as Powell Touts Fed’s Limits on Supply Shocks",
+          "domains": [
+            "economics",
+            "geopolitics"
+          ]
+        },
+        {
+          "text": "Military conflict in Iran drives oil prices higher, creating financial contagion across Asian markets.",
+          "source": "AP News",
+          "title": "Asian shares decline as oil prices soar amid the war in Iran, echoing last week’",
+          "domains": [
+            "economics",
+            "geopolitics",
+            "security"
+          ]
+        }
+      ],
+      "tier_framing": {
+        "national": {
+          "count": 7,
+          "keywords": [
+            "iran",
+            "markets",
+            "market",
+            "amid",
+            "volatility"
+          ],
+          "sample": {
+            "title": "Iran war volatility strains trading in world's biggest markets - Reuters",
+            "source": "Reuters",
+            "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNYVJXZEczYnFocUJpR0NDVVNzS1V5djdYYTZzTlZYWlZUbTdtdHM1Um8ycGpURTVXd0ZCZ25IdnNjSEluM09BY2JnOHdrSmRxQnhpaHZOM1ZFWE1PZU52TjBOa0FGa2FZSG8xQTd0NFdwOThrZGZRT3M4M0dRZTZ6ckpjTUJaZzF0VnNBUURZd1Qwdw?oc=5",
+            "context": "Owned by Thomson Reuters. Major international wire service. Generally regarded as centrist."
+          }
+        },
+        "international": {
+          "count": 1,
+          "keywords": [
+            "dollar",
+            "near",
+            "month",
+            "high",
+            "middle"
+          ],
+          "sample": {
+            "title": "Dollar near 10‑month high on Middle East escalation concerns",
+            "source": "Channel News Asia",
+            "url": "https://www.channelnewsasia.com/business/dollar-near-10-month-high-middle-east-escalation-concerns-6024796",
+            "context": "Singaporean news network covering Asia-Pacific region"
+          }
+        },
+        "specialist": {
+          "count": 1,
+          "keywords": [
+            "putin",
+            "trapped",
+            "regime",
+            "survival",
+            "does"
+          ],
+          "sample": {
+            "title": "Putin Is Not Trapped: Why Regime Survival Does Not Depend on Victory",
+            "source": "War on the Rocks",
+            "url": "https://warontherocks.com/2026/03/putin-is-not-trapped-why-regime-survival-does-not-depend-on-victory/",
+            "context": "Publication covering military affairs and national security"
+          }
+        }
+      },
+      "articles": [
+        {
+          "title": "Iran war volatility strains trading in world's biggest markets - Reuters",
+          "source": "Reuters",
+          "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNYVJXZEczYnFocUJpR0NDVVNzS1V5djdYYTZzTlZYWlZUbTdtdHM1Um8ycGpURTVXd0ZCZ25IdnNjSEluM09BY2JnOHdrSmRxQnhpaHZOM1ZFWE1PZU52TjBOa0FGa2FZSG8xQTd0NFdwOThrZGZRT3M4M0dRZTZ6ckpjTUJaZzF0VnNBUURZd1Qwdw?oc=5",
+          "tier": "national",
+          "paywall": false,
+          "context": "Owned by Thomson Reuters. Major international wire service. Generally regarded as centrist.",
+          "connection": "Geopolitical conflict in Iran region directly destabilizes financial markets through uncertainty about oil supply and shipping routes.",
+          "force_tag": "geopolitical risk premium"
+        },
+        {
+          "title": "Treasuries Rally as Powell Touts Fed’s Limits on Supply Shocks",
+          "source": "Bloomberg",
+          "url": "https://www.bloomberg.com/news/articles/2026-03-30/treasuries-rally-as-powell-touts-fed-s-limits-on-supply-shocks",
+          "tier": "national",
+          "paywall": true,
+          "context": "Founded and majority-owned by Michael Bloomberg. Dominant source for financial professionals.",
+          "connection": "Central bank credibility depends on distinguishing policy-controllable inflation from geopolitical supply shocks beyond its reach.",
+          "force_tag": "geopolitical risk premium"
+        },
+        {
+          "title": "Asian shares decline as oil prices soar amid the war in Iran, echoing last week’s Wall Street drop",
+          "source": "AP News",
+          "url": "https://apnews.com/article/stock-markets-war-oil-trump-iran-1aef947ecb395c3bb97fcdb5ed3826f1",
+          "tier": "national",
+          "paywall": false,
+          "context": "Nonprofit cooperative owned by member newspapers and broadcasters. Generally regarded as centrist wire service.",
+          "connection": "Military conflict in Iran drives oil prices higher, creating financial contagion across Asian markets.",
+          "force_tag": "geopolitical risk premium transmission"
+        },
+        {
+          "title": "Oil jumps, stocks slide ahead of U.S. stock market open",
+          "source": "NBC News",
+          "url": "https://www.nbcnews.com/business/business-news/oil-jumps-stocks-slide-ahead-us-stock-market-open-iran-war-rounds-one-rcna265734",
+          "tier": "national",
+          "paywall": false,
+          "context": "Major broadcast television network providing national and international news",
+          "connection": "Regional military escalation triggers global commodity volatility, demonstrating how localized conflict translates into financial system instability.",
+          "force_tag": "geopolitical risk pricing"
+        },
+        {
+          "title": "Pessimism sets in for Europe as Iran war hits economic and consumer confidence",
+          "source": "CNBC",
+          "url": "https://www.cnbc.com/2026/03/30/european-economic-sentiment-consumer-confidence-march-iran-war-trump.html",
+          "tier": "national",
+          "paywall": true,
+          "context": "Business television network covering financial markets and business news",
+          "connection": "Geopolitical conflict dampens consumer and business confidence, contracting economic activity across Europe.",
+          "force_tag": "geopolitical risk transmission"
+        },
+        {
+          "title": "Dollar near 10‑month high on Middle East escalation concerns",
+          "source": "Channel News Asia",
+          "url": "https://www.channelnewsasia.com/business/dollar-near-10-month-high-middle-east-escalation-concerns-6024796",
+          "tier": "international",
+          "paywall": false,
+          "context": "Singaporean news network covering Asia-Pacific region",
+          "connection": "Middle East regional instability drives currency markets as investors seek safe-haven assets amid geopolitical risk.",
+          "force_tag": "geopolitical risk premium"
+        }
+      ]
+    },
+    {
       "headline": "Republican official publicly criticizes DOJ leadership for selective prosecutions and mass firings tied to partisan loyalty.",
       "structural_force": "institutional legitimacy erosion",
       "all_forces": [
@@ -1293,8 +1483,8 @@
       "tier_count": 3,
       "tiers": [
         "national",
-        "international",
-        "local-regional"
+        "local-regional",
+        "international"
       ],
       "domains": [
         "Politics",
@@ -1450,9 +1640,9 @@
       "source_count": 6,
       "tier_count": 3,
       "tiers": [
-        "national",
+        "local-regional",
         "international",
-        "local-regional"
+        "national"
       ],
       "domains": [
         "Economics",
@@ -1626,196 +1816,6 @@
       ]
     },
     {
-      "headline": "Geopolitical conflict in Iran region directly destabilizes financial markets through uncertainty about oil supply and shipping routes.",
-      "structural_force": "geopolitical risk premium",
-      "all_forces": [
-        "geopolitical risk premium",
-        "geopolitical risk premium transmission",
-        "geopolitical risk inflation",
-        "geopolitical risk pricing",
-        "geopolitical miscalculation risk"
-      ],
-      "source_count": 6,
-      "tier_count": 3,
-      "tiers": [
-        "national",
-        "international",
-        "specialist"
-      ],
-      "domains": [
-        "Geopolitics",
-        "Economics",
-        "Security"
-      ],
-      "domain_keys": [
-        "geopolitics",
-        "economics",
-        "security"
-      ],
-      "article_count": 8,
-      "connections": [
-        {
-          "text": "Geopolitical conflict in Iran region directly destabilizes financial markets through uncertainty about oil supply and shipping routes.",
-          "source": "Reuters",
-          "title": "Iran war volatility strains trading in world's biggest markets - Reuters",
-          "domains": [
-            "geopolitics",
-            "economics"
-          ]
-        },
-        {
-          "text": "Middle East regional instability drives currency markets as investors seek safe-haven assets amid geopolitical risk.",
-          "source": "Channel News Asia",
-          "title": "Dollar near 10‑month high on Middle East escalation concerns",
-          "domains": [
-            "economics",
-            "geopolitics"
-          ]
-        },
-        {
-          "text": "Regional conflict drives market risk reassessment and capital flow decisions.",
-          "source": "Reuters",
-          "title": "Morgan Stanley downgrades global equities; sees US as 'defensive' market amid Mi",
-          "domains": [
-            "economics",
-            "geopolitics"
-          ]
-        },
-        {
-          "text": "Military conflict in Iran drives oil prices higher, creating financial contagion across Asian markets.",
-          "source": "AP News",
-          "title": "Asian shares decline as oil prices soar amid the war in Iran, echoing last week’",
-          "domains": [
-            "economics",
-            "geopolitics",
-            "security"
-          ]
-        },
-        {
-          "text": "Prolonged Middle East conflict raises geopolitical risk premium, forcing currency markets to price in sustained economic uncertainty and supply disruption.",
-          "source": "Reuters",
-          "title": "Dollar bides time as markets brace for drawn-out Middle East war - Reuters",
-          "domains": [
-            "economics",
-            "geopolitics",
-            "security"
-          ]
-        }
-      ],
-      "tier_framing": {
-        "national": {
-          "count": 6,
-          "keywords": [
-            "iran",
-            "markets",
-            "market",
-            "amid",
-            "volatility"
-          ],
-          "sample": {
-            "title": "Iran war volatility strains trading in world's biggest markets - Reuters",
-            "source": "Reuters",
-            "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNYVJXZEczYnFocUJpR0NDVVNzS1V5djdYYTZzTlZYWlZUbTdtdHM1Um8ycGpURTVXd0ZCZ25IdnNjSEluM09BY2JnOHdrSmRxQnhpaHZOM1ZFWE1PZU52TjBOa0FGa2FZSG8xQTd0NFdwOThrZGZRT3M4M0dRZTZ6ckpjTUJaZzF0VnNBUURZd1Qwdw?oc=5",
-            "context": "Owned by Thomson Reuters. Major international wire service. Generally regarded as centrist."
-          }
-        },
-        "international": {
-          "count": 1,
-          "keywords": [
-            "dollar",
-            "near",
-            "month",
-            "high",
-            "middle"
-          ],
-          "sample": {
-            "title": "Dollar near 10‑month high on Middle East escalation concerns",
-            "source": "Channel News Asia",
-            "url": "https://www.channelnewsasia.com/business/dollar-near-10-month-high-middle-east-escalation-concerns-6024796",
-            "context": "Singaporean news network covering Asia-Pacific region"
-          }
-        },
-        "specialist": {
-          "count": 1,
-          "keywords": [
-            "putin",
-            "trapped",
-            "regime",
-            "survival",
-            "does"
-          ],
-          "sample": {
-            "title": "Putin Is Not Trapped: Why Regime Survival Does Not Depend on Victory",
-            "source": "War on the Rocks",
-            "url": "https://warontherocks.com/2026/03/putin-is-not-trapped-why-regime-survival-does-not-depend-on-victory/",
-            "context": "Publication covering military affairs and national security"
-          }
-        }
-      },
-      "articles": [
-        {
-          "title": "Iran war volatility strains trading in world's biggest markets - Reuters",
-          "source": "Reuters",
-          "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNYVJXZEczYnFocUJpR0NDVVNzS1V5djdYYTZzTlZYWlZUbTdtdHM1Um8ycGpURTVXd0ZCZ25IdnNjSEluM09BY2JnOHdrSmRxQnhpaHZOM1ZFWE1PZU52TjBOa0FGa2FZSG8xQTd0NFdwOThrZGZRT3M4M0dRZTZ6ckpjTUJaZzF0VnNBUURZd1Qwdw?oc=5",
-          "tier": "national",
-          "paywall": false,
-          "context": "Owned by Thomson Reuters. Major international wire service. Generally regarded as centrist.",
-          "connection": "Geopolitical conflict in Iran region directly destabilizes financial markets through uncertainty about oil supply and shipping routes.",
-          "force_tag": "geopolitical risk premium"
-        },
-        {
-          "title": "Asian shares decline as oil prices soar amid the war in Iran, echoing last week’s Wall Street drop",
-          "source": "AP News",
-          "url": "https://apnews.com/article/stock-markets-war-oil-trump-iran-1aef947ecb395c3bb97fcdb5ed3826f1",
-          "tier": "national",
-          "paywall": false,
-          "context": "Nonprofit cooperative owned by member newspapers and broadcasters. Generally regarded as centrist wire service.",
-          "connection": "Military conflict in Iran drives oil prices higher, creating financial contagion across Asian markets.",
-          "force_tag": "geopolitical risk premium transmission"
-        },
-        {
-          "title": "Oil jumps, stocks slide ahead of U.S. stock market open",
-          "source": "NBC News",
-          "url": "https://www.nbcnews.com/business/business-news/oil-jumps-stocks-slide-ahead-us-stock-market-open-iran-war-rounds-one-rcna265734",
-          "tier": "national",
-          "paywall": false,
-          "context": "Major broadcast television network providing national and international news",
-          "connection": "Regional military escalation triggers global commodity volatility, demonstrating how localized conflict translates into financial system instability.",
-          "force_tag": "geopolitical risk pricing"
-        },
-        {
-          "title": "Pessimism sets in for Europe as Iran war hits economic and consumer confidence",
-          "source": "CNBC",
-          "url": "https://www.cnbc.com/2026/03/30/european-economic-sentiment-consumer-confidence-march-iran-war-trump.html",
-          "tier": "national",
-          "paywall": true,
-          "context": "Business television network covering financial markets and business news",
-          "connection": "Geopolitical conflict dampens consumer and business confidence, contracting economic activity across Europe.",
-          "force_tag": "geopolitical risk transmission"
-        },
-        {
-          "title": "Dollar near 10‑month high on Middle East escalation concerns",
-          "source": "Channel News Asia",
-          "url": "https://www.channelnewsasia.com/business/dollar-near-10-month-high-middle-east-escalation-concerns-6024796",
-          "tier": "international",
-          "paywall": false,
-          "context": "Singaporean news network covering Asia-Pacific region",
-          "connection": "Middle East regional instability drives currency markets as investors seek safe-haven assets amid geopolitical risk.",
-          "force_tag": "geopolitical risk premium"
-        },
-        {
-          "title": "Putin Is Not Trapped: Why Regime Survival Does Not Depend on Victory",
-          "source": "War on the Rocks",
-          "url": "https://warontherocks.com/2026/03/putin-is-not-trapped-why-regime-survival-does-not-depend-on-victory/",
-          "tier": "specialist",
-          "paywall": false,
-          "context": "Publication covering military affairs and national security",
-          "connection": "Analysis examines how regime legitimacy and war strategy are structurally intertwined, challenging assumptions that military defeat necessarily destabilizes authoritarian rule.",
-          "force_tag": "geopolitical miscalculation risk"
-        }
-      ]
-    },
-    {
       "headline": "Trump's constitutional challenge to birthright citizenship seeks to reframe citizenship law through partisan political rhetoric.",
       "structural_force": "democratic erosion",
       "all_forces": [
@@ -1964,8 +1964,8 @@
       "tier_count": 3,
       "tiers": [
         "national",
-        "international",
-        "specialist"
+        "specialist",
+        "international"
       ],
       "domains": [
         "Economics",
@@ -2136,8 +2136,8 @@
         "regulatory capture and environmental rollback",
         "regulatory capture via market consolidation"
       ],
-      "article_count": 22,
-      "source_count": 20,
+      "article_count": 23,
+      "source_count": 21,
       "domains": [
         "AI",
         "Climate",
@@ -2207,9 +2207,10 @@
         "arms supply chain geopolitics",
         "supply chain disruption",
         "conflict-driven supply chain reconfiguration",
-        "supply chain geopolitical capture"
+        "supply chain geopolitical capture",
+        "supply chain reorientation"
       ],
-      "article_count": 15,
+      "article_count": 16,
       "source_count": 11,
       "domains": [
         "Climate",
@@ -2294,8 +2295,8 @@
         "geopolitical miscalculation risk",
         "geopolitical risk transmission"
       ],
-      "article_count": 8,
-      "source_count": 6,
+      "article_count": 9,
+      "source_count": 7,
       "domains": [
         "Economics",
         "Geopolitics",
@@ -2582,6 +2583,28 @@
       "sample_title": "Success in Iran Will Come Down To Managing Fear of Energy Prices"
     },
     {
+      "force": "jurisdictional institutional reform",
+      "related_forces": [
+        "whistleblowing for institutional reform",
+        "institutional reform under pressure"
+      ],
+      "article_count": 3,
+      "source_count": 3,
+      "domains": [
+        "Climate",
+        "Governance",
+        "Legal",
+        "Security"
+      ],
+      "domain_keys": [
+        "climate",
+        "governance",
+        "legal",
+        "security"
+      ],
+      "sample_title": "Lok Sabha MP submits memorandum to Meghwal, seeks separate bar council for Sikkim"
+    },
+    {
       "force": "institutional response to systemic failure",
       "related_forces": [
         "institutional response to poverty as criminalization",
@@ -2683,52 +2706,66 @@
         "labor"
       ],
       "sample_title": "How Mexico’s conservation work brought monarchs back from the brink"
-    },
-    {
-      "force": "arms race escalation",
-      "related_forces": [
-        "security arms race acceleration"
-      ],
-      "article_count": 3,
-      "source_count": 3,
-      "domains": [
-        "Economics",
-        "Geopolitics",
-        "Security"
-      ],
-      "domain_keys": [
-        "economics",
-        "geopolitics",
-        "security"
-      ],
-      "sample_title": "US senators visit Taiwan to push defence spending as arms deadlines loom"
     }
   ],
   "what_connects": [
+    {
+      "headline": "WATCH:  The skies over Western Australia took on a deep red and orange hue ahead of a tropical cyclone as powerful winds",
+      "structural_force": "extreme weather documentation",
+      "total_sources": 37,
+      "spectrum_segments": 4,
+      "left_sources": [
+        "NBC News",
+        "Mother Jones",
+        "New York Times"
+      ],
+      "right_sources": [
+        "Daily Wire",
+        "Breitbart",
+        "Fox News"
+      ],
+      "international_sources": [
+        "France 24",
+        "The Japan Times",
+        "Rappler"
+      ],
+      "local_regional_sources": [
+        "InForum",
+        "El Diario NY",
+        "NJ Spotlight News"
+      ],
+      "article_count": 59,
+      "domains": [
+        "climate",
+        "information",
+        "geopolitics"
+      ],
+      "sample_connection": ""
+    },
     {
       "headline": "New nuclear safety rules reduce protections for workers, the public",
       "structural_force": "regulatory capture",
       "total_sources": 35,
       "spectrum_segments": 4,
       "left_sources": [
-        "NPR",
-        "American Prospect",
-        "NBC News"
+        "NBC News",
+        "New York Times",
+        "American Prospect"
       ],
       "right_sources": [
-        "RealClearPolitics",
-        "Fox News",
-        "Breitbart"
+        "The Dispatch",
+        "Breitbart",
+        "RealClearPolitics"
       ],
       "international_sources": [
-        "ABC Australia",
-        "Dawn",
-        "Jamaica Observer"
+        "Rappler",
+        "Jamaica Observer",
+        "The Guardian World"
       ],
       "local_regional_sources": [
         "Kansas Reflector",
-        "Arizona Mirror",
-        "Source NM"
+        "NJ Spotlight News",
+        "High Country News"
       ],
       "article_count": 37,
       "domains": [
@@ -2739,32 +2776,34 @@
       "sample_connection": "Regulatory rollback reduces worker and public protections in nuclear industry safety standards."
     },
     {
-      "headline": "WATCH:  The skies over Western Australia took on a deep red and orange hue ahead of a tropical cyclone as powerful winds",
-      "structural_force": "extreme weather documentation",
-      "total_sources": 26,
+      "headline": "Pakistan board charges Fakhar Zaman with ball‑tampering in PSL match",
+      "structural_force": "sports regulation enforcement",
+      "total_sources": 25,
       "spectrum_segments": 4,
       "left_sources": [
-        "Mother Jones",
-        "ABC News",
-        "NBC News"
+        "NPR",
+        "New York Times",
+        "ABC News"
       ],
       "right_sources": [
-        "Breitbart"
+        "Reason",
+        "RealClearPolitics",
+        "The Blaze"
       ],
       "international_sources": [
-        "The Japan Times",
-        "Bangkok Post",
-        "The Globe and Mail"
+        "Taipei Times",
+        "Channel News Asia",
+        "Jamaica Observer"
       ],
       "local_regional_sources": [
-        "Teen Vogue",
-        "Post and Courier",
-        "InForum"
+        "InForum",
+        "El Diario NY",
+        "The Oregonian"
       ],
-      "article_count": 40,
+      "article_count": 36,
       "domains": [
+        "legal",
         "climate",
-        "security",
         "information"
       ],
       "sample_connection": ""
@@ -2772,98 +2811,95 @@
     {
       "headline": "Fugitive Dezi Freeman shot dead by Australian police after seven months in hiding",
       "structural_force": "police use of force in standoffs",
-      "total_sources": 21,
+      "total_sources": 20,
       "spectrum_segments": 4,
       "left_sources": [
         "The Atlantic"
       ],
       "right_sources": [
-        "Daily Wire",
-        "Fox News",
-        "Breitbart"
+        "Breitbart",
+        "Fox News"
       ],
       "international_sources": [
-        "South China Morning Post",
-        "Dawn",
-        "Jamaica Observer"
+        "BBC World",
+        "Channel News Asia",
+        "Rappler"
       ],
       "local_regional_sources": [
         "New Hampshire Bulletin",
-        "Religion News Service",
-        "The Grio"
+        "WyoFile",
+        "Christianity Today"
       ],
-      "article_count": 23,
+      "article_count": 22,
       "domains": [
+        "security",
         "information",
-        "climate",
-        "security"
+        "climate"
       ],
       "sample_connection": "Police use of lethal force to resolve violent fugitive situation reflects state monopoly on enforcement."
     },
     {
-      "headline": "Pakistan board charges Fakhar Zaman with ball‑tampering in PSL match",
-      "structural_force": "sports regulation enforcement",
-      "total_sources": 20,
+      "headline": "Grab-Foodpanda deal could reshape market: experts",
+      "structural_force": "market consolidation",
+      "total_sources": 18,
       "spectrum_segments": 4,
       "left_sources": [
-        "NPR",
-        "ABC News",
         "New York Times"
       ],
       "right_sources": [
-        "RealClearPolitics",
-        "Reason",
-        "The Blaze"
+        "American Enterprise Institute"
       ],
       "international_sources": [
-        "Taipei Times",
-        "ABC Australia",
-        "Dawn"
+        "Anadolu Agency",
+        "Times of India",
+        "Channel News Asia"
       ],
       "local_regional_sources": [
-        "Post and Courier",
-        "The Oregonian",
-        "El Diario NY"
+        "InForum",
+        "El Diario NY",
+        "Post and Courier"
       ],
-      "article_count": 27,
+      "article_count": 23,
       "domains": [
+        "economics",
         "legal"
       ],
       "sample_connection": ""
     },
     {
-      "headline": "‘We’re killing them, bro’: Israelis correct Iranian online streamer",
-      "structural_force": "algorithmic amplification of celebrity culture",
-      "total_sources": 13,
+      "headline": "Australian police fatally shoot suspect in 3-hour standoff after 2 officers killed",
+      "structural_force": "criminal justice response",
+      "total_sources": 17,
       "spectrum_segments": 4,
       "left_sources": [
         "NBC News",
-        "New York Times"
+        "ABC News"
       ],
       "right_sources": [
         "Fox News"
       ],
       "international_sources": [
-        "The Japan Times",
-        "Channel News Asia",
-        "Rappler"
+        "Jamaica Observer",
+        "Times of India",
+        "Dawn"
       ],
       "local_regional_sources": [
-        "NJ Spotlight News",
-        "AsAmNews"
+        "City Limits",
+        "Kentucky Lantern",
+        "GBH News"
       ],
-      "article_count": 18,
+      "article_count": 20,
       "domains": [
-        "information",
-        "geopolitics",
+        "legal",
+        "security",
         "climate"
       ],
-      "sample_connection": "Online content amplifies geopolitical war rhetoric, with platform discourse transforming military violence into entertainment and social validation."
+      "sample_connection": ""
     },
     {
       "headline": "'Only country that dignifies this': Trump slams birthright citizenship again",
       "structural_force": "democratic erosion",
-      "total_sources": 12,
+      "total_sources": 14,
       "spectrum_segments": 4,
       "left_sources": [
         "NBC News"
@@ -2873,18 +2909,20 @@
         "Fox News"
       ],
       "international_sources": [
-        "South China Morning Post",
+        "Balkan Insight",
         "Bangkok Post",
-        "Dawn"
+        "The Guardian World"
       ],
       "local_regional_sources": [
-        "Montana Free Press"
+        "Nevada Independent",
+        "Montana Free Press",
+        "Voice of San Diego"
       ],
-      "article_count": 15,
+      "article_count": 17,
       "domains": [
+        "domestic_politics",
         "governance",
-        "information",
-        "domestic_politics"
+        "information"
       ],
       "sample_connection": "Trump's constitutional challenge to birthright citizenship seeks to reframe citizenship law through partisan political rhetoric."
     },
@@ -2900,13 +2938,13 @@
         "RealClearPolitics"
       ],
       "international_sources": [
-        "Times of India",
         "The Globe and Mail",
+        "Times of India",
         "The Hindu"
       ],
       "local_regional_sources": [
-        "NBC News Latino",
         "Capitol News Illinois",
+        "NBC News Latino",
         "Alabama Political Reporter"
       ],
       "article_count": 13,
@@ -2915,50 +2953,21 @@
         "security"
       ],
       "sample_connection": ""
-    },
-    {
-      "headline": "Australian police fatally shoot suspect in 3-hour standoff after 2 officers killed",
-      "structural_force": "criminal justice response",
-      "total_sources": 11,
-      "spectrum_segments": 4,
-      "left_sources": [
-        "ABC News",
-        "NBC News"
-      ],
-      "right_sources": [
-        "Fox News"
-      ],
-      "international_sources": [
-        "South China Morning Post",
-        "Times of India",
-        "Dawn"
-      ],
-      "local_regional_sources": [
-        "Kentucky Lantern",
-        "Post and Courier"
-      ],
-      "article_count": 13,
-      "domains": [
-        "legal",
-        "security",
-        "climate"
-      ],
-      "sample_connection": ""
     }
   ],
   "cooperation": {
-    "total_cooperation_stories": 274,
+    "total_cooperation_stories": 290,
     "cooperation_rate": 19,
     "by_type": [
       {
         "type": "institutional reform",
-        "count": 45,
+        "count": 47,
         "sources": [
-          "South China Morning Post",
-          "Bangkok Post",
           "404 Media",
-          "Wired",
-          "Al Jazeera"
+          "ABC Australia",
+          "Just Security",
+          "NBC News",
+          "The Dispatch"
         ],
         "domains": [
           "Governance",
@@ -2974,13 +2983,13 @@
       },
       {
         "type": "civic participation",
-        "count": 42,
+        "count": 43,
         "sources": [
-          "Mississippi Free Press",
-          "South China Morning Post",
-          "El Diario NY",
-          "Al Jazeera",
-          "OnLabor"
+          "The Advocate",
+          "The Root",
+          "Rappler",
+          "CT Mirror",
+          "Daily Wire"
         ],
         "domains": [
           "Governance",
@@ -2996,13 +3005,13 @@
       },
       {
         "type": "institutional integrity",
-        "count": 15,
+        "count": 16,
         "sources": [
-          "Straits Times",
+          "InForum",
           "South China Morning Post",
-          "Fox News",
-          "Dawn",
-          "Reuters"
+          "The Free Press (Bari Weiss)",
+          "Washington Examiner",
+          "Business Insider"
         ],
         "domains": [
           "Geopolitics",
@@ -3017,36 +3026,14 @@
         }
       },
       {
-        "type": "community organizing",
+        "type": "whistleblowing",
         "count": 10,
         "sources": [
-          "South China Morning Post",
-          "Honolulu Civil Beat",
-          "Positive News",
-          "American Prospect",
-          "Inside Climate News"
-        ],
-        "domains": [
-          "Governance",
-          "Geopolitics",
-          "Climate"
-        ],
-        "sample": {
-          "title": "China ‘left-behind aunties’, known as senior girl group, gain popularity for charm, dance skills",
-          "source": "South China Morning Post",
-          "url": "https://www.scmp.com/news/people-culture/gender-diversity/article/3347686/china-left-behind-aunties-known-senior-girl-group-gain-popularity-charm-dance-skills?utm_source=rss_feed",
-          "connection": ""
-        }
-      },
-      {
-        "type": "whistleblowing",
-        "count": 9,
-        "sources": [
-          "Straits Times",
+          "Washington Examiner",
           "The Japan Times",
-          "South China Morning Post",
           "Fox News",
-          "ABC Australia"
+          "Straits Times",
+          "Al Jazeera"
         ],
         "domains": [
           "Legal",
@@ -3062,13 +3049,13 @@
       },
       {
         "type": "cross-party collaboration",
-        "count": 9,
+        "count": 10,
         "sources": [
-          "Straits Times",
           "The Japan Times",
-          "South China Morning Post",
           "Meduza",
-          "Dawn"
+          "Straits Times",
+          "The Guardian World",
+          "Deutsche Welle"
         ],
         "domains": [
           "Geopolitics",
@@ -3083,13 +3070,35 @@
         }
       },
       {
+        "type": "community organizing",
+        "count": 10,
+        "sources": [
+          "Honolulu Civil Beat",
+          "Civil Eats",
+          "American Prospect",
+          "AP News",
+          "Positive News"
+        ],
+        "domains": [
+          "Governance",
+          "Geopolitics",
+          "Climate"
+        ],
+        "sample": {
+          "title": "China ‘left-behind aunties’, known as senior girl group, gain popularity for charm, dance skills",
+          "source": "South China Morning Post",
+          "url": "https://www.scmp.com/news/people-culture/gender-diversity/article/3347686/china-left-behind-aunties-known-senior-girl-group-gain-popularity-charm-dance-skills?utm_source=rss_feed",
+          "connection": ""
+        }
+      },
+      {
         "type": "diplomatic engagement",
         "count": 4,
         "sources": [
+          "Al Jazeera",
           "AP News",
-          "NHK World",
           "Deutsche Welle",
-          "Al Jazeera"
+          "NHK World"
         ],
         "domains": [
           "Geopolitics",
@@ -3108,9 +3117,9 @@
         "count": 4,
         "sources": [
           "Daily Wire",
+          "BBC World",
           "Caribbean National Weekly",
-          "The Hindu",
-          "BBC World"
+          "The Hindu"
         ],
         "domains": [
           "Governance",
@@ -3128,10 +3137,10 @@
         "type": "mutual aid",
         "count": 4,
         "sources": [
+          "Bridge Michigan",
           "The Japan Times",
-          "The Diplomat",
           "The Grio",
-          "Bridge Michigan"
+          "The Diplomat"
         ],
         "domains": [
           "Labor",
@@ -3147,10 +3156,11 @@
       },
       {
         "type": "institutional accountability",
-        "count": 3,
+        "count": 4,
         "sources": [
-          "Straits Times",
           "InForum",
+          "El Diario NY",
+          "Straits Times",
           "Fox News"
         ],
         "domains": [
@@ -3501,7 +3511,7 @@
       ],
       "label": "Geopolitics + Security",
       "explanation": "Military tensions between nations",
-      "today_count": 223,
+      "today_count": 226,
       "trend": "rising",
       "sample_articles": [
         {
@@ -3527,12 +3537,43 @@
     },
     {
       "pair": [
+        "governance",
+        "legal"
+      ],
+      "label": "Governance + Legal",
+      "explanation": "Government actions challenged or upheld in courts",
+      "today_count": 147,
+      "trend": "rising",
+      "sample_articles": [
+        {
+          "title": "Gao Zhen, a Chinese Artist Accused of Mocking Mao, Goes on Trial",
+          "source": "New York Times",
+          "url": "https://www.nytimes.com/2026/03/29/world/asia/china-artist-gao-trial.html"
+        },
+        {
+          "title": "Dem senator warns deportation could let Virginia woman's illegal immigrant kille",
+          "source": "Fox News",
+          "url": "https://www.foxnews.com/politics/dem-senator-warns-deportation-could-let-virginia-womans-illegal-immigrants-killer-escape-accountability"
+        },
+        {
+          "title": "Lionel Richie issues warning to rude celebrities after Chappell Roan backlash",
+          "source": "Fox News",
+          "url": "https://www.foxnews.com/entertainment/lionel-richie-warning-celebrities-fans-chappell-roan-backlash"
+        }
+      ],
+      "ai_connections": [
+        "Authoritarian state criminalizes artistic expression through legal system to suppress dissent.",
+        "Deportation policy conflicts with criminal justice accountability, forcing choice between immigration enforcement and prosecution."
+      ]
+    },
+    {
+      "pair": [
         "economics",
         "geopolitics"
       ],
       "label": "Economics + Geopolitics",
       "explanation": "Trade, sanctions, and global economic competition",
-      "today_count": 142,
+      "today_count": 146,
       "trend": "rising",
       "sample_articles": [
         {
@@ -3559,42 +3600,11 @@
     {
       "pair": [
         "governance",
-        "legal"
-      ],
-      "label": "Governance + Legal",
-      "explanation": "Government actions challenged or upheld in courts",
-      "today_count": 142,
-      "trend": "rising",
-      "sample_articles": [
-        {
-          "title": "Gao Zhen, a Chinese Artist Accused of Mocking Mao, Goes on Trial",
-          "source": "New York Times",
-          "url": "https://www.nytimes.com/2026/03/29/world/asia/china-artist-gao-trial.html"
-        },
-        {
-          "title": "Dem senator warns deportation could let Virginia woman's illegal immigrant kille",
-          "source": "Fox News",
-          "url": "https://www.foxnews.com/politics/dem-senator-warns-deportation-could-let-virginia-womans-illegal-immigrants-killer-escape-accountability"
-        },
-        {
-          "title": "Lionel Richie issues warning to rude celebrities after Chappell Roan backlash",
-          "source": "Fox News",
-          "url": "https://www.foxnews.com/entertainment/lionel-richie-warning-celebrities-fans-chappell-roan-backlash"
-        }
-      ],
-      "ai_connections": [
-        "Authoritarian state criminalizes artistic expression through legal system to suppress dissent.",
-        "Deportation policy conflicts with criminal justice accountability, forcing choice between immigration enforcement and prosecution."
-      ]
-    },
-    {
-      "pair": [
-        "governance",
         "security"
       ],
       "label": "Governance + Security",
       "explanation": "Defense policy and military strategy",
-      "today_count": 133,
+      "today_count": 134,
       "trend": "rising",
       "sample_articles": [
         {
@@ -3625,7 +3635,7 @@
       ],
       "label": "Economics + Governance",
       "explanation": "Tax policy, trade agreements, and government spending",
-      "today_count": 119,
+      "today_count": 121,
       "trend": "rising",
       "sample_articles": [
         {
@@ -3713,6 +3723,37 @@
     },
     {
       "pair": [
+        "information",
+        "security"
+      ],
+      "label": "Information + Security",
+      "explanation": "Information and Security",
+      "today_count": 100,
+      "trend": "rising",
+      "sample_articles": [
+        {
+          "title": "Lionel Richie issues warning to rude celebrities after Chappell Roan backlash",
+          "source": "Fox News",
+          "url": "https://www.foxnews.com/entertainment/lionel-richie-warning-celebrities-fans-chappell-roan-backlash"
+        },
+        {
+          "title": "They're old enough to be my grandparents — and in better shape than people half ",
+          "source": "Business Insider",
+          "url": "https://www.businessinsider.com/healthy-aging-singapore-longevity-fitness-wellness-team-strong-silvers-2026-3"
+        },
+        {
+          "title": "対話型生成AI 回答に“偽サイトや詐欺サイト”表示か 注意を",
+          "source": "NHK World",
+          "url": "http://www3.nhk.or.jp/news/html/20260330/k10015087661000.html"
+        }
+      ],
+      "ai_connections": [
+        "AI systems generating fraudulent content creates new vector for consumer deception and identity theft.",
+        "Military forces' abuse of press corps reveals tension between operational security and media freedom of access."
+      ]
+    },
+    {
+      "pair": [
         "climate",
         "security"
       ],
@@ -3739,37 +3780,6 @@
       ],
       "ai_connections": [
         "Executive action exempts fossil fuel extraction from endangered species protections, directly pitting energy production against environmental law."
-      ]
-    },
-    {
-      "pair": [
-        "information",
-        "security"
-      ],
-      "label": "Information + Security",
-      "explanation": "Information and Security",
-      "today_count": 99,
-      "trend": "rising",
-      "sample_articles": [
-        {
-          "title": "Lionel Richie issues warning to rude celebrities after Chappell Roan backlash",
-          "source": "Fox News",
-          "url": "https://www.foxnews.com/entertainment/lionel-richie-warning-celebrities-fans-chappell-roan-backlash"
-        },
-        {
-          "title": "They're old enough to be my grandparents — and in better shape than people half ",
-          "source": "Business Insider",
-          "url": "https://www.businessinsider.com/healthy-aging-singapore-longevity-fitness-wellness-team-strong-silvers-2026-3"
-        },
-        {
-          "title": "対話型生成AI 回答に“偽サイトや詐欺サイト”表示か 注意を",
-          "source": "NHK World",
-          "url": "http://www3.nhk.or.jp/news/html/20260330/k10015087661000.html"
-        }
-      ],
-      "ai_connections": [
-        "AI systems generating fraudulent content creates new vector for consumer deception and identity theft.",
-        "Military forces' abuse of press corps reveals tension between operational security and media freedom of access."
       ]
     },
     {
@@ -3806,39 +3816,11 @@
     {
       "pair": [
         "climate",
-        "legal"
-      ],
-      "label": "Climate + Legal",
-      "explanation": "Environmental lawsuits and climate litigation",
-      "today_count": 86,
-      "trend": "new",
-      "sample_articles": [
-        {
-          "title": "No. 2 UConn shocks No. 1 Duke with last-second 3-pointer to advance to men's Fin",
-          "source": "NBC News",
-          "url": "https://www.nbcnews.com/sports/college-basketball/ncaa-tournament-connecticut-duke-elite-eight-final-four-results-rcna265728"
-        },
-        {
-          "title": "Anne Hathaway, 43, says she stopped being a 'stressed person' for her kids — and",
-          "source": "Business Insider",
-          "url": "https://www.businessinsider.com/anne-hathaway-quit-being-stressed-mother-kids-parenting-career-balance-2026-3"
-        },
-        {
-          "title": "Thieves steal Renoir, Cézanne and Matisse paintings worth millions from Italian ",
-          "source": "The Guardian World",
-          "url": "https://www.theguardian.com/artanddesign/2026/mar/30/paintings-stolen-museum-italy-renoir-cezanne-matisse"
-        }
-      ],
-      "ai_connections": []
-    },
-    {
-      "pair": [
-        "climate",
         "governance"
       ],
       "label": "Climate + Governance",
       "explanation": "Environmental regulation and climate policy implementation",
-      "today_count": 86,
+      "today_count": 90,
       "trend": "rising",
       "sample_articles": [
         {
@@ -3860,6 +3842,36 @@
       "ai_connections": [
         "Humanitarian aid disruption in conflict zone compounds displacement crisis amid resource scarcity.",
         "Japan seeks remote island disposal for nuclear waste, shifting environmental and governance burden from populated centers to isolated territory."
+      ]
+    },
+    {
+      "pair": [
+        "climate",
+        "legal"
+      ],
+      "label": "Climate + Legal",
+      "explanation": "Environmental lawsuits and climate litigation",
+      "today_count": 88,
+      "trend": "rising",
+      "sample_articles": [
+        {
+          "title": "No. 2 UConn shocks No. 1 Duke with last-second 3-pointer to advance to men's Fin",
+          "source": "NBC News",
+          "url": "https://www.nbcnews.com/sports/college-basketball/ncaa-tournament-connecticut-duke-elite-eight-final-four-results-rcna265728"
+        },
+        {
+          "title": "Anne Hathaway, 43, says she stopped being a 'stressed person' for her kids — and",
+          "source": "Business Insider",
+          "url": "https://www.businessinsider.com/anne-hathaway-quit-being-stressed-mother-kids-parenting-career-balance-2026-3"
+        },
+        {
+          "title": "Thieves steal Renoir, Cézanne and Matisse paintings worth millions from Italian ",
+          "source": "The Guardian World",
+          "url": "https://www.theguardian.com/artanddesign/2026/mar/30/paintings-stolen-museum-italy-renoir-cezanne-matisse"
+        }
+      ],
+      "ai_connections": [
+        "State responds to federal litigation pressure by implementing heat protections, balancing fiscal concerns with climate-driven health risks in custody."
       ]
     },
     {
@@ -3957,22 +3969,22 @@
     }
   ],
   "source_spectrum": {
-    "international": 704,
-    "national": 375,
-    "local-regional": 227,
-    "specialist": 82,
-    "explainer": 27,
-    "analysis": 18,
+    "international": 718,
+    "national": 387,
+    "local-regional": 234,
+    "specialist": 87,
+    "explainer": 28,
+    "analysis": 19,
     "newsletter": 11,
     "government": 7,
     "think-tank": 3,
-    "research": 1,
+    "research": 2,
     "podcast": 1
   },
   "questions": [
     {
       "question": "What is the current state of international military tensions?",
-      "article_count": 223,
+      "article_count": 226,
       "domains": [
         "Geopolitics",
         "Security"
@@ -4002,39 +4014,8 @@
       ]
     },
     {
-      "question": "How are trade and global power shifts affecting the US economy?",
-      "article_count": 142,
-      "domains": [
-        "Economics",
-        "Geopolitics"
-      ],
-      "sources_by_tier": {
-        "national": [
-          {
-            "source": "New York Times",
-            "title": "U.S. Allows Russian Oil Tanker to Reach Cuba, Despite Blockade",
-            "url": "https://www.nytimes.com/2026/03/29/world/americas/cuba-russian-oil-tanlker.html",
-            "context": "Publicly traded, headquartered in New York. Largest US newspaper by circulation. Generally regarded as center-left in editorial stance.",
-            "connection": "Trade sanctions enforcement conflicts with energy market realities when permitting oil delivery undermines blockade strategy."
-          },
-          {
-            "source": "Bloomberg",
-            "title": "Trump Says Iran Gave In to US Demands Despite 15-Point Plan Rejection | Daybreak Europe 3/30/2026",
-            "url": "https://www.bloomberg.com/news/videos/2026-03-30/daybreak-europe-3-30-2026-video",
-            "context": "Founded and majority-owned by Michael Bloomberg. Dominant source for financial professionals.",
-            "connection": "Diplomatic claims about nuclear tensions clash with market reality as oil and equity traders price in actual escalation risk."
-          }
-        ]
-      },
-      "ai_insights": [
-        "Trade sanctions enforcement conflicts with energy market realities when permitting oil delivery undermines blockade strategy.",
-        "Diplomatic claims about nuclear tensions clash with market reality as oil and equity traders price in actual escalation risk.",
-        "Regional conflict forces central banks to inject liquidity and ease lending standards to prevent financial system stress."
-      ]
-    },
-    {
       "question": "Which government actions are being challenged in court?",
-      "article_count": 142,
+      "article_count": 147,
       "domains": [
         "Governance",
         "Legal"
@@ -4080,8 +4061,39 @@
       ]
     },
     {
+      "question": "How are trade and global power shifts affecting the US economy?",
+      "article_count": 146,
+      "domains": [
+        "Economics",
+        "Geopolitics"
+      ],
+      "sources_by_tier": {
+        "national": [
+          {
+            "source": "New York Times",
+            "title": "U.S. Allows Russian Oil Tanker to Reach Cuba, Despite Blockade",
+            "url": "https://www.nytimes.com/2026/03/29/world/americas/cuba-russian-oil-tanlker.html",
+            "context": "Publicly traded, headquartered in New York. Largest US newspaper by circulation. Generally regarded as center-left in editorial stance.",
+            "connection": "Trade sanctions enforcement conflicts with energy market realities when permitting oil delivery undermines blockade strategy."
+          },
+          {
+            "source": "Bloomberg",
+            "title": "Trump Says Iran Gave In to US Demands Despite 15-Point Plan Rejection | Daybreak Europe 3/30/2026",
+            "url": "https://www.bloomberg.com/news/videos/2026-03-30/daybreak-europe-3-30-2026-video",
+            "context": "Founded and majority-owned by Michael Bloomberg. Dominant source for financial professionals.",
+            "connection": "Diplomatic claims about nuclear tensions clash with market reality as oil and equity traders price in actual escalation risk."
+          }
+        ]
+      },
+      "ai_insights": [
+        "Trade sanctions enforcement conflicts with energy market realities when permitting oil delivery undermines blockade strategy.",
+        "Diplomatic claims about nuclear tensions clash with market reality as oil and equity traders price in actual escalation risk.",
+        "Regional conflict forces central banks to inject liquidity and ease lending standards to prevent financial system stress."
+      ]
+    },
+    {
       "question": "What military and defense policy decisions are being made?",
-      "article_count": 133,
+      "article_count": 134,
       "domains": [
         "Governance",
         "Security"
@@ -4272,7 +4284,7 @@
     {
       "topic": "Governance + Economics",
       "theme": "Labor Department regulatory action directly shapes how retirement savings are invested and allocated.",
-      "source_count": 20,
+      "source_count": 21,
       "structural_force": "regulatory capture",
       "articles": [
         {
@@ -4472,6 +4484,43 @@
           "force_tag": "supply chain fragility"
         }
       ]
+    }
+  ],
+  "editorial": {
+    "headline": "Regulatory rollback strips nuclear worker protections while military escalation disrupts global supply chains",
+    "accessible_headline": "New nuclear rules cut worker safety as Iran war hits oil markets",
+    "subheadline": "Labor Department policy changes coincide with Middle East conflict creating compound risks to economic stability and worker protection.",
+    "synthesis": "The Labor Department's rollback of nuclear industry safety standards, reported primarily by High Country News while national outlets focused on 401(k) investment rules, reveals how regulatory capture operates in plain sight during periods of international crisis. The timing matters because geopolitical instability creates the perfect cover for weakening worker protections when public attention is elsewhere, and the combination produces compound vulnerabilities that neither story captures alone. When nuclear safety regulations are loosened at the same moment that Middle East conflict threatens energy supply chains, the result is a double exposure to systemic risk that affects both the workers inside nuclear facilities and the communities that depend on stable energy systems.\n\nThe escalation in Iran has moved beyond diplomatic posturing into direct market disruption, with aluminum producers under attack and oil markets experiencing what Bloomberg describes as war-driven volatility that forces real-time renegotiation of pricing mechanisms between major exporters and importers. What makes this different from previous Middle East tensions is the simultaneity across sectors, from Indonesia losing a UN peacekeeper in Lebanon to Australian communities canceling events because fuel costs have become prohibitive. The regional military escalation that national security outlets are tracking connects directly to the supply chain disruptions that economics reporters are covering, but the synthesis happens primarily in international and specialist sources while domestic outlets treat them as separate stories.\n\nThe gap in coverage becomes most visible when looking at community-level impacts that local and ethnic media are documenting while national outlets owned or influenced by tech companies focus on market indicators. The Hechinger Report's analysis of how ICE operations create psychological trauma that leads to declining school enrollment and diminished workforce development opportunities doesn't appear in national coverage, nor does Civil Eats' reporting on how a small farming county successfully fought off a data center complex tied to energy monopolization. These stories matter because they show people responding to structural forces with organized resistance and mutual aid, but the information architecture that most Americans encounter filters out precisely these examples of effective collective action.\n\nThe cooperation stories embedded throughout today's coverage suggest that institutional legitimacy erosion, which appears across political and governance domains, is prompting both principled resignation and cross-party collaboration in ways that challenge the narrative of inevitable polarization. When a CAF general secretary quits over tournament controversy, Hungarian youth organize against Orbán's rule, and even religious leaders call for peace while criticizing those who wage war, the pattern suggests that people are choosing institutional integrity over partisan loyalty across multiple domains simultaneously. The question isn't whether institutions are failing, but whether the alternatives being built can scale fast enough to address the compound crises that regulatory capture and military escalation are creating together.",
+    "cooperation_highlight": "A small farming county successfully blocked corporate acquisition of agricultural land for data center infrastructure, according to Civil Eats, demonstrating how rural communities can organize effective resistance against tech monopolization of energy resources. The victory required coordination across property owners, environmental groups, and local officials who recognized that data centers would strain both electrical grids and water systems that farming communities depend on.",
+    "coverage_gap_note": "National outlets missed how ICE operations are creating educational disruption that reduces workforce development opportunities, a connection the Hechinger Report documented through interviews with students and educators that revealed systematic psychological trauma affecting enrollment and career paths.",
+    "thread_to_watch": "The combination of nuclear safety deregulation and Middle East supply chain disruption is creating compound infrastructure vulnerability that neither the security nor economics coverage is adequately tracking as a single system. Watch whether local sources continue to catch community-level impacts that national outlets miss.",
+    "generated": "2026-03-30T15:21:48Z",
+    "model": "claude-sonnet-4-20250514"
+  },
+  "story_syntheses": [
+    {
+      "role": "thread",
+      "structural_force": "regulatory capture",
+      "synthesis": "Twenty-one outlets covered the same story today without using the same headline, because they were watching regulatory capture work its way through different government departments simultaneously. CNBC reported the Labor Department's new rule allowing 401(k) plans to invest in private credit and alternative assets. High Country News covered nuclear safety rollbacks that reduce worker protections. STAT News tracked how pharmaceutical companies shaped White House drug pricing policy through direct consultation rather than independent rule-making.\n\nThe thread connecting these stories runs through the mechanism itself: agencies writing rules that benefit the industries they regulate, with public welfare treated as a secondary concern. The Dispatch covered AI policy as a Republican split over consumer protection, while CalMatters reported tech companies deploying lobbying to shape regulatory outcomes. What emerges across outlets is not a collection of separate policy fights, but a single process where regulatory agencies serve as distribution points for corporate priorities wrapped in public interest language.\n\nThe scale becomes visible only when you read across sources. Rappler connected this to agricultural technology access, where public funding creates innovations that remain locked behind patent restrictions. The Atlantic examined how suburban zoning regulations protect property values while restricting tenant access. Each outlet saw one piece, but together they mapped an entire system where regulatory authority flows toward private benefit rather than public protection.",
+      "cross_spectrum": "CNBC framed the 401(k) alternative asset rule as a market opportunity for retirement savers, centering investor choice while treating systemic risk as a footnote. High Country News covered nuclear safety rollbacks through the workers who will absorb the risk, centering human consequences while treating the regulatory debate as background context. STAT News reported pharmaceutical consultation as insider access to policy-making, centering the process of regulatory capture while treating the drug pricing outcomes as inevitable results. The Dispatch presented AI deregulation as intraparty Republican politics over consumer protection, centering Congressional dynamics while treating actual consumer impact as campaign positioning. Rappler connected agricultural technology patents to food security in the Philippines, centering developing world access while treating intellectual property law as a tool of resource control. The Atlantic examined suburban zoning as wealth protection mechanisms, centering property owners while treating housing access as an externality to be managed. Six outlets covered the same regulatory capture force and produced six different stories about markets, workers, process, politics, development, and property, which means your understanding of this structural force depends entirely on which outlet's framing reaches you first.",
+      "why_this_matters": "If you have a 401(k), work in a regulated industry, or depend on government agencies to protect your safety, these rule changes directly affect your financial security, workplace conditions, and health protections. The same mechanism shapes everything from your retirement savings risk to nuclear plant safety standards.",
+      "watch_for": "Watch for implementation timelines on these new rules. If multiple agencies announce rule changes in the same week, it signals coordinated regulatory rollback rather than isolated policy adjustments."
+    },
+    {
+      "role": "gap",
+      "structural_force": "regional military escalation",
+      "synthesis": "Fourteen sources covered the same military escalation today and told completely different stories about what was happening. The Hill reported Iranian threats against potential U.S. ground troops as direct military messaging. The New York Times framed Trump's Iran policy as dangerous for Asian allies. The Atlantic called America a rogue superpower. Reuters covered Israeli reports of Yemeni attacks as Middle East conflict escalation. Channel News Asia reported an Indonesian peacekeeper death in Lebanon. Al Jazeera covered sirens in Haifa port.\n\nThe underlying force was the same: military threat warnings escalating asymmetric conflict as U.S.-led operations intensify across multiple theaters. Each outlet saw a different piece of the same expanding military confrontation, but their audiences received entirely different information about who was threatened, who was responsible, and what the stakes were. The gap between frames reveals how the same escalation gets packaged as Iranian aggression, Trump policy failure, American imperialism, regional conflict spillover, peacekeeping casualty, or local security threat depending on where you get your news.",
+      "cross_spectrum": "The Hill presented Iranian military threats as direct confrontational messaging toward U.S. forces, centering American military decision-making while treating regional consequences as Iranian responsibility. The New York Times framed escalating Iran tensions as Trump policy creating danger for Asian allies, centering allied vulnerability while treating military action as geopolitical miscalculation. The Atlantic characterized American military posture as rogue superpower behavior, centering imperial overreach while treating regional resistance as predictable response to U.S. aggression. Reuters reported Israeli accounts of Yemeni attacks as Middle East conflict expansion, centering state-level military actions while treating escalation as mechanical sequence of retaliations. Channel News Asia covered Indonesian peacekeeper casualties as UN mission impact, centering multilateral peacekeeping while treating military escalation as context for institutional vulnerability. Al Jazeera reported port sirens as immediate civilian threat, centering local population experience while treating military operations as background force creating daily insecurity. Six outlets covered the same military escalation and produced six different stories about American threats, allied danger, imperial behavior, state conflict, peacekeeping failure, and civilian vulnerability, which demonstrates how military information gets filtered through completely different frameworks before reaching different audiences who then understand entirely different versions of the same expanding war.",
+      "why_this_matters": "If you have family in the military, live near military installations, or work in industries affected by Middle East supply chains, this escalation directly impacts deployment risk, base security, and economic stability through energy and shipping disruptions.",
+      "watch_for": "Watch for coordination between threat announcements and military positioning. If Iranian warnings coincide with U.S. troop movements or Israeli operations, it signals choreographed escalation rather than spontaneous conflict."
+    },
+    {
+      "role": "meanwhile",
+      "structural_force": "cooperation",
+      "synthesis": "Two hundred ninety cooperation stories ran today, making up 19% of all coverage, while national outlets focused on military threats and regulatory changes. Civil Eats covered how a tiny farm county fought a data center complex and won, with rural residents organizing against corporate land acquisition. The Hechinger Report examined how ICE operations traumatize students and reduce educational enrollment. National Catholic Reporter described a San Francisco Jesuit parish standing by immigrant families as courts shrink. High Country News reported workers advocating against nuclear safety rollbacks.\n\nThese stories share space with Naked Capitalism covering nationwide general strike planning for May 1st, connecting anti-war organizing with domestic labor demands. Disability Scoop reported community pushback against budget cuts threatening Medicaid-funded services. AsAmNews covered community response to a deadly crash in San Francisco's Chinatown. Wisconsin Examiner described hundreds joining a Palm Sunday march at the state capitol directed at Trump policies. What emerges is a consistent pattern of local institutions, community organizations, and advocacy groups filling gaps that federal policy creates or ignores.",
+      "cross_spectrum": "Reuters covered Treasury consulting with insurance regulators on private credit oversight as institutional coordination, centering federal regulatory process while treating industry input as necessary expertise. Civil Eats reported the farm county's data center victory as community organizing success, centering rural resident agency while treating corporate land acquisition as defeatable rather than inevitable. The Hechinger Report examined ICE enforcement through student psychological trauma and educational disruption, centering vulnerable population impact while treating immigration policy as educational policy. National Catholic Reporter covered parish support for immigrant families as institutional care response, centering faith community action while treating judicial system failure as context requiring moral response. Naked Capitalism presented May 1st strike organizing as anti-imperialist labor coordination, centering cross-movement solidarity while treating foreign policy and domestic worker issues as connected struggle. Disability Scoop reported community resistance to Medicaid service cuts as advocacy defending essential programs, centering disabled people's institutional needs while treating budget cuts as policy choices rather than fiscal necessities. Six outlets covered cooperation and community response as federal process, local victory, educational advocacy, faith action, labor organizing, and disability rights, which reveals how the same cooperative impulse gets channeled through completely different institutional frameworks and reaches audiences who understand community power through entirely different lenses.",
+      "why_this_matters": "If you live in a small community facing corporate development, have kids in school affected by immigration enforcement, or depend on Medicaid-funded services, these local organizing efforts directly protect resources and services that federal policy doesn't address.",
+      "watch_for": "Watch for coordination between local resistance efforts and federal policy announcements. If community organizing intensifies right after federal rule changes, it signals people responding to policy impacts before they become visible in national coverage."
     }
   ]
 }
