@@ -33,15 +33,28 @@ const canonicalUrl = `${siteUrl}/${title === 'Today' ? 'today/' : title === 'Abo
   <link rel="apple-touch-icon" sizes="180x180" href="/signal-board/apple-touch-icon.png">
 
   <!-- Open Graph -->
-  <meta property="og:type" content="website">
+  <meta property="og:type" content={dateStr ? 'article' : 'website'}>
   <meta property="og:title" content={pageTitle}>
   <meta property="og:description" content={description}>
   <meta property="og:image" content={ogImage}>
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Signal Board: Daily news analysis from 300 sources">
   <meta property="og:url" content={canonicalUrl}>
   <meta property="og:site_name" content="Signal Board">
+  <meta property="og:locale" content="en_US">
+  {dateStr && (
+    <meta property="article:published_time" content={dateStr}>
+    <meta property="article:modified_time" content={dateStr}>
+    <meta property="article:author" content="https://www.elisehasseltine.com">
+  )}
 
+
+  <!-- Author -->
+  <meta name="author" content="Elise Hasseltine">
+
+  <!-- RSS Feed -->
+  <link rel="alternate" type="application/rss+xml" title="Signal Board" href={`${siteUrl}/rss.xml`}>
 
   <!-- Canonical -->
   <link rel="canonical" href={canonicalUrl}>
@@ -114,6 +127,31 @@ const canonicalUrl = `${siteUrl}/${title === 'Today' ? 'today/' : title === 'Abo
       }
     })} />
   )}
+
+  <!-- BreadcrumbList JSON-LD -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Signal Board",
+        "item": siteUrl
+      },
+      ...(title !== 'Today' ? [{
+        "@type": "ListItem",
+        "position": 2,
+        "name": title,
+        "item": canonicalUrl
+      }] : [{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Today",
+        "item": `${siteUrl}/today/`
+      }])
+    ]
+  })} />
 
   <!-- Fonts — consolidated to 4 families for performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com">

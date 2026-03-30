@@ -3,15 +3,32 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { listDailyDates } from '../../lib/data';
 
 const dates = listDailyDates();
+const formatDate = (d: string) => {
+  const [y, m, day] = d.split('-');
+  const dt = new Date(+y, +m - 1, +day);
+  return dt.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+};
 ---
 
 <BaseLayout title="Archive">
+
+<main id="main-content">
+
+<nav aria-label="Breadcrumb" style="padding: 16px clamp(24px, 4vw, 48px) 0;">
+  <div class="wrap">
+    <ol style="list-style: none; padding: 0; margin: 0; font-family: 'Inter', sans-serif; font-size: 13px; color: var(--ink-light); display: flex; gap: 8px; align-items: center;">
+      <li><a href="/signal-board/today/" style="color: var(--ink-light);">Signal Board</a></li>
+      <li aria-hidden="true" style="color: var(--ink-faint);">/</li>
+      <li aria-current="page">Archive</li>
+    </ol>
+  </div>
+</nav>
 
 <div class="masthead-wrap" style="min-height: auto; padding: clamp(48px, 8vw, 80px) 0;">
   <div class="wrap">
     <div class="masthead" style="padding: 0;">
       <div class="r">
-        <div class="display masthead-title">ARCHIVE</div>
+        <h1 class="display masthead-title">Archive</h1>
       </div>
       <p class="masthead-sub r d1" style="color: var(--cream); margin-top: clamp(24px, 4vw, 40px);">
         Browse all daily Signal Board editions
@@ -20,18 +37,20 @@ const dates = listDailyDates();
   </div>
 </div>
 
-<div class="wrap" style="padding: clamp(48px, 8vw, 80px) clamp(24px, 4vw, 48px);">
+<section class="wrap" style="padding: clamp(48px, 8vw, 80px) clamp(24px, 4vw, 48px);" aria-label="Daily editions">
   <div class="section" style="padding: 0;">
     <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: clamp(16px, 2vw, 24px);">
       {dates.map(date => (
         <a href={`/signal-board/archive/${date}/`} style="text-decoration: none; color: inherit;">
-          <div class="summary-card r" style="height: 100%; display: flex; flex-direction: column;">
-            <div class="card-label" style="margin-bottom: 16px;">{date}</div>
+          <article class="summary-card r" style="height: 100%; display: flex; flex-direction: column;">
+            <h2 class="card-label" style="margin-bottom: 16px; font-size: inherit;">
+              <time datetime={date}>{formatDate(date)}</time>
+            </h2>
             <p class="card-hook" style="flex-grow: 1; margin-bottom: 20px;">
-              View the daily analysis for this date
+              Daily analysis for <time datetime={date}>{date}</time>
             </p>
             <span class="card-arrow">Read &darr;</span>
-          </div>
+          </article>
         </a>
       ))}
     </div>
@@ -42,6 +61,16 @@ const dates = listDailyDates();
       </div>
     )}
   </div>
+</section>
+
+</main>
+
+<footer role="contentinfo">
+<div class="wrap">
+  <nav aria-label="Footer navigation" style="padding: 40px 0; font-family: 'Inter', sans-serif; font-size: 13px; color: var(--ink-light); border-top: 1px solid var(--ink-faint);">
+    <a href="/signal-board/today/" style="color: var(--ink-light);">Today's Analysis</a>&ensp;·&ensp;<a href="/signal-board/about/" style="color: var(--ink-light);">About</a>&ensp;·&ensp;<a href="https://substack.com/@elisehasseltine" target="_blank" rel="noopener" style="color: var(--ink-light);">Subscribe</a>
+  </nav>
 </div>
+</footer>
 
 </BaseLayout>
