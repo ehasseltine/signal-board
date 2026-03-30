@@ -478,8 +478,9 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
 )}
 
 <!-- Angled divider: cream → navy -->
-<div class="section-divider" aria-hidden="true">
+<div class="section-divider" aria-hidden="true" style="background: var(--cream);">
   <svg viewBox="0 0 1440 72" preserveAspectRatio="none" fill="none">
+    <polygon points="0,0 1440,0 1440,24 0,0" fill="var(--cream)"/>
     <polygon points="0,0 1440,24 1440,72 0,72" fill="var(--ink)"/>
   </svg>
 </div>
@@ -516,10 +517,9 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
 </div>
 
 <!-- Angled divider: navy → teal wash -->
-<div class="section-divider" aria-hidden="true">
+<div class="section-divider" aria-hidden="true" style="background: var(--teal-wash);">
   <svg viewBox="0 0 1440 72" preserveAspectRatio="none" fill="none">
     <polygon points="0,0 1440,0 1440,48 0,72" fill="var(--ink)"/>
-    <polygon points="0,72 1440,48 1440,72" fill="var(--teal-wash)"/>
   </svg>
 </div>
 
@@ -600,10 +600,12 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
 </article>
 )}
 
-<!-- Angled divider: teal wash → meanwhile teal wash (subtle wave) -->
-<div class="section-divider" aria-hidden="true">
+<!-- Angled divider: teal wash gap → meanwhile teal wash (subtle wave boundary) -->
+<div class="section-divider" aria-hidden="true" style="background: var(--teal-wash);">
   <svg viewBox="0 0 1440 72" preserveAspectRatio="none" fill="none">
-    <path d="M0,72 L0,48 Q360,0 720,36 Q1080,72 1440,24 L1440,72 Z" fill="var(--teal-wash)"/>
+    <rect x="0" y="0" width="1440" height="72" fill="var(--teal-wash)"/>
+    <path d="M0,0 L0,48 Q360,72 720,36 Q1080,0 1440,48 L1440,0 Z" fill="var(--teal-wash)" opacity="0.5"/>
+    <line x1="0" y1="36" x2="1440" y2="36" stroke="var(--green)" stroke-width="1.5" opacity="0.2"/>
   </svg>
 </div>
 
@@ -699,10 +701,10 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
     <span class="section-label r">Today's Sources</span>
 
     <div class="r d1" style="position: relative; display: inline-block; margin-top: 4px;">
-      <svg style="position: absolute; top: -14px; left: -20px; width: calc(100% + 40px); height: calc(100% + 28px);" viewBox="0 0 200 120" fill="none" preserveAspectRatio="none" aria-hidden="true">
-        <ellipse cx="100" cy="60" rx="90" ry="52" stroke="var(--ink)" stroke-width="2" fill="none" opacity="0.15" transform="rotate(-2, 100, 60)" stroke-dasharray="5,4"/>
+      <svg style="position: absolute; top: -18px; left: -24px; width: calc(100% + 48px); height: calc(100% + 36px);" viewBox="0 0 200 120" fill="none" preserveAspectRatio="none" aria-hidden="true">
+        <ellipse cx="100" cy="60" rx="90" ry="52" stroke="var(--ink)" stroke-width="2.5" fill="none" opacity="0.3" transform="rotate(-2, 100, 60)" stroke-dasharray="5,4"/>
       </svg>
-      <div class="display" style="font-size: clamp(64px, 13vw, 150px); line-height: 1; color: var(--ink);">{totalStories}</div>
+      <div class="display" style="font-size: clamp(80px, 16vw, 180px); line-height: 1; color: var(--ink);">{totalStories}</div>
     </div>
     <p class="stat-annotation r d2" style="font-size: 22px; margin-top: 4px;">articles analyzed today</p>
 
