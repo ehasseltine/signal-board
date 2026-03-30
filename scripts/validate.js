@@ -177,6 +177,70 @@ check('Meanwhile section exists', todayHtml.includes('id="meanwhile"') || todayH
   null);
 
 // ---------------------------------------------------------------------------
+// 7. Cooperation rate → fraction consistency (4A)
+// ---------------------------------------------------------------------------
+
+console.log('Cooperation fraction:');
+
+if (coop) {
+  const rate = coop.cooperation_rate || 0;
+  // The template maps rates to fractions — verify the HTML contains the right one
+  const expectedFraction =
+    rate >= 28 ? 'About one in three' :
+    rate >= 23 ? 'About one in four' :
+    rate >= 18 ? 'About one in five' :
+    rate >= 15 ? 'About one in six' :
+    rate >= 12 ? 'About one in eight' :
+    `${rate}% of`;
+  const fractionInHtml = todayHtml.includes(expectedFraction);
+  check(`Cooperation fraction matches rate (${rate}% → "${expectedFraction}")`, fractionInHtml,
+    fractionInHtml ? null : `Expected "${expectedFraction}" in HTML for rate ${rate}%`);
+}
+
+// ---------------------------------------------------------------------------
+// 8. URL-content section isolation (4B)
+// ---------------------------------------------------------------------------
+
+console.log('URL isolation:');
+
+// Extract URLs from each section and check for cross-section contamination
+// Thread section: between "daily-thread" and "daily-gap" or "gap"
+// Gap section: between "daily-gap"/"gap" and "meanwhile"
+function extractSectionUrls(html, startMarker, endMarker) {
+  const startIdx = html.indexOf(startMarker);
+  const endIdx = endMarker ? html.indexOf(endMarker, startIdx + 1) : html.length;
+  if (startIdx === -1) return [];
+  const section = html.substring(startIdx, endIdx > startIdx ? endIdx : html.length);
+  const urlRegex = /href="(https?:\/\/[^"]+)"/g;
+  const urls = [];
+  let um;
+  while ((um = urlRegex.exec(section)) !== null) {
+    urls.push(um[1]);
+  }
+  return urls;
+}
+
+// Check that Thread and Gap sections have at least some URLs
+// Use id attributes as markers — more reliable than text content
+const threadUrls = extractSectionUrls(todayHtml, 'id="thread"', 'id="gap"');
+const gapUrls = extractSectionUrls(todayHtml, 'id="gap"', 'id="meanwhile"');
+
+check('Thread section has source URLs', threadUrls.length >= 1,
+  `Found ${threadUrls.length} URLs in Thread section`);
+check('Gap section has source URLs', gapUrls.length >= 1,
+  `Found ${gapUrls.length} URLs in Gap section`);
+
+// Check that Thread and Gap don't share identical URL sets (they can share some outlets, but not all)
+if (threadUrls.length > 0 && gapUrls.length > 0) {
+  const threadSet = new Set(threadUrls);
+  const gapSet = new Set(gapUrls);
+  const overlap = [...threadSet].filter(u => gapSet.has(u));
+  const overlapPct = Math.round((overlap.length / Math.min(threadSet.size, gapSet.size)) * 100);
+  check('Thread and Gap sections are not URL-identical', overlapPct < 90,
+    overlapPct >= 90 ? `${overlapPct}% URL overlap — sections may be showing the same story` : `${overlapPct}% overlap (some shared outlets expected)`);
+}
+
+// ---------------------------------------------------------------------------
 // Summary
 // ---------------------------------------------------------------------------
 
