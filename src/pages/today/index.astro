@@ -84,6 +84,32 @@ if (cooperation) {
   }
 }
 
+// Build outlet → context description lookup from ALL pipeline data sources
+const outletContextMap = new Map<string, string>();
+for (const story of topStories) {
+  for (const article of (story.articles || [])) {
+    if (article.source && article.context && !outletContextMap.has(article.source)) {
+      outletContextMap.set(article.source, article.context);
+    }
+  }
+  // Also pull context from tier_framing samples (covers sources in sourcesSample)
+  if (story.tier_framing) {
+    for (const [, data] of Object.entries(story.tier_framing)) {
+      const sample = (data as any)?.sample;
+      if (sample?.source && sample?.context && !outletContextMap.has(sample.source)) {
+        outletContextMap.set(sample.source, sample.context);
+      }
+    }
+  }
+}
+for (const nd of narrativeDivergence) {
+  for (const article of (nd.articles || [])) {
+    if (article.source && article.context && !outletContextMap.has(article.source)) {
+      outletContextMap.set(article.source, article.context);
+    }
+  }
+}
+
 // Escape text then wrap known outlet names with hyperlinks
 function linkifyText(text: string): string {
   let html = escapeHtml(text);
@@ -108,73 +134,9 @@ function linkifyText(text: string): string {
 }
 
 function getSourceContext(sourceName: string): string | null {
-  const SOURCE_CONTEXT: Record<string, string> = {
-    'Dawn': 'Founded 1941, oldest English-language newspaper in Pakistan',
-    'Arab American News': 'Published in Dearborn MI since 1984, independent',
-    'The Advocate': 'Oldest LGBTQ+ publication in US, founded 1967',
-    'Colorado Sun': 'Founded 2018 by ex-Denver Post journalists',
-    'Indian Country Today': 'Native American news, founded 1981',
-    'El Diario NY': 'Oldest Spanish-language daily in US',
-    'Inside Climate News': 'Pulitzer-winning nonprofit climate journalism',
-    'Mother Jones': 'Nonprofit investigative journalism',
-    'The Marshall Project': 'Nonprofit criminal justice journalism',
-    'Rappler': 'Philippine digital news, Maria Ressa, Nobel laureate',
-    'South China Morning Post': 'Hong Kong-based English-language daily since 1903',
-    'Times of India': 'World\'s largest English-language daily newspaper',
-    'Straits Times': 'Singapore\'s newspaper of record since 1845',
-    'BBC World': 'British Broadcasting Corporation, global news service',
-    'NHK World': 'Japan\'s public broadcaster, international service',
-    'The Hindu': 'India\'s national newspaper since 1878',
-    'ABC Australia': 'Australia\'s national public broadcaster',
-    'The Globe and Mail': 'Canada\'s newspaper of record',
-    'Military Times': 'Independent news for the military community',
-    'The Root': 'Black news, opinion, politics, and culture',
-    'Atlanta Black Star': 'Independent Black media outlet',
-    'The Grio': 'Digital platform for African American stories',
-    'Hechinger Report': 'Nonprofit education journalism',
-    'AsAmNews': 'Asian American news and features',
-    'MinnPost': 'Nonprofit news for Minnesota',
-    'Texas Tribune': 'Nonprofit Texas news',
-    'Heritage Foundation': 'Conservative think tank, founded 1973',
-    'Breitbart': 'Right-leaning news and opinion',
-    'Daily Wire': 'Conservative media company',
-    'Fox News': 'Right-leaning cable news network',
-    'Washington Times': 'Conservative daily newspaper',
-    'RealClearPolitics': 'Political news aggregation and analysis',
-    'NBC News': 'American broadcast news',
-    'ABC News': 'American broadcast news network',
-    'New York Times': 'American newspaper of record',
-    'The Atlantic': 'American magazine of culture and politics',
-    'NPR': 'National Public Radio',
-    'Reuters': 'International wire service, founded 1851',
-    'Bloomberg': 'Financial and business news, founded by Michael Bloomberg',
-    'CNBC': 'Business and financial news network',
-    'Lawfare': 'National security law analysis',
-    'Naked Capitalism': 'Finance and economics blog',
-    'National Catholic Reporter': 'Independent Catholic news',
-    'Religion News Service': 'Interfaith religion journalism',
-    'AP News': 'Nonprofit wire service owned by member newspapers, founded 1846',
-    'Washington Post': 'National newspaper, owned by Jeff Bezos since 2013',
-    'The Hill': 'Political journalism focused on Capitol Hill',
-    'France 24': 'French international news network, 24-hour multilingual',
-    'Al Jazeera': 'Qatar-based international news network',
-    'Straits Times': "Singapore's newspaper of record since 1845",
-    'NHK World': "Japan's public broadcaster, international service",
-    'Times of India': "World's largest English-language daily newspaper",
-    'Channel News Asia': 'Singapore-based Asian news network',
-    'Bangkok Post': "Thailand's leading English-language newspaper",
-    'The Japan Times': "Japan's oldest English-language newspaper",
-    'Anadolu Agency': "Turkey's state news agency",
-    'Oregon Public Broadcasting': 'Member-supported public media for Oregon',
-    'Wisconsin Examiner': 'Nonprofit news covering Wisconsin government',
-    'Source NM': 'Nonprofit news covering New Mexico',
-    'Honolulu Civil Beat': 'Nonprofit investigative news for Hawaii',
-    'The Forward': 'Jewish American news and culture since 1897',
-    'Global Voices': 'International citizen media community',
-    'Post and Courier': 'South Carolina daily newspaper since 1803',
-    'El Diario NY': 'Oldest Spanish-language daily in the U.S.',
-  };
-  return SOURCE_CONTEXT[sourceName] || null;
+  // Primary: use pipeline-generated context from analyze.py's SOURCE_CONTEXT (300 entries)
+  // This is populated from article.context fields in the daily JSON
+  return outletContextMap.get(sourceName) || null;
 }
 
 function tierLabel(tier: string): string {
