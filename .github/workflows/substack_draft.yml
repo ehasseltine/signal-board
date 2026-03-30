@@ -1,0 +1,79 @@
+name: Draft Substack Post
+
+on:
+  workflow_run:
+    workflows: ["Generate Today Page"]
+    types:
+      - completed
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  draft_substack:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name == 'workflow_dispatch' }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Format Signal Board data for Substack
+        run: |
+          python scripts/format_substack.py > /tmp/email_body.html
+          echo "Email body generated successfully"
+          wc -c /tmp/email_body.html
+
+      - name: Extract subject line from data
+        id: extract_subject
+        run: |
+          python3 << 'ENDPYTHON'
+          import json
+          data = json.load(open('data/daily/latest.json'))
+          subject = data.get('editorial', {}).get('accessible_headline', 'Signal Board Today')
+          with open('/tmp/subject.txt', 'w') as f:
+            f.write(subject)
+          ENDPYTHON
+          SUBJECT=$(cat /tmp/subject.txt)
+          echo "subject=${SUBJECT}" >> $GITHUB_OUTPUT
+          echo "Subject line: $SUBJECT"
+
+      - name: Send email to Substack
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: ${{ secrets.SMTP_USERNAME }}
+          password: ${{ secrets.SMTP_PASSWORD }}
+          subject: ${{ steps.extract_subject.outputs.subject }}
+          from: ${{ secrets.SMTP_USERNAME }}
+          to: ${{ secrets.SUBSTACK_EMAIL }}
+          html_body_file: /tmp/email_body.html
+          priority: high
+
+      - name: Log email sent
+        run: |
+          echo "Email sent to Substack at $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          echo "Subject: ${{ steps.extract_subject.outputs.subject }}"
+
+  notify-failure:
+    needs: [draft_substack]
+    if: failure()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const today = new Date().toISOString().split('T')[0];
+            github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: '⚠️ Draft Substack Post failed on ' + today,
+              body: 'Workflow failed to auto-draft post. [View details](' + context.server_url + '/' + context.repo.owner + '/' + context.repo.repo + '/actions/runs/' + context.runId + ')'
+            });
