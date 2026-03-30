@@ -428,6 +428,12 @@ export function selectDailyGap(
     }
 
     const tierCount = Object.keys(articlesByTier).length;
+    // ND entries are derived from top_stories[:3] — the articles array is a sample (max 6),
+    // not the full count. Look up the matching top_story for the real article_count.
+    const matchingTopStory = topStories.find(ts =>
+      ts.structural_force?.toLowerCase() === pick.structural_force?.toLowerCase()
+    );
+    const realArticleCount = matchingTopStory?.article_count || pick.articles?.length || 0;
     const gapSection: SectionStory = {
       title: pick.theme || pick.topic,
       synthesis: synthParts.join(' ') ||
@@ -435,7 +441,7 @@ export function selectDailyGap(
       crossSpectrum: framingInsights.join(' '),
       whyThisMatters: 'When the same event gets told as different stories, the gap between those frames is where the real story lives.',
       watchFor: '',
-      articleCount: pick.articles?.length || 0,
+      articleCount: realArticleCount,
       sourceCount: pick.source_count || 0,
       sourcesSample: uniqueSources.slice(0, 8),
       domains: [pick.topic],

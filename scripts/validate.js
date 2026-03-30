@@ -241,6 +241,71 @@ if (threadUrls.length > 0 && gapUrls.length > 0) {
 }
 
 // ---------------------------------------------------------------------------
+// 9. Meanwhile synthesis outlet accuracy (Issue E)
+// ---------------------------------------------------------------------------
+
+console.log('Meanwhile synthesis accuracy:');
+
+const meanwhileSynth = (latestJson.story_syntheses || []).find(s => s.role === 'meanwhile');
+if (meanwhileSynth) {
+  // Only check the synthesis field — cross_spectrum intentionally names
+  // non-cooperation outlets for framing contrast, which is correct editorial behavior.
+  const meanwhileText = meanwhileSynth.synthesis || '';
+
+  // Collect all cooperation sources
+  const coopSources = new Set();
+  const coopHighlights = latestJson.cooperation?.highlights || [];
+  for (const h of coopHighlights) {
+    if (h.source) coopSources.add(h.source);
+  }
+  const allSourceUrls = latestJson.cooperation?.all_source_urls || {};
+  for (const src of Object.keys(allSourceUrls)) {
+    coopSources.add(src);
+  }
+  // Also add by_type sources
+  for (const t of (latestJson.cooperation?.by_type || [])) {
+    for (const src of (t.sources || [])) {
+      coopSources.add(src);
+    }
+  }
+
+  // Build the full set of known outlet names from sources.json (all 300 outlets)
+  // plus any that appear in the pipeline data
+  const allKnownOutlets = new Set();
+  const sourcesJsonPath = resolve(ROOT, 'data/sources.json');
+  if (existsSync(sourcesJsonPath)) {
+    const sourcesJson = JSON.parse(readFileSync(sourcesJsonPath, 'utf-8'));
+    for (const name of Object.keys(sourcesJson)) {
+      allKnownOutlets.add(name);
+    }
+  }
+  for (const story of (latestJson.top_stories || [])) {
+    for (const a of (story.articles || [])) {
+      if (a.source) allKnownOutlets.add(a.source);
+    }
+  }
+  for (const src of coopSources) allKnownOutlets.add(src);
+
+  // Find outlet names in synthesis text that aren't cooperation-tagged
+  const hallucinatedOutlets = [];
+  for (const outlet of allKnownOutlets) {
+    if (meanwhileText.includes(outlet) && !coopSources.has(outlet)) {
+      hallucinatedOutlets.push(outlet);
+    }
+  }
+
+  // This is a WARNING, not a hard failure — the synthesis model may occasionally
+  // reference outlets not tagged as cooperation in the pipeline. This can only be
+  // fixed by re-running the synthesis, not at the template level.
+  if (hallucinatedOutlets.length > 0) {
+    console.log(`  ⚠ WARNING: Meanwhile synthesis names non-cooperation outlets: ${hallucinatedOutlets.join(', ')}`);
+    console.log(`    → This is a synthesis model accuracy issue. Consider tightening the prompt.`);
+  } else {
+    check('Meanwhile synthesis only names cooperation sources', true);
+  }
+}
+
+// ---------------------------------------------------------------------------
 // Summary
 // ---------------------------------------------------------------------------
 

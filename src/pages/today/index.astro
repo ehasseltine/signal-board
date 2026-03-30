@@ -107,9 +107,17 @@ const gapUrlMap = buildUrlMap([
   ...(gapTopStory?.articles || []),
 ]);
 
-// Meanwhile uses cooperation highlights
+// Meanwhile uses cooperation highlights + all_source_urls (complete cooperation article URL index)
 const meanwhileUrlMap = new Map<string, string>();
 if (cooperation) {
+  // Primary: all_source_urls covers every cooperation-tagged outlet (added in analyze.py)
+  const allUrls = (cooperation as any).all_source_urls || {};
+  for (const [src, url] of Object.entries(allUrls)) {
+    if (src && url && !meanwhileUrlMap.has(src)) {
+      meanwhileUrlMap.set(src, url as string);
+    }
+  }
+  // Fallback: highlights (for older data that may lack all_source_urls)
   for (const h of (cooperation.highlights || [])) {
     if (h.source && h.url && !meanwhileUrlMap.has(h.source)) {
       meanwhileUrlMap.set(h.source, h.url);
@@ -594,53 +602,54 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
   )}
 
   <!-- CROSS-SPECTRUM — framing exhibit -->
-  {threadStory.crossSpectrum && (
-  <div style="padding: 32px 0 0;">
-    <span class="section-label r" style="font-size: 13px; margin-bottom: 20px; display: block;">How outlets told it differently</span>
-    <div class="r cascade-parent" style="display: flex; flex-direction: column; gap: 0;">
-      {splitSentences(threadStory.crossSpectrum).map((sentence: string, i: number) => {
-        // Extract outlet name using known outlet names from pipeline data
-        const outletName = extractOutletFromSentence(sentence);
-        // Detect summary/wrap-up sentences (not outlet-specific)
-        const isSummary = /^(Same|Put them|Together|Overall|The gap|What connects|None of|Each one|When you|Six |Seven |Eight |Nine |Ten )/i.test(sentence);
-        // Determine label and tier for coloring
-        let label: string;
-        let tierForColor: string;
-        let content: string;
-        if (isSummary) {
-          label = 'The pattern';
-          tierForColor = 'analysis';
-          content = sentence;
-        } else if (outletName) {
-          label = outletName;
-          content = sentence;
-          const t = getOutletTier(outletName);
-          if (t === 'international') tierForColor = 'international';
-          else if (t === 'local-regional' || t === 'lived') tierForColor = 'local';
-          else if (t === 'specialist' || t === 'domain') tierForColor = 'specialist';
-          else if (t === 'analysis' || t === 'think-tank') tierForColor = 'analysis';
-          else tierForColor = 'national';
-        } else {
-          const fallbackMatch = sentence.match(/^([A-Z][A-Za-z0-9\s'.]+?)\s+[a-z]/);
-          if (fallbackMatch && fallbackMatch[1].trim().length > 2) {
-            label = fallbackMatch[1].replace(/'s$/, '').trim();
+  {threadStory.crossSpectrum && (() => {
+    const allSentences = splitSentences(threadStory.crossSpectrum);
+    const summaryPattern = /^(Same|Put them|Together|Overall|The gap|What connects|None of|Each one|When you|Six |Seven |Eight |Nine |Ten )/i;
+    const outletRows = allSentences.filter(s => !summaryPattern.test(s));
+    const summaryRows = allSentences.filter(s => summaryPattern.test(s));
+    return (
+    <div style="padding: 32px 0 0;">
+      <span class="section-label r" style="font-size: 13px; margin-bottom: 20px; display: block;">How outlets told it differently</span>
+      <div class="r cascade-parent" style="display: flex; flex-direction: column; gap: 0;">
+        {outletRows.map((sentence: string, i: number) => {
+          const outletName = extractOutletFromSentence(sentence);
+          let label: string;
+          let tierForColor: string;
+          if (outletName) {
+            label = outletName;
+            const t = getOutletTier(outletName);
+            if (t === 'international') tierForColor = 'international';
+            else if (t === 'local-regional' || t === 'lived') tierForColor = 'local';
+            else if (t === 'specialist' || t === 'domain') tierForColor = 'specialist';
+            else if (t === 'analysis' || t === 'think-tank') tierForColor = 'analysis';
+            else tierForColor = 'national';
           } else {
-            label = `Perspective ${i + 1}`;
+            const fallbackMatch = sentence.match(/^([A-Z][A-Za-z0-9\s'.]+?)\s+[a-z]/);
+            if (fallbackMatch && fallbackMatch[1].trim().length > 2) {
+              label = fallbackMatch[1].replace(/'s$/, '').trim();
+            } else {
+              label = `Perspective ${i + 1}`;
+            }
+            tierForColor = '';
           }
-          tierForColor = '';
-          content = sentence;
-        }
-        const outletUrl = lookupOutletUrl(label, threadUrlMap);
-        return (
-        <div class="framing-row cascade" data-tier={tierForColor || undefined}>
-          <div class="framing-label">{outletUrl ? <a href={outletUrl} target="_blank" rel="noopener" class="outlet-link">{label}</a> : label}</div>
-          <div class="framing-content">{content.trim()}</div>
-        </div>
-        );
-      })}
+          const outletUrl = lookupOutletUrl(label, threadUrlMap);
+          return (
+          <div class="framing-row cascade" data-tier={tierForColor || undefined}>
+            <div class="framing-label">{outletUrl ? <a href={outletUrl} target="_blank" rel="noopener" class="outlet-link">{label}</a> : label}</div>
+            <div class="framing-content">{sentence.trim()}</div>
+          </div>
+          );
+        })}
+      </div>
+      {summaryRows.length > 0 && (
+      <div class="pattern-callout r" style="margin-top: 12px; padding: 20px 24px; background: rgba(27,42,75,0.08); border-radius: var(--radius-sm);">
+        <span style="font-family: 'Inter', sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-mid); display: block; margin-bottom: 8px;">The pattern</span>
+        <p style="font-family: 'Lora', Georgia, serif; font-size: clamp(15px, 1.6vw, 18px); line-height: 1.65; color: var(--ink-body); margin: 0;">{summaryRows.join(' ')}</p>
+      </div>
+      )}
     </div>
-  </div>
-  )}
+    );
+  })()}
 </div>
 
 <!-- WHY THIS MATTERS — warm editorial wash -->
@@ -686,7 +695,7 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
         const geo = getSourceGeo(sourceName);
         return (
         <div class="coverage-card cascade" data-tier={geo?.tier || ''} data-geo={geo?.geo || ''}>
-          <div class="coverage-name">{sourceName}{geo && geo.country !== 'US' && <span class="coverage-country">{geo.country}</span>}</div>
+          <div class="coverage-name">{sourceName}</div>
           {getSourceContext(sourceName) && (
             <div class="coverage-type">{getSourceContext(sourceName)}</div>
           )}
@@ -772,28 +781,23 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
   )}
 
   <!-- FRAMING INSIGHTS — framing exhibit for Gap (prefer crossSpectrum from Pass 2) -->
-  {(gapStory.crossSpectrum || (gapStory.insights && gapStory.insights.length > 0)) && (
-  <div style="padding: 32px 0 0;">
-    <span class="section-label r section-label-teal" style="font-size: 13px; margin-bottom: 20px; display: block;">How outlets framed it</span>
-    <div class="r cascade-parent" style="display: flex; flex-direction: column; gap: 0;">
-      {(() => {
-        // Prefer crossSpectrum (outlet-by-outlet from Pass 2) over insights (tier-based)
-        const sentences = gapStory.crossSpectrum
-          ? splitSentences(gapStory.crossSpectrum)
-          : gapStory.insights.slice(0, 6);
-        return sentences.map((sentence: string, i: number) => {
+  {(gapStory.crossSpectrum || (gapStory.insights && gapStory.insights.length > 0)) && (() => {
+    const allSentences = gapStory.crossSpectrum
+      ? splitSentences(gapStory.crossSpectrum)
+      : gapStory.insights.slice(0, 6);
+    const summaryPattern = /^(Same|Put them|Together|Overall|The gap|What connects|None of|Each one|When you|Six |Seven |Eight |Nine |Ten )/i;
+    const outletRows = allSentences.filter(s => !summaryPattern.test(s));
+    const summaryRows = allSentences.filter(s => summaryPattern.test(s));
+    return (
+    <div style="padding: 32px 0 0;">
+      <span class="section-label r section-label-teal" style="font-size: 13px; margin-bottom: 20px; display: block;">How outlets framed it</span>
+      <div class="r cascade-parent" style="display: flex; flex-direction: column; gap: 0;">
+        {outletRows.map((sentence: string, i: number) => {
           const outletName = extractOutletFromSentence(sentence);
-          const isSummary = /^(Same|Put them|Together|Overall|The gap|What connects|None of|Each one|When you|Six |Seven |Eight |Nine |Ten )/i.test(sentence);
           let label: string;
           let tierForColor: string;
-          let content: string;
-          if (isSummary) {
-            label = 'The pattern';
-            tierForColor = 'analysis';
-            content = sentence;
-          } else if (outletName) {
+          if (outletName) {
             label = outletName;
-            content = sentence;
             const t = getOutletTier(outletName);
             if (t === 'international') tierForColor = 'international';
             else if (t === 'local-regional' || t === 'lived') tierForColor = 'local';
@@ -808,22 +812,27 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
               label = '';
             }
             tierForColor = '';
-            content = sentence;
           }
           const outletUrl = label ? lookupOutletUrl(label, gapUrlMap) : '';
           return (
           <div class="framing-row cascade" data-tier={tierForColor || undefined} style={!tierForColor ? 'background: rgba(59,206,172,0.06);' : ''}>
             {label && <div class="framing-label">{outletUrl ? <a href={outletUrl} target="_blank" rel="noopener" class="outlet-link">{label}</a> : label}</div>}
             <div class="framing-content" style={`${!tierForColor ? 'border-left-color: var(--teal);' : ''}`}>
-              <span>{content.trim()}</span>
+              <span>{sentence.trim()}</span>
             </div>
           </div>
           );
-        });
-      })()}
+        })}
+      </div>
+      {summaryRows.length > 0 && (
+      <div class="pattern-callout r" style="margin-top: 12px; padding: 20px 24px; background: rgba(27,42,75,0.08); border-radius: var(--radius-sm);">
+        <span style="font-family: 'Inter', sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-mid); display: block; margin-bottom: 8px;">The pattern</span>
+        <p style="font-family: 'Lora', Georgia, serif; font-size: clamp(15px, 1.6vw, 18px); line-height: 1.65; color: var(--ink-body); margin: 0;">{summaryRows.join(' ')}</p>
+      </div>
+      )}
     </div>
-  </div>
-  )}
+    );
+  })()}
 
   <!-- WHY THIS MATTERS — warm editorial wash -->
   {gapStory.whyThisMatters && (
@@ -841,7 +850,7 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
         const geo = getSourceGeo(sourceName);
         return (
         <div class="coverage-card cascade" data-tier={geo?.tier || ''} data-geo={geo?.geo || ''}>
-          <div class="coverage-name">{sourceName}{geo && geo.country !== 'US' && <span class="coverage-country">{geo.country}</span>}</div>
+          <div class="coverage-name">{sourceName}</div>
           {getSourceContext(sourceName) && (
             <div class="coverage-type">{getSourceContext(sourceName)}</div>
           )}

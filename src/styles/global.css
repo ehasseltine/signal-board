@@ -403,25 +403,10 @@
   .framing-row:not([data-tier]) .framing-label { color: var(--ink-mid); }
   .framing-row:not([data-tier]) .framing-content { border-left-color: var(--ink-light); }
 
-  /* Odd/even rhythm — alternating warm/cool bands */
-  .framing-row:nth-child(odd) {
-    background-color: rgba(255,208,123,0.12);
-  }
-  .framing-row:nth-child(even) {
-    background-color: rgba(8,76,97,0.08);
-  }
-  .framing-row[data-tier="military"],
-  .framing-row[data-tier="Military"],
-  .framing-row[data-tier="local"],
-  .framing-row[data-tier="Local"] {
-    background: rgba(248,117,117,0.15) !important;
-  }
+  /* Last framing row gets bottom radius */
   .framing-row:last-child {
-    background: rgba(93,81,121,0.10) !important;
     border-radius: 0 0 var(--radius-sm) var(--radius-sm);
   }
-  .framing-row:last-child .framing-label { color: var(--color-dusty-purple) !important; }
-  .framing-row:last-child .framing-content { border-left-color: var(--color-dusty-purple) !important; }
 
   /* Gap section framing overrides */
   .gap-world .framing-row[data-tier="national"],

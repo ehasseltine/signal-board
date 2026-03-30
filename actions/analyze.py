@@ -630,12 +630,23 @@ def analyze_cooperation_stories(articles):
                 "note": "No cooperation signals detected. Is goodness happening here that the coverage isn't showing?",
             })
 
+    # Build a complete source → URL map for all cooperation articles.
+    # The synthesis model may reference any cooperation source, not just the top 8 highlights.
+    # This map lets the template link every outlet the synthesis mentions.
+    all_source_urls = {}
+    for a in coop_articles:
+        src = a.get("source", "")
+        url = a.get("url", "")
+        if src and url and src not in all_source_urls:
+            all_source_urls[src] = url
+
     return {
         "total_cooperation_stories": coop_count,
         "cooperation_rate": coop_rate,
         "by_type": by_type[:10],
         "by_force": by_force,
         "highlights": highlights[:8],
+        "all_source_urls": all_source_urls,
         "coverage_gap": coverage_gap[:5],
     }
 

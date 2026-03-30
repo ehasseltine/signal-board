@@ -391,7 +391,7 @@
         {
           "text": "Public technology monopoly restricts access to government-funded innovation, preventing broader agricultural adoption.",
           "source": "Rappler",
-          "title": "[OPINION] As Middle East imports dry up, restore open access to bio-fertilizers ",
+          "title": "[OPINION] As Middle East imports dry up,\u00a0restore open access to bio-fertilizers ",
           "domains": [
             "economics",
             "governance"
@@ -422,7 +422,7 @@
         {
           "text": "White House drug pricing policy shaped through direct consultation with pharmaceutical companies rather than independent rule-making.",
           "source": "STAT News",
-          "title": "STAT+: Pharmalittle: We’re reading about Trump pushing drug pricing policy, Chin",
+          "title": "STAT+: Pharmalittle: We\u2019re reading about Trump pushing drug pricing policy, Chin",
           "domains": [
             "governance",
             "economics"
@@ -457,7 +457,7 @@
             "imports"
           ],
           "sample": {
-            "title": "[OPINION] As Middle East imports dry up, restore open access to bio-fertilizers technology",
+            "title": "[OPINION] As Middle East imports dry up,\u00a0restore open access to bio-fertilizers technology",
             "source": "Rappler",
             "url": "https://www.rappler.com/voices/thought-leaders/opinion-open-access-bio-fertilizer-technology/",
             "context": "Philippine digital news organization founded in 2012 by journalist Maria Ressa in Manila, covering Southeast Asian politics, governance, and social media disinformation."
@@ -489,7 +489,7 @@
             "reading"
           ],
           "sample": {
-            "title": "STAT+: Pharmalittle: We’re reading about Trump pushing drug pricing policy, Chinese biotech licensing, and more",
+            "title": "STAT+: Pharmalittle: We\u2019re reading about Trump pushing drug pricing policy, Chinese biotech licensing, and more",
             "source": "STAT News",
             "url": "https://www.statnews.com/pharmalot/2026/03/30/trump-pushes-drug-pricing-policy-chinese-biotech-licensing-lilly/?utm_campaign=rss",
             "context": "Health and science news publication founded in 2015 by Boston Globe Media Partners, covering the pharmaceutical industry, biotechnology, medicine, and health policy."
@@ -628,7 +628,7 @@
             "security",
             "geopolitics"
           ],
-          "context": "French international news network launched in 2006, funded by the French government through France Médias Monde, broadcasting in French, English, Arabic, and Spanish."
+          "context": "French international news network launched in 2006, funded by the French government through France M\u00e9dias Monde, broadcasting in French, English, Arabic, and Spanish."
         },
         {
           "text": "Drone attacks on Syrian military bases signal escalation in broader Middle East conflict following U.S.-Israeli strikes on Iran.",
@@ -652,7 +652,7 @@
             "across"
           ],
           "sample": {
-            "title": "Iran: US ground troops would be ‘set on fire’",
+            "title": "Iran: US ground troops would be \u2018set on fire\u2019",
             "source": "The Hill",
             "url": "https://thehill.com/policy/defense/5807214-iran-threatens-us-troops/",
             "context": "Political news organization founded in 1994 in Washington DC, owned by Nexstar Media Group since 2021, covering Congress, the White House, and campaigns."
@@ -690,7 +690,7 @@
       },
       "articles": [
         {
-          "title": "Iran: US ground troops would be ‘set on fire’",
+          "title": "Iran: US ground troops would be \u2018set on fire\u2019",
           "source": "The Hill",
           "url": "https://thehill.com/policy/defense/5807214-iran-threatens-us-troops/",
           "tier": "national",
@@ -700,7 +700,7 @@
           "force_tag": "military escalation spiral"
         },
         {
-          "title": "Across Asia, Trump’s War on Iran Is Dangerous for Everyone",
+          "title": "Across Asia, Trump\u2019s War on Iran Is Dangerous for Everyone",
           "source": "New York Times",
           "url": "https://www.nytimes.com/2026/03/30/opinion/trump-iran-war-india-oil.html",
           "tier": "national",
@@ -806,7 +806,7 @@
         {
           "text": "Geopolitical conflict disrupts supply chains for green technology, undermining climate transition goals.",
           "source": "Rest of World",
-          "title": "EVs were meant to bypass oil. Now they’re stuck at the Strait of Hormuz",
+          "title": "EVs were meant to bypass oil. Now they\u2019re stuck at the Strait of Hormuz",
           "domains": [
             "economics",
             "geopolitics",
@@ -817,7 +817,7 @@
         {
           "text": "Houthi maritime disruption extends shipping crisis, compounding global oil supply vulnerability.",
           "source": "Straits Times",
-          "title": "How Yemen’s Houthis could worsen the oil crunch",
+          "title": "How Yemen\u2019s Houthis could worsen the oil crunch",
           "domains": [
             "geopolitics",
             "economics"
@@ -912,7 +912,7 @@
           "force_tag": "supply chain weaponization"
         },
         {
-          "title": "How Yemen’s Houthis could worsen the oil crunch",
+          "title": "How Yemen\u2019s Houthis could worsen the oil crunch",
           "source": "Straits Times",
           "url": "https://www.straitstimes.com/world/middle-east/how-yemens-houthis-could-worsen-the-oil-crunch",
           "tier": "international",
@@ -987,7 +987,7 @@
         {
           "text": "Senate oversight authority used to block military promotions in response to defense secretary's blocking of officers, creating institutional checks within defense hierarchy.",
           "source": "Military Times",
-          "title": "Senator stalls 3 ‘unfit’ officer promotions in retort to Hegseth",
+          "title": "Senator stalls 3 \u2018unfit\u2019 officer promotions in retort to Hegseth",
           "domains": [
             "governance",
             "security"
@@ -997,7 +997,7 @@
         {
           "text": "War crimes policy decisions by military leadership directly affect both combatant safety and civilian security outcomes.",
           "source": "The Dispatch",
-          "title": "How Pete Hegseth Is Putting Americans—Soldiers and Civilians—at Risk",
+          "title": "How Pete Hegseth Is Putting Americans\u2014Soldiers and Civilians\u2014at Risk",
           "domains": [
             "security",
             "governance"
@@ -1007,7 +1007,7 @@
         {
           "text": "Police officers invoke self-incrimination protections during official inquest into custodial death, creating legal obstacle to institutional accountability.",
           "source": "The Guardian World",
-          "title": "Victoria police called to give evidence into Indigenous man’s death in custody s",
+          "title": "Victoria police called to give evidence into Indigenous man\u2019s death in custody s",
           "domains": [
             "legal",
             "governance"
@@ -1026,7 +1026,7 @@
             "soldiers"
           ],
           "sample": {
-            "title": "How Pete Hegseth Is Putting Americans—Soldiers and Civilians—at Risk",
+            "title": "How Pete Hegseth Is Putting Americans\u2014Soldiers and Civilians\u2014at Risk",
             "source": "The Dispatch",
             "url": "https://thedispatch.com/article/hegseth-war-crimes-endanger-americans/",
             "context": "Online news and commentary publication founded in 2019 by Jonah Goldberg and Stephen Hayes, covering politics, policy, and cultural analysis from Washington DC."
@@ -1058,7 +1058,7 @@
             "promotions"
           ],
           "sample": {
-            "title": "Senator stalls 3 ‘unfit’ officer promotions in retort to Hegseth",
+            "title": "Senator stalls 3 \u2018unfit\u2019 officer promotions in retort to Hegseth",
             "source": "Military Times",
             "url": "https://www.militarytimes.com/news/pentagon-congress/2026/03/30/senator-stalls-3-unfit-officer-promotions-in-retort-to-hegseth/",
             "context": "Independent news organization owned by Sightline Media Group, covering military policy, defense spending, veteran affairs, and service member communities across all branches."
@@ -1067,7 +1067,7 @@
       },
       "articles": [
         {
-          "title": "How Pete Hegseth Is Putting Americans—Soldiers and Civilians—at Risk",
+          "title": "How Pete Hegseth Is Putting Americans\u2014Soldiers and Civilians\u2014at Risk",
           "source": "The Dispatch",
           "url": "https://thedispatch.com/article/hegseth-war-crimes-endanger-americans/",
           "tier": "national",
@@ -1087,7 +1087,7 @@
           "force_tag": "institutional accountability for safety failures"
         },
         {
-          "title": "Israel Defense Forces suspends battalion from deployment over ‘inappropriate’ incident with CNN crew",
+          "title": "Israel Defense Forces suspends battalion from deployment over \u2018inappropriate\u2019 incident with CNN crew",
           "source": "Fox News",
           "url": "https://www.foxnews.com/media/israel-defense-forces-suspends-battalion-from-deployment-over-inappropriate-incident-cnn-crew",
           "tier": "national",
@@ -1117,7 +1117,7 @@
           "force_tag": "institutional accountability"
         },
         {
-          "title": "Victoria police called to give evidence into Indigenous man’s death in custody seek protection from self-incrimination",
+          "title": "Victoria police called to give evidence into Indigenous man\u2019s death in custody seek protection from self-incrimination",
           "source": "The Guardian World",
           "url": "https://www.theguardian.com/australia-news/2026/mar/30/indigenous-death-custody-victoria-police-seek-protection-self-incrimination-ntwnfb",
           "tier": "international",
@@ -1348,7 +1348,7 @@
         {
           "text": "Middle East regional instability drives currency markets as investors seek safe-haven assets amid geopolitical risk.",
           "source": "Channel News Asia",
-          "title": "Dollar near 10‑month high on Middle East escalation concerns",
+          "title": "Dollar near 10\u2011month high on Middle East escalation concerns",
           "domains": [
             "economics",
             "geopolitics"
@@ -1368,7 +1368,7 @@
         {
           "text": "Central bank credibility depends on distinguishing policy-controllable inflation from geopolitical supply shocks beyond its reach.",
           "source": "Bloomberg",
-          "title": "Treasuries Rally as Powell Touts Fed’s Limits on Supply Shocks",
+          "title": "Treasuries Rally as Powell Touts Fed\u2019s Limits on Supply Shocks",
           "domains": [
             "economics",
             "geopolitics"
@@ -1378,7 +1378,7 @@
         {
           "text": "Military conflict in Iran drives oil prices higher, creating financial contagion across Asian markets.",
           "source": "AP News",
-          "title": "Asian shares decline as oil prices soar amid the war in Iran, echoing last week’",
+          "title": "Asian shares decline as oil prices soar amid the war in Iran, echoing last week\u2019",
           "domains": [
             "economics",
             "geopolitics",
@@ -1414,7 +1414,7 @@
             "middle"
           ],
           "sample": {
-            "title": "Dollar near 10‑month high on Middle East escalation concerns",
+            "title": "Dollar near 10\u2011month high on Middle East escalation concerns",
             "source": "Channel News Asia",
             "url": "https://www.channelnewsasia.com/business/dollar-near-10-month-high-middle-east-escalation-concerns-6024796",
             "context": "News network launched in 1999 by Mediacorp, a Singaporean state-owned media company, covering Asia-Pacific politics, business, and regional affairs."
@@ -1449,7 +1449,7 @@
           "force_tag": "geopolitical risk premium"
         },
         {
-          "title": "Treasuries Rally as Powell Touts Fed’s Limits on Supply Shocks",
+          "title": "Treasuries Rally as Powell Touts Fed\u2019s Limits on Supply Shocks",
           "source": "Bloomberg",
           "url": "https://www.bloomberg.com/news/articles/2026-03-30/treasuries-rally-as-powell-touts-fed-s-limits-on-supply-shocks",
           "tier": "national",
@@ -1459,7 +1459,7 @@
           "force_tag": "geopolitical risk premium"
         },
         {
-          "title": "Asian shares decline as oil prices soar amid the war in Iran, echoing last week’s Wall Street drop",
+          "title": "Asian shares decline as oil prices soar amid the war in Iran, echoing last week\u2019s Wall Street drop",
           "source": "AP News",
           "url": "https://apnews.com/article/stock-markets-war-oil-trump-iran-1aef947ecb395c3bb97fcdb5ed3826f1",
           "tier": "national",
@@ -1489,7 +1489,7 @@
           "force_tag": "geopolitical risk transmission"
         },
         {
-          "title": "Dollar near 10‑month high on Middle East escalation concerns",
+          "title": "Dollar near 10\u2011month high on Middle East escalation concerns",
           "source": "Channel News Asia",
           "url": "https://www.channelnewsasia.com/business/dollar-near-10-month-high-middle-east-escalation-concerns-6024796",
           "tier": "international",
@@ -1543,7 +1543,7 @@
         {
           "text": "Republican official publicly criticizes DOJ leadership for selective prosecutions and mass firings tied to partisan loyalty.",
           "source": "The Hill",
-          "title": "Christie: Blanche ‘obliterating’ DOJ’s reputation",
+          "title": "Christie: Blanche \u2018obliterating\u2019 DOJ\u2019s reputation",
           "domains": [
             "domestic_politics",
             "legal",
@@ -1564,7 +1564,7 @@
         {
           "text": "Presidential behavior at business event becomes media spectacle, revealing power imbalance where elites scramble to manage fallout.",
           "source": "Atlanta Black Star",
-          "title": "‘Wait… I Can Do WHAT?’: Donald Trump Implodes Summit, Stuns Elite Business Crowd",
+          "title": "\u2018Wait\u2026 I Can Do WHAT?\u2019: Donald Trump Implodes Summit, Stuns Elite Business Crowd",
           "domains": [
             "domestic_politics",
             "information"
@@ -1582,7 +1582,7 @@
             "reputation"
           ],
           "sample": {
-            "title": "Christie: Blanche ‘obliterating’ DOJ’s reputation",
+            "title": "Christie: Blanche \u2018obliterating\u2019 DOJ\u2019s reputation",
             "source": "The Hill",
             "url": "https://thehill.com/homenews/administration/5807321-christie-attacks-blanche-justice-reputation/",
             "context": "Political news organization founded in 1994 in Washington DC, owned by Nexstar Media Group since 2021, covering Congress, the White House, and campaigns."
@@ -1623,7 +1623,7 @@
       },
       "articles": [
         {
-          "title": "Christie: Blanche ‘obliterating’ DOJ’s reputation",
+          "title": "Christie: Blanche \u2018obliterating\u2019 DOJ\u2019s reputation",
           "source": "The Hill",
           "url": "https://thehill.com/homenews/administration/5807321-christie-attacks-blanche-justice-reputation/",
           "tier": "national",
@@ -1653,7 +1653,7 @@
           "force_tag": "foreign policy legitimacy erosion"
         },
         {
-          "title": "‘Wait… I Can Do WHAT?’: Donald Trump Implodes Summit, Stuns Elite Business Crowd With Bizarre Bedroom Invite — Cameras C",
+          "title": "\u2018Wait\u2026 I Can Do WHAT?\u2019: Donald Trump Implodes Summit, Stuns Elite Business Crowd With Bizarre Bedroom Invite \u2014 Cameras C",
           "source": "Atlanta Black Star",
           "url": "https://atlantablackstar.com/2026/03/30/donald-trump-implodes-summit-stuns-elite-business-crowd-with-bizarre-bedroom-invite/",
           "tier": "local-regional",
@@ -1703,7 +1703,7 @@
         {
           "text": "International relations and energy markets intersect as diplomatic negotiations affect global oil transit.",
           "source": "El Diario NY",
-          "title": "Trump aseguró que Irán permitirá paso de 20 buques petroleros por el estrecho de",
+          "title": "Trump asegur\u00f3 que Ir\u00e1n permitir\u00e1 paso de 20 buques petroleros por el estrecho de",
           "domains": [
             "geopolitics",
             "economics"
@@ -1733,7 +1733,7 @@
         {
           "text": "Military threats against critical oil infrastructure weaponize energy supply as a geopolitical lever affecting global commodity prices.",
           "source": "Times of India",
-          "title": "How Trump’s Kharg Island threat puts global oil flows, prices under pressure",
+          "title": "How Trump\u2019s Kharg Island threat puts global oil flows, prices under pressure",
           "domains": [
             "geopolitics",
             "economics"
@@ -1784,7 +1784,7 @@
             "petroleros"
           ],
           "sample": {
-            "title": "Trump aseguró que Irán permitirá paso de 20 buques petroleros por el estrecho de Ormuz",
+            "title": "Trump asegur\u00f3 que Ir\u00e1n permitir\u00e1 paso de 20 buques petroleros por el estrecho de Ormuz",
             "source": "El Diario NY",
             "url": "https://eldiariony.com/2026/03/29/trump-aseguro-que-iran-permitira-paso-de-20-buques-petroleros-por-el-estrecho-de-ormuz/",
             "context": "Spanish-language daily newspaper founded in 1913 in New York City, owned by ImpreMedia, serving Latino communities with coverage of immigration, politics, and culture."
@@ -1823,7 +1823,7 @@
           "force_tag": "trade weaponization"
         },
         {
-          "title": "How Trump’s Kharg Island threat puts global oil flows, prices under pressure",
+          "title": "How Trump\u2019s Kharg Island threat puts global oil flows, prices under pressure",
           "source": "Times of India",
           "url": "https://timesofindia.indiatimes.com/business/international-business/how-trumps-kharg-island-threat-puts-global-oil-flows-prices-under-pressure/articleshow/129898469.cms",
           "tier": "international",
@@ -1843,7 +1843,7 @@
           "force_tag": "trade route weaponization"
         },
         {
-          "title": "Trump aseguró que Irán permitirá paso de 20 buques petroleros por el estrecho de Ormuz",
+          "title": "Trump asegur\u00f3 que Ir\u00e1n permitir\u00e1 paso de 20 buques petroleros por el estrecho de Ormuz",
           "source": "El Diario NY",
           "url": "https://eldiariony.com/2026/03/29/trump-aseguro-que-iran-permitira-paso-de-20-buques-petroleros-por-el-estrecho-de-ormuz/",
           "tier": "local-regional",
@@ -1896,7 +1896,7 @@
         {
           "text": "Five EU governments systematically dismantle judicial independence and rule of law protections, undermining legal accountability mechanisms.",
           "source": "The Guardian World",
-          "title": "Five EU governments found to ‘consistently’ dismantle rule of law",
+          "title": "Five EU governments found to \u2018consistently\u2019 dismantle rule of law",
           "domains": [
             "governance",
             "legal"
@@ -1906,7 +1906,7 @@
         {
           "text": "Military junta legalizes authoritarianism through civilian constitutional mechanisms, using procedural legitimacy to entrench coup power.",
           "source": "South China Morning Post",
-          "title": "Myanmar paves way for junta chief to be civilian president, ruling with ‘iron fi",
+          "title": "Myanmar paves way for junta chief to be civilian president, ruling with \u2018iron fi",
           "domains": [
             "governance",
             "domestic_politics"
@@ -1954,7 +1954,7 @@
           "force_tag": "democratic erosion"
         },
         {
-          "title": "Five EU governments found to ‘consistently’ dismantle rule of law",
+          "title": "Five EU governments found to \u2018consistently\u2019 dismantle rule of law",
           "source": "The Guardian World",
           "url": "https://www.theguardian.com/law/2026/mar/30/five-eu-governments-consistently-dismantle-rule-of-law-finds-civil-liberties-union-for-europe",
           "tier": "international",
@@ -1964,7 +1964,7 @@
           "force_tag": "democratic erosion and judicial capture"
         },
         {
-          "title": "Myanmar paves way for junta chief to be civilian president, ruling with ‘iron fist’",
+          "title": "Myanmar paves way for junta chief to be civilian president, ruling with \u2018iron fist\u2019",
           "source": "South China Morning Post",
           "url": "https://www.scmp.com/news/asia/southeast-asia/article/3348416/myanmar-paves-way-junta-chief-be-civilian-president-ruling-iron-fist?utm_source=rss_feed",
           "tier": "international",
@@ -2058,7 +2058,7 @@
         {
           "text": "Military strikes on energy infrastructure destroy civilian utilities while political leaders discuss resource control.",
           "source": "Al Jazeera",
-          "title": "Iran war live: Trump says wants to take Iran’s oil; Kuwait power site hit",
+          "title": "Iran war live: Trump says wants to take Iran\u2019s oil; Kuwait power site hit",
           "domains": [
             "security",
             "economics",
@@ -2563,7 +2563,7 @@
         "geopolitics",
         "security"
       ],
-      "sample_title": "Rubio tells Al Jazeera Strait of Hormuz will reopen ‘one way or another’"
+      "sample_title": "Rubio tells Al Jazeera Strait of Hormuz will reopen \u2018one way or another\u2019"
     },
     {
       "force": "great power competition for resources",
@@ -2584,7 +2584,7 @@
         "geopolitics",
         "security"
       ],
-      "sample_title": "They’ve Been Accused of Running a ‘Covert’ Operation in Greenland. It’s No Secret."
+      "sample_title": "They\u2019ve Been Accused of Running a \u2018Covert\u2019 Operation in Greenland. It\u2019s No Secret."
     },
     {
       "force": "privatization of public infrastructure",
@@ -2691,7 +2691,7 @@
         "ai",
         "economics"
       ],
-      "sample_title": "Inflexion Raises €4.5 Billion for Buyout Fund in Just Six Months"
+      "sample_title": "Inflexion Raises \u20ac4.5 Billion for Buyout Fund in Just Six Months"
     },
     {
       "force": "industrial policy job creation",
@@ -2714,7 +2714,7 @@
         "governance",
         "labor"
       ],
-      "sample_title": "Government clears 29 investment proposals worth ₹7,104 cr under Electronics Component Manufacturing "
+      "sample_title": "Government clears 29 investment proposals worth \u20b97,104 cr under Electronics Component Manufacturing "
     },
     {
       "force": "geopolitical realignment",
@@ -2752,7 +2752,7 @@
         "geopolitics",
         "labor"
       ],
-      "sample_title": "How Mexico’s conservation work brought monarchs back from the brink"
+      "sample_title": "How Mexico\u2019s conservation work brought monarchs back from the brink"
     }
   ],
   "what_connects": [
@@ -2823,7 +2823,7 @@
       "sample_connection": "Regulatory rollback reduces worker and public protections in nuclear industry safety standards."
     },
     {
-      "headline": "Pakistan board charges Fakhar Zaman with ball‑tampering in PSL match",
+      "headline": "Pakistan board charges Fakhar Zaman with ball\u2011tampering in PSL match",
       "structural_force": "sports regulation enforcement",
       "total_sources": 25,
       "spectrum_segments": 4,
@@ -3044,7 +3044,7 @@
           "Information"
         ],
         "sample": {
-          "title": "A youth-led push for change threatens Orbán’s 16-year rule in Hungary’s elections",
+          "title": "A youth-led push for change threatens Orb\u00e1n\u2019s 16-year rule in Hungary\u2019s elections",
           "source": "AP News",
           "url": "https://apnews.com/article/hungary-election-youth-voters-orban-58e71836ef9e3a38bc478bdbde9ca0b0",
           "connection": ""
@@ -3066,7 +3066,7 @@
           "Security"
         ],
         "sample": {
-          "title": "Pope Leo calls for peace, saying God doesn’t listen to prayers of ‘those who wage war’",
+          "title": "Pope Leo calls for peace, saying God doesn\u2019t listen to prayers of \u2018those who wage war\u2019",
           "source": "Washington Examiner",
           "url": "https://www.washingtonexaminer.com/news/4509019/pope-leo-god-doesnt-listen-to-prayers-of-those-who-wage-war/",
           "connection": "Religious authority uses moral argument to delegitimize military conflict and those who invoke faith to justify war."
@@ -3110,7 +3110,7 @@
           "Politics"
         ],
         "sample": {
-          "title": "Labor backs Greens inquiry into gas export tax – as it happened",
+          "title": "Labor backs Greens inquiry into gas export tax \u2013 as it happened",
           "source": "The Guardian World",
           "url": "https://www.theguardian.com/australia-news/live/2026/mar/30/australia-politics-live-national-cabinet-fuel-prices-oil-crisis-labor-anthony-albanese-chris-bowen-coalition-angus-taylor-ntwnfb",
           "connection": "Labor government aligns with Greens on gas export taxation while implementing fuel excise cuts, balancing fiscal and energy policy."
@@ -3132,7 +3132,7 @@
           "Climate"
         ],
         "sample": {
-          "title": "China ‘left-behind aunties’, known as senior girl group, gain popularity for charm, dance skills",
+          "title": "China \u2018left-behind aunties\u2019, known as senior girl group, gain popularity for charm, dance skills",
           "source": "South China Morning Post",
           "url": "https://www.scmp.com/news/people-culture/gender-diversity/article/3347686/china-left-behind-aunties-known-senior-girl-group-gain-popularity-charm-dance-skills?utm_source=rss_feed",
           "connection": ""
@@ -3174,7 +3174,7 @@
           "Economics"
         ],
         "sample": {
-          "title": "Government clears 29 investment proposals worth ₹7,104 cr under Electronics Component Manufacturing Scheme",
+          "title": "Government clears 29 investment proposals worth \u20b97,104 cr under Electronics Component Manufacturing Scheme",
           "source": "The Hindu",
           "url": "https://www.thehindu.com/business/Industry/government-clears-29-investment-proposals-worth-7104-cr-under-electronics-component-manufacturing-scheme/article70802068.ece",
           "connection": "State investment policy targets manufacturing sector to simultaneously boost domestic production capacity and create employment."
@@ -3259,7 +3259,7 @@
         "cooperation_types": [
           "institutional integrity"
         ],
-        "sample_title": "Pakistan board charges Fakhar Zaman with ball‑tampering in PSL match",
+        "sample_title": "Pakistan board charges Fakhar Zaman with ball\u2011tampering in PSL match",
         "sample_source": "Channel News Asia"
       },
       {
@@ -3269,7 +3269,7 @@
           "institutional conservation effort",
           "community organizing"
         ],
-        "sample_title": "How Mexico’s conservation work brought monarchs back from the brink",
+        "sample_title": "How Mexico\u2019s conservation work brought monarchs back from the brink",
         "sample_source": "Optimist Daily"
       },
       {
@@ -3333,7 +3333,7 @@
         "context": "Nonprofit newsroom founded in 2009 at Teachers College at Columbia University, covering education inequality, K-12 schools, and higher education policy."
       },
       {
-        "title": "How a Tiny Farm County Fought a Data Center Complex and Won",
+        "title": "How a Tiny Farm County Fought a Data Center Complex and\u00a0Won",
         "source": "Civil Eats",
         "url": "https://civileats.com/2026/03/30/how-a-tiny-farm-county-fought-a-data-center-complex-and-won/",
         "tier": "local-regional",
@@ -3343,7 +3343,7 @@
         "context": "Nonprofit publication founded in 2009, covering the American food system including food policy, sustainable agriculture, farm labor, and food justice."
       },
       {
-        "title": "Nation’s Disability Services System Faces ‘Unprecedented’ Threats",
+        "title": "Nation\u2019s Disability Services System Faces \u2018Unprecedented\u2019 Threats",
         "source": "Disability Scoop",
         "url": "https://www.disabilityscoop.com/2026/03/30/nations-disability-services-system-faces-unprecedented-threats/31929/",
         "tier": "local-regional",
@@ -3363,7 +3363,7 @@
         "context": "Independent Catholic news organization founded in 1964 in Kansas City, Missouri, not owned by or affiliated with any diocese, covering faith, church, and social issues."
       },
       {
-        "title": "Every Soldier a Software Builder: Governing the Army’s New Digital Workforce",
+        "title": "Every Soldier a Software Builder: Governing the Army\u2019s New Digital Workforce",
         "source": "War on the Rocks",
         "url": "https://warontherocks.com/2026/03/every-soldier-a-software-builder-governing-the-armys-new-digital-workforce/",
         "tier": "specialist",
@@ -3373,7 +3373,7 @@
         "context": "National security and foreign policy analysis platform founded in 2013, publishing expert commentary on military strategy, defense policy, and international security."
       },
       {
-        "title": "Pakistán será sede de conversaciones entre EE.UU. e Irán en medio de la guerra",
+        "title": "Pakist\u00e1n ser\u00e1 sede de conversaciones entre EE.UU. e Ir\u00e1n en medio de la guerra",
         "source": "El Diario NY",
         "url": "https://eldiariony.com/2026/03/29/pakistan-sera-sede-de-conversaciones-entre-ee-uu-e-iran-en-medio-de-la-guerra/",
         "tier": "local-regional",
@@ -3383,7 +3383,95 @@
         "context": "Spanish-language daily newspaper founded in 1913 in New York City, owned by ImpreMedia, serving Latino communities with coverage of immigration, politics, and culture."
       }
     ],
-    "coverage_gap": []
+    "coverage_gap": [],
+    "all_source_urls": {
+      "New York Times": "https://www.nytimes.com/2026/03/29/world/middleeast/us-precision-strike-missile-iran-lamerd.html",
+      "Bloomberg": "https://www.bloomberg.com/news/articles/2026-03-30/australia-and-india-plan-more-trade-talks-in-coming-weeks",
+      "AP News": "https://apnews.com/article/hungary-election-youth-voters-orban-58e71836ef9e3a38bc478bdbde9ca0b0",
+      "Fox News": "https://www.foxnews.com/politics/dem-senator-warns-deportation-could-let-virginia-womans-illegal-immigrants-killer-escape-accountability",
+      "Reuters": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNdzZFVFdxVUtteC1TQVRoQ2ZpZW9ydzAwSHA0a1lLV3p6Sl9EVmxWMkVWaldZVmJIM2ExbW5aMWlEODVpV1F1YV9mX3RRdDBTempjR09XcHlVRTlKU2VhR3RINzh0Vi1DQ2VVSVdnTmxJb183WlNpUElIbm4tM2ZuNmx3Qkh0dkItcVZmQ0JEWmF5QU53QTdIVUxnVk5KYXZrU1RjVnJNRXlyQzBFLVdpNy1vZXV0b2g0ODgwMm9tMjZlUExmQTNOejRRN180NmtmbFl0Tw?oc=5",
+      "Business Insider": "https://www.businessinsider.com/couple-started-business-alcohol-free-flavor-chemistry-sparkling-tea-saicho-2026-3",
+      "The Dispatch": "https://thedispatch.com/article/hegseth-war-crimes-endanger-americans/",
+      "Washington Examiner": "https://www.washingtonexaminer.com/news/4509019/pope-leo-god-doesnt-listen-to-prayers-of-those-who-wage-war/",
+      "Al Jazeera": "https://www.aljazeera.com/video/newsfeed/2026/3/30/displaced-families-in-sudan-struggle-as-aid-falls-short?traffic_source=rss",
+      "RealClearPolitics": "https://www.realclearpolitics.com/2026/03/29/how_americans_can_end_this_war_695749.html",
+      "The Guardian World": "https://www.theguardian.com/global-development/2026/mar/30/urgent-action-needed-to-prevent-surge-in-digital-violence-in-africa-experts-say",
+      "France 24": "https://www.france24.com/en/middle-east/20260330-israel-restores-latin-patriarch-access-holy-sepulchre-church-after-international-outcry",
+      "NHK World": "http://www3.nhk.or.jp/news/html/20260330/k10015087151000.html",
+      "ABC Australia": "https://www.abc.net.au/news/2026-03-30/wa-parliamentary-inquiry-into-greyhound-racing-begins/106511614",
+      "The Hindu": "https://www.thehindu.com/elections/tamil-nadu-assembly/will-electors-of-kerala-puducherry-residing-in-tamil-nadu-get-a-holiday-to-cast-their-vote-tn-govt-issues-advisory/article70801796.ece",
+      "Deutsche Welle": "https://www.dw.com/en/taiwan-opposition-leader-accepts-xi-s-invite-to-visit-china/a-76588423?maca=en-rss-en-all-1573-rdf",
+      "South China Morning Post": "https://www.scmp.com/news/world/europe/article/3348364/iran-war-rogue-drones-force-european-aviation-safety-rethink?utm_source=rss_feed",
+      "Naked Capitalism": "https://www.nakedcapitalism.com/2026/03/nationwide-general-strike-planned-for-may-1-no-kings-organizer.html",
+      "High Country News": "https://www.hcn.org/articles/new-nuclear-safety-rules-reduce-protections-for-workers-the-public/",
+      "Hechinger Report": "https://hechingerreport.org/opinion-ice-operations-psychological-trauma-students-declining-enrollment/",
+      "Civil Eats": "https://civileats.com/2026/03/30/how-a-tiny-farm-county-fought-a-data-center-complex-and-won/",
+      "Times of India": "https://timesofindia.indiatimes.com/science/water-discovery-fuels-return-to-moon/articleshow/129891722.cms",
+      "Straits Times": "https://www.straitstimes.com/world/europe/sheep-culls-put-pressure-on-greek-feta-cheese-production",
+      "Disability Scoop": "https://www.disabilityscoop.com/2026/03/30/nations-disability-services-system-faces-unprecedented-threats/31929/",
+      "National Catholic Reporter": "https://www.ncronline.org/news/immigration-courts-shrink-san-francisco-jesuit-parish-stands-families",
+      "War on the Rocks": "https://warontherocks.com/2026/03/every-soldier-a-software-builder-governing-the-armys-new-digital-workforce/",
+      "Rappler": "https://www.rappler.com/philippines/supreme-court-review-chiz-escudero-campaign-donation-case/",
+      "El Diario NY": "https://eldiariony.com/2026/03/29/pakistan-sera-sede-de-conversaciones-entre-ee-uu-e-iran-en-medio-de-la-guerra/",
+      "Breitbart": "https://www.breitbart.com/sports/2026/03/29/watch-school-resource-officer-bashes-teen-baseball-player-in-head-taser/",
+      "Wisconsin Examiner": "https://wisconsinexaminer.com/briefs/in-a-sermon-on-foot-directed-at-donald-trump-hundreds-join-palm-sunday-path-at-state-capitol/",
+      "Ohio Capital Journal": "https://ohiocapitaljournal.com/2026/03/30/record-anti-trump-crowds-reported-in-central-ohio/",
+      "Channel News Asia": "https://www.channelnewsasia.com/singapore/student-care-centre-operators-appointed-little-professors-learning-centre-termination-moe-6025226",
+      "Dawn": "https://www.dawn.com/news/1986805/govt-taking-steps-to-ease-burden-on-lower-and-middle-class-amid-fuel-price-hike-pm-shehbaz",
+      "Taipei Times": "https://www.taipeitimes.com/News/front/archives/2026/03/30/2003854698",
+      "The Japan Times": "https://www.japantimes.co.jp/news/2026/03/30/world/science-health/chatgpt-australia-ai-vaccine/",
+      "Bangkok Post": "https://www.bangkokpost.com/thailand/general/3227125/heat-index-could-hit-60c-in-early-april",
+      "Caribbean National Weekly": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQeTF1NC1VMHhlZUtKelJ1cWtsNzM4R2kyZ3JqVmQwaHFZNzRSLUt5TW94RGVzWWtYXzlpcENLbUU0WnY1eGQwQmpPREdYUElXV1RtRWZIOVl5WEw0djZaYzdoTlZmMExpOEpnUWEzOGw5MnRZeVlRZi1NV2tKYll0cnI2Rlgza0ZHSFQ0SmJMb2hMZTgxSVI2VnZQV3FuN2gwemVSck5CODdnaExydzYySFQwSQ?oc=5",
+      "Nevada Independent": "https://thenevadaindependent.com/article/demanda-inmigrantes-contratados-para-vender-alarmas-para-casas-en-las-vegas-temian-ser-deportados/",
+      "Balkan Insight": "https://balkaninsight.com/2026/03/30/fathers-dying-wish-albanian-sues-serbia-in-strasbourg-after-address-erased/bi/",
+      "NC Health News": "https://www.northcarolinahealthnews.org/2026/03/30/nc-remains-key-access-point-for-abortion-care/",
+      "The Free Press (Bari Weiss)": "https://www.thefp.com/p/anthropic-wins-the-first-round-against-trump",
+      "CT Mirror": "https://ctmirror.org/2026/03/30/connecticut-should-act-to-limit-ndas-that-silence-victims/",
+      "Florida Phoenix": "https://floridaphoenix.com/2026/03/30/repub/your-personal-data-might-set-your-grocery-prices-states-aim-to-crack-down/",
+      "InForum": "https://www.inforum.com/community/today-in-history-1966-faulty-welding-named-as-cause-of-north-high-gym-roof-collapse",
+      "Post and Courier": "https://www.postandcourier.com/business/stressed-us-grid-forcing-data-centers-to-get-more-flexible/article_ca1526ee-aa85-4c84-88fc-b140926cae70.html",
+      "Nebraska Examiner": "https://nebraskaexaminer.com/briefs/free-uno-concord-coalition-workshop-in-omaha-to-explore-federal-budget/",
+      "Spotlight PA": "https://www.spotlightpa.org/news/2026/03/key-2026-primary-elections-pennsylvana-state-house-senate-competitive/",
+      "Optimist Daily": "https://www.optimistdaily.com/2026/03/how-mexicos-conservation-work-brought-monarchs-back-from-the-brink/",
+      "Positive News": "https://www.positive.news/environment/agriculture/the-quest-to-restore-west-bank-olive-groves/",
+      "NPR": "https://www.npr.org/2026/03/30/g-s1-115720/up-first-newsletter-israel-lebanon-strait-of-hormuz-tsa-dhs-birthright-citizenship",
+      "NBC News": "https://www.today.com/video/tsa-officers-to-receive-backpay-as-airport-bottleneck-persists-260350533863",
+      "The Hill": "https://thehill.com/homenews/administration/5807321-christie-attacks-blanche-justice-reputation/",
+      "ABC News": "https://abcnews.com/International/wireStory/spain-closed-airspace-us-planes-involved-iran-war-131536616",
+      "BBC World": "https://www.bbc.com/news/articles/cgme8xy2rl1o?at_medium=RSS&at_campaign=rss",
+      "The Federalist": "https://thefederalist.com/2026/03/30/with-missouri-v-biden-settled-its-time-for-censorship-reparations/?utm_source=rss&utm_medium=rss&utm_campaign=with-missouri-v-biden-settled-its-time-for-censorship-reparations",
+      "Daily Wire": "https://www.dailywire.com/news/catholic-holy-week-events-move-forward-in-jerusalem-as-traditions-shift-for-safety",
+      "The Diplomat": "https://thediplomat.com/2026/03/in-photos-life-along-myanmars-border/",
+      "American Prospect": "https://prospect.org/2026/03/30/apr-2026-magazine-when-ice-blows-through-rural-america-minnesota/",
+      "The Markup": "https://themarkup.org/inside-the-markup/2026/03/30/the-markup-wins-sabew-award-for-best-in-business-journalism",
+      "OnLabor": "https://onlabor.org/can-workers-have-free-speech-rights/",
+      "ProPublica": "https://www.propublica.org/article/joseph-schwartz-trump-pardon-skyline-nursing-home-patients",
+      "404 Media": "https://www.404media.co/an-ai-agent-was-banned-from-creating-wikipedia-articles-then-wrote-angry-blogs-about-being-banned/",
+      "Vox": "https://www.vox.com/the-highlight/484080/welcome-to-the-april-issue-of-the-highlight",
+      "Wired": "https://www.wired.com/story/meet-the-man-making-music-with-his-brain-implant/",
+      "Indian Country Today": "https://ictnews.org/news/the-washoe-tribes-historic-landback-purchase-near-lake-tahoe/",
+      "Stateline": "https://stateline.org/2026/03/30/new-federal-data-reinforces-nationwide-drop-in-crime-since-pandemic-peak/",
+      "Christianity Today": "https://www.christianitytoday.com/2026/03/african-citizens-tricked-into-russian-army/",
+      "Center for American Progress": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxOVFJSeWVuR0hxTC13OTQ3cnVYSjUxWHZCcHFaUzBiTWpWM0JvTHhsdDI5MmVKSXdKWG11bXp1YU1wc3l1S0RHdU0wcTJnaU1GdUN3OHp2TVE1VVVHd25fNG8wUUdJS05Hc0hlb3hwRnI5RXZMSTd4X2J3Qk9OWTVXUUpEVUg3dDRKUk9ZT0hVZE13M1ZGWlpMWUVGNVVkeC0xckZzSDJrNHduQl90S2JXU3FMaVQyT2ljNUh0X3JxdlFJRWg0UVlWOHl6ZDRBWF8ycUdiSmVZSFpsMVU?oc=5",
+      "The Root": "https://www.theroot.com/rev-william-barber-why-the-midterm-election-is-so-imp-2000097302",
+      "Military Times": "https://www.militarytimes.com/news/pentagon-congress/2026/03/30/senator-stalls-3-unfit-officer-promotions-in-retort-to-hegseth/",
+      "Honolulu Civil Beat": "https://www.civilbeat.org/2026/03/kauai-homeowners-can-soon-get-a-free-wildfire-home-assessment/",
+      "Daily Yonder": "https://dailyyonder.com/part-1-hands-on-telehealth-helps-reach-rural-texas-communities/2026/03/30/",
+      "The Imprint": "https://imprintnews.org/opinion/her-children-were-taken-while-she-lay-shot-in-the-hospital/273465",
+      "The Forward": "https://forward.com/fast-forward/815986/netanyahu-orders-church-of-the-holy-sepulchre-open-after-palm-sunday-closure-flares-tensions/",
+      "Mississippi Free Press": "https://www.mississippifreepress.org/opinion-make-mississippi-worth-choosing-not-enduring/",
+      "The Advocate": "https://www.advocate.com/newsletter/advocate-newsletter-3-30-26",
+      "Inside Climate News": "https://insideclimatenews.org/news/30032026/maine-wabanaki-basketmakers-help-save-ash-trees/",
+      "Just Security": "https://www.justsecurity.org/134898/iran-school-strike-us-investigation/?utm_source=rss&utm_medium=rss&utm_campaign=iran-school-strike-us-investigation",
+      "Meduza": "https://meduza.io/en/feature/2026/03/30/last-week-ukrainian-drones-reportedly-landed-in-latvia-estonia-and-lithuania-russian-propaganda-was-quick-to-react",
+      "The Grio": "https://thegrio.com/2026/03/30/tsa-workers-return-gift-cards-tyler-perry-atlanta-airport/",
+      "STAT News": "https://www.statnews.com/2026/03/30/fair-act-pbm-reform-fiduciary-duty-to-patients/?utm_campaign=rss",
+      "Atlanta Black Star": "https://atlantablackstar.com/2026/03/30/appalling-student-calls-black-basketball-player-at-rival-high-school-in-indiana-the-n-word-on-live-sports-broadcast-prompting-calls-for-boycott/",
+      "MinnPost": "https://www.minnpost.com/glean/2026/03/atv-users-get-a-specialized-state-park-campground-in-northern-minnesota/",
+      "Bridge Michigan": "https://bridgemi.com/michigan-government/family-of-michigan-ice-detainee-offers-mutual-aid-for-fellow-immigrants/",
+      "Washington Post": "https://www.washingtonpost.com/world/2026/03/30/easter-jerusalem-pizzaballa-holy-church-sepulchre/",
+      "E&E News": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOV0lMckp2Y3Y5bnJqejRnTndMeF85dzZQY2l4dXRzY0x4cGh6cnN6WV9wd0o3dGFuNDZRblB3VmVGR0ZiUVltQTVFRVM0S2pLRjB2dks3UWdtX2hoR2FxUVR4ZjM4Y250Qmcyb1lYWnNMOU5NY1hkRm9MR3lBcHRBTFV2UE5ZYms?oc=5"
+    }
   },
   "local_regional_exclusive": [
     {
@@ -3430,7 +3518,7 @@
       "context": "Independent digital news outlet founded in 2014, covering news, politics, and cultural issues affecting Asian American and Pacific Islander communities."
     },
     {
-      "title": "Every Soldier a Software Builder: Governing the Army’s New Digital Workforce",
+      "title": "Every Soldier a Software Builder: Governing the Army\u2019s New Digital Workforce",
       "source": "War on the Rocks",
       "url": "https://warontherocks.com/2026/03/every-soldier-a-software-builder-governing-the-armys-new-digital-workforce/",
       "tier": "specialist",
@@ -3448,7 +3536,7 @@
       "source": "El Diario NY",
       "url": "https://eldiariony.com/2026/03/30/lo-que-deben-saber-los-padres-sobre-el-acoso-y-la-violencia-en-el-noviazgo-adolescente-en-nueva-york/",
       "tier": "local-regional",
-      "text_preview": "La era digital le pone más combustible a la tendencia de conductas dañinas dentro de una relación romántica entre jóvenes y adolescentes",
+      "text_preview": "La era digital le pone m\u00e1s combustible a la tendencia de conductas da\u00f1inas dentro de una relaci\u00f3n rom\u00e1ntica entre j\u00f3venes y adolescentes",
       "domains": [
         "information"
       ],
@@ -3484,11 +3572,11 @@
       "context": "Nonprofit newsroom part of the States Newsroom network, founded in 2019, covering Ohio state government, elections, and policy from Columbus."
     },
     {
-      "title": "Demanda: Inmigrantes contratados para vender alarmas para casas en Las Vegas temían ser deportados",
+      "title": "Demanda: Inmigrantes contratados para vender alarmas para casas en Las Vegas tem\u00edan ser deportados",
       "source": "Nevada Independent",
       "url": "https://thenevadaindependent.com/article/demanda-inmigrantes-contratados-para-vender-alarmas-para-casas-en-las-vegas-temian-ser-deportados/",
       "tier": "local-regional",
-      "text_preview": "Tres empleados de Vivint en Nevada, una de las mayores empresas de seguridad para el hogar en el país, demandaron a esa compañía por tráfico laboral, señalando que fueron obligados a trasladarse a otra ciudad, que se les negaron salarios justos y que",
+      "text_preview": "Tres empleados de Vivint en Nevada, una de las mayores empresas de seguridad para el hogar en el pa\u00eds, demandaron a esa compa\u00f1\u00eda por tr\u00e1fico laboral, se\u00f1alando que fueron obligados a trasladarse a otra ciudad, que se les negaron salarios justos y que",
       "domains": [
         "labor",
         "legal",
@@ -3514,7 +3602,7 @@
       "source": "TechCrunch",
       "url": "https://techcrunch.com/2026/03/29/why-openai-really-shut-down-sora/",
       "tier": "specialist",
-      "text_preview": "OpenAI's decision last week to shut down Sora, its AI video-generation tool, just six months after releasing it to the public raised immediate suspicions. The app had invited users to upload their own faces — so was this some kind of elaborate data g",
+      "text_preview": "OpenAI's decision last week to shut down Sora, its AI video-generation tool, just six months after releasing it to the public raised immediate suspicions. The app had invited users to upload their own faces \u2014 so was this some kind of elaborate data g",
       "domains": [
         "ai",
         "information"
@@ -3524,11 +3612,11 @@
       "context": "Technology industry publication founded in 2005 by Michael Arrington, now owned by Yahoo, covering startups, venture capital, product launches, and Silicon Valley."
     },
     {
-      "title": "Why Danbury’s homeless deserve more help",
+      "title": "Why Danbury\u2019s homeless deserve more help",
       "source": "CT Mirror",
       "url": "https://ctmirror.org/2026/03/30/why-danburys-homeless-deserve-more-help/",
       "tier": "local-regional",
-      "text_preview": "Isette, a 62-year-old who spent 30 years as a paralegal, got evicted from her apartment a year and a half ago when she couldn’t pay its rising rent. She spent months living in her car and had to put her beloved cats in foster homes. One saving grace:",
+      "text_preview": "Isette, a 62-year-old who spent 30 years as a paralegal, got evicted from her apartment a year and a half ago when she couldn\u2019t pay its rising rent. She spent months living in her car and had to put her beloved cats in foster homes. One saving grace:",
       "domains": [
         "governance"
       ],
@@ -3562,12 +3650,12 @@
       "trend": "rising",
       "sample_articles": [
         {
-          "title": "They’ve Been Accused of Running a ‘Covert’ Operation in Greenland. It’s No Secre",
+          "title": "They\u2019ve Been Accused of Running a \u2018Covert\u2019 Operation in Greenland. It\u2019s No Secre",
           "source": "New York Times",
           "url": "https://www.nytimes.com/2026/03/30/world/europe/trump-greenland-operation-danish-media.html"
         },
         {
-          "title": "Across Asia, Trump’s War on Iran Is Dangerous for Everyone",
+          "title": "Across Asia, Trump\u2019s War on Iran Is Dangerous for Everyone",
           "source": "New York Times",
           "url": "https://www.nytimes.com/2026/03/30/opinion/trump-iran-war-india-oil.html"
         },
@@ -3665,7 +3753,7 @@
           "url": "https://www.foxnews.com/entertainment/lionel-richie-warning-celebrities-fans-chappell-roan-backlash"
         },
         {
-          "title": "They're old enough to be my grandparents — and in better shape than people half ",
+          "title": "They're old enough to be my grandparents \u2014 and in better shape than people half ",
           "source": "Business Insider",
           "url": "https://www.businessinsider.com/healthy-aging-singapore-longevity-fitness-wellness-team-strong-silvers-2026-3"
         }
@@ -3686,7 +3774,7 @@
       "trend": "rising",
       "sample_articles": [
         {
-          "title": "India’s Boldest Currency Move in Years Brings Brief Rupee Relief",
+          "title": "India\u2019s Boldest Currency Move in Years Brings Brief Rupee Relief",
           "source": "Bloomberg",
           "url": "https://www.bloomberg.com/news/articles/2026-03-30/indian-rupee-surges-as-rbi-s-cap-on-limits-sparks-dollar-sales"
         },
@@ -3758,7 +3846,7 @@
           "url": "https://www.bloomberg.com/news/videos/2026-03-30/oil-gains-as-houthis-enter-middle-east-war-video"
         },
         {
-          "title": "Asian shares decline as oil prices soar amid the war in Iran, echoing last week’",
+          "title": "Asian shares decline as oil prices soar amid the war in Iran, echoing last week\u2019",
           "source": "AP News",
           "url": "https://apnews.com/article/stock-markets-war-oil-trump-iran-1aef947ecb395c3bb97fcdb5ed3826f1"
         }
@@ -3784,12 +3872,12 @@
           "url": "https://www.foxnews.com/entertainment/lionel-richie-warning-celebrities-fans-chappell-roan-backlash"
         },
         {
-          "title": "They're old enough to be my grandparents — and in better shape than people half ",
+          "title": "They're old enough to be my grandparents \u2014 and in better shape than people half ",
           "source": "Business Insider",
           "url": "https://www.businessinsider.com/healthy-aging-singapore-longevity-fitness-wellness-team-strong-silvers-2026-3"
         },
         {
-          "title": "対話型生成AI 回答に“偽サイトや詐欺サイト”表示か 注意を",
+          "title": "\u5bfe\u8a71\u578b\u751f\u6210AI \u56de\u7b54\u306b\u201c\u507d\u30b5\u30a4\u30c8\u3084\u8a50\u6b3a\u30b5\u30a4\u30c8\u201d\u8868\u793a\u304b \u6ce8\u610f\u3092",
           "source": "NHK World",
           "url": "http://www3.nhk.or.jp/news/html/20260330/k10015087661000.html"
         }
@@ -3845,7 +3933,7 @@
           "url": "https://www.foxnews.com/politics/dem-senator-warns-deportation-could-let-virginia-womans-illegal-immigrants-killer-escape-accountability"
         },
         {
-          "title": "They're old enough to be my grandparents — and in better shape than people half ",
+          "title": "They're old enough to be my grandparents \u2014 and in better shape than people half ",
           "source": "Business Insider",
           "url": "https://www.businessinsider.com/healthy-aging-singapore-longevity-fitness-wellness-team-strong-silvers-2026-3"
         },
@@ -3907,12 +3995,12 @@
           "url": "https://www.nbcnews.com/sports/college-basketball/ncaa-tournament-connecticut-duke-elite-eight-final-four-results-rcna265728"
         },
         {
-          "title": "Anne Hathaway, 43, says she stopped being a 'stressed person' for her kids — and",
+          "title": "Anne Hathaway, 43, says she stopped being a 'stressed person' for her kids \u2014 and",
           "source": "Business Insider",
           "url": "https://www.businessinsider.com/anne-hathaway-quit-being-stressed-mother-kids-parenting-career-balance-2026-3"
         },
         {
-          "title": "Thieves steal Renoir, Cézanne and Matisse paintings worth millions from Italian ",
+          "title": "Thieves steal Renoir, C\u00e9zanne and Matisse paintings worth millions from Italian ",
           "source": "The Guardian World",
           "url": "https://www.theguardian.com/artanddesign/2026/mar/30/paintings-stolen-museum-italy-renoir-cezanne-matisse"
         }
@@ -3942,7 +4030,7 @@
           "url": "https://www.nbcnews.com/sports/college-basketball/ncaa-tournament-connecticut-duke-elite-eight-final-four-results-rcna265728"
         },
         {
-          "title": "They're old enough to be my grandparents — and in better shape than people half ",
+          "title": "They're old enough to be my grandparents \u2014 and in better shape than people half ",
           "source": "Business Insider",
           "url": "https://www.businessinsider.com/healthy-aging-singapore-longevity-fitness-wellness-team-strong-silvers-2026-3"
         }
@@ -3968,7 +4056,7 @@
           "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNWGxBSWFud1RLWEU1QlFtRmNNWktrZGlRX05lS1lmclBXZFI2TlV2NndRVW9EZ3F5Nl8zaWZpUHZHVGV2UWlCVXlFcDg4N0EzZ3JTTThmQ1hRZ0FWbTd3T0t5YlJwRC1MbEJtbGl0UE1vME1sZThYaG9GSXdMY1ppSUpUSmplMDRFRE1hVXlTWndRVzJlN245dVBBcjJzYzhTaF9vMDVKMTF1bmNYZWc?oc=5"
         },
         {
-          "title": "Anne Hathaway, 43, says she stopped being a 'stressed person' for her kids — and",
+          "title": "Anne Hathaway, 43, says she stopped being a 'stressed person' for her kids \u2014 and",
           "source": "Business Insider",
           "url": "https://www.businessinsider.com/anne-hathaway-quit-being-stressed-mother-kids-parenting-career-balance-2026-3"
         },
@@ -3999,12 +4087,12 @@
           "url": "https://www.foxnews.com/entertainment/lionel-richie-warning-celebrities-fans-chappell-roan-backlash"
         },
         {
-          "title": "Anne Hathaway, 43, says she stopped being a 'stressed person' for her kids — and",
+          "title": "Anne Hathaway, 43, says she stopped being a 'stressed person' for her kids \u2014 and",
           "source": "Business Insider",
           "url": "https://www.businessinsider.com/anne-hathaway-quit-being-stressed-mother-kids-parenting-career-balance-2026-3"
         },
         {
-          "title": "They're old enough to be my grandparents — and in better shape than people half ",
+          "title": "They're old enough to be my grandparents \u2014 and in better shape than people half ",
           "source": "Business Insider",
           "url": "https://www.businessinsider.com/healthy-aging-singapore-longevity-fitness-wellness-team-strong-silvers-2026-3"
         }
@@ -4040,7 +4128,7 @@
         "national": [
           {
             "source": "New York Times",
-            "title": "They’ve Been Accused of Running a ‘Covert’ Operation in Greenland. It’s No Secret.",
+            "title": "They\u2019ve Been Accused of Running a \u2018Covert\u2019 Operation in Greenland. It\u2019s No Secret.",
             "url": "https://www.nytimes.com/2026/03/30/world/europe/trump-greenland-operation-danish-media.html",
             "context": "Daily newspaper founded in 1851, owned by the New York Times Company, the largest newspaper by digital subscriptions globally, covering national and world affairs.",
             "connection": "Foreign intelligence monitors covert influence operations targeting resource-rich territory, revealing strategic competition disguised as diplomacy."
@@ -4094,7 +4182,7 @@
           },
           {
             "source": "The Guardian World",
-            "title": "Victoria police called to give evidence into Indigenous man’s death in custody seek protection from ",
+            "title": "Victoria police called to give evidence into Indigenous man\u2019s death in custody seek protection from ",
             "url": "https://www.theguardian.com/australia-news/2026/mar/30/indigenous-death-custody-victoria-police-seek-protection-self-incrimination-ntwnfb",
             "context": "British newspaper founded in 1821, owned by the Scott Trust nonprofit, one of the most-read English-language news sites globally, covering international affairs.",
             "connection": "Police officers invoke self-incrimination protections during official inquest into custodial death, creating legal obstacle to institutional accountability."
@@ -4172,7 +4260,7 @@
           },
           {
             "source": "The Guardian World",
-            "title": "Fugitive emerged from building holding weapon before being shot dead, commissioner says – as it happ",
+            "title": "Fugitive emerged from building holding weapon before being shot dead, commissioner says \u2013 as it happ",
             "url": "https://www.theguardian.com/australia-news/live/2026/mar/30/dezi-freeman-update-news-shot-dead-by-police-australia-fugitive-victoria-porepunkah-shooting-live-updates-latest-ntwnfb",
             "context": "British newspaper founded in 1821, owned by the Scott Trust nonprofit, one of the most-read English-language news sites globally, covering international affairs.",
             "connection": "Police shooting of fugitive after extended manhunt raises questions about use-of-force protocols and investigative procedures."
@@ -4203,7 +4291,7 @@
           },
           {
             "source": "AP News",
-            "title": "Asian shares decline as oil prices soar amid the war in Iran, echoing last week’s Wall Street drop",
+            "title": "Asian shares decline as oil prices soar amid the war in Iran, echoing last week\u2019s Wall Street drop",
             "url": "https://apnews.com/article/stock-markets-war-oil-trump-iran-1aef947ecb395c3bb97fcdb5ed3826f1",
             "context": "Nonprofit news cooperative founded in 1846 and owned by its member newspapers and broadcasters, operating as a global wire service in 100 countries.",
             "connection": "Military conflict in Iran drives oil prices higher, creating financial contagion across Asian markets."
@@ -4288,7 +4376,7 @@
           },
           {
             "source": "Business Insider",
-            "title": "They're old enough to be my grandparents — and in better shape than people half their age",
+            "title": "They're old enough to be my grandparents \u2014 and in better shape than people half their age",
             "url": "https://www.businessinsider.com/healthy-aging-singapore-longevity-fitness-wellness-team-strong-silvers-2026-3",
             "context": "Digital news outlet founded in 2007, owned by Axel Springer since 2015, covering business, technology, finance, and corporate news for a global audience.",
             "connection": ""
@@ -4313,7 +4401,7 @@
         "local-regional": [
           {
             "source": "Ohio Capital Journal",
-            "title": "Ohio Sen. Louis Blessing praises veterans. So why won’t he let them have a vote?",
+            "title": "Ohio Sen. Louis Blessing praises veterans. So why won\u2019t he let them have a vote?",
             "url": "https://ohiocapitaljournal.com/2026/03/30/ohio-sen-louis-blessing-praises-veterans-so-why-wont-he-let-them-have-a-vote/",
             "context": "Nonprofit newsroom part of the States Newsroom network, founded in 2019, covering Ohio state government, elections, and policy from Columbus.",
             "connection": "Senator blocks veteran property tax relief vote despite publicly praising veterans' sacrifice, exposing gap between rhetoric and policy action."
@@ -4403,7 +4491,7 @@
       "structural_force": "regional military escalation",
       "articles": [
         {
-          "title": "Iran: US ground troops would be ‘set on fire’",
+          "title": "Iran: US ground troops would be \u2018set on fire\u2019",
           "source": "The Hill",
           "url": "https://thehill.com/policy/defense/5807214-iran-threatens-us-troops/",
           "tier": "national",
@@ -4413,7 +4501,7 @@
           "force_tag": "military escalation spiral"
         },
         {
-          "title": "Across Asia, Trump’s War on Iran Is Dangerous for Everyone",
+          "title": "Across Asia, Trump\u2019s War on Iran Is Dangerous for Everyone",
           "source": "New York Times",
           "url": "https://www.nytimes.com/2026/03/30/opinion/trump-iran-war-india-oil.html",
           "tier": "national",
@@ -4511,7 +4599,7 @@
           "force_tag": "supply chain weaponization"
         },
         {
-          "title": "How Yemen’s Houthis could worsen the oil crunch",
+          "title": "How Yemen\u2019s Houthis could worsen the oil crunch",
           "source": "Straits Times",
           "url": "https://www.straitstimes.com/world/middle-east/how-yemens-houthis-could-worsen-the-oil-crunch",
           "tier": "international",
@@ -4537,7 +4625,7 @@
     "headline": "Regulatory rollback strips nuclear worker protections while military escalation disrupts global supply chains",
     "accessible_headline": "New nuclear rules cut worker safety as Iran war hits oil markets",
     "subheadline": "Labor Department policy changes coincide with Middle East conflict creating compound risks to economic stability and worker protection.",
-    "synthesis": "The Labor Department's rollback of nuclear industry safety standards, reported primarily by High Country News while national outlets focused on 401(k) investment rules, reveals how regulatory capture operates in plain sight during periods of international crisis. The timing matters because geopolitical instability creates the perfect cover for weakening worker protections when public attention is elsewhere, and the combination produces compound vulnerabilities that neither story captures alone. When nuclear safety regulations are loosened at the same moment that Middle East conflict threatens energy supply chains, the result is a double exposure to systemic risk that affects both the workers inside nuclear facilities and the communities that depend on stable energy systems.\n\nThe escalation in Iran has moved beyond diplomatic posturing into direct market disruption, with aluminum producers under attack and oil markets experiencing what Bloomberg describes as war-driven volatility that forces real-time renegotiation of pricing mechanisms between major exporters and importers. What makes this different from previous Middle East tensions is the simultaneity across sectors, from Indonesia losing a UN peacekeeper in Lebanon to Australian communities canceling events because fuel costs have become prohibitive. The regional military escalation that national security outlets are tracking connects directly to the supply chain disruptions that economics reporters are covering, but the synthesis happens primarily in international and specialist sources while domestic outlets treat them as separate stories.\n\nThe gap in coverage becomes most visible when looking at community-level impacts that local and ethnic media are documenting while national outlets owned or influenced by tech companies focus on market indicators. The Hechinger Report's analysis of how ICE operations create psychological trauma that leads to declining school enrollment and diminished workforce development opportunities doesn't appear in national coverage, nor does Civil Eats' reporting on how a small farming county successfully fought off a data center complex tied to energy monopolization. These stories matter because they show people responding to structural forces with organized resistance and mutual aid, but the information architecture that most Americans encounter filters out precisely these examples of effective collective action.\n\nThe cooperation stories embedded throughout today's coverage suggest that institutional legitimacy erosion, which appears across political and governance domains, is prompting both principled resignation and cross-party collaboration in ways that challenge the narrative of inevitable polarization. When a CAF general secretary quits over tournament controversy, Hungarian youth organize against Orbán's rule, and even religious leaders call for peace while criticizing those who wage war, the pattern suggests that people are choosing institutional integrity over partisan loyalty across multiple domains simultaneously. The question isn't whether institutions are failing, but whether the alternatives being built can scale fast enough to address the compound crises that regulatory capture and military escalation are creating together.",
+    "synthesis": "The Labor Department's rollback of nuclear industry safety standards, reported primarily by High Country News while national outlets focused on 401(k) investment rules, reveals how regulatory capture operates in plain sight during periods of international crisis. The timing matters because geopolitical instability creates the perfect cover for weakening worker protections when public attention is elsewhere, and the combination produces compound vulnerabilities that neither story captures alone. When nuclear safety regulations are loosened at the same moment that Middle East conflict threatens energy supply chains, the result is a double exposure to systemic risk that affects both the workers inside nuclear facilities and the communities that depend on stable energy systems.\n\nThe escalation in Iran has moved beyond diplomatic posturing into direct market disruption, with aluminum producers under attack and oil markets experiencing what Bloomberg describes as war-driven volatility that forces real-time renegotiation of pricing mechanisms between major exporters and importers. What makes this different from previous Middle East tensions is the simultaneity across sectors, from Indonesia losing a UN peacekeeper in Lebanon to Australian communities canceling events because fuel costs have become prohibitive. The regional military escalation that national security outlets are tracking connects directly to the supply chain disruptions that economics reporters are covering, but the synthesis happens primarily in international and specialist sources while domestic outlets treat them as separate stories.\n\nThe gap in coverage becomes most visible when looking at community-level impacts that local and ethnic media are documenting while national outlets owned or influenced by tech companies focus on market indicators. The Hechinger Report's analysis of how ICE operations create psychological trauma that leads to declining school enrollment and diminished workforce development opportunities doesn't appear in national coverage, nor does Civil Eats' reporting on how a small farming county successfully fought off a data center complex tied to energy monopolization. These stories matter because they show people responding to structural forces with organized resistance and mutual aid, but the information architecture that most Americans encounter filters out precisely these examples of effective collective action.\n\nThe cooperation stories embedded throughout today's coverage suggest that institutional legitimacy erosion, which appears across political and governance domains, is prompting both principled resignation and cross-party collaboration in ways that challenge the narrative of inevitable polarization. When a CAF general secretary quits over tournament controversy, Hungarian youth organize against Orb\u00e1n's rule, and even religious leaders call for peace while criticizing those who wage war, the pattern suggests that people are choosing institutional integrity over partisan loyalty across multiple domains simultaneously. The question isn't whether institutions are failing, but whether the alternatives being built can scale fast enough to address the compound crises that regulatory capture and military escalation are creating together.",
     "cooperation_highlight": "A small farming county successfully blocked corporate acquisition of agricultural land for data center infrastructure, according to Civil Eats, demonstrating how rural communities can organize effective resistance against tech monopolization of energy resources. The victory required coordination across property owners, environmental groups, and local officials who recognized that data centers would strain both electrical grids and water systems that farming communities depend on.",
     "coverage_gap_note": "National outlets missed how ICE operations are creating educational disruption that reduces workforce development opportunities, a connection the Hechinger Report documented through interviews with students and educators that revealed systematic psychological trauma affecting enrollment and career paths.",
     "thread_to_watch": "The combination of nuclear safety deregulation and Middle East supply chain disruption is creating compound infrastructure vulnerability that neither the security nor economics coverage is adequately tracking as a single system. Watch whether local sources continue to catch community-level impacts that national outlets miss.",
