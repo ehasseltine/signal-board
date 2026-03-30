@@ -181,6 +181,8 @@ CRITICAL ACCURACY RULE FOR MEANWHILE: In the "synthesis" field, you may ONLY nam
 
 **watch_for** (30-50 words maximum): What should a reader pay attention to in the coming days? Every item must include AT LEAST ONE of: a specific date or deadline, a specific bill or regulation number, a specific institution to monitor, or a specific measurable threshold. If you cannot name something specific, do not generate a "What to Watch For" item. Vague watchlist items ("watch for coordination," "watch for implementation timelines") waste the reader's time. The reader should be able to set a calendar reminder or check a specific source next week. If they cannot, cut it.
 
+CRITICAL: Only include dates, deadlines, or timelines that are EXPLICITLY stated in the source articles provided to you. Do not infer, estimate, or fabricate dates. If no article mentions a specific date or deadline, say "timeline not yet announced" or omit the watch item entirely. A wrong date destroys reader trust faster than no date. All dates must be in the FUTURE relative to today's date. If a date has already passed, do not include it.
+
 OUTPUT FORMAT:
 Return valid JSON with this structure:
 {{

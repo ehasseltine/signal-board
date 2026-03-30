@@ -302,9 +302,15 @@ function extractOutletFromSentence(sentence: string): string | null {
     if (sentence.startsWith(name + ' ') || sentence.startsWith(name + "'s ")) {
       return name;
     }
-    // Also try "The X" variants
-    if (name.startsWith('The ') && sentence.startsWith(name + ' ')) {
-      return name;
+  }
+  // Second pass: the synthesis may drop "The" from outlet names like "The Globe and Mail"
+  // Try prepending "The " to find a match
+  for (const name of allOutletNames) {
+    if (name.startsWith('The ')) {
+      const shortName = name.slice(4); // "Globe and Mail"
+      if (sentence.startsWith(shortName + ' ') || sentence.startsWith(shortName + "'s ")) {
+        return name; // Return canonical name with "The"
+      }
     }
   }
   return null;
@@ -609,9 +615,10 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
   <!-- CROSS-SPECTRUM — framing exhibit -->
   {threadStory.crossSpectrum && (() => {
     const allSentences = splitSentences(threadStory.crossSpectrum);
-    const summaryPattern = /^(Same|Put them|Together|Overall|The gap|What connects|None of|Each one|When you|Six |Seven |Eight |Nine |Ten )/i;
-    const outletRows = allSentences.filter(s => !summaryPattern.test(s));
-    const summaryRows = allSentences.filter(s => summaryPattern.test(s));
+    // A sentence is an outlet framing row if it starts with a known outlet name.
+    // Everything else is a pattern/summary sentence for the callout card.
+    const outletRows = allSentences.filter(s => extractOutletFromSentence(s) !== null);
+    const summaryRows = allSentences.filter(s => extractOutletFromSentence(s) === null);
     return (
     <div style="padding: 32px 0 0;">
       <span class="section-label r" style="font-size: 13px; margin-bottom: 20px; display: block;">How outlets told it differently</span>
@@ -790,9 +797,10 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
     const allSentences = gapStory.crossSpectrum
       ? splitSentences(gapStory.crossSpectrum)
       : gapStory.insights.slice(0, 6);
-    const summaryPattern = /^(Same|Put them|Together|Overall|The gap|What connects|None of|Each one|When you|Six |Seven |Eight |Nine |Ten )/i;
-    const outletRows = allSentences.filter(s => !summaryPattern.test(s));
-    const summaryRows = allSentences.filter(s => summaryPattern.test(s));
+    // A sentence is an outlet framing row if it starts with a known outlet name.
+    // Everything else is a pattern/summary sentence for the callout card.
+    const outletRows = allSentences.filter(s => extractOutletFromSentence(s) !== null);
+    const summaryRows = allSentences.filter(s => extractOutletFromSentence(s) === null);
     return (
     <div style="padding: 32px 0 0;">
       <span class="section-label r section-label-teal" style="font-size: 13px; margin-bottom: 20px; display: block;">How outlets framed it</span>
