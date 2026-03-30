@@ -164,6 +164,27 @@ function splitSentences(text: string): string[] {
   });
 }
 
+// All known outlet names from pipeline data, sorted longest-first for matching
+const allOutletNames = Array.from(new Set([
+  ...Array.from(outletUrlMap.keys()),
+  ...Array.from(outletContextMap.keys()),
+])).sort((a, b) => b.length - a.length);
+
+// Extract outlet name from the beginning of a framing sentence
+// Uses known outlet names for reliable matching instead of verb-pattern guessing
+function extractOutletFromSentence(sentence: string): string | null {
+  for (const name of allOutletNames) {
+    if (sentence.startsWith(name + ' ') || sentence.startsWith(name + "'s ")) {
+      return name;
+    }
+    // Also try "The X" variants
+    if (name.startsWith('The ') && sentence.startsWith(name + ' ')) {
+      return name;
+    }
+  }
+  return null;
+}
+
 function tierLabel(tier: string): string {
   const labels: Record<string, string> = {
     'national': 'National',
@@ -463,40 +484,48 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
     <span class="section-label r" style="font-size: 13px; margin-bottom: 20px; display: block;">How outlets told it differently</span>
     <div class="r cascade-parent" style="display: flex; flex-direction: column; gap: 0;">
       {splitSentences(threadStory.crossSpectrum).map((sentence: string, i: number) => {
-        // Extract outlet name: "Reuters sees...", "France 24 sees...", "NBC's interview..."
-        const outletMatch = sentence.match(/^([A-Z][A-Za-z0-9\s'.]+?)\s+(?:sees?|frames?|reports?|covered|interview|ran|tallied|leads?)/);
-        // Also try tier-based labels for fallback
-        const tierMatch = sentence.match(/^(National|International|Local|Specialist|Military|Conservative|Progressive|Analysis)/i);
+        // Extract outlet name using known outlet names from pipeline data
+        const outletName = extractOutletFromSentence(sentence);
         // Detect summary/wrap-up sentences (not outlet-specific)
-        const isSummary = /^(Same|Put them|Together|Overall|The gap|What connects|None of|Each one|When you)/i.test(sentence);
+        const isSummary = /^(Same|Put them|Together|Overall|The gap|What connects|None of|Each one|When you|Six |Seven |Eight |Nine |Ten )/i.test(sentence);
         // Determine label and tier for coloring
         let label: string;
         let tierForColor: string;
         let content: string;
         if (isSummary) {
-          // Summary sentences get a special "takeaway" treatment
           label = 'The pattern';
           tierForColor = 'analysis';
           content = sentence;
-        } else if (outletMatch) {
-          label = outletMatch[1].replace(/'s$/, '').trim();
+        } else if (outletName) {
+          label = outletName;
           content = sentence;
-          // Map known outlets to tiers for background coloring
-          const intlOutlets = ['Reuters', 'AP', 'France 24', 'Al Jazeera', 'BBC', 'Straits Times', 'NHK', 'Times of India', 'The Hindu', 'South China Morning Post', 'Channel News Asia', 'Dawn'];
-          const localOutlets = ['Military Times', 'Honolulu Civil Beat', 'Oregon Public Broadcasting', 'VTDigger'];
-          const specialistOutlets = ['Bloomberg', 'The Marshall Project', 'Hechinger Report', 'ProPublica'];
-          const analysisOutlets = ['The Atlantic', 'The Economist', 'Foreign Affairs'];
-          if (intlOutlets.some(o => label.includes(o))) tierForColor = 'international';
-          else if (localOutlets.some(o => label.includes(o))) tierForColor = 'local';
-          else if (specialistOutlets.some(o => label.includes(o))) tierForColor = 'specialist';
-          else if (analysisOutlets.some(o => label.includes(o))) tierForColor = 'analysis';
+          // Look up tier from pipeline data for coloring
+          const articleTier = (() => {
+            for (const story of topStories) {
+              for (const a of (story.articles || [])) {
+                if (a.source === outletName) return a.tier;
+              }
+            }
+            for (const nd of narrativeDivergence) {
+              for (const a of (nd.articles || [])) {
+                if (a.source === outletName) return a.tier;
+              }
+            }
+            return '';
+          })();
+          if (articleTier === 'international') tierForColor = 'international';
+          else if (articleTier === 'local-regional' || articleTier === 'lived') tierForColor = 'local';
+          else if (articleTier === 'specialist' || articleTier === 'domain') tierForColor = 'specialist';
+          else if (articleTier === 'analysis') tierForColor = 'analysis';
           else tierForColor = 'national';
-        } else if (tierMatch) {
-          label = tierMatch[1];
-          tierForColor = tierMatch[1].toLowerCase();
-          content = sentence.replace(tierMatch[0], '').replace(/^[-\s]*(?:focused|oriented|leaning)?\s*(?:outlets?|sources?|media|press|coverage)?\s*/i, '').replace(/^[,.:]\s*/, '');
         } else {
-          label = `Perspective ${i + 1}`;
+          // Last resort: try to extract any capitalized multi-word name at the start
+          const fallbackMatch = sentence.match(/^([A-Z][A-Za-z0-9\s'.]+?)\s+[a-z]/);
+          if (fallbackMatch && fallbackMatch[1].trim().length > 2) {
+            label = fallbackMatch[1].replace(/'s$/, '').trim();
+          } else {
+            label = `Perspective ${i + 1}`;
+          }
           tierForColor = '';
           content = sentence;
         }
@@ -651,14 +680,9 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
         const sentences = gapStory.crossSpectrum
           ? splitSentences(gapStory.crossSpectrum)
           : gapStory.insights.slice(0, 6);
-        const intlOutlets = ['Reuters', 'AP', 'France 24', 'Al Jazeera', 'BBC', 'Straits Times', 'NHK', 'Times of India', 'The Hindu', 'South China Morning Post', 'Channel News Asia', 'Dawn'];
-        const localOutlets = ['Military Times', 'Honolulu Civil Beat', 'Oregon Public Broadcasting', 'VTDigger'];
-        const specialistOutlets = ['Bloomberg', 'The Marshall Project', 'Hechinger Report', 'ProPublica'];
-        const analysisOutlets = ['The Atlantic', 'The Economist', 'Foreign Affairs'];
         return sentences.map((sentence: string, i: number) => {
-          const outletMatch = sentence.match(/^([A-Z][A-Za-z0-9\s'.]+?)\s+(?:sees?|frames?|reports?|covered|interview|ran|tallied|leads?)/);
-          const tierMatch = sentence.match(/^(National|International|Local|Specialist|Military|Conservative|Progressive|Analysis)/i);
-          const isSummary = /^(Same|Put them|Together|Overall|The gap|What connects|None of|Each one|When you)/i.test(sentence);
+          const outletName = extractOutletFromSentence(sentence);
+          const isSummary = /^(Same|Put them|Together|Overall|The gap|What connects|None of|Each one|When you|Six |Seven |Eight |Nine |Ten )/i.test(sentence);
           let label: string;
           let tierForColor: string;
           let content: string;
@@ -666,20 +690,35 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
             label = 'The pattern';
             tierForColor = 'analysis';
             content = sentence;
-          } else if (outletMatch) {
-            label = outletMatch[1].replace(/'s$/, '').trim();
+          } else if (outletName) {
+            label = outletName;
             content = sentence;
-            if (intlOutlets.some(o => label.includes(o))) tierForColor = 'international';
-            else if (localOutlets.some(o => label.includes(o))) tierForColor = 'local';
-            else if (specialistOutlets.some(o => label.includes(o))) tierForColor = 'specialist';
-            else if (analysisOutlets.some(o => label.includes(o))) tierForColor = 'analysis';
+            const articleTier = (() => {
+              for (const story of topStories) {
+                for (const a of (story.articles || [])) {
+                  if (a.source === outletName) return a.tier;
+                }
+              }
+              for (const nd of narrativeDivergence) {
+                for (const a of (nd.articles || [])) {
+                  if (a.source === outletName) return a.tier;
+                }
+              }
+              return '';
+            })();
+            if (articleTier === 'international') tierForColor = 'international';
+            else if (articleTier === 'local-regional' || articleTier === 'lived') tierForColor = 'local';
+            else if (articleTier === 'specialist' || articleTier === 'domain') tierForColor = 'specialist';
+            else if (articleTier === 'analysis') tierForColor = 'analysis';
             else tierForColor = 'national';
-          } else if (tierMatch) {
-            label = tierMatch[1];
-            tierForColor = tierMatch[1].toLowerCase();
-            content = sentence.replace(tierMatch[0], '').replace(/^[-\s]*(?:focused|oriented|leaning)?\s*(?:outlets?|sources?|media|press|coverage)?\s*/i, '').replace(/^[,.:]\s*/, '');
           } else {
-            label = '';
+            // Last resort fallback
+            const fallbackMatch = sentence.match(/^([A-Z][A-Za-z0-9\s'.]+?)\s+[a-z]/);
+            if (fallbackMatch && fallbackMatch[1].trim().length > 2) {
+              label = fallbackMatch[1].replace(/'s$/, '').trim();
+            } else {
+              label = '';
+            }
             tierForColor = '';
             content = sentence;
           }

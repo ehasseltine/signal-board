@@ -385,7 +385,8 @@
             "labor",
             "governance",
             "security"
-          ]
+          ],
+          "context": "Nonprofit magazine founded in 1970 in Paonia, Colorado, covering the environment, public lands, communities, and Indigenous issues across the American West."
         },
         {
           "text": "Public technology monopoly restricts access to government-funded innovation, preventing broader agricultural adoption.",
@@ -394,7 +395,8 @@
           "domains": [
             "economics",
             "governance"
-          ]
+          ],
+          "context": "Philippine digital news organization founded in 2012 by journalist Maria Ressa in Manila, covering Southeast Asian politics, governance, and social media disinformation."
         },
         {
           "text": "Labor Department regulatory action directly shapes how retirement savings are invested and allocated.",
@@ -403,7 +405,8 @@
           "domains": [
             "economics",
             "governance"
-          ]
+          ],
+          "context": "Business television network owned by NBCUniversal, a division of Comcast, founded in 1989, covering financial markets, corporate earnings, and economic policy."
         },
         {
           "text": "Tech companies deploy political spending and lobbying to shape regulatory outcomes affecting their business models.",
@@ -413,7 +416,8 @@
             "information",
             "domestic_politics",
             "governance"
-          ]
+          ],
+          "context": "Nonprofit newsroom founded in 2015 in Sacramento, covering California state government, policy, elections, and the state legislature for a general audience."
         },
         {
           "text": "White House drug pricing policy shaped through direct consultation with pharmaceutical companies rather than independent rule-making.",
@@ -422,7 +426,8 @@
           "domains": [
             "governance",
             "economics"
-          ]
+          ],
+          "context": "Health and science news publication founded in 2015 by Boston Globe Media Partners, covering the pharmaceutical industry, biotechnology, medicine, and health policy."
         }
       ],
       "tier_framing": {
@@ -439,7 +444,7 @@
             "title": "401(k) alternative asset rule proposed by Labor Department",
             "source": "CNBC",
             "url": "https://www.cnbc.com/2026/03/30/401ks-alternative-investments.html",
-            "context": "Business television network covering financial markets and business news"
+            "context": "Business television network owned by NBCUniversal, a division of Comcast, founded in 1989, covering financial markets, corporate earnings, and economic policy."
           }
         },
         "international": {
@@ -455,7 +460,7 @@
             "title": "[OPINION] As Middle East imports dry up, restore open access to bio-fertilizers technology",
             "source": "Rappler",
             "url": "https://www.rappler.com/voices/thought-leaders/opinion-open-access-bio-fertilizer-technology/",
-            "context": "Philippine news organization covering Southeast Asia and Asia-Pacific"
+            "context": "Philippine digital news organization founded in 2012 by journalist Maria Ressa in Manila, covering Southeast Asian politics, governance, and social media disinformation."
           }
         },
         "local-regional": {
@@ -471,7 +476,7 @@
             "title": "New nuclear safety rules reduce protections for workers, the public",
             "source": "High Country News",
             "url": "https://www.hcn.org/articles/new-nuclear-safety-rules-reduce-protections-for-workers-the-public/",
-            "context": "Environmental and social news from the American West and Indigenous communities"
+            "context": "Nonprofit magazine founded in 1970 in Paonia, Colorado, covering the environment, public lands, communities, and Indigenous issues across the American West."
           }
         },
         "specialist": {
@@ -487,7 +492,7 @@
             "title": "STAT+: Pharmalittle: We’re reading about Trump pushing drug pricing policy, Chinese biotech licensing, and more",
             "source": "STAT News",
             "url": "https://www.statnews.com/pharmalot/2026/03/30/trump-pushes-drug-pricing-policy-chinese-biotech-licensing-lilly/?utm_campaign=rss",
-            "context": "Publication covering biotech"
+            "context": "Health and science news publication founded in 2015 by Boston Globe Media Partners, covering the pharmaceutical industry, biotechnology, medicine, and health policy."
           }
         }
       },
@@ -498,7 +503,7 @@
           "url": "https://www.cnbc.com/2026/03/30/401ks-alternative-investments.html",
           "tier": "national",
           "paywall": true,
-          "context": "Business television network covering financial markets and business news",
+          "context": "Business television network owned by NBCUniversal, a division of Comcast, founded in 1989, covering financial markets, corporate earnings, and economic policy.",
           "connection": "Labor Department regulatory action directly shapes how retirement savings are invested and allocated.",
           "force_tag": "regulatory capture"
         },
@@ -508,7 +513,7 @@
           "url": "https://thedispatch.com/article/ai-david-sacks-marsha-blackburn-trump-administration/",
           "tier": "national",
           "paywall": true,
-          "context": "Conservative publication founded by National Review alumni focusing on news and analysis",
+          "context": "Online news and commentary publication founded in 2019 by Jonah Goldberg and Stephen Hayes, covering politics, policy, and cultural analysis from Washington DC.",
           "connection": "Executive branch AI deregulation conflicts with Congressional Republican consumer protection priorities, fracturing party consensus.",
           "force_tag": "regulatory capture by tech interests"
         },
@@ -518,7 +523,7 @@
           "url": "https://www.nytimes.com/2026/03/30/business/private-credit-risks-trump-administration.html",
           "tier": "national",
           "paywall": true,
-          "context": "Publicly traded, headquartered in New York. Largest US newspaper by circulation. Generally regarded as center-left in editorial stance.",
+          "context": "Daily newspaper founded in 1851, owned by the New York Times Company, the largest newspaper by digital subscriptions globally, covering national and world affairs.",
           "connection": "Deregulatory policy removes safeguards on financial instruments already showing structural stress.",
           "force_tag": "regulatory capture enabling financial risk"
         },
@@ -528,7 +533,7 @@
           "url": "https://www.npr.org/2026/03/30/nx-s1-5753946/science-jeffrey-epstein-mit-exploit-donors-philanthropy",
           "tier": "national",
           "paywall": false,
-          "context": "Nonprofit public media funded by member stations, sponsors, and foundations. Generally regarded as center-left.",
+          "context": "National Public Radio, a nonprofit media organization founded in 1970, funded by member stations and corporate sponsors, producing news programming for over 1,000 stations.",
           "connection": "Philanthropy's lack of legal oversight enabled reputation laundering through scientific institutions, exposing how power operates outside democratic accountability.",
           "force_tag": "regulatory capture through philanthropic opacity"
         },
@@ -538,7 +543,7 @@
           "url": "https://www.nbcnews.com/tech/tech-news/democrats-push-trump-admin-prediction-market-insider-trading-rcna265503",
           "tier": "national",
           "paywall": false,
-          "context": "Major broadcast television network providing national and international news",
+          "context": "Broadcast news division of NBCUniversal, a subsidiary of Comcast, founded in 1940, providing national and international news across television and digital platforms.",
           "connection": "Democratic oversight attempts to address insider trading enabled by regulatory gaps in government ethics enforcement.",
           "force_tag": "regulatory capture and enforcement gaps"
         },
@@ -548,7 +553,7 @@
           "url": "https://www.theatlantic.com/ideas/2026/03/suburbs-homeownership-renting/686599/?utm_source=feed",
           "tier": "national",
           "paywall": true,
-          "context": "Longform magazine covering politics",
+          "context": "Magazine founded in 1857 in Boston by Ralph Waldo Emerson and others, owned by Laurene Powell Jobs since 2017, covering politics, culture, and ideas.",
           "connection": "Housing supply legislation designed to benefit homeowners over renters reveals structural bias in policy design.",
           "force_tag": "regulatory capture favoring property owners"
         }
@@ -592,7 +597,8 @@
           "domains": [
             "security",
             "geopolitics"
-          ]
+          ],
+          "context": "News network launched in 1999 by Mediacorp, a Singaporean state-owned media company, covering Asia-Pacific politics, business, and regional affairs."
         },
         {
           "text": "Military escalation in active conflict zone creates immediate civilian safety threat.",
@@ -601,7 +607,8 @@
           "domains": [
             "security",
             "geopolitics"
-          ]
+          ],
+          "context": "International news network founded in 1996, funded by the government of Qatar, headquartered in Doha, covering global news with Middle East emphasis."
         },
         {
           "text": "Military strike in active conflict zone creates immediate civilian impact.",
@@ -610,7 +617,8 @@
           "domains": [
             "security",
             "geopolitics"
-          ]
+          ],
+          "context": "International news network founded in 1996, funded by the government of Qatar, headquartered in Doha, covering global news with Middle East emphasis."
         },
         {
           "text": "Israeli military operations against Lebanese targets escalate regional conflict with direct casualties among state forces.",
@@ -619,7 +627,8 @@
           "domains": [
             "security",
             "geopolitics"
-          ]
+          ],
+          "context": "French international news network launched in 2006, funded by the French government through France Médias Monde, broadcasting in French, English, Arabic, and Spanish."
         },
         {
           "text": "Drone attacks on Syrian military bases signal escalation in broader Middle East conflict following U.S.-Israeli strikes on Iran.",
@@ -628,7 +637,8 @@
           "domains": [
             "geopolitics",
             "security"
-          ]
+          ],
+          "context": "Singapore's English-language broadsheet newspaper, founded in 1845, owned by Singapore Press Holdings, covering Southeast Asian and global news, politics, and business."
         }
       ],
       "tier_framing": {
@@ -645,7 +655,7 @@
             "title": "Iran: US ground troops would be ‘set on fire’",
             "source": "The Hill",
             "url": "https://thehill.com/policy/defense/5807214-iran-threatens-us-troops/",
-            "context": "Political news outlet covering Congress and policy developments"
+            "context": "Political news organization founded in 1994 in Washington DC, owned by Nexstar Media Group since 2021, covering Congress, the White House, and campaigns."
           }
         },
         "international": {
@@ -661,7 +671,7 @@
             "title": "Indonesian UN peacekeeper killed, some injured in southern Lebanon",
             "source": "Channel News Asia",
             "url": "https://www.channelnewsasia.com/asia/indonesia-un-peacekeeper-killed-lebanon-injured-6025051",
-            "context": "Singaporean news network covering Asia-Pacific region"
+            "context": "News network launched in 1999 by Mediacorp, a Singaporean state-owned media company, covering Asia-Pacific politics, business, and regional affairs."
           }
         },
         "specialist": {
@@ -674,7 +684,7 @@
             "title": "Early Edition: March 30, 2026",
             "source": "Just Security",
             "url": "https://www.justsecurity.org/135158/early-edition-march-30-2026/?utm_source=rss&utm_medium=rss&utm_campaign=early-edition-march-30-2026",
-            "context": "Law and security experts providing analysis on national security and justice issues"
+            "context": "Online forum at the NYU School of Law Reiss Center on Law and Security, publishing expert analysis on national security, human rights, and international law."
           }
         }
       },
@@ -685,7 +695,7 @@
           "url": "https://thehill.com/policy/defense/5807214-iran-threatens-us-troops/",
           "tier": "national",
           "paywall": false,
-          "context": "Political news outlet covering Congress and policy developments",
+          "context": "Political news organization founded in 1994 in Washington DC, owned by Nexstar Media Group since 2021, covering Congress, the White House, and campaigns.",
           "connection": "Military threat warning escalates asymmetric conflict messaging as U.S.-led operations intensify.",
           "force_tag": "military escalation spiral"
         },
@@ -695,7 +705,7 @@
           "url": "https://www.nytimes.com/2026/03/30/opinion/trump-iran-war-india-oil.html",
           "tier": "national",
           "paywall": true,
-          "context": "Publicly traded, headquartered in New York. Largest US newspaper by circulation. Generally regarded as center-left in editorial stance.",
+          "context": "Daily newspaper founded in 1851, owned by the New York Times Company, the largest newspaper by digital subscriptions globally, covering national and world affairs.",
           "connection": "U.S. military confrontation with Iran destabilizes broader Asian region and global interests.",
           "force_tag": "unilateral military escalation"
         },
@@ -705,7 +715,7 @@
           "url": "https://www.theatlantic.com/international/2026/03/trump-us-power-iran/686567/?utm_source=feed",
           "tier": "national",
           "paywall": true,
-          "context": "Longform magazine covering politics",
+          "context": "Magazine founded in 1857 in Boston by Ralph Waldo Emerson and others, owned by Laurene Powell Jobs since 2017, covering politics, culture, and ideas.",
           "connection": "Foreign policy decisions framed as accelerating global instability and isolating the U.S. internationally.",
           "force_tag": "unilateral military escalation"
         },
@@ -715,7 +725,7 @@
           "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQZHlrYWItR0JXcENnOEtGYkd4Uk1FRkdNN3BlVEN5bTRkbEd2VjF3YjNZMWlPTkp2Q21lSGM5TDVwbFJLQmp2aDRva3hxSUQ4U0JtYVYwTDlRdHhpQ0RXSkpGSDVjeUo0TFY5dmNJY0NuS1RmT3lPTEt3YVRQUHFSYWRQb3diZGlqMG9VeExPeUlaTXF0UU0zQU1Cc1FhUUlkZnhscXlZRUhVWkMtR285ZmhBWkZJV2M4c05DXzJ3U3JnTmI5eXVnbHl3NFhrZw?oc=5",
           "tier": "national",
           "paywall": false,
-          "context": "Owned by Thomson Reuters. Major international wire service. Generally regarded as centrist.",
+          "context": "International news agency founded in 1851 in London, now owned by Thomson Reuters, operating as one of the largest global wire services.",
           "connection": "Regional military escalation between state actors creates direct security threat and broader geopolitical instability.",
           "force_tag": "military escalation"
         },
@@ -725,7 +735,7 @@
           "url": "https://www.channelnewsasia.com/asia/indonesia-un-peacekeeper-killed-lebanon-injured-6025051",
           "tier": "international",
           "paywall": false,
-          "context": "Singaporean news network covering Asia-Pacific region",
+          "context": "News network launched in 1999 by Mediacorp, a Singaporean state-owned media company, covering Asia-Pacific politics, business, and regional affairs.",
           "connection": "UN peacekeeping casualty in Lebanon reflects escalating regional conflict involving international military presence.",
           "force_tag": "regional military escalation"
         },
@@ -735,7 +745,7 @@
           "url": "https://www.aljazeera.com/video/newsfeed/2026/3/30/sirens-heard-across-haifa-port?traffic_source=rss",
           "tier": "international",
           "paywall": false,
-          "context": "Funded by the government of Qatar. Major international news network. Significant coverage of Middle East and Global South.",
+          "context": "International news network founded in 1996, funded by the government of Qatar, headquartered in Doha, covering global news with Middle East emphasis.",
           "connection": "Military escalation in active conflict zone creates immediate civilian safety threat.",
           "force_tag": "regional military escalation"
         }
@@ -780,7 +790,8 @@
             "governance",
             "security",
             "economics"
-          ]
+          ],
+          "context": "Australian Broadcasting Corporation, a government-funded public broadcaster founded in 1932, covering Australian domestic and international news."
         },
         {
           "text": "Military conflict disrupts global commodity supply, creating market volatility and economic uncertainty.",
@@ -789,7 +800,8 @@
           "domains": [
             "geopolitics",
             "economics"
-          ]
+          ],
+          "context": "Business television network owned by NBCUniversal, a division of Comcast, founded in 1989, covering financial markets, corporate earnings, and economic policy."
         },
         {
           "text": "Geopolitical conflict disrupts supply chains for green technology, undermining climate transition goals.",
@@ -799,7 +811,8 @@
             "economics",
             "geopolitics",
             "climate"
-          ]
+          ],
+          "context": "Nonprofit global technology publication founded in 2020 by journalist Sophie Schmidt, covering how technology shapes the lives of people outside the Western tech industry."
         },
         {
           "text": "Houthi maritime disruption extends shipping crisis, compounding global oil supply vulnerability.",
@@ -808,7 +821,8 @@
           "domains": [
             "geopolitics",
             "economics"
-          ]
+          ],
+          "context": "Singapore's English-language broadsheet newspaper, founded in 1845, owned by Singapore Press Holdings, covering Southeast Asian and global news, politics, and business."
         },
         {
           "text": "Supply chain disruption from regional conflict threatens energy security, complicating global transition away from fossil fuel dependence.",
@@ -818,7 +832,8 @@
             "economics",
             "geopolitics",
             "climate"
-          ]
+          ],
+          "context": "International news agency founded in 1851 in London, now owned by Thomson Reuters, operating as one of the largest global wire services."
         }
       ],
       "tier_framing": {
@@ -835,7 +850,7 @@
             "title": "Iran's attacks on aluminum producers are sending 'shockwaves' through the metals market",
             "source": "CNBC",
             "url": "https://www.cnbc.com/2026/03/30/iran-attacks-aluminum-producers-shockwaves-market-metals.html",
-            "context": "Business television network covering financial markets and business news"
+            "context": "Business television network owned by NBCUniversal, a division of Comcast, founded in 1989, covering financial markets, corporate earnings, and economic policy."
           }
         },
         "international": {
@@ -851,7 +866,7 @@
             "title": "Australia's four-step plan to survive fuel crisis",
             "source": "ABC Australia",
             "url": "https://www.abc.net.au/news/2026-03-30/four-step-fuel-supply-plan-national-cabinet-fuel-crisis/106512706",
-            "context": "Australian public broadcaster providing news coverage"
+            "context": "Australian Broadcasting Corporation, a government-funded public broadcaster founded in 1932, covering Australian domestic and international news."
           }
         }
       },
@@ -862,7 +877,7 @@
           "url": "https://www.cnbc.com/2026/03/30/iran-attacks-aluminum-producers-shockwaves-market-metals.html",
           "tier": "national",
           "paywall": true,
-          "context": "Business television network covering financial markets and business news",
+          "context": "Business television network owned by NBCUniversal, a division of Comcast, founded in 1989, covering financial markets, corporate earnings, and economic policy.",
           "connection": "Military conflict disrupts global commodity supply, creating market volatility and economic uncertainty.",
           "force_tag": "supply chain weaponization"
         },
@@ -872,7 +887,7 @@
           "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNWGxBSWFud1RLWEU1QlFtRmNNWktrZGlRX05lS1lmclBXZFI2TlV2NndRVW9EZ3F5Nl8zaWZpUHZHVGV2UWlCVXlFcDg4N0EzZ3JTTThmQ1hRZ0FWbTd3T0t5YlJwRC1MbEJtbGl0UE1vME1sZThYaG9GSXdMY1ppSUpUSmplMDRFRE1hVXlTWndRVzJlN245dVBBcjJzYzhTaF9vMDVKMTF1bmNYZWc?oc=5",
           "tier": "national",
           "paywall": false,
-          "context": "Owned by Thomson Reuters. Major international wire service. Generally regarded as centrist.",
+          "context": "International news agency founded in 1851 in London, now owned by Thomson Reuters, operating as one of the largest global wire services.",
           "connection": "Supply chain disruption from regional conflict threatens energy security, complicating global transition away from fossil fuel dependence.",
           "force_tag": "supply chain fragility"
         },
@@ -882,7 +897,7 @@
           "url": "https://www.bloomberg.com/news/articles/2026-03-30/sri-lanka-in-talks-for-russian-oil-products-as-war-jolts-market",
           "tier": "national",
           "paywall": true,
-          "context": "Founded and majority-owned by Michael Bloomberg. Dominant source for financial professionals.",
+          "context": "Financial data and news company founded in 1981 by Michael Bloomberg, dominant in financial information services, covering global markets, economics, and business.",
           "connection": "War disrupts energy supply chains, forcing buyers to pivot from traditional suppliers to geopolitical alternatives like Russia.",
           "force_tag": "supply chain fragmentation"
         },
@@ -892,7 +907,7 @@
           "url": "https://www.abc.net.au/news/2026-03-30/four-step-fuel-supply-plan-national-cabinet-fuel-crisis/106512706",
           "tier": "international",
           "paywall": false,
-          "context": "Australian public broadcaster providing news coverage",
+          "context": "Australian Broadcasting Corporation, a government-funded public broadcaster founded in 1932, covering Australian domestic and international news.",
           "connection": "War disrupts fuel supply, forcing government to ration resources and prioritize emergency services over civilian economy.",
           "force_tag": "supply chain weaponization"
         },
@@ -902,7 +917,7 @@
           "url": "https://www.straitstimes.com/world/middle-east/how-yemens-houthis-could-worsen-the-oil-crunch",
           "tier": "international",
           "paywall": false,
-          "context": "Singapore newspaper covering Asia-Pacific and global news",
+          "context": "Singapore's English-language broadsheet newspaper, founded in 1845, owned by Singapore Press Holdings, covering Southeast Asian and global news, politics, and business.",
           "connection": "Houthi maritime disruption extends shipping crisis, compounding global oil supply vulnerability.",
           "force_tag": "supply chain weaponization"
         },
@@ -912,7 +927,7 @@
           "url": "https://www.japantimes.co.jp/news/2026/03/30/japan/japan-pm-deny-medical-device/",
           "tier": "international",
           "paywall": false,
-          "context": "Japanese English-language newspaper covering Japan and Asia-Pacific",
+          "context": "Japan's oldest English-language newspaper, founded in 1897 in Tokyo, owned by News2u Holdings, covering Japanese politics, culture, and Asia-Pacific affairs.",
           "connection": "PM addresses supply-chain vulnerability from global oil instability, exposing Japan's dependence on fragile Asian energy networks.",
           "force_tag": "supply chain fragility"
         }
@@ -956,7 +971,8 @@
           "domains": [
             "legal",
             "security"
-          ]
+          ],
+          "context": "Australian Broadcasting Corporation, a government-funded public broadcaster founded in 1932, covering Australian domestic and international news."
         },
         {
           "text": "Military accountability mechanisms enforce institutional discipline for documented soldier misconduct.",
@@ -965,7 +981,8 @@
           "domains": [
             "security",
             "legal"
-          ]
+          ],
+          "context": "English-language newspaper founded in 1903 in Hong Kong, owned by Alibaba Group since 2016, covering Asia-Pacific business, geopolitics, and Chinese affairs."
         },
         {
           "text": "Senate oversight authority used to block military promotions in response to defense secretary's blocking of officers, creating institutional checks within defense hierarchy.",
@@ -974,7 +991,8 @@
           "domains": [
             "governance",
             "security"
-          ]
+          ],
+          "context": "Independent news organization owned by Sightline Media Group, covering military policy, defense spending, veteran affairs, and service member communities across all branches."
         },
         {
           "text": "War crimes policy decisions by military leadership directly affect both combatant safety and civilian security outcomes.",
@@ -983,7 +1001,8 @@
           "domains": [
             "security",
             "governance"
-          ]
+          ],
+          "context": "Online news and commentary publication founded in 2019 by Jonah Goldberg and Stephen Hayes, covering politics, policy, and cultural analysis from Washington DC."
         },
         {
           "text": "Police officers invoke self-incrimination protections during official inquest into custodial death, creating legal obstacle to institutional accountability.",
@@ -992,7 +1011,8 @@
           "domains": [
             "legal",
             "governance"
-          ]
+          ],
+          "context": "British newspaper founded in 1821, owned by the Scott Trust nonprofit, one of the most-read English-language news sites globally, covering international affairs."
         }
       ],
       "tier_framing": {
@@ -1009,7 +1029,7 @@
             "title": "How Pete Hegseth Is Putting Americans—Soldiers and Civilians—at Risk",
             "source": "The Dispatch",
             "url": "https://thedispatch.com/article/hegseth-war-crimes-endanger-americans/",
-            "context": "Conservative publication founded by National Review alumni focusing on news and analysis"
+            "context": "Online news and commentary publication founded in 2019 by Jonah Goldberg and Stephen Hayes, covering politics, policy, and cultural analysis from Washington DC."
           }
         },
         "international": {
@@ -1025,7 +1045,7 @@
             "title": "Former NSW police officer pleads guilty to weapons charges",
             "source": "ABC Australia",
             "url": "https://www.abc.net.au/news/2026-03-30/former-nsw-police-office-jonathan-james-martin-weapons-charges/106511822",
-            "context": "Australian public broadcaster providing news coverage"
+            "context": "Australian Broadcasting Corporation, a government-funded public broadcaster founded in 1932, covering Australian domestic and international news."
           }
         },
         "local-regional": {
@@ -1041,7 +1061,7 @@
             "title": "Senator stalls 3 ‘unfit’ officer promotions in retort to Hegseth",
             "source": "Military Times",
             "url": "https://www.militarytimes.com/news/pentagon-congress/2026/03/30/senator-stalls-3-unfit-officer-promotions-in-retort-to-hegseth/",
-            "context": "Independent news covering military and veteran communities. Not affiliated with DoD."
+            "context": "Independent news organization owned by Sightline Media Group, covering military policy, defense spending, veteran affairs, and service member communities across all branches."
           }
         }
       },
@@ -1052,7 +1072,7 @@
           "url": "https://thedispatch.com/article/hegseth-war-crimes-endanger-americans/",
           "tier": "national",
           "paywall": true,
-          "context": "Conservative publication founded by National Review alumni focusing on news and analysis",
+          "context": "Online news and commentary publication founded in 2019 by Jonah Goldberg and Stephen Hayes, covering politics, policy, and cultural analysis from Washington DC.",
           "connection": "War crimes policy decisions by military leadership directly affect both combatant safety and civilian security outcomes.",
           "force_tag": "institutional accountability failure"
         },
@@ -1062,7 +1082,7 @@
           "url": "https://apnews.com/article/air-canada-ceo-crash-english-french-resign-02da899607c92b8ecb31dc01085e4980",
           "tier": "national",
           "paywall": false,
-          "context": "Nonprofit cooperative owned by member newspapers and broadcasters. Generally regarded as centrist wire service.",
+          "context": "Nonprofit news cooperative founded in 1846 and owned by its member newspapers and broadcasters, operating as a global wire service in 100 countries.",
           "connection": "CEO departure reflects institutional accountability for communication failure during safety incident, intersecting executive governance with public safety.",
           "force_tag": "institutional accountability for safety failures"
         },
@@ -1072,7 +1092,7 @@
           "url": "https://www.foxnews.com/media/israel-defense-forces-suspends-battalion-from-deployment-over-inappropriate-incident-cnn-crew",
           "tier": "national",
           "paywall": false,
-          "context": "Owned by Fox Corporation (Murdoch family). Largest cable news network by viewership. Generally regarded as right-leaning.",
+          "context": "Cable news network founded in 1996 by Rupert Murdoch, owned by Fox Corporation, providing 24-hour news, opinion, and political commentary from New York.",
           "connection": "Military forces' abuse of press corps reveals tension between operational security and media freedom of access.",
           "force_tag": "institutional accountability through transparency"
         },
@@ -1082,7 +1102,7 @@
           "url": "https://www.abc.net.au/news/2026-03-30/former-nsw-police-office-jonathan-james-martin-weapons-charges/106511822",
           "tier": "international",
           "paywall": false,
-          "context": "Australian public broadcaster providing news coverage",
+          "context": "Australian Broadcasting Corporation, a government-funded public broadcaster founded in 1932, covering Australian domestic and international news.",
           "connection": "Former police officer charged under weapons law raises questions about law enforcement accountability.",
           "force_tag": "institutional accountability"
         },
@@ -1092,7 +1112,7 @@
           "url": "https://www.scmp.com/news/world/middle-east/article/3348440/israel-suspends-military-unit-assaulted-cnn-crew-west-bank?utm_source=rss_feed",
           "tier": "international",
           "paywall": true,
-          "context": "English-language newspaper covering Asia-Pacific region",
+          "context": "English-language newspaper founded in 1903 in Hong Kong, owned by Alibaba Group since 2016, covering Asia-Pacific business, geopolitics, and Chinese affairs.",
           "connection": "Military accountability mechanisms enforce institutional discipline for documented soldier misconduct.",
           "force_tag": "institutional accountability"
         },
@@ -1102,7 +1122,7 @@
           "url": "https://www.theguardian.com/australia-news/2026/mar/30/indigenous-death-custody-victoria-police-seek-protection-self-incrimination-ntwnfb",
           "tier": "international",
           "paywall": false,
-          "context": "Owned by the Scott Trust, a nonprofit. British newspaper. Generally regarded as left-leaning. No paywall.",
+          "context": "British newspaper founded in 1821, owned by the Scott Trust nonprofit, one of the most-read English-language news sites globally, covering international affairs.",
           "connection": "Police officers invoke self-incrimination protections during official inquest into custodial death, creating legal obstacle to institutional accountability.",
           "force_tag": "institutional opacity in accountability processes"
         }
@@ -1145,7 +1165,8 @@
           "domains": [
             "economics",
             "geopolitics"
-          ]
+          ],
+          "context": "Financial data and news company founded in 1981 by Michael Bloomberg, dominant in financial information services, covering global markets, economics, and business."
         },
         {
           "text": "Escalating Middle East conflict drives oil price fears that ripple through global equity markets, impacting resource-dependent economies.",
@@ -1154,7 +1175,8 @@
           "domains": [
             "economics",
             "geopolitics"
-          ]
+          ],
+          "context": "Financial data and news company founded in 1981 by Michael Bloomberg, dominant in financial information services, covering global markets, economics, and business."
         },
         {
           "text": "Regional conflict expands to new actors (Houthis targeting Israel), widening supply disruption fears and pushing commodity prices higher.",
@@ -1163,7 +1185,8 @@
           "domains": [
             "geopolitics",
             "economics"
-          ]
+          ],
+          "context": "Business television network owned by NBCUniversal, a division of Comcast, founded in 1989, covering financial markets, corporate earnings, and economic policy."
         },
         {
           "text": "Conflict-driven supply chain disruptions in strategic waterways push commodity prices higher in global markets.",
@@ -1172,7 +1195,8 @@
           "domains": [
             "economics",
             "geopolitics"
-          ]
+          ],
+          "context": "International news agency founded in 1851 in London, now owned by Thomson Reuters, operating as one of the largest global wire services."
         },
         {
           "text": "Fuel crisis from distant geopolitical conflict cancels domestic cultural event, revealing supply-chain vulnerability of rural Australia.",
@@ -1181,7 +1205,8 @@
           "domains": [
             "economics",
             "governance"
-          ]
+          ],
+          "context": "Australian Broadcasting Corporation, a government-funded public broadcaster founded in 1932, covering Australian domestic and international news."
         }
       ],
       "tier_framing": {
@@ -1198,7 +1223,7 @@
             "title": "Saudi Oil Price Talks Take on Added Urgency as Deadline Nears",
             "source": "Bloomberg",
             "url": "https://www.bloomberg.com/news/articles/2026-03-30/saudi-oil-price-talks-take-on-added-urgency-as-deadline-nears",
-            "context": "Founded and majority-owned by Michael Bloomberg. Dominant source for financial professionals."
+            "context": "Financial data and news company founded in 1981 by Michael Bloomberg, dominant in financial information services, covering global markets, economics, and business."
           }
         },
         "international": {
@@ -1214,7 +1239,7 @@
             "title": "National campdraft competition cancelled over soaring cost of fuel",
             "source": "ABC Australia",
             "url": "https://www.abc.net.au/news/2026-03-30/national-campdraft-cancelled-due-to-soaring-cost-of-fuel/106511094",
-            "context": "Australian public broadcaster providing news coverage"
+            "context": "Australian Broadcasting Corporation, a government-funded public broadcaster founded in 1932, covering Australian domestic and international news."
           }
         }
       },
@@ -1225,7 +1250,7 @@
           "url": "https://www.bloomberg.com/news/articles/2026-03-30/saudi-oil-price-talks-take-on-added-urgency-as-deadline-nears",
           "tier": "national",
           "paywall": true,
-          "context": "Founded and majority-owned by Michael Bloomberg. Dominant source for financial professionals.",
+          "context": "Financial data and news company founded in 1981 by Michael Bloomberg, dominant in financial information services, covering global markets, economics, and business.",
           "connection": "War-driven oil market volatility forces major oil exporters and importers to renegotiate pricing mechanisms in real time.",
           "force_tag": "geopolitical supply shock"
         },
@@ -1235,7 +1260,7 @@
           "url": "https://www.cnbc.com/2026/03/30/oil-price-today-wti-brent-yemen-houthis-israel-iran-war.html",
           "tier": "national",
           "paywall": true,
-          "context": "Business television network covering financial markets and business news",
+          "context": "Business television network owned by NBCUniversal, a division of Comcast, founded in 1989, covering financial markets, corporate earnings, and economic policy.",
           "connection": "Regional conflict expands to new actors (Houthis targeting Israel), widening supply disruption fears and pushing commodity prices higher.",
           "force_tag": "supply chain vulnerability to geopolitical shock"
         },
@@ -1245,7 +1270,7 @@
           "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNeUt3WFdkQVhZVGZNazg1Q2RpdjNocGdHeGNoVHNENXcwYnBmUFphcEREQWxYOEwtcFdQSWxuYW5UUnh5T3dHclFabVlPRzYyZ1pvMWpKWVdOUmJUdF8zYjdPOEJpaE1SQ2p3MXY1SjR0TlRiQTgtN0luR3lsSG1sLU1raw?oc=5",
           "tier": "national",
           "paywall": false,
-          "context": "Owned by Thomson Reuters. Major international wire service. Generally regarded as centrist.",
+          "context": "International news agency founded in 1851 in London, now owned by Thomson Reuters, operating as one of the largest global wire services.",
           "connection": "Conflict-driven supply chain disruptions in strategic waterways push commodity prices higher in global markets.",
           "force_tag": "supply shock from geopolitical disruption"
         },
@@ -1255,7 +1280,7 @@
           "url": "https://www.abc.net.au/news/2026-03-30/national-campdraft-cancelled-due-to-soaring-cost-of-fuel/106511094",
           "tier": "international",
           "paywall": false,
-          "context": "Australian public broadcaster providing news coverage",
+          "context": "Australian Broadcasting Corporation, a government-funded public broadcaster founded in 1932, covering Australian domestic and international news.",
           "connection": "Fuel crisis from distant geopolitical conflict cancels domestic cultural event, revealing supply-chain vulnerability of rural Australia.",
           "force_tag": "supply shock cascading"
         },
@@ -1265,7 +1290,7 @@
           "url": "https://www.straitstimes.com/world/europe/g-7-ministers-set-to-tackle-financial-fallout-of-middle-east-war",
           "tier": "international",
           "paywall": false,
-          "context": "Singapore newspaper covering Asia-Pacific and global news",
+          "context": "Singapore's English-language broadsheet newspaper, founded in 1845, owned by Singapore Press Holdings, covering Southeast Asian and global news, politics, and business.",
           "connection": "Middle East military conflict constrains energy supply, raising global oil and gas prices with systemic economic impact.",
           "force_tag": "supply shock from geopolitical crisis"
         },
@@ -1275,7 +1300,7 @@
           "url": "https://www.dawn.com/news/1986754/australia-to-halve-fuel-tax-to-keep-prices-within-reach-of-citizens-amid-iran-war",
           "tier": "international",
           "paywall": false,
-          "context": "Pakistani English-language newspaper covering South Asian news",
+          "context": "Pakistani English-language newspaper founded in 1941 by Muhammad Ali Jinnah, published from Karachi, covering national politics and South Asian affairs as Pakistan's oldest newspaper.",
           "connection": "Tax policy responds to supply shock caused by Middle East conflict, requiring executive coordination across state lines.",
           "force_tag": "geopolitical supply shock cascading into domestic policy"
         }
@@ -1317,7 +1342,8 @@
           "domains": [
             "geopolitics",
             "economics"
-          ]
+          ],
+          "context": "International news agency founded in 1851 in London, now owned by Thomson Reuters, operating as one of the largest global wire services."
         },
         {
           "text": "Middle East regional instability drives currency markets as investors seek safe-haven assets amid geopolitical risk.",
@@ -1326,7 +1352,8 @@
           "domains": [
             "economics",
             "geopolitics"
-          ]
+          ],
+          "context": "News network launched in 1999 by Mediacorp, a Singaporean state-owned media company, covering Asia-Pacific politics, business, and regional affairs."
         },
         {
           "text": "Regional conflict drives market risk reassessment and capital flow decisions.",
@@ -1335,7 +1362,8 @@
           "domains": [
             "economics",
             "geopolitics"
-          ]
+          ],
+          "context": "International news agency founded in 1851 in London, now owned by Thomson Reuters, operating as one of the largest global wire services."
         },
         {
           "text": "Central bank credibility depends on distinguishing policy-controllable inflation from geopolitical supply shocks beyond its reach.",
@@ -1344,7 +1372,8 @@
           "domains": [
             "economics",
             "geopolitics"
-          ]
+          ],
+          "context": "Financial data and news company founded in 1981 by Michael Bloomberg, dominant in financial information services, covering global markets, economics, and business."
         },
         {
           "text": "Military conflict in Iran drives oil prices higher, creating financial contagion across Asian markets.",
@@ -1354,7 +1383,8 @@
             "economics",
             "geopolitics",
             "security"
-          ]
+          ],
+          "context": "Nonprofit news cooperative founded in 1846 and owned by its member newspapers and broadcasters, operating as a global wire service in 100 countries."
         }
       ],
       "tier_framing": {
@@ -1371,7 +1401,7 @@
             "title": "Iran war volatility strains trading in world's biggest markets - Reuters",
             "source": "Reuters",
             "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNYVJXZEczYnFocUJpR0NDVVNzS1V5djdYYTZzTlZYWlZUbTdtdHM1Um8ycGpURTVXd0ZCZ25IdnNjSEluM09BY2JnOHdrSmRxQnhpaHZOM1ZFWE1PZU52TjBOa0FGa2FZSG8xQTd0NFdwOThrZGZRT3M4M0dRZTZ6ckpjTUJaZzF0VnNBUURZd1Qwdw?oc=5",
-            "context": "Owned by Thomson Reuters. Major international wire service. Generally regarded as centrist."
+            "context": "International news agency founded in 1851 in London, now owned by Thomson Reuters, operating as one of the largest global wire services."
           }
         },
         "international": {
@@ -1387,7 +1417,7 @@
             "title": "Dollar near 10‑month high on Middle East escalation concerns",
             "source": "Channel News Asia",
             "url": "https://www.channelnewsasia.com/business/dollar-near-10-month-high-middle-east-escalation-concerns-6024796",
-            "context": "Singaporean news network covering Asia-Pacific region"
+            "context": "News network launched in 1999 by Mediacorp, a Singaporean state-owned media company, covering Asia-Pacific politics, business, and regional affairs."
           }
         },
         "specialist": {
@@ -1403,7 +1433,7 @@
             "title": "Putin Is Not Trapped: Why Regime Survival Does Not Depend on Victory",
             "source": "War on the Rocks",
             "url": "https://warontherocks.com/2026/03/putin-is-not-trapped-why-regime-survival-does-not-depend-on-victory/",
-            "context": "Publication covering military affairs and national security"
+            "context": "National security and foreign policy analysis platform founded in 2013, publishing expert commentary on military strategy, defense policy, and international security."
           }
         }
       },
@@ -1414,7 +1444,7 @@
           "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNYVJXZEczYnFocUJpR0NDVVNzS1V5djdYYTZzTlZYWlZUbTdtdHM1Um8ycGpURTVXd0ZCZ25IdnNjSEluM09BY2JnOHdrSmRxQnhpaHZOM1ZFWE1PZU52TjBOa0FGa2FZSG8xQTd0NFdwOThrZGZRT3M4M0dRZTZ6ckpjTUJaZzF0VnNBUURZd1Qwdw?oc=5",
           "tier": "national",
           "paywall": false,
-          "context": "Owned by Thomson Reuters. Major international wire service. Generally regarded as centrist.",
+          "context": "International news agency founded in 1851 in London, now owned by Thomson Reuters, operating as one of the largest global wire services.",
           "connection": "Geopolitical conflict in Iran region directly destabilizes financial markets through uncertainty about oil supply and shipping routes.",
           "force_tag": "geopolitical risk premium"
         },
@@ -1424,7 +1454,7 @@
           "url": "https://www.bloomberg.com/news/articles/2026-03-30/treasuries-rally-as-powell-touts-fed-s-limits-on-supply-shocks",
           "tier": "national",
           "paywall": true,
-          "context": "Founded and majority-owned by Michael Bloomberg. Dominant source for financial professionals.",
+          "context": "Financial data and news company founded in 1981 by Michael Bloomberg, dominant in financial information services, covering global markets, economics, and business.",
           "connection": "Central bank credibility depends on distinguishing policy-controllable inflation from geopolitical supply shocks beyond its reach.",
           "force_tag": "geopolitical risk premium"
         },
@@ -1434,7 +1464,7 @@
           "url": "https://apnews.com/article/stock-markets-war-oil-trump-iran-1aef947ecb395c3bb97fcdb5ed3826f1",
           "tier": "national",
           "paywall": false,
-          "context": "Nonprofit cooperative owned by member newspapers and broadcasters. Generally regarded as centrist wire service.",
+          "context": "Nonprofit news cooperative founded in 1846 and owned by its member newspapers and broadcasters, operating as a global wire service in 100 countries.",
           "connection": "Military conflict in Iran drives oil prices higher, creating financial contagion across Asian markets.",
           "force_tag": "geopolitical risk premium transmission"
         },
@@ -1444,7 +1474,7 @@
           "url": "https://www.nbcnews.com/business/business-news/oil-jumps-stocks-slide-ahead-us-stock-market-open-iran-war-rounds-one-rcna265734",
           "tier": "national",
           "paywall": false,
-          "context": "Major broadcast television network providing national and international news",
+          "context": "Broadcast news division of NBCUniversal, a subsidiary of Comcast, founded in 1940, providing national and international news across television and digital platforms.",
           "connection": "Regional military escalation triggers global commodity volatility, demonstrating how localized conflict translates into financial system instability.",
           "force_tag": "geopolitical risk pricing"
         },
@@ -1454,7 +1484,7 @@
           "url": "https://www.cnbc.com/2026/03/30/european-economic-sentiment-consumer-confidence-march-iran-war-trump.html",
           "tier": "national",
           "paywall": true,
-          "context": "Business television network covering financial markets and business news",
+          "context": "Business television network owned by NBCUniversal, a division of Comcast, founded in 1989, covering financial markets, corporate earnings, and economic policy.",
           "connection": "Geopolitical conflict dampens consumer and business confidence, contracting economic activity across Europe.",
           "force_tag": "geopolitical risk transmission"
         },
@@ -1464,7 +1494,7 @@
           "url": "https://www.channelnewsasia.com/business/dollar-near-10-month-high-middle-east-escalation-concerns-6024796",
           "tier": "international",
           "paywall": false,
-          "context": "Singaporean news network covering Asia-Pacific region",
+          "context": "News network launched in 1999 by Mediacorp, a Singaporean state-owned media company, covering Asia-Pacific politics, business, and regional affairs.",
           "connection": "Middle East regional instability drives currency markets as investors seek safe-haven assets amid geopolitical risk.",
           "force_tag": "geopolitical risk premium"
         }
@@ -1507,7 +1537,8 @@
           "domains": [
             "governance",
             "legal"
-          ]
+          ],
+          "context": "International news network founded in 1996, funded by the government of Qatar, headquartered in Doha, covering global news with Middle East emphasis."
         },
         {
           "text": "Republican official publicly criticizes DOJ leadership for selective prosecutions and mass firings tied to partisan loyalty.",
@@ -1517,7 +1548,8 @@
             "domestic_politics",
             "legal",
             "governance"
-          ]
+          ],
+          "context": "Political news organization founded in 1994 in Washington DC, owned by Nexstar Media Group since 2021, covering Congress, the White House, and campaigns."
         },
         {
           "text": "Diaspora political opinion diverges from potential U.S. military escalation in Middle East conflict.",
@@ -1526,7 +1558,8 @@
           "domains": [
             "domestic_politics",
             "geopolitics"
-          ]
+          ],
+          "context": "International news agency founded in 1917, the oldest English-language Jewish news service, covering Jewish communities, Israel, and interfaith issues worldwide."
         },
         {
           "text": "Presidential behavior at business event becomes media spectacle, revealing power imbalance where elites scramble to manage fallout.",
@@ -1535,7 +1568,8 @@
           "domains": [
             "domestic_politics",
             "information"
-          ]
+          ],
+          "context": "Digital news publication founded in 2011, covering news, politics, culture, and opinion relevant to African American communities across the United States."
         }
       ],
       "tier_framing": {
@@ -1551,7 +1585,7 @@
             "title": "Christie: Blanche ‘obliterating’ DOJ’s reputation",
             "source": "The Hill",
             "url": "https://thehill.com/homenews/administration/5807321-christie-attacks-blanche-justice-reputation/",
-            "context": "Political news outlet covering Congress and policy developments"
+            "context": "Political news organization founded in 1994 in Washington DC, owned by Nexstar Media Group since 2021, covering Congress, the White House, and campaigns."
           }
         },
         "international": {
@@ -1567,7 +1601,7 @@
             "title": "CAF general secretary quits amid AFCON final controversy",
             "source": "Al Jazeera",
             "url": "https://www.aljazeera.com/sports/2026/3/30/caf-general-secretary-quits-amid-afcon-final-controversy?traffic_source=rss",
-            "context": "Funded by the government of Qatar. Major international news network. Significant coverage of Middle East and Global South."
+            "context": "International news network founded in 1996, funded by the government of Qatar, headquartered in Doha, covering global news with Middle East emphasis."
           }
         },
         "local-regional": {
@@ -1583,7 +1617,7 @@
             "title": "Most American Jews disapprove of US military action against Iran, new poll shows",
             "source": "Jewish Telegraphic Agency",
             "url": "https://www.jta.org/2026/03/30/united-states/most-american-jews-disapprove-of-us-military-action-against-iran-new-poll-shows",
-            "context": "News organization covering Jewish communities and Israel-related issues"
+            "context": "International news agency founded in 1917, the oldest English-language Jewish news service, covering Jewish communities, Israel, and interfaith issues worldwide."
           }
         }
       },
@@ -1594,7 +1628,7 @@
           "url": "https://thehill.com/homenews/administration/5807321-christie-attacks-blanche-justice-reputation/",
           "tier": "national",
           "paywall": false,
-          "context": "Political news outlet covering Congress and policy developments",
+          "context": "Political news organization founded in 1994 in Washington DC, owned by Nexstar Media Group since 2021, covering Congress, the White House, and campaigns.",
           "connection": "Republican official publicly criticizes DOJ leadership for selective prosecutions and mass firings tied to partisan loyalty.",
           "force_tag": "institutional integrity erosion"
         },
@@ -1604,7 +1638,7 @@
           "url": "https://www.aljazeera.com/sports/2026/3/30/caf-general-secretary-quits-amid-afcon-final-controversy?traffic_source=rss",
           "tier": "international",
           "paywall": false,
-          "context": "Funded by the government of Qatar. Major international news network. Significant coverage of Middle East and Global South.",
+          "context": "International news network founded in 1996, funded by the government of Qatar, headquartered in Doha, covering global news with Middle East emphasis.",
           "connection": "Board decision to strip a title triggers institutional resignation, exposing governance legitimacy crisis within sports administration.",
           "force_tag": "institutional legitimacy erosion"
         },
@@ -1614,7 +1648,7 @@
           "url": "https://www.jta.org/2026/03/30/united-states/most-american-jews-disapprove-of-us-military-action-against-iran-new-poll-shows",
           "tier": "local-regional",
           "paywall": false,
-          "context": "News organization covering Jewish communities and Israel-related issues",
+          "context": "International news agency founded in 1917, the oldest English-language Jewish news service, covering Jewish communities, Israel, and interfaith issues worldwide.",
           "connection": "Diaspora political opinion diverges from potential U.S. military escalation in Middle East conflict.",
           "force_tag": "foreign policy legitimacy erosion"
         },
@@ -1624,7 +1658,7 @@
           "url": "https://atlantablackstar.com/2026/03/30/donald-trump-implodes-summit-stuns-elite-business-crowd-with-bizarre-bedroom-invite/",
           "tier": "local-regional",
           "paywall": false,
-          "context": "Digital publication covering Black news and culture",
+          "context": "Digital news publication founded in 2011, covering news, politics, culture, and opinion relevant to African American communities across the United States.",
           "connection": "Presidential behavior at business event becomes media spectacle, revealing power imbalance where elites scramble to manage fallout.",
           "force_tag": "erosion of institutional gatekeeping"
         }
@@ -1663,7 +1697,8 @@
           "domains": [
             "economics",
             "geopolitics"
-          ]
+          ],
+          "context": "German international broadcaster founded in 1953 and funded by the German federal government, providing news in 30 languages from Bonn and Berlin."
         },
         {
           "text": "International relations and energy markets intersect as diplomatic negotiations affect global oil transit.",
@@ -1672,7 +1707,8 @@
           "domains": [
             "geopolitics",
             "economics"
-          ]
+          ],
+          "context": "Spanish-language daily newspaper founded in 1913 in New York City, owned by ImpreMedia, serving Latino communities with coverage of immigration, politics, and culture."
         },
         {
           "text": "Trade rule reform stalled by competing national interests in digital commerce, exposing negotiation gridlock over technology sovereignty.",
@@ -1681,7 +1717,8 @@
           "domains": [
             "geopolitics",
             "economics"
-          ]
+          ],
+          "context": "Taiwanese English-language daily newspaper founded in 1999, covering Taiwan domestic politics, cross-strait relations, and Asia-Pacific regional affairs."
         },
         {
           "text": "Trade policy directly reshapes consumer prices and business operations across supply chains.",
@@ -1690,7 +1727,8 @@
           "domains": [
             "economics",
             "domestic_politics"
-          ]
+          ],
+          "context": "International news agency founded in 1851 in London, now owned by Thomson Reuters, operating as one of the largest global wire services."
         },
         {
           "text": "Military threats against critical oil infrastructure weaponize energy supply as a geopolitical lever affecting global commodity prices.",
@@ -1699,7 +1737,8 @@
           "domains": [
             "geopolitics",
             "economics"
-          ]
+          ],
+          "context": "India's largest English-language daily newspaper by circulation, founded in 1838, owned by the Bennett Coleman family, covering national and international news."
         }
       ],
       "tier_framing": {
@@ -1716,7 +1755,7 @@
             "title": "US menus change as Trump's tariffs hit wine prices - Reuters",
             "source": "Reuters",
             "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOeDIwUmYtMldMd3RESWJiOEJ2UGp1RXpWYUJ5YUZGNVJjT0d0bTZQbTYzbldHaTFOOXJFZ2QzaG14MUtsMTQxN2tjWXlBemt1Tzl6d2FwZTFQRFZ0aUZnX01SOW9XRGF1cGtxdnZ3MnBDdlNaOUVuSFVpc2l3U2JjaFFWTzY0Z013LTlhSFMzLWYzUFVWZkE?oc=5",
-            "context": "Owned by Thomson Reuters. Major international wire service. Generally regarded as centrist."
+            "context": "International news agency founded in 1851 in London, now owned by Thomson Reuters, operating as one of the largest global wire services."
           }
         },
         "international": {
@@ -1732,7 +1771,7 @@
             "title": "How US 'Liberation Day' tariffs reshaped global trade",
             "source": "Deutsche Welle",
             "url": "https://www.dw.com/en/how-us-liberation-day-tariffs-reshaped-global-trade/a-76303601?maca=en-rss-en-all-1573-rdf",
-            "context": "German public broadcaster providing international news"
+            "context": "German international broadcaster founded in 1953 and funded by the German federal government, providing news in 30 languages from Bonn and Berlin."
           }
         },
         "local-regional": {
@@ -1748,7 +1787,7 @@
             "title": "Trump aseguró que Irán permitirá paso de 20 buques petroleros por el estrecho de Ormuz",
             "source": "El Diario NY",
             "url": "https://eldiariony.com/2026/03/29/trump-aseguro-que-iran-permitira-paso-de-20-buques-petroleros-por-el-estrecho-de-ormuz/",
-            "context": "Spanish-language daily serving Latino communities in New York metro area."
+            "context": "Spanish-language daily newspaper founded in 1913 in New York City, owned by ImpreMedia, serving Latino communities with coverage of immigration, politics, and culture."
           }
         }
       },
@@ -1759,7 +1798,7 @@
           "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOeDIwUmYtMldMd3RESWJiOEJ2UGp1RXpWYUJ5YUZGNVJjT0d0bTZQbTYzbldHaTFOOXJFZ2QzaG14MUtsMTQxN2tjWXlBemt1Tzl6d2FwZTFQRFZ0aUZnX01SOW9XRGF1cGtxdnZ3MnBDdlNaOUVuSFVpc2l3U2JjaFFWTzY0Z013LTlhSFMzLWYzUFVWZkE?oc=5",
           "tier": "national",
           "paywall": false,
-          "context": "Owned by Thomson Reuters. Major international wire service. Generally regarded as centrist.",
+          "context": "International news agency founded in 1851 in London, now owned by Thomson Reuters, operating as one of the largest global wire services.",
           "connection": "Trade policy directly reshapes consumer prices and business operations across supply chains.",
           "force_tag": "trade weaponization"
         },
@@ -1769,7 +1808,7 @@
           "url": "https://www.dw.com/en/how-us-liberation-day-tariffs-reshaped-global-trade/a-76303601?maca=en-rss-en-all-1573-rdf",
           "tier": "international",
           "paywall": false,
-          "context": "German public broadcaster providing international news",
+          "context": "German international broadcaster founded in 1953 and funded by the German federal government, providing news in 30 languages from Bonn and Berlin.",
           "connection": "Trump's tariffs redistributed global trade flows, creating winners and losers across nations and revealing tariffs as geopolitical weapons reshaping supply chains.",
           "force_tag": "trade weaponization"
         },
@@ -1779,7 +1818,7 @@
           "url": "https://www.taipeitimes.com/News/biz/archives/2026/03/30/2003854682",
           "tier": "international",
           "paywall": false,
-          "context": "Taiwanese English-language newspaper covering Taiwan and Asia-Pacific",
+          "context": "Taiwanese English-language daily newspaper founded in 1999, covering Taiwan domestic politics, cross-strait relations, and Asia-Pacific regional affairs.",
           "connection": "Trade rule reform stalled by competing national interests in digital commerce, exposing negotiation gridlock over technology sovereignty.",
           "force_tag": "trade weaponization"
         },
@@ -1789,7 +1828,7 @@
           "url": "https://timesofindia.indiatimes.com/business/international-business/how-trumps-kharg-island-threat-puts-global-oil-flows-prices-under-pressure/articleshow/129898469.cms",
           "tier": "international",
           "paywall": false,
-          "context": "Major Indian newspaper covering national and international news",
+          "context": "India's largest English-language daily newspaper by circulation, founded in 1838, owned by the Bennett Coleman family, covering national and international news.",
           "connection": "Military threats against critical oil infrastructure weaponize energy supply as a geopolitical lever affecting global commodity prices.",
           "force_tag": "trade weaponization"
         },
@@ -1799,7 +1838,7 @@
           "url": "https://www.straitstimes.com/world/middle-east/why-the-iran-war-makes-red-sea-shipping-a-bigger-worry",
           "tier": "international",
           "paywall": false,
-          "context": "Singapore newspaper covering Asia-Pacific and global news",
+          "context": "Singapore's English-language broadsheet newspaper, founded in 1845, owned by Singapore Press Holdings, covering Southeast Asian and global news, politics, and business.",
           "connection": "Regional military conflict disrupts global energy shipping routes, raising crude oil prices across Asia markets.",
           "force_tag": "trade route weaponization"
         },
@@ -1809,7 +1848,7 @@
           "url": "https://eldiariony.com/2026/03/29/trump-aseguro-que-iran-permitira-paso-de-20-buques-petroleros-por-el-estrecho-de-ormuz/",
           "tier": "local-regional",
           "paywall": false,
-          "context": "Spanish-language daily serving Latino communities in New York metro area.",
+          "context": "Spanish-language daily newspaper founded in 1913 in New York City, owned by ImpreMedia, serving Latino communities with coverage of immigration, politics, and culture.",
           "connection": "International relations and energy markets intersect as diplomatic negotiations affect global oil transit.",
           "force_tag": "trade weaponization"
         }
@@ -1851,7 +1890,8 @@
           "domains": [
             "domestic_politics",
             "legal"
-          ]
+          ],
+          "context": "India's largest English-language daily newspaper by circulation, founded in 1838, owned by the Bennett Coleman family, covering national and international news."
         },
         {
           "text": "Five EU governments systematically dismantle judicial independence and rule of law protections, undermining legal accountability mechanisms.",
@@ -1860,7 +1900,8 @@
           "domains": [
             "governance",
             "legal"
-          ]
+          ],
+          "context": "British newspaper founded in 1821, owned by the Scott Trust nonprofit, one of the most-read English-language news sites globally, covering international affairs."
         },
         {
           "text": "Military junta legalizes authoritarianism through civilian constitutional mechanisms, using procedural legitimacy to entrench coup power.",
@@ -1869,7 +1910,8 @@
           "domains": [
             "governance",
             "domestic_politics"
-          ]
+          ],
+          "context": "English-language newspaper founded in 1903 in Hong Kong, owned by Alibaba Group since 2016, covering Asia-Pacific business, geopolitics, and Chinese affairs."
         },
         {
           "text": "Election manipulation requires controlling information distribution and political narratives through coordinated administrative action.",
@@ -1878,7 +1920,8 @@
           "domains": [
             "domestic_politics",
             "information"
-          ]
+          ],
+          "context": "Technology and culture magazine founded in 1993 in San Francisco, owned by Conde Nast, covering digital technology, science, business, and the future of innovation."
         }
       ],
       "tier_framing": {
@@ -1895,7 +1938,7 @@
             "title": "Mandates after Medals: Bulgarian Sport Stars Line Up for Parliament",
             "source": "Balkan Insight",
             "url": "https://balkaninsight.com/2026/03/30/mandates-after-medals-bulgarian-sport-stars-line-up-for-parliament/bi/",
-            "context": "Publication covering Southeast Europe and the Balkans"
+            "context": "Nonprofit investigative news outlet run by the Balkan Investigative Reporting Network, covering politics, democracy, and corruption in Southeast Europe."
           }
         }
       },
@@ -1906,7 +1949,7 @@
           "url": "https://timesofindia.indiatimes.com/world/us/only-country-that-dignifies-this-subject-trump-reignites-birthright-citizenship-debate-slams-us-courts/articleshow/129901892.cms",
           "tier": "international",
           "paywall": false,
-          "context": "Major Indian newspaper covering national and international news",
+          "context": "India's largest English-language daily newspaper by circulation, founded in 1838, owned by the Bennett Coleman family, covering national and international news.",
           "connection": "Trump's constitutional challenge to birthright citizenship seeks to reframe citizenship law through partisan political rhetoric.",
           "force_tag": "democratic erosion"
         },
@@ -1916,7 +1959,7 @@
           "url": "https://www.theguardian.com/law/2026/mar/30/five-eu-governments-consistently-dismantle-rule-of-law-finds-civil-liberties-union-for-europe",
           "tier": "international",
           "paywall": false,
-          "context": "Owned by the Scott Trust, a nonprofit. British newspaper. Generally regarded as left-leaning. No paywall.",
+          "context": "British newspaper founded in 1821, owned by the Scott Trust nonprofit, one of the most-read English-language news sites globally, covering international affairs.",
           "connection": "Five EU governments systematically dismantle judicial independence and rule of law protections, undermining legal accountability mechanisms.",
           "force_tag": "democratic erosion and judicial capture"
         },
@@ -1926,7 +1969,7 @@
           "url": "https://www.scmp.com/news/asia/southeast-asia/article/3348416/myanmar-paves-way-junta-chief-be-civilian-president-ruling-iron-fist?utm_source=rss_feed",
           "tier": "international",
           "paywall": true,
-          "context": "English-language newspaper covering Asia-Pacific region",
+          "context": "English-language newspaper founded in 1903 in Hong Kong, owned by Alibaba Group since 2016, covering Asia-Pacific business, geopolitics, and Chinese affairs.",
           "connection": "Military junta legalizes authoritarianism through civilian constitutional mechanisms, using procedural legitimacy to entrench coup power.",
           "force_tag": "democratic erosion through institutional capture"
         },
@@ -1936,7 +1979,7 @@
           "url": "https://www.wired.com/story/this-is-how-trump-is-already-threatening-the-midterms/",
           "tier": "explainer",
           "paywall": true,
-          "context": "Magazine covering technology",
+          "context": "Technology and culture magazine founded in 1993 in San Francisco, owned by Conde Nast, covering digital technology, science, business, and the future of innovation.",
           "connection": "Election manipulation requires controlling information distribution and political narratives through coordinated administrative action.",
           "force_tag": "democratic erosion through information control"
         },
@@ -1946,7 +1989,7 @@
           "url": "https://balkaninsight.com/2026/03/30/mandates-after-medals-bulgarian-sport-stars-line-up-for-parliament/bi/",
           "tier": "international",
           "paywall": false,
-          "context": "Publication covering Southeast Europe and the Balkans",
+          "context": "Nonprofit investigative news outlet run by the Balkan Investigative Reporting Network, covering politics, democracy, and corruption in Southeast Europe.",
           "connection": "",
           "force_tag": "democratic erosion"
         }
@@ -1989,7 +2032,8 @@
             "economics",
             "security",
             "geopolitics"
-          ]
+          ],
+          "context": "International news network founded in 1996, funded by the government of Qatar, headquartered in Doha, covering global news with Middle East emphasis."
         },
         {
           "text": "Regional military escalation raises commodity prices, triggering financial market volatility across global trading hubs.",
@@ -1998,7 +2042,8 @@
           "domains": [
             "geopolitics",
             "economics"
-          ]
+          ],
+          "context": "English-language newspaper founded in 1903 in Hong Kong, owned by Alibaba Group since 2016, covering Asia-Pacific business, geopolitics, and Chinese affairs."
         },
         {
           "text": "Oil producers moderate output despite price spikes, weighing short-term volatility against production capacity and climate transition.",
@@ -2007,7 +2052,8 @@
           "domains": [
             "economics",
             "climate"
-          ]
+          ],
+          "context": "Independent financial and economics blog founded in 2006 by Susan Webber under the pen name Yves Smith, covering financial industry practices, economics, and policy."
         },
         {
           "text": "Military strikes on energy infrastructure destroy civilian utilities while political leaders discuss resource control.",
@@ -2017,7 +2063,8 @@
             "security",
             "economics",
             "geopolitics"
-          ]
+          ],
+          "context": "International news network founded in 1996, funded by the government of Qatar, headquartered in Doha, covering global news with Middle East emphasis."
         }
       ],
       "tier_framing": {
@@ -2034,7 +2081,7 @@
             "title": "US airlines face fuel-driven financial shakeout - Reuters",
             "source": "Reuters",
             "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNVWwzWnk3OTRpaVM4LWxXbk9BQXNFbmFzbExwQWEwUEppR1lpSEhDOXlkTjlsLWhkdkRLa2twNVVnenhRWDBiRE5LYzItWGxDcDV6ZGh1WGV3Q1JlcU43ZGF3WG05Yl9VdU56NFFpQjluS056Q0o0WFFoWkxEcWtibDlmMGNZeUtVbFNrdGh5Z2tlOHNaajZZ?oc=5",
-            "context": "Owned by Thomson Reuters. Major international wire service. Generally regarded as centrist."
+            "context": "International news agency founded in 1851 in London, now owned by Thomson Reuters, operating as one of the largest global wire services."
           }
         },
         "international": {
@@ -2050,7 +2097,7 @@
             "title": "Oil tops $116 a barrel as Iran accuses US of preparing invasion",
             "source": "Al Jazeera",
             "url": "https://www.aljazeera.com/economy/2026/3/30/oil-rises-above-116-a-barrel-as-iran-accuses-us-of-preparing-invasion?traffic_source=rss",
-            "context": "Funded by the government of Qatar. Major international news network. Significant coverage of Middle East and Global South."
+            "context": "International news network founded in 1996, funded by the government of Qatar, headquartered in Doha, covering global news with Middle East emphasis."
           }
         },
         "specialist": {
@@ -2066,7 +2113,7 @@
             "title": "Drillers See Triple-Digit Crude and Hit the Brakes",
             "source": "Naked Capitalism",
             "url": "https://www.nakedcapitalism.com/2026/03/drillers-see-triple-digit-crude-and-hit-the-brakes.html",
-            "context": "Independent blog covering finance"
+            "context": "Independent financial and economics blog founded in 2006 by Susan Webber under the pen name Yves Smith, covering financial industry practices, economics, and policy."
           }
         }
       },
@@ -2077,7 +2124,7 @@
           "url": "https://www.aljazeera.com/economy/2026/3/30/oil-rises-above-116-a-barrel-as-iran-accuses-us-of-preparing-invasion?traffic_source=rss",
           "tier": "international",
           "paywall": false,
-          "context": "Funded by the government of Qatar. Major international news network. Significant coverage of Middle East and Global South.",
+          "context": "International news network founded in 1996, funded by the government of Qatar, headquartered in Doha, covering global news with Middle East emphasis.",
           "connection": "Military conflict disrupts oil supply, creating global energy crisis and inflation pressure across markets.",
           "force_tag": "conflict-driven commodity price shock"
         },
@@ -2087,7 +2134,7 @@
           "url": "https://www.scmp.com/business/article/3348360/hong-kong-stocks-fall-asia-iran-conflict-drives-oil-prices-higher?utm_source=rss_feed",
           "tier": "international",
           "paywall": true,
-          "context": "English-language newspaper covering Asia-Pacific region",
+          "context": "English-language newspaper founded in 1903 in Hong Kong, owned by Alibaba Group since 2016, covering Asia-Pacific business, geopolitics, and Chinese affairs.",
           "connection": "Regional military escalation raises commodity prices, triggering financial market volatility across global trading hubs.",
           "force_tag": "conflict-driven commodity price shock"
         },
@@ -2097,7 +2144,7 @@
           "url": "https://www.nakedcapitalism.com/2026/03/drillers-see-triple-digit-crude-and-hit-the-brakes.html",
           "tier": "specialist",
           "paywall": false,
-          "context": "Independent blog covering finance",
+          "context": "Independent financial and economics blog founded in 2006 by Susan Webber under the pen name Yves Smith, covering financial industry practices, economics, and policy.",
           "connection": "Oil producers moderate output despite price spikes, weighing short-term volatility against production capacity and climate transition.",
           "force_tag": "commodity price volatility"
         },
@@ -2107,7 +2154,7 @@
           "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNVWwzWnk3OTRpaVM4LWxXbk9BQXNFbmFzbExwQWEwUEppR1lpSEhDOXlkTjlsLWhkdkRLa2twNVVnenhRWDBiRE5LYzItWGxDcDV6ZGh1WGV3Q1JlcU43ZGF3WG05Yl9VdU56NFFpQjluS056Q0o0WFFoWkxEcWtibDlmMGNZeUtVbFNrdGh5Z2tlOHNaajZZ?oc=5",
           "tier": "national",
           "paywall": false,
-          "context": "Owned by Thomson Reuters. Major international wire service. Generally regarded as centrist.",
+          "context": "International news agency founded in 1851 in London, now owned by Thomson Reuters, operating as one of the largest global wire services.",
           "connection": "",
           "force_tag": "commodity price volatility"
         }
@@ -3263,7 +3310,7 @@
         "cooperation_type": "labor organizing",
         "force_tag": "cross-movement solidarity",
         "connection": "General strike demands connect anti-imperialist foreign policy with domestic labor organizing under single mobilization.",
-        "context": "Independent blog covering finance"
+        "context": "Independent financial and economics blog founded in 2006 by Susan Webber under the pen name Yves Smith, covering financial industry practices, economics, and policy."
       },
       {
         "title": "New nuclear safety rules reduce protections for workers, the public",
@@ -3273,7 +3320,7 @@
         "cooperation_type": "whistleblowing/worker advocacy",
         "force_tag": "regulatory capture",
         "connection": "Regulatory rollback reduces worker and public protections in nuclear industry safety standards.",
-        "context": "Environmental and social news from the American West and Indigenous communities"
+        "context": "Nonprofit magazine founded in 1970 in Paonia, Colorado, covering the environment, public lands, communities, and Indigenous issues across the American West."
       },
       {
         "title": "OPINION: ICE operations cause deep psychological trauma for students, declining enrollment and diminishing job paths",
@@ -3283,7 +3330,7 @@
         "cooperation_type": "institutional advocacy",
         "force_tag": "enforcement-induced displacement",
         "connection": "Immigration enforcement directly disrupts educational access and workforce development for vulnerable student populations.",
-        "context": "Nonprofit newsroom covering education policy and K-12 schools"
+        "context": "Nonprofit newsroom founded in 2009 at Teachers College at Columbia University, covering education inequality, K-12 schools, and higher education policy."
       },
       {
         "title": "How a Tiny Farm County Fought a Data Center Complex and Won",
@@ -3293,7 +3340,7 @@
         "cooperation_type": "community organizing",
         "force_tag": "land-use privatization resistance",
         "connection": "Rural community resistance blocked corporate land acquisition for data center infrastructure tied to energy monopoly.",
-        "context": "Publication covering food policy"
+        "context": "Nonprofit publication founded in 2009, covering the American food system including food policy, sustainable agriculture, farm labor, and food justice."
       },
       {
         "title": "Nation’s Disability Services System Faces ‘Unprecedented’ Threats",
@@ -3303,7 +3350,7 @@
         "cooperation_type": "advocacy and institutional pushback",
         "force_tag": "fiscal austerity eroding public welfare access",
         "connection": "Budget cuts and fraud-prevention mandates squeeze Medicaid-funded community services for disabled people.",
-        "context": "News organization covering disability policy and disability community issues"
+        "context": "Independent news organization founded in 2008, covering disability policy, developmental disabilities, intellectual disability issues, and the disability rights community."
       },
       {
         "title": "As immigration courts shrink, San Francisco Jesuit parish stands by families",
@@ -3313,7 +3360,7 @@
         "cooperation_type": "institutional care and community support",
         "force_tag": "institutional capacity collapse and mutual aid substitution",
         "connection": "Judicial system backlog creates human vulnerability that community institutions fill with direct support.",
-        "context": "Independent Catholic news organization covering church and faith issues"
+        "context": "Independent Catholic news organization founded in 1964 in Kansas City, Missouri, not owned by or affiliated with any diocese, covering faith, church, and social issues."
       },
       {
         "title": "Every Soldier a Software Builder: Governing the Army’s New Digital Workforce",
@@ -3323,7 +3370,7 @@
         "cooperation_type": "institutional reform",
         "force_tag": "institutional capability building",
         "connection": "Military develops internal software engineering capacity to reduce dependence on external tech vendors and accelerate digital modernization of defense operations.",
-        "context": "Publication covering military affairs and national security"
+        "context": "National security and foreign policy analysis platform founded in 2013, publishing expert commentary on military strategy, defense policy, and international security."
       },
       {
         "title": "Pakistán será sede de conversaciones entre EE.UU. e Irán en medio de la guerra",
@@ -3333,7 +3380,7 @@
         "cooperation_type": "cross-party diplomatic mediation",
         "force_tag": "diplomatic intermediation",
         "connection": "Pakistan's diplomatic mediation role requires state institutional trust-building to bridge adversarial U.S.-Iran tensions.",
-        "context": "Spanish-language daily serving Latino communities in New York metro area."
+        "context": "Spanish-language daily newspaper founded in 1913 in New York City, owned by ImpreMedia, serving Latino communities with coverage of immigration, politics, and culture."
       }
     ],
     "coverage_gap": []
@@ -3351,7 +3398,7 @@
       ],
       "connection": "Immigration enforcement directly disrupts educational access and workforce development for vulnerable student populations.",
       "force_tag": "enforcement-induced displacement",
-      "context": "Nonprofit newsroom covering education policy and K-12 schools"
+      "context": "Nonprofit newsroom founded in 2009 at Teachers College at Columbia University, covering education inequality, K-12 schools, and higher education policy."
     },
     {
       "title": "As immigration courts shrink, San Francisco Jesuit parish stands by families",
@@ -3365,7 +3412,7 @@
       ],
       "connection": "Judicial system backlog creates human vulnerability that community institutions fill with direct support.",
       "force_tag": "institutional capacity collapse and mutual aid substitution",
-      "context": "Independent Catholic news organization covering church and faith issues"
+      "context": "Independent Catholic news organization founded in 1964 in Kansas City, Missouri, not owned by or affiliated with any diocese, covering faith, church, and social issues."
     },
     {
       "title": "Deadly crash in SF Chinatown kills pedestrian, injures 1",
@@ -3380,7 +3427,7 @@
       ],
       "connection": "",
       "force_tag": "",
-      "context": "News organization covering Asian American communities and issues"
+      "context": "Independent digital news outlet founded in 2014, covering news, politics, and cultural issues affecting Asian American and Pacific Islander communities."
     },
     {
       "title": "Every Soldier a Software Builder: Governing the Army’s New Digital Workforce",
@@ -3394,7 +3441,7 @@
       ],
       "connection": "Military develops internal software engineering capacity to reduce dependence on external tech vendors and accelerate digital modernization of defense operations.",
       "force_tag": "institutional capability building",
-      "context": "Publication covering military affairs and national security"
+      "context": "National security and foreign policy analysis platform founded in 2013, publishing expert commentary on military strategy, defense policy, and international security."
     },
     {
       "title": "Lo que deben saber los padres sobre el acoso y la violencia en el noviazgo adolescente en Nueva York",
@@ -3407,7 +3454,7 @@
       ],
       "connection": "",
       "force_tag": "algorithmic harm",
-      "context": "Spanish-language daily serving Latino communities in New York metro area."
+      "context": "Spanish-language daily newspaper founded in 1913 in New York City, owned by ImpreMedia, serving Latino communities with coverage of immigration, politics, and culture."
     },
     {
       "title": "In a sermon on foot directed at Donald Trump, hundreds join Palm Sunday Path at state Capitol",
@@ -3420,7 +3467,7 @@
       ],
       "connection": "",
       "force_tag": "civic protest",
-      "context": "Nonprofit newsroom covering Wisconsin state government"
+      "context": "Nonprofit newsroom part of the States Newsroom network, founded in 2019, covering Wisconsin state government, elections, and public policy from Madison."
     },
     {
       "title": "Ohio House child care bills take aim at fraud, providers say state is solving for lack of a problem",
@@ -3434,7 +3481,7 @@
       ],
       "connection": "Regulatory oversight of child care industry affects working conditions and fraud prevention enforcement mechanisms.",
       "force_tag": "regulatory friction over enforcement standards",
-      "context": "Nonprofit newsroom covering Ohio state government and policy"
+      "context": "Nonprofit newsroom part of the States Newsroom network, founded in 2019, covering Ohio state government, elections, and policy from Columbus."
     },
     {
       "title": "Demanda: Inmigrantes contratados para vender alarmas para casas en Las Vegas temían ser deportados",
@@ -3449,7 +3496,7 @@
       ],
       "connection": "Migrant workers sue employer for wage theft and deportation threats, exposing labor trafficking enabled by immigration vulnerability.",
       "force_tag": "labor trafficking and wage theft",
-      "context": "Nonprofit newsroom covering Nevada state government and policy"
+      "context": "Nonprofit newsroom founded in 2017 by journalist Jon Ralston in Las Vegas, covering Nevada state government, gaming industry policy, and Western politics."
     },
     {
       "title": "Whitehorse takes lead with 90.15 ride in Round 2 at Ty Murray Invitational - navajotimes.com",
@@ -3460,7 +3507,7 @@
       "domains": [],
       "connection": "",
       "force_tag": "",
-      "context": "Newspaper serving the Navajo Nation and tribal communities"
+      "context": "Independent newspaper founded in 1959, owned by the Navajo Nation, the largest Indigenous newspaper in the US, covering tribal government and community life."
     },
     {
       "title": "Why OpenAI really shut down Sora",
@@ -3474,7 +3521,7 @@
       ],
       "connection": "AI tool shutdown raises questions about data collection practices embedded in product design and user trust in platform governance.",
       "force_tag": "platform data extraction opacity",
-      "context": "Publication covering technology startups and venture capital"
+      "context": "Technology industry publication founded in 2005 by Michael Arrington, now owned by Yahoo, covering startups, venture capital, product launches, and Silicon Valley."
     },
     {
       "title": "Why Danbury’s homeless deserve more help",
@@ -3487,7 +3534,7 @@
       ],
       "connection": "",
       "force_tag": "homelessness policy inadequacy",
-      "context": "Connecticut state government and public policy"
+      "context": "Connecticut Mirror, a nonprofit newsroom founded in 2010, covering state government, public policy, education, and health care in Connecticut."
     },
     {
       "title": "Today in History, 1966: Faulty welding named as cause of North High gym roof collapse",
@@ -3500,7 +3547,7 @@
       ],
       "connection": "",
       "force_tag": "infrastructure failure investigation",
-      "context": "North Dakota and Upper Midwest regional news"
+      "context": "Regional newspaper based in Fargo, North Dakota, owned by Forum Communications, covering North Dakota and the Upper Midwest including agriculture and energy policy."
     }
   ],
   "active_threads": [
@@ -3995,14 +4042,14 @@
             "source": "New York Times",
             "title": "They’ve Been Accused of Running a ‘Covert’ Operation in Greenland. It’s No Secret.",
             "url": "https://www.nytimes.com/2026/03/30/world/europe/trump-greenland-operation-danish-media.html",
-            "context": "Publicly traded, headquartered in New York. Largest US newspaper by circulation. Generally regarded as center-left in editorial stance.",
+            "context": "Daily newspaper founded in 1851, owned by the New York Times Company, the largest newspaper by digital subscriptions globally, covering national and world affairs.",
             "connection": "Foreign intelligence monitors covert influence operations targeting resource-rich territory, revealing strategic competition disguised as diplomacy."
           },
           {
             "source": "Bloomberg",
             "title": "Oil Gains as Houthis Enter Middle East War",
             "url": "https://www.bloomberg.com/news/videos/2026-03-30/oil-gains-as-houthis-enter-middle-east-war-video",
-            "context": "Founded and majority-owned by Michael Bloomberg. Dominant source for financial professionals.",
+            "context": "Financial data and news company founded in 1981 by Michael Bloomberg, dominant in financial information services, covering global markets, economics, and business.",
             "connection": "Military escalation in Yemen disrupts global oil supply, raising energy prices and escalating regional military tensions."
           }
         ]
@@ -4026,14 +4073,14 @@
             "source": "New York Times",
             "title": "Gao Zhen, a Chinese Artist Accused of Mocking Mao, Goes on Trial",
             "url": "https://www.nytimes.com/2026/03/29/world/asia/china-artist-gao-trial.html",
-            "context": "Publicly traded, headquartered in New York. Largest US newspaper by circulation. Generally regarded as center-left in editorial stance.",
+            "context": "Daily newspaper founded in 1851, owned by the New York Times Company, the largest newspaper by digital subscriptions globally, covering national and world affairs.",
             "connection": "Authoritarian state criminalizes artistic expression through legal system to suppress dissent."
           },
           {
             "source": "Fox News",
             "title": "Dem senator warns deportation could let Virginia woman's illegal immigrant killer 'escape accountabi",
             "url": "https://www.foxnews.com/politics/dem-senator-warns-deportation-could-let-virginia-womans-illegal-immigrants-killer-escape-accountability",
-            "context": "Owned by Fox Corporation (Murdoch family). Largest cable news network by viewership. Generally regarded as right-leaning.",
+            "context": "Cable news network founded in 1996 by Rupert Murdoch, owned by Fox Corporation, providing 24-hour news, opinion, and political commentary from New York.",
             "connection": "Deportation policy conflicts with criminal justice accountability, forcing choice between immigration enforcement and prosecution."
           }
         ],
@@ -4042,14 +4089,14 @@
             "source": "Al Jazeera",
             "title": "Amnesty warns of human rights risks at 2026 World Cup",
             "url": "https://www.aljazeera.com/video/newsfeed/2026/3/30/amnesty-warns-of-human-rights-risks-at-2026-world-cup?traffic_source=rss",
-            "context": "Funded by the government of Qatar. Major international news network. Significant coverage of Middle East and Global South.",
+            "context": "International news network founded in 1996, funded by the government of Qatar, headquartered in Doha, covering global news with Middle East emphasis.",
             "connection": "Host nation obligations to protect attendee rights clash with governance structures that may permit labor exploitation and surveillance."
           },
           {
             "source": "The Guardian World",
             "title": "Victoria police called to give evidence into Indigenous man’s death in custody seek protection from ",
             "url": "https://www.theguardian.com/australia-news/2026/mar/30/indigenous-death-custody-victoria-police-seek-protection-self-incrimination-ntwnfb",
-            "context": "Owned by the Scott Trust, a nonprofit. British newspaper. Generally regarded as left-leaning. No paywall.",
+            "context": "British newspaper founded in 1821, owned by the Scott Trust nonprofit, one of the most-read English-language news sites globally, covering international affairs.",
             "connection": "Police officers invoke self-incrimination protections during official inquest into custodial death, creating legal obstacle to institutional accountability."
           }
         ]
@@ -4073,14 +4120,14 @@
             "source": "New York Times",
             "title": "U.S. Allows Russian Oil Tanker to Reach Cuba, Despite Blockade",
             "url": "https://www.nytimes.com/2026/03/29/world/americas/cuba-russian-oil-tanlker.html",
-            "context": "Publicly traded, headquartered in New York. Largest US newspaper by circulation. Generally regarded as center-left in editorial stance.",
+            "context": "Daily newspaper founded in 1851, owned by the New York Times Company, the largest newspaper by digital subscriptions globally, covering national and world affairs.",
             "connection": "Trade sanctions enforcement conflicts with energy market realities when permitting oil delivery undermines blockade strategy."
           },
           {
             "source": "Bloomberg",
             "title": "Trump Says Iran Gave In to US Demands Despite 15-Point Plan Rejection | Daybreak Europe 3/30/2026",
             "url": "https://www.bloomberg.com/news/videos/2026-03-30/daybreak-europe-3-30-2026-video",
-            "context": "Founded and majority-owned by Michael Bloomberg. Dominant source for financial professionals.",
+            "context": "Financial data and news company founded in 1981 by Michael Bloomberg, dominant in financial information services, covering global markets, economics, and business.",
             "connection": "Diplomatic claims about nuclear tensions clash with market reality as oil and equity traders price in actual escalation risk."
           }
         ]
@@ -4104,14 +4151,14 @@
             "source": "NPR",
             "title": "ICE officers could remain at airports after TSA workers are paid",
             "url": "https://www.npr.org/2026/03/29/nx-s1-5765454/tsa-paychecks-ice-airports-tom-homan",
-            "context": "Nonprofit public media funded by member stations, sponsors, and foundations. Generally regarded as center-left.",
+            "context": "National Public Radio, a nonprofit media organization founded in 1970, funded by member stations and corporate sponsors, producing news programming for over 1,000 stations.",
             "connection": "Immigration enforcement presence at airports persists independent of TSA operational status."
           },
           {
             "source": "Fox News",
             "title": "Lionel Richie issues warning to rude celebrities after Chappell Roan backlash",
             "url": "https://www.foxnews.com/entertainment/lionel-richie-warning-celebrities-fans-chappell-roan-backlash",
-            "context": "Owned by Fox Corporation (Murdoch family). Largest cable news network by viewership. Generally regarded as right-leaning.",
+            "context": "Cable news network founded in 1996 by Rupert Murdoch, owned by Fox Corporation, providing 24-hour news, opinion, and political commentary from New York.",
             "connection": ""
           }
         ],
@@ -4120,14 +4167,14 @@
             "source": "BBC World",
             "title": "Fugitive Dezi Freeman shot dead by Australian police after seven months in hiding",
             "url": "https://www.bbc.com/news/articles/c93e4gxn22wo?at_medium=RSS&at_campaign=rss",
-            "context": "Funded by the UK license fee. British public broadcaster. Generally regarded as centrist by international standards.",
+            "context": "British Broadcasting Corporation's international news service, funded by the UK license fee, providing global news coverage from bureaus in over 50 countries.",
             "connection": "Police use of lethal force to resolve violent fugitive situation reflects state monopoly on enforcement."
           },
           {
             "source": "The Guardian World",
             "title": "Fugitive emerged from building holding weapon before being shot dead, commissioner says – as it happ",
             "url": "https://www.theguardian.com/australia-news/live/2026/mar/30/dezi-freeman-update-news-shot-dead-by-police-australia-fugitive-victoria-porepunkah-shooting-live-updates-latest-ntwnfb",
-            "context": "Owned by the Scott Trust, a nonprofit. British newspaper. Generally regarded as left-leaning. No paywall.",
+            "context": "British newspaper founded in 1821, owned by the Scott Trust nonprofit, one of the most-read English-language news sites globally, covering international affairs.",
             "connection": "Police shooting of fugitive after extended manhunt raises questions about use-of-force protocols and investigative procedures."
           }
         ]
@@ -4151,14 +4198,14 @@
             "source": "Bloomberg",
             "title": "Rallies in Equities Likely to be Shortlived This Week: 3-Minutes MLIV",
             "url": "https://www.bloomberg.com/news/videos/2026-03-30/equities-rally-likely-to-be-shortlived-3-minutes-mliv-video",
-            "context": "Founded and majority-owned by Michael Bloomberg. Dominant source for financial professionals.",
+            "context": "Financial data and news company founded in 1981 by Michael Bloomberg, dominant in financial information services, covering global markets, economics, and business.",
             "connection": ""
           },
           {
             "source": "AP News",
             "title": "Asian shares decline as oil prices soar amid the war in Iran, echoing last week’s Wall Street drop",
             "url": "https://apnews.com/article/stock-markets-war-oil-trump-iran-1aef947ecb395c3bb97fcdb5ed3826f1",
-            "context": "Nonprofit cooperative owned by member newspapers and broadcasters. Generally regarded as centrist wire service.",
+            "context": "Nonprofit news cooperative founded in 1846 and owned by its member newspapers and broadcasters, operating as a global wire service in 100 countries.",
             "connection": "Military conflict in Iran drives oil prices higher, creating financial contagion across Asian markets."
           }
         ],
@@ -4167,7 +4214,7 @@
             "source": "Al Jazeera",
             "title": "Oil tops $116 a barrel as Iran accuses US of preparing invasion",
             "url": "https://www.aljazeera.com/economy/2026/3/30/oil-rises-above-116-a-barrel-as-iran-accuses-us-of-preparing-invasion?traffic_source=rss",
-            "context": "Funded by the government of Qatar. Major international news network. Significant coverage of Middle East and Global South.",
+            "context": "International news network founded in 1996, funded by the government of Qatar, headquartered in Doha, covering global news with Middle East emphasis.",
             "connection": "Military conflict disrupts oil supply, creating global energy crisis and inflation pressure across markets."
           }
         ]
@@ -4191,14 +4238,14 @@
             "source": "RealClearPolitics",
             "title": "War in Iran: The Everything Shock",
             "url": "https://www.realclearpolitics.com/2026/03/29/war_in_iran_the_everything_shock_695738.html",
-            "context": "Political news aggregation site curating multiple sources",
+            "context": "Political news aggregation website founded in 2000 by John McIntyre and Tom Bevan, curating articles and polling averages from across the political spectrum.",
             "connection": ""
           },
           {
             "source": "NBC News",
             "title": "UConn's Braylon Mullins Talks 3-Point Buzzer Beater Against Duke",
             "url": "https://www.today.com/video/braylon-mullins-on-3-point-buzzer-beater-uconn-to-final-four-260356165648",
-            "context": "Major broadcast television network providing national and international news",
+            "context": "Broadcast news division of NBCUniversal, a subsidiary of Comcast, founded in 1940, providing national and international news across television and digital platforms.",
             "connection": ""
           }
         ],
@@ -4207,14 +4254,14 @@
             "source": "Times of India",
             "title": "Dhurandhar: The Revenge box office collection day 12: Film eyes Rs 1000 crore",
             "url": "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/box-office/dhurandhar-2-the-revenge-box-office-collection-day-12-live-ranveer-singh-rakesh-bedi-sanjay-dutt-arjun-rampal-film-smashes-dhurandhar-1-lifetime-record-eyes-rs-1000-crore-india-net/articleshow/129893741.cms",
-            "context": "Major Indian newspaper covering national and international news",
+            "context": "India's largest English-language daily newspaper by circulation, founded in 1838, owned by the Bennett Coleman family, covering national and international news.",
             "connection": ""
           },
           {
             "source": "Rappler",
             "title": "LIT: The Poverty of the Woman Who Turned Herself into Stone",
             "url": "https://www.rappler.com/life-and-style/literature/lit-poverty-woman-who-turned-herself-stone/",
-            "context": "Philippine news organization covering Southeast Asia and Asia-Pacific",
+            "context": "Philippine digital news organization founded in 2012 by journalist Maria Ressa in Manila, covering Southeast Asian politics, governance, and social media disinformation.",
             "connection": ""
           }
         ]
@@ -4236,14 +4283,14 @@
             "source": "Fox News",
             "title": "Dem senator warns deportation could let Virginia woman's illegal immigrant killer 'escape accountabi",
             "url": "https://www.foxnews.com/politics/dem-senator-warns-deportation-could-let-virginia-womans-illegal-immigrants-killer-escape-accountability",
-            "context": "Owned by Fox Corporation (Murdoch family). Largest cable news network by viewership. Generally regarded as right-leaning.",
+            "context": "Cable news network founded in 1996 by Rupert Murdoch, owned by Fox Corporation, providing 24-hour news, opinion, and political commentary from New York.",
             "connection": "Deportation policy conflicts with criminal justice accountability, forcing choice between immigration enforcement and prosecution."
           },
           {
             "source": "Business Insider",
             "title": "They're old enough to be my grandparents — and in better shape than people half their age",
             "url": "https://www.businessinsider.com/healthy-aging-singapore-longevity-fitness-wellness-team-strong-silvers-2026-3",
-            "context": "Business and technology news outlet serving corporate and startup audiences",
+            "context": "Digital news outlet founded in 2007, owned by Axel Springer since 2015, covering business, technology, finance, and corporate news for a global audience.",
             "connection": ""
           }
         ],
@@ -4252,14 +4299,14 @@
             "source": "BBC World",
             "title": "Partial government shutdown becomes the longest in US history",
             "url": "https://www.bbc.com/news/articles/cyv1qpzq5v7o?at_medium=RSS&at_campaign=rss",
-            "context": "Funded by the UK license fee. British public broadcaster. Generally regarded as centrist by international standards.",
+            "context": "British Broadcasting Corporation's international news service, funded by the UK license fee, providing global news coverage from bureaus in over 50 countries.",
             "connection": "Partisan gridlock over DHS funding creates operational chaos affecting public infrastructure and travel."
           },
           {
             "source": "The Hindu",
             "title": "Will electors from Kerala and Puducherry residing in Tamil Nadu get a holiday to cast their vote? T.",
             "url": "https://www.thehindu.com/elections/tamil-nadu-assembly/will-electors-of-kerala-puducherry-residing-in-tamil-nadu-get-a-holiday-to-cast-their-vote-tn-govt-issues-advisory/article70801796.ece",
-            "context": "Indian newspaper covering national and international news",
+            "context": "Indian English-language newspaper founded in 1878 in Chennai, owned by the Kasturi and Sons family trust, covering national and international news.",
             "connection": "Government facilitates cross-state voter participation by granting workers paid leave, removing logistical barriers to democratic participation."
           }
         ],
@@ -4268,7 +4315,7 @@
             "source": "Ohio Capital Journal",
             "title": "Ohio Sen. Louis Blessing praises veterans. So why won’t he let them have a vote?",
             "url": "https://ohiocapitaljournal.com/2026/03/30/ohio-sen-louis-blessing-praises-veterans-so-why-wont-he-let-them-have-a-vote/",
-            "context": "Nonprofit newsroom covering Ohio state government and policy",
+            "context": "Nonprofit newsroom part of the States Newsroom network, founded in 2019, covering Ohio state government, elections, and policy from Columbus.",
             "connection": "Senator blocks veteran property tax relief vote despite publicly praising veterans' sacrifice, exposing gap between rhetoric and policy action."
           }
         ]
@@ -4293,7 +4340,7 @@
           "url": "https://www.cnbc.com/2026/03/30/401ks-alternative-investments.html",
           "tier": "national",
           "paywall": true,
-          "context": "Business television network covering financial markets and business news",
+          "context": "Business television network owned by NBCUniversal, a division of Comcast, founded in 1989, covering financial markets, corporate earnings, and economic policy.",
           "connection": "Labor Department regulatory action directly shapes how retirement savings are invested and allocated.",
           "force_tag": "regulatory capture"
         },
@@ -4303,7 +4350,7 @@
           "url": "https://thedispatch.com/article/ai-david-sacks-marsha-blackburn-trump-administration/",
           "tier": "national",
           "paywall": true,
-          "context": "Conservative publication founded by National Review alumni focusing on news and analysis",
+          "context": "Online news and commentary publication founded in 2019 by Jonah Goldberg and Stephen Hayes, covering politics, policy, and cultural analysis from Washington DC.",
           "connection": "Executive branch AI deregulation conflicts with Congressional Republican consumer protection priorities, fracturing party consensus.",
           "force_tag": "regulatory capture by tech interests"
         },
@@ -4313,7 +4360,7 @@
           "url": "https://www.nytimes.com/2026/03/30/business/private-credit-risks-trump-administration.html",
           "tier": "national",
           "paywall": true,
-          "context": "Publicly traded, headquartered in New York. Largest US newspaper by circulation. Generally regarded as center-left in editorial stance.",
+          "context": "Daily newspaper founded in 1851, owned by the New York Times Company, the largest newspaper by digital subscriptions globally, covering national and world affairs.",
           "connection": "Deregulatory policy removes safeguards on financial instruments already showing structural stress.",
           "force_tag": "regulatory capture enabling financial risk"
         },
@@ -4323,7 +4370,7 @@
           "url": "https://www.npr.org/2026/03/30/nx-s1-5753946/science-jeffrey-epstein-mit-exploit-donors-philanthropy",
           "tier": "national",
           "paywall": false,
-          "context": "Nonprofit public media funded by member stations, sponsors, and foundations. Generally regarded as center-left.",
+          "context": "National Public Radio, a nonprofit media organization founded in 1970, funded by member stations and corporate sponsors, producing news programming for over 1,000 stations.",
           "connection": "Philanthropy's lack of legal oversight enabled reputation laundering through scientific institutions, exposing how power operates outside democratic accountability.",
           "force_tag": "regulatory capture through philanthropic opacity"
         },
@@ -4333,7 +4380,7 @@
           "url": "https://www.nbcnews.com/tech/tech-news/democrats-push-trump-admin-prediction-market-insider-trading-rcna265503",
           "tier": "national",
           "paywall": false,
-          "context": "Major broadcast television network providing national and international news",
+          "context": "Broadcast news division of NBCUniversal, a subsidiary of Comcast, founded in 1940, providing national and international news across television and digital platforms.",
           "connection": "Democratic oversight attempts to address insider trading enabled by regulatory gaps in government ethics enforcement.",
           "force_tag": "regulatory capture and enforcement gaps"
         },
@@ -4343,7 +4390,7 @@
           "url": "https://www.theatlantic.com/ideas/2026/03/suburbs-homeownership-renting/686599/?utm_source=feed",
           "tier": "national",
           "paywall": true,
-          "context": "Longform magazine covering politics",
+          "context": "Magazine founded in 1857 in Boston by Ralph Waldo Emerson and others, owned by Laurene Powell Jobs since 2017, covering politics, culture, and ideas.",
           "connection": "Housing supply legislation designed to benefit homeowners over renters reveals structural bias in policy design.",
           "force_tag": "regulatory capture favoring property owners"
         }
@@ -4361,7 +4408,7 @@
           "url": "https://thehill.com/policy/defense/5807214-iran-threatens-us-troops/",
           "tier": "national",
           "paywall": false,
-          "context": "Political news outlet covering Congress and policy developments",
+          "context": "Political news organization founded in 1994 in Washington DC, owned by Nexstar Media Group since 2021, covering Congress, the White House, and campaigns.",
           "connection": "Military threat warning escalates asymmetric conflict messaging as U.S.-led operations intensify.",
           "force_tag": "military escalation spiral"
         },
@@ -4371,7 +4418,7 @@
           "url": "https://www.nytimes.com/2026/03/30/opinion/trump-iran-war-india-oil.html",
           "tier": "national",
           "paywall": true,
-          "context": "Publicly traded, headquartered in New York. Largest US newspaper by circulation. Generally regarded as center-left in editorial stance.",
+          "context": "Daily newspaper founded in 1851, owned by the New York Times Company, the largest newspaper by digital subscriptions globally, covering national and world affairs.",
           "connection": "U.S. military confrontation with Iran destabilizes broader Asian region and global interests.",
           "force_tag": "unilateral military escalation"
         },
@@ -4381,7 +4428,7 @@
           "url": "https://www.theatlantic.com/international/2026/03/trump-us-power-iran/686567/?utm_source=feed",
           "tier": "national",
           "paywall": true,
-          "context": "Longform magazine covering politics",
+          "context": "Magazine founded in 1857 in Boston by Ralph Waldo Emerson and others, owned by Laurene Powell Jobs since 2017, covering politics, culture, and ideas.",
           "connection": "Foreign policy decisions framed as accelerating global instability and isolating the U.S. internationally.",
           "force_tag": "unilateral military escalation"
         },
@@ -4391,7 +4438,7 @@
           "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQZHlrYWItR0JXcENnOEtGYkd4Uk1FRkdNN3BlVEN5bTRkbEd2VjF3YjNZMWlPTkp2Q21lSGM5TDVwbFJLQmp2aDRva3hxSUQ4U0JtYVYwTDlRdHhpQ0RXSkpGSDVjeUo0TFY5dmNJY0NuS1RmT3lPTEt3YVRQUHFSYWRQb3diZGlqMG9VeExPeUlaTXF0UU0zQU1Cc1FhUUlkZnhscXlZRUhVWkMtR285ZmhBWkZJV2M4c05DXzJ3U3JnTmI5eXVnbHl3NFhrZw?oc=5",
           "tier": "national",
           "paywall": false,
-          "context": "Owned by Thomson Reuters. Major international wire service. Generally regarded as centrist.",
+          "context": "International news agency founded in 1851 in London, now owned by Thomson Reuters, operating as one of the largest global wire services.",
           "connection": "Regional military escalation between state actors creates direct security threat and broader geopolitical instability.",
           "force_tag": "military escalation"
         },
@@ -4401,7 +4448,7 @@
           "url": "https://www.channelnewsasia.com/asia/indonesia-un-peacekeeper-killed-lebanon-injured-6025051",
           "tier": "international",
           "paywall": false,
-          "context": "Singaporean news network covering Asia-Pacific region",
+          "context": "News network launched in 1999 by Mediacorp, a Singaporean state-owned media company, covering Asia-Pacific politics, business, and regional affairs.",
           "connection": "UN peacekeeping casualty in Lebanon reflects escalating regional conflict involving international military presence.",
           "force_tag": "regional military escalation"
         },
@@ -4411,7 +4458,7 @@
           "url": "https://www.aljazeera.com/video/newsfeed/2026/3/30/sirens-heard-across-haifa-port?traffic_source=rss",
           "tier": "international",
           "paywall": false,
-          "context": "Funded by the government of Qatar. Major international news network. Significant coverage of Middle East and Global South.",
+          "context": "International news network founded in 1996, funded by the government of Qatar, headquartered in Doha, covering global news with Middle East emphasis.",
           "connection": "Military escalation in active conflict zone creates immediate civilian safety threat.",
           "force_tag": "regional military escalation"
         }
@@ -4429,7 +4476,7 @@
           "url": "https://www.cnbc.com/2026/03/30/iran-attacks-aluminum-producers-shockwaves-market-metals.html",
           "tier": "national",
           "paywall": true,
-          "context": "Business television network covering financial markets and business news",
+          "context": "Business television network owned by NBCUniversal, a division of Comcast, founded in 1989, covering financial markets, corporate earnings, and economic policy.",
           "connection": "Military conflict disrupts global commodity supply, creating market volatility and economic uncertainty.",
           "force_tag": "supply chain weaponization"
         },
@@ -4439,7 +4486,7 @@
           "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNWGxBSWFud1RLWEU1QlFtRmNNWktrZGlRX05lS1lmclBXZFI2TlV2NndRVW9EZ3F5Nl8zaWZpUHZHVGV2UWlCVXlFcDg4N0EzZ3JTTThmQ1hRZ0FWbTd3T0t5YlJwRC1MbEJtbGl0UE1vME1sZThYaG9GSXdMY1ppSUpUSmplMDRFRE1hVXlTWndRVzJlN245dVBBcjJzYzhTaF9vMDVKMTF1bmNYZWc?oc=5",
           "tier": "national",
           "paywall": false,
-          "context": "Owned by Thomson Reuters. Major international wire service. Generally regarded as centrist.",
+          "context": "International news agency founded in 1851 in London, now owned by Thomson Reuters, operating as one of the largest global wire services.",
           "connection": "Supply chain disruption from regional conflict threatens energy security, complicating global transition away from fossil fuel dependence.",
           "force_tag": "supply chain fragility"
         },
@@ -4449,7 +4496,7 @@
           "url": "https://www.bloomberg.com/news/articles/2026-03-30/sri-lanka-in-talks-for-russian-oil-products-as-war-jolts-market",
           "tier": "national",
           "paywall": true,
-          "context": "Founded and majority-owned by Michael Bloomberg. Dominant source for financial professionals.",
+          "context": "Financial data and news company founded in 1981 by Michael Bloomberg, dominant in financial information services, covering global markets, economics, and business.",
           "connection": "War disrupts energy supply chains, forcing buyers to pivot from traditional suppliers to geopolitical alternatives like Russia.",
           "force_tag": "supply chain fragmentation"
         },
@@ -4459,7 +4506,7 @@
           "url": "https://www.abc.net.au/news/2026-03-30/four-step-fuel-supply-plan-national-cabinet-fuel-crisis/106512706",
           "tier": "international",
           "paywall": false,
-          "context": "Australian public broadcaster providing news coverage",
+          "context": "Australian Broadcasting Corporation, a government-funded public broadcaster founded in 1932, covering Australian domestic and international news.",
           "connection": "War disrupts fuel supply, forcing government to ration resources and prioritize emergency services over civilian economy.",
           "force_tag": "supply chain weaponization"
         },
@@ -4469,7 +4516,7 @@
           "url": "https://www.straitstimes.com/world/middle-east/how-yemens-houthis-could-worsen-the-oil-crunch",
           "tier": "international",
           "paywall": false,
-          "context": "Singapore newspaper covering Asia-Pacific and global news",
+          "context": "Singapore's English-language broadsheet newspaper, founded in 1845, owned by Singapore Press Holdings, covering Southeast Asian and global news, politics, and business.",
           "connection": "Houthi maritime disruption extends shipping crisis, compounding global oil supply vulnerability.",
           "force_tag": "supply chain weaponization"
         },
@@ -4479,7 +4526,7 @@
           "url": "https://www.japantimes.co.jp/news/2026/03/30/japan/japan-pm-deny-medical-device/",
           "tier": "international",
           "paywall": false,
-          "context": "Japanese English-language newspaper covering Japan and Asia-Pacific",
+          "context": "Japan's oldest English-language newspaper, founded in 1897 in Tokyo, owned by News2u Holdings, covering Japanese politics, culture, and Asia-Pacific affairs.",
           "connection": "PM addresses supply-chain vulnerability from global oil instability, exposing Japan's dependence on fragile Asian energy networks.",
           "force_tag": "supply chain fragility"
         }
