@@ -391,7 +391,7 @@ def analyze_top_stories(articles):
                 })
 
         stories.append({
-            "headline": lead_title[:120],
+            "headline": lead_title,
             "structural_force": primary_force,
             "all_forces": all_forces,
             "source_count": len(sources),

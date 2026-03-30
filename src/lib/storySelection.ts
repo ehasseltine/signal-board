@@ -291,6 +291,9 @@ export function selectDailyThread(
       if (threadSynth.cross_spectrum) section.crossSpectrum = threadSynth.cross_spectrum;
       if (threadSynth.why_this_matters) section.whyThisMatters = threadSynth.why_this_matters;
       if (threadSynth.watch_for) section.watchFor = threadSynth.watch_for;
+      if (threadSynth.structural_force) {
+        section.title = threadSynth.structural_force.charAt(0).toUpperCase() + threadSynth.structural_force.slice(1);
+      }
     } else if (editorial?.thread_to_watch) {
       // Fallback: use editorial's thread_to_watch
       section.watchFor = editorial.thread_to_watch;
@@ -427,6 +430,11 @@ export function selectDailyGap(
       if (gapSynth.cross_spectrum) gapSection.crossSpectrum = gapSynth.cross_spectrum;
       if (gapSynth.why_this_matters) gapSection.whyThisMatters = gapSynth.why_this_matters;
       if (gapSynth.watch_for) gapSection.watchFor = gapSynth.watch_for;
+      // Use structural_force as title when available — it's a cleaner editorial label
+      // than the raw connection string which may be truncated or overly long
+      if (gapSynth.structural_force) {
+        gapSection.title = gapSynth.structural_force.charAt(0).toUpperCase() + gapSynth.structural_force.slice(1);
+      }
     }
 
     return gapSection;
