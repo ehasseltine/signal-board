@@ -155,6 +155,46 @@ const canonicalUrl = `${siteUrl}/${title === 'Today' ? 'today/' : title === 'Abo
     ]
   })} />
 
+  <!-- Dataset JSON-LD (daily pages only) -->
+  {title === 'Today' && dateStr && totalStories && (
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Dataset",
+      "name": `Signal Board Daily Analysis — ${dateStr}`,
+      "description": `Cross-spectrum news analysis synthesized from ${sourcesReporting || 300} sources covering ${totalStories} articles across the political spectrum, across borders, and across languages.`,
+      "url": canonicalUrl,
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "creator": {
+        "@type": "Person",
+        "name": "Elise Hasseltine",
+        "url": "https://www.elisehasseltine.com"
+      },
+      "datePublished": dateStr,
+      "dateModified": dateStr,
+      "temporalCoverage": dateStr,
+      "spatialCoverage": "Global",
+      "variableMeasured": [
+        {
+          "@type": "PropertyValue",
+          "name": "Sources Reporting",
+          "value": sourcesReporting || 300
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Articles Analyzed",
+          "value": totalStories
+        }
+      ],
+      "distribution": {
+        "@type": "DataDownload",
+        "contentUrl": `${siteUrl}/today/`,
+        "encodingFormat": "text/html"
+      },
+      "isAccessibleForFree": true,
+      "keywords": ["news analysis", "media framing", "cross-spectrum coverage", "structural forces", "cooperation", "media landscape"]
+    })} />
+  )}
+
   <!-- Fonts — consolidated to 4 families for performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
