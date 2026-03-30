@@ -40,6 +40,7 @@ WRITING_STYLE = """WRITING STYLE (non-negotiable):
 - NO short declarative reversals ("This is not X. It is Y." or "This sounds basic. In a better world it wouldn't be remarkable.")
 - NO dramatic pivot sentences ("But here's the thing." "And then everything changed." "That's where it gets interesting.")
 - NO staccato rhetorical cadence or ping-ponging between opposites. The structure "X. But Y." repeated across paragraphs reads as manufactured tension.
+- Never begin a sentence with "But" as a rhetorical pivot. If two ideas contrast, embed the contrast within a single flowing sentence rather than creating a setup-and-reversal with "But." This is a hard rule.
 - NO em dashes anywhere. Use commas, parentheses, "because," "which," or restructure the sentence instead. This is a hard rule with zero exceptions.
 - NO borrowed-confidence phrases ("Let that sink in." "Read that again." "Here's what nobody is talking about.")
 - NO straw man setups ("Some people think X. But actually Y."). Make the point directly.
@@ -130,7 +131,20 @@ FOR EACH STORY, PRODUCE:
 
 **synthesis** (2-3 paragraphs, 150-250 words — keep it tight): A narrative analysis of this specific story. What does it reveal when you read it across multiple outlets? Name specific outlets and what they reported. Connect details across sources to show something the reader could not see from any single article alone. Keep paragraphs short (3-4 sentences max).
 
-**cross_spectrum** (5-8 sentences, 120-200 words): How different outlets frame this story, and what each framing reveals or hides. Each outlet gets its OWN sentence of 15-30 words. Start with the outlet name and a verb (sees, frames, reports, leads with), then explain in plain language what their framing emphasizes, who it centers, and what it makes invisible or secondary. Do NOT write short labels like "Reuters sees a shipping risk." Instead write substantive descriptions: "Reuters frames this as a supply chain disruption for global commodity traders, centering the cost to importers while the communities downstream of new refinery construction remain unnamed." End with ONE full sentence starting with a pattern-detection word (Together, Same, Put them, When you) that names the analytical takeaway from the framing gap, written as a complete observation that lands the point. Example: "Together, five outlets covered the same force and produced five different stories, each one protecting the audience its business model depends on."
+**cross_spectrum** (5-8 sentences, 150-250 words): How different outlets frame this story, and what each framing reveals or hides.
+
+Each framing description must be 15-30 words and answer three questions in a single flowing sentence: what did this outlet emphasize, who does that framing center, and what does it make invisible or secondary? Do not write labels like "[Outlet] sees [topic]." Write analytical observations that reveal what the framing choice tells the reader about how the information system works.
+
+BAD (too short, just a label): "The Dispatch sees a Republican Party split over AI policy."
+GOOD: "The Dispatch framed AI deregulation as an intraparty fight over consumer protection, centering Republican Congressional politics while treating the actual regulatory consequences for consumers as background context."
+
+BAD: "High Country News sees worker safety under attack."
+GOOD: "High Country News covered the nuclear safety rollback through the workers who will absorb the risk, centering the human cost of regulatory capture rather than the policy debate in Washington."
+
+BAD: "Deutsche Welle sees international trade negotiations failing."
+GOOD: "Deutsche Welle reported the WTO e-commerce collapse as a breakdown in multilateral cooperation, framing it as a governance failure visible from Europe that American outlets treated as a trade story."
+
+End with ONE full pattern sentence that synthesizes across all the framings into one analytical observation about what the framing landscape reveals. Not a label like "Same force, different victims" but a complete thought like: "Six outlets covered the same structural force and produced six different stories, each one shaped by who their audience is and what that audience is positioned to do about it, which means the frame you encounter first determines whether you see this as a policy fight, a market signal, a worker safety crisis, or someone else's problem."
 
 SPECIFIC GAP SECTION INSTRUCTIONS: The Daily Gap is NOT "another big story." It exists to show how the SAME underlying force gets told as completely different stories by different outlets. Lead with something like "X sources covered the same story today and none of them knew it" or "The same force showed up in X different headlines." The synthesis should trace HOW the outlets connect, not just THAT they connect. The cross_spectrum should name outlet after outlet, each in its own 15-30 word sentence explaining what that outlet emphasized, who it centered, and what it left out. Build the picture piece by piece so the reader feels the gap widening with each sentence.
 

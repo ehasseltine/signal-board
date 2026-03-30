@@ -1,0 +1,27 @@
+{
+  "name": "Signal Board",
+  "short_name": "Signal Board",
+  "description": "Daily news analysis from 300 sources across the political spectrum, across borders, and across languages.",
+  "start_url": "/signal-board/today/",
+  "scope": "/signal-board/",
+  "display": "standalone",
+  "background_color": "#F5EFDF",
+  "theme_color": "#1B2A4B",
+  "icons": [
+    {
+      "src": "/signal-board/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/signal-board/favicon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/signal-board/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}

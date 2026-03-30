@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+  xmlns:atom="http://www.w3.org/2005/Atom"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:signal="https://www.elisehasseltine.com/signal-board/ns">
+  <channel>
+    <title>Signal Board</title>
+    <link>https://www.elisehasseltine.com/signal-board</link>
+    <description>Daily news analysis from 300 sources across the political spectrum, across borders, and across languages. See what no single outlet can show you.</description>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 30 Mar 2026 14:34:35 GMT</lastBuildDate>
+    <atom:link href="https://www.elisehasseltine.com/signal-board/rss.xml" rel="self" type="application/rss+xml" />
+    <copyright>Elise Hasseltine</copyright>
+    <managingEditor>elise@elisehasseltine.com (Elise Hasseltine)</managingEditor>
+    <ttl>1440</ttl>
+    <image>
+      <url>https://www.elisehasseltine.com/signal-board/favicon-192.png</url>
+      <title>Signal Board</title>
+      <link>https://www.elisehasseltine.com/signal-board</link>
+    </image>
+    <item>
+      <title>Military escalation clusters with supply chain attacks as conflict weaponizes commerce itself</title>
+      <link>https://www.elisehasseltine.com/signal-board/archive/2026-03-29/</link>
+      <guid isPermaLink="true">https://www.elisehasseltine.com/signal-board/archive/2026-03-29/</guid>
+      <pubDate>Sun, 29 Mar 2026 07:00:00 GMT</pubDate>
+      <description>Today&apos;s coverage reveals something fundamental about how conflict operates in an interconnected world: the distinction between military action and economic warfare has collapsed entirely. Ukraine&apos;s drone strikes on Russian energy infrastructure, Pentagon preparations for weeks of ground operations in Iran, and the resulting scramble by refiners to reroute supply chains show how warfare now targets the commercial systems that sustain civilian life across continents. When Philippine refiner Petron shifts to Russian crude specifically because of Iran conflict escalation, or when Saudi Arabia&apos;s pipeline infrastructure becomes a strategic hedge against chokepoint vulnerability, we&apos;re witnessing supply chains themselves become weapons and targets simultaneously.</description>
+      <dc:creator>Elise Hasseltine</dc:creator>
+      <signal:sources>104</signal:sources>
+      <signal:articles>879</signal:articles>
+    </item>
+    <item>
+      <title>Signal Board - 2026-03-28</title>
+      <link>https://www.elisehasseltine.com/signal-board/archive/2026-03-28/</link>
+      <guid isPermaLink="true">https://www.elisehasseltine.com/signal-board/archive/2026-03-28/</guid>
+      <pubDate>Sat, 28 Mar 2026 07:00:00 GMT</pubDate>
+      <description>Daily news analysis from 300 sources for 2026-03-28</description>
+      <dc:creator>Elise Hasseltine</dc:creator>
+      <signal:sources>129</signal:sources>
+      <signal:articles>1201</signal:articles>
+    </item>
+  </channel>
+</rss>
