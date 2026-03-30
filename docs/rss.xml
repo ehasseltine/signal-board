@@ -8,7 +8,7 @@
     <link>https://www.elisehasseltine.com/signal-board</link>
     <description>Daily news analysis from 300 sources across the political spectrum, across borders, and across languages. See what no single outlet can show you.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 30 Mar 2026 15:04:36 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 30 Mar 2026 15:15:42 GMT</lastBuildDate>
     <atom:link href="https://www.elisehasseltine.com/signal-board/rss.xml" rel="self" type="application/rss+xml" />
     <copyright>Elise Hasseltine</copyright>
     <managingEditor>elise@elisehasseltine.com (Elise Hasseltine)</managingEditor>
@@ -25,8 +25,8 @@
       <pubDate>Mon, 30 Mar 2026 07:00:00 GMT</pubDate>
       <description>Daily news analysis from 300 sources for 2026-03-30</description>
       <dc:creator>Elise Hasseltine</dc:creator>
-      <signal:sources>73</signal:sources>
-      <signal:articles>476</signal:articles>
+      <signal:sources>184</signal:sources>
+      <signal:articles>1456</signal:articles>
     </item>
     <item>
       <title>Military escalation clusters with supply chain attacks as conflict weaponizes commerce itself</title>
