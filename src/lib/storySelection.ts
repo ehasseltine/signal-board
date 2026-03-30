@@ -346,6 +346,11 @@ export function selectDailyGap(
   threadTitle?: string,
   storySyntheses?: StorySynthesis[]
 ): SectionStory | null {
+  // Determine the thread's structural force so the Gap always picks a DIFFERENT force.
+  // This is the core editorial rule: the Gap must surface a different structural force than the Thread.
+  const threadSynth = storySyntheses?.find(s => s.role === 'thread');
+  const threadForce = threadSynth?.structural_force?.toLowerCase() || '';
+
   // Legacy: second-best mega story with cross_spectrum
   if (megaStories && megaStories.length > 0) {
     const candidates = megaStories.filter(s => s.name !== threadTitle);
@@ -359,13 +364,30 @@ export function selectDailyGap(
     }
   }
 
-  // Current: narrative_divergence — pick one that differs from the thread
+  // Current: narrative_divergence — pick the entry that matches the gap synthesis's structural force
   if (narrativeDivergence && narrativeDivergence.length > 0) {
-    // Try to find a divergence that's NOT the same story as the thread
-    let pick = narrativeDivergence.find(nd =>
-      nd.theme !== threadTitle && !nd.theme?.startsWith(threadTitle?.substring(0, 30) || '___')
-    );
-    if (!pick) pick = narrativeDivergence[0];
+    const gapSynth = storySyntheses?.find(s => s.role === 'gap');
+    let pick: NarrativeDivergence | undefined;
+
+    if (gapSynth?.structural_force) {
+      // Primary: match by the gap synthesis's structural force
+      const gapForce = gapSynth.structural_force.toLowerCase();
+      pick = narrativeDivergence.find(nd =>
+        nd.structural_force?.toLowerCase() === gapForce
+      );
+    }
+
+    if (!pick) {
+      // Fallback: pick any ND whose structural force differs from the thread's
+      pick = narrativeDivergence.find(nd =>
+        nd.structural_force?.toLowerCase() !== threadForce
+      );
+    }
+
+    if (!pick) {
+      // Last resort: pick the second ND entry (skip the first, which likely matches the thread)
+      pick = narrativeDivergence.length > 1 ? narrativeDivergence[1] : narrativeDivergence[0];
+    }
 
     const sources: string[] = (pick.articles || []).map(a => a.source);
     const uniqueSources = [...new Set(sources)];
@@ -405,9 +427,10 @@ export function selectDailyGap(
       }
     }
 
+    const tierCount = Object.keys(articlesByTier).length;
     const gapSection: SectionStory = {
       title: pick.theme || pick.topic,
-      synthesis: editorial?.coverage_gap_note || synthParts.join(' ') ||
+      synthesis: synthParts.join(' ') ||
         `Across ${pick.source_count} sources, the framing diverges, revealing how the same events get shaped into different stories.`,
       crossSpectrum: framingInsights.join(' '),
       whyThisMatters: 'When the same event gets told as different stories, the gap between those frames is where the real story lives.',
@@ -418,13 +441,13 @@ export function selectDailyGap(
       domains: [pick.topic],
       domainCounts: {},
       sourceTiers: {},
-      changeDescription: `${pick.source_count} sources, ${Object.keys(articlesByTier).length} tiers`,
+      changeDescription: `${pick.source_count} sources, ${tierCount} ${tierCount === 1 ? 'tier' : 'tiers'}`,
       insights: framingInsights,
       yesterdayCount: 0,
     };
 
-    // Merge per-story synthesis if available
-    const gapSynth = storySyntheses?.find(s => s.role === 'gap');
+    // Merge per-story synthesis if available — overrides narrative text but NOT counts/sources.
+    // The counts must come from the matched ND entry above, not from the synthesis text.
     if (gapSynth) {
       if (gapSynth.synthesis) gapSection.synthesis = gapSynth.synthesis;
       if (gapSynth.cross_spectrum) gapSection.crossSpectrum = gapSynth.cross_spectrum;
@@ -442,12 +465,12 @@ export function selectDailyGap(
 
   // Fallback: second top_story
   if (topStories && topStories.length > 1) {
-    const candidates = topStories.filter(ts => ts.headline !== threadTitle);
+    const candidates = topStories.filter(ts =>
+      ts.structural_force?.toLowerCase() !== threadForce &&
+      ts.headline !== threadTitle
+    );
     if (candidates.length > 0) {
       const section = topStoryToSection(candidates[0]);
-      if (editorial?.coverage_gap_note) {
-        section.synthesis = editorial.coverage_gap_note;
-      }
       return section;
     }
   }

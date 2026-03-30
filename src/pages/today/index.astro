@@ -60,7 +60,64 @@ function escapeHtml(text: string): string {
     .replace(/'/g, '&#39;');
 }
 
-// Build outlet → article URL lookup from all pipeline data
+// Check if the editorial coverage_gap_note matches the Gap section's structural force.
+// The coverage_gap_note is a global editorial field that may describe a gap in a completely
+// different story. Only show it in the Gap section if it references outlets or topics from the Gap.
+const gapForceLabel = storySyntheses.find(s => s.role === 'gap')?.structural_force || '';
+const gapSources = (narrativeDivergence.find(nd =>
+  nd.structural_force?.toLowerCase() === gapForceLabel.toLowerCase()
+)?.articles || []).map(a => a.source);
+const coverageGapMatchesGap = (() => {
+  const note = editorial?.coverage_gap_note?.toLowerCase() || '';
+  if (!note) return false;
+  // Check if the note mentions any of the Gap section's sources
+  if (gapSources.some(s => note.includes(s.toLowerCase()))) return true;
+  // Check if the note mentions keywords from the Gap's structural force
+  const forceWords = gapForceLabel.toLowerCase().split(/\s+/).filter(w => w.length > 3);
+  if (forceWords.some(w => note.includes(w))) return true;
+  return false;
+})();
+
+// Build per-section outlet → article URL maps.
+// Each section gets URLs from its own story's articles only.
+// This prevents an outlet appearing in multiple stories from getting the wrong URL.
+function buildUrlMap(articles: Array<{ source?: string; url?: string }>): Map<string, string> {
+  const map = new Map<string, string>();
+  for (const a of articles) {
+    if (a.source && a.url && !map.has(a.source)) {
+      map.set(a.source, a.url);
+    }
+  }
+  return map;
+}
+
+// Find the top_stories entry matching each section's structural force
+const threadSynthForce = storySyntheses.find(s => s.role === 'thread')?.structural_force?.toLowerCase() || '';
+const gapSynthForce = storySyntheses.find(s => s.role === 'gap')?.structural_force?.toLowerCase() || '';
+
+const threadTopStory = topStories.find(ts => ts.structural_force?.toLowerCase() === threadSynthForce) || topStories[0];
+const gapTopStory = topStories.find(ts => ts.structural_force?.toLowerCase() === gapSynthForce) || topStories[1];
+
+// Also check narrative_divergence for the gap (it may have different/better article URLs)
+const gapND = narrativeDivergence.find(nd => nd.structural_force?.toLowerCase() === gapSynthForce);
+
+const threadUrlMap = buildUrlMap(threadTopStory?.articles || []);
+const gapUrlMap = buildUrlMap([
+  ...(gapND?.articles || []),
+  ...(gapTopStory?.articles || []),
+]);
+
+// Meanwhile uses cooperation highlights
+const meanwhileUrlMap = new Map<string, string>();
+if (cooperation) {
+  for (const h of (cooperation.highlights || [])) {
+    if (h.source && h.url && !meanwhileUrlMap.has(h.source)) {
+      meanwhileUrlMap.set(h.source, h.url);
+    }
+  }
+}
+
+// Global fallback map (for any outlet not in a section-specific map)
 const outletUrlMap = new Map<string, string>();
 for (const story of topStories) {
   for (const article of (story.articles || [])) {
@@ -129,13 +186,22 @@ for (const nd of narrativeDivergence) {
   }
 }
 
-// Escape text then wrap known outlet names with hyperlinks
-function linkifyText(text: string): string {
+// Escape text then wrap known outlet names with hyperlinks.
+// sectionMap takes priority — it has the correct URL for this section.
+// Falls back to the global outletUrlMap for outlets not in the section's own data.
+function linkifyText(text: string, sectionMap?: Map<string, string>): string {
   let html = escapeHtml(text);
+  // Merge: section-specific URLs override global URLs
+  const mergedMap = new Map(outletUrlMap);
+  if (sectionMap) {
+    for (const [k, v] of sectionMap) {
+      mergedMap.set(k, v);
+    }
+  }
   // Sort outlet names longest-first to avoid partial matches
-  const outlets = Array.from(outletUrlMap.keys()).sort((a, b) => b.length - a.length);
+  const outlets = Array.from(mergedMap.keys()).sort((a, b) => b.length - a.length);
   for (const outlet of outlets) {
-    const url = outletUrlMap.get(outlet)!;
+    const url = mergedMap.get(outlet)!;
     // Match the outlet name as a whole word (not inside another word)
     // Use a simple string replacement — first occurrence only for each outlet per block
     const escaped = escapeHtml(outlet);
@@ -156,6 +222,16 @@ function getSourceContext(sourceName: string): string | null {
   // Primary: use pipeline-generated context from analyze.py's SOURCE_CONTEXT (300 entries)
   // This is populated from article.context fields in the daily JSON
   return outletContextMap.get(sourceName) || null;
+}
+
+// Look up outlet URL with fuzzy matching (try exact, then " News"/" World" suffix, then without "The " prefix)
+function lookupOutletUrl(label: string, sectionMap?: Map<string, string>): string {
+  const maps = sectionMap ? [sectionMap, outletUrlMap] : [outletUrlMap];
+  for (const map of maps) {
+    const url = map.get(label) || map.get(label + ' News') || map.get(label + ' World') || map.get(label.replace(/^The /, ''));
+    if (url) return url;
+  }
+  return '';
 }
 
 // Split cross_spectrum text into sentences, handling abbreviations like U.S., U.K., D.C.
@@ -435,7 +511,11 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
       </div>
       <div class="card-stat card-stat-green">{cooperation?.total_cooperation_stories || '—'}</div>
       <div class="stat-annotation stat-annotation-green">{cooperation ? `stories of people showing up (${cooperation.cooperation_rate}%)` : 'who showed up today'}</div>
-      <div class="card-hook">One in four stories today showed people showing up for each other.</div>
+      <div class="card-hook">{cooperation ? (() => {
+        const rate = cooperation.cooperation_rate;
+        const fraction = rate >= 28 ? 'About one in three' : rate >= 23 ? 'About one in four' : rate >= 18 ? 'About one in five' : rate >= 15 ? 'About one in six' : rate >= 12 ? 'About one in eight' : `${rate}% of`;
+        return `${fraction} stories today showed people showing up for each other.`;
+      })() : 'Who showed up today?'}</div>
       <span class="card-arrow">Read &darr;</span>
     </a>
 
@@ -506,7 +586,7 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
   {threadStory.synthesis && (
   <div style="padding: 28px 0 0;">
     <div class="r">
-      <p class="body r d2" style="font-size: clamp(17px, 1.8vw, 20px); line-height: 1.8; margin-bottom: 0;" set:html={linkifyText(threadStory.synthesis)} />
+      <p class="body r d2" style="font-size: clamp(17px, 1.8vw, 20px); line-height: 1.8; margin-bottom: 0;" set:html={linkifyText(threadStory.synthesis, threadUrlMap)} />
     </div>
   </div>
   )}
@@ -548,8 +628,7 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
           tierForColor = '';
           content = sentence;
         }
-        // Look up outlet URL: try exact, then with " News" / " World" suffix, then without "The " prefix
-        const outletUrl = outletUrlMap.get(label) || outletUrlMap.get(label + ' News') || outletUrlMap.get(label + ' World') || outletUrlMap.get(label.replace(/^The /, '')) || '';
+        const outletUrl = lookupOutletUrl(label, threadUrlMap);
         return (
         <div class="framing-row cascade" data-tier={tierForColor || undefined}>
           <div class="framing-label">{outletUrl ? <a href={outletUrl} target="_blank" rel="noopener" class="outlet-link">{label}</a> : label}</div>
@@ -566,7 +645,7 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
 {threadStory.whyThisMatters && (
 <div class="editorial-wash r" style="margin-top: 32px; overflow: hidden;">
   <div class="wrap">
-    <p style="font-family: 'Lora', serif; font-style: italic; font-size: clamp(19px, 2.2vw, 26px); line-height: 1.7; color: var(--ink); max-width: 680px;" set:html={linkifyText(threadStory.whyThisMatters)} />
+    <p style="font-family: 'Lora', serif; font-style: italic; font-size: clamp(19px, 2.2vw, 26px); line-height: 1.7; color: var(--ink); max-width: 680px;" set:html={linkifyText(threadStory.whyThisMatters, threadUrlMap)} />
   </div>
 </div>
 )}
@@ -578,7 +657,7 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
     <div class="r callout-wash callout-wash-yellow">
       <div class="watch-for-card" style="border-left: 4px solid var(--color-amber-gold); padding: 14px 18px; background: rgba(253, 184, 51, 0.22); border-radius: 0 8px 8px 0;">
         <span style="font-family: 'Inter', sans-serif; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--yellow-accessible); font-weight: 600; display: block; margin-bottom: 8px;">What to watch for</span>
-        <p class="body" style="font-size: clamp(15px, 1.5vw, 17px); line-height: 1.8; color: var(--ink); margin: 0;" set:html={linkifyText(threadStory.watchFor)} />
+        <p class="body" style="font-size: clamp(15px, 1.5vw, 17px); line-height: 1.8; color: var(--ink); margin: 0;" set:html={linkifyText(threadStory.watchFor, threadUrlMap)} />
       </div>
     </div>
   </div>
@@ -669,8 +748,8 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
     </p>
   )}
 
-  <!-- COVERAGE GAP NOTE — hero highlight card on teal wash -->
-  {editorial?.coverage_gap_note && (
+  <!-- COVERAGE GAP NOTE — only shown when the note matches the Gap section's structural force -->
+  {editorial?.coverage_gap_note && coverageGapMatchesGap && (
   <div style="padding: 32px 0 0;">
     <div class="r">
       <div style="padding: 28px 32px; background: var(--white); border-radius: var(--radius-md); border-left: 4px solid var(--teal); box-shadow: var(--shadow-card);">
@@ -685,7 +764,7 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
   {gapStory.synthesis && (
   <div style="padding: 28px 0 0;">
     <div class="r">
-      <p class="body" style="font-size: clamp(16px, 1.7vw, 19px); line-height: 1.8; margin-bottom: 0;" set:html={linkifyText(gapStory.synthesis)} />
+      <p class="body" style="font-size: clamp(16px, 1.7vw, 19px); line-height: 1.8; margin-bottom: 0;" set:html={linkifyText(gapStory.synthesis, gapUrlMap)} />
     </div>
   </div>
   )}
@@ -729,7 +808,7 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
             tierForColor = '';
             content = sentence;
           }
-          const outletUrl = label ? (outletUrlMap.get(label) || outletUrlMap.get(label + ' News') || outletUrlMap.get(label + ' World') || outletUrlMap.get(label.replace(/^The /, '')) || '') : '';
+          const outletUrl = label ? lookupOutletUrl(label, gapUrlMap) : '';
           return (
           <div class="framing-row cascade" data-tier={tierForColor || undefined} style={!tierForColor ? 'background: rgba(59,206,172,0.06);' : ''}>
             {label && <div class="framing-label">{outletUrl ? <a href={outletUrl} target="_blank" rel="noopener" class="outlet-link">{label}</a> : label}</div>}
@@ -747,7 +826,7 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
   <!-- WHY THIS MATTERS — warm editorial wash -->
   {gapStory.whyThisMatters && (
   <div class="editorial-wash r" style="overflow: hidden;">
-    <p class="body" style="font-style: italic; font-size: clamp(17px, 1.9vw, 21px); line-height: 1.7;" set:html={linkifyText(gapStory.whyThisMatters)} />
+    <p class="body" style="font-style: italic; font-size: clamp(17px, 1.9vw, 21px); line-height: 1.7;" set:html={linkifyText(gapStory.whyThisMatters, gapUrlMap)} />
   </div>
   )}
 
@@ -822,7 +901,7 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
   {meanwhileStory.synthesis && (
   <div style="padding: 32px 0 0;">
     <div class="r">
-      <p class="body r d2" style="font-size: clamp(19px, 2.2vw, 24px); line-height: 1.75; margin-bottom: 0; color: var(--ink);" set:html={linkifyText(meanwhileStory.synthesis)} />
+      <p class="body r d2" style="font-size: clamp(19px, 2.2vw, 24px); line-height: 1.75; margin-bottom: 0; color: var(--ink);" set:html={linkifyText(meanwhileStory.synthesis, meanwhileUrlMap)} />
     </div>
   </div>
   )}
@@ -831,7 +910,7 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
   {meanwhileStory.whyThisMatters && (
   <div style="padding: 24px 0 0;">
     <div class="r">
-      <p class="body" style="font-size: clamp(16px, 1.7vw, 19px); line-height: 1.8; color: var(--ink-mid);" set:html={linkifyText(meanwhileStory.whyThisMatters)} />
+      <p class="body" style="font-size: clamp(16px, 1.7vw, 19px); line-height: 1.8; color: var(--ink-mid);" set:html={linkifyText(meanwhileStory.whyThisMatters, meanwhileUrlMap)} />
     </div>
   </div>
   )}
@@ -842,7 +921,7 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
     <div class="r callout-wash callout-wash-yellow">
       <div class="watch-for-card" style="border-left: 4px solid var(--color-amber-gold); padding: 14px 18px; background: rgba(253, 184, 51, 0.22); border-radius: 0 8px 8px 0;">
         <span style="font-family: 'Inter', sans-serif; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--yellow-accessible); font-weight: 600; display: block; margin-bottom: 8px;">What to watch for</span>
-        <p class="body" style="font-size: clamp(15px, 1.5vw, 17px); line-height: 1.8; color: var(--ink); margin: 0;" set:html={linkifyText(meanwhileStory.watchFor)} />
+        <p class="body" style="font-size: clamp(15px, 1.5vw, 17px); line-height: 1.8; color: var(--ink); margin: 0;" set:html={linkifyText(meanwhileStory.watchFor, meanwhileUrlMap)} />
       </div>
     </div>
   </div>
