@@ -8,7 +8,7 @@
     <link>https://signal-board.org</link>
     <description>Daily news analysis from 300 sources across the political spectrum, across borders, and across languages. See what no single outlet can show you.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 30 Mar 2026 21:23:42 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 30 Mar 2026 21:41:33 GMT</lastBuildDate>
     <atom:link href="https://signal-board.org/rss.xml" rel="self" type="application/rss+xml" />
     <copyright>Elise Hasseltine</copyright>
     <managingEditor>elise@elisehasseltine.com (Elise Hasseltine)</managingEditor>
@@ -19,14 +19,14 @@
       <link>https://signal-board.org</link>
     </image>
     <item>
-      <title>New nuclear rules cut worker safety as Iran war hits oil markets</title>
+      <title>Government agencies weaken safety rules for the industries they regulate</title>
       <link>https://signal-board.org/archive/2026-03-30/</link>
       <guid isPermaLink="true">https://signal-board.org/archive/2026-03-30/</guid>
       <pubDate>Mon, 30 Mar 2026 07:00:00 GMT</pubDate>
-      <description>The Labor Department&apos;s rollback of nuclear industry safety standards, reported primarily by High Country News while national outlets focused on 401(k) investment rules, reveals how regulatory capture operates in plain sight during periods of international crisis. The timing matters because geopolitical instability creates the perfect cover for weakening worker protections when public attention is elsewhere, and the combination produces compound vulnerabilities that neither story captures alone. When nuclear safety regulations are loosened at the same moment that Middle East conflict threatens energy supply chains, the result is a double exposure to systemic risk that affects both the workers inside nuclear facilities and the communities that depend on stable energy systems.</description>
+      <description>The Labor Department&apos;s new rule allowing alternative assets in 401(k) plans arrived the same week nuclear safety standards were rolled back for workers and the public, part of what 37 articles across governance, economics, and legal domains reveal as systematic regulatory capture. What High Country News reported as weakened nuclear protections and what CNBC framed as expanded retirement investment options represent the same structural force: agencies writing rules that benefit the industries they regulate rather than the people those industries affect. The pattern extends from pharmaceutical pricing policy to California&apos;s AI regulation, where the Cato Institute argues federal law should override state attempts to regulate tech platforms, a position that happens to align with the business interests of the companies that fund much of the information architecture through which Americans encounter these stories.</description>
       <dc:creator>Elise Hasseltine</dc:creator>
-      <signal:sources>186</signal:sources>
-      <signal:articles>1497</signal:articles>
+      <signal:sources>208</signal:sources>
+      <signal:articles>2401</signal:articles>
     </item>
   </channel>
 </rss>
