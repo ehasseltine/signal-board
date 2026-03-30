@@ -130,11 +130,11 @@ FOR EACH STORY, PRODUCE:
 
 **synthesis** (2-3 paragraphs, 150-250 words — keep it tight): A narrative analysis of this specific story. What does it reveal when you read it across multiple outlets? Name specific outlets and what they reported. Connect details across sources to show something the reader could not see from any single article alone. Keep paragraphs short (3-4 sentences max).
 
-**cross_spectrum** (3-5 sentences, 60-120 words): How different outlet types frame this story. Use this format: name the outlet, then describe what they see. Example: "Bloomberg sees a business decision. The Straits Times sees an act of war. AP sees a shipping risk. NHK sees a national security problem for Japan. Same event, four different stories for four different audiences." Do not just list which outlets covered it. Describe the difference in what each outlet SEES and what that gap reveals.
+**cross_spectrum** (5-8 sentences, 120-200 words): How different outlets frame this story, and what each framing reveals or hides. Each outlet gets its OWN sentence of 15-30 words. Start with the outlet name and a verb (sees, frames, reports, leads with), then explain in plain language what their framing emphasizes, who it centers, and what it makes invisible or secondary. Do NOT write short labels like "Reuters sees a shipping risk." Instead write substantive descriptions: "Reuters frames this as a supply chain disruption for global commodity traders, centering the cost to importers while the communities downstream of new refinery construction remain unnamed." End with ONE full sentence starting with a pattern-detection word (Together, Same, Put them, When you) that names the analytical takeaway from the framing gap, written as a complete observation that lands the point. Example: "Together, five outlets covered the same force and produced five different stories, each one protecting the audience its business model depends on."
 
-SPECIFIC GAP SECTION INSTRUCTIONS: The Daily Gap is NOT "another big story." It exists to show how the SAME underlying force gets told as completely different stories by different outlets. Lead with something like "X sources covered the same story today and none of them knew it" or "The same force showed up in X different headlines." The synthesis should trace HOW the outlets connect, not just THAT they connect. The cross_spectrum should name outlet after outlet with what each one saw, building the picture piece by piece.
+SPECIFIC GAP SECTION INSTRUCTIONS: The Daily Gap is NOT "another big story." It exists to show how the SAME underlying force gets told as completely different stories by different outlets. Lead with something like "X sources covered the same story today and none of them knew it" or "The same force showed up in X different headlines." The synthesis should trace HOW the outlets connect, not just THAT they connect. The cross_spectrum should name outlet after outlet, each in its own 15-30 word sentence explaining what that outlet emphasized, who it centered, and what it left out. Build the picture piece by piece so the reader feels the gap widening with each sentence.
 
-SPECIFIC MEANWHILE SECTION INSTRUCTIONS: The Meanwhile section must feel warm and specific, not statistical. Open with the cooperation count and rate, then immediately go to specific stories from specific outlets. Name the outlet, name the story, say what happened in one sentence. The cross_spectrum should contrast how national outlets covered an event versus how local outlets covered the same event, with specific outlet names and specific differences. Make the reader feel like they are discovering outlets they have never heard of.
+SPECIFIC MEANWHILE SECTION INSTRUCTIONS: The Meanwhile section must feel warm and specific, not statistical. Open with the cooperation count and rate, then immediately go to specific stories from specific outlets. Name the outlet, name the story, say what happened in one sentence. The cross_spectrum should contrast how national outlets covered an event versus how local outlets covered the same event, with specific outlet names and specific differences. Each framing row should be a full 15-30 word sentence, not a label. Make the reader feel like they are discovering outlets they have never heard of.
 
 **why_this_matters** (2-3 sentences): Ground this story in personal relevance. Start with "If you..." — if you drive a car, if you have kids in school, if you live in Ohio. Be specific about whose life this touches and how. No abstractions.
 
@@ -148,7 +148,7 @@ Return valid JSON with this structure:
       "role": "thread",
       "structural_force": "the force tag of the story",
       "synthesis": "2-3 paragraph narrative analysis (150-250 words)",
-      "cross_spectrum": "Name outlet, describe what they see (3-5 sentences)",
+      "cross_spectrum": "5-8 sentences, 15-30 words each. Outlet name + verb + what framing reveals/hides. End with pattern sentence.",
       "why_this_matters": "If you... specific personal relevance",
       "watch_for": "Watch for X. If Y happens, it means Z."
     }},
@@ -156,7 +156,7 @@ Return valid JSON with this structure:
       "role": "gap",
       "structural_force": "...",
       "synthesis": "Lead with how many outlets covered the same force without knowing it...",
-      "cross_spectrum": "Outlet by outlet, what each one saw...",
+      "cross_spectrum": "Outlet by outlet, 15-30 words each, what framing reveals/hides. End with pattern sentence.",
       "why_this_matters": "...",
       "watch_for": "..."
     }},
@@ -164,7 +164,7 @@ Return valid JSON with this structure:
       "role": "meanwhile",
       "structural_force": "cooperation",
       "synthesis": "Count + rate, then specific stories from specific outlets...",
-      "cross_spectrum": "National vs local on the same event, name names...",
+      "cross_spectrum": "National vs local on the same event, 15-30 words per outlet. End with pattern sentence.",
       "why_this_matters": "...",
       "watch_for": "..."
     }}
