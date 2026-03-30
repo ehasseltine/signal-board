@@ -10,7 +10,7 @@
     --ink: #1B2A4A;
     --ink-body: #2D3B4E;          /* softened navy for body text */
     --ink-mid: rgba(27,42,74,0.65);
-    --ink-light: rgba(27,42,74,0.42);
+    --ink-light: rgba(27,42,74,0.52);
     --ink-faint: rgba(27,42,74,0.07);
     --shadow: rgba(27, 42, 75, 0.08); /* navy-tinted shadows per blueprint */
 
@@ -646,6 +646,11 @@
     gap: clamp(16px, 2.5vw, 28px);
   }
   @media (max-width: 700px) { .summary-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 480px) {
+    .framing-row { flex-direction: column; }
+    .framing-label { width: 100%; padding: 12px 16px 4px; }
+    .framing-content { border-left: none; border-top: 3px solid; padding: 8px 16px 14px; }
+  }
 
   .summary-card {
     padding: clamp(24px, 3vw, 32px);
@@ -746,7 +751,7 @@
   /* ================ DATA VIZ: SOURCE COVERAGE ================ */
   .coverage-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
     gap: 12px;
     margin-top: var(--space-md);
   }
@@ -828,7 +833,8 @@
   .pill {
     font-family: 'Inter', sans-serif;
     font-size: 12px;
-    padding: 5px 12px;
+    padding: 8px 14px;
+    min-height: 36px;
     border: 1px solid var(--ink-faint);
     border-radius: var(--radius-pill);
     color: var(--ink-mid);

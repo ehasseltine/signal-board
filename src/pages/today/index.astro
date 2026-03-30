@@ -477,7 +477,7 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
         <div class="display" style="font-size: clamp(48px, 7vw, 72px); line-height: 1; color: var(--red);">{threadStory.articleCount}</div>
         <div class="stat-annotation stat-annotation-red" style="margin-top: 6px;">articles across {threadStory.sourceCount} sources</div>
       </div>
-      <div style="flex: 1; min-width: 200px;">
+      <div style="flex: 1; min-width: min(200px, 100%);">
         <div style="height: 12px; background: rgba(27,42,74,0.08); border-radius: 6px; overflow: hidden;">
           <div style={`height: 100%; width: ${Math.min(100, Math.round((threadStory.articleCount / Math.max(totalStories, 1)) * 100))}%; background: var(--yellow); border-radius: 6px;`}></div>
         </div>

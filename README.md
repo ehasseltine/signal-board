@@ -42,7 +42,27 @@ Signal Board runs a four-stage data pipeline every day at 7 AM UTC:
 
 In GitHub Actions, open the "Daily Pipeline" workflow and click **Run workflow** to kick off stages 1–3 (ingest, analyze, synthesize) on demand. This is useful for testing code changes or catching up after an outage.
 
-The "Generate Today Page" workflow is triggered automatically after the Daily Pipeline succeeds, but can also be run manually for rebuilds.
+The "Generate Today Page" workflow is triggered automatically after the Daily Pipeline succeeds, but can also be run manually for rebuilds. The "Draft Substack Post" workflow runs after Generate Today Page succeeds, formatting the day's analysis as an HTML email and sending it to Substack's import address.
+
+### Staging Workflow
+
+Use the `staging` branch to preview changes before they go live:
+
+```bash
+# Switch to staging
+git checkout staging
+
+# Make changes, then test locally
+npm run dev          # preview at http://localhost:3000
+npm run build        # full build with validation (13 checks)
+
+# When satisfied, merge to main and push
+git checkout main
+git merge staging
+git push origin main  # triggers live deploy via GitHub Actions
+```
+
+The staging branch never deploys automatically. Only `main` triggers GitHub Pages builds. This gives you a safe place to test pipeline changes, CSS tweaks, or template edits without risking the live site.
 
 ### Local Development
 
@@ -93,6 +113,15 @@ To rotate the key:
 2. Update the GitHub secret in repository settings
 3. Commit and push to trigger the next scheduled run
 
+### Substack Automation
+
+The Substack draft workflow requires three additional GitHub secrets:
+- `SUBSTACK_EMAIL` — your Substack import email address
+- `SMTP_USERNAME` — Gmail address used to send the draft
+- `SMTP_PASSWORD` — Gmail app password (not your account password)
+
+Set these in Settings → Secrets and variables → Actions. The workflow sends an HTML-formatted email to Substack after each successful build.
+
 ### Add a New Source
 
 Edit `data/feeds.csv` and append a row:
@@ -138,6 +167,7 @@ python synthesize.py --date 2026-03-28
   - `synthesize.py` - Generate editorial narrative
 - **data/** - Raw and processed data
   - `feeds.csv` - Source registry (300+ feeds)
+  - `sources.json` - Source metadata (descriptions, tiers, ownership)
   - `articles.json` - Ingested articles (updated daily)
   - `daily/` - Per-date analysis output (JSON files)
     - `latest.json` - Pointer to today's date
@@ -156,10 +186,12 @@ python synthesize.py --date 2026-03-28
 - **docs/** - Built static site (GitHub Pages output)
 - **scripts/** - Build and validation scripts
   - `prebuild.sh` - Sync data from `data/daily/` to `public/data/daily/`
-  - `validate.js` - Post-build checks (HTML presence, data validity)
+  - `validate.js` - Post-build checks (13 automated validations)
+  - `format_substack.py` - Format daily analysis as HTML email for Substack
 - **.github/workflows/** - GitHub Actions CI/CD
   - `ingest.yml` - Daily Pipeline (cron 7 AM UTC, or manual trigger)
   - `generate_today.yml` - Build & publish (triggered after ingest succeeds)
+  - `substack_draft.yml` - Email draft to Substack (triggered after build succeeds)
 
 ## Troubleshooting
 
@@ -194,6 +226,34 @@ python synthesize.py --date 2026-03-28
 3. If expired, generate a new key and update the GitHub secret
 4. If rate-limited, wait 24 hours or upgrade your plan
 5. Re-run the Daily Pipeline
+
+### Git Lock Files (Stale .lock in .git/)
+
+**Cause**: A `git` process was interrupted (crashed terminal, killed process, or FUSE mount disconnection), leaving behind lock files like `HEAD.lock` or `maintenance.lock`.
+
+**Symptoms**: Git commands fail with "Unable to create '.git/HEAD.lock': File exists" or similar.
+
+**Fix**:
+```bash
+# Remove stale lock files
+rm -f .git/HEAD.lock
+rm -f .git/index.lock
+rm -f .git/objects/maintenance.lock
+```
+
+These files are safe to delete when no git process is actively running. If you're working through a FUSE mount (like Cowork), you may need to delete them from your local terminal directly — the mount may not have write access to `.git/`.
+
+### Astro Build Wipes Data
+
+**Cause**: Running `npm run build` without syncing `data/daily/` to `public/data/daily/` first. Astro clears the output directory before building, so any JSON files that weren't copied into `public/` will be lost from the build output.
+
+**Fix**: The `scripts/prebuild.sh` script handles this automatically. If it fails:
+```bash
+mkdir -p public/data/daily
+cp data/daily/latest.json public/data/daily/
+cp data/daily/2*.json public/data/daily/ 2>/dev/null || true
+npm run build
+```
 
 ### Site Not Updated After Push
 
