@@ -3,10 +3,18 @@
 Format Signal Board daily data into an HTML email for Substack import.
 
 Reads the daily JSON from data/daily/latest.json and outputs formatted HTML
-that will be imported as a Substack draft post.
+designed to feel like a letter from someone who did the reading, not a
+reformatted web dashboard.
 
-Substack accepts email imports at a secret address that auto-creates draft posts
-from the email body. This script generates HTML formatted for that pipeline.
+Structure:
+  1. Personal lead (newsletter_lead or generated from editorial)
+  2. The Daily Thread (synthesis paragraph only, link to full)
+  3. The Daily Gap (synthesis paragraph only, link to full)
+  4. Meanwhile (2-3 cooperation highlights, link to full)
+  5. Footer with links
+
+Substack accepts email imports at a secret address that auto-creates draft
+posts from the email body.
 """
 
 import json
@@ -14,6 +22,9 @@ import sys
 from pathlib import Path
 from datetime import datetime
 from html import escape
+
+
+SITE_URL = "https://signal-board.org"
 
 
 def load_daily_json(json_path):
@@ -29,90 +40,137 @@ def load_daily_json(json_path):
         sys.exit(1)
 
 
-def get_editorial_fields(data):
-    """Extract editorial fields from the daily data."""
-    editorial = data.get('editorial', {})
-
-    return {
-        'headline': editorial.get('headline', ''),
-        'accessible_headline': editorial.get('accessible_headline', ''),
-        'subheadline': editorial.get('subheadline', ''),
-        'synthesis': editorial.get('synthesis', ''),
-        'cooperation_highlight': editorial.get('cooperation_highlight', ''),
-        'coverage_gap_note': editorial.get('coverage_gap_note', ''),
-        'thread_to_watch': editorial.get('thread_to_watch', ''),
-        'date': data.get('date', ''),
-    }
-
-
-def sanitize_html(text):
-    """Escape HTML special characters in text."""
+def sanitize(text):
+    """Escape HTML special characters."""
     return escape(text)
 
 
-def format_html_body(fields):
-    """
-    Format extracted fields into an HTML email body for Substack.
+def paragraphs(text):
+    """Convert plain text to HTML paragraphs, splitting on double newlines."""
+    if not text:
+        return ""
+    parts = text.strip().split("\n\n")
+    return "".join(f"<p>{sanitize(p.strip())}</p>" for p in parts if p.strip())
 
-    The format is designed to be imported by Substack's email-to-post feature,
-    which converts this HTML into a draft post.
-    """
 
-    date_str = fields['date']
-    synthesis = sanitize_html(fields['synthesis'])
-    cooperation = sanitize_html(fields['cooperation_highlight'])
-    coverage_gap = sanitize_html(fields['coverage_gap_note'])
-    thread = sanitize_html(fields['thread_to_watch'])
+def format_newsletter(data):
+    """Build the newsletter HTML from daily pipeline data."""
+    editorial = data.get("editorial", {})
+    story_syntheses = data.get("story_syntheses", [])
+    cooperation = data.get("cooperation", {})
+    summary = data.get("summary", {})
+    date_str = data.get("date", "")
 
-    # Parse date for readability
+    # Parse date
     try:
         date_obj = datetime.fromisoformat(date_str)
-        formatted_date = date_obj.strftime('%B %d, %Y')
+        formatted_date = date_obj.strftime("%A, %B %d, %Y")
     except (ValueError, TypeError):
         formatted_date = date_str
 
-    # Build the HTML email body
-    # Substack's email import looks for <body> content to convert to post
-    html = f"""<html>
+    total_stories = summary.get("total_stories", 0)
+    sources_reporting = summary.get("sources_reporting", 0)
+    coop_count = cooperation.get("total_cooperation_stories", 0)
+
+    # Find story syntheses by role
+    thread = next((s for s in story_syntheses if s.get("role") == "thread"), {})
+    gap = next((s for s in story_syntheses if s.get("role") == "gap"), {})
+    meanwhile = next((s for s in story_syntheses if s.get("role") == "meanwhile"), {})
+
+    accessible_headline = editorial.get("accessible_headline", editorial.get("headline", "Signal Board"))
+    newsletter_lead = editorial.get("newsletter_lead", "")
+
+    # Fallback lead if newsletter_lead wasn't generated
+    if not newsletter_lead:
+        sub = editorial.get("subheadline", "")
+        newsletter_lead = (
+            f"Today Signal Board read {total_stories:,} articles from {sources_reporting} sources. "
+            f"{sub}"
+        )
+
+    # Build HTML
+    html = f"""<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>{sanitize_html(fields['accessible_headline'])}</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{sanitize(accessible_headline)}</title>
 </head>
-<body>
-<p><strong>{formatted_date}</strong></p>
+<body style="margin: 0; padding: 0; background-color: #FFF8E7; font-family: Georgia, 'Times New Roman', serif;">
 
-<h2>{sanitize_html(fields['headline'])}</h2>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color: #FFF8E7;">
+<tr><td align="center" style="padding: 32px 16px;">
+<table role="presentation" width="600" cellpadding="0" cellspacing="0" style="max-width: 600px; width: 100%;">
 
-<p><em>{sanitize_html(fields['subheadline'])}</em></p>
+<!-- HEADER -->
+<tr><td style="padding: 0 0 24px 0;">
+<p style="margin: 0; font-family: Georgia, serif; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #8B7355;">{formatted_date}</p>
+<h1 style="margin: 8px 0 0 0; font-family: Georgia, serif; font-size: 28px; line-height: 1.3; color: #1B2A4B; font-weight: 700;">Signal Board</h1>
+</td></tr>
 
-<h3>Today's Synthesis</h3>
-<p>{synthesis}</p>
+<!-- PERSONAL LEAD -->
+<tr><td style="padding: 0 0 32px 0;">
+<p style="margin: 0; font-family: Georgia, serif; font-size: 18px; line-height: 1.7; color: #1B2A4B;">{sanitize(newsletter_lead)}</p>
+</td></tr>
 
-<h3>Cooperation Highlight</h3>
-<p>{cooperation}</p>
+<!-- DIVIDER -->
+<tr><td style="padding: 0 0 28px 0;"><hr style="border: none; border-top: 1px solid #D4C5A9; margin: 0;"></td></tr>
 
-<h3>Coverage Gap</h3>
-<p>{coverage_gap}</p>
+<!-- THE DAILY THREAD -->
+<tr><td style="padding: 0 0 28px 0;">
+<p style="margin: 0 0 8px 0; font-family: -apple-system, Arial, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #D94032;">The Daily Thread</p>
+{paragraphs(thread.get("synthesis", ""))}
+<p style="margin: 12px 0 0 0;"><a href="{SITE_URL}/today/#thread" style="color: #D94032; text-decoration: underline; font-family: -apple-system, Arial, sans-serif; font-size: 14px;">See how outlets framed it differently &rarr;</a></p>
+</td></tr>
 
-<h3>Thread to Watch</h3>
-<p>{thread}</p>
+<!-- DIVIDER -->
+<tr><td style="padding: 0 0 28px 0;"><hr style="border: none; border-top: 1px solid #D4C5A9; margin: 0;"></td></tr>
 
-<hr>
+<!-- THE DAILY GAP -->
+<tr><td style="padding: 0 0 28px 0;">
+<p style="margin: 0 0 8px 0; font-family: -apple-system, Arial, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #0B7A5E;">The Daily Gap</p>
+{paragraphs(gap.get("synthesis", ""))}
+<p style="margin: 12px 0 0 0;"><a href="{SITE_URL}/today/#gap" style="color: #D94032; text-decoration: underline; font-family: -apple-system, Arial, sans-serif; font-size: 14px;">Read the full framing comparison &rarr;</a></p>
+</td></tr>
 
-<p><a href="https://signal-board.org/today/">Read full analysis at Signal Board</a></p>
+<!-- DIVIDER -->
+<tr><td style="padding: 0 0 28px 0;"><hr style="border: none; border-top: 1px solid #D4C5A9; margin: 0;"></td></tr>
+
+<!-- MEANWHILE -->
+<tr><td style="padding: 0 0 28px 0;">
+<p style="margin: 0 0 8px 0; font-family: -apple-system, Arial, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #07743F;">Meanwhile: {coop_count} stories of people showing up</p>
+{paragraphs(meanwhile.get("synthesis", ""))}
+<p style="margin: 12px 0 0 0;"><a href="{SITE_URL}/today/#meanwhile" style="color: #D94032; text-decoration: underline; font-family: -apple-system, Arial, sans-serif; font-size: 14px;">See all {coop_count} cooperation stories &rarr;</a></p>
+</td></tr>
+
+<!-- DIVIDER -->
+<tr><td style="padding: 0 0 28px 0;"><hr style="border: none; border-top: 1px solid #D4C5A9; margin: 0;"></td></tr>
+
+<!-- FOOTER -->
+<tr><td style="padding: 0;">
+<p style="margin: 0 0 16px 0; font-family: Georgia, serif; font-size: 15px; line-height: 1.7; color: #5C5040;">Signal Board reads {sources_reporting} sources every day across the political spectrum, across borders, and across languages. The full daily analysis, with framing comparisons, source cards, and the complete data, is always free at signal-board.org.</p>
+
+<p style="margin: 0 0 8px 0;"><a href="{SITE_URL}/today/" style="color: #D94032; text-decoration: underline; font-family: -apple-system, Arial, sans-serif; font-size: 14px;">Read the full analysis &rarr;</a></p>
+<p style="margin: 0 0 20px 0;"><a href="{SITE_URL}/archive/" style="color: #D94032; text-decoration: underline; font-family: -apple-system, Arial, sans-serif; font-size: 14px;">Browse the archive &rarr;</a></p>
+
+<p style="margin: 0; font-family: -apple-system, Arial, sans-serif; font-size: 12px; color: #8B7355;">No tracking. No ads. No algorithms.</p>
+</td></tr>
+
+</table>
+</td></tr>
+</table>
 
 </body>
 </html>"""
 
-    return html
+    return html, accessible_headline
 
 
 def main():
     """Main entry point."""
-    # Determine the data path - check multiple locations
     data_paths = [
-        Path('data/daily/latest.json'),
-        Path('public/data/daily/latest.json'),
+        Path("data/daily/latest.json"),
+        Path("public/data/daily/latest.json"),
     ]
 
     data_path = None
@@ -125,23 +183,22 @@ def main():
         print(f"Error: Could not find latest.json in any of {data_paths}", file=sys.stderr)
         sys.exit(1)
 
-    # Load and process the data
     data = load_daily_json(data_path)
-    fields = get_editorial_fields(data)
 
-    # Validate required fields
-    required = ['accessible_headline', 'synthesis', 'cooperation_highlight',
-                'coverage_gap_note', 'thread_to_watch', 'date']
-    missing = [f for f in required if not fields.get(f)]
-
-    if missing:
-        print(f"Error: Missing required fields: {', '.join(missing)}", file=sys.stderr)
+    # Validate minimum required fields
+    if not data.get("story_syntheses"):
+        print("Error: No story_syntheses in daily data. Run synthesize.py first.", file=sys.stderr)
         sys.exit(1)
 
-    # Output the formatted HTML to stdout
-    html_body = format_html_body(fields)
-    print(html_body)
+    html_body, subject = format_newsletter(data)
+
+    # Output mode: --subject prints just the subject line,
+    # --html (default) prints the full HTML body
+    if len(sys.argv) > 1 and sys.argv[1] == "--subject":
+        print(subject)
+    else:
+        print(html_body)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
