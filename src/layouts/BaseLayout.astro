@@ -25,12 +25,14 @@ const canonicalUrl = `${siteUrl}/${title === 'Today' ? 'today/' : title === 'Abo
   <title>{pageTitle}</title>
   <meta name="description" content={description}>
 
-  <!-- Favicons -->
+  <!-- Favicons & Web App -->
   <link rel="icon" type="image/svg+xml" href="/signal-board/favicon.svg">
   <link rel="icon" type="image/x-icon" href="/signal-board/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/signal-board/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/signal-board/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/signal-board/apple-touch-icon.png">
+  <link rel="manifest" href="/signal-board/manifest.json">
+  <meta name="theme-color" content="#1B2A4B">
 
   <!-- Open Graph -->
   <meta property="og:type" content={dateStr ? 'article' : 'website'}>
