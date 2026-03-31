@@ -8,7 +8,7 @@
     <link>https://signal-board.org</link>
     <description>Daily news analysis from 300 sources across the political spectrum, across borders, and across languages. See what no single outlet can show you.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 30 Mar 2026 22:24:15 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 31 Mar 2026 08:12:41 GMT</lastBuildDate>
     <atom:link href="https://signal-board.org/rss.xml" rel="self" type="application/rss+xml" />
     <copyright>Elise Hasseltine</copyright>
     <managingEditor>elise@elisehasseltine.com (Elise Hasseltine)</managingEditor>
@@ -18,6 +18,16 @@
       <title>Signal Board</title>
       <link>https://signal-board.org</link>
     </image>
+    <item>
+      <title>Army helicopters flew to Kid Rock&apos;s house as prisons face heat death trials</title>
+      <link>https://signal-board.org/archive/2026-03-31/</link>
+      <guid isPermaLink="true">https://signal-board.org/archive/2026-03-31/</guid>
+      <pubDate>Tue, 31 Mar 2026 07:00:00 GMT</pubDate>
+      <description>The same federal apparatus that dispatched Army helicopters to a celebrity&apos;s private residence is simultaneously being challenged in Texas courts over whether prisoners deserve air conditioning during deadly heat waves. These stories, connected by institutional power but separated by who benefits, reveal the most fundamental question about governance: which citizens receive protection and which receive punishment. The helicopter deployment near Kid Rock&apos;s home triggered investigations across the political spectrum, from NBC News to Breitbart, but the coverage focused on procedural violations rather than the deeper pattern of military resources flowing toward wealth and influence. Meanwhile, in a Houston federal courthouse, attorneys argued over whether providing basic climate control to incarcerated people violates cruel and unusual punishment protections, a case that will determine whether the state can continue operating prisons where people die from heat exposure.</description>
+      <dc:creator>Elise Hasseltine</dc:creator>
+      <signal:sources>94</signal:sources>
+      <signal:articles>635</signal:articles>
+    </item>
     <item>
       <title>Government agencies weaken safety rules for the industries they regulate</title>
       <link>https://signal-board.org/archive/2026-03-30/</link>
