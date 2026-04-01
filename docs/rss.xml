@@ -8,7 +8,7 @@
     <link>https://signal-board.org</link>
     <description>Daily news analysis from 300 sources across the political spectrum, across borders, and across languages. See what no single outlet can show you.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 31 Mar 2026 08:12:41 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 01 Apr 2026 08:22:39 GMT</lastBuildDate>
     <atom:link href="https://signal-board.org/rss.xml" rel="self" type="application/rss+xml" />
     <copyright>Elise Hasseltine</copyright>
     <managingEditor>elise@elisehasseltine.com (Elise Hasseltine)</managingEditor>
@@ -18,6 +18,16 @@
       <title>Signal Board</title>
       <link>https://signal-board.org</link>
     </image>
+    <item>
+      <title>Iran strikes oil tankers while Trump limits mail voting nationwide</title>
+      <link>https://signal-board.org/archive/2026-04-01/</link>
+      <guid isPermaLink="true">https://signal-board.org/archive/2026-04-01/</guid>
+      <pubDate>Wed, 01 Apr 2026 07:00:00 GMT</pubDate>
+      <description>The structural forces reshaping governance today operate through three connected patterns: military conflict weaponizing supply chains, executive power circumventing judicial oversight, and regulatory capture enabling corporate harm while communities bear the costs. Iranian strikes on oil tankers near Qatar sent energy prices surging across Asian markets, revealing how regional military actions instantly translate into production costs for manufacturing economies thousands of miles away. The same day, Trump signed an executive order restricting mail-in voting access, triggering immediate legal challenges that expose the constitutional tension between executive authority and electoral administration, while his separate lawsuit against the IRS forces the Justice Department to navigate unprecedented conflicts between presidential power and agency independence. These developments unfold against a backdrop of regulatory failures that local media are documenting while national outlets focus elsewhere: chemical pollution regulations that fail to address endocrine disruptors in consumer products, utility cost crises hitting Bronx residents as corporate watchdogs compromise their independence by hiring consultants recommended by the CEOs they oversee, and occupational health gaps for Texas shrimpers that a mobile clinic addresses outside any formal regulatory framework. The cooperation threading through this landscape comes from unexpected quarters, including tribal nations working with Wisconsin&apos;s governor on gaming legislation that respects sovereignty while generating state revenue, and Supreme Court proceedings that maintain institutional integrity even as they adjudicate politically charged questions about birthright citizenship. What emerges is a picture of institutions under pressure responding through both constitutional processes and workarounds, while communities organize direct solutions to problems that formal systems have failed to address. The acceleration of both executive overreach and judicial pushback suggests the constitutional balance itself has become the contested terrain, with supply chain disruptions and regulatory capture operating as multiplying forces that amplify the stakes of each institutional confrontation.</description>
+      <dc:creator>Elise Hasseltine</dc:creator>
+      <signal:sources>99</signal:sources>
+      <signal:articles>667</signal:articles>
+    </item>
     <item>
       <title>Army helicopters flew to Kid Rock&apos;s house as prisons face heat death trials</title>
       <link>https://signal-board.org/archive/2026-03-31/</link>
