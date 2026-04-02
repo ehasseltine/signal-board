@@ -8,7 +8,7 @@
     <link>https://signal-board.org</link>
     <description>Daily news analysis from 300 sources across the political spectrum, across borders, and across languages. See what no single outlet can show you.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 01 Apr 2026 08:22:39 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 02 Apr 2026 08:13:17 GMT</lastBuildDate>
     <atom:link href="https://signal-board.org/rss.xml" rel="self" type="application/rss+xml" />
     <copyright>Elise Hasseltine</copyright>
     <managingEditor>elise@elisehasseltine.com (Elise Hasseltine)</managingEditor>
@@ -18,6 +18,16 @@
       <title>Signal Board</title>
       <link>https://signal-board.org</link>
     </image>
+    <item>
+      <title>Signal Board - 2026-04-02</title>
+      <link>https://signal-board.org/archive/2026-04-02/</link>
+      <guid isPermaLink="true">https://signal-board.org/archive/2026-04-02/</guid>
+      <pubDate>Thu, 02 Apr 2026 07:00:00 GMT</pubDate>
+      <description>Daily news analysis from 300 sources for 2026-04-02</description>
+      <dc:creator>Elise Hasseltine</dc:creator>
+      <signal:sources>107</signal:sources>
+      <signal:articles>643</signal:articles>
+    </item>
     <item>
       <title>Iran strikes oil tankers while Trump limits mail voting nationwide</title>
       <link>https://signal-board.org/archive/2026-04-01/</link>
