@@ -1,10 +1,11 @@
-name: Draft Substack Post
+name: Draft Substack Post (DISABLED)
 
 on:
-  workflow_run:
-    workflows: ["Generate Today Page"]
-    types:
-      - completed
+  # All automatic triggers disabled. Manual only.
+  # workflow_run:
+  #   workflows: ["Generate Today Page"]
+  #   types:
+  #     - completed
   workflow_dispatch:
 
 permissions:

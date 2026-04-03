@@ -593,20 +593,26 @@ def analyze_cooperation_stories(articles):
 
     # Highlight stories: cooperation stories from tiers that typically
     # get less attention (local-regional, specialist, solutions)
+    # Deduplicated by source name — keep the first appearance of each source.
     highlights = []
+    highlight_sources_seen = set()
     highlight_tiers = {"local-regional", "specialist", "solutions"}
     for a in coop_articles:
         tier = a.get("tier", "")
+        src = a["source"]
+        if src in highlight_sources_seen:
+            continue
         if tier in highlight_tiers or any(alias == tier for alias in ["lived", "domain"]):
+            highlight_sources_seen.add(src)
             highlights.append({
                 "title": a["title"][:120],
-                "source": a["source"],
+                "source": src,
                 "url": a.get("url", ""),
                 "tier": tier,
                 "cooperation_type": a.get("cooperation_type", ""),
                 "force_tag": a.get("force_tag", ""),
                 "connection": a.get("connection", ""),
-                "context": SOURCE_CONTEXT.get(a["source"], ""),
+                "context": SOURCE_CONTEXT.get(src, ""),
             })
 
     # Coverage gap: forces with MANY articles but ZERO cooperation signals
