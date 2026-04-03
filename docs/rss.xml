@@ -8,7 +8,7 @@
     <link>https://signal-board.org</link>
     <description>Daily news analysis from 300 sources across the political spectrum, across borders, and across languages. See what no single outlet can show you.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 02 Apr 2026 08:13:17 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 03 Apr 2026 08:09:01 GMT</lastBuildDate>
     <atom:link href="https://signal-board.org/rss.xml" rel="self" type="application/rss+xml" />
     <copyright>Elise Hasseltine</copyright>
     <managingEditor>elise@elisehasseltine.com (Elise Hasseltine)</managingEditor>
@@ -18,6 +18,16 @@
       <title>Signal Board</title>
       <link>https://signal-board.org</link>
     </image>
+    <item>
+      <title>Trump fires top military leaders while building legal cases around hirings</title>
+      <link>https://signal-board.org/archive/2026-04-03/</link>
+      <guid isPermaLink="true">https://signal-board.org/archive/2026-04-03/</guid>
+      <pubDate>Fri, 03 Apr 2026 07:00:00 GMT</pubDate>
+      <description>The collision between executive personnel decisions and legal accountability is creating a new form of institutional crisis, one where the power to hire and fire becomes itself a contested battlefield. Defense Secretary Pete Hegseth forced out the Army&apos;s top officer this week while simultaneously defending the firing rationale for Attorney General Pam Bondi through official channels, a pattern that transforms routine personnel management into high-stakes political theater. When these decisions happen during active military conflict with Iran, the stakes compound because personnel choices directly affect war-making authority, concentrating critical decisions in civilian appointees who are themselves navigating legal challenges.</description>
+      <dc:creator>Elise Hasseltine</dc:creator>
+      <signal:sources>95</signal:sources>
+      <signal:articles>564</signal:articles>
+    </item>
     <item>
       <title>Signal Board - 2026-04-02</title>
       <link>https://signal-board.org/archive/2026-04-02/</link>
