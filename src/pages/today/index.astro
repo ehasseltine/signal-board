@@ -744,20 +744,20 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
       <svg class="cat-icon" width="20" height="18" viewBox="0 0 20 18" fill="none" aria-hidden="true"><rect x="1" y="1" width="6" height="16" rx="1" fill="currentColor"/><rect x="13" y="1" width="6" height="16" rx="1" fill="currentColor" opacity="0.25"/></svg>
       The Daily Gap
     </span>
-    <h2 class="headline headline-gap r d1" style="color: var(--violet); font-size: clamp(28px, 4.5vw, 52px);">{gapStory.title}</h2>
+    <h2 class="headline headline-gap r d1">{gapStory.title}</h2>
   </div>
 </div>
 </div>
 
 <!-- Gap body — violet wash background -->
-<article id="gap" class="section-world gap-world" aria-label="The Daily Gap" style="background: rgba(131,56,236,0.10); margin-top: -1px;">
+<article id="gap" class="section-world gap-world" aria-label="The Daily Gap" style="margin-top: -1px;">
 <div class="wrap">
 
   <!-- Article + source count — now on teal wash reading surface -->
   <div class="r" style="display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap; padding-top: 8px;">
-    <div class="display" style="font-size: clamp(40px, 6vw, 64px); line-height: 1; color: var(--violet-text);">{gapStory.articleCount}</div>
+    <div class="display" style="font-size: clamp(40px, 6vw, 64px); line-height: 1; color: var(--violet);">{gapStory.articleCount}</div>
     <div class="stat-annotation" style="color: var(--ink-mid);">
-      articles from <strong style="color: var(--violet-text); font-weight: 700;">{gapStory.sourceCount} sources</strong> covering what others missed
+      articles from <strong style="color: var(--violet); font-weight: 700;">{gapStory.sourceCount} sources</strong> covering what others missed
     </div>
   </div>
   {gapStory.changeDescription && (
@@ -870,7 +870,7 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
 <!-- MEANWHILE — CYAN WASH BACKGROUND                                 -->
 <!-- ================================================================ -->
 {meanwhileStory && (
-<article id="meanwhile" class="section-world meanwhile-world" aria-label="Meanwhile" style="overflow: hidden; background: rgba(0,229,255,0.10);">
+<article id="meanwhile" class="section-world meanwhile-world" aria-label="Meanwhile" style="overflow: hidden;">
 <svg aria-hidden="true" style="position: absolute; top: -20px; left: -5%; width: 110%; height: 200px; pointer-events: none; z-index: 0;">
   <rect x="-50" y="30" width="120%" height="60" fill="#F87575" opacity="0.05" transform="rotate(-3)"/>
 </svg>
@@ -880,12 +880,12 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
       <svg class="cat-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="4" fill="currentColor"/><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5" opacity="0.3"/></svg>
       Meanwhile
     </span>
-    <h2 class="headline headline-meanwhile r d1" style="color: var(--cyan-text);">{meanwhileStory.title}</h2>
+    <h2 class="headline headline-meanwhile r d1">{meanwhileStory.title}</h2>
 
     <!-- Big number + inline cooperation type sentence -->
     <div class="r d2" style="margin-top: 24px;">
       <div style="display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap;">
-        <div class="display" style="font-size: clamp(40px, 6vw, 64px); line-height: 1; color: var(--cyan-text);">{cooperation?.total_cooperation_stories || meanwhileStory.articleCount}</div>
+        <div class="display" style="font-size: clamp(40px, 6vw, 64px); line-height: 1; color: var(--cyan);">{cooperation?.total_cooperation_stories || meanwhileStory.articleCount}</div>
         <div class="stat-annotation stat-annotation-green">
           stories of cooperation, {cooperation?.cooperation_rate || 25}% of everything we read
         </div>

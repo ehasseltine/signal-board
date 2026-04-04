@@ -6,30 +6,30 @@
     --cream:                #FFF8F0;
 
     /* ── Tangerine Family (Thread) ── */
-    --tangerine:            #FF8300;
-    --tangerine-text:       #8B4500;
-    --tangerine-wash:       rgba(255, 131, 0, 0.10);
-    --tangerine-wash-deep:  rgba(255, 131, 0, 0.20);
-    --tangerine-pill:       rgba(255, 131, 0, 0.15);
+    --tangerine:            #FF6B00;
+    --tangerine-text:       #C45200;
+    --tangerine-wash:       rgba(255, 107, 0, 0.12);
+    --tangerine-wash-deep:  rgba(255, 107, 0, 0.22);
+    --tangerine-pill:       rgba(255, 107, 0, 0.18);
 
     /* ── Violet Family (Gap) ── */
-    --violet:               #8338EC;
-    --violet-text:          #6B2CB8;
-    --violet-wash:          rgba(131, 56, 236, 0.06);
-    --violet-wash-deep:     rgba(131, 56, 236, 0.12);
-    --violet-pill:          rgba(131, 56, 236, 0.10);
+    --violet:               #7B2FF2;
+    --violet-text:          #6320CC;
+    --violet-wash:          rgba(123, 47, 242, 0.10);
+    --violet-wash-deep:     rgba(123, 47, 242, 0.18);
+    --violet-pill:          rgba(123, 47, 242, 0.14);
 
     /* ── Cyan Family (Meanwhile) ── */
     --cyan:                 #00B8D4;
-    --cyan-text:            #005F6B;
-    --cyan-wash:            rgba(0, 184, 212, 0.10);
-    --cyan-wash-deep:       rgba(0, 184, 212, 0.15);
-    --cyan-pill:            rgba(0, 184, 212, 0.15);
+    --cyan-text:            #008C9E;
+    --cyan-wash:            rgba(0, 184, 212, 0.12);
+    --cyan-wash-deep:       rgba(0, 184, 212, 0.20);
+    --cyan-pill:            rgba(0, 184, 212, 0.18);
 
     /* ── Moss Family (Callouts) ── */
-    --moss:                 #557B2F;
-    --moss-text:            #3A5220;
-    --moss-wash:            rgba(85, 123, 47, 0.15);
+    --moss:                 #4A8C2A;
+    --moss-text:            #3A7020;
+    --moss-wash:            rgba(74, 140, 42, 0.18);
 
     /* ── Magenta (Interface Only — never in section content) ── */
     --magenta:              #FF006E;
@@ -161,18 +161,21 @@
     font-weight: 800;
     font-size: clamp(28px, 4.5vw, 52px);
     letter-spacing: -0.03em;
+    color: var(--tangerine);
   }
   .headline-gap {
     font-family: 'Outfit', sans-serif;
     font-weight: 700;
     font-size: clamp(28px, 4.5vw, 52px);
     letter-spacing: 0.01em;
+    color: var(--violet);
   }
   .headline-meanwhile {
     font-family: 'Outfit', sans-serif;
     font-weight: 600;
     font-size: clamp(24px, 3.5vw, 44px);
     letter-spacing: 0;
+    color: var(--cyan-text);
   }
 
   /* Body — navy only, never colored. Line-height 1.65 per blueprint. */
@@ -240,8 +243,8 @@
   }
   .section-label-green { color: var(--cyan-text); }
   .section-label-teal { color: var(--cyan-text); }
-  .section-label-magenta { color: var(--tangerine-text); }
-  .section-label-violet { color: var(--violet-text); }
+  .section-label-magenta { color: var(--tangerine); }
+  .section-label-violet { color: var(--violet); }
   .section-label-cyan { color: var(--cyan-text); }
   .cat-icon { flex-shrink: 0; }
 
@@ -345,18 +348,20 @@
   /* Thread section framing overrides — tangerine accent */
   .thread-world .framing-row { background: var(--tangerine-wash); }
   .thread-world .framing-row .framing-label {
-    color: var(--tangerine-text);
-    border-left: 3px solid var(--tangerine);
+    color: var(--tangerine);
+    border-left: 4px solid var(--tangerine);
     padding-left: 0.75rem;
+    font-weight: 700;
   }
   .thread-world .framing-row .framing-content { border-left-color: var(--tangerine); }
 
   /* Gap section framing overrides — violet accent */
   .gap-world .framing-row { background: var(--violet-wash); }
   .gap-world .framing-row .framing-label {
-    color: var(--violet-text);
-    border-left: 3px solid var(--violet);
+    color: var(--violet);
+    border-left: 4px solid var(--violet);
     padding-left: 0.75rem;
+    font-weight: 700;
   }
   .gap-world .framing-row .framing-content { border-left-color: var(--violet); }
 
@@ -364,8 +369,9 @@
   .meanwhile-world .framing-row { background: var(--cyan-wash); }
   .meanwhile-world .framing-row .framing-label {
     color: var(--cyan-text);
-    border-left: 3px solid var(--cyan);
+    border-left: 4px solid var(--cyan);
     padding-left: 0.75rem;
+    font-weight: 700;
   }
   .meanwhile-world .framing-row .framing-content { border-left-color: var(--cyan); }
 
@@ -397,7 +403,7 @@
   /* ================ SECTION DIVIDERS ================ */
   .section-divider {
     border: none;
-    border-top: 3px solid currentColor;
+    border-top: 4px solid currentColor;
     margin: 3rem auto 1.5rem;
     max-width: 1080px;
     padding: 0 clamp(24px, 4vw, 48px);
@@ -430,22 +436,25 @@
   }
 
   .pattern-box--thread {
-    border-left: 4px solid var(--tangerine);
+    border-left: 5px solid var(--tangerine);
     background: var(--tangerine-wash-deep);
     padding: 1.25rem 1.5rem;
     margin: 2rem 0;
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
   }
   .pattern-box--gap {
-    border-left: 4px solid var(--violet);
+    border-left: 5px solid var(--violet);
     background: var(--violet-wash-deep);
     padding: 1.25rem 1.5rem;
     margin: 2rem 0;
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
   }
   .pattern-box--meanwhile {
-    border-left: 4px solid var(--cyan);
+    border-left: 5px solid var(--cyan);
     background: var(--cyan-wash-deep);
     padding: 1.25rem 1.5rem;
     margin: 2rem 0;
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
   }
   .callout-label {
     font-family: 'Inter', sans-serif;
@@ -453,10 +462,10 @@
     font-size: 12px;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: var(--moss-text);
+    color: var(--moss);
     margin-bottom: var(--space-xs);
   }
-  .callout-label-green { color: var(--moss-text); }
+  .callout-label-green { color: var(--moss); }
   .callout-text {
     font-family: 'Lora', Georgia, serif;
     font-size: clamp(15px, 1.6vw, 17px);
@@ -515,18 +524,18 @@
     content: '';
     position: absolute;
     top: 0; left: 0;
-    width: 4px; height: 100%;
+    width: 5px; height: 100%;
   }
 
   /* Thread — tangerine wash bg, tangerine accent bar */
   .thread-world { background: var(--tangerine-wash); }
   .thread-world::before { background: var(--tangerine); }
-  .thread-world .section-label { color: var(--tangerine-text); }
+  .thread-world .section-label { color: var(--tangerine); }
 
   /* Gap — violet wash bg, violet accent bar */
   .gap-world { background: var(--violet-wash); position: relative; }
   .gap-world::before { background: var(--violet); }
-  .gap-world .section-label { color: var(--violet-text); }
+  .gap-world .section-label { color: var(--violet); }
 
   /* Meanwhile — cyan wash bg, cyan accent bar */
   .meanwhile-world { background: var(--cyan-wash); content-visibility: auto; contain-intrinsic-size: auto 800px; }
@@ -644,14 +653,19 @@
     transform: translateY(-4px);
     box-shadow: var(--shadow-card-hover);
   }
-  .summary-card-tangerine { background: rgba(255,131,0,0.10); }
-  .summary-card-violet { background: var(--violet-wash); }
-  .summary-card-cyan { background: var(--cyan-wash); }
+  .summary-card-tangerine { background: var(--tangerine-wash-deep); }
+  .summary-card-tangerine .card-stat { color: var(--tangerine); }
+  .summary-card-violet { background: var(--violet-wash-deep); }
+  .summary-card-violet .card-stat { color: var(--violet); }
   .summary-card-violet:hover { border-color: var(--violet); }
+  .summary-card-cyan { background: var(--cyan-wash-deep); }
+  .summary-card-cyan .card-stat { color: var(--cyan-text); }
   .summary-card-cyan:hover { border-color: var(--cyan); }
   /* Legacy compat */
-  .summary-card-teal { background: var(--violet-wash); }
-  .summary-card-green { background: var(--cyan-wash); }
+  .summary-card-teal { background: var(--violet-wash-deep); }
+  .summary-card-teal .card-stat { color: var(--violet); }
+  .summary-card-green { background: var(--cyan-wash-deep); }
+  .summary-card-green .card-stat { color: var(--cyan-text); }
   .summary-card-green:hover { border-color: var(--cyan); }
 
   .card-label {
@@ -727,7 +741,7 @@
     content: '';
     position: absolute;
     top: 0; left: 0; right: 0;
-    height: 3px;
+    height: 4px;
     background: var(--tangerine);
     border-radius: var(--radius-md) var(--radius-md) 0 0;
   }
