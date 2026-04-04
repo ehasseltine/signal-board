@@ -1,208 +1,196 @@
-# Signal Board
+# CLAUDE.md — Signal Board
 
-## What this is
+## What This Project Is
 
-Signal Board is a daily news analysis system that reads 300 sources, classifies articles across 10 structural domains using AI, clusters them into stories by structural force, and publishes a daily synthesis showing how the forces reshaping the world are connected. It lives at elisehasseltine.com/signal-board.
+Signal Board is a daily editorial data dashboard that reads 300 news sources across borders, languages, political orientations, and institutional types, identifies cross-domain story connections, and publishes a daily analysis at signal-board.org. It exists as a structural counter to platform-mediated information systems.
 
-This is Elise Hasseltine's personal project. She builds it because the current information architecture degrades people's ability to think well together, and she believes building the alternative is worth doing.
+The site is built by Elise Hasseltine, who is the sole creator, editorial director, and operator. Elise has no coding background. All technical execution happens through Claude. Elise makes editorial decisions, defines section purpose, and reviews output quality.
 
-## The thesis
+## What Signal Board Is Trying to Accomplish
 
-Tech oligarchs are capturing America's information ecosystem through three interlocking strategies: buying media companies outright, building financial dependency with the newsrooms that are supposed to hold them accountable, and controlling the platforms where most people get their information. Ownership, influence, and distribution work as a single system. Signal Board exists to counter that system.
+Signal Board is not a news aggregator. It's a daily practice that builds structural literacy over time. A reader who follows it for a month should start seeing that the tariff story connects to the labor story connects to the AI governance story connects to what's happening in their community — not because they were told it does, but because the structure of the output trained them to look for those connections on their own.
 
-Signal Board is the structural inverse of media capture:
-- **Democratic sourcing** (300 outlets, 10 tiers, 79 local-regional + 31 state/ethnic media) means no single owner shapes the picture.
-- **Independent AI classification** that asks "where are people being decent" means the analysis isn't beholden to the companies it covers.
-- **Direct-to-reader delivery** with no algorithmic intermediary means the information architecture itself refuses to be captured.
+Five things the output must accomplish:
 
-## The philosophy
+1. **Build the framework that doesn't exist yet.** Connect dots across domains that no single outlet connects. Train readers to see structural patterns, not just events.
 
-The conviction underneath everything: humans are inherently cooperative, not inherently selfish, and the information systems through which most people encounter the world produce a systematically distorted picture of who we are. Signal Board exists to correct that distortion.
+2. **Make the information environment visible.** Show people how events are reported, not just what happened. A reader should finish the Gap section understanding how their reality is shaped by which outlet they read.
 
-Every day's analysis is guided by seven questions:
-1. Who is thinking well together here, and who has been cut out?
-2. What is the information architecture underneath this, and is it carrying knowledge to the people who need it?
-3. Where does this connect to something I've read in a different domain?
-4. What does this look like for someone living inside it?
-5. What would the honest version of this conversation sound like?
-6. If I could only tell someone one thing from this source, what would change how they see the world?
-7. Where in this story are people being decent, and why is that not the headline?
+3. **Treat cooperation as signal, not consolation.** Meanwhile is not a feel-good section. It's the measured share of civic infrastructure that persists whether national media covers it or not. The percentage metric does real work.
 
-## Architecture
+4. **Be usable by someone who won't read the underlying sources.** Every section should end with something concrete — check this, watch for this, this is what it means for your specific situation. Synthesis that doesn't land in someone's actual life is just sophisticated expert knowledge that isn't reaching anyone.
 
-### Current state (Astro SSG + GitHub Pages)
-- **Framework:** Astro 5.0.0, static site generation
-- **Hosting:** GitHub Pages served from `docs/` folder
-- **Frontend:** Astro pages + components, TypeScript story selection logic, CSS custom properties
-- **Data:** JSON files committed to git (`data/articles.json`, `data/daily/latest.json`)
-- **Pipeline:** GitHub Actions cron (7 AM UTC daily) → `ingest.py` → `ai_classify.py` → `analyze.py` → `synthesize.py` → JSON → Astro build → `docs/`
-- **AI classification:** Claude Haiku (`claude-haiku-4-5-20251001`), batched 10-15 articles per call, 4 concurrent threads
-- **AI synthesis:** Claude Sonnet, two passes (global editorial + per-story narratives)
+5. **Demonstrate the practice it's arguing for.** The output should feel like you can see someone thinking clearly across a huge volume of information — not performing authority, not simplifying for effect, but doing the actual work of synthesis in a way that invites the reader into the process.
 
-### Daily pipeline flow
+## The Three Sections
+
+### The Daily Thread
+**Answers:** What structural force connected the most coverage today, and what does reading across sources reveal that reading any one of them wouldn't?
+
+**Selection logic:** Identify which structural force had the highest cross-tier article count. Tier diversity matters more than raw volume — a force appearing across national, international, regional, and partisan sources is more interesting than one with 30 articles all from national outlets.
+
+**Output:** Editorial synthesis naming specific outlets, what each emphasized, what each made invisible. Framing rows with 15-30 word descriptions per outlet. Pattern summary. Concrete personal stakes. Forward-looking callout scoped to THIS section's topic.
+
+### The Daily Gap
+**Answers:** Where did outlets covering the same event construct incompatible versions of reality for their audiences?
+
+**Selection logic (CURRENT — NEEDS FIX):** Currently clusters by shared structural force label, which groups different stories that share a thematic tag. This produces thematic surveys, not framing analysis.
+
+**Selection logic (TARGET):** After force tagging, a second-pass clustering identifies shared events within force clusters (same actors, same timeframe, same triggering action). Framing variance across outlets covering that shared event is the selection metric. High framing variance on a shared event = the Gap story.
+
+**Output:** Comparison of how multiple outlets framed the same event. Not "here are different events under the same theme." Multiple outlets per framing perspective, not one.
+
+### Meanwhile — Who Showed Up Today
+**Answers:** Where are people showing up for each other?
+
+**Selection logic:** Filter for cooperation-tagged articles. Surface stories from sources and tiers that Thread and Gap didn't feature. The percentage of total coverage is a meaningful metric, not decoration.
+
+**Output:** Specific cooperation stories with named sources. Category breakdown. Concrete personal stakes. No filler language about how "these stories matter."
+
+## Technical Architecture
+
+### Pipeline (runs daily at 7 UTC via GitHub Actions)
+
+1. **`actions/ingest.py`** — Fetches articles from 300 RSS feeds (`data/feeds.csv`). Claude Haiku classifies each by domain, structural force, cooperation signal. Output: `data/articles.json`
+
+2. **`actions/analyze.py`** — Clusters by structural force, computes tier distribution, identifies cooperation stories, detects framing divergence. Reads source metadata from `data/sources.json`. Output: `data/daily/{date}.json`
+
+3. **`actions/synthesize.py`** — One Claude Sonnet call per day. Reads analysis JSON, produces editorial synthesis. Includes 3-day cross-day continuity. Output: merged into daily JSON.
+
+4. **Astro build** — `generate_today.yml` workflow. Pre-build sync (`scripts/prebuild.sh`), Astro build, post-build validation (`scripts/validate.js`, 13 checks). Output to `docs/` for GitHub Pages.
+
+### Key Files
+
 ```
-7 AM UTC: ingest.yml triggers
-  ├── ingest.py     → data/articles.json (RSS fetch + AI classify)
-  ├── analyze.py    → data/daily/{date}.json (cluster + spectrum + cooperation)
-  ├── synthesize.py → data/daily/{date}.json (editorial narrative, 2 passes)
-  └── copies data to docs/data/daily/
-
-After ingest.yml succeeds: generate_today.yml triggers
-  ├── syncs data/daily/ → public/data/daily/
-  ├── npx astro build → docs/
-  └── commits and pushes built HTML
+data/feeds.csv              — 300 RSS feed URLs
+data/sources.json           — Canonical source metadata (single source of truth)
+data/daily/{date}.json      — Daily analysis output
+data/daily/latest.json      — Most recent daily file
+actions/ingest.py           — Fetch + classify
+actions/analyze.py          — Cluster + analyze
+actions/synthesize.py       — Editorial synthesis prompt + execution
+src/pages/today/index.astro — Today page template
+src/pages/archive/[date].astro — Archive page template
+src/pages/archive/index.astro  — Archive index
+src/pages/about/index.astro    — About page
+src/layouts/BaseLayout.astro   — Site-wide layout
+src/styles/global.css          — Global CSS
+scripts/prebuild.sh            — Pre-build data sync (MUST run before every build)
+scripts/validate.js            — Post-build validation
+.github/workflows/ingest.yml          — Daily pipeline
+.github/workflows/generate_today.yml  — Astro build + deploy
+.github/workflows/substack_draft.yml  — DISABLED, do not re-enable
 ```
 
-### Two workflows
-- `.github/workflows/ingest.yml` — Daily pipeline (Python: ingest → analyze → synthesize)
-- `.github/workflows/generate_today.yml` — Site build (Node: sync data → Astro build → commit)
+### Costs
 
-## Design system (V2)
+- Haiku classification: ~$0.50/day
+- Sonnet synthesis: ~$0.40-$1.00/day
+- Total: ~$25-$45/month
+- Every GitHub Actions workflow run costs real money. Never trigger workflows to test. Verify locally first.
 
-### Color palette
-- Navy: #1B2A4B (primary dark, 30%)
-- Cream: #F5EFDF (primary light, 60%)
-- Red: #D94032 (Thread accent, 10%)
-- Yellow: #FFD23F (watch-for cards, editorial wash)
-- Teal: #3BCEAC (Gap accent)
-- Green: #0EAD69 (Meanwhile accent)
-- Teal wash: #E4F7F1 (Gap section background)
-- Ink: var(--ink) for text on cream backgrounds
+## Working Rules
 
-### Accessible text variants (WCAG AA on cream)
-- --red-accessible: #A82A1E
-- --green-accessible: #07743F
-- --teal-accessible: #1A7A64
-- --yellow-accessible: #8B7500
+### Branching and Deployment
 
-### Color distribution
-60% cream, 30% navy, 10% accent colors. Each section has its own accent world:
-- Thread (red): navy background with red accents
-- Gap (teal): navy header strip → teal wash body
-- Meanwhile (green): teal wash background with green accents
+- **Never push directly to main.** All changes go to a `staging` branch first.
+- **Verify locally before pushing.** Run `npm run build`, check the output visually.
+- **Never trigger GitHub Actions workflows until the local build is visually confirmed.**
+- **One task per session.** Do not combine unrelated changes.
+
+### Git Access
+
+- Clone to `/tmp/sb-clone` — do not use the mounted workspace `.git` (FUSE deadlocks).
+- Configure credentials: `git config --global credential.helper store` with the `signal-board-deploy` token.
+- Verify push works before starting: `git push --dry-run origin main`
+
+### Environment Check (do this first every session)
+
+Before ANY work, confirm:
+1. `git status` works
+2. `git push --dry-run` works
+3. `npm run build` works
+4. You can visually verify built HTML
+
+If any fail, STOP and report. Do not attempt workarounds.
+
+### Verification
+
+- **Visual verification means looking at the rendered page**, not checking HTML source for strings.
+- After deploying, scroll through the entire page top to bottom.
+- Check: all sections visible, text readable, colors correct, no invisible text, no broken layout.
+- Report what you see at each section, not "it looks good."
+
+### Communication
+
+- **Report findings before implementing fixes.**
+- **If something is broken, say so directly.** Do not minimize or bury problems.
+- **If you can't do something, say so before attempting.** Do not waste time on workarounds.
+- **If you made a mistake, own it.** "My change broke X because Y."
+- **Be specific.** "Added og:title to BaseLayout" is good. "Updated meta tags" is not.
+
+## Source Description Rules
+
+All source descriptions live in `data/sources.json`. This is the single source of truth.
+
+- 15-25 words, factual, institutional context only
+- Include: what the outlet is (type), who owns/funds it, what it covers, when founded if notable
+- NEVER include political lean labels: no "conservative," "liberal," "center-left," "center-right," "left-leaning," "right-leaning," "generally regarded as"
+- The About page states: "This is not a bias rating; it is context"
+
+## Writing Style (Synthesis Prompt)
+
+- Voice: Ideas build forward. Each sentence adds context, evidence, or implication. Always forward, never back-and-forth.
+- Reading level: 8th grade. Short clear words, direct sentences, confidence to explain complex things simply.
+- First person natural: "I," "we read," "Signal Board found"
+- Every sentence must earn its place. Zero tolerance for filler.
+- No short declarative reversals ("This is not X. It is Y.")
+- No dramatic pivot sentences ("But here's the thing")
+- No borrowed-confidence phrases ("Let that sink in")
+- No filler language ("it's worth noting," "at the end of the day")
+- No em dashes anywhere
+- No periods in abbreviations (US, UK, UN — not U.S., U.K.)
+- Framing descriptions: 15-30 words, start with outlet name + past-tense verb
+- Foreign-language content must be translated or excluded, never displayed raw
+
+## Design System
+
+### Section Colors
+- Thread: Red #D94032, card bg peach-gold #FFD07B at 25% opacity
+- Gap: Teal #3BCEAC, card bg mint #42F0A5
+- Meanwhile: Green #0EAD69, card bg bright blue #1789FC
+
+### Core Colors
+- Navy #1B2A4B (text, hero)
+- Warm cream #FFF8E7 (primary background)
+- Yellow/Gold #FFD23F (callout highlights)
+- Amber gold #FDB833 (callout cards)
 
 ### Fonts
-- **Abril Fatface:** Masthead title, CTA. Display weight, decorative.
-- **Outfit:** Section headlines, stat labels, framing row labels. Weight 800.
-- **Lora:** Body text, synthesis paragraphs, framing content. Serif, readable.
-- **Caveat:** Handwritten annotations on stats. Informal, personal.
-- **Inter:** UI elements, nav, source labels, small text. Clean sans-serif.
+- Outfit (headlines, navigation)
+- Lora (body text, editorial)
+- Inter (data, metadata)
+- Caveat (annotations, human-touch moments)
+- Abril Fatface (hero masthead)
 
-### Section structure
-Each daily page has three content sections plus framing:
-1. **The Daily Thread** — story with widest cross-tier coverage (red accent)
-2. **The Daily Gap** — story where framing diverges most (teal accent)
-3. **Meanwhile: Who Showed Up Today** — cooperation stories (green accent)
+### Rules
+- Color carries meaning, never decoration
+- No neutral gray anywhere
+- Five-layer navy-tinted box shadows on cards
+- `prefers-reduced-motion` respected throughout
 
-Sections are separated by angled SVG dividers with background color transitions.
+## Known Issues (as of April 2026)
 
-## Source base
+- **Gap section clusters by structural force, not by shared event.** Produces thematic surveys instead of framing analysis. Needs restructure in `analyze.py` and `synthesize.py`.
+- **`analyze.py` contains `left_sources`/`right_sources` variables and `SOURCE_CONTEXT` dictionary** with political lean language. Flagged for removal. Navigate by variable name, not line number.
+- **Some source descriptions in `sources.json` contain political lean labels** or are missing entirely. Being fixed.
+- **"What to watch for" callouts sometimes bleed between sections** — a Thread callout may reference the Gap topic. Prompt scoping issue in `synthesize.py`.
+- **Archive pages use a simpler template** than the today page. Parity work needed but lower priority than pipeline fixes.
+- **SEO meta tags are minimal.** Needs sitemap verification, dynamic titles/descriptions, Twitter Cards, JSON-LD. Separate task from pipeline work.
+- **Substack draft workflow is disabled.** Do not re-enable.
 
-300 sources across 10 tiers: national (28), international (40), specialist (38), local-regional (79 + 31 state/ethnic media), analysis/think tank (18), podcast (12), explainer (9), newsletter (7), government (5), research (3), solutions journalism (5).
+## Author and Attribution
 
-Sources are defined in `data/feeds.csv`. The pipeline reads this file on every run.
-
-## Pipeline details
-
-### ingest.py (Stage 1)
-- Reads `data/feeds.csv`
-- Fetches each RSS feed (max 25 articles per feed, 8 parallel workers)
-- Calls `ai_classify.py` for batched Claude Haiku classification
-- Deduplicates by URL hash
-- Outputs `data/articles.json`
-- Falls back to keyword tagging from `domains.py` if no API key
-
-### ai_classify.py
-- Batches 10-15 articles per API call, 4 concurrent threads
-- Classifies by structural force, not keyword overlap
-- Returns: domains (multi-select from 10), connection sentence, force_tag, cooperation (bool), cooperation_type
-- The seventh question is embedded in the prompt: "Where in this story are people being decent?"
-- Cost: ~$0.50/day for ~1,000 articles
-
-### analyze.py (Stage 2)
-- Filters to today's articles
-- Clusters by force_tag (Jaccard similarity merging)
-- Builds top_stories with tier_framing (how different outlet types frame the same story)
-- Analyzes cooperation stories by type (civic participation, institutional reform, etc.)
-- Detects coverage gaps between outlet types
-- Builds what_connects and narrative_divergence structures
-- Outputs `data/daily/{date}.json` and `data/daily/latest.json`
-
-### synthesize.py (Stage 3)
-- **Pass 1 (global editorial):** Single Claude Sonnet call reading full day's analysis. Returns: headline, accessible_headline, subheadline, synthesis (4-6 paragraphs), cooperation_highlight, coverage_gap_note, thread_to_watch.
-- **Pass 2 (per-story synthesis):** Second Sonnet call with data for the three featured stories. Returns: synthesis, cross_spectrum, why_this_matters, watch_for for each of thread/gap/meanwhile roles.
-- Both passes use WRITING_STYLE constant enforcing Elise's voice (no em dashes, no reversals, ideas build forward).
-- Merges output into `data/daily/{date}.json` under `editorial` and `story_syntheses` keys.
-- Cost: ~$0.40-1.00/day
-
-### Story selection (frontend, storySelection.ts)
-- **selectDailyThread():** Picks story with highest (tier_count × 100 + source_count). Merges Pass 2 synthesis if available.
-- **selectDailyGap():** Picks from narrative_divergence (different story than Thread). Builds framing comparisons from tier_framing data. Merges Pass 2 synthesis.
-- **selectMeanwhile():** Uses cooperation data. Hardened fallback: if Pass 2 is missing, constructs analytical content from cooperation highlights connection text and type breakdowns. Never falls back to raw headlines. Skips highlights without analysis.
-
-## Writing style (non-negotiable)
-
-All prose on the site follows Elise's writing style (see `.claude/skills/elise-writing-style/SKILL.md` for full guide). The key rules:
-- No em dashes anywhere (commas, parentheses, or restructure instead)
-- No short declarative reversals ("This is not X. It is Y.")
-- No dramatic pivot sentences ("But here's the thing.")
-- No staccato rhetorical cadence or ping-ponging between opposites
-- No borrowed-confidence phrases ("Let that sink in.")
-- Ideas build forward in flowing prose, each sentence adding to what came before
-- Longer sentences with subordinate clauses are welcome
-- Specificity over abstraction: name the source, the detail, the number
-- Write at an 8th grade reading level with no jargon
-- The through-line is synthesis, not contrast: pulling threads together
-- Write as though sending a long, thoughtful letter to someone you respect
-
-These rules apply to: synthesize.py prompts, storySelection.ts fallback templates, and any manually written content.
-
-## Working conventions
-
-- Push back on technical decisions. Elise is not a web developer. If the architecture is wrong, say so.
-- Frame everything around curiosity, warmth, intellectual energy, honesty, and transparency.
-- Never use "community" as a source tier label. It's "local-regional."
-- When adding sources, validate RSS feeds before committing them.
-- Never publish bio/about/personal copy without Elise's explicit sign-off. She wants minimal bio (name + website link only).
-
-## Domains
-
-ai, labor, governance, information, economics, climate, security, geopolitics, domestic_politics, legal
-
-## Key files
-
-### Pipeline (actions/)
-- `actions/ingest.py` — Stage 1: RSS fetcher + AI classification orchestrator
-- `actions/ai_classify.py` — Claude Haiku batched classifier (cooperation dimension)
-- `actions/analyze.py` — Stage 2: daily structural analysis + cooperation analysis
-- `actions/synthesize.py` — Stage 3: Claude Sonnet editorial narrative (2 passes)
-- `actions/domains.py` — keyword fallback classification + tier/domain definitions
-- `actions/fetch_bias.py` — AllSides bias rating fetcher (manual utility, not in pipeline)
-- `actions/reclassify_today.py` — Re-classification utility (manual, not in pipeline)
-
-### Data
-- `data/feeds.csv` — all 300 source definitions (name, URL, tier, region, type, description, why)
-- `data/articles.json` — full article corpus
-- `data/daily/latest.json` — today's analysis (output of analyze + synthesize)
-- `data/bias_ratings.json` — AllSides bias ratings (output of fetch_bias.py)
-
-### Frontend (src/)
-- `src/pages/today/index.astro` — main daily page template
-- `src/pages/archive/[date].astro` — archive page template
-- `src/pages/archive/index.astro` — archive listing
-- `src/pages/about/index.astro` — about/methodology page
-- `src/lib/storySelection.ts` — story selection logic (Thread, Gap, Meanwhile)
-- `src/lib/data.ts` — data loader (reads public/data/daily/latest.json at build time)
-- `src/styles/global.css` — complete design system (V2 palette, all components)
-- `src/layouts/BaseLayout.astro` — shared HTML template, nav, meta
-
-### Workflows
-- `.github/workflows/ingest.yml` — daily pipeline automation (7 AM UTC)
-- `.github/workflows/generate_today.yml` — Astro build after pipeline succeeds
-
-## GitHub
-
-- Repo: ehasseltine/signal-board
-- Secrets: ANTHROPIC_API_KEY (for Claude Haiku + Sonnet)
-- Pages: served from docs/ folder on main branch
-- Bot commits daily data as "Signal Board Bot"
+- All author links: https://www.elisehasseltine.com/ (no other URLs)
+- No Twitter/X, no LinkedIn in schema or structured data
+- Footer: "Signal Board · Created by Elise Hasseltine · Last updated: [date] · No tracking · No ads"

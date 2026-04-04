@@ -50,7 +50,8 @@ WRITING_STYLE = """WRITING STYLE (non-negotiable):
 - The through-line is synthesis, not contrast: pulling threads together, tracing how the trade policy connects to the labor story connects to the community response.
 - Write as though you are sending a long, thoughtful letter to someone you respect and want to bring up to speed on something important.
 - Write at an 8th grade reading level. No jargon. No internal vocabulary. Plain English that respects the reader's intelligence without requiring specialized knowledge.
-- When embedding a statistic or detail, ground it in a sentence naturally rather than displaying it as a standalone dramatic reveal."""
+- When embedding a statistic or detail, ground it in a sentence naturally rather than displaying it as a standalone dramatic reveal.
+- Foreign-language headline text must be translated to English or excluded entirely. Never display raw non-English text in any output field. If an article title is in a foreign language, translate it or describe what the article covers in English."""
 
 # ---------------------------------------------------------------------------
 # GLOBAL EDITORIAL SYNTHESIS PROMPT (Pass 1)
@@ -354,6 +355,7 @@ def build_story_synthesis_input(analysis: dict) -> str:
     parts = []
     stories = analysis.get("top_stories", [])
     coop = analysis.get("cooperation", {})
+    event_divergence = analysis.get("event_divergence", [])
     divergence = analysis.get("narrative_divergence", [])
     bridges = analysis.get("what_connects", [])
     local_exclusive = analysis.get("local_regional_exclusive", [])
@@ -413,40 +415,64 @@ def build_story_synthesis_input(analysis: dict) -> str:
 
         parts.append("")
 
-    # ── GAP: narrative divergence or second story ──
-    gap_story = None
-    if divergence:
-        # Find a divergence that is NOT the same as the thread
+    # ── GAP: event-level framing divergence ──
+    # Primary: use event_divergence (shared-event clusters scored by framing divergence)
+    # Fallback: narrative_divergence (legacy force-level grouping)
+    # Last resort: second top story
+    gap_written = False
+
+    if event_divergence:
+        gap_event = event_divergence[0]  # highest divergence score
+        parts.append("=" * 60)
+        parts.append("STORY 2: THE DAILY GAP")
+        parts.append(f"Role: Where outlets covering the SAME EVENT construct incompatible versions of reality")
+        parts.append("=" * 60)
+        parts.append(f"Force: {gap_event.get('structural_force', 'unknown')}")
+        shared = gap_event.get("shared_entities", [])
+        if shared:
+            parts.append(f"Shared actors/entities: {', '.join(shared)}")
+        div = gap_event.get("divergence", {})
+        parts.append(f"Divergence score: {div.get('score', 0)} (keyword divergence: {div.get('keyword_divergence', 0)}, tier spread: {div.get('tier_spread', 0)}, sources: {div.get('source_count', 0)})")
+        parts.append(f"Tiers covering this event: {', '.join(gap_event.get('tiers', []))}")
+
+        gap_articles = gap_event.get("articles", [])
+        if gap_articles:
+            parts.append(f"\nArticles covering this shared event ({len(gap_articles)} shown, {gap_event.get('all_article_count', len(gap_articles))} total):")
+            for art in gap_articles:
+                line = f"  [{art.get('tier', '?')}] \"{art.get('title', '')}\" — {art.get('source', '')}"
+                if art.get("connection"):
+                    line += f"\n    Connection: {art['connection']}"
+                if art.get("context"):
+                    line += f"\n    Source context: {art['context']}"
+                parts.append(line)
+        parts.append("")
+        gap_written = True
+
+    if not gap_written and divergence:
+        # Legacy fallback
         thread_force = stories[0].get("structural_force", "") if stories else ""
+        gap_story = None
         for nd in divergence:
             if nd.get("structural_force") != thread_force:
                 gap_story = nd
                 break
         if not gap_story:
             gap_story = divergence[0]
-
-    if gap_story:
         parts.append("=" * 60)
         parts.append("STORY 2: THE DAILY GAP")
         parts.append(f"Role: Where framing diverges most sharply between outlet types")
         parts.append("=" * 60)
         parts.append(f"Force: {gap_story.get('structural_force', 'unknown')}")
         parts.append(f"Theme: {gap_story.get('theme', '')}")
-        parts.append(f"Topic area: {gap_story.get('topic', '')}")
-        parts.append(f"Sources: {gap_story.get('source_count', 0)}")
-
-        articles = gap_story.get("articles", [])
-        if articles:
-            parts.append(f"\nArticles covering this story ({len(articles)}):")
-            for art in articles:
-                line = f"  [{art.get('tier', '?')}] \"{art.get('title', '')}\" — {art.get('source', '')}"
-                if art.get("framing"):
-                    line += f"\n    Framing: {art['framing']}"
-                parts.append(line)
+        gap_articles = gap_story.get("articles", [])
+        if gap_articles:
+            parts.append(f"\nArticles ({len(gap_articles)}):")
+            for art in gap_articles:
+                parts.append(f"  [{art.get('tier', '?')}] \"{art.get('title', '')}\" — {art.get('source', '')}")
         parts.append("")
+        gap_written = True
 
-    elif len(stories) > 1:
-        # Fallback: use second top story
+    if not gap_written and len(stories) > 1:
         gap_story_data = scored[1] if len(scored) > 1 else stories[1]
         parts.append("=" * 60)
         parts.append("STORY 2: THE DAILY GAP")
@@ -458,10 +484,6 @@ def build_story_synthesis_input(analysis: dict) -> str:
         parts.append(f"Articles: {gap_story_data.get('article_count', 0)}")
         for conn in gap_story_data.get("connections", [])[:3]:
             parts.append(f"Connection: {conn.get('text', '')}")
-        tf = gap_story_data.get("tier_framing", {})
-        for tier_name, info in tf.items():
-            sample = info.get("sample", {})
-            parts.append(f"  {tier_name}: \"{sample.get('title', '')}\" ({sample.get('source', '')})")
         parts.append("")
 
     # ── MEANWHILE: cooperation stories ──

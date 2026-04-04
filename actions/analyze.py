@@ -253,6 +253,302 @@ def score_force_cluster(cluster):
 
 
 # ---------------------------------------------------------------------------
+# EVENT-LEVEL CLUSTERING + FRAMING DIVERGENCE (for the Gap section)
+# ---------------------------------------------------------------------------
+
+def extract_entities(text):
+    """
+    Extract likely named entities (proper nouns) from a headline or summary.
+    Uses capitalization patterns: sequences of capitalized words that aren't
+    sentence-initial. Simple but effective for headlines where entities are
+    dense and formatting is consistent.
+    """
+    if not text:
+        return set()
+    # Split into words, keep capitalized tokens that aren't common title words
+    title_noise = {
+        'The', 'A', 'An', 'In', 'On', 'At', 'To', 'For', 'Of', 'And',
+        'But', 'Or', 'Is', 'Are', 'Was', 'Were', 'Has', 'Have', 'Had',
+        'Will', 'Would', 'Could', 'Should', 'May', 'Can', 'Do', 'Does',
+        'Did', 'Not', 'No', 'How', 'Why', 'What', 'When', 'Where', 'Who',
+        'New', 'More', 'Over', 'After', 'With', 'From', 'Into', 'About',
+        'Says', 'Said', 'Up', 'Out', 'Its', 'All', 'By', 'As', 'Be',
+        'If', 'So', 'My', 'His', 'Her', 'Our', 'Their', 'This', 'That',
+        'Report', 'Analysis', 'Opinion', 'Breaking', 'Update', 'Watch',
+        'Live', 'First', 'Last', 'Big', 'Top', 'Key', 'Major', 'Latest',
+    }
+    words = text.split()
+    entities = set()
+    for i, word in enumerate(words):
+        # Strip punctuation for matching
+        clean = re.sub(r'[^\w]', '', word)
+        if not clean:
+            continue
+        # Keep capitalized words that aren't noise and aren't sentence-start
+        # (sentence-start = index 0 or preceded by period)
+        is_sentence_start = (i == 0) or (i > 0 and words[i-1].endswith('.'))
+        if clean[0].isupper() and clean not in title_noise:
+            if not is_sentence_start or len(clean) > 3:
+                entities.add(clean.lower())
+        # Also keep ALL-CAPS acronyms (EU, NATO, FDA)
+        if clean.isupper() and len(clean) >= 2 and clean not in title_noise:
+            entities.add(clean.lower())
+    return entities
+
+
+def compute_event_similarity(art1, art2):
+    """
+    Compute how likely two articles cover the same event.
+    Returns a 0-1 score based on entity overlap and keyword overlap.
+    Entity overlap is weighted higher because shared proper nouns
+    (people, orgs, places) are stronger event indicators than shared
+    topic words.
+    """
+    title1 = art1.get("title", "")
+    title2 = art2.get("title", "")
+    summary1 = (art1.get("summary") or "")[:150]
+    summary2 = (art2.get("summary") or "")[:150]
+
+    text1 = title1 + " " + summary1
+    text2 = title2 + " " + summary2
+
+    # Entity overlap (proper nouns, acronyms)
+    ent1 = extract_entities(text1)
+    ent2 = extract_entities(text2)
+    if ent1 and ent2:
+        ent_jaccard = len(ent1 & ent2) / len(ent1 | ent2)
+    else:
+        ent_jaccard = 0
+
+    # Keyword overlap (content words from title only, for precision)
+    kw1 = set(re.findall(r'[a-z]{4,}', title1.lower()))
+    kw2 = set(re.findall(r'[a-z]{4,}', title2.lower()))
+    # Remove very common words
+    common = {'that', 'this', 'with', 'from', 'have', 'will', 'been',
+              'says', 'said', 'could', 'would', 'should', 'about',
+              'after', 'over', 'into', 'also', 'more', 'than',
+              'what', 'when', 'where', 'which', 'their', 'there',
+              'were', 'some', 'just', 'like', 'make', 'made',
+              'year', 'years', 'first', 'other', 'being', 'under',
+              'report', 'reports', 'news'}
+    kw1 -= common
+    kw2 -= common
+    if kw1 and kw2:
+        kw_jaccard = len(kw1 & kw2) / len(kw1 | kw2)
+    else:
+        kw_jaccard = 0
+
+    # Entity overlap weighted 0.65, keyword overlap weighted 0.35
+    return ent_jaccard * 0.65 + kw_jaccard * 0.35
+
+
+def cluster_events_within_force(force_cluster, similarity_threshold=0.15):
+    """
+    Within a structural force cluster, sub-group articles by shared event.
+    Uses single-linkage agglomerative clustering: if any article in cluster A
+    is similar enough to any article in cluster B, merge them.
+
+    Returns a list of event clusters (each a list of articles).
+    Only returns clusters with >= 3 articles from >= 2 sources.
+    """
+    if len(force_cluster) < 3:
+        return []
+
+    # Start with each article in its own cluster
+    clusters = [[a] for a in force_cluster]
+
+    # Precompute pairwise similarities
+    n = len(force_cluster)
+    sim_matrix = {}
+    for i in range(n):
+        for j in range(i + 1, n):
+            sim = compute_event_similarity(force_cluster[i], force_cluster[j])
+            sim_matrix[(i, j)] = sim
+
+    # Single-linkage merge
+    changed = True
+    while changed:
+        changed = False
+        best_sim = 0
+        best_pair = None
+
+        for ci in range(len(clusters)):
+            for cj in range(ci + 1, len(clusters)):
+                # Max similarity between any pair across two clusters
+                max_sim = 0
+                for ai in clusters[ci]:
+                    for aj in clusters[cj]:
+                        idx_i = force_cluster.index(ai)
+                        idx_j = force_cluster.index(aj)
+                        key = (min(idx_i, idx_j), max(idx_i, idx_j))
+                        s = sim_matrix.get(key, 0)
+                        if s > max_sim:
+                            max_sim = s
+
+                if max_sim > best_sim:
+                    best_sim = max_sim
+                    best_pair = (ci, cj)
+
+        if best_sim >= similarity_threshold and best_pair:
+            ci, cj = best_pair
+            clusters[ci] = clusters[ci] + clusters[cj]
+            clusters.pop(cj)
+            changed = True
+
+    # Filter: need >= 3 articles from >= 2 distinct sources
+    valid = []
+    for cluster in clusters:
+        sources = set(a.get("source", "") for a in cluster)
+        if len(cluster) >= 3 and len(sources) >= 2:
+            valid.append(cluster)
+
+    return valid
+
+
+def score_framing_divergence(event_cluster):
+    """
+    Score how much framing divergence exists within an event cluster.
+    Higher score = outlets are framing the same event more differently.
+
+    Components:
+    1. Headline keyword divergence (avg pairwise Jaccard distance of titles)
+    2. Tier spread (how many distinct source tiers cover this event)
+    3. Source count (more sources = more perspectives)
+
+    Returns a dict with the score and its components.
+    """
+    import math
+
+    articles = event_cluster
+    n = len(articles)
+
+    # 1. Headline keyword divergence (avg pairwise)
+    total_distance = 0
+    pair_count = 0
+    for i in range(n):
+        kw_i = set(re.findall(r'[a-z]{4,}', articles[i].get("title", "").lower()))
+        for j in range(i + 1, n):
+            kw_j = set(re.findall(r'[a-z]{4,}', articles[j].get("title", "").lower()))
+            if kw_i or kw_j:
+                jaccard_sim = len(kw_i & kw_j) / len(kw_i | kw_j) if (kw_i | kw_j) else 0
+                total_distance += (1 - jaccard_sim)
+            else:
+                total_distance += 1
+            pair_count += 1
+
+    avg_divergence = total_distance / max(pair_count, 1)
+
+    # 2. Tier spread
+    tiers = set()
+    for a in articles:
+        tier = a.get("tier", "unknown")
+        if tier in ("local-regional", "lived"):
+            tiers.add("local-regional")
+        elif tier in ("specialist", "domain"):
+            tiers.add("specialist")
+        else:
+            tiers.add(tier)
+    tier_spread = len(tiers)
+
+    # 3. Source count
+    source_count = len(set(a.get("source", "") for a in articles))
+
+    # Combined score
+    score = (avg_divergence * 0.5
+             + (tier_spread / 5.0) * 0.3  # normalize: 5 tiers = max
+             + (math.log(max(source_count, 1)) / math.log(20)) * 0.2)  # normalize: 20 sources = max
+
+    return {
+        "score": round(score, 4),
+        "keyword_divergence": round(avg_divergence, 4),
+        "tier_spread": tier_spread,
+        "source_count": source_count,
+        "article_count": n,
+    }
+
+
+def analyze_event_divergence(articles, exclude_force=None):
+    """
+    The Gap section pipeline:
+    1. Cluster articles by structural force
+    2. Within each force cluster, sub-cluster by shared event
+    3. Score each event cluster for framing divergence
+    4. Return event clusters ranked by divergence score
+
+    exclude_force: if provided, skip this force tag (already used for Thread)
+    """
+    classified = [a for a in articles if a.get("domains") and a.get("force_tag")]
+    force_clusters = cluster_by_structural_force(classified)
+
+    all_event_clusters = []
+
+    for force_cluster in force_clusters:
+        # Get the primary force tag for this cluster
+        force_tags = Counter(normalize_force_tag(a.get("force_tag", ""))
+                            for a in force_cluster if a.get("force_tag"))
+        primary_force = force_tags.most_common(1)[0][0] if force_tags else ""
+
+        # Skip the force already used for Thread
+        if exclude_force and primary_force == exclude_force:
+            continue
+
+        # Sub-cluster by shared event
+        event_clusters = cluster_events_within_force(force_cluster)
+
+        for ec in event_clusters:
+            divergence = score_framing_divergence(ec)
+
+            # Build a representative label from shared entities
+            all_entities = Counter()
+            for a in ec:
+                for ent in extract_entities(a.get("title", "")):
+                    all_entities[ent] += 1
+            # Entities that appear in at least 40% of articles = shared actors
+            threshold = max(len(ec) * 0.4, 2)
+            shared_entities = [ent for ent, count in all_entities.most_common(10)
+                              if count >= threshold]
+
+            # Collect source details
+            sources = list(set(a.get("source", "") for a in ec))
+            tiers = list(set(
+                ("local-regional" if a.get("tier") in ("local-regional", "lived") else
+                 "specialist" if a.get("tier") in ("specialist", "domain") else
+                 a.get("tier", "unknown"))
+                for a in ec
+            ))
+
+            # Sample articles (one per source, max 8)
+            seen_sources = set()
+            sample_articles = []
+            for a in ec:
+                if a["source"] not in seen_sources and len(sample_articles) < 8:
+                    seen_sources.add(a["source"])
+                    sample_articles.append({
+                        "title": a["title"][:150],
+                        "source": a["source"],
+                        "url": a.get("url", ""),
+                        "tier": a.get("tier", ""),
+                        "force_tag": a.get("force_tag", ""),
+                        "connection": a.get("connection", ""),
+                        "context": SOURCE_CONTEXT.get(a["source"], ""),
+                    })
+
+            all_event_clusters.append({
+                "structural_force": primary_force,
+                "shared_entities": shared_entities[:8],
+                "divergence": divergence,
+                "sources": sources,
+                "tiers": tiers,
+                "articles": sample_articles,
+                "all_article_count": len(ec),
+            })
+
+    # Sort by divergence score, highest first
+    all_event_clusters.sort(key=lambda x: x["divergence"]["score"], reverse=True)
+    return all_event_clusters[:10]
+
+
+# ---------------------------------------------------------------------------
 # CORE ANALYSIS FUNCTIONS
 # ---------------------------------------------------------------------------
 
@@ -1081,6 +1377,18 @@ def generate_daily_analysis(articles, analysis_date, history):
     source_spectrum = analyze_source_spectrum(articles)
     questions = generate_questions_people_are_asking(articles)
 
+    # ── Event-level divergence for the Gap section ──
+    # Exclude the Thread's force so Gap tells a different story
+    thread_force = None
+    if top_stories:
+        scored = sorted(
+            top_stories,
+            key=lambda s: (s.get("tier_count", 1) * 100 + s.get("source_count", 0)),
+            reverse=True
+        )
+        thread_force = scored[0].get("structural_force", "")
+    event_divergence = analyze_event_divergence(articles, exclude_force=thread_force)
+
     # ── Temporal context: compare today vs yesterday ──
     temporal_context = build_temporal_context(articles, analysis_date)
 
@@ -1121,6 +1429,7 @@ def generate_daily_analysis(articles, analysis_date, history):
         "source_spectrum": source_spectrum,
         "questions": questions,
         "article_url_index": article_url_index,
+        "event_divergence": event_divergence,
         # Backward compat
         "narrative_divergence": [
             {
