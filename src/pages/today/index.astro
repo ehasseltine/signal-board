@@ -1075,48 +1075,45 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
 </div>
 </footer>
 
-<script>
+<script is:inline>
   // Count-up animation for summary card stats
   // Respects prefers-reduced-motion: shows final number immediately
   (function () {
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const counters = document.querySelectorAll('[data-count-to]');
-    if (!counters.length) return;
-
-    if (prefersReducedMotion) return; // Numbers already rendered server-side
+    var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var counters = document.querySelectorAll('[data-count-to]');
+    if (!counters.length || prefersReducedMotion) return;
 
     // Set initial state: show 0
-    counters.forEach(el => {
-      const target = parseInt(el.getAttribute('data-count-to') || '0', 10);
+    counters.forEach(function (el) {
+      var target = parseInt(el.getAttribute('data-count-to') || '0', 10);
       if (target > 0) el.textContent = '0';
     });
 
-    function animateCount(el: Element, target: number) {
-      const duration = 1200;
-      const start = performance.now();
-      function step(now: number) {
-        const elapsed = now - start;
-        const progress = Math.min(elapsed / duration, 1);
-        // Ease-out cubic for a satisfying deceleration
-        const eased = 1 - Math.pow(1 - progress, 3);
+    function animateCount(el, target) {
+      var duration = 1200;
+      var start = performance.now();
+      function step(now) {
+        var elapsed = now - start;
+        var progress = Math.min(elapsed / duration, 1);
+        var eased = 1 - Math.pow(1 - progress, 3);
         el.textContent = String(Math.round(eased * target));
         if (progress < 1) requestAnimationFrame(step);
       }
       requestAnimationFrame(step);
     }
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
         if (entry.isIntersecting) {
-          const el = entry.target;
-          const target = parseInt(el.getAttribute('data-count-to') || '0', 10);
+          var el = entry.target;
+          var target = parseInt(el.getAttribute('data-count-to') || '0', 10);
           if (target > 0) animateCount(el, target);
           observer.unobserve(el);
         }
       });
     }, { threshold: 0.3 });
 
-    counters.forEach(el => observer.observe(el));
+    counters.forEach(function (el) { observer.observe(el); });
   })();
 </script>
 
