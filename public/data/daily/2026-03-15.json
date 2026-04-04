@@ -1,0 +1,21 @@
+{
+  "date": "2026-03-15",
+  "generated": "2026-03-28T02:14:13Z",
+  "summary": {
+    "total_stories": 0,
+    "sources_reporting": 0,
+    "cross_domain": 0,
+    "top_domain": ""
+  },
+  "narrative_divergence": [],
+  "collision_threads": [],
+  "source_spectrum": {
+    "national": 0,
+    "international": 0,
+    "specialist": 0,
+    "explainer": 0,
+    "community": 0,
+    "analysis": 0
+  },
+  "emerging_signals": []
+}

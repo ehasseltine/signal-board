@@ -91,7 +91,8 @@ check('At least 6 framing rows exist', labels.length >= 6,
 
 console.log('Source descriptions:');
 
-const descRegex = /class="coverage-type"[^>]*>(.*?)<\/div>/gs;
+// Check for inline source context (outlet-context class) or legacy coverage-type
+const descRegex = /class="(?:coverage-type|outlet-context)"[^>]*>(.*?)<\/(?:div|span)>/gs;
 const descriptions = [];
 while ((m = descRegex.exec(todayHtml)) !== null) {
   descriptions.push(m[1].replace(/<[^>]+>/g, '').trim());

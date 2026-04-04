@@ -9,12 +9,13 @@ interface Props {
   sourcesReporting?: number;
 }
 
-const { title, description = 'Daily news analysis from 300 sources across the political spectrum, across borders, and across languages. See what no single outlet can show you.', dateStr, totalStories, sourcesReporting } = Astro.props;
+const { title = 'Signal Board', description = 'Daily analysis from 300 sources across borders, languages, and political orientations.', dateStr, totalStories, sourcesReporting } = Astro.props;
 
 const siteUrl = 'https://signal-board.org';
 const ogImage = `${siteUrl}/og-image.png`;
-const pageTitle = `Signal Board - ${title}`;
-const canonicalUrl = `${siteUrl}/${title === 'Today' ? 'today/' : title === 'About' ? 'about/' : title === 'Archive' ? 'archive/' : ''}`;
+const pageTitle = title === 'Signal Board' ? title : title;
+const canonicalUrl = `${siteUrl}${Astro.url.pathname}`;
+const isArticle = Astro.url.pathname.startsWith('/today') || /^\/archive\/\d{4}-\d{2}-\d{2}/.test(Astro.url.pathname);
 ---
 
 <!DOCTYPE html>
@@ -35,7 +36,7 @@ const canonicalUrl = `${siteUrl}/${title === 'Today' ? 'today/' : title === 'Abo
   <meta name="theme-color" content="#1B2A4B">
 
   <!-- Open Graph -->
-  <meta property="og:type" content={dateStr ? 'article' : 'website'}>
+  <meta property="og:type" content={isArticle ? 'article' : 'website'}>
   <meta property="og:title" content={pageTitle}>
   <meta property="og:description" content={description}>
   <meta property="og:image" content={ogImage}>
@@ -52,6 +53,11 @@ const canonicalUrl = `${siteUrl}/${title === 'Today' ? 'today/' : title === 'Abo
   )}
 
 
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content={pageTitle} />
+  <meta name="twitter:description" content={description} />
+
   <!-- Author -->
   <meta name="author" content="Elise Hasseltine">
 
@@ -62,7 +68,7 @@ const canonicalUrl = `${siteUrl}/${title === 'Today' ? 'today/' : title === 'Abo
   <link rel="canonical" href={canonicalUrl}>
 
   <!-- JSON-LD Structured Data -->
-  {title === 'Today' && dateStr && (
+  {isArticle && dateStr && (
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "NewsArticle",
@@ -94,7 +100,7 @@ const canonicalUrl = `${siteUrl}/${title === 'Today' ? 'today/' : title === 'Abo
       ...(totalStories ? { "about": `Analysis of ${totalStories} articles from ${sourcesReporting || 300} sources` } : {})
     })} />
   )}
-  {title === 'About' && (
+  {title.startsWith('About') && (
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "AboutPage",
@@ -115,7 +121,7 @@ const canonicalUrl = `${siteUrl}/${title === 'Today' ? 'today/' : title === 'Abo
       }
     })} />
   )}
-  {title !== 'Today' && title !== 'About' && (
+  {!isArticle && !title.startsWith('About') && (
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "WebSite",
@@ -141,22 +147,17 @@ const canonicalUrl = `${siteUrl}/${title === 'Today' ? 'today/' : title === 'Abo
         "name": "Signal Board",
         "item": siteUrl
       },
-      ...(title !== 'Today' ? [{
+      {
         "@type": "ListItem",
         "position": 2,
-        "name": title,
+        "name": pageTitle,
         "item": canonicalUrl
-      }] : [{
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Today",
-        "item": `${siteUrl}/today/`
-      }])
+      }
     ]
   })} />
 
   <!-- Dataset JSON-LD (daily pages only) -->
-  {title === 'Today' && dateStr && totalStories && (
+  {isArticle && dateStr && totalStories && (
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "Dataset",

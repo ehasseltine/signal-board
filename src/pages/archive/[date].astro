@@ -207,7 +207,7 @@ function linkifyText(text: string, sectionMap: Map<string, string>): string {
       <p class="body r d2" style="margin-top: 28px; font-size: clamp(17px, 1.8vw, 20px); line-height: 1.8;" set:html={linkifyText(threadStory.synthesis, threadUrlMap)} />
     )}
     {threadStory.crossSpectrum && (
-      <div class="r" style="margin-top: 24px; border-left: 4px solid var(--red); padding: 16px 20px; background: rgba(27, 42, 74, 0.04); border-radius: 0 8px 8px 0;">
+      <div class="r" style="margin-top: 24px; border-left: 4px solid var(--tangerine); padding: 16px 20px; background: rgba(27, 42, 74, 0.04); border-radius: 0 8px 8px 0;">
         <p class="body" style="font-size: clamp(15px, 1.5vw, 17px); line-height: 1.8;" set:html={linkifyText(threadStory.crossSpectrum, threadUrlMap)} />
       </div>
     )}
@@ -230,7 +230,7 @@ function linkifyText(text: string, sectionMap: Map<string, string>): string {
       <p class="body r d2" style="margin-top: 28px; font-size: clamp(17px, 1.8vw, 20px); line-height: 1.8; color: var(--on-navy-dim);" set:html={linkifyText(gapStory.synthesis, gapUrlMap)} />
     )}
     {gapStory.crossSpectrum && (
-      <div class="r" style="margin-top: 24px; border-left: 4px solid var(--red); padding: 16px 20px; background: rgba(255, 255, 255, 0.06); border-radius: 0 8px 8px 0;">
+      <div class="r" style="margin-top: 24px; border-left: 4px solid var(--tangerine); padding: 16px 20px; background: rgba(255, 255, 255, 0.06); border-radius: 0 8px 8px 0;">
         <p class="body" style="font-size: clamp(15px, 1.5vw, 17px); line-height: 1.8; color: var(--on-navy-dim);" set:html={linkifyText(gapStory.crossSpectrum, gapUrlMap)} />
       </div>
     )}
@@ -253,7 +253,7 @@ function linkifyText(text: string, sectionMap: Map<string, string>): string {
       <p class="body r d2" style="margin-top: 28px; font-size: clamp(17px, 1.8vw, 20px); line-height: 1.8;" set:html={linkifyText(meanwhileStory.synthesis, meanwhileUrlMap)} />
     )}
     {meanwhileStory.insights && meanwhileStory.insights.length > 0 && meanwhileStory.insights.map((insight: string) => (
-      <div class="r" style="margin-top: 20px; padding: 16px 20px; background: rgba(45, 138, 78, 0.06); border-radius: 8px; border-left: 4px solid var(--green);">
+      <div class="r" style="margin-top: 20px; padding: 16px 20px; background: rgba(45, 138, 78, 0.06); border-radius: 8px; border-left: 4px solid var(--cyan);">
         <p class="body" style="font-size: clamp(15px, 1.5vw, 17px); line-height: 1.8;" set:html={linkifyText(insight, meanwhileUrlMap)} />
       </div>
     ))}
@@ -266,7 +266,7 @@ function linkifyText(text: string, sectionMap: Map<string, string>): string {
 <div class="close-section">
   <div class="wrap" style="display: flex; justify-content: space-between; align-items: center;">
     <p class="body r" style="color: var(--on-navy-dim); margin: 0;">
-      <a href="/archive/" style="color: var(--red); text-decoration: underline;">Back to archive</a>
+      <a href="/archive/" style="color: var(--tangerine); text-decoration: underline;">Back to archive</a>
     </p>
     <div style="font-family: 'Inter', sans-serif; font-size: 14px; display: flex; gap: 20px;">
       {olderDate && (

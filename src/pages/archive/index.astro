@@ -51,7 +51,7 @@ const entries: ArchiveEntry[] = dates.map(date => {
 }).filter(Boolean) as ArchiveEntry[];
 ---
 
-<BaseLayout title="Archive">
+<BaseLayout title="Archive | Signal Board">
 
 <main id="main-content">
 
@@ -169,11 +169,11 @@ const entries: ArchiveEntry[] = dates.map(date => {
     position: absolute;
     top: 0; left: 0; right: 0;
     height: 3px;
-    background: var(--red);
+    background: var(--tangerine);
     border-radius: var(--radius-md) var(--radius-md) 0 0;
   }
   .archive-card-link:hover .archive-card {
-    border-color: var(--red);
+    border-color: var(--tangerine);
     transform: translateY(-3px);
     box-shadow: var(--shadow-card-hover);
   }
@@ -184,7 +184,7 @@ const entries: ArchiveEntry[] = dates.map(date => {
     font-size: 11px;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: var(--red-accessible);
+    color: var(--tangerine-text);
     display: block;
     margin-bottom: 12px;
   }
@@ -216,15 +216,15 @@ const entries: ArchiveEntry[] = dates.map(date => {
   }
   .archive-section-thread {
     background: rgba(204, 51, 51, 0.08);
-    color: var(--red-accessible);
+    color: var(--tangerine-text);
   }
   .archive-section-gap {
     background: rgba(66, 240, 165, 0.12);
-    color: var(--teal-accessible);
+    color: var(--violet-text);
   }
   .archive-section-meanwhile {
     background: rgba(45, 138, 78, 0.08);
-    color: var(--green-accessible);
+    color: var(--cyan-text);
   }
 
   .archive-card-stats {

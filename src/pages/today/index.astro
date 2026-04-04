@@ -247,9 +247,22 @@ function linkifyText(text: string, sectionMap?: Map<string, string>): string {
 }
 
 function getSourceContext(sourceName: string): string | null {
-  // Primary: use pipeline-generated context from analyze.py's SOURCE_CONTEXT (300 entries)
-  // This is populated from article.context fields in the daily JSON
-  return outletContextMap.get(sourceName) || null;
+  // Exact match first
+  const exact = outletContextMap.get(sourceName);
+  if (exact) return exact;
+  // Normalized match: lowercase, strip hyphens and periods
+  const normalize = (s: string) => s.toLowerCase().replace(/[-.']/g, '').replace(/\s+/g, ' ').trim();
+  const normalized = normalize(sourceName);
+  for (const [key, value] of outletContextMap.entries()) {
+    if (normalize(key) === normalized) {
+      if (!outletContextMap.has(sourceName)) {
+        console.log(`[Source lookup] Fuzzy matched "${sourceName}" → "${key}"`);
+      }
+      return value;
+    }
+  }
+  console.log(`[Source lookup] No match for "${sourceName}"`);
+  return null;
 }
 
 // Look up outlet URL with fuzzy matching (try exact, then " News"/" World" suffix, then without "The " prefix)
@@ -426,7 +439,7 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
 
 ---
 
-<BaseLayout title="Today" description={`Signal Board reads ${totalMonitoredSources} sources daily across borders and languages. Today: ${editorial?.accessible_headline || editorial?.headline || 'See what the picture looks like today.'}. ${dateStr}.`} dateStr={dateStr} totalStories={totalStories} sourcesReporting={sourcesReporting}>
+<BaseLayout title={`${(editorial?.accessible_headline || editorial?.headline || 'Today').slice(0, 55)} | Signal Board`} description={editorial?.subheadline || `Daily analysis from 300 sources across borders, languages, and political orientations.`} dateStr={dateStr} totalStories={totalStories} sourcesReporting={sourcesReporting}>
 
 <!-- MASTHEAD — NAVY -->
 <header class="masthead-wrap" role="banner">
@@ -496,7 +509,7 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
     <line x1="100" y1="0" x2="200" y2="80" stroke="var(--ink)" stroke-width="1"/>
     <line x1="200" y1="80" x2="400" y2="40" stroke="var(--ink)" stroke-width="1"/>
     <line x1="400" y1="40" x2="550" y2="100" stroke="var(--ink)" stroke-width="0.5"/>
-    <circle cx="200" cy="80" r="3" fill="var(--red)" opacity="0.3"/>
+    <circle cx="200" cy="80" r="3" fill="var(--tangerine)" opacity="0.3"/>
     <circle cx="400" cy="40" r="2" fill="var(--ink)" opacity="0.2"/>
   </svg>
 </header>
@@ -561,11 +574,7 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
 <!-- ================================================================ -->
 <!-- THE DAILY THREAD — CREAM BACKGROUND                              -->
 <!-- ================================================================ -->
-<div class="section-divider" aria-hidden="true" style="background: var(--cream);">
-  <svg viewBox="0 0 1440 32" preserveAspectRatio="none">
-    <polygon points="0,0 1440,0 1440,32 0,8" fill="var(--cream)"/>
-  </svg>
-</div>
+<hr class="section-divider section-divider--thread" aria-hidden="true" />
 {threadStory && (
 <article id="thread" class="section-world thread-world" aria-label="The Daily Thread" style="overflow: hidden;">
 <div class="wrap" style="position: relative; z-index: 1;">
@@ -577,7 +586,7 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
     <h2 class="headline headline-thread r d1">{threadStory.title}</h2>
 
     {threadStory.changeDescription && (
-      <p class="r d1" style="font-family: 'Caveat', cursive; font-size: clamp(18px, 2vw, 22px); color: var(--red-accessible); margin-top: 8px;">
+      <p class="r d1" style="font-family: 'Caveat', cursive; font-size: clamp(18px, 2vw, 22px); color: var(--tangerine-text); margin-top: 8px;">
         {threadStory.changeDescription}
       </p>
     )}
@@ -587,7 +596,7 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
   <div class="r d2" style="margin-top: 32px; padding: 28px 0; border-top: 1px solid rgba(27,42,74,0.08); border-bottom: 1px solid rgba(27,42,74,0.08);">
     <div style="display: flex; align-items: center; gap: 24px; flex-wrap: wrap;">
       <div>
-        <div class="display" style="font-size: clamp(48px, 7vw, 72px); line-height: 1; color: var(--red);">{threadStory.articleCount}</div>
+        <div class="display" style="font-size: clamp(48px, 7vw, 72px); line-height: 1; color: var(--tangerine);">{threadStory.articleCount}</div>
         <div class="stat-annotation stat-annotation-red" style="margin-top: 6px;">articles across {threadStory.sourceCount} sources</div>
       </div>
       <div style="flex: 1; min-width: min(200px, 100%);">
@@ -657,17 +666,23 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
             tierForColor = '';
           }
           const outletUrl = lookupOutletUrl(label, threadUrlMap);
+          const ctx = getSourceContext(label);
           return (
           <div class="framing-row cascade" data-tier={tierForColor || undefined}>
-            <div class="framing-label">{outletUrl ? <a href={outletUrl} target="_blank" rel="noopener" class="outlet-link">{label}</a> : label}</div>
+            <div class="framing-label">
+              <div>
+                {outletUrl ? <a href={outletUrl} target="_blank" rel="noopener" class="outlet-link">{label}</a> : label}
+                {ctx && <div class="outlet-context">{ctx}</div>}
+              </div>
+            </div>
             <div class="framing-content">{sentence.trim()}</div>
           </div>
           );
         })}
       </div>
       {summaryRows.length > 0 && (
-      <div class="pattern-callout r" style="margin-top: 12px; padding: 20px 24px; background: rgba(27,42,75,0.08); border-radius: var(--radius-sm);">
-        <span style="font-family: 'Inter', sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-mid); display: block; margin-bottom: 8px;">The pattern</span>
+      <div class="pattern-box--thread r" style="border-radius: var(--radius-sm);">
+        <span style="font-family: 'Inter', sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--tangerine-text); display: block; margin-bottom: 8px;">The pattern</span>
         <p style="font-family: 'Lora', Georgia, serif; font-size: clamp(15px, 1.6vw, 18px); line-height: 1.65; color: var(--ink-body); margin: 0;">{summaryRows.join(' ')}</p>
       </div>
       )}
@@ -690,8 +705,8 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
   {threadStory.watchFor && (
   <div style="padding: 28px 0 0;">
     <div class="r callout-wash callout-wash-chartreuse">
-      <div class="watch-for-card" style="border-left: 4px solid var(--chartreuse); padding: 14px 18px; background: var(--chartreuse-wash); border-radius: 0 8px 8px 0;">
-        <span style="font-family: 'Inter', sans-serif; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--chartreuse-text); font-weight: 600; display: block; margin-bottom: 8px;">What to watch for</span>
+      <div class="watch-for-card" style="border-left: 4px solid var(--moss); padding: 14px 18px; background: var(--moss-wash); border-radius: 0 8px 8px 0;">
+        <span style="font-family: 'Inter', sans-serif; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--moss-text); font-weight: 600; display: block; margin-bottom: 8px;">What to watch for</span>
         <p class="body" style="font-size: clamp(15px, 1.5vw, 17px); line-height: 1.8; color: var(--ink); margin: 0;" set:html={linkifyText(threadStory.watchFor, threadUrlMap)} />
       </div>
     </div>
@@ -702,47 +717,23 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
   {editorial?.thread_to_watch && (
   <div style="padding: 16px 0 0;">
     <div class="r callout-wash callout-wash-chartreuse">
-      <div style="border-left: 4px solid var(--chartreuse); padding: 14px 18px; background: var(--chartreuse-wash); border-radius: 0 8px 8px 0;">
-        <span style="font-family: 'Inter', sans-serif; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--chartreuse-text); font-weight: 600; display: block; margin-bottom: 8px;">Thread to watch</span>
+      <div style="border-left: 4px solid var(--moss); padding: 14px 18px; background: var(--moss-wash); border-radius: 0 8px 8px 0;">
+        <span style="font-family: 'Inter', sans-serif; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--moss-text); font-weight: 600; display: block; margin-bottom: 8px;">Thread to watch</span>
         <p class="body" style="font-size: clamp(15px, 1.5vw, 17px); line-height: 1.8; color: var(--ink); margin: 0;" set:html={escapeHtml(editorial.thread_to_watch)} />
       </div>
     </div>
   </div>
   )}
 
-  <!-- SOURCES -->
-  {threadStory.sourcesSample.length > 0 && (
-  <div style="padding: 24px 0 48px;">
-    <div class="coverage-label r">Sources reporting</div>
-    <div class="coverage-grid r cascade-parent">
-      {threadStory.sourcesSample.slice(0, 8).map(sourceName => {
-        const geo = getSourceGeo(sourceName);
-        return (
-        <div class="coverage-card cascade" data-tier={geo?.tier || ''} data-geo={geo?.geo || ''}>
-          <div class="coverage-name">{sourceName}</div>
-          {getSourceContext(sourceName) && (
-            <div class="coverage-type">{getSourceContext(sourceName)}</div>
-          )}
-        </div>
-        );
-      })}
-    </div>
-  </div>
-  )}
+
 </div>
 </article>
 )}
 
-<!-- Angled divider: cream → navy -->
-<div class="section-divider" aria-hidden="true" style="background: var(--ink);">
-  <svg viewBox="0 0 1440 48" preserveAspectRatio="none">
-    <polygon points="0,0 1440,0 1440,48 0,48" fill="var(--ink)"/>
-    <polygon points="0,0 1440,0 1440,12 0,48" fill="var(--cream)"/>
-  </svg>
-</div>
+<hr class="section-divider section-divider--gap" aria-hidden="true" />
 
 <!-- ================================================================ -->
-<!-- THE DAILY GAP — NAVY HEADER + TEAL WASH BODY                     -->
+<!-- THE DAILY GAP — NAVY HEADER + VIOLET WASH BODY                   -->
 <!-- ================================================================ -->
 {gapStory && (
 <!-- Gap header strip — navy (compact: just label + headline) -->
@@ -758,27 +749,19 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
 </div>
 </div>
 
-<!-- Angled divider: navy → violet wash -->
-<div class="section-divider" aria-hidden="true" style="background: rgba(131,56,236,0.10);">
-  <svg viewBox="0 0 1440 48" preserveAspectRatio="none">
-    <polygon points="0,0 1440,0 1440,48 0,48" fill="rgba(131,56,236,0.10)"/>
-    <polygon points="0,0 1440,0 0,48" fill="var(--ink)"/>
-  </svg>
-</div>
-
 <!-- Gap body — violet wash background -->
 <article id="gap" class="section-world gap-world" aria-label="The Daily Gap" style="background: rgba(131,56,236,0.10); margin-top: -1px;">
 <div class="wrap">
 
   <!-- Article + source count — now on teal wash reading surface -->
   <div class="r" style="display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap; padding-top: 8px;">
-    <div class="display" style="font-size: clamp(40px, 6vw, 64px); line-height: 1; color: var(--violet-accessible);">{gapStory.articleCount}</div>
+    <div class="display" style="font-size: clamp(40px, 6vw, 64px); line-height: 1; color: var(--violet-text);">{gapStory.articleCount}</div>
     <div class="stat-annotation" style="color: var(--ink-mid);">
-      articles from <strong style="color: var(--violet-accessible); font-weight: 700;">{gapStory.sourceCount} sources</strong> covering what others missed
+      articles from <strong style="color: var(--violet-text); font-weight: 700;">{gapStory.sourceCount} sources</strong> covering what others missed
     </div>
   </div>
   {gapStory.changeDescription && (
-    <p class="r d1" style="font-family: 'Caveat', cursive; font-size: clamp(18px, 2vw, 22px); color: var(--teal-accessible); margin-top: 8px;">
+    <p class="r d1" style="font-family: 'Caveat', cursive; font-size: clamp(18px, 2vw, 22px); color: var(--violet-text); margin-top: 8px;">
       {gapStory.changeDescription}
     </p>
   )}
@@ -787,8 +770,8 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
   {editorial?.coverage_gap_note && coverageGapMatchesGap && (
   <div style="padding: 32px 0 0;">
     <div class="r">
-      <div style="padding: 28px 32px; background: var(--white); border-radius: var(--radius-md); border-left: 4px solid var(--teal); box-shadow: var(--shadow-card);">
-        <span style="font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 14px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--teal-accessible); display: block; margin-bottom: 12px;">What national coverage missed</span>
+      <div style="padding: 28px 32px; background: var(--white); border-radius: var(--radius-md); border-left: 4px solid var(--violet); box-shadow: var(--shadow-card);">
+        <span style="font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 14px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--violet-text); display: block; margin-bottom: 12px;">What national coverage missed</span>
         <p style="font-family: 'Lora', serif; font-size: clamp(17px, 1.9vw, 22px); line-height: 1.75; color: var(--ink); margin: 0;" set:html={escapeHtml(editorial.coverage_gap_note)} />
       </div>
     </div>
@@ -840,9 +823,19 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
           }
           const outletUrl = label ? lookupOutletUrl(label, gapUrlMap) : '';
           return (
-          <div class="framing-row cascade" data-tier={tierForColor || undefined} style={!tierForColor ? 'background: rgba(59,206,172,0.06);' : ''}>
-            {label && <div class="framing-label">{outletUrl ? <a href={outletUrl} target="_blank" rel="noopener" class="outlet-link">{label}</a> : label}</div>}
-            <div class="framing-content" style={`${!tierForColor ? 'border-left-color: var(--violet);' : ''}`}>
+          <div class="framing-row cascade" data-tier={tierForColor || undefined}>
+            {label && (() => {
+              const ctx = getSourceContext(label);
+              return (
+              <div class="framing-label">
+                <div>
+                  {outletUrl ? <a href={outletUrl} target="_blank" rel="noopener" class="outlet-link">{label}</a> : label}
+                  {ctx && <div class="outlet-context">{ctx}</div>}
+                </div>
+              </div>
+              );
+            })()}
+            <div class="framing-content">
               <span>{sentence.trim()}</span>
             </div>
           </div>
@@ -850,8 +843,8 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
         })}
       </div>
       {summaryRows.length > 0 && (
-      <div class="pattern-callout r" style="margin-top: 12px; padding: 20px 24px; background: rgba(27,42,75,0.08); border-radius: var(--radius-sm);">
-        <span style="font-family: 'Inter', sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-mid); display: block; margin-bottom: 8px;">The pattern</span>
+      <div class="pattern-box--gap r" style="border-radius: var(--radius-sm);">
+        <span style="font-family: 'Inter', sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--violet-text); display: block; margin-bottom: 8px;">The pattern</span>
         <p style="font-family: 'Lora', Georgia, serif; font-size: clamp(15px, 1.6vw, 18px); line-height: 1.65; color: var(--ink-body); margin: 0;">{summaryRows.join(' ')}</p>
       </div>
       )}
@@ -866,39 +859,15 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
   </div>
   )}
 
-  <!-- SOURCES -->
-  {gapStory.sourcesSample.length > 0 && (
-  <div style="padding: 24px 0 48px;">
-    <div class="coverage-label r">Sources reporting</div>
-    <div class="coverage-grid r cascade-parent">
-      {gapStory.sourcesSample.slice(0, 8).map(sourceName => {
-        const geo = getSourceGeo(sourceName);
-        return (
-        <div class="coverage-card cascade" data-tier={geo?.tier || ''} data-geo={geo?.geo || ''}>
-          <div class="coverage-name">{sourceName}</div>
-          {getSourceContext(sourceName) && (
-            <div class="coverage-type">{getSourceContext(sourceName)}</div>
-          )}
-        </div>
-        );
-      })}
-    </div>
-  </div>
-  )}
+
 </div>
 </article>
 )}
 
-<!-- Divider: violet wash gap → meanwhile cyan tint -->
-<div class="section-divider" aria-hidden="true" style="background: rgba(0,229,255,0.10);">
-  <svg viewBox="0 0 1440 32" preserveAspectRatio="none">
-    <polygon points="0,0 1440,0 1440,32 0,32" fill="rgba(0,229,255,0.10)"/>
-    <polygon points="0,0 1440,0 1440,8 0,32" fill="rgba(131,56,236,0.10)"/>
-  </svg>
-</div>
+<hr class="section-divider section-divider--meanwhile" aria-hidden="true" />
 
 <!-- ================================================================ -->
-<!-- MEANWHILE — TEAL WASH BACKGROUND                                 -->
+<!-- MEANWHILE — CYAN WASH BACKGROUND                                 -->
 <!-- ================================================================ -->
 {meanwhileStory && (
 <article id="meanwhile" class="section-world meanwhile-world" aria-label="Meanwhile" style="overflow: hidden; background: rgba(0,229,255,0.10);">
@@ -911,12 +880,12 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
       <svg class="cat-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="4" fill="currentColor"/><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5" opacity="0.3"/></svg>
       Meanwhile
     </span>
-    <h2 class="headline headline-meanwhile r d1" style="color: var(--cyan-dark);">{meanwhileStory.title}</h2>
+    <h2 class="headline headline-meanwhile r d1" style="color: var(--cyan-text);">{meanwhileStory.title}</h2>
 
     <!-- Big number + inline cooperation type sentence -->
     <div class="r d2" style="margin-top: 24px;">
       <div style="display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap;">
-        <div class="display" style="font-size: clamp(40px, 6vw, 64px); line-height: 1; color: var(--cyan-dark);">{cooperation?.total_cooperation_stories || meanwhileStory.articleCount}</div>
+        <div class="display" style="font-size: clamp(40px, 6vw, 64px); line-height: 1; color: var(--cyan-text);">{cooperation?.total_cooperation_stories || meanwhileStory.articleCount}</div>
         <div class="stat-annotation stat-annotation-green">
           stories of cooperation, {cooperation?.cooperation_rate || 25}% of everything we read
         </div>
@@ -925,7 +894,7 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
         <p style="font-family: 'Lora', serif; font-size: clamp(14px, 1.3vw, 16px); color: var(--ink-light); margin-top: 10px; line-height: 1.6;">
           {cooperation.by_type.map((t: any, i: number) => (
             <span>
-              <strong style="color: var(--green-accessible); font-weight: 700;">{t.count}</strong>{' '}{t.type}{i < cooperation.by_type.length - 1 ? ', ' : ''}
+              <strong style="color: var(--cyan-text); font-weight: 700;">{t.count}</strong>{' '}{t.type}{i < cooperation.by_type.length - 1 ? ', ' : ''}
             </span>
           ))}
         </p>
@@ -955,8 +924,8 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
   {meanwhileStory.watchFor && (
   <div style="padding: 24px 0 0;">
     <div class="r callout-wash callout-wash-chartreuse">
-      <div class="watch-for-card" style="border-left: 4px solid var(--chartreuse); padding: 14px 18px; background: var(--chartreuse-wash); border-radius: 0 8px 8px 0;">
-        <span style="font-family: 'Inter', sans-serif; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--chartreuse-text); font-weight: 600; display: block; margin-bottom: 8px;">What to watch for</span>
+      <div class="watch-for-card" style="border-left: 4px solid var(--moss); padding: 14px 18px; background: var(--moss-wash); border-radius: 0 8px 8px 0;">
+        <span style="font-family: 'Inter', sans-serif; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--moss-text); font-weight: 600; display: block; margin-bottom: 8px;">What to watch for</span>
         <p class="body" style="font-size: clamp(15px, 1.5vw, 17px); line-height: 1.8; color: var(--ink); margin: 0;" set:html={linkifyText(meanwhileStory.watchFor, meanwhileUrlMap)} />
       </div>
     </div>
@@ -969,7 +938,7 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
     <div class="r" style="font-family: 'Inter', sans-serif; font-size: 12px; color: var(--ink-light); line-height: 1.8;">
       Sources: {cooperation.highlights.slice(0, 6).map((h: any, i: number) => (
         <span>
-          <a href={h.url || '#'} target="_blank" rel="noopener" style="color: var(--green-accessible); text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1px;">{h.source}</a>{i < Math.min(cooperation.highlights.length, 6) - 1 ? ', ' : ''}
+          <a href={h.url || '#'} target="_blank" rel="noopener" style="color: var(--cyan-text); text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1px;">{h.source}</a>{i < Math.min(cooperation.highlights.length, 6) - 1 ? ', ' : ''}
         </span>
       ))}
     </div>
@@ -986,12 +955,6 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
 <!-- ================================================================ -->
 <!-- FOOTER — CREAM                                                   -->
 <!-- ================================================================ -->
-<div class="section-divider" aria-hidden="true" style="background: rgba(255,208,123,0.08);">
-  <svg viewBox="0 0 1440 40" preserveAspectRatio="none">
-    <polygon points="0,0 1440,0 1440,40 0,40" fill="rgba(255,208,123,0.08)"/>
-    <polygon points="0,0 1440,0 1440,10 0,40" fill="rgba(66,240,165,0.11)"/>
-  </svg>
-</div>
 <footer role="contentinfo" style="background: rgba(255,208,123,0.08); content-visibility: auto; contain-intrinsic-size: auto 600px;">
 <div class="wrap">
   <div class="section">
@@ -1004,12 +967,12 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
 
     <div class="r d3" style="margin-top: 20px; max-width: 500px;">
       <div style="height: 14px; border-radius: 7px; overflow: hidden; display: flex; gap: 2px;" role="progressbar" aria-valuenow={crossDomainPct} aria-valuemin="0" aria-valuemax="100" aria-label={`${crossDomainPct}% of stories crossed domain boundaries`}>
-        <div style={`width: ${crossDomainPct * 0.22}%; background: var(--red); border-radius: 7px 0 0 7px;`}></div>
-        <div style={`width: ${crossDomainPct * 0.20}%; background: var(--green);`}></div>
-        <div style={`width: ${crossDomainPct * 0.20}%; background: var(--color-bright-blue);`}></div>
-        <div style={`width: ${crossDomainPct * 0.20}%; background: var(--color-amber-gold);`}></div>
-        <div style={`width: ${crossDomainPct * 0.18}%; background: var(--color-dusty-purple);`}></div>
-        <div style={`flex: 1; background: var(--color-steel-blue); border-radius: 0 7px 7px 0;`}></div>
+        <div style={`width: ${crossDomainPct * 0.22}%; background: var(--tangerine); border-radius: 7px 0 0 7px;`}></div>
+        <div style={`width: ${crossDomainPct * 0.20}%; background: var(--cyan);`}></div>
+        <div style={`width: ${crossDomainPct * 0.20}%; background: var(--violet);`}></div>
+        <div style={`width: ${crossDomainPct * 0.20}%; background: var(--moss);`}></div>
+        <div style={`width: ${crossDomainPct * 0.18}%; background: var(--navy);`}></div>
+        <div style={`flex: 1; background: rgba(27,42,74,0.4); border-radius: 0 7px 7px 0;`}></div>
       </div>
       <div style="display: flex; justify-content: space-between; margin-top: 8px;">
         <span style="font-family: 'Inter', sans-serif; font-size: 12px; color: var(--ink-mid); font-weight: 500;">{crossDomain} cross-domain</span>

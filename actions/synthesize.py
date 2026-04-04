@@ -94,7 +94,7 @@ Return valid JSON with these fields:
   "headline": "A single sentence (max 15 words) that captures the day's most important structural insight. The headline must communicate what the structural force does to people, not name two surface topics. 'Three agencies wrote rules for the industries they regulate' communicates the pattern. 'Nuclear rules change as Iran tensions rise' does not.",
   "accessible_headline": "A short, plain-English headline (max 12 words, 8th grade reading level) that a friend would text you. Describe the structural pattern in plain terms a reader would recognize from their own life, not the policy categories it falls under. No jargon. No words like 'clusters', 'weaponizes', 'escalation', 'signals'. Example: 'The Pentagon is planning ground operations in Iran. Here's what 18 outlets saw.'",
   "subheadline": "One sentence expanding on the headline with a specific detail or connection",
-  "synthesis": "The full 4-6 paragraph editorial narrative",
+  "synthesis": "Maximum 3 paragraphs, maximum 200 words total. Every sentence must add new information or connection. Do not restate points made in the Thread, Gap, or Meanwhile sections. The close synthesis should ONLY contain observations that emerge from reading across all three sections — connections the individual sections could not make on their own.",
   "cooperation_highlight": "One specific cooperation story (2-3 sentences) drawn from the data, with source attribution",
   "coverage_gap_note": "One specific observation (1-2 sentences) about what national coverage missed that local/regional sources caught",
   "thread_to_watch": "One structural force or pattern (1-2 sentences) worth watching in coming days. MUST name a specific institution, regulation, deadline, or measurable threshold. If you cannot name something concrete, omit this field. Abstract observations like 'information asymmetry is operating as a structural barrier' waste the reader's time. The reader should be able to check a specific source or set a calendar reminder.",
@@ -327,13 +327,18 @@ def build_synthesis_input(analysis: dict) -> str:
     # Bridging stories
     bridges = analysis.get("what_connects", [])
     if bridges:
-        parts.append("BRIDGING STORIES (across political spectrum):")
+        parts.append("BRIDGING STORIES (across source tiers):")
         for b in bridges[:3]:
             parts.append(f"  - {b['headline']} (force: {b.get('structural_force', 'unknown')})")
-            parts.append(f"    Left: {', '.join(b.get('left_sources', []))}")
-            parts.append(f"    Right: {', '.join(b.get('right_sources', []))}")
-            parts.append(f"    International: {', '.join(b.get('international_sources', []))}")
-            parts.append(f"    Local/Regional: {', '.join(b.get('local_regional_sources', b.get('community_sources', [])))}")
+            tier_breakdown = b.get("tier_breakdown", {})
+            if tier_breakdown:
+                for tier, sources in tier_breakdown.items():
+                    parts.append(f"    {tier.title()} outlets: {', '.join(sources)}")
+            else:
+                # Legacy fallback for older data
+                for key in ("international_sources", "local_regional_sources"):
+                    if b.get(key):
+                        parts.append(f"    {key.replace('_', ' ').title()}: {', '.join(b[key])}")
         parts.append("")
 
     # Source spectrum
@@ -402,15 +407,15 @@ def build_story_synthesis_input(analysis: dict) -> str:
             for art in articles:
                 parts.append(f"  [{art.get('tier', '?')}] \"{art.get('title', '')}\" — {art.get('source', '')}")
 
-        # Matching bridging story (cross-spectrum detail)
+        # Matching bridging story (cross-tier detail)
         thread_force = thread_story.get("structural_force", "")
         for b in bridges:
             if b.get("structural_force") == thread_force or thread_force in b.get("headline", ""):
-                parts.append(f"\nCross-spectrum sources on this story:")
-                parts.append(f"  Left: {', '.join(b.get('left_sources', []))}")
-                parts.append(f"  Right: {', '.join(b.get('right_sources', []))}")
-                parts.append(f"  International: {', '.join(b.get('international_sources', []))}")
-                parts.append(f"  Local/Regional: {', '.join(b.get('local_regional_sources', b.get('community_sources', [])))}")
+                parts.append(f"\nCross-tier sources on this story:")
+                tier_breakdown = b.get("tier_breakdown", {})
+                if tier_breakdown:
+                    for tier, sources in tier_breakdown.items():
+                        parts.append(f"  {tier.title()} outlets: {', '.join(sources)}")
                 break
 
         parts.append("")

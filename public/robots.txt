@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.elisehasseltine.com/signal-board/sitemap-index.xml
+Sitemap: https://signal-board.org/sitemap-index.xml

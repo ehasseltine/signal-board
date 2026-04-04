@@ -37,10 +37,9 @@ export interface WhatConnects {
   structural_force: string;
   total_sources: number;
   spectrum_segments: number;
-  left_sources: string[];
-  right_sources: string[];
-  international_sources: string[];
-  local_regional_sources: string[];
+  tier_breakdown?: Record<string, string[]>;
+  international_sources?: string[];
+  local_regional_sources?: string[];
   article_count: number;
   domains: string[];
   sample_connection: string;
@@ -306,12 +305,12 @@ export function selectDailyThread(
   if (whatConnects && whatConnects.length > 0) {
     const sorted = [...whatConnects].sort((a, b) => (b.total_sources || 0) - (a.total_sources || 0));
     const pick = sorted[0];
-    const allSources = [
-      ...(pick.left_sources || []),
-      ...(pick.right_sources || []),
-      ...(pick.international_sources || []),
-      ...(pick.local_regional_sources || []),
-    ];
+    const allSources = pick.tier_breakdown
+      ? Object.values(pick.tier_breakdown).flat()
+      : [
+          ...(pick.international_sources || []),
+          ...(pick.local_regional_sources || []),
+        ];
     return {
       title: pick.headline,
       synthesis: pick.sample_connection || '',

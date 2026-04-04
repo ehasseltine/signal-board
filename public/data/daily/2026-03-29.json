@@ -1,0 +1,634 @@
+{
+  "date": "2026-03-29",
+  "generated": "2026-03-29T00:27:20Z",
+  "summary": {
+    "total_stories": 39,
+    "sources_reporting": 9,
+    "cross_domain": 22,
+    "cross_domain_pct": 56,
+    "ai_classified": 24,
+    "ai_classified_pct": 62,
+    "connection_insights": 18,
+    "top_domain": "Security",
+    "domain_distribution": {
+      "Security": 16,
+      "Geopolitics": 12,
+      "Legal": 6,
+      "Information": 6,
+      "Governance": 5,
+      "Economics": 4,
+      "Politics": 3,
+      "Climate": 2,
+      "AI": 1
+    }
+  },
+  "temporal_context": {
+    "has_yesterday": true,
+    "yesterday_date": "2026-03-28",
+    "yesterday_total": 2071,
+    "today_total": 39,
+    "volume_change_pct": -98,
+    "domain_shifts": [
+      {
+        "domain": "labor",
+        "label": "Labor",
+        "yesterday": 95,
+        "today": 0,
+        "change_pct": -100
+      },
+      {
+        "domain": "climate",
+        "label": "Climate",
+        "yesterday": 254,
+        "today": 2,
+        "change_pct": -99
+      },
+      {
+        "domain": "governance",
+        "label": "Governance",
+        "yesterday": 434,
+        "today": 5,
+        "change_pct": -99
+      },
+      {
+        "domain": "economics",
+        "label": "Economics",
+        "yesterday": 332,
+        "today": 4,
+        "change_pct": -99
+      },
+      {
+        "domain": "domestic_politics",
+        "label": "Politics",
+        "yesterday": 492,
+        "today": 3,
+        "change_pct": -99
+      },
+      {
+        "domain": "legal",
+        "label": "Legal",
+        "yesterday": 316,
+        "today": 6,
+        "change_pct": -98
+      },
+      {
+        "domain": "security",
+        "label": "Security",
+        "yesterday": 564,
+        "today": 16,
+        "change_pct": -97
+      },
+      {
+        "domain": "ai",
+        "label": "AI",
+        "yesterday": 39,
+        "today": 1,
+        "change_pct": -97
+      },
+      {
+        "domain": "information",
+        "label": "Information",
+        "yesterday": 205,
+        "today": 6,
+        "change_pct": -97
+      },
+      {
+        "domain": "geopolitics",
+        "label": "Geopolitics",
+        "yesterday": 314,
+        "today": 12,
+        "change_pct": -96
+      }
+    ],
+    "surges": [],
+    "drops": [
+      {
+        "domain": "labor",
+        "label": "Labor",
+        "yesterday": 95,
+        "today": 0,
+        "change_pct": -100
+      },
+      {
+        "domain": "climate",
+        "label": "Climate",
+        "yesterday": 254,
+        "today": 2,
+        "change_pct": -99
+      },
+      {
+        "domain": "governance",
+        "label": "Governance",
+        "yesterday": 434,
+        "today": 5,
+        "change_pct": -99
+      }
+    ],
+    "persisting_forces": [],
+    "new_forces": [],
+    "faded_forces": [
+      {
+        "force": "grassroots political mobilization",
+        "count": 25,
+        "domains": [
+          "domestic_politics",
+          "labor"
+        ]
+      },
+      {
+        "force": "supply chain disruption",
+        "count": 13,
+        "domains": [
+          "economics",
+          "security",
+          "geopolitics"
+        ]
+      },
+      {
+        "force": "mass mobilization against executive power",
+        "count": 13,
+        "domains": [
+          "domestic_politics",
+          "information"
+        ]
+      },
+      {
+        "force": "regulatory capture",
+        "count": 12,
+        "domains": [
+          "governance",
+          "legal",
+          "economics"
+        ]
+      },
+      {
+        "force": "proxy conflict escalation",
+        "count": 12,
+        "domains": [
+          "geopolitics",
+          "security",
+          "economics"
+        ]
+      }
+    ],
+    "yesterday_classified": 594,
+    "today_classified": 24
+  },
+  "top_stories": [],
+  "structural_forces": [],
+  "what_connects": [],
+  "local_regional_exclusive": [
+    {
+      "title": "Yailin La Más Viral da sus primeras declaraciones tras salir de prisión",
+      "source": "El Diario NY",
+      "url": "https://eldiariony.com/2026/03/28/yailin-la-mas-viral-da-sus-primeras-declaraciones-tras-salir-de-prision/",
+      "tier": "local-regional",
+      "text_preview": "La cantante dominicana habló sobre el impacto que le causó ese proceso judicial, aunque intentó evadir las cámaras",
+      "domains": [
+        "information",
+        "climate",
+        "security"
+      ],
+      "connection": "",
+      "force_tag": "",
+      "context": "Spanish-language daily serving Latino communities in New York metro area."
+    }
+  ],
+  "active_threads": [
+    {
+      "pair": [
+        "geopolitics",
+        "security"
+      ],
+      "label": "Geopolitics + Security",
+      "explanation": "Military tensions between nations",
+      "today_count": 9,
+      "trend": "falling",
+      "sample_articles": [
+        {
+          "title": "Russian authorities detain suspect over St. Petersburg cafe blast",
+          "source": "CNN",
+          "url": "https://edition.cnn.com/webview/europe/live-news/russia-ukraine-war-news-04-03-23/index.html"
+        },
+        {
+          "title": "US Marine unit and warship arrive in Middle East, CENTCOM says",
+          "source": "Washington Examiner",
+          "url": "https://www.washingtonexaminer.com/policy/defense/4508721/us-marine-unit-warship-iran/"
+        },
+        {
+          "title": "Impact of Iran war on Filipinos: What happens now?",
+          "source": "Rappler",
+          "url": "https://www.rappler.com/video/video-explainers/impact-of-us-israel-iran-war-on-filipinos/"
+        }
+      ],
+      "ai_connections": [
+        "Terrorist attack investigation in Russia reflects ongoing internal security threats amid broader geopolitical tensions.",
+        "Military deployment signals U.S. commitment to regional power balance in volatile zone where multiple state and non-state actors compete for influence."
+      ]
+    },
+    {
+      "pair": [
+        "information",
+        "security"
+      ],
+      "label": "Information + Security",
+      "explanation": "Information and Security",
+      "today_count": 4,
+      "trend": "falling",
+      "sample_articles": [
+        {
+          "title": "Hundreds of millions at risk from Chinese shopping app malware",
+          "source": "CNN",
+          "url": "https://cnn.it/40OSomK"
+        },
+        {
+          "title": "Writer Andrea Panaligan on ‘Regla Dust’ and centering feminism",
+          "source": "Rappler",
+          "url": "https://www.rappler.com/people/artists/writer-andrea-panaligan-regla-dust-feminism/"
+        },
+        {
+          "title": "Yailin La Más Viral da sus primeras declaraciones tras salir de prisión",
+          "source": "El Diario NY",
+          "url": "https://eldiariony.com/2026/03/28/yailin-la-mas-viral-da-sus-primeras-declaraciones-tras-salir-de-prision/"
+        }
+      ],
+      "ai_connections": [
+        "Mobile platform security breach exposes millions of users to financial and data theft risks.",
+        "State-sponsored disinformation operations target alliance institutions; information warfare blurs intelligence and diplomatic competition."
+      ]
+    },
+    {
+      "pair": [
+        "economics",
+        "security"
+      ],
+      "label": "Economics + Security",
+      "explanation": "Military spending and conflict affecting markets",
+      "today_count": 2,
+      "trend": "falling",
+      "sample_articles": [
+        {
+          "title": "Adani Defence delivers first batch of 2,000 LMGs to Army ahead of schedule",
+          "source": "Times of India",
+          "url": "https://timesofindia.indiatimes.com/defence/news/adani-defence-delivers-first-batch-of-2000-lmgs-to-army-ahead-of-schedule/articleshow/129874252.cms"
+        },
+        {
+          "title": "Houthis enter war as Iran strikes disrupt shipping",
+          "source": "Taipei Times",
+          "url": "https://www.taipeitimes.com/News/front/archives/2026/03/29/2003854648"
+        }
+      ],
+      "ai_connections": [
+        "Private defense contractor accelerates weapons manufacturing to meet military procurement timelines, integrating commercial efficiency into national security supply.",
+        "Non-state actor entry into regional conflict disrupts maritime commerce; military escalation creates economic externalities."
+      ]
+    },
+    {
+      "pair": [
+        "climate",
+        "security"
+      ],
+      "label": "Climate + Security",
+      "explanation": "Environmental change creating security challenges",
+      "today_count": 2,
+      "trend": "falling",
+      "sample_articles": [
+        {
+          "title": "Yailin La Más Viral da sus primeras declaraciones tras salir de prisión",
+          "source": "El Diario NY",
+          "url": "https://eldiariony.com/2026/03/28/yailin-la-mas-viral-da-sus-primeras-declaraciones-tras-salir-de-prision/"
+        },
+        {
+          "title": "Bélgica exhibe las carencias de Estados Unidos con goleada 5-2 en Atlanta",
+          "source": "El Diario NY",
+          "url": "https://eldiariony.com/2026/03/28/belgica-exhibe-las-carencias-de-estados-unidos-con-goleada-5-2-en-atlanta/"
+        }
+      ],
+      "ai_connections": []
+    },
+    {
+      "pair": [
+        "geopolitics",
+        "information"
+      ],
+      "label": "Geopolitics + Information",
+      "explanation": "Geopolitics and Information",
+      "today_count": 2,
+      "trend": "new",
+      "sample_articles": [
+        {
+          "title": "China used fake profiles to spy on NATO, EU: source",
+          "source": "Taipei Times",
+          "url": "https://www.taipeitimes.com/News/front/archives/2026/03/29/2003854647"
+        },
+        {
+          "title": "Disinformation targets Taiwan LNG supply",
+          "source": "Taipei Times",
+          "url": "https://www.taipeitimes.com/News/taiwan/archives/2026/03/29/2003854659"
+        }
+      ],
+      "ai_connections": [
+        "State-sponsored disinformation operations target alliance institutions; information warfare blurs intelligence and diplomatic competition.",
+        "Coordinated disinformation attacks target critical infrastructure to destabilize adversary's economy and security."
+      ]
+    },
+    {
+      "pair": [
+        "domestic_politics",
+        "legal"
+      ],
+      "label": "Politics + Legal",
+      "explanation": "Political disputes reaching the courts",
+      "today_count": 1,
+      "trend": "falling",
+      "sample_articles": [
+        {
+          "title": "Trump pleads not guilty to 34 felony counts",
+          "source": "CNN",
+          "url": "https://edition.cnn.com/webview/politics/live-news/trump-indictment-stormy-daniels-news-04-03-23/index.html"
+        }
+      ],
+      "ai_connections": [
+        "Criminal indictment of political candidate raises questions about whether legal processes can function independently during election cycles."
+      ]
+    },
+    {
+      "pair": [
+        "economics",
+        "governance"
+      ],
+      "label": "Economics + Governance",
+      "explanation": "Tax policy, trade agreements, and government spending",
+      "today_count": 1,
+      "trend": "falling",
+      "sample_articles": [
+        {
+          "title": "Kyoto is eyeing taller buildings. Critics warn it will look like ‘every other ci",
+          "source": "South China Morning Post",
+          "url": "https://www.scmp.com/week-asia/lifestyle-culture/article/3348197/kyoto-eyeing-taller-buildings-critics-warn-it-will-look-every-other-city-japan?utm_source=rss_feed"
+        }
+      ],
+      "ai_connections": [
+        "Local zoning policy change directly affects tourism revenue and urban development investment in historic city."
+      ]
+    },
+    {
+      "pair": [
+        "climate",
+        "information"
+      ],
+      "label": "Climate + Information",
+      "explanation": "Climate and Information",
+      "today_count": 1,
+      "trend": "new",
+      "sample_articles": [
+        {
+          "title": "Yailin La Más Viral da sus primeras declaraciones tras salir de prisión",
+          "source": "El Diario NY",
+          "url": "https://eldiariony.com/2026/03/28/yailin-la-mas-viral-da-sus-primeras-declaraciones-tras-salir-de-prision/"
+        }
+      ],
+      "ai_connections": []
+    },
+    {
+      "pair": [
+        "climate",
+        "legal"
+      ],
+      "label": "Climate + Legal",
+      "explanation": "Environmental lawsuits and climate litigation",
+      "today_count": 1,
+      "trend": "new",
+      "sample_articles": [
+        {
+          "title": "Bélgica exhibe las carencias de Estados Unidos con goleada 5-2 en Atlanta",
+          "source": "El Diario NY",
+          "url": "https://eldiariony.com/2026/03/28/belgica-exhibe-las-carencias-de-estados-unidos-con-goleada-5-2-en-atlanta/"
+        }
+      ],
+      "ai_connections": []
+    },
+    {
+      "pair": [
+        "legal",
+        "security"
+      ],
+      "label": "Legal + Security",
+      "explanation": "Legal and Security",
+      "today_count": 1,
+      "trend": "falling",
+      "sample_articles": [
+        {
+          "title": "Bélgica exhibe las carencias de Estados Unidos con goleada 5-2 en Atlanta",
+          "source": "El Diario NY",
+          "url": "https://eldiariony.com/2026/03/28/belgica-exhibe-las-carencias-de-estados-unidos-con-goleada-5-2-en-atlanta/"
+        }
+      ],
+      "ai_connections": []
+    },
+    {
+      "pair": [
+        "geopolitics",
+        "legal"
+      ],
+      "label": "Geopolitics + Legal",
+      "explanation": "International law, treaties, and war crimes",
+      "today_count": 1,
+      "trend": "new",
+      "sample_articles": [
+        {
+          "title": "Taiwan defines key industries: sources",
+          "source": "Taipei Times",
+          "url": "https://www.taipeitimes.com/News/front/archives/2026/03/29/2003854644"
+        }
+      ],
+      "ai_connections": []
+    },
+    {
+      "pair": [
+        "economics",
+        "geopolitics"
+      ],
+      "label": "Economics + Geopolitics",
+      "explanation": "Trade, sanctions, and global economic competition",
+      "today_count": 1,
+      "trend": "new",
+      "sample_articles": [
+        {
+          "title": "Houthis enter war as Iran strikes disrupt shipping",
+          "source": "Taipei Times",
+          "url": "https://www.taipeitimes.com/News/front/archives/2026/03/29/2003854648"
+        }
+      ],
+      "ai_connections": [
+        "Non-state actor entry into regional conflict disrupts maritime commerce; military escalation creates economic externalities."
+      ]
+    },
+    {
+      "pair": [
+        "governance",
+        "legal"
+      ],
+      "label": "Governance + Legal",
+      "explanation": "Government actions challenged or upheld in courts",
+      "today_count": 1,
+      "trend": "falling",
+      "sample_articles": [
+        {
+          "title": "Former Nepalese prime minister Oli charged over deaths",
+          "source": "Taipei Times",
+          "url": "https://www.taipeitimes.com/News/front/archives/2026/03/29/2003854649"
+        }
+      ],
+      "ai_connections": [
+        "Criminal charges against former prime minister test whether judicial systems can hold political leaders accountable."
+      ]
+    },
+    {
+      "pair": [
+        "governance",
+        "security"
+      ],
+      "label": "Governance + Security",
+      "explanation": "Defense policy and military strategy",
+      "today_count": 1,
+      "trend": "falling",
+      "sample_articles": [
+        {
+          "title": "Cabinet defense budget good for regional security contribution: Greene",
+          "source": "Taipei Times",
+          "url": "https://www.taipeitimes.com/News/taiwan/archives/2026/03/29/2003854656"
+        }
+      ],
+      "ai_connections": [
+        "Defense spending allocation reflects government policy prioritizing military capability for regional stability."
+      ]
+    },
+    {
+      "pair": [
+        "information",
+        "legal"
+      ],
+      "label": "Information + Legal",
+      "explanation": "Free speech, media law, and platform regulation",
+      "today_count": 1,
+      "trend": "new",
+      "sample_articles": [
+        {
+          "title": "Court convicts pair over sale of data of Chinese",
+          "source": "Taipei Times",
+          "url": "https://www.taipeitimes.com/News/taiwan/archives/2026/03/29/2003854665"
+        }
+      ],
+      "ai_connections": [
+        "Data sale prosecution enforces privacy law against unauthorized collection and monetization of personal information."
+      ]
+    }
+  ],
+  "source_spectrum": {
+    "international": 30,
+    "national": 6,
+    "local-regional": 2,
+    "government": 1
+  },
+  "questions": [
+    {
+      "question": "What is the current state of international military tensions?",
+      "article_count": 9,
+      "domains": [
+        "Geopolitics",
+        "Security"
+      ],
+      "sources_by_tier": {
+        "national": [
+          {
+            "source": "CNN",
+            "title": "Russian authorities detain suspect over St. Petersburg cafe blast",
+            "url": "https://edition.cnn.com/webview/europe/live-news/russia-ukraine-war-news-04-03-23/index.html",
+            "context": "Owned by Warner Bros. Discovery. Major cable news network. Generally regarded as centrist to center-left.",
+            "connection": "Terrorist attack investigation in Russia reflects ongoing internal security threats amid broader geopolitical tensions."
+          },
+          {
+            "source": "Washington Examiner",
+            "title": "US Marine unit and warship arrive in Middle East, CENTCOM says",
+            "url": "https://www.washingtonexaminer.com/policy/defense/4508721/us-marine-unit-warship-iran/",
+            "context": "",
+            "connection": "Military deployment signals U.S. commitment to regional power balance in volatile zone where multiple state and non-state actors compete for influence."
+          }
+        ],
+        "international": [
+          {
+            "source": "Rappler",
+            "title": "Impact of Iran war on Filipinos: What happens now?",
+            "url": "https://www.rappler.com/video/video-explainers/impact-of-us-israel-iran-war-on-filipinos/",
+            "context": "",
+            "connection": "Regional conflict between Iran and Israel creates spillover economic and security consequences for Asian nations dependent on Mideast stability."
+          },
+          {
+            "source": "Taipei Times",
+            "title": "EU urges closer cooperation with Taiwan, partners",
+            "url": "https://www.taipeitimes.com/News/front/archives/2026/03/29/2003854645",
+            "context": "",
+            "connection": "EU seeks closer Taiwan ties to strengthen democratic partnerships and counter regional security threats."
+          }
+        ]
+      },
+      "ai_insights": [
+        "Terrorist attack investigation in Russia reflects ongoing internal security threats amid broader geopolitical tensions.",
+        "Military deployment signals U.S. commitment to regional power balance in volatile zone where multiple state and non-state actors compete for influence.",
+        "Regional conflict between Iran and Israel creates spillover economic and security consequences for Asian nations dependent on Mideast stability."
+      ]
+    },
+    {
+      "question": "How is the conflict affecting prices and the economy?",
+      "article_count": 2,
+      "domains": [
+        "Economics",
+        "Security"
+      ],
+      "sources_by_tier": {
+        "international": [
+          {
+            "source": "Times of India",
+            "title": "Adani Defence delivers first batch of 2,000 LMGs to Army ahead of schedule",
+            "url": "https://timesofindia.indiatimes.com/defence/news/adani-defence-delivers-first-batch-of-2000-lmgs-to-army-ahead-of-schedule/articleshow/129874252.cms",
+            "context": "",
+            "connection": "Private defense contractor accelerates weapons manufacturing to meet military procurement timelines, integrating commercial efficiency into national security supply."
+          },
+          {
+            "source": "Taipei Times",
+            "title": "Houthis enter war as Iran strikes disrupt shipping",
+            "url": "https://www.taipeitimes.com/News/front/archives/2026/03/29/2003854648",
+            "context": "",
+            "connection": "Non-state actor entry into regional conflict disrupts maritime commerce; military escalation creates economic externalities."
+          }
+        ]
+      },
+      "ai_insights": [
+        "Private defense contractor accelerates weapons manufacturing to meet military procurement timelines, integrating commercial efficiency into national security supply.",
+        "Non-state actor entry into regional conflict disrupts maritime commerce; military escalation creates economic externalities."
+      ]
+    },
+    {
+      "question": "How is environmental change creating security risks?",
+      "article_count": 2,
+      "domains": [
+        "Climate",
+        "Security"
+      ],
+      "sources_by_tier": {
+        "local-regional": [
+          {
+            "source": "El Diario NY",
+            "title": "Yailin La Más Viral da sus primeras declaraciones tras salir de prisión",
+            "url": "https://eldiariony.com/2026/03/28/yailin-la-mas-viral-da-sus-primeras-declaraciones-tras-salir-de-prision/",
+            "context": "Spanish-language daily serving Latino communities in New York metro area.",
+            "connection": ""
+          }
+        ]
+      },
+      "ai_insights": []
+    }
+  ],
+  "narrative_divergence": []
+}

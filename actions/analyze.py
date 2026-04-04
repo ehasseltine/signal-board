@@ -685,58 +685,48 @@ def analyze_top_stories(articles):
     return stories
 
 
+def _load_source_tiers():
+    """Load source tier data from data/sources.json."""
+    if SOURCES_FILE.exists():
+        with open(SOURCES_FILE) as f:
+            sources = json.load(f)
+        return {name: entry.get("tier", "") for name, entry in sources.items()}
+    return {}
+
+_SOURCE_TIERS = _load_source_tiers()
+
+
 def analyze_what_connects(articles):
     """
-    Find stories where sources from across the political/demographic spectrum
+    Find stories where sources from across different tiers
     converge on the same structural force.
+    A story is "bridging" if it appears across 3+ different source tiers.
     """
-    LEFT = {'New York Times', 'Washington Post', 'NPR', 'CNN', 'The Atlantic',
-            'NBC News', 'ABC News', 'Vox', 'American Prospect', 'The Intercept',
-            'Prism', 'Mother Jones', 'Center for American Progress',
-            'Roosevelt Institute', 'Brookings'}
-    RIGHT = {'Fox News', 'National Review', 'Washington Examiner', 'Washington Times',
-             'Daily Wire', 'The Dispatch', 'Reason', 'RealClearPolitics',
-             'The Federalist', 'Newsmax', 'The Blaze', 'Breitbart',
-             'Heritage Foundation', 'American Enterprise Institute',
-             'Hoover Institution', 'Hudson Institute', 'Cato Institute'}
-    INTL = {'BBC World', 'The Guardian World', 'Al Jazeera', 'Deutsche Welle',
-            'France 24', 'South China Morning Post', 'The Hindu', 'NHK World',
-            'ABC Australia', 'Rappler', 'Meduza', 'Times of India', 'Straits Times',
-            'Haaretz', 'Dawn', 'The Korea Herald', 'Bangkok Post', 'Taipei Times',
-            'Channel News Asia', 'Daily Maverick', 'Jamaica Observer',
-            'The Japan Times', 'Anadolu Agency', 'Global Voices',
-            'The New Humanitarian', 'Scroll.in', 'Balkan Insight', 'Nikkei Asia',
-            'The East African', 'The Globe and Mail', 'Press Gazette'}
-
     clusters = cluster_by_structural_force(articles)
     bridging = []
 
     for cluster in clusters:
-        left = set(); right = set(); intl = set(); local_regional = set()
+        tier_buckets = defaultdict(set)
         for a in cluster:
             src = a["source"]
-            if src in LEFT: left.add(src)
-            elif src in RIGHT: right.add(src)
-            elif src in INTL: intl.add(src)
-            elif a.get("tier") in ("local-regional", "lived"): local_regional.add(src)
+            tier = _SOURCE_TIERS.get(src, a.get("tier", ""))
+            if tier:
+                tier_buckets[tier].add(src)
 
-        segments = sum(1 for g in [left, right, intl, local_regional] if g)
-        if segments >= 2 and len(left | right | intl | local_regional) >= 4:
-            # Get the structural force
+        tier_count = len(tier_buckets)
+        if tier_count >= 3 and sum(len(v) for v in tier_buckets.values()) >= 4:
             force_tags = Counter(normalize_force_tag(a.get("force_tag", ""))
                                for a in cluster if a.get("force_tag"))
             primary_force = force_tags.most_common(1)[0][0] if force_tags else ""
 
             lead = sorted(cluster, key=lambda a: (0 if a.get("connection") else 1))[0]
+            tier_breakdown = {tier: list(sources)[:4] for tier, sources in tier_buckets.items()}
             bridging.append({
                 "headline": lead["title"][:120],
                 "structural_force": primary_force,
                 "total_sources": len(set(a["source"] for a in cluster)),
-                "spectrum_segments": segments,
-                "left_sources": list(left)[:3],
-                "right_sources": list(right)[:3],
-                "international_sources": list(intl)[:3],
-                "local_regional_sources": list(local_regional)[:3],
+                "spectrum_segments": tier_count,
+                "tier_breakdown": tier_breakdown,
                 "article_count": len(cluster),
                 "domains": [d for d, _ in Counter(
                     d for a in cluster for d in a.get("domains", [])
