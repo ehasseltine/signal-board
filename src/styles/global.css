@@ -297,6 +297,50 @@
 
   /* ================ FRAMING EXHIBIT ================ */
   /* The analytical centerpiece — tier-colored perspective rows */
+
+  /* ── Tier legend — compact key above framing rows ── */
+  .tier-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 14px;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    color: var(--ink-mid);
+    letter-spacing: 0.02em;
+  }
+  .tier-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .tier-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .tier-dot--national     { background: var(--navy); }
+  .tier-dot--international { background: var(--violet); }
+  .tier-dot--local        { background: var(--tangerine); }
+  .tier-dot--specialist   { background: var(--cyan); }
+  .tier-dot--analysis     { background: var(--moss); }
+
+  /* ── Tier indicator dot inside framing labels ── */
+  .framing-tier-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-right: 6px;
+    margin-top: 3px;
+  }
+  .framing-tier-dot--national     { background: var(--navy); }
+  .framing-tier-dot--international { background: var(--violet); }
+  .framing-tier-dot--local        { background: var(--tangerine); }
+  .framing-tier-dot--specialist   { background: var(--cyan); }
+  .framing-tier-dot--analysis     { background: var(--moss); }
+
   .framing-row {
     display: flex;
     gap: 0;

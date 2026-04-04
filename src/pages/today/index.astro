@@ -529,7 +529,7 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
           <line x1="7" y1="14" x2="15" y2="14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" opacity="0.25"/>
         </svg>The Daily Thread
       </div>
-      <div class="card-stat">{threadStory.articleCount}</div>
+      <div class="card-stat" data-count-to={threadStory.articleCount}>{threadStory.articleCount}</div>
       <div class="stat-annotation stat-annotation-red">articles from {threadStory.sourceCount} sources</div>
       <div class="card-hook">{threadStory.title}</div>
       <span class="card-arrow">Read &darr;</span>
@@ -544,7 +544,7 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
           <rect x="13" y="1" width="6" height="16" rx="1" fill="currentColor" opacity="0.25"/>
         </svg>The Daily Gap
       </div>
-      <div class="card-stat card-stat-violet">{gapStory.sourceCount}</div>
+      <div class="card-stat card-stat-violet" data-count-to={gapStory.sourceCount}>{gapStory.sourceCount}</div>
       <div class="stat-annotation stat-annotation-violet">sources covering what others miss</div>
       <div class="card-hook">{gapStory.title}</div>
       <span class="card-arrow">Read &darr;</span>
@@ -558,7 +558,7 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
           <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5" opacity="0.3"/>
         </svg>Meanwhile
       </div>
-      <div class="card-stat card-stat-cyan">{cooperation?.total_cooperation_stories || '—'}</div>
+      <div class="card-stat card-stat-cyan" data-count-to={cooperation?.total_cooperation_stories || 0}>{cooperation?.total_cooperation_stories || '—'}</div>
       <div class="stat-annotation stat-annotation-cyan">{cooperation ? `stories of people showing up (${cooperation.cooperation_rate}%)` : 'who showed up today'}</div>
       <div class="card-hook">{cooperation ? (() => {
         const rate = cooperation.cooperation_rate;
@@ -643,6 +643,35 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
     return (
     <div style="padding: 32px 0 0;">
       <span class="section-label r" style="font-size: 13px; margin-bottom: 20px; display: block;">How outlets told it differently</span>
+      {(() => {
+        // Collect tiers present in these rows for the legend
+        const tiersPresent = new Set<string>();
+        outletRows.forEach((s: string) => {
+          const name = extractOutletFromSentence(s);
+          if (name) {
+            const t = getOutletTier(name);
+            const mapped = t === 'international' ? 'international' : (t === 'local-regional' || t === 'lived') ? 'local' : (t === 'specialist' || t === 'domain') ? 'specialist' : (t === 'analysis' || t === 'think-tank') ? 'analysis' : 'national';
+            tiersPresent.add(mapped);
+          }
+        });
+        const tierLegendItems: Array<{key: string, label: string}> = [
+          {key: 'national', label: 'National'},
+          {key: 'international', label: 'International'},
+          {key: 'local', label: 'Local & Regional'},
+          {key: 'specialist', label: 'Specialist'},
+          {key: 'analysis', label: 'Analysis'},
+        ].filter(t => tiersPresent.has(t.key));
+        return tierLegendItems.length >= 2 ? (
+          <div class="tier-legend r">
+            {tierLegendItems.map(t => (
+              <span class="tier-legend-item">
+                <span class={`tier-dot tier-dot--${t.key}`}></span>
+                {t.label}
+              </span>
+            ))}
+          </div>
+        ) : null;
+      })()}
       <div class="r cascade-parent" style="display: flex; flex-direction: column; gap: 0;">
         {outletRows.map((sentence: string, i: number) => {
           const outletName = extractOutletFromSentence(sentence);
@@ -670,6 +699,7 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
           return (
           <div class="framing-row cascade" data-tier={tierForColor || undefined}>
             <div class="framing-label">
+              {tierForColor && <span class={`framing-tier-dot framing-tier-dot--${tierForColor}`} aria-label={tierForColor}></span>}
               <div>
                 {outletUrl ? <a href={outletUrl} target="_blank" rel="noopener" class="outlet-link">{label}</a> : label}
                 {ctx && <div class="outlet-context">{ctx}</div>}
@@ -799,6 +829,34 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
     return (
     <div style="padding: 32px 0 0;">
       <span class="section-label r section-label-teal" style="font-size: 13px; margin-bottom: 20px; display: block;">How outlets framed it</span>
+      {(() => {
+        const tiersPresent = new Set<string>();
+        outletRows.forEach((s: string) => {
+          const name = extractOutletFromSentence(s);
+          if (name) {
+            const t = getOutletTier(name);
+            const mapped = t === 'international' ? 'international' : (t === 'local-regional' || t === 'lived') ? 'local' : (t === 'specialist' || t === 'domain') ? 'specialist' : (t === 'analysis' || t === 'think-tank') ? 'analysis' : 'national';
+            tiersPresent.add(mapped);
+          }
+        });
+        const tierLegendItems: Array<{key: string, label: string}> = [
+          {key: 'national', label: 'National'},
+          {key: 'international', label: 'International'},
+          {key: 'local', label: 'Local & Regional'},
+          {key: 'specialist', label: 'Specialist'},
+          {key: 'analysis', label: 'Analysis'},
+        ].filter(t => tiersPresent.has(t.key));
+        return tierLegendItems.length >= 2 ? (
+          <div class="tier-legend r">
+            {tierLegendItems.map(t => (
+              <span class="tier-legend-item">
+                <span class={`tier-dot tier-dot--${t.key}`}></span>
+                {t.label}
+              </span>
+            ))}
+          </div>
+        ) : null;
+      })()}
       <div class="r cascade-parent" style="display: flex; flex-direction: column; gap: 0;">
         {outletRows.map((sentence: string, i: number) => {
           const outletName = extractOutletFromSentence(sentence);
@@ -828,6 +886,7 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
               const ctx = getSourceContext(label);
               return (
               <div class="framing-label">
+                {tierForColor && <span class={`framing-tier-dot framing-tier-dot--${tierForColor}`} aria-label={tierForColor}></span>}
                 <div>
                   {outletUrl ? <a href={outletUrl} target="_blank" rel="noopener" class="outlet-link">{label}</a> : label}
                   {ctx && <div class="outlet-context">{ctx}</div>}
@@ -1015,5 +1074,50 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
   </div>
 </div>
 </footer>
+
+<script>
+  // Count-up animation for summary card stats
+  // Respects prefers-reduced-motion: shows final number immediately
+  (function () {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const counters = document.querySelectorAll('[data-count-to]');
+    if (!counters.length) return;
+
+    if (prefersReducedMotion) return; // Numbers already rendered server-side
+
+    // Set initial state: show 0
+    counters.forEach(el => {
+      const target = parseInt(el.getAttribute('data-count-to') || '0', 10);
+      if (target > 0) el.textContent = '0';
+    });
+
+    function animateCount(el: Element, target: number) {
+      const duration = 1200;
+      const start = performance.now();
+      function step(now: number) {
+        const elapsed = now - start;
+        const progress = Math.min(elapsed / duration, 1);
+        // Ease-out cubic for a satisfying deceleration
+        const eased = 1 - Math.pow(1 - progress, 3);
+        el.textContent = String(Math.round(eased * target));
+        if (progress < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const target = parseInt(el.getAttribute('data-count-to') || '0', 10);
+          if (target > 0) animateCount(el, target);
+          observer.unobserve(el);
+        }
+      });
+    }, { threshold: 0.3 });
+
+    counters.forEach(el => observer.observe(el));
+  })();
+</script>
 
 </BaseLayout>
