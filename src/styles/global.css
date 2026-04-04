@@ -31,6 +31,23 @@
     --teal-wash: #E4F7F1;
     --teal-soft: rgba(59,206,172,0.08);
 
+    /* ── NEW ACCENT PALETTE ── */
+    --magenta: #FF006E;
+    --magenta-accessible: #C80057; /* darkened for text on cream — ~5.5:1 */
+    --tangerine: #FF8300;
+    --tangerine-accessible: #B85E00; /* darkened for text on cream — ~5:1 */
+    --tangerine-wash: rgba(255,131,0,0.08);
+    --violet: #8338EC;
+    --violet-accessible: #6A2BBF;  /* darkened for text on light backgrounds — ~6:1 */
+    --violet-wash: rgba(131,56,236,0.10);
+    --cyan: #00E5FF;
+    --cyan-accessible: #00B8D4;    /* darkened for text on cream — ~3.5:1, use on dark bg */
+    --cyan-dark: #00838F;          /* for text on cream — ~6:1 */
+    --cyan-wash: rgba(0,229,255,0.10);
+    --chartreuse: #D7FF1A;
+    --chartreuse-wash: rgba(215,255,26,0.25);
+    --chartreuse-text: #4A5500;    /* dark olive for text on chartreuse bg — ~6:1 */
+
     /* ── DOMAIN COLOR IDENTITY ── per blueprint §2 */
     --domain-ai: #1B2A4B;        /* navy — depth, computation */
     --domain-labor: #D94032;     /* red — urgency, solidarity */
@@ -247,6 +264,9 @@
   }
   .section-label-green { color: var(--green-accessible); }
   .section-label-teal { color: var(--teal-accessible); }
+  .section-label-magenta { color: var(--magenta); }
+  .section-label-violet { color: var(--violet); }
+  .section-label-cyan { color: var(--cyan-dark); }
   .cat-icon { flex-shrink: 0; }
 
   .aside {
@@ -291,6 +311,9 @@
   .callout-wash-green::before {
     background: radial-gradient(ellipse at 20% 50%, rgba(14,173,105,0.08) 0%, transparent 70%);
   }
+  .callout-wash-chartreuse::before {
+    background: radial-gradient(ellipse at 40% 50%, rgba(215,255,26,0.12) 0%, transparent 70%);
+  }
 
   /* ================ FRAMING EXHIBIT ================ */
   /* The analytical centerpiece — tier-colored perspective rows */
@@ -331,7 +354,7 @@
   .framing-row[data-tier="national"] .framing-label,
   .framing-row[data-tier="National"] .framing-label { color: var(--red-accessible); }
   .framing-row[data-tier="national"] .framing-content,
-  .framing-row[data-tier="National"] .framing-content { border-left-color: var(--red); }
+  .framing-row[data-tier="National"] .framing-content { border-left-color: var(--tangerine); }
 
   .framing-row[data-tier="international"],
   .framing-row[data-tier="International"] {
@@ -408,14 +431,43 @@
     border-radius: 0 0 var(--radius-sm) var(--radius-sm);
   }
 
-  /* Gap section framing overrides */
+  /* Thread section framing overrides — tangerine accent */
+  .thread-world .framing-row .framing-content {
+    border-left-color: var(--tangerine);
+  }
+
+  /* Gap section framing overrides — violet accent */
+  .gap-world .framing-row .framing-content {
+    border-left-color: var(--violet);
+  }
+  .gap-world .framing-row[data-tier="national"] .framing-content,
+  .gap-world .framing-row[data-tier="National"] .framing-content {
+    border-left-color: var(--violet);
+  }
+  .gap-world .framing-row[data-tier="international"] .framing-content,
+  .gap-world .framing-row[data-tier="International"] .framing-content {
+    border-left-color: var(--violet);
+  }
+  .gap-world .framing-row[data-tier="specialist"] .framing-content,
+  .gap-world .framing-row[data-tier="Specialist"] .framing-content {
+    border-left-color: var(--violet);
+  }
   .gap-world .framing-row[data-tier="national"],
   .gap-world .framing-row[data-tier="National"] {
-    background: rgba(23,137,252,0.10);
+    background: rgba(131,56,236,0.08);
   }
   .gap-world .framing-row[data-tier="international"],
   .gap-world .framing-row[data-tier="International"] {
-    background: rgba(66,240,165,0.12);
+    background: rgba(131,56,236,0.06);
+  }
+  .gap-world .framing-row[data-tier="specialist"],
+  .gap-world .framing-row[data-tier="Specialist"] {
+    background: rgba(131,56,236,0.05);
+  }
+
+  /* Meanwhile section framing overrides — cyan accent */
+  .meanwhile-world .framing-row .framing-content {
+    border-left-color: var(--cyan-accessible);
   }
 
   /* ── Outlet hyperlinks — subtle, credibility-building ── */
@@ -428,8 +480,8 @@
     transition: text-decoration-color 0.2s var(--ease-smooth, ease), color 0.2s var(--ease-smooth, ease);
   }
   .outlet-link:hover {
-    text-decoration-color: var(--red);
-    color: var(--red-accessible, #A82A1E);
+    text-decoration-color: var(--magenta);
+    color: var(--magenta-accessible);
   }
   .outlet-link:focus-visible {
     outline: 2px solid var(--yellow);
@@ -530,20 +582,20 @@
   }
 
   /* Thread — cream bg, red accent bar */
-  .thread-world { background: linear-gradient(to bottom, var(--cream), rgba(248,117,117,0.02) 40%, var(--cream) 100%); }
-  .thread-world::before { background: var(--red); }
-  .thread-world .section-label { color: var(--red-accessible); }
+  .thread-world { background: linear-gradient(to bottom, var(--cream), rgba(255,131,0,0.03) 40%, var(--cream) 100%); }
+  .thread-world::before { background: var(--tangerine); }
+  .thread-world .section-label { color: var(--magenta); }
 
-  /* Gap — teal wash bg, teal accent bar (navy only for header strip) */
-  .gap-world { background: var(--teal-wash); position: relative; }
-  .gap-world::before { background: var(--teal); }
-  .gap-world .section-label { color: var(--teal-accessible); }
+  /* Gap — violet wash bg, violet accent bar (navy only for header strip) */
+  .gap-world { background: var(--violet-wash); position: relative; }
+  .gap-world::before { background: var(--violet); }
+  .gap-world .section-label { color: var(--violet); }
 
-  /* Meanwhile — teal wash bg, green accent bar */
-  .meanwhile-world { background: rgba(66,240,165,0.11); content-visibility: auto; contain-intrinsic-size: auto 800px; }
-  .meanwhile-world::before { background: var(--green); }
-  .meanwhile-world .section-label { color: var(--green-accessible); }
-  .meanwhile-world .section-label-green { color: var(--green-accessible); }
+  /* Meanwhile — cyan wash bg, cyan accent bar */
+  .meanwhile-world { background: var(--cyan-wash); content-visibility: auto; contain-intrinsic-size: auto 800px; }
+  .meanwhile-world::before { background: var(--cyan-accessible); }
+  .meanwhile-world .section-label { color: var(--cyan-dark); }
+  .meanwhile-world .section-label-cyan { color: var(--cyan-dark); }
 
   /* ================ NAVY SECTION — reusable ================ */
   .navy {
@@ -551,7 +603,7 @@
     color: var(--on-navy);
   }
   .navy .headline { color: var(--cream); }
-  .navy .section-label { color: var(--teal); }
+  .navy .section-label { color: var(--cyan); }
   .navy .body { color: var(--cream); }
   .navy .body a { color: var(--teal); }
   .navy .body a:hover { opacity: 0.7; }
@@ -651,13 +703,19 @@
     position: relative;
   }
   .summary-card:hover {
-    border-color: var(--red);
+    border-color: var(--tangerine);
     transform: translateY(-4px);
     box-shadow: var(--shadow-card-hover);
   }
-  .summary-card-teal { background: rgba(66,240,165,0.25); }
-  .summary-card-green { background: rgba(14,173,105,0.15); }
-  .summary-card-green:hover { border-color: var(--green); }
+  .summary-card-tangerine { background: rgba(255,131,0,0.10); }
+  .summary-card-violet { background: var(--violet-wash); }
+  .summary-card-cyan { background: var(--cyan-wash); }
+  .summary-card-violet:hover { border-color: var(--violet); }
+  .summary-card-cyan:hover { border-color: var(--cyan-accessible); }
+  /* Legacy compat */
+  .summary-card-teal { background: var(--violet-wash); }
+  .summary-card-green { background: var(--cyan-wash); }
+  .summary-card-green:hover { border-color: var(--cyan-accessible); }
 
   .card-label {
     font-family: 'Inter', sans-serif;
@@ -668,8 +726,10 @@
     color: var(--red-accessible);
     margin-bottom: 10px;
   }
-  .card-label-teal { color: var(--teal-accessible); }
-  .card-label-green { color: var(--green-accessible); }
+  .card-label-teal { color: var(--violet-accessible); }
+  .card-label-green { color: var(--cyan-dark); }
+  .card-label-violet { color: var(--violet-accessible); }
+  .card-label-cyan { color: var(--cyan-dark); }
 
   .card-stat {
     font-family: 'Outfit', sans-serif;
@@ -680,8 +740,10 @@
     margin-bottom: var(--space-sm);
     font-variant-numeric: tabular-nums;
   }
-  .card-stat-teal { color: var(--teal-accessible); }
-  .card-stat-green { color: var(--green-accessible); }
+  .card-stat-teal { color: var(--violet-accessible); }
+  .card-stat-green { color: var(--cyan-dark); }
+  .card-stat-violet { color: var(--violet-accessible); }
+  .card-stat-cyan { color: var(--cyan-dark); }
 
   /* Caveat annotation — editorial context beside big numbers */
   .stat-annotation {
@@ -691,9 +753,11 @@
     color: var(--ink-mid);
     margin-top: 4px;
   }
-  .stat-annotation-red { color: var(--red-accessible); }
-  .stat-annotation-teal { color: var(--teal-accessible); }
-  .stat-annotation-green { color: var(--green-accessible); }
+  .stat-annotation-red { color: var(--tangerine-accessible); }
+  .stat-annotation-teal { color: var(--violet-accessible); }
+  .stat-annotation-green { color: var(--cyan-dark); }
+  .stat-annotation-violet { color: var(--violet-accessible); }
+  .stat-annotation-cyan { color: var(--cyan-dark); }
 
   .card-meta {
     font-family: 'Inter', sans-serif;
@@ -727,12 +791,15 @@
     position: absolute;
     top: 0; left: 0; right: 0;
     height: 3px;
-    background: var(--red);
+    background: var(--tangerine);
     border-radius: var(--radius-md) var(--radius-md) 0 0;
   }
-  .summary-card-teal:hover { border-color: var(--teal); }
-  .summary-card-teal::before { background: var(--teal); }
-  .summary-card-green::before { background: var(--green); }
+  .summary-card-teal:hover { border-color: var(--violet); }
+  .summary-card-teal::before { background: var(--violet); }
+  .summary-card-green::before { background: var(--cyan-accessible); }
+  .summary-card-tangerine::before { background: var(--tangerine); }
+  .summary-card-violet::before { background: var(--violet); }
+  .summary-card-cyan::before { background: var(--cyan-accessible); }
 
   /* ================ DATA VIZ: SOURCE COVERAGE ================ */
   .coverage-grid {

@@ -247,7 +247,7 @@ function linkifyText(text: string, sectionMap: Map<string, string>): string {
 <div id="meanwhile" style="background: #EFF5EE;">
 <div class="wrap">
   <div class="section">
-    <span class="section-label section-label-green r">Meanwhile</span>
+    <span class="section-label section-label-cyan r">Meanwhile</span>
     <h2 class="headline r d1">{meanwhileStory.title}</h2>
     {meanwhileStory.synthesis && (
       <p class="body r d2" style="margin-top: 28px; font-size: clamp(17px, 1.8vw, 20px); line-height: 1.8;" set:html={linkifyText(meanwhileStory.synthesis, meanwhileUrlMap)} />
