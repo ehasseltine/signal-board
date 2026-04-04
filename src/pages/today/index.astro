@@ -572,9 +572,9 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
 </div>
 
 <!-- ================================================================ -->
-<!-- THE DAILY THREAD — CREAM BACKGROUND                              -->
+<!-- THE DAILY THREAD — PEACH ROOM                                    -->
 <!-- ================================================================ -->
-<hr class="section-divider section-divider--thread" aria-hidden="true" />
+<div class="section-diagonal section-diagonal--cream-to-thread" aria-hidden="true"></div>
 {threadStory && (
 <article id="thread" class="section-world thread-world" aria-label="The Daily Thread" style="overflow: hidden;">
 <div class="wrap" style="position: relative; z-index: 1;">
@@ -600,8 +600,8 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
         <div class="stat-annotation stat-annotation-red" style="margin-top: 6px;">articles across {threadStory.sourceCount} sources</div>
       </div>
       <div style="flex: 1; min-width: min(200px, 100%);">
-        <div style="height: 16px; background: rgba(27,42,74,0.08); border-radius: 8px; overflow: hidden;">
-          <div style={`height: 100%; width: ${Math.min(100, Math.round((threadStory.articleCount / Math.max(totalStories, 1)) * 100))}%; background: var(--yellow); border-radius: 8px; transition: width 0.6s var(--ease-out-expo);`}></div>
+        <div class="coverage-meter">
+          <div class="coverage-meter-fill" style={`width: ${Math.min(100, Math.round((threadStory.articleCount / Math.max(totalStories, 1)) * 100))}%;`}></div>
         </div>
         <div style="display: flex; justify-content: space-between; margin-top: 8px;">
           <span style="font-family: 'Inter', sans-serif; font-size: 13px; color: var(--ink-mid); font-weight: 600;">
@@ -624,14 +624,27 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
     </div>
   </div>
 
-  <!-- SYNTHESIS -->
-  {threadStory.synthesis && (
-  <div style="padding: 28px 0 0;">
-    <div class="r">
-      <p class="body r d2" style="font-size: clamp(17px, 1.8vw, 20px); line-height: 1.8; margin-bottom: 0;" set:html={linkifyText(threadStory.synthesis, threadUrlMap)} />
+  <!-- SYNTHESIS — lead sentence callout + collapsible rest -->
+  {threadStory.synthesis && (() => {
+    const synthSentences = splitSentences(threadStory.synthesis);
+    const lead = synthSentences[0] || '';
+    const rest = synthSentences.slice(1).join(' ');
+    return (
+    <div style="padding: 28px 0 0;">
+      <div class="r">
+        <p class="synthesis-lead" set:html={linkifyText(lead, threadUrlMap)} />
+        {rest && (
+        <details class="synthesis-details">
+          <summary>Read the full analysis</summary>
+          <div class="synthesis-body">
+            <p class="body" style="font-size: clamp(17px, 1.8vw, 20px); line-height: 1.8; margin-bottom: 0;" set:html={linkifyText(rest, threadUrlMap)} />
+          </div>
+        </details>
+        )}
+      </div>
     </div>
-  </div>
-  )}
+    );
+  })()}
 
   <!-- CROSS-SPECTRUM — framing exhibit -->
   {threadStory.crossSpectrum && (() => {
@@ -760,10 +773,10 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
 </article>
 )}
 
-<hr class="section-divider section-divider--gap" aria-hidden="true" />
+<div class="section-diagonal section-diagonal--thread-to-gap" aria-hidden="true"></div>
 
 <!-- ================================================================ -->
-<!-- THE DAILY GAP — NAVY HEADER + VIOLET WASH BODY                   -->
+<!-- THE DAILY GAP — NAVY HEADER + LAVENDER ROOM                      -->
 <!-- ================================================================ -->
 {gapStory && (
 <!-- Gap header strip — navy (compact: just label + headline) -->
@@ -779,7 +792,8 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
 </div>
 </div>
 
-<!-- Gap body — violet wash background -->
+<div class="section-diagonal section-diagonal--gap-navy-to-body" aria-hidden="true"></div>
+<!-- Gap body — lavender room -->
 <article id="gap" class="section-world gap-world" aria-label="The Daily Gap" style="margin-top: -1px;">
 <div class="wrap">
 
@@ -808,14 +822,27 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
   </div>
   )}
 
-  <!-- SYNTHESIS -->
-  {gapStory.synthesis && (
-  <div style="padding: 28px 0 0;">
-    <div class="r">
-      <p class="body" style="font-size: clamp(16px, 1.7vw, 19px); line-height: 1.8; margin-bottom: 0;" set:html={linkifyText(gapStory.synthesis, gapUrlMap)} />
+  <!-- SYNTHESIS — lead sentence callout + collapsible rest -->
+  {gapStory.synthesis && (() => {
+    const synthSentences = splitSentences(gapStory.synthesis);
+    const lead = synthSentences[0] || '';
+    const rest = synthSentences.slice(1).join(' ');
+    return (
+    <div style="padding: 28px 0 0;">
+      <div class="r">
+        <p class="synthesis-lead" set:html={linkifyText(lead, gapUrlMap)} />
+        {rest && (
+        <details class="synthesis-details">
+          <summary>Read the full analysis</summary>
+          <div class="synthesis-body">
+            <p class="body" style="font-size: clamp(16px, 1.7vw, 19px); line-height: 1.8; margin-bottom: 0;" set:html={linkifyText(rest, gapUrlMap)} />
+          </div>
+        </details>
+        )}
+      </div>
     </div>
-  </div>
-  )}
+    );
+  })()}
 
   <!-- FRAMING INSIGHTS — framing exhibit for Gap (prefer crossSpectrum from Pass 2) -->
   {(gapStory.crossSpectrum || (gapStory.insights && gapStory.insights.length > 0)) && (() => {
@@ -923,16 +950,13 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
 </article>
 )}
 
-<hr class="section-divider section-divider--meanwhile" aria-hidden="true" />
+<div class="section-diagonal section-diagonal--gap-to-meanwhile" aria-hidden="true"></div>
 
 <!-- ================================================================ -->
-<!-- MEANWHILE — CYAN WASH BACKGROUND                                 -->
+<!-- MEANWHILE — MINT ROOM                                            -->
 <!-- ================================================================ -->
 {meanwhileStory && (
 <article id="meanwhile" class="section-world meanwhile-world" aria-label="Meanwhile" style="overflow: hidden;">
-<svg aria-hidden="true" style="position: absolute; top: -20px; left: -5%; width: 110%; height: 200px; pointer-events: none; z-index: 0;">
-  <rect x="-50" y="30" width="120%" height="60" fill="#F87575" opacity="0.05" transform="rotate(-3)"/>
-</svg>
 <div class="wrap" style="position: relative; z-index: 1;">
   <div style="padding: 48px 0 0;">
     <span class="section-label section-label-cyan r">
@@ -941,31 +965,61 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
     </span>
     <h2 class="headline headline-meanwhile r d1">{meanwhileStory.title}</h2>
 
-    <!-- Big number + inline cooperation type sentence -->
+    <!-- Big number + cooperation type cards -->
     <div class="r d2" style="margin-top: 24px;">
       <div style="display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap;">
-        <div class="display" style="font-size: clamp(40px, 6vw, 64px); line-height: 1; color: var(--cyan);">{cooperation?.total_cooperation_stories || meanwhileStory.articleCount}</div>
-        <div class="stat-annotation stat-annotation-green">
+        <div class="display" style="font-size: clamp(48px, 8vw, 80px); line-height: 1; color: var(--cyan);">{cooperation?.total_cooperation_stories || meanwhileStory.articleCount}</div>
+        <div class="stat-annotation stat-annotation-green" style="font-size: clamp(18px, 2vw, 24px);">
           stories of cooperation, {cooperation?.cooperation_rate || 25}% of everything we read
         </div>
       </div>
       {cooperation && cooperation.by_type && cooperation.by_type.length > 0 && (
-        <p style="font-family: 'Lora', serif; font-size: clamp(14px, 1.3vw, 16px); color: var(--ink-light); margin-top: 10px; line-height: 1.6;">
-          {cooperation.by_type.map((t: any, i: number) => (
-            <span>
-              <strong style="color: var(--cyan-text); font-weight: 700;">{t.count}</strong>{' '}{t.type}{i < cooperation.by_type.length - 1 ? ', ' : ''}
-            </span>
+        <div class="coop-grid">
+          {cooperation.by_type.map((t: any) => (
+            <div class="coop-type-card">
+              <div class="coop-type-count">{t.count}</div>
+              <div class="coop-type-label">{t.type}</div>
+            </div>
           ))}
-        </p>
+        </div>
       )}
     </div>
   </div>
 
-  <!-- SYNTHESIS — hero content, larger type -->
-  {meanwhileStory.synthesis && (
-  <div style="padding: 32px 0 0;">
-    <div class="r">
-      <p class="body r d2" style="font-size: clamp(19px, 2.2vw, 24px); line-height: 1.75; margin-bottom: 0; color: var(--ink);" set:html={linkifyText(meanwhileStory.synthesis, meanwhileUrlMap)} />
+  <!-- SYNTHESIS — lead sentence callout + collapsible rest -->
+  {meanwhileStory.synthesis && (() => {
+    const synthSentences = splitSentences(meanwhileStory.synthesis);
+    const lead = synthSentences[0] || '';
+    const rest = synthSentences.slice(1).join(' ');
+    return (
+    <div style="padding: 32px 0 0;">
+      <div class="r">
+        <p class="synthesis-lead" set:html={linkifyText(lead, meanwhileUrlMap)} />
+        {rest && (
+        <details class="synthesis-details">
+          <summary>Read the full analysis</summary>
+          <div class="synthesis-body">
+            <p class="body" style="font-size: clamp(17px, 1.8vw, 20px); line-height: 1.75; margin-bottom: 0; color: var(--ink);" set:html={linkifyText(rest, meanwhileUrlMap)} />
+          </div>
+        </details>
+        )}
+      </div>
+    </div>
+    );
+  })()}
+
+  <!-- COOPERATION HIGHLIGHTS — visual cards for specific stories -->
+  {cooperation && cooperation.highlights && cooperation.highlights.length > 0 && (
+  <div style="padding: 24px 0 0;">
+    <span class="section-label section-label-cyan r" style="font-size: 13px; margin-bottom: 8px; display: block;">Stories of people showing up</span>
+    <div class="coop-highlights">
+      {cooperation.highlights.slice(0, 6).map((h: any) => (
+        <a href={h.url || '#'} target="_blank" rel="noopener" class="coop-highlight-card" style="text-decoration: none; color: inherit;">
+          <div class="coop-highlight-source">{h.source}</div>
+          <div class="coop-highlight-title">{h.title}</div>
+          {h.cooperation_type && <span class="coop-highlight-type">{h.cooperation_type}</span>}
+        </a>
+      ))}
     </div>
   </div>
   )}
@@ -1011,10 +1065,12 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
 
 </main>
 
+<div class="section-diagonal section-diagonal--meanwhile-to-footer" aria-hidden="true"></div>
+
 <!-- ================================================================ -->
 <!-- FOOTER — CREAM                                                   -->
 <!-- ================================================================ -->
-<footer role="contentinfo" style="background: rgba(255,208,123,0.08); content-visibility: auto; contain-intrinsic-size: auto 600px;">
+<footer role="contentinfo" style="background: var(--cream); content-visibility: auto; contain-intrinsic-size: auto 600px;">
 <div class="wrap">
   <div class="section">
     <h2 class="section-label r" style="margin: 0;">Today's Sources</h2>
