@@ -1,104 +1,104 @@
 {
   "date": "2026-04-04",
-  "generated": "2026-04-04T00:19:57Z",
+  "generated": "2026-04-04T07:50:00Z",
   "summary": {
-    "total_stories": 859,
-    "sources_reporting": 154,
-    "cross_domain": 582,
-    "cross_domain_pct": 68,
-    "ai_classified": 2,
-    "ai_classified_pct": 0,
-    "connection_insights": 2,
+    "total_stories": 1193,
+    "sources_reporting": 160,
+    "cross_domain": 798,
+    "cross_domain_pct": 67,
+    "ai_classified": 243,
+    "ai_classified_pct": 20,
+    "connection_insights": 177,
     "top_domain": "Security",
     "domain_distribution": {
-      "Security": 382,
-      "Legal": 301,
-      "Climate": 289,
-      "Information": 271,
-      "Governance": 261,
-      "Politics": 249,
-      "Economics": 197,
-      "Geopolitics": 92,
-      "Labor": 90,
-      "AI": 31
+      "Security": 497,
+      "Governance": 349,
+      "Legal": 349,
+      "Climate": 330,
+      "Politics": 306,
+      "Information": 305,
+      "Economics": 254,
+      "Geopolitics": 196,
+      "Labor": 102,
+      "AI": 43
     }
   },
   "temporal_context": {
     "has_yesterday": true,
     "yesterday_date": "2026-04-03",
-    "yesterday_total": 1288,
-    "today_total": 859,
-    "volume_change_pct": -33,
+    "yesterday_total": 1373,
+    "today_total": 1193,
+    "volume_change_pct": -13,
     "domain_shifts": [
       {
         "domain": "geopolitics",
         "label": "Geopolitics",
-        "yesterday": 264,
-        "today": 92,
-        "change_pct": -65
+        "yesterday": 275,
+        "today": 196,
+        "change_pct": -29
       },
       {
         "domain": "economics",
         "label": "Economics",
-        "yesterday": 323,
-        "today": 197,
-        "change_pct": -39
+        "yesterday": 335,
+        "today": 254,
+        "change_pct": -24
       },
       {
         "domain": "governance",
         "label": "Governance",
-        "yesterday": 421,
-        "today": 261,
-        "change_pct": -38
-      },
-      {
-        "domain": "domestic_politics",
-        "label": "Politics",
-        "yesterday": 325,
-        "today": 249,
-        "change_pct": -23
-      },
-      {
-        "domain": "security",
-        "label": "Security",
-        "yesterday": 487,
-        "today": 382,
-        "change_pct": -22
-      },
-      {
-        "domain": "ai",
-        "label": "AI",
-        "yesterday": 39,
-        "today": 31,
+        "yesterday": 444,
+        "today": 349,
         "change_pct": -21
-      },
-      {
-        "domain": "legal",
-        "label": "Legal",
-        "yesterday": 364,
-        "today": 301,
-        "change_pct": -17
-      },
-      {
-        "domain": "labor",
-        "label": "Labor",
-        "yesterday": 107,
-        "today": 90,
-        "change_pct": -16
-      },
-      {
-        "domain": "climate",
-        "label": "Climate",
-        "yesterday": 317,
-        "today": 289,
-        "change_pct": -9
       },
       {
         "domain": "information",
         "label": "Information",
-        "yesterday": 263,
-        "today": 271,
-        "change_pct": 3
+        "yesterday": 272,
+        "today": 305,
+        "change_pct": 12
+      },
+      {
+        "domain": "domestic_politics",
+        "label": "Politics",
+        "yesterday": 336,
+        "today": 306,
+        "change_pct": -9
+      },
+      {
+        "domain": "labor",
+        "label": "Labor",
+        "yesterday": 111,
+        "today": 102,
+        "change_pct": -8
+      },
+      {
+        "domain": "legal",
+        "label": "Legal",
+        "yesterday": 374,
+        "today": 349,
+        "change_pct": -7
+      },
+      {
+        "domain": "security",
+        "label": "Security",
+        "yesterday": 505,
+        "today": 497,
+        "change_pct": -2
+      },
+      {
+        "domain": "climate",
+        "label": "Climate",
+        "yesterday": 324,
+        "today": 330,
+        "change_pct": 2
+      },
+      {
+        "domain": "ai",
+        "label": "AI",
+        "yesterday": 44,
+        "today": 43,
+        "change_pct": -2
       }
     ],
     "surges": [],
@@ -106,37 +106,114 @@
       {
         "domain": "geopolitics",
         "label": "Geopolitics",
-        "yesterday": 264,
-        "today": 92,
-        "change_pct": -65
+        "yesterday": 275,
+        "today": 196,
+        "change_pct": -29
       },
       {
         "domain": "economics",
         "label": "Economics",
-        "yesterday": 323,
-        "today": 197,
-        "change_pct": -39
+        "yesterday": 335,
+        "today": 254,
+        "change_pct": -24
       },
       {
         "domain": "governance",
         "label": "Governance",
-        "yesterday": 421,
-        "today": 261,
-        "change_pct": -38
+        "yesterday": 444,
+        "today": 349,
+        "change_pct": -21
       }
     ],
-    "persisting_forces": [],
-    "new_forces": [],
-    "faded_forces": [
+    "persisting_forces": [
       {
         "force": "military escalation",
-        "count": 16,
+        "yesterday_count": 17,
+        "today_count": 28,
         "domains": [
           "security",
+          "geopolitics"
+        ],
+        "insight": "Military aircraft losses signal escalation in direct U.S.-Iran military confrontation with regional security implications."
+      }
+    ],
+    "new_forces": [
+      {
+        "force": "regional escalation",
+        "count": 6,
+        "domains": [
+          "security",
+          "geopolitics"
+        ],
+        "insight": "Direct Iranian strike on Israeli civilian areas marks expansion of conflict scope from proxy forces to state actors."
+      },
+      {
+        "force": "proxy warfare escalation",
+        "count": 5,
+        "domains": [
+          "security",
+          "geopolitics"
+        ],
+        "insight": "Lebanese militant group conducts coordinated attack claiming specific tactical objective within broader regional conflict."
+      },
+      {
+        "force": "climate-driven extreme weather",
+        "count": 4,
+        "domains": [
+          "climate"
+        ],
+        "insight": ""
+      },
+      {
+        "force": "supply chain enforcement",
+        "count": 4,
+        "domains": [
+          "economics",
+          "governance",
+          "geopolitics"
+        ],
+        "insight": "Enforcement action on fuel supply diversion suggests regulatory capacity problem amid broader commodity distribution."
+      },
+      {
+        "force": "geopolitical disruption of supply chains",
+        "count": 3,
+        "domains": [
           "geopolitics",
           "economics"
-        ]
+        ],
+        "insight": "Shipping logistics affected by regional military tensions constraining global energy supply routes and trade flow."
       },
+      {
+        "force": "executive instability",
+        "count": 3,
+        "domains": [
+          "domestic_politics",
+          "governance",
+          "ai"
+        ],
+        "insight": ""
+      },
+      {
+        "force": "geopolitical shock to energy markets",
+        "count": 3,
+        "domains": [
+          "economics",
+          "geopolitics"
+        ],
+        "insight": "Middle East conflict disrupts global oil supply, raising fuel costs for ordinary consumers in Jamaica."
+      },
+      {
+        "force": "resource vulnerability in geopolitical conflict",
+        "count": 3,
+        "domains": [
+          "geopolitics",
+          "economics",
+          "security"
+        ],
+        "insight": "Military conflict in strategic strait forces India to secure fuel supply routes amid sanctions-related disruption."
+      }
+    ],
+    "faded_forces": [
       {
         "force": "democratic erosion",
         "count": 11,
@@ -157,7 +234,7 @@
       },
       {
         "force": "institutional accountability",
-        "count": 8,
+        "count": 9,
         "domains": [
           "legal",
           "governance",
@@ -172,27 +249,1963 @@
           "legal",
           "security"
         ]
+      },
+      {
+        "force": "great power mediation",
+        "count": 4,
+        "domains": [
+          "geopolitics",
+          "security",
+          "ai"
+        ]
       }
     ],
-    "yesterday_classified": 404,
-    "today_classified": 2
+    "yesterday_classified": 451,
+    "today_classified": 243
   },
-  "top_stories": [],
-  "structural_forces": [],
-  "what_connects": [],
+  "top_stories": [
+    {
+      "headline": "Military aircraft losses signal escalation in direct U.S.-Iran military confrontation with regional security implications.",
+      "structural_force": "military escalation",
+      "all_forces": [
+        "military escalation",
+        "regional military escalation",
+        "military escalation and crisis response",
+        "military escalation and hostage dynamics",
+        "military escalation with civilian spillover"
+      ],
+      "source_count": 15,
+      "tier_count": 3,
+      "tiers": [
+        "international",
+        "local-regional",
+        "national"
+      ],
+      "domains": [
+        "Security",
+        "Geopolitics"
+      ],
+      "domain_keys": [
+        "security",
+        "geopolitics"
+      ],
+      "article_count": 28,
+      "connections": [
+        {
+          "text": "Military aircraft losses signal escalation in direct U.S.-Iran military confrontation with regional security implications.",
+          "source": "The Hill",
+          "title": "What to know about US fighter jets hit in Iran war",
+          "domains": [
+            "security",
+            "geopolitics"
+          ],
+          "context": "Political news organization founded in 1994 in Washington DC, owned by Nexstar Media Group since 2021, covering Congress, the White House, and campaigns."
+        },
+        {
+          "text": "Regional military escalation involves US-Iran direct engagement over downed aircraft and crew recovery operations.",
+          "source": "France 24",
+          "title": "Live: Several blasts heard coming from northern Tehran",
+          "domains": [
+            "security",
+            "geopolitics"
+          ],
+          "context": "French international news network launched in 2006, funded by the French government through France Médias Monde, broadcasting in French, English, Arabic, and Spanish."
+        },
+        {
+          "text": "US and Iranian forces compete for recovery of downed warplane crew, creating shared stakes in rescue operations.",
+          "source": "France 24",
+          "title": "Iran, US race to recover missing crew member of crashed American fighter jet",
+          "domains": [
+            "security",
+            "geopolitics"
+          ],
+          "context": "French international news network launched in 2006, funded by the French government through France Médias Monde, broadcasting in French, English, Arabic, and Spanish."
+        },
+        {
+          "text": "Military capability demonstrations signal resolve in geopolitical standoffs and influence deterrence calculations.",
+          "source": "Times of India",
+          "title": "Iran downs F-15, A-10 jets: First US combat aircraft losses in over 20 years",
+          "domains": [
+            "security",
+            "geopolitics"
+          ],
+          "context": "India's largest English-language daily newspaper by circulation, founded in 1838, owned by the Bennett Coleman family, covering national and international news."
+        },
+        {
+          "text": "Military strikes on militant group infrastructure represent escalation in regional armed conflict.",
+          "source": "Straits Times",
+          "title": "Israel says striking Hezbollah sites in Beirut after destroying bridge",
+          "domains": [
+            "geopolitics",
+            "security"
+          ],
+          "context": "Singapore's English-language broadsheet newspaper, founded in 1845, owned by Singapore Press Holdings, covering Southeast Asian and global news, politics, and business."
+        }
+      ],
+      "tier_framing": {
+        "national": {
+          "count": 2,
+          "keywords": [
+            "what",
+            "know",
+            "fighter",
+            "jets",
+            "iran"
+          ],
+          "sample": {
+            "title": "What to know about US fighter jets hit in Iran war",
+            "source": "The Hill",
+            "url": "https://thehill.com/policy/defense/5815865-us-air-force-jets-downed-iran/",
+            "context": "Political news organization founded in 1994 in Washington DC, owned by Nexstar Media Group since 2021, covering Congress, the White House, and campaigns."
+          }
+        },
+        "international": {
+          "count": 24,
+          "keywords": [
+            "iran",
+            "crew",
+            "member",
+            "down",
+            "race"
+          ],
+          "sample": {
+            "title": "Live: Several blasts heard coming from northern Tehran",
+            "source": "France 24",
+            "url": "https://www.france24.com/en/middle-east/20260404-live-several-blasts-heard-coming-from-northern-tehran",
+            "context": "French international news network launched in 2006, funded by the French government through France Médias Monde, broadcasting in French, English, Arabic, and Spanish."
+          }
+        },
+        "local-regional": {
+          "count": 2,
+          "keywords": [
+            "iran",
+            "downs",
+            "fighter",
+            "jets",
+            "pilot"
+          ],
+          "sample": {
+            "title": "Iran downs 2 US fighter jets, one pilot rescued",
+            "source": "Post and Courier",
+            "url": "https://www.postandcourier.com/nation-world/iran-downs-2-us-fighter-jets-one-pilot-rescued/article_df576bfc-0bef-41a4-85f1-4e7abec7c823.html",
+            "context": "Daily newspaper founded in 1803 in Charleston, South Carolina, the oldest newspaper in the South, covering state politics, culture, and investigative reporting."
+          }
+        }
+      },
+      "articles": [
+        {
+          "title": "What to know about US fighter jets hit in Iran war",
+          "source": "The Hill",
+          "url": "https://thehill.com/policy/defense/5815865-us-air-force-jets-downed-iran/",
+          "tier": "national",
+          "paywall": false,
+          "context": "Political news organization founded in 1994 in Washington DC, owned by Nexstar Media Group since 2021, covering Congress, the White House, and campaigns.",
+          "connection": "Military aircraft losses signal escalation in direct U.S.-Iran military confrontation with regional security implications.",
+          "force_tag": "military escalation"
+        },
+        {
+          "title": "Downed planes spell new peril for Trump as Tehran hunts missing US pilot - Reuters",
+          "source": "Reuters",
+          "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPWVZhSm5OVWlJdjQ4V09wQTk0ZjZjM3ZwbVNFQldGLUtQdVVmRVktdUVucUtQMGRmUExxalNMbXBWcFBUSXZZQ0xYR19kNFQxWml2eFdrZjhfMzVCbWc0YmJ4Z0pVRWdzbl9LbnBXRlA4V3JLalVXc00tS1RxQ1J0UVBKSmNobFJoSUJvbF85dHMzcmMyMkdweE16Z0JFWEhXdTNoVHlYVUNqRDlUWGpfMEFXd1ZCUHFnOTFPaw?oc=5",
+          "tier": "national",
+          "paywall": false,
+          "context": "International news agency founded in 1851 in London, now owned by Thomson Reuters, operating as one of the largest global wire services.",
+          "connection": "Military escalation in Middle East creates diplomatic crisis for U.S. administration, raising stakes for conflict resolution.",
+          "force_tag": "military escalation and hostage dynamics"
+        },
+        {
+          "title": "Live: Several blasts heard coming from northern Tehran",
+          "source": "France 24",
+          "url": "https://www.france24.com/en/middle-east/20260404-live-several-blasts-heard-coming-from-northern-tehran",
+          "tier": "international",
+          "paywall": false,
+          "context": "French international news network launched in 2006, funded by the French government through France Médias Monde, broadcasting in French, English, Arabic, and Spanish.",
+          "connection": "Regional military escalation involves US-Iran direct engagement over downed aircraft and crew recovery operations.",
+          "force_tag": "military escalation"
+        },
+        {
+          "title": "Iran downs F-15, A-10 jets: First US combat aircraft losses in over 20 years",
+          "source": "Times of India",
+          "url": "https://timesofindia.indiatimes.com/world/middle-east/iran-downs-f-15-a-10-jets-first-us-combat-aircraft-losses-in-over-20-years/articleshow/130012777.cms",
+          "tier": "international",
+          "paywall": false,
+          "context": "India's largest English-language daily newspaper by circulation, founded in 1838, owned by the Bennett Coleman family, covering national and international news.",
+          "connection": "Military capability demonstrations signal resolve in geopolitical standoffs and influence deterrence calculations.",
+          "force_tag": "military escalation"
+        },
+        {
+          "title": "Israel says striking Hezbollah sites in Beirut after destroying bridge",
+          "source": "Straits Times",
+          "url": "https://www.straitstimes.com/world/middle-east/israel-says-striking-hezbollah-sites-in-beirut-after-destroying-bridge",
+          "tier": "international",
+          "paywall": false,
+          "context": "Singapore's English-language broadsheet newspaper, founded in 1845, owned by Singapore Press Holdings, covering Southeast Asian and global news, politics, and business.",
+          "connection": "Military strikes on militant group infrastructure represent escalation in regional armed conflict.",
+          "force_tag": "military escalation"
+        },
+        {
+          "title": "Iran, US race to find crew member of crashed American fighter jet",
+          "source": "Dawn",
+          "url": "https://www.dawn.com/news/1988487/iran-us-race-to-find-crew-member-of-crashed-american-fighter-jet",
+          "tier": "international",
+          "paywall": false,
+          "context": "Pakistani English-language newspaper founded in 1941 by Muhammad Ali Jinnah, published from Karachi, covering national politics and South Asian affairs as Pakistan's oldest newspaper.",
+          "connection": "Military aircraft incidents escalate US-Iran tensions amid broader regional conflict.",
+          "force_tag": "military escalation"
+        }
+      ]
+    },
+    {
+      "headline": "Enforcement action on fuel supply diversion suggests regulatory capacity problem amid broader commodity distribution.",
+      "structural_force": "supply chain enforcement",
+      "all_forces": [
+        "supply chain enforcement",
+        "supply chain weaponization",
+        "supply chain vulnerability",
+        "supply chain geopolitical fragility"
+      ],
+      "source_count": 4,
+      "tier_count": 2,
+      "tiers": [
+        "international",
+        "specialist"
+      ],
+      "domains": [
+        "Economics",
+        "Governance",
+        "Geopolitics",
+        "Labor"
+      ],
+      "domain_keys": [
+        "economics",
+        "governance",
+        "geopolitics",
+        "labor"
+      ],
+      "article_count": 4,
+      "connections": [
+        {
+          "text": "Enforcement action on fuel supply diversion suggests regulatory capacity problem amid broader commodity distribution.",
+          "source": "The Hindu",
+          "title": "3,699 domestic LPG cylinders seized in Telangana from March 12",
+          "domains": [
+            "governance",
+            "economics"
+          ],
+          "context": "Indian English-language newspaper founded in 1878 in Chennai, owned by the Kasturi and Sons family trust, covering national and international news."
+        },
+        {
+          "text": "Middle East conflict disrupts global oil supply routes, forcing Japan to develop alternative import paths to secure energy.",
+          "source": "The Japan Times",
+          "title": "Oil bypassing Strait of Hormuz set to arrive in Japan from May",
+          "domains": [
+            "geopolitics",
+            "economics"
+          ],
+          "context": "Japan's oldest English-language newspaper, founded in 1897 in Tokyo, owned by News2u Holdings, covering Japanese politics, culture, and Asia-Pacific affairs."
+        },
+        {
+          "text": "Supply chain disruption in manufacturing constrains production capacity and employment.",
+          "source": "TechCrunch",
+          "title": "Lucid blames dip in Q1 sales on seat supplier issue",
+          "domains": [
+            "economics",
+            "labor"
+          ],
+          "context": "Technology industry publication founded in 2005 by Michael Arrington, now owned by Yahoo, covering startups, venture capital, product launches, and Silicon Valley."
+        },
+        {
+          "text": "Airline exposure to geopolitical risk in Middle East conflict creates commodity price volatility affecting operational costs.",
+          "source": "Irish Times",
+          "title": "Ryanair chief’s looming test of crisis management amid warning of $200 per barre",
+          "domains": [
+            "economics",
+            "security"
+          ],
+          "context": "Ireland's newspaper of record, founded in 1859 in Dublin, owned by the Irish Times Trust since 1974, covering Irish politics, European affairs, and international news."
+        }
+      ],
+      "tier_framing": {
+        "international": {
+          "count": 3,
+          "keywords": [
+            "from",
+            "domestic",
+            "cylinders",
+            "seized",
+            "telangana"
+          ],
+          "sample": {
+            "title": "3,699 domestic LPG cylinders seized in Telangana from March 12",
+            "source": "The Hindu",
+            "url": "https://www.thehindu.com/news/national/telangana/3699-domestic-lpg-cylinders-seized-in-telangana-from-march-12/article70820802.ece",
+            "context": "Indian English-language newspaper founded in 1878 in Chennai, owned by the Kasturi and Sons family trust, covering national and international news."
+          }
+        },
+        "specialist": {
+          "count": 1,
+          "keywords": [
+            "lucid",
+            "blames",
+            "sales",
+            "seat",
+            "supplier"
+          ],
+          "sample": {
+            "title": "Lucid blames dip in Q1 sales on seat supplier issue",
+            "source": "TechCrunch",
+            "url": "https://techcrunch.com/2026/04/03/lucid-blames-dip-in-q1-sales-on-seat-supplier-issue/",
+            "context": "Technology industry publication founded in 2005 by Michael Arrington, now owned by Yahoo, covering startups, venture capital, product launches, and Silicon Valley."
+          }
+        }
+      },
+      "articles": [
+        {
+          "title": "3,699 domestic LPG cylinders seized in Telangana from March 12",
+          "source": "The Hindu",
+          "url": "https://www.thehindu.com/news/national/telangana/3699-domestic-lpg-cylinders-seized-in-telangana-from-march-12/article70820802.ece",
+          "tier": "international",
+          "paywall": false,
+          "context": "Indian English-language newspaper founded in 1878 in Chennai, owned by the Kasturi and Sons family trust, covering national and international news.",
+          "connection": "Enforcement action on fuel supply diversion suggests regulatory capacity problem amid broader commodity distribution.",
+          "force_tag": "supply chain enforcement"
+        },
+        {
+          "title": "Oil bypassing Strait of Hormuz set to arrive in Japan from May",
+          "source": "The Japan Times",
+          "url": "https://www.japantimes.co.jp/business/2026/04/04/oil-bypassing-hormuz-japan-may/",
+          "tier": "international",
+          "paywall": false,
+          "context": "Japan's oldest English-language newspaper, founded in 1897 in Tokyo, owned by News2u Holdings, covering Japanese politics, culture, and Asia-Pacific affairs.",
+          "connection": "Middle East conflict disrupts global oil supply routes, forcing Japan to develop alternative import paths to secure energy.",
+          "force_tag": "supply chain weaponization"
+        },
+        {
+          "title": "Ryanair chief’s looming test of crisis management amid warning of $200 per barrel of oil",
+          "source": "Irish Times",
+          "url": "https://www.irishtimes.com/business/2026/04/04/ryanairs-oleary-faces-fresh-test-of-crisis-mastery-amid-warnings-of-200-oil/",
+          "tier": "international",
+          "paywall": false,
+          "context": "Ireland's newspaper of record, founded in 1859 in Dublin, owned by the Irish Times Trust since 1974, covering Irish politics, European affairs, and international news.",
+          "connection": "Airline exposure to geopolitical risk in Middle East conflict creates commodity price volatility affecting operational costs.",
+          "force_tag": "supply chain geopolitical fragility"
+        },
+        {
+          "title": "Lucid blames dip in Q1 sales on seat supplier issue",
+          "source": "TechCrunch",
+          "url": "https://techcrunch.com/2026/04/03/lucid-blames-dip-in-q1-sales-on-seat-supplier-issue/",
+          "tier": "specialist",
+          "paywall": false,
+          "context": "Technology industry publication founded in 2005 by Michael Arrington, now owned by Yahoo, covering startups, venture capital, product launches, and Silicon Valley.",
+          "connection": "Supply chain disruption in manufacturing constrains production capacity and employment.",
+          "force_tag": "supply chain vulnerability"
+        }
+      ]
+    },
+    {
+      "headline": "Military conflict in strategic strait forces India to secure fuel supply routes amid sanctions-related disruption.",
+      "structural_force": "resource vulnerability in geopolitical conflict",
+      "all_forces": [
+        "resource vulnerability in geopolitical conflict",
+        "economic coercion in geopolitical conflict",
+        "infrastructure vulnerability to geopolitical conflict"
+      ],
+      "source_count": 3,
+      "tier_count": 1,
+      "tiers": [
+        "international"
+      ],
+      "domains": [
+        "Geopolitics",
+        "Economics",
+        "Security",
+        "Information"
+      ],
+      "domain_keys": [
+        "geopolitics",
+        "economics",
+        "security",
+        "information"
+      ],
+      "article_count": 3,
+      "connections": [
+        {
+          "text": "Military conflict in strategic strait forces India to secure fuel supply routes amid sanctions-related disruption.",
+          "source": "Deutsche Welle",
+          "title": "India news: LPG tanker headed for Mumbai crosses Strait of Hormuz",
+          "domains": [
+            "geopolitics",
+            "economics"
+          ],
+          "context": "German international broadcaster founded in 1953 and funded by the German federal government, providing news in 30 languages from Bonn and Berlin."
+        },
+        {
+          "text": "Economic sanctions are weaponized as retaliation in military escalation cycles between regional powers.",
+          "source": "South China Morning Post",
+          "title": "UAE squeezes Iranian economic lifeline in retaliation for attacks",
+          "domains": [
+            "geopolitics",
+            "economics"
+          ],
+          "context": "English-language newspaper founded in 1903 in Hong Kong, owned by Alibaba Group since 2016, covering Asia-Pacific business, geopolitics, and Chinese affairs."
+        },
+        {
+          "text": "Undersea cable vulnerability exposes how critical digital infrastructure depends on physical security in geopolitically contested waters.",
+          "source": "Irish Times",
+          "title": "Attacks on undersea cables could cut off Ireland from global internet, Governmen",
+          "domains": [
+            "security",
+            "information"
+          ],
+          "context": "Ireland's newspaper of record, founded in 1859 in Dublin, owned by the Irish Times Trust since 1974, covering Irish politics, European affairs, and international news."
+        }
+      ],
+      "tier_framing": {
+        "international": {
+          "count": 3,
+          "keywords": [
+            "attacks",
+            "india",
+            "news",
+            "tanker",
+            "headed"
+          ],
+          "sample": {
+            "title": "India news: LPG tanker headed for Mumbai crosses Strait of Hormuz",
+            "source": "Deutsche Welle",
+            "url": "https://www.dw.com/en/india-news-lpg-tanker-headed-for-mumbai-crosses-strait-of-hormuz/live-76658437?maca=en-rss-en-all-1573-rdf",
+            "context": "German international broadcaster founded in 1953 and funded by the German federal government, providing news in 30 languages from Bonn and Berlin."
+          }
+        }
+      },
+      "articles": [
+        {
+          "title": "India news: LPG tanker headed for Mumbai crosses Strait of Hormuz",
+          "source": "Deutsche Welle",
+          "url": "https://www.dw.com/en/india-news-lpg-tanker-headed-for-mumbai-crosses-strait-of-hormuz/live-76658437?maca=en-rss-en-all-1573-rdf",
+          "tier": "international",
+          "paywall": false,
+          "context": "German international broadcaster founded in 1953 and funded by the German federal government, providing news in 30 languages from Bonn and Berlin.",
+          "connection": "Military conflict in strategic strait forces India to secure fuel supply routes amid sanctions-related disruption.",
+          "force_tag": "resource vulnerability in geopolitical conflict"
+        },
+        {
+          "title": "UAE squeezes Iranian economic lifeline in retaliation for attacks",
+          "source": "South China Morning Post",
+          "url": "https://www.scmp.com/week-asia/economics/article/3348996/uae-squeezes-iranian-economic-lifeline-retaliation-attacks?utm_source=rss_feed",
+          "tier": "international",
+          "paywall": true,
+          "context": "English-language newspaper founded in 1903 in Hong Kong, owned by Alibaba Group since 2016, covering Asia-Pacific business, geopolitics, and Chinese affairs.",
+          "connection": "Economic sanctions are weaponized as retaliation in military escalation cycles between regional powers.",
+          "force_tag": "economic coercion in geopolitical conflict"
+        },
+        {
+          "title": "Attacks on undersea cables could cut off Ireland from global internet, Government warned",
+          "source": "Irish Times",
+          "url": "https://www.irishtimes.com/politics/2026/04/04/attacks-on-undersea-cables-could-cut-off-ireland-from-global-internet-government-warned/",
+          "tier": "international",
+          "paywall": false,
+          "context": "Ireland's newspaper of record, founded in 1859 in Dublin, owned by the Irish Times Trust since 1974, covering Irish politics, European affairs, and international news.",
+          "connection": "Undersea cable vulnerability exposes how critical digital infrastructure depends on physical security in geopolitically contested waters.",
+          "force_tag": "infrastructure vulnerability to geopolitical conflict"
+        }
+      ]
+    },
+    {
+      "headline": "State execution of political opposition represents judicial weaponization against dissent, violating international human rights law.",
+      "structural_force": "authoritarian repression of political opposition",
+      "all_forces": [
+        "authoritarian repression of political opposition",
+        "repression of political opposition"
+      ],
+      "source_count": 2,
+      "tier_count": 2,
+      "tiers": [
+        "international",
+        "national"
+      ],
+      "domains": [
+        "Geopolitics",
+        "Legal",
+        "Governance",
+        "Security"
+      ],
+      "domain_keys": [
+        "geopolitics",
+        "legal",
+        "governance",
+        "security"
+      ],
+      "article_count": 2,
+      "connections": [
+        {
+          "text": "State execution of political opposition represents judicial weaponization against dissent, violating international human rights law.",
+          "source": "Reuters",
+          "title": "Iran executes two linked to opposition group, media say - Reuters",
+          "domains": [
+            "geopolitics",
+            "legal"
+          ],
+          "context": "International news agency founded in 1851 in London, now owned by Thomson Reuters, operating as one of the largest global wire services."
+        },
+        {
+          "text": "State security apparatus uses capital punishment against political opposition to suppress dissent.",
+          "source": "South China Morning Post",
+          "title": "Rights groups raise alarm after Iran executes 2 more opposition group members",
+          "domains": [
+            "governance",
+            "security"
+          ],
+          "context": "English-language newspaper founded in 1903 in Hong Kong, owned by Alibaba Group since 2016, covering Asia-Pacific business, geopolitics, and Chinese affairs."
+        }
+      ],
+      "tier_framing": {
+        "national": {
+          "count": 1,
+          "keywords": [
+            "iran",
+            "executes",
+            "linked",
+            "opposition",
+            "media"
+          ],
+          "sample": {
+            "title": "Iran executes two linked to opposition group, media say - Reuters",
+            "source": "Reuters",
+            "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQbmp2WWhRYTdIWmIxOThQc2c3RTNYX2hjNlYzcHpHTjQ0VU5XeUJWU3o3bzNkbU41LWJFWEZ0bXk2NmdzZWtfSEhVQ2lwbEl6TXVIZm83Y1cybEhOcHBVY2hvQUxIcGQxR3VSWWl0WVJFeU95ZXVNd3kwYmN0MzZLTFcxV3ozbzhYQW1uYW9YazVvNlhlS2JvMGlYZ2FTVHQtQjVmOGZmMzU?oc=5",
+            "context": "International news agency founded in 1851 in London, now owned by Thomson Reuters, operating as one of the largest global wire services."
+          }
+        },
+        "international": {
+          "count": 1,
+          "keywords": [
+            "rights",
+            "groups",
+            "raise",
+            "alarm",
+            "iran"
+          ],
+          "sample": {
+            "title": "Rights groups raise alarm after Iran executes 2 more opposition group members",
+            "source": "South China Morning Post",
+            "url": "https://www.scmp.com/news/world/middle-east/article/3349026/rights-groups-raise-alarm-after-iran-executes-2-more-opposition-group-members?utm_source=rss_feed",
+            "context": "English-language newspaper founded in 1903 in Hong Kong, owned by Alibaba Group since 2016, covering Asia-Pacific business, geopolitics, and Chinese affairs."
+          }
+        }
+      },
+      "articles": [
+        {
+          "title": "Iran executes two linked to opposition group, media say - Reuters",
+          "source": "Reuters",
+          "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQbmp2WWhRYTdIWmIxOThQc2c3RTNYX2hjNlYzcHpHTjQ0VU5XeUJWU3o3bzNkbU41LWJFWEZ0bXk2NmdzZWtfSEhVQ2lwbEl6TXVIZm83Y1cybEhOcHBVY2hvQUxIcGQxR3VSWWl0WVJFeU95ZXVNd3kwYmN0MzZLTFcxV3ozbzhYQW1uYW9YazVvNlhlS2JvMGlYZ2FTVHQtQjVmOGZmMzU?oc=5",
+          "tier": "national",
+          "paywall": false,
+          "context": "International news agency founded in 1851 in London, now owned by Thomson Reuters, operating as one of the largest global wire services.",
+          "connection": "State execution of political opposition represents judicial weaponization against dissent, violating international human rights law.",
+          "force_tag": "authoritarian repression of political opposition"
+        },
+        {
+          "title": "Rights groups raise alarm after Iran executes 2 more opposition group members",
+          "source": "South China Morning Post",
+          "url": "https://www.scmp.com/news/world/middle-east/article/3349026/rights-groups-raise-alarm-after-iran-executes-2-more-opposition-group-members?utm_source=rss_feed",
+          "tier": "international",
+          "paywall": true,
+          "context": "English-language newspaper founded in 1903 in Hong Kong, owned by Alibaba Group since 2016, covering Asia-Pacific business, geopolitics, and Chinese affairs.",
+          "connection": "State security apparatus uses capital punishment against political opposition to suppress dissent.",
+          "force_tag": "repression of political opposition"
+        }
+      ]
+    },
+    {
+      "headline": "Executive Instability across Politics, Governance, AI",
+      "structural_force": "executive instability",
+      "all_forces": [
+        "executive instability",
+        "executive instability in ai sector",
+        "executive personnel instability"
+      ],
+      "source_count": 3,
+      "tier_count": 2,
+      "tiers": [
+        "international",
+        "national"
+      ],
+      "domains": [
+        "Politics",
+        "Governance",
+        "AI"
+      ],
+      "domain_keys": [
+        "domestic_politics",
+        "governance",
+        "ai"
+      ],
+      "article_count": 3,
+      "connections": [],
+      "tier_framing": {
+        "national": {
+          "count": 2,
+          "keywords": [
+            "considering",
+            "more",
+            "changes",
+            "cabinet",
+            "coming"
+          ],
+          "sample": {
+            "title": "Trump is considering more changes to his Cabinet in the coming weeks",
+            "source": "NBC News",
+            "url": "https://www.nbcnews.com/politics/trump-administration/trump-considering-changes-cabinet-coming-weeks-rcna266624",
+            "context": "Broadcast news division of NBCUniversal, a subsidiary of Comcast, founded in 1940, providing national and international news across television and digital platforms."
+          }
+        },
+        "international": {
+          "count": 1,
+          "keywords": [
+            "weighs",
+            "more",
+            "cabinet",
+            "changes",
+            "bondi"
+          ],
+          "sample": {
+            "title": "Trump weighs more Cabinet changes after Bondi ouster",
+            "source": "Politico Europe",
+            "url": "https://www.politico.eu/article/trump-weighs-more-cabinet-changes-after-bondi-ouster/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
+            "context": "European edition of Politico launched in 2015 in Brussels through a partnership with Axel Springer, covering EU institutions, policy, and European governance."
+          }
+        }
+      },
+      "articles": [
+        {
+          "title": "Trump is considering more changes to his Cabinet in the coming weeks",
+          "source": "NBC News",
+          "url": "https://www.nbcnews.com/politics/trump-administration/trump-considering-changes-cabinet-coming-weeks-rcna266624",
+          "tier": "national",
+          "paywall": false,
+          "context": "Broadcast news division of NBCUniversal, a subsidiary of Comcast, founded in 1940, providing national and international news across television and digital platforms.",
+          "connection": "",
+          "force_tag": "executive instability"
+        },
+        {
+          "title": "OpenAI sees a new round of executive shake-ups",
+          "source": "Business Insider",
+          "url": "https://www.businessinsider.com/openai-executive-shake-up-coo-cmo-2026-4",
+          "tier": "national",
+          "paywall": true,
+          "context": "Digital news outlet founded in 2007, owned by Axel Springer since 2015, covering business, technology, finance, and corporate news for a global audience.",
+          "connection": "",
+          "force_tag": "executive instability in AI sector"
+        },
+        {
+          "title": "Trump weighs more Cabinet changes after Bondi ouster",
+          "source": "Politico Europe",
+          "url": "https://www.politico.eu/article/trump-weighs-more-cabinet-changes-after-bondi-ouster/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
+          "tier": "international",
+          "paywall": false,
+          "context": "European edition of Politico launched in 2015 in Brussels through a partnership with Axel Springer, covering EU institutions, policy, and European governance.",
+          "connection": "",
+          "force_tag": "executive personnel instability"
+        }
+      ]
+    },
+    {
+      "headline": "Police investigation reveals gaps in law enforcement coordination during extended fugitive manhunt.",
+      "structural_force": "law enforcement failure",
+      "all_forces": [
+        "law enforcement failure",
+        "traffic law enforcement",
+        "cooperative law enforcement resolution"
+      ],
+      "source_count": 3,
+      "tier_count": 1,
+      "tiers": [
+        "international"
+      ],
+      "domains": [
+        "Security",
+        "Governance",
+        "Legal"
+      ],
+      "domain_keys": [
+        "security",
+        "governance",
+        "legal"
+      ],
+      "article_count": 3,
+      "connections": [
+        {
+          "text": "Police investigation reveals gaps in law enforcement coordination during extended fugitive manhunt.",
+          "source": "The Guardian World",
+          "title": "Victoria police arrest two people as part of Dezi Freeman investigation",
+          "domains": [
+            "security",
+            "governance"
+          ],
+          "context": "British newspaper founded in 1821, owned by the Scott Trust nonprofit, one of the most-read English-language news sites globally, covering international affairs."
+        },
+        {
+          "text": "Public safety incident resolution is facilitated by suspect's voluntary surrender to authorities, enabling rapid investigation and community response.",
+          "source": "The Japan Times",
+          "title": "Man arrested after admitting to starting fire at Tokyo's Shibuya crossing",
+          "domains": [
+            "legal",
+            "security"
+          ],
+          "context": "Japan's oldest English-language newspaper, founded in 1897 in Tokyo, owned by News2u Holdings, covering Japanese politics, culture, and Asia-Pacific affairs."
+        }
+      ],
+      "tier_framing": {
+        "international": {
+          "count": 3,
+          "keywords": [
+            "victoria",
+            "police",
+            "arrest",
+            "part",
+            "dezi"
+          ],
+          "sample": {
+            "title": "Victoria police arrest two people as part of Dezi Freeman investigation",
+            "source": "The Guardian World",
+            "url": "https://www.theguardian.com/global/2026/apr/04/dezi-freeman-investigation-arrests-victoria-police-porepunkah-ntwnfb",
+            "context": "British newspaper founded in 1821, owned by the Scott Trust nonprofit, one of the most-read English-language news sites globally, covering international affairs."
+          }
+        }
+      },
+      "articles": [
+        {
+          "title": "Victoria police arrest two people as part of Dezi Freeman investigation",
+          "source": "The Guardian World",
+          "url": "https://www.theguardian.com/global/2026/apr/04/dezi-freeman-investigation-arrests-victoria-police-porepunkah-ntwnfb",
+          "tier": "international",
+          "paywall": false,
+          "context": "British newspaper founded in 1821, owned by the Scott Trust nonprofit, one of the most-read English-language news sites globally, covering international affairs.",
+          "connection": "Police investigation reveals gaps in law enforcement coordination during extended fugitive manhunt.",
+          "force_tag": "law enforcement failure"
+        },
+        {
+          "title": "Man arrested after admitting to starting fire at Tokyo's Shibuya crossing",
+          "source": "The Japan Times",
+          "url": "https://www.japantimes.co.jp/news/2026/04/04/japan/crime-legal/shibuya-scramble-fire/",
+          "tier": "international",
+          "paywall": false,
+          "context": "Japan's oldest English-language newspaper, founded in 1897 in Tokyo, owned by News2u Holdings, covering Japanese politics, culture, and Asia-Pacific affairs.",
+          "connection": "Public safety incident resolution is facilitated by suspect's voluntary surrender to authorities, enabling rapid investigation and community response.",
+          "force_tag": "cooperative law enforcement resolution"
+        },
+        {
+          "title": "308 booked for using mobile phones while driving in Hyderabad",
+          "source": "The Hindu",
+          "url": "https://www.thehindu.com/news/cities/Hyderabad/308-booked-for-using-mobile-phones-while-driving-in-hyderabad/article70820953.ece",
+          "tier": "international",
+          "paywall": false,
+          "context": "Indian English-language newspaper founded in 1878 in Chennai, owned by the Kasturi and Sons family trust, covering national and international news.",
+          "connection": "",
+          "force_tag": "traffic law enforcement"
+        }
+      ]
+    },
+    {
+      "headline": "Lebanese militant group conducts coordinated attack claiming specific tactical objective within broader regional conflict.",
+      "structural_force": "proxy warfare escalation",
+      "all_forces": [
+        "proxy warfare escalation",
+        "warfare escalation and adaptation",
+        "proxy conflict escalation"
+      ],
+      "source_count": 3,
+      "tier_count": 1,
+      "tiers": [
+        "international"
+      ],
+      "domains": [
+        "Security",
+        "Geopolitics"
+      ],
+      "domain_keys": [
+        "security",
+        "geopolitics"
+      ],
+      "article_count": 5,
+      "connections": [
+        {
+          "text": "Lebanese militant group conducts coordinated attack claiming specific tactical objective within broader regional conflict.",
+          "source": "Middle East Eye",
+          "title": "Rockets fired at Israeli position near Maroun al-Ras, Hezbollah says",
+          "domains": [
+            "security",
+            "geopolitics"
+          ],
+          "context": "London-based independent news website founded in 2014, covering Middle East and North African politics, conflict, and human rights through regional and international correspondents."
+        },
+        {
+          "text": "Iraqi militia claims coordinated multi-domain attacks across borders, demonstrating networked regional resistance.",
+          "source": "Middle East Eye",
+          "title": "Iraqi group claims 19 attacks on 'enemy bases' in 24 hours",
+          "domains": [
+            "security",
+            "geopolitics"
+          ],
+          "context": "London-based independent news website founded in 2014, covering Middle East and North African politics, conflict, and human rights through regional and international correspondents."
+        },
+        {
+          "text": "Repeated strikes on Iraqi paramilitary force suggest sustained campaign by external actor against Iran-aligned groups.",
+          "source": "Middle East Eye",
+          "title": "Second air strike hits PMF base in western Iraq",
+          "domains": [
+            "security",
+            "geopolitics"
+          ],
+          "context": "London-based independent news website founded in 2014, covering Middle East and North African politics, conflict, and human rights through regional and international correspondents."
+        },
+        {
+          "text": "Military adaptation in prolonged conflict demonstrates escalating technological and tactical innovation by attacking force.",
+          "source": "Deutsche Welle",
+          "title": "Ukraine: 14 people killed in 'massive' Russian attack on 1,500th day of war",
+          "domains": [
+            "geopolitics",
+            "security"
+          ],
+          "context": "German international broadcaster founded in 1953 and funded by the German federal government, providing news in 30 languages from Bonn and Berlin."
+        },
+        {
+          "text": "Military strikes target proxy forces within regional power competition over territorial influence.",
+          "source": "South China Morning Post",
+          "title": "Israel targets Iran-backed Hezbollah sites in Lebanon in fresh strikes",
+          "domains": [
+            "security",
+            "geopolitics"
+          ],
+          "context": "English-language newspaper founded in 1903 in Hong Kong, owned by Alibaba Group since 2016, covering Asia-Pacific business, geopolitics, and Chinese affairs."
+        }
+      ],
+      "tier_framing": {
+        "international": {
+          "count": 5,
+          "keywords": [
+            "hezbollah",
+            "rockets",
+            "fired",
+            "israeli",
+            "position"
+          ],
+          "sample": {
+            "title": "Rockets fired at Israeli position near Maroun al-Ras, Hezbollah says",
+            "source": "Middle East Eye",
+            "url": "https://www.middleeasteye.net/live-blog/live-blog-update/rockets-fired-israeli-position-near-maroun-al-ras-hezbollah-says",
+            "context": "London-based independent news website founded in 2014, covering Middle East and North African politics, conflict, and human rights through regional and international correspondents."
+          }
+        }
+      },
+      "articles": [
+        {
+          "title": "Rockets fired at Israeli position near Maroun al-Ras, Hezbollah says",
+          "source": "Middle East Eye",
+          "url": "https://www.middleeasteye.net/live-blog/live-blog-update/rockets-fired-israeli-position-near-maroun-al-ras-hezbollah-says",
+          "tier": "international",
+          "paywall": false,
+          "context": "London-based independent news website founded in 2014, covering Middle East and North African politics, conflict, and human rights through regional and international correspondents.",
+          "connection": "Lebanese militant group conducts coordinated attack claiming specific tactical objective within broader regional conflict.",
+          "force_tag": "proxy warfare escalation"
+        },
+        {
+          "title": "Ukraine: 14 people killed in 'massive' Russian attack on 1,500th day of war",
+          "source": "Deutsche Welle",
+          "url": "https://www.dw.com/en/ukraine-14-people-killed-in-massive-russian-attack-on-1-500th-day-of-war/a-76652096?maca=en-rss-en-all-1573-rdf",
+          "tier": "international",
+          "paywall": false,
+          "context": "German international broadcaster founded in 1953 and funded by the German federal government, providing news in 30 languages from Bonn and Berlin.",
+          "connection": "Military adaptation in prolonged conflict demonstrates escalating technological and tactical innovation by attacking force.",
+          "force_tag": "warfare escalation and adaptation"
+        },
+        {
+          "title": "Israel targets Iran-backed Hezbollah sites in Lebanon in fresh strikes",
+          "source": "South China Morning Post",
+          "url": "https://www.scmp.com/news/world/middle-east/article/3349021/israel-targets-iran-backed-hezbollah-sites-lebanon-fresh-strikes?utm_source=rss_feed",
+          "tier": "international",
+          "paywall": true,
+          "context": "English-language newspaper founded in 1903 in Hong Kong, owned by Alibaba Group since 2016, covering Asia-Pacific business, geopolitics, and Chinese affairs.",
+          "connection": "Military strikes target proxy forces within regional power competition over territorial influence.",
+          "force_tag": "proxy conflict escalation"
+        }
+      ]
+    },
+    {
+      "headline": "AI adoption in film production displaces creative workers and reshapes labor markets in world's largest film industry by output.",
+      "structural_force": "automation displacing creative workers",
+      "all_forces": [
+        "automation displacing creative workers"
+      ],
+      "source_count": 2,
+      "tier_count": 2,
+      "tiers": [
+        "international",
+        "national"
+      ],
+      "domains": [
+        "AI",
+        "Labor",
+        "Economics"
+      ],
+      "domain_keys": [
+        "ai",
+        "labor",
+        "economics"
+      ],
+      "article_count": 2,
+      "connections": [
+        {
+          "text": "AI adoption in film production displaces creative workers and reshapes labor markets in world's largest film industry by output.",
+          "source": "Reuters",
+          "title": "AI is rewiring the world’s most prolific film industry - Reuters",
+          "domains": [
+            "ai",
+            "labor"
+          ],
+          "context": "International news agency founded in 1851 in London, now owned by Thomson Reuters, operating as one of the largest global wire services."
+        },
+        {
+          "text": "AI adoption is being deployed to offset shrinking production budgets and changing consumer demand, directly substituting for human creative labor.",
+          "source": "The Japan Times",
+          "title": "AI is rewiring the world's most prolific film industry",
+          "domains": [
+            "ai",
+            "labor",
+            "economics"
+          ],
+          "context": "Japan's oldest English-language newspaper, founded in 1897 in Tokyo, owned by News2u Holdings, covering Japanese politics, culture, and Asia-Pacific affairs."
+        }
+      ],
+      "tier_framing": {
+        "national": {
+          "count": 1,
+          "keywords": [
+            "rewiring",
+            "most",
+            "prolific",
+            "film",
+            "industry"
+          ],
+          "sample": {
+            "title": "AI is rewiring the world’s most prolific film industry - Reuters",
+            "source": "Reuters",
+            "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNMlpuQ0JEaTZlYXpGSk5xVGpWY3Vnd3ZJRE5rZVJSMXhmS3pQVzk5Z3N1UEZPX1lFT2dpMzBFcy1kNUhZRFVhZlNIMEVILWR4bENWSnY4M09ZYm5CSVdVOWFBdEhBTm53MVVQbU9HLW8xR0x5VE81X2toMFQyTU50Wll1aF9BWHBnSWlNY29UaDdQMTJMem1XUEFGc1g?oc=5",
+            "context": "International news agency founded in 1851 in London, now owned by Thomson Reuters, operating as one of the largest global wire services."
+          }
+        },
+        "international": {
+          "count": 1,
+          "keywords": [
+            "rewiring",
+            "most",
+            "prolific",
+            "film",
+            "industry"
+          ],
+          "sample": {
+            "title": "AI is rewiring the world's most prolific film industry",
+            "source": "The Japan Times",
+            "url": "https://www.japantimes.co.jp/news/2026/04/04/asia-pacific/ai-india-bollywood-film/",
+            "context": "Japan's oldest English-language newspaper, founded in 1897 in Tokyo, owned by News2u Holdings, covering Japanese politics, culture, and Asia-Pacific affairs."
+          }
+        }
+      },
+      "articles": [
+        {
+          "title": "AI is rewiring the world’s most prolific film industry - Reuters",
+          "source": "Reuters",
+          "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNMlpuQ0JEaTZlYXpGSk5xVGpWY3Vnd3ZJRE5rZVJSMXhmS3pQVzk5Z3N1UEZPX1lFT2dpMzBFcy1kNUhZRFVhZlNIMEVILWR4bENWSnY4M09ZYm5CSVdVOWFBdEhBTm53MVVQbU9HLW8xR0x5VE81X2toMFQyTU50Wll1aF9BWHBnSWlNY29UaDdQMTJMem1XUEFGc1g?oc=5",
+          "tier": "national",
+          "paywall": false,
+          "context": "International news agency founded in 1851 in London, now owned by Thomson Reuters, operating as one of the largest global wire services.",
+          "connection": "AI adoption in film production displaces creative workers and reshapes labor markets in world's largest film industry by output.",
+          "force_tag": "automation displacing creative workers"
+        },
+        {
+          "title": "AI is rewiring the world's most prolific film industry",
+          "source": "The Japan Times",
+          "url": "https://www.japantimes.co.jp/news/2026/04/04/asia-pacific/ai-india-bollywood-film/",
+          "tier": "international",
+          "paywall": false,
+          "context": "Japan's oldest English-language newspaper, founded in 1897 in Tokyo, owned by News2u Holdings, covering Japanese politics, culture, and Asia-Pacific affairs.",
+          "connection": "AI adoption is being deployed to offset shrinking production budgets and changing consumer demand, directly substituting for human creative labor.",
+          "force_tag": "automation displacing creative workers"
+        }
+      ]
+    },
+    {
+      "headline": "Regional war disrupts energy markets, forcing government austerity measures that deepen domestic economic crisis.",
+      "structural_force": "geopolitical shock cascading to economic collapse",
+      "all_forces": [
+        "geopolitical shock cascading to economic collapse",
+        "geopolitical economic shock"
+      ],
+      "source_count": 2,
+      "tier_count": 2,
+      "tiers": [
+        "international",
+        "local-regional"
+      ],
+      "domains": [
+        "Economics",
+        "Geopolitics",
+        "Labor"
+      ],
+      "domain_keys": [
+        "economics",
+        "geopolitics",
+        "labor"
+      ],
+      "article_count": 2,
+      "connections": [
+        {
+          "text": "Regional war disrupts energy markets, forcing government austerity measures that deepen domestic economic crisis.",
+          "source": "Channel News Asia",
+          "title": "Sri Lanka struggles to avert economic collapse over Mideast war",
+          "domains": [
+            "economics",
+            "geopolitics"
+          ],
+          "context": "News network launched in 1999 by Mediacorp, a Singaporean state-owned media company, covering Asia-Pacific politics, business, and regional affairs."
+        },
+        {
+          "text": "Job growth masks emerging labor market vulnerability as military conflict threatens economic stability and employment.",
+          "source": "Post and Courier",
+          "title": "US posts largest jobs gain in 15 months, but clouds brewing from Iran war",
+          "domains": [
+            "labor",
+            "geopolitics",
+            "economics"
+          ],
+          "context": "Daily newspaper founded in 1803 in Charleston, South Carolina, the oldest newspaper in the South, covering state politics, culture, and investigative reporting."
+        }
+      ],
+      "tier_framing": {
+        "international": {
+          "count": 1,
+          "keywords": [
+            "lanka",
+            "struggles",
+            "avert",
+            "economic",
+            "collapse"
+          ],
+          "sample": {
+            "title": "Sri Lanka struggles to avert economic collapse over Mideast war",
+            "source": "Channel News Asia",
+            "url": "https://www.channelnewsasia.com/asia/sri-lanka-avert-economic-collapse-mideast-war-6036396",
+            "context": "News network launched in 1999 by Mediacorp, a Singaporean state-owned media company, covering Asia-Pacific politics, business, and regional affairs."
+          }
+        },
+        "local-regional": {
+          "count": 1,
+          "keywords": [
+            "posts",
+            "largest",
+            "jobs",
+            "gain",
+            "months"
+          ],
+          "sample": {
+            "title": "US posts largest jobs gain in 15 months, but clouds brewing from Iran war",
+            "source": "Post and Courier",
+            "url": "https://www.postandcourier.com/us-posts-largest-jobs-gain-in-15-months-but-clouds-brewing-from-iran-war/article_af910c52-f9de-4bad-88a6-38b96b4fde74.html",
+            "context": "Daily newspaper founded in 1803 in Charleston, South Carolina, the oldest newspaper in the South, covering state politics, culture, and investigative reporting."
+          }
+        }
+      },
+      "articles": [
+        {
+          "title": "Sri Lanka struggles to avert economic collapse over Mideast war",
+          "source": "Channel News Asia",
+          "url": "https://www.channelnewsasia.com/asia/sri-lanka-avert-economic-collapse-mideast-war-6036396",
+          "tier": "international",
+          "paywall": false,
+          "context": "News network launched in 1999 by Mediacorp, a Singaporean state-owned media company, covering Asia-Pacific politics, business, and regional affairs.",
+          "connection": "Regional war disrupts energy markets, forcing government austerity measures that deepen domestic economic crisis.",
+          "force_tag": "geopolitical shock cascading to economic collapse"
+        },
+        {
+          "title": "US posts largest jobs gain in 15 months, but clouds brewing from Iran war",
+          "source": "Post and Courier",
+          "url": "https://www.postandcourier.com/us-posts-largest-jobs-gain-in-15-months-but-clouds-brewing-from-iran-war/article_af910c52-f9de-4bad-88a6-38b96b4fde74.html",
+          "tier": "local-regional",
+          "paywall": false,
+          "context": "Daily newspaper founded in 1803 in Charleston, South Carolina, the oldest newspaper in the South, covering state politics, culture, and investigative reporting.",
+          "connection": "Job growth masks emerging labor market vulnerability as military conflict threatens economic stability and employment.",
+          "force_tag": "geopolitical economic shock"
+        }
+      ]
+    },
+    {
+      "headline": "Military strategy assessment becomes partisan critique when opposition questions commander-in-chief's competence in active conflict.",
+      "structural_force": "partisan military accountability",
+      "all_forces": [
+        "partisan military accountability",
+        "partisan loyalty over accountability"
+      ],
+      "source_count": 2,
+      "tier_count": 2,
+      "tiers": [
+        "international",
+        "national"
+      ],
+      "domains": [
+        "Politics",
+        "Geopolitics",
+        "Security"
+      ],
+      "domain_keys": [
+        "domestic_politics",
+        "geopolitics",
+        "security"
+      ],
+      "article_count": 2,
+      "connections": [
+        {
+          "text": "Military strategy assessment becomes partisan critique when opposition questions commander-in-chief's competence in active conflict.",
+          "source": "Breitbart",
+          "title": "Dem Rep. Moulton: 'Iran Is Winning the War,' Trump 'in over His Head'",
+          "domains": [
+            "domestic_politics",
+            "geopolitics",
+            "security"
+          ],
+          "context": "Online news outlet founded in 2007 by Andrew Breitbart, headquartered in Los Angeles, covering national politics, immigration, and cultural commentary."
+        }
+      ],
+      "tier_framing": {
+        "national": {
+          "count": 1,
+          "keywords": [
+            "moulton",
+            "iran",
+            "winning",
+            "over",
+            "head"
+          ],
+          "sample": {
+            "title": "Dem Rep. Moulton: 'Iran Is Winning the War,' Trump 'in over His Head'",
+            "source": "Breitbart",
+            "url": "https://www.breitbart.com/clips/2026/04/03/dem-rep-moulton-iran-is-winning-the-war-trump-in-over-his-head/",
+            "context": "Online news outlet founded in 2007 by Andrew Breitbart, headquartered in Los Angeles, covering national politics, immigration, and cultural commentary."
+          }
+        },
+        "international": {
+          "count": 1,
+          "keywords": [
+            "look",
+            "wrong",
+            "town",
+            "tipperary",
+            "criticism"
+          ],
+          "sample": {
+            "title": "‘Look, you’re in the wrong town’: In Tipperary, criticism of Michael Lowry doesn’t fly",
+            "source": "Irish Times",
+            "url": "https://www.irishtimes.com/politics/2026/04/04/look-youre-in-the-wrong-town-in-tipperary-criticism-of-michael-lowry-doesnt-fly/",
+            "context": "Ireland's newspaper of record, founded in 1859 in Dublin, owned by the Irish Times Trust since 1974, covering Irish politics, European affairs, and international news."
+          }
+        }
+      },
+      "articles": [
+        {
+          "title": "Dem Rep. Moulton: 'Iran Is Winning the War,' Trump 'in over His Head'",
+          "source": "Breitbart",
+          "url": "https://www.breitbart.com/clips/2026/04/03/dem-rep-moulton-iran-is-winning-the-war-trump-in-over-his-head/",
+          "tier": "national",
+          "paywall": false,
+          "context": "Online news outlet founded in 2007 by Andrew Breitbart, headquartered in Los Angeles, covering national politics, immigration, and cultural commentary.",
+          "connection": "Military strategy assessment becomes partisan critique when opposition questions commander-in-chief's competence in active conflict.",
+          "force_tag": "partisan military accountability"
+        },
+        {
+          "title": "‘Look, you’re in the wrong town’: In Tipperary, criticism of Michael Lowry doesn’t fly",
+          "source": "Irish Times",
+          "url": "https://www.irishtimes.com/politics/2026/04/04/look-youre-in-the-wrong-town-in-tipperary-criticism-of-michael-lowry-doesnt-fly/",
+          "tier": "international",
+          "paywall": false,
+          "context": "Ireland's newspaper of record, founded in 1859 in Dublin, owned by the Irish Times Trust since 1974, covering Irish politics, European affairs, and international news.",
+          "connection": "",
+          "force_tag": "partisan loyalty over accountability"
+        }
+      ]
+    }
+  ],
+  "structural_forces": [
+    {
+      "force": "military escalation",
+      "related_forces": [
+        "regional military escalation",
+        "military escalation and crisis response",
+        "military escalation and hostage dynamics",
+        "military escalation with civilian spillover",
+        "military escalation and territorial control",
+        "military escalation in contested waters",
+        "military escalation and hostage leverage",
+        "military escalation and tactical exposure",
+        "military escalation and combat operations",
+        "active military conflict escalation",
+        "military escalation and personnel vulnerability",
+        "military escalation and personnel recovery"
+      ],
+      "article_count": 28,
+      "source_count": 15,
+      "domains": [
+        "Geopolitics",
+        "Security"
+      ],
+      "domain_keys": [
+        "geopolitics",
+        "security"
+      ],
+      "sample_title": "What to know about US fighter jets hit in Iran war"
+    },
+    {
+      "force": "supply chain enforcement",
+      "related_forces": [
+        "supply chain weaponization",
+        "supply chain vulnerability",
+        "supply chain geopolitical fragility"
+      ],
+      "article_count": 4,
+      "source_count": 4,
+      "domains": [
+        "Economics",
+        "Geopolitics",
+        "Governance",
+        "Labor",
+        "Security"
+      ],
+      "domain_keys": [
+        "economics",
+        "geopolitics",
+        "governance",
+        "labor",
+        "security"
+      ],
+      "sample_title": "3,699 domestic LPG cylinders seized in Telangana from March 12"
+    },
+    {
+      "force": "regional escalation",
+      "related_forces": [
+        "collateral damage from regional escalation"
+      ],
+      "article_count": 6,
+      "source_count": 1,
+      "domains": [
+        "Geopolitics",
+        "Security"
+      ],
+      "domain_keys": [
+        "geopolitics",
+        "security"
+      ],
+      "sample_title": "Damage reported as missiles hit residential areas in central Israel"
+    },
+    {
+      "force": "resource vulnerability in geopolitical conflict",
+      "related_forces": [
+        "economic coercion in geopolitical conflict",
+        "infrastructure vulnerability to geopolitical conflict"
+      ],
+      "article_count": 3,
+      "source_count": 3,
+      "domains": [
+        "Economics",
+        "Geopolitics",
+        "Information",
+        "Security"
+      ],
+      "domain_keys": [
+        "economics",
+        "geopolitics",
+        "information",
+        "security"
+      ],
+      "sample_title": "India news: LPG tanker headed for Mumbai crosses Strait of Hormuz"
+    },
+    {
+      "force": "proxy warfare escalation",
+      "related_forces": [
+        "warfare escalation and adaptation",
+        "proxy conflict escalation"
+      ],
+      "article_count": 5,
+      "source_count": 3,
+      "domains": [
+        "Geopolitics",
+        "Security"
+      ],
+      "domain_keys": [
+        "geopolitics",
+        "security"
+      ],
+      "sample_title": "Rockets fired at Israeli position near Maroun al-Ras, Hezbollah says"
+    },
+    {
+      "force": "executive instability",
+      "related_forces": [
+        "executive instability in ai sector",
+        "executive personnel instability"
+      ],
+      "article_count": 3,
+      "source_count": 3,
+      "domains": [
+        "AI",
+        "Politics",
+        "Governance"
+      ],
+      "domain_keys": [
+        "ai",
+        "domestic_politics",
+        "governance"
+      ],
+      "sample_title": "Trump is considering more changes to his Cabinet in the coming weeks"
+    },
+    {
+      "force": "law enforcement failure",
+      "related_forces": [
+        "traffic law enforcement",
+        "cooperative law enforcement resolution"
+      ],
+      "article_count": 3,
+      "source_count": 3,
+      "domains": [
+        "Governance",
+        "Legal",
+        "Security"
+      ],
+      "domain_keys": [
+        "governance",
+        "legal",
+        "security"
+      ],
+      "sample_title": "Victoria police arrest two people as part of Dezi Freeman investigation"
+    },
+    {
+      "force": "geopolitical shock to energy markets",
+      "related_forces": [
+        "geopolitical shock cascading to economic collapse",
+        "geopolitical energy shock constraining growth"
+      ],
+      "article_count": 4,
+      "source_count": 3,
+      "domains": [
+        "Economics",
+        "Geopolitics"
+      ],
+      "domain_keys": [
+        "economics",
+        "geopolitics"
+      ],
+      "sample_title": "Pain at the pumps"
+    },
+    {
+      "force": "authoritarian repression of political opposition",
+      "related_forces": [
+        "repression of political opposition"
+      ],
+      "article_count": 2,
+      "source_count": 2,
+      "domains": [
+        "Geopolitics",
+        "Governance",
+        "Legal",
+        "Security"
+      ],
+      "domain_keys": [
+        "geopolitics",
+        "governance",
+        "legal",
+        "security"
+      ],
+      "sample_title": "Iran executes two linked to opposition group, media say - Reuters"
+    },
+    {
+      "force": "public accountability and institutional responsiveness",
+      "related_forces": [
+        "public health failure and accountability gap"
+      ],
+      "article_count": 2,
+      "source_count": 2,
+      "domains": [
+        "Politics",
+        "Governance",
+        "Information",
+        "Labor"
+      ],
+      "domain_keys": [
+        "domestic_politics",
+        "governance",
+        "information",
+        "labor"
+      ],
+      "sample_title": "City of Houston Deletes X Post Referring to Good Friday as ‘Spring Holiday’ After Backlash"
+    },
+    {
+      "force": "automation displacing creative workers",
+      "related_forces": [],
+      "article_count": 2,
+      "source_count": 2,
+      "domains": [
+        "AI",
+        "Economics",
+        "Labor"
+      ],
+      "domain_keys": [
+        "ai",
+        "economics",
+        "labor"
+      ],
+      "sample_title": "AI is rewiring the world’s most prolific film industry - Reuters"
+    },
+    {
+      "force": "institutional checks and balances",
+      "related_forces": [],
+      "article_count": 2,
+      "source_count": 2,
+      "domains": [
+        "Politics",
+        "Governance",
+        "Legal"
+      ],
+      "domain_keys": [
+        "domestic_politics",
+        "governance",
+        "legal"
+      ],
+      "sample_title": "Collins knocks Trump’s budget proposal: ‘Several shortcomings’"
+    },
+    {
+      "force": "democratic accountability vs. institutional protection",
+      "related_forces": [
+        "institutional accountability"
+      ],
+      "article_count": 2,
+      "source_count": 2,
+      "domains": [
+        "Politics",
+        "Governance",
+        "Legal"
+      ],
+      "domain_keys": [
+        "domestic_politics",
+        "governance",
+        "legal"
+      ],
+      "sample_title": "European Parliament’s Rima Hassan: I’m a target of ‘political harassment’"
+    },
+    {
+      "force": "automation in conflict",
+      "related_forces": [
+        "escalation in undeclared conflict"
+      ],
+      "article_count": 2,
+      "source_count": 2,
+      "domains": [
+        "AI",
+        "Geopolitics",
+        "Security"
+      ],
+      "domain_keys": [
+        "ai",
+        "geopolitics",
+        "security"
+      ],
+      "sample_title": "‘The frontline is like Terminator’: fighting robots give Ukraine hope in war with Russia"
+    },
+    {
+      "force": "democratic erosion through policy neglect",
+      "related_forces": [
+        "democratic erosion through selective enforcement"
+      ],
+      "article_count": 2,
+      "source_count": 2,
+      "domains": [
+        "Politics",
+        "Governance",
+        "Legal"
+      ],
+      "domain_keys": [
+        "domestic_politics",
+        "governance",
+        "legal"
+      ],
+      "sample_title": "Tamil Nadu Assembly polls: Residents to boycott voting in protest over delay in building service lan"
+    },
+    {
+      "force": "geopolitical disruption of supply chains",
+      "related_forces": [
+        "geopolitical disruption of economic policy",
+        "geopolitical disruption of economic activity"
+      ],
+      "article_count": 3,
+      "source_count": 3,
+      "domains": [
+        "Economics",
+        "Geopolitics"
+      ],
+      "domain_keys": [
+        "economics",
+        "geopolitics"
+      ],
+      "sample_title": "7th India-flagged LPG tanker crosses Hormuz, 17 in queue"
+    },
+    {
+      "force": "partisan military accountability",
+      "related_forces": [
+        "partisan loyalty over accountability"
+      ],
+      "article_count": 2,
+      "source_count": 2,
+      "domains": [
+        "Politics",
+        "Geopolitics",
+        "Security"
+      ],
+      "domain_keys": [
+        "domestic_politics",
+        "geopolitics",
+        "security"
+      ],
+      "sample_title": "Dem Rep. Moulton: 'Iran Is Winning the War,' Trump 'in over His Head'"
+    },
+    {
+      "force": "political pressure on pricing decisions",
+      "related_forces": [
+        "political pressure on technocratic pricing"
+      ],
+      "article_count": 2,
+      "source_count": 1,
+      "domains": [
+        "Politics",
+        "Economics",
+        "Governance"
+      ],
+      "domain_keys": [
+        "domestic_politics",
+        "economics",
+        "governance"
+      ],
+      "sample_title": "Petrol price drops to Rs378 as PM cuts levy amid backlash"
+    },
+    {
+      "force": "hate crime enforcement",
+      "related_forces": [],
+      "article_count": 2,
+      "source_count": 2,
+      "domains": [
+        "Legal",
+        "Security"
+      ],
+      "domain_keys": [
+        "legal",
+        "security"
+      ],
+      "sample_title": "UK charges three men with arson over attack on Jewish community ambulances"
+    },
+    {
+      "force": "strategic coercion through infrastructure control",
+      "related_forces": [],
+      "article_count": 2,
+      "source_count": 1,
+      "domains": [
+        "Geopolitics",
+        "Security"
+      ],
+      "domain_keys": [
+        "geopolitics",
+        "security"
+      ],
+      "sample_title": "First Western vessel crosses Hormuz amid tight restrictions"
+    },
+    {
+      "force": "extreme weather intensification and emergency response strain",
+      "related_forces": [
+        "emergency response and rescue"
+      ],
+      "article_count": 2,
+      "source_count": 2,
+      "domains": [
+        "Climate",
+        "Security"
+      ],
+      "domain_keys": [
+        "climate",
+        "security"
+      ],
+      "sample_title": "Crews battle fast-growing wildfire in windy Southern California that’s forced some to evacuate"
+    },
+    {
+      "force": "state censorship and digital infrastructure control",
+      "related_forces": [
+        "state control of digital infrastructure"
+      ],
+      "article_count": 2,
+      "source_count": 2,
+      "domains": [
+        "Geopolitics",
+        "Information"
+      ],
+      "domain_keys": [
+        "geopolitics",
+        "information"
+      ],
+      "sample_title": "Telegram's Durov says Russia triggered payment system problem by blocking VPNs - Reuters"
+    },
+    {
+      "force": "partisan alignment on regulatory capture",
+      "related_forces": [
+        "regulatory capture by partisan ideology"
+      ],
+      "article_count": 2,
+      "source_count": 2,
+      "domains": [
+        "Politics",
+        "Governance"
+      ],
+      "domain_keys": [
+        "domestic_politics",
+        "governance"
+      ],
+      "sample_title": "Power 4 college sports conferences react to Trump's latest executive order"
+    },
+    {
+      "force": "climate-driven extreme weather",
+      "related_forces": [
+        "extreme weather warning",
+        "extreme weather records",
+        "extreme weather disruption"
+      ],
+      "article_count": 4,
+      "source_count": 4,
+      "domains": [
+        "Climate"
+      ],
+      "domain_keys": [
+        "climate"
+      ],
+      "sample_title": "Fast-growing wildfire in Southern California triggers evacuations"
+    },
+    {
+      "force": "infrastructure safety gaps",
+      "related_forces": [
+        "public safety infrastructure gap"
+      ],
+      "article_count": 2,
+      "source_count": 2,
+      "domains": [
+        "Governance"
+      ],
+      "domain_keys": [
+        "governance"
+      ],
+      "sample_title": "Nine killed as car plunges into well in Nashik district’s Dindori"
+    }
+  ],
+  "what_connects": [
+    {
+      "headline": "Fast-growing wildfire in Southern California triggers evacuations",
+      "structural_force": "climate-driven extreme weather",
+      "total_sources": 53,
+      "spectrum_segments": 4,
+      "left_sources": [
+        "Brookings",
+        "New York Times",
+        "ABC News"
+      ],
+      "right_sources": [
+        "Washington Times",
+        "The Dispatch",
+        "Fox News"
+      ],
+      "international_sources": [
+        "Channel News Asia",
+        "Taipei Times",
+        "Al Jazeera"
+      ],
+      "local_regional_sources": [
+        "Arkansas Times",
+        "CalMatters",
+        "Nebraska Examiner"
+      ],
+      "article_count": 99,
+      "domains": [
+        "climate",
+        "security",
+        "information"
+      ],
+      "sample_connection": ""
+    },
+    {
+      "headline": "Tamil Nadu Assembly polls: Residents to boycott voting in protest over delay in building service lanes",
+      "structural_force": "democratic erosion through policy neglect",
+      "total_sources": 48,
+      "spectrum_segments": 4,
+      "left_sources": [
+        "Mother Jones",
+        "ABC News",
+        "NBC News"
+      ],
+      "right_sources": [
+        "Washington Times",
+        "Fox News",
+        "RealClearPolitics"
+      ],
+      "international_sources": [
+        "The Guardian World",
+        "Times of India",
+        "South China Morning Post"
+      ],
+      "local_regional_sources": [
+        "Nevada Independent",
+        "Nebraska Examiner",
+        "CT Mirror"
+      ],
+      "article_count": 75,
+      "domains": [
+        "legal",
+        "climate",
+        "governance"
+      ],
+      "sample_connection": "Citizens withdraw electoral participation to force accountability on local infrastructure promises repeatedly broken across election cycles."
+    },
+    {
+      "headline": "Petrol price drops to Rs378 as PM cuts levy amid backlash",
+      "structural_force": "political pressure on pricing decisions",
+      "total_sources": 45,
+      "spectrum_segments": 4,
+      "left_sources": [
+        "ABC News",
+        "The Atlantic",
+        "American Prospect"
+      ],
+      "right_sources": [
+        "RealClearPolitics",
+        "Reason",
+        "Fox News"
+      ],
+      "international_sources": [
+        "Rappler",
+        "France 24",
+        "Times of India"
+      ],
+      "local_regional_sources": [
+        "Nebraska Examiner",
+        "CT Mirror",
+        "Military Times"
+      ],
+      "article_count": 62,
+      "domains": [
+        "economics",
+        "climate",
+        "security"
+      ],
+      "sample_connection": "Prime minister reverses fiscal policy under public pressure, signaling government responsiveness to economic grievance."
+    },
+    {
+      "headline": "What to know about US fighter jets hit in Iran war",
+      "structural_force": "military escalation",
+      "total_sources": 33,
+      "spectrum_segments": 4,
+      "left_sources": [
+        "ABC News",
+        "NBC News"
+      ],
+      "right_sources": [
+        "Breitbart"
+      ],
+      "international_sources": [
+        "Channel News Asia",
+        "Deutsche Welle",
+        "Taipei Times"
+      ],
+      "local_regional_sources": [
+        "Post and Courier",
+        "Arkansas Times",
+        "El Diario NY"
+      ],
+      "article_count": 71,
+      "domains": [
+        "security",
+        "geopolitics",
+        "information"
+      ],
+      "sample_connection": "Military aircraft losses signal escalation in direct U.S.-Iran military confrontation with regional security implications."
+    },
+    {
+      "headline": "Historical Thinking and Democratic Citizenship - hoover.org",
+      "structural_force": "civic literacy and democratic participation",
+      "total_sources": 31,
+      "spectrum_segments": 4,
+      "left_sources": [
+        "ABC News",
+        "NBC News",
+        "New York Times"
+      ],
+      "right_sources": [
+        "Washington Times",
+        "Washington Examiner",
+        "Hoover Institution"
+      ],
+      "international_sources": [
+        "Channel News Asia",
+        "Deutsche Welle",
+        "Al Jazeera"
+      ],
+      "local_regional_sources": [
+        "The Root",
+        "The Maine Monitor",
+        "Bridge Michigan"
+      ],
+      "article_count": 38,
+      "domains": [
+        "domestic_politics",
+        "security",
+        "information"
+      ],
+      "sample_connection": ""
+    },
+    {
+      "headline": "European Parliament’s Rima Hassan: I’m a target of ‘political harassment’",
+      "structural_force": "democratic accountability vs. institutional protection",
+      "total_sources": 28,
+      "spectrum_segments": 4,
+      "left_sources": [
+        "NPR",
+        "New York Times"
+      ],
+      "right_sources": [
+        "Washington Times",
+        "RealClearPolitics",
+        "Reason"
+      ],
+      "international_sources": [
+        "Bangkok Post",
+        "The Guardian World",
+        "Al Jazeera"
+      ],
+      "local_regional_sources": [
+        "Mountain State Spotlight",
+        "The Oregonian",
+        "CT Mirror"
+      ],
+      "article_count": 40,
+      "domains": [
+        "legal",
+        "economics",
+        "governance"
+      ],
+      "sample_connection": "Parliamentary immunity rules are tested when judicial systems pursue charges against elected members."
+    },
+    {
+      "headline": "Victoria police arrest two people as part of Dezi Freeman investigation",
+      "structural_force": "law enforcement failure",
+      "total_sources": 28,
+      "spectrum_segments": 4,
+      "left_sources": [
+        "The Atlantic",
+        "NBC News",
+        "New York Times"
+      ],
+      "right_sources": [
+        "Washington Times",
+        "Daily Wire",
+        "Fox News"
+      ],
+      "international_sources": [
+        "Taipei Times",
+        "The Guardian World",
+        "Al Jazeera"
+      ],
+      "local_regional_sources": [
+        "Nebraska Examiner",
+        "El Diario NY",
+        "Military Times"
+      ],
+      "article_count": 43,
+      "domains": [
+        "legal",
+        "governance",
+        "security"
+      ],
+      "sample_connection": "Police investigation reveals gaps in law enforcement coordination during extended fugitive manhunt."
+    },
+    {
+      "headline": "UK charges three men with arson over attack on Jewish community ambulances",
+      "structural_force": "hate crime enforcement",
+      "total_sources": 27,
+      "spectrum_segments": 4,
+      "left_sources": [
+        "The Atlantic",
+        "NBC News"
+      ],
+      "right_sources": [
+        "Reason",
+        "Daily Wire",
+        "Breitbart"
+      ],
+      "international_sources": [
+        "Al Jazeera",
+        "France 24",
+        "Times of India"
+      ],
+      "local_regional_sources": [
+        "Religion News Service",
+        "City Limits",
+        "Military Times"
+      ],
+      "article_count": 34,
+      "domains": [
+        "information",
+        "security",
+        "legal"
+      ],
+      "sample_connection": "Criminal prosecution of hate crime requires law enforcement investigation and court enforcement."
+    }
+  ],
   "cooperation": {
-    "total_cooperation_stories": 2,
-    "cooperation_rate": 0,
+    "total_cooperation_stories": 94,
+    "cooperation_rate": 8,
     "by_type": [
       {
-        "type": "civic participation",
-        "count": 1,
+        "type": "institutional reform",
+        "count": 12,
         "sources": [
-          "BBC World"
+          "Channel News Asia",
+          "Irish Times",
+          "The Guardian World",
+          "The Japan Times",
+          "NHK World"
         ],
         "domains": [
           "Governance",
+          "Politics",
           "Legal"
+        ],
+        "sample": {
+          "title": "Trump directs DHS to pay employees during shutdown",
+          "source": "The Hill",
+          "url": "https://thehill.com/homenews/administration/5815933-trump-orders-dhs-pay/",
+          "connection": "Executive action bypasses shutdown deadlock to ensure federal workers receive wages they've already earned."
+        }
+      },
+      {
+        "type": "civic participation",
+        "count": 6,
+        "sources": [
+          "Irish Times",
+          "Al Jazeera",
+          "Politico Europe",
+          "BBC World",
+          "The Hindu"
+        ],
+        "domains": [
+          "Legal",
+          "Politics",
+          "Governance"
         ],
         "sample": {
           "title": "'We want a voice in our land' - the people evicted to build Nigeria's capital",
@@ -203,13 +2216,18 @@
       },
       {
         "type": "institutional integrity",
-        "count": 1,
+        "count": 6,
         "sources": [
-          "Channel News Asia"
+          "Irish Times",
+          "Channel News Asia",
+          "Mother Jones",
+          "Al-Monitor",
+          "Straits Times"
         ],
         "domains": [
           "Security",
-          "Geopolitics"
+          "Legal",
+          "Governance"
         ],
         "sample": {
           "title": "WHO warns about attacks on Iran health facilities, regional threat",
@@ -217,9 +2235,174 @@
           "url": "https://www.channelnewsasia.com/world/world-health-organization-israel-united-states-iran-health-facilities-attacks-6036166",
           "connection": "Attacks on health infrastructure weaponize civilian medical systems within a regional conflict, rendering healthcare a geopolitical target."
         }
+      },
+      {
+        "type": "institutional coordination",
+        "count": 3,
+        "sources": [
+          "Rappler",
+          "The Hill",
+          "The Guardian World"
+        ],
+        "domains": [
+          "Security",
+          "Governance",
+          "Geopolitics"
+        ],
+        "sample": {
+          "title": "What to know about US fighter jets hit in Iran war",
+          "source": "The Hill",
+          "url": "https://thehill.com/policy/defense/5815865-us-air-force-jets-downed-iran/",
+          "connection": "Military aircraft losses signal escalation in direct U.S.-Iran military confrontation with regional security implications."
+        }
+      },
+      {
+        "type": "institutional accountability",
+        "count": 3,
+        "sources": [
+          "Premium Times Nigeria",
+          "ABC Australia",
+          "Times of India"
+        ],
+        "domains": [
+          "Governance",
+          "Security",
+          "Legal"
+        ],
+        "sample": {
+          "title": "Two arrested as part of investigation into movements of Dezi Freeman",
+          "source": "ABC Australia",
+          "url": "https://www.abc.net.au/news/2026-04-04/two-arrested-police-investigation-dezi-freeman-movements/106531570",
+          "connection": "Police investigation into a fatal shooting's circumstances reveals post-incident accountability mechanisms in law enforcement."
+        }
+      },
+      {
+        "type": "mutual aid",
+        "count": 2,
+        "sources": [
+          "Indian Express",
+          "InForum"
+        ],
+        "domains": [
+          "Economics",
+          "Governance",
+          "Geopolitics"
+        ],
+        "sample": {
+          "title": "Today in History, 1937:  Great Depression spurs Moorhead family to build home from salvaged materials",
+          "source": "InForum",
+          "url": "https://www.inforum.com/community/today-in-history-1937-great-depression-spurs-moorhead-family-to-build-home-from-salvaged-materials",
+          "connection": ""
+        }
+      },
+      {
+        "type": "cross-adversary humanitarian coordination",
+        "count": 2,
+        "sources": [
+          "Al-Monitor"
+        ],
+        "domains": [
+          "Geopolitics",
+          "Security"
+        ],
+        "sample": {
+          "title": "Downed planes spell new peril for Trump as Tehran hunts missing US pilot",
+          "source": "Al-Monitor",
+          "url": "https://www.al-monitor.com/originals/2026/04/downed-planes-spell-new-peril-trump-tehran-hunts-missing-us-pilot",
+          "connection": "Military aircraft downing creates immediate crisis requiring coordinated search-and-rescue between hostile nation-states."
+        }
+      },
+      {
+        "type": "executive intervention for worker protection",
+        "count": 1,
+        "sources": [
+          "New York Times"
+        ],
+        "domains": [
+          "Governance"
+        ],
+        "sample": {
+          "title": "Trump Directs Officials to Pay All D.H.S. Employees",
+          "source": "New York Times",
+          "url": "https://www.nytimes.com/2026/04/03/us/politics/trump-order-dhs-funding.html",
+          "connection": ""
+        }
+      },
+      {
+        "type": "legal advocacy and institutional whistleblowing by former officials",
+        "count": 1,
+        "sources": [
+          "New York Times"
+        ],
+        "domains": [
+          "Legal",
+          "Politics",
+          "Governance"
+        ],
+        "sample": {
+          "title": "Arrest of Wisconsin Mosque Leader Was Tied to Trump Antisemitism Campaign",
+          "source": "New York Times",
+          "url": "https://www.nytimes.com/2026/04/03/us/wisconsin-mosque-leader-antisemitism.html",
+          "connection": "Enforcement actions against pro-Palestinian activists mirror a broader pattern of targeting based on political speech and advocacy alignment."
+        }
+      },
+      {
+        "type": "mutual aid through shared housing",
+        "count": 1,
+        "sources": [
+          "NPR"
+        ],
+        "domains": [
+          "Economics"
+        ],
+        "sample": {
+          "title": "65, single, seeking a roommate: More seniors are being priced out of living alone",
+          "source": "NPR",
+          "url": "https://www.npr.org/2026/04/04/nx-s1-5760948/high-housing-costs-seniors-seeking-roommates",
+          "connection": ""
+        }
       }
     ],
     "by_force": [
+      {
+        "force": "military escalation",
+        "cooperation_count": 6,
+        "cooperation_types": [
+          "community resilience",
+          "search-and-rescue coordination",
+          "institutional coordination"
+        ],
+        "sample_title": "What to know about US fighter jets hit in Iran war",
+        "sample_source": "The Hill"
+      },
+      {
+        "force": "institutional checks and balances",
+        "cooperation_count": 2,
+        "cooperation_types": [
+          "cross-party institutional integrity",
+          "cross-party institutional norm"
+        ],
+        "sample_title": "Collins knocks Trump’s budget proposal: ‘Several shortcomings’",
+        "sample_source": "Washington Examiner"
+      },
+      {
+        "force": "hate crime enforcement",
+        "cooperation_count": 2,
+        "cooperation_types": [
+          "institutional integrity"
+        ],
+        "sample_title": "UK charges three men with arson over attack on Jewish community ambulances",
+        "sample_source": "Straits Times"
+      },
+      {
+        "force": "military escalation and crisis response",
+        "cooperation_count": 2,
+        "cooperation_types": [
+          "cross-adversary humanitarian coordination"
+        ],
+        "sample_title": "Downed planes spell new peril for Trump as Tehran hunts missing US pilot",
+        "sample_source": "Al-Monitor"
+      },
       {
         "force": "eminent domain without accountability",
         "cooperation_count": 1,
@@ -237,14 +2420,100 @@
         ],
         "sample_title": "WHO warns about attacks on Iran health facilities, regional threat",
         "sample_source": "Channel News Asia"
+      },
+      {
+        "force": "government shutdown creating service disruption",
+        "cooperation_count": 1,
+        "cooperation_types": [
+          "executive intervention for worker protection"
+        ],
+        "sample_title": "Trump Directs Officials to Pay All D.H.S. Employees",
+        "sample_source": "New York Times"
+      },
+      {
+        "force": "selective prosecution following political rhetoric",
+        "cooperation_count": 1,
+        "cooperation_types": [
+          "legal advocacy and institutional whistleblowing by former officials"
+        ],
+        "sample_title": "Arrest of Wisconsin Mosque Leader Was Tied to Trump Antisemitism Campaign",
+        "sample_source": "New York Times"
       }
     ],
-    "highlights": [],
+    "highlights": [
+      {
+        "title": "Authorities Bust Sinaloa Cartel Mayos Kidnapping Cell in Chiapas, Find Cartel Guidelines and Rules",
+        "source": "Borderland Beat",
+        "url": "https://www.borderlandbeat.com/2026/04/authorities-bust-sinaloa-cartel-mayos.html",
+        "tier": "local-regional",
+        "cooperation_type": "institutional enforcement",
+        "force_tag": "criminal organization management and state interdiction",
+        "connection": "Law enforcement raid on organized crime cell reveals cartel's internal governance structure and frees captives.",
+        "context": "Independent news blog founded in 2009, covering the Mexico-US border region, drug policy, cartel activity, and security issues along the frontier."
+      },
+      {
+        "title": "Today in History, 1937:  Great Depression spurs Moorhead family to build home from salvaged materials",
+        "source": "InForum",
+        "url": "https://www.inforum.com/community/today-in-history-1937-great-depression-spurs-moorhead-family-to-build-home-from-salvaged-materials",
+        "tier": "local-regional",
+        "cooperation_type": "mutual aid",
+        "force_tag": "economic resilience through salvage",
+        "connection": "",
+        "context": "Regional newspaper based in Fargo, North Dakota, owned by Forum Communications, covering North Dakota and the Upper Midwest including agriculture and energy policy."
+      },
+      {
+        "title": "Iran downs 2 US fighter jets, one pilot rescued",
+        "source": "Post and Courier",
+        "url": "https://www.postandcourier.com/nation-world/iran-downs-2-us-fighter-jets-one-pilot-rescued/article_df576bfc-0bef-41a4-85f1-4e7abec7c823.html",
+        "tier": "local-regional",
+        "cooperation_type": "search-and-rescue coordination",
+        "force_tag": "military escalation",
+        "connection": "Military escalation between Iran and U.S. marks direct kinetic engagement in ongoing regional power competition.",
+        "context": "Daily newspaper founded in 1803 in Charleston, South Carolina, the oldest newspaper in the South, covering state politics, culture, and investigative reporting."
+      }
+    ],
     "all_source_urls": {
       "BBC World": "https://www.bbc.com/news/articles/clyggr00x5vo?at_medium=RSS&at_campaign=rss",
-      "Channel News Asia": "https://www.channelnewsasia.com/world/world-health-organization-israel-united-states-iran-health-facilities-attacks-6036166"
+      "Channel News Asia": "https://www.channelnewsasia.com/world/world-health-organization-israel-united-states-iran-health-facilities-attacks-6036166",
+      "New York Times": "https://www.nytimes.com/2026/04/03/us/politics/trump-order-dhs-funding.html",
+      "NPR": "https://www.npr.org/2026/04/04/nx-s1-5760948/high-housing-costs-seniors-seeking-roommates",
+      "AP News": "https://apnews.com/article/southern-california-springs-wildfire-perris-aff44411b359df6855b3e8f82e4a41c8",
+      "The Hill": "https://thehill.com/homenews/administration/5815933-trump-orders-dhs-pay/",
+      "Washington Examiner": "https://www.washingtonexaminer.com/news/senate/4516177/collins-knocks-trumps-budget-proposal-several-shortcomings/",
+      "Al Jazeera": "https://www.aljazeera.com/video/newsfeed/2026/4/4/european-parliaments-rima-hassan-im-a-target-of-political?traffic_source=rss",
+      "The Guardian World": "https://www.theguardian.com/australia-news/2026/apr/04/confidential-report-found-former-home-affairs-boss-michael-pezzullo-was-reckless-in-engagement-with-liberal-powerbroker",
+      "France 24": "https://www.france24.com/en/france/20260404-is-opposing-israel-anti-semitism-france-s-latest-attempt-to-fight-hate-risks-inflaming-it",
+      "The Hindu": "https://www.thehindu.com/opinion/lead/keralas-development-decade/article70820770.ece",
+      "Deutsche Welle": "https://www.dw.com/en/afghanistan-earthquake-of-magnitude-5-9-kills-at-least-8/a-76657899?maca=en-rss-en-all-1573-rdf",
+      "ABC Australia": "https://www.abc.net.au/news/2026-04-04/two-arrested-police-investigation-dezi-freeman-movements/106531570",
+      "NHK World": "http://www3.nhk.or.jp/news/html/20260404/k10015092151000.html",
+      "South China Morning Post": "https://www.scmp.com/news/china/science/article/3348923/china-team-release-worlds-first-bamboo-drone-flight-control-software-free?utm_source=rss_feed",
+      "Times of India": "https://timesofindia.indiatimes.com/city/bhopal/13-seconds-of-horror-youth-slips-while-trying-to-board-moving-train-at-bhopal-railway-station-battles-for-life/articleshow/130011972.cms",
+      "Straits Times": "https://www.straitstimes.com/world/europe/uk-charges-three-men-with-arson-over-attack-on-jewish-community-ambulances",
+      "Borderland Beat": "https://www.borderlandbeat.com/2026/04/authorities-bust-sinaloa-cartel-mayos.html",
+      "Rappler": "https://www.rappler.com/philippines/list-bayanihan-3-legislative-actions-fuel-crisis-philippines/",
+      "Breitbart": "https://www.breitbart.com/faith/2026/04/03/houston-deletes-post-referring-good-friday-spring-holiday-backlash/",
+      "Dawn": "https://www.dawn.com/news/1988487/iran-us-race-to-find-crew-member-of-crashed-american-fighter-jet",
+      "The Japan Times": "https://www.japantimes.co.jp/news/2026/04/04/japan/tokyo-university-corruption-panel/",
+      "Jamaica Observer": "https://www.jamaicaobserver.com/2026/04/03/dr-neville-graham-pressing-mobile-clinics-initiative/",
+      "Bangkok Post": "https://www.bangkokpost.com/world/3230578/downed-planes-raise-new-perils-for-trump",
+      "Mother Jones": "https://www.motherjones.com/politics/2026/04/inconsequential-investigations-2026-garrison-hayes-doppelganger-neutral-milk-hotel/",
+      "InForum": "https://www.inforum.com/community/today-in-history-1937-great-depression-spurs-moorhead-family-to-build-home-from-salvaged-materials",
+      "Post and Courier": "https://www.postandcourier.com/nation-world/iran-downs-2-us-fighter-jets-one-pilot-rescued/article_df576bfc-0bef-41a4-85f1-4e7abec7c823.html",
+      "Premium Times Nigeria": "https://www.premiumtimesng.com/news/top-news/869232-sokoto-senator-to-leave-apc-over-insecurity-concerns.html",
+      "Al-Monitor": "https://www.al-monitor.com/originals/2026/04/uk-charges-three-men-arson-over-attack-jewish-community-ambulances",
+      "Politico Europe": "https://www.politico.eu/article/viktor-orban-hungary-maverick-two-tailed-dog-party-combats-with-satire/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
+      "Middle East Eye": "https://www.middleeasteye.net/live-blog/live-blog-update/shame-judaism-former-israeli-president-warns-against-armageddon",
+      "Irish Times": "https://www.irishtimes.com/politics/2026/04/04/attacks-on-undersea-cables-could-cut-off-ireland-from-global-internet-government-warned/",
+      "Indian Express": "https://indianexpress.com/article/india/kashmiri-mans-killing-in-army-encounter-finds-echo-in-assembly-10618490/"
     },
-    "coverage_gap": []
+    "coverage_gap": [
+      {
+        "force": "regional escalation",
+        "article_count": 5,
+        "note": "No cooperation signals detected. Is goodness happening here that the coverage isn't showing?"
+      }
+    ]
   },
   "local_regional_exclusive": [
     {
@@ -370,21 +2639,6 @@
       "context": "Nonprofit wire service and news outlet founded in 1934, providing independent coverage of religion, faith communities, spirituality, and ethics across all traditions."
     },
     {
-      "title": "Inspection finds dozens of violations of detention standards at El Paso immigration facility",
-      "source": "Texas Tribune",
-      "url": "https://feeds.texastribune.org/link/16799/17313292/texas-el-paso-camp-east-montana-immigration-inspection-violations",
-      "tier": "local-regional",
-      "text_preview": "Camp East Montana is seen in East El Paso, days before it was set to begin receiving U.S. Immigration and Customs Enforcement detainees, on Aug. 11, 2025.",
-      "domains": [
-        "labor",
-        "governance",
-        "legal"
-      ],
-      "connection": "",
-      "force_tag": "",
-      "context": "Nonprofit digital news organization founded in 2009 by Evan Smith, Ross Ramsey, and John Thornton, covering Texas state government, elections, and policy from Austin."
-    },
-    {
       "title": "Fired for refusing to remove LGBTQ+ books, Tennessee librarian says she’d do it again",
       "source": "The Advocate",
       "url": "https://www.advocate.com/politics/states/fired-tn-library-director-speaks",
@@ -427,6 +2681,19 @@
       "connection": "",
       "force_tag": "",
       "context": "Digital publication owned by Conde Nast, relaunched online in 2017 with expanded political and cultural coverage aimed at young adult and Gen Z readers."
+    },
+    {
+      "title": "Person of the Day | Mary-Margaret Duggan: Theater Becomes a Safehaven for Student Overcoming Learning Challenges",
+      "source": "Mississippi Free Press",
+      "url": "https://www.mississippifreepress.org/person-of-the-day-mary-margaret-duggan-theater-becomes-a-safehaven-for-student-overcoming-learning-challenges/",
+      "tier": "local-regional",
+      "text_preview": "Mary-Margaret Duggan, a theater major at the University of Southern Mississippi in Hattiesburg, Miss., shared how she fell in love with reading despite her dyslexia. The post Person of the Day | Mary-Margaret Duggan: Theater Becomes a Safehaven for S",
+      "domains": [
+        "information"
+      ],
+      "connection": "",
+      "force_tag": "",
+      "context": "Nonprofit newsroom founded in 2020 in Jackson, Mississippi, covering state government, civil rights, education, and community issues across the state."
     }
   ],
   "active_threads": [
@@ -437,7 +2704,7 @@
       ],
       "label": "Governance + Legal",
       "explanation": "Government actions challenged or upheld in courts",
-      "today_count": 167,
+      "today_count": 183,
       "trend": "rising",
       "sample_articles": [
         {
@@ -457,7 +2724,8 @@
         }
       ],
       "ai_connections": [
-        "Government development authority displaces residents without honoring compensation agreements, creating a legal remedy gap for evicted populations."
+        "Government development authority displaces residents without honoring compensation agreements, creating a legal remedy gap for evicted populations.",
+        "Enforcement actions against pro-Palestinian activists mirror a broader pattern of targeting based on political speech and advocacy alignment."
       ]
     },
     {
@@ -467,7 +2735,7 @@
       ],
       "label": "Information + Security",
       "explanation": "Information and Security",
-      "today_count": 162,
+      "today_count": 175,
       "trend": "rising",
       "sample_articles": [
         {
@@ -486,7 +2754,40 @@
           "url": "https://www.theatlantic.com/ideas/2026/04/trump-iran-war-weapons/686685/?utm_source=feed"
         }
       ],
-      "ai_connections": []
+      "ai_connections": [
+        "Undersea cable vulnerability exposes how critical digital infrastructure depends on physical security in geopolitically contested waters."
+      ]
+    },
+    {
+      "pair": [
+        "legal",
+        "security"
+      ],
+      "label": "Legal + Security",
+      "explanation": "Legal and Security",
+      "today_count": 163,
+      "trend": "rising",
+      "sample_articles": [
+        {
+          "title": "Iran Is Quickly Repairing Missile Bunkers, U.S. Intelligence Says",
+          "source": "New York Times",
+          "url": "https://www.nytimes.com/2026/04/03/us/politics/iran-missiles-launchers.html"
+        },
+        {
+          "title": "Exhaustive search underway in Iran to rescue downed F-15 airman",
+          "source": "NBC News",
+          "url": "https://www.nbcnews.com/nightly-news/video/exhaustive-search-underway-in-iran-to-rescue-downed-f-15-airman-260690501771"
+        },
+        {
+          "title": "Forced from their homes by Israeli bombing, displaced Lebanese face uncertainty ",
+          "source": "NBC News",
+          "url": "https://www.nbcnews.com/world/lebanon/lebanons-displaced-face-dire-conditions-turned-away-hezbollah-fear-rcna266534"
+        }
+      ],
+      "ai_connections": [
+        "Police investigation into a fatal shooting's circumstances reveals post-incident accountability mechanisms in law enforcement.",
+        "Criminal prosecution of hate crime requires law enforcement investigation and court enforcement."
+      ]
     },
     {
       "pair": [
@@ -495,7 +2796,7 @@
       ],
       "label": "Climate + Security",
       "explanation": "Environmental change creating security challenges",
-      "today_count": 152,
+      "today_count": 161,
       "trend": "rising",
       "sample_articles": [
         {
@@ -518,40 +2819,12 @@
     },
     {
       "pair": [
-        "legal",
-        "security"
-      ],
-      "label": "Legal + Security",
-      "explanation": "Legal and Security",
-      "today_count": 150,
-      "trend": "rising",
-      "sample_articles": [
-        {
-          "title": "Iran Is Quickly Repairing Missile Bunkers, U.S. Intelligence Says",
-          "source": "New York Times",
-          "url": "https://www.nytimes.com/2026/04/03/us/politics/iran-missiles-launchers.html"
-        },
-        {
-          "title": "Exhaustive search underway in Iran to rescue downed F-15 airman",
-          "source": "NBC News",
-          "url": "https://www.nbcnews.com/nightly-news/video/exhaustive-search-underway-in-iran-to-rescue-downed-f-15-airman-260690501771"
-        },
-        {
-          "title": "Forced from their homes by Israeli bombing, displaced Lebanese face uncertainty ",
-          "source": "NBC News",
-          "url": "https://www.nbcnews.com/world/lebanon/lebanons-displaced-face-dire-conditions-turned-away-hezbollah-fear-rcna266534"
-        }
-      ],
-      "ai_connections": []
-    },
-    {
-      "pair": [
         "domestic_politics",
         "governance"
       ],
       "label": "Politics + Governance",
       "explanation": "Political conflict over how government agencies operate",
-      "today_count": 138,
+      "today_count": 157,
       "trend": "rising",
       "sample_articles": [
         {
@@ -570,7 +2843,10 @@
           "url": "https://www.nytimes.com/2026/04/03/business/spacex-ipo-grok-elon-musk.html"
         }
       ],
-      "ai_connections": []
+      "ai_connections": [
+        "Senate confirmation timelines create political urgency that forces cabinet nominees through partisan gridlock before midterms shift congressional power.",
+        "Enforcement actions against pro-Palestinian activists mirror a broader pattern of targeting based on political speech and advocacy alignment."
+      ]
     },
     {
       "pair": [
@@ -579,7 +2855,7 @@
       ],
       "label": "Governance + Security",
       "explanation": "Defense policy and military strategy",
-      "today_count": 135,
+      "today_count": 155,
       "trend": "rising",
       "sample_articles": [
         {
@@ -598,7 +2874,10 @@
           "url": "https://www.nytimes.com/2026/04/03/science/nasa-artemis-ii-demonstration-moon-pilot.html"
         }
       ],
-      "ai_connections": []
+      "ai_connections": [
+        "Police investigation reveals gaps in law enforcement coordination during extended fugitive manhunt.",
+        "Law enforcement coordination across jurisdictions and agencies detects cross-state drug trafficking through evidence gathered during maritime emergency response."
+      ]
     },
     {
       "pair": [
@@ -607,7 +2886,7 @@
       ],
       "label": "Climate + Legal",
       "explanation": "Environmental lawsuits and climate litigation",
-      "today_count": 132,
+      "today_count": 145,
       "trend": "rising",
       "sample_articles": [
         {
@@ -635,7 +2914,7 @@
       ],
       "label": "Politics + Legal",
       "explanation": "Political disputes reaching the courts",
-      "today_count": 131,
+      "today_count": 141,
       "trend": "rising",
       "sample_articles": [
         {
@@ -654,7 +2933,41 @@
           "url": "https://www.npr.org/2026/04/03/nx-s1-5772665/trump-ballroom-underground-military-bunker"
         }
       ],
-      "ai_connections": []
+      "ai_connections": [
+        "Enforcement actions against pro-Palestinian activists mirror a broader pattern of targeting based on political speech and advocacy alignment.",
+        "State election authority directly challenges federal executive order on voting access, asserting constitutional autonomy over election administration."
+      ]
+    },
+    {
+      "pair": [
+        "geopolitics",
+        "security"
+      ],
+      "label": "Geopolitics + Security",
+      "explanation": "Military tensions between nations",
+      "today_count": 131,
+      "trend": "stable",
+      "sample_articles": [
+        {
+          "title": "Japanese, French and Omani vessels cross the Strait of Hormuz - Reuters",
+          "source": "Reuters",
+          "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPUDZlUENrREdFa2cxVWpLTE44Q1FGVjU1SXFiS2RVWUUzeVJWNDdDMXNzSlA1X1ZTUlJ0YnNjb0FFQ0RMRnhLaDg4cUV5T1pMX2xOQU5tSmpfQ0x3MjhQQ3lCREJ4ZXI1REVDVGJGZE5oaFRXVzN1TjR3WWRYWksxamRRcWo0aXJHWlljdHdrZ2tPcjJNbTNKZlhveXlvN3dp?oc=5"
+        },
+        {
+          "title": "New York Times goes viral for erroneous print headline on Trump's NATO exit thre",
+          "source": "Fox News",
+          "url": "https://www.foxnews.com/media/new-york-times-goes-viral-erroneous-print-headline-trumps-nato-exit-threat"
+        },
+        {
+          "title": "Dem Senator warns of NFL Draft security risks amid Iran war in letter to DHS",
+          "source": "Fox News",
+          "url": "https://www.foxnews.com/sports/dem-senator-warns-nfl-draft-security-risks-amid-iran-war-letter-dhs"
+        }
+      ],
+      "ai_connections": [
+        "Attacks on health infrastructure weaponize civilian medical systems within a regional conflict, rendering healthcare a geopolitical target.",
+        "China uses diplomatic channels on regional conflict to project global influence while U.S. disengages from de-escalation efforts."
+      ]
     },
     {
       "pair": [
@@ -663,7 +2976,7 @@
       ],
       "label": "Politics + Security",
       "explanation": "Defense and public safety as political issues",
-      "today_count": 125,
+      "today_count": 130,
       "trend": "rising",
       "sample_articles": [
         {
@@ -682,7 +2995,10 @@
           "url": "https://www.nbcnews.com/politics/white-house/trump-said-iran-was-decimated-american-f-15e-fighter-jet-was-shot-rcna266611"
         }
       ],
-      "ai_connections": []
+      "ai_connections": [
+        "A convicted offender exploits proximity to power to gain credibility and access for illicit influence over foreign policy perceptions.",
+        "Military encounter legitimacy contested through political channels when governance oversight questions Army's classification of casualty as terrorist."
+      ]
     },
     {
       "pair": [
@@ -691,7 +3007,7 @@
       ],
       "label": "Information + Legal",
       "explanation": "Free speech, media law, and platform regulation",
-      "today_count": 118,
+      "today_count": 127,
       "trend": "rising",
       "sample_articles": [
         {
@@ -710,7 +3026,10 @@
           "url": "https://apnews.com/article/trump-bondi-justice-department-9071b8fd9a429267732b5d4238946eff"
         }
       ],
-      "ai_connections": []
+      "ai_connections": [
+        "Legal definition of hate speech conflates political criticism with identity-based discrimination, raising free expression and enforcement questions.",
+        "Election integrity endangered when deepfaked imagery deployed via party-controlled media channels breaches electoral conduct codes."
+      ]
     },
     {
       "pair": [
@@ -719,8 +3038,8 @@
       ],
       "label": "Climate + Information",
       "explanation": "Climate and Information",
-      "today_count": 113,
-      "trend": "new",
+      "today_count": 124,
+      "trend": "rising",
       "sample_articles": [
         {
           "title": "US Judge Denies Pirro Motion to Revive Quashed Fed Subpoenas",
@@ -742,40 +3061,12 @@
     },
     {
       "pair": [
-        "economics",
-        "security"
-      ],
-      "label": "Economics + Security",
-      "explanation": "Military spending and conflict affecting markets",
-      "today_count": 109,
-      "trend": "rising",
-      "sample_articles": [
-        {
-          "title": "Trump Requests $1.5 Trillion for Military Spending",
-          "source": "New York Times",
-          "url": "https://www.nytimes.com/2026/04/03/us/politics/white-house-defense-budget.html"
-        },
-        {
-          "title": "Strong Jobs Numbers Make the Fed’s Job Easier",
-          "source": "New York Times",
-          "url": "https://www.nytimes.com/2026/04/03/business/economy/jobs-unemployment-inflation-fed-rates.html"
-        },
-        {
-          "title": "Some Marines graduate without their parents' presence amid ICE fears",
-          "source": "NBC News",
-          "url": "https://www.nbcnews.com/news/us-news/marines-graduation-ice-fears-parris-island-rcna266019"
-        }
-      ],
-      "ai_connections": []
-    },
-    {
-      "pair": [
         "climate",
         "governance"
       ],
       "label": "Climate + Governance",
       "explanation": "Environmental regulation and climate policy implementation",
-      "today_count": 106,
+      "today_count": 116,
       "trend": "rising",
       "sample_articles": [
         {
@@ -794,22 +3085,56 @@
           "url": "https://www.nbcnews.com/news/us-news/marines-graduation-ice-fears-parris-island-rcna266019"
         }
       ],
-      "ai_connections": []
+      "ai_connections": [
+        "Infrastructure zoning decisions pit energy-intensive datacentres against housing and climate resilience, revealing conflicts in resource allocation.",
+        "Heritage listing sought as regulatory mechanism to prevent mining expansion and protect ecological/cultural land values."
+      ]
     },
     {
       "pair": [
-        "domestic_politics",
-        "economics"
+        "economics",
+        "security"
       ],
-      "label": "Politics + Economics",
-      "explanation": "Economic conditions shaping political debate",
-      "today_count": 100,
-      "trend": "new",
+      "label": "Economics + Security",
+      "explanation": "Military spending and conflict affecting markets",
+      "today_count": 114,
+      "trend": "rising",
       "sample_articles": [
         {
           "title": "Trump Requests $1.5 Trillion for Military Spending",
           "source": "New York Times",
           "url": "https://www.nytimes.com/2026/04/03/us/politics/white-house-defense-budget.html"
+        },
+        {
+          "title": "Strong Jobs Numbers Make the Fed’s Job Easier",
+          "source": "New York Times",
+          "url": "https://www.nytimes.com/2026/04/03/business/economy/jobs-unemployment-inflation-fed-rates.html"
+        },
+        {
+          "title": "Some Marines graduate without their parents' presence amid ICE fears",
+          "source": "NBC News",
+          "url": "https://www.nbcnews.com/news/us-news/marines-graduation-ice-fears-parris-island-rcna266019"
+        }
+      ],
+      "ai_connections": [
+        "Defense industrialization requires sustained international partnership and export markets to justify development costs.",
+        "Geopolitical fuel shock forces government subsidy response to prevent social unrest from infrastructure cost escalation."
+      ]
+    },
+    {
+      "pair": [
+        "economics",
+        "governance"
+      ],
+      "label": "Economics + Governance",
+      "explanation": "Tax policy, trade agreements, and government spending",
+      "today_count": 110,
+      "trend": "rising",
+      "sample_articles": [
+        {
+          "title": "Strong Jobs Numbers Make the Fed’s Job Easier",
+          "source": "New York Times",
+          "url": "https://www.nytimes.com/2026/04/03/business/economy/jobs-unemployment-inflation-fed-rates.html"
         },
         {
           "title": "Big Banks Seeking a Piece of SpaceX’s I.P.O. Must Subscribe to Elon Musk’s Grok",
@@ -822,54 +3147,29 @@
           "url": "https://www.politico.com/newsletters/new-york-playbook-pm/2026/04/03/is-hochul-the-unlikely-hero-of-adams-world-indictments-00858598"
         }
       ],
-      "ai_connections": []
-    },
-    {
-      "pair": [
-        "economics",
-        "legal"
-      ],
-      "label": "Economics + Legal",
-      "explanation": "Antitrust enforcement, financial regulation, and corporate law",
-      "today_count": 98,
-      "trend": "new",
-      "sample_articles": [
-        {
-          "title": "In the Philippines, Rising Fuel Prices Force Travelers to Stay Home During Holy ",
-          "source": "New York Times",
-          "url": "https://www.nytimes.com/2026/04/03/world/asia/philippines-holy-week-oil-fuel-prices.html"
-        },
-        {
-          "title": "Is Hochul the unlikely hero of Adams’ world indictments?",
-          "source": "Politico",
-          "url": "https://www.politico.com/newsletters/new-york-playbook-pm/2026/04/03/is-hochul-the-unlikely-hero-of-adams-world-indictments-00858598"
-        },
-        {
-          "title": "US Judge Denies Pirro Motion to Revive Quashed Fed Subpoenas",
-          "source": "Bloomberg",
-          "url": "https://www.bloomberg.com/news/articles/2026-04-03/us-judge-denies-pirro-motion-to-reconsider-quashed-fed-subpoenas"
-        }
-      ],
-      "ai_connections": []
+      "ai_connections": [
+        "Infrastructure zoning decisions pit energy-intensive datacentres against housing and climate resilience, revealing conflicts in resource allocation.",
+        "State development success despite unfavorable federal fiscal structure demonstrates local policy effectiveness within constrained resources."
+      ]
     }
   ],
   "source_spectrum": {
-    "international": 292,
-    "national": 243,
-    "local-regional": 232,
-    "specialist": 41,
-    "explainer": 19,
-    "analysis": 12,
+    "international": 530,
+    "national": 290,
+    "local-regional": 271,
+    "specialist": 45,
+    "explainer": 21,
+    "analysis": 15,
     "newsletter": 9,
     "government": 4,
     "research": 3,
     "think-tank": 3,
-    "podcast": 1
+    "podcast": 2
   },
   "questions": [
     {
       "question": "Which government actions are being challenged in court?",
-      "article_count": 167,
+      "article_count": 183,
       "domains": [
         "Governance",
         "Legal"
@@ -893,12 +3193,14 @@
         ]
       },
       "ai_insights": [
-        "Government development authority displaces residents without honoring compensation agreements, creating a legal remedy gap for evicted populations."
+        "Government development authority displaces residents without honoring compensation agreements, creating a legal remedy gap for evicted populations.",
+        "Enforcement actions against pro-Palestinian activists mirror a broader pattern of targeting based on political speech and advocacy alignment.",
+        "State election authority directly challenges federal executive order on voting access, asserting constitutional autonomy over election administration."
       ]
     },
     {
       "question": "How is environmental change creating security risks?",
-      "article_count": 152,
+      "article_count": 161,
       "domains": [
         "Climate",
         "Security"
@@ -925,7 +3227,7 @@
     },
     {
       "question": "What is the government actually doing right now?",
-      "article_count": 138,
+      "article_count": 157,
       "domains": [
         "Politics",
         "Governance"
@@ -948,11 +3250,15 @@
           }
         ]
       },
-      "ai_insights": []
+      "ai_insights": [
+        "Senate confirmation timelines create political urgency that forces cabinet nominees through partisan gridlock before midterms shift congressional power.",
+        "Enforcement actions against pro-Palestinian activists mirror a broader pattern of targeting based on political speech and advocacy alignment.",
+        "College sports conference leaders align with executive order and Congress legislation, showing partisan coordination on regulatory policy."
+      ]
     },
     {
       "question": "What military and defense policy decisions are being made?",
-      "article_count": 135,
+      "article_count": 155,
       "domains": [
         "Governance",
         "Security"
@@ -975,11 +3281,15 @@
           }
         ]
       },
-      "ai_insights": []
+      "ai_insights": [
+        "Police investigation reveals gaps in law enforcement coordination during extended fugitive manhunt.",
+        "Law enforcement coordination across jurisdictions and agencies detects cross-state drug trafficking through evidence gathered during maritime emergency response.",
+        "Military encounter legitimacy contested through political channels when governance oversight questions Army's classification of casualty as terrorist."
+      ]
     },
     {
       "question": "What legal challenges are being filed, and what do they mean?",
-      "article_count": 131,
+      "article_count": 141,
       "domains": [
         "Politics",
         "Legal"
@@ -1002,11 +3312,55 @@
           }
         ]
       },
-      "ai_insights": []
+      "ai_insights": [
+        "Enforcement actions against pro-Palestinian activists mirror a broader pattern of targeting based on political speech and advocacy alignment.",
+        "State election authority directly challenges federal executive order on voting access, asserting constitutional autonomy over election administration.",
+        "Parliamentary immunity rules are tested when judicial systems pursue charges against elected members."
+      ]
+    },
+    {
+      "question": "What is the current state of international military tensions?",
+      "article_count": 131,
+      "domains": [
+        "Geopolitics",
+        "Security"
+      ],
+      "sources_by_tier": {
+        "national": [
+          {
+            "source": "Reuters",
+            "title": "Japanese, French and Omani vessels cross the Strait of Hormuz - Reuters",
+            "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPUDZlUENrREdFa2cxVWpLTE44Q1FGVjU1SXFiS2RVWUUzeVJWNDdDMXNzSlA1X1ZTUlJ0YnNjb0FFQ0RMRnhLaDg4cUV5T1pMX2xOQU5tSmpfQ0x3MjhQQ3lCREJ4ZXI1REVDVGJGZE5oaFRXVzN1TjR3WWRYWksxamRRcWo0aXJHWlljdHdrZ2tPcjJNbTNKZlhveXlvN3dp?oc=5",
+            "context": "International news agency founded in 1851 in London, now owned by Thomson Reuters, operating as one of the largest global wire services.",
+            "connection": ""
+          },
+          {
+            "source": "Fox News",
+            "title": "New York Times goes viral for erroneous print headline on Trump's NATO exit threat",
+            "url": "https://www.foxnews.com/media/new-york-times-goes-viral-erroneous-print-headline-trumps-nato-exit-threat",
+            "context": "Cable news network founded in 1996 by Rupert Murdoch, owned by Fox Corporation, providing 24-hour news, opinion, and political commentary from New York.",
+            "connection": ""
+          }
+        ],
+        "international": [
+          {
+            "source": "Al Jazeera",
+            "title": "Video shows the moment a Russian drone hit an apartment in Ukraine",
+            "url": "https://www.aljazeera.com/video/newsfeed/2026/4/3/video-shows-the-moment-a-russian-drone-hit-an-apartment-in-ukraine?traffic_source=rss",
+            "context": "International news network founded in 1996, funded by the government of Qatar, headquartered in Doha, covering global news with Middle East emphasis.",
+            "connection": ""
+          }
+        ]
+      },
+      "ai_insights": [
+        "Attacks on health infrastructure weaponize civilian medical systems within a regional conflict, rendering healthcare a geopolitical target.",
+        "China uses diplomatic channels on regional conflict to project global influence while U.S. disengages from de-escalation efforts.",
+        "Iranian air defense successfully targets U.S. military assets, marking a rare shift in asymmetric conflict capabilities and escalation patterns."
+      ]
     },
     {
       "question": "How are defense and security decisions being shaped by politics?",
-      "article_count": 125,
+      "article_count": 130,
       "domains": [
         "Politics",
         "Security"
@@ -1029,34 +3383,11 @@
           }
         ]
       },
-      "ai_insights": []
-    },
-    {
-      "question": "How is the conflict affecting prices and the economy?",
-      "article_count": 109,
-      "domains": [
-        "Economics",
-        "Security"
-      ],
-      "sources_by_tier": {
-        "national": [
-          {
-            "source": "New York Times",
-            "title": "Trump Requests $1.5 Trillion for Military Spending",
-            "url": "https://www.nytimes.com/2026/04/03/us/politics/white-house-defense-budget.html",
-            "context": "Daily newspaper founded in 1851, owned by the New York Times Company, the largest newspaper by digital subscriptions globally, covering national and world affairs.",
-            "connection": ""
-          },
-          {
-            "source": "NBC News",
-            "title": "Some Marines graduate without their parents' presence amid ICE fears",
-            "url": "https://www.nbcnews.com/news/us-news/marines-graduation-ice-fears-parris-island-rcna266019",
-            "context": "Broadcast news division of NBCUniversal, a subsidiary of Comcast, founded in 1940, providing national and international news across television and digital platforms.",
-            "connection": ""
-          }
-        ]
-      },
-      "ai_insights": []
+      "ai_insights": [
+        "A convicted offender exploits proximity to power to gain credibility and access for illicit influence over foreign policy perceptions.",
+        "Military encounter legitimacy contested through political channels when governance oversight questions Army's classification of casualty as terrorist.",
+        "Military overconfidence in contested airspace undermines Trump's geopolitical messaging and exposes strategic vulnerability."
+      ]
     }
   ],
   "article_url_index": {
@@ -1213,8 +3544,207 @@
     "Tampa Bay Times": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOcVluekNrMVRnZDVsZDB4Sk1ENzBteG9sUVIyc2VoOEFmYVUwdlNIbW9ESGQyVTBLUkxOSHN5MHlKNmtEanZWVmxCSzlzR1Zsa1FHdEk3S25janhQWnpfX0Z4cUt4SGNNNVZzeDh0QkZwTmttN2ZlbFlLQWQ2dGYyajRiaTROMjE0WUlCSmhfMFVGd1J4NUdnRTBYY2M5UDMwQkQ2WEdZbDdaTzQzU1FtZzJHRHItdDlTdmRpMFZ3?oc=5",
     "The Oregonian": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOZkdtTFYxT0ViXzR3eUdjYXhQUkhjdVUxZEFwUXkxbGFpcGQtajNla1VoMUUwWlpSZ2M5V3Rjckp5T3FEZDBWTzZhSjdnalFBSUpLZFp3MTVwN3FFRnM5cXkycXNIWUxrNzkxZkIybEwyN0NweXRYaFREaE1uQU1rbmQ2M0ZnRFlzdjZDNmRTeUFGUFN1R0owQ3pDSWJxcVVVQjkzcndKV3cwNWdoR3FnVEZiUdIBxwFBVV95cUxPUkhqc25iR3c2ZWVjRTVCTmZKbzFLcG10aGV6clBfbjhxM2JLcDlhY1VPRWNXbUh3QWhSeGo5WEYzQm4ya0JTTW9wZ21iUTZzZ2poU0Rsb2xhcEFVdDY4YzVoanVtakRJLTlKejd3WFFPeEZMbGxJeWlqWGlvUXJnaFREOFVwLWFFRWFTVmVCdy1sQjNUc1p2d2JGNVV6dV9FZm12b2ljVEViYmE2VnJMOElPSF9nYXFxSUlnWDRCTldZckJ0bU5J?oc=5",
     "Atlantic Council": "https://www.atlanticcouncil.org/blogs/energysource/how-the-iran-war-could-shift-energy-policies-around-the-world/",
-    "NPR Politics Podcast": "https://www.npr.org/2026/04/03/nx-s1-5771769/trump-tries-to-sell-the-iran-war-a-month-after-it-started"
+    "NPR Politics Podcast": "https://www.npr.org/2026/04/03/nx-s1-5771769/trump-tries-to-sell-the-iran-war-a-month-after-it-started",
+    "Honolulu Civil Beat": "https://www.civilbeat.org/2026/04/photo-essay-hawaii-medical-students-anxiously-seek-their-perfect-match/",
+    "Borderland Beat": "https://www.borderlandbeat.com/2026/04/authorities-bust-sinaloa-cartel-mayos.html",
+    "Muslim Matters": "https://muslimmatters.org/2026/04/04/beyond-ramadan-connecting-to-allah-through-his-beautiful-names/?utm_source=rss&utm_medium=rss&utm_campaign=beyond-ramadan-connecting-to-allah-through-his-beautiful-names",
+    "Marshall Fund": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOQjVQMzNGSW9sRWR6V1ZRU1hGMy1OYmpxMU9aSDZzWXdYTjgzS0VLMWF0TV9MS2pVMGgyZW9iUGdqRW95emszSHRsTGs0SG01UkluSkdHWDVMcElnQ0VCNUhDaXFsel8wV3ctdTZDWXc2Y0paYnd4MFg1dm1DaDVJcE04VXFnTWxQTVE?oc=5",
+    "Planet Money (NPR)": "https://www.npr.org/2026/04/03/nx-s1-5773425/reeses-peanut-butter-candy-chocolate-egg-easter-hershey-brad",
+    "Politico Europe": "https://www.politico.eu/article/trump-weighs-more-cabinet-changes-after-bondi-ouster/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication"
   },
   "event_divergence": [],
-  "narrative_divergence": []
+  "narrative_divergence": [
+    {
+      "topic": "Security + Geopolitics",
+      "theme": "Military aircraft losses signal escalation in direct U.S.-Iran military confrontation with regional security implications.",
+      "source_count": 15,
+      "structural_force": "military escalation",
+      "articles": [
+        {
+          "title": "What to know about US fighter jets hit in Iran war",
+          "source": "The Hill",
+          "url": "https://thehill.com/policy/defense/5815865-us-air-force-jets-downed-iran/",
+          "tier": "national",
+          "paywall": false,
+          "context": "Political news organization founded in 1994 in Washington DC, owned by Nexstar Media Group since 2021, covering Congress, the White House, and campaigns.",
+          "connection": "Military aircraft losses signal escalation in direct U.S.-Iran military confrontation with regional security implications.",
+          "force_tag": "military escalation"
+        },
+        {
+          "title": "Downed planes spell new peril for Trump as Tehran hunts missing US pilot - Reuters",
+          "source": "Reuters",
+          "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPWVZhSm5OVWlJdjQ4V09wQTk0ZjZjM3ZwbVNFQldGLUtQdVVmRVktdUVucUtQMGRmUExxalNMbXBWcFBUSXZZQ0xYR19kNFQxWml2eFdrZjhfMzVCbWc0YmJ4Z0pVRWdzbl9LbnBXRlA4V3JLalVXc00tS1RxQ1J0UVBKSmNobFJoSUJvbF85dHMzcmMyMkdweE16Z0JFWEhXdTNoVHlYVUNqRDlUWGpfMEFXd1ZCUHFnOTFPaw?oc=5",
+          "tier": "national",
+          "paywall": false,
+          "context": "International news agency founded in 1851 in London, now owned by Thomson Reuters, operating as one of the largest global wire services.",
+          "connection": "Military escalation in Middle East creates diplomatic crisis for U.S. administration, raising stakes for conflict resolution.",
+          "force_tag": "military escalation and hostage dynamics"
+        },
+        {
+          "title": "Live: Several blasts heard coming from northern Tehran",
+          "source": "France 24",
+          "url": "https://www.france24.com/en/middle-east/20260404-live-several-blasts-heard-coming-from-northern-tehran",
+          "tier": "international",
+          "paywall": false,
+          "context": "French international news network launched in 2006, funded by the French government through France Médias Monde, broadcasting in French, English, Arabic, and Spanish.",
+          "connection": "Regional military escalation involves US-Iran direct engagement over downed aircraft and crew recovery operations.",
+          "force_tag": "military escalation"
+        },
+        {
+          "title": "Iran downs F-15, A-10 jets: First US combat aircraft losses in over 20 years",
+          "source": "Times of India",
+          "url": "https://timesofindia.indiatimes.com/world/middle-east/iran-downs-f-15-a-10-jets-first-us-combat-aircraft-losses-in-over-20-years/articleshow/130012777.cms",
+          "tier": "international",
+          "paywall": false,
+          "context": "India's largest English-language daily newspaper by circulation, founded in 1838, owned by the Bennett Coleman family, covering national and international news.",
+          "connection": "Military capability demonstrations signal resolve in geopolitical standoffs and influence deterrence calculations.",
+          "force_tag": "military escalation"
+        },
+        {
+          "title": "Israel says striking Hezbollah sites in Beirut after destroying bridge",
+          "source": "Straits Times",
+          "url": "https://www.straitstimes.com/world/middle-east/israel-says-striking-hezbollah-sites-in-beirut-after-destroying-bridge",
+          "tier": "international",
+          "paywall": false,
+          "context": "Singapore's English-language broadsheet newspaper, founded in 1845, owned by Singapore Press Holdings, covering Southeast Asian and global news, politics, and business.",
+          "connection": "Military strikes on militant group infrastructure represent escalation in regional armed conflict.",
+          "force_tag": "military escalation"
+        },
+        {
+          "title": "Iran, US race to find crew member of crashed American fighter jet",
+          "source": "Dawn",
+          "url": "https://www.dawn.com/news/1988487/iran-us-race-to-find-crew-member-of-crashed-american-fighter-jet",
+          "tier": "international",
+          "paywall": false,
+          "context": "Pakistani English-language newspaper founded in 1941 by Muhammad Ali Jinnah, published from Karachi, covering national politics and South Asian affairs as Pakistan's oldest newspaper.",
+          "connection": "Military aircraft incidents escalate US-Iran tensions amid broader regional conflict.",
+          "force_tag": "military escalation"
+        }
+      ]
+    },
+    {
+      "topic": "Economics + Governance",
+      "theme": "Enforcement action on fuel supply diversion suggests regulatory capacity problem amid broader commodity distribution.",
+      "source_count": 4,
+      "structural_force": "supply chain enforcement",
+      "articles": [
+        {
+          "title": "3,699 domestic LPG cylinders seized in Telangana from March 12",
+          "source": "The Hindu",
+          "url": "https://www.thehindu.com/news/national/telangana/3699-domestic-lpg-cylinders-seized-in-telangana-from-march-12/article70820802.ece",
+          "tier": "international",
+          "paywall": false,
+          "context": "Indian English-language newspaper founded in 1878 in Chennai, owned by the Kasturi and Sons family trust, covering national and international news.",
+          "connection": "Enforcement action on fuel supply diversion suggests regulatory capacity problem amid broader commodity distribution.",
+          "force_tag": "supply chain enforcement"
+        },
+        {
+          "title": "Oil bypassing Strait of Hormuz set to arrive in Japan from May",
+          "source": "The Japan Times",
+          "url": "https://www.japantimes.co.jp/business/2026/04/04/oil-bypassing-hormuz-japan-may/",
+          "tier": "international",
+          "paywall": false,
+          "context": "Japan's oldest English-language newspaper, founded in 1897 in Tokyo, owned by News2u Holdings, covering Japanese politics, culture, and Asia-Pacific affairs.",
+          "connection": "Middle East conflict disrupts global oil supply routes, forcing Japan to develop alternative import paths to secure energy.",
+          "force_tag": "supply chain weaponization"
+        },
+        {
+          "title": "Ryanair chief’s looming test of crisis management amid warning of $200 per barrel of oil",
+          "source": "Irish Times",
+          "url": "https://www.irishtimes.com/business/2026/04/04/ryanairs-oleary-faces-fresh-test-of-crisis-mastery-amid-warnings-of-200-oil/",
+          "tier": "international",
+          "paywall": false,
+          "context": "Ireland's newspaper of record, founded in 1859 in Dublin, owned by the Irish Times Trust since 1974, covering Irish politics, European affairs, and international news.",
+          "connection": "Airline exposure to geopolitical risk in Middle East conflict creates commodity price volatility affecting operational costs.",
+          "force_tag": "supply chain geopolitical fragility"
+        },
+        {
+          "title": "Lucid blames dip in Q1 sales on seat supplier issue",
+          "source": "TechCrunch",
+          "url": "https://techcrunch.com/2026/04/03/lucid-blames-dip-in-q1-sales-on-seat-supplier-issue/",
+          "tier": "specialist",
+          "paywall": false,
+          "context": "Technology industry publication founded in 2005 by Michael Arrington, now owned by Yahoo, covering startups, venture capital, product launches, and Silicon Valley.",
+          "connection": "Supply chain disruption in manufacturing constrains production capacity and employment.",
+          "force_tag": "supply chain vulnerability"
+        }
+      ]
+    },
+    {
+      "topic": "Geopolitics + Economics",
+      "theme": "Military conflict in strategic strait forces India to secure fuel supply routes amid sanctions-related disruption.",
+      "source_count": 3,
+      "structural_force": "resource vulnerability in geopolitical conflict",
+      "articles": [
+        {
+          "title": "India news: LPG tanker headed for Mumbai crosses Strait of Hormuz",
+          "source": "Deutsche Welle",
+          "url": "https://www.dw.com/en/india-news-lpg-tanker-headed-for-mumbai-crosses-strait-of-hormuz/live-76658437?maca=en-rss-en-all-1573-rdf",
+          "tier": "international",
+          "paywall": false,
+          "context": "German international broadcaster founded in 1953 and funded by the German federal government, providing news in 30 languages from Bonn and Berlin.",
+          "connection": "Military conflict in strategic strait forces India to secure fuel supply routes amid sanctions-related disruption.",
+          "force_tag": "resource vulnerability in geopolitical conflict"
+        },
+        {
+          "title": "UAE squeezes Iranian economic lifeline in retaliation for attacks",
+          "source": "South China Morning Post",
+          "url": "https://www.scmp.com/week-asia/economics/article/3348996/uae-squeezes-iranian-economic-lifeline-retaliation-attacks?utm_source=rss_feed",
+          "tier": "international",
+          "paywall": true,
+          "context": "English-language newspaper founded in 1903 in Hong Kong, owned by Alibaba Group since 2016, covering Asia-Pacific business, geopolitics, and Chinese affairs.",
+          "connection": "Economic sanctions are weaponized as retaliation in military escalation cycles between regional powers.",
+          "force_tag": "economic coercion in geopolitical conflict"
+        },
+        {
+          "title": "Attacks on undersea cables could cut off Ireland from global internet, Government warned",
+          "source": "Irish Times",
+          "url": "https://www.irishtimes.com/politics/2026/04/04/attacks-on-undersea-cables-could-cut-off-ireland-from-global-internet-government-warned/",
+          "tier": "international",
+          "paywall": false,
+          "context": "Ireland's newspaper of record, founded in 1859 in Dublin, owned by the Irish Times Trust since 1974, covering Irish politics, European affairs, and international news.",
+          "connection": "Undersea cable vulnerability exposes how critical digital infrastructure depends on physical security in geopolitically contested waters.",
+          "force_tag": "infrastructure vulnerability to geopolitical conflict"
+        }
+      ]
+    }
+  ],
+  "editorial": {
+    "headline": "Military escalation between Iran and US reaches direct engagement as supply chains buckle",
+    "accessible_headline": "Iran shot down US jets as trade routes get squeezed",
+    "subheadline": "Regional conflict expands from proxy forces to state actors while fuel supply enforcement reveals regulatory gaps under pressure",
+    "synthesis": "Today's coverage reveals how military escalation becomes a structural force reshaping everything from fuel distribution to regulatory enforcement. The downing of two US fighter jets by Iranian forces marks a transition from proxy warfare to direct state engagement, with one pilot rescued and regional security implications rippling outward. What emerges from reading across 160 sources is how this escalation operates as more than a bilateral military event, creating pressure waves that expose vulnerabilities in systems far from the conflict zone itself.\n\nThe connection between military tension and supply chain enforcement becomes visible through enforcement actions on fuel distribution that suggest regulatory capacity problems under stress. Indian LPG tankers crossing the Strait of Hormuz, seizures of 3,699 domestic gas cylinders in Telangana, and Japan developing alternative import paths reveal how geopolitical conflict forces economic adaptation in real time. These are not separate stories but expressions of the same underlying force, where military confrontation in strategic waterways creates cascading effects on commodity distribution networks that regulators struggle to manage.\n\nLocal and regional sources are capturing community-level impacts that national coverage misses entirely. The Post and Courier reported the pilot rescue operation while national outlets focused on policy implications. Borderland Beat documented authorities freeing captives from a Sinaloa cartel kidnapping cell, revealing how organized crime operates its own governance structures during periods of state distraction. InForum covered a Depression-era family building homes from salvaged materials, a cooperation story that connects resource scarcity across generations. These details matter because they show how structural forces play out in specific places with specific people, not as abstract geopolitical chess moves.\n\nThe cooperation signals present in 94 stories across this coverage suggest that institutional coordination continues even under military pressure. The World Health Organization warned about attacks on Iranian health facilities while maintaining regional threat assessments. Authorities coordinated across jurisdictions in the Dezi Freeman investigation. Trump directed DHS to pay employees during shutdown, showing institutional reform operating alongside escalation. These decency signals exist within the same information environment as the conflict escalation, suggesting that cooperation and confrontation develop simultaneously rather than sequentially.\n\nWhat's worth watching is how enforcement capacity responds to simultaneous pressure from military escalation and supply chain disruption. The fuel supply seizures in India, Japanese alternative import development, and regulatory gaps revealed under stress indicate that the next phase of this story may be less about military engagement and more about which distribution systems can maintain function when multiple structural forces converge. The thread connecting military escalation to regulatory capacity to community response is still unwinding, and local sources are positioned to see where it leads first.",
+    "cooperation_highlight": "Authorities coordinated across jurisdictions to bust a Sinaloa cartel kidnapping cell in Chiapas, freeing captives and revealing the cartel's internal governance structure through discovered guidelines and rules. The operation, reported by Borderland Beat, demonstrates law enforcement cooperation functioning even as broader regional tensions escalate elsewhere.",
+    "coverage_gap_note": "National outlets missed specialist reporting on space-based data centers, three hundred habeas cases where the government defied court orders, and detailed coverage of journalist Shelly Kittleson's abduction circumstances. Local sources like the Post and Courier covered pilot rescue operations while national media focused on policy implications.",
+    "thread_to_watch": "Fuel supply enforcement actions in India and Japan's development of alternative import routes suggest regulatory systems are adapting to sustained military pressure on strategic waterways. Watch for additional enforcement capacity changes in countries dependent on Strait of Hormuz shipping routes over the next two weeks.",
+    "newsletter_lead": "The thing that stopped me today was reading about Iranian forces downing US fighter jets in the same information environment as Indian authorities seizing 3,699 gas cylinders and Japan scrambling to secure alternative fuel import routes. These aren't separate stories but expressions of how military escalation becomes a structural force that reshapes everything it touches, from regulatory enforcement to supply chain adaptation.",
+    "generated": "2026-04-04T07:50:26Z",
+    "model": "claude-sonnet-4-20250514"
+  },
+  "story_syntheses": [
+    {
+      "role": "thread",
+      "structural_force": "military escalation",
+      "synthesis": "Military aircraft losses mark the first direct kinetic exchange between US and Iranian forces in decades, moving beyond proxy warfare into direct engagement. When Iranian forces downed American fighter jets and both sides race to recover missing crew, the conflict mechanics shift from sanctions and regional allies to immediate military calculation. Cross-source reading reveals this is not just another Middle East flare-up but a threshold moment where deterrence theory meets battlefield reality, forcing both governments to recalibrate their tolerance for direct confrontation while regional allies watch which side blinks first.",
+      "cross_spectrum": "The Hill framed the aircraft losses as a knowledge briefing for American readers, focusing on what citizens should understand about the military engagement. France 24 opened with breaking news from Tehran, reporting explosions and real-time developments as they unfolded across the region. Post and Courier treated the downed jets as a rescue story, emphasizing that one pilot was saved rather than the geopolitical implications. Times of India highlighted this as the first US combat aircraft losses in over twenty years, contextualizing the military significance. Dawn focused on the race between Iranian and American forces to locate the missing crew member and recovery operations. Reuters positioned the incident as a political crisis for Trump, analyzing domestic implications rather than military strategy. When outlets frame the same military escalation as either breaking news, rescue drama, historical milestone, or political liability, readers get fragments of a crisis that demands seeing all dimensions simultaneously.",
+      "why_this_matters": "If you have family in the military or work in defense-adjacent industries, deployment patterns and contract priorities could shift rapidly. The escalation changes oil market calculations and supply chain routing through the Persian Gulf, affecting fuel costs within weeks.",
+      "watch_for": "Monitor Pentagon briefings for casualty confirmation and rescue operation updates. Iranian state media announcements about recovered personnel or wreckage will signal whether diplomatic channels remain open for crew exchanges."
+    },
+    {
+      "role": "gap",
+      "structural_force": "supply chain enforcement",
+      "synthesis": "Fuel supply diversions and regulatory seizures reveal enforcement capacity straining across multiple commodities and regions. When different outlets treat the same supply chain disruptions as either regulatory success stories or market crisis signals, audiences receive incompatible assessments of whether the system is working or failing. The Hindu celebrated enforcement action seizing thousands of diverted LPG cylinders while Irish Times warned of oil price spikes reaching crisis levels.",
+      "cross_spectrum": "The Hindu reported enforcement officials seizing nearly four thousand domestic LPG cylinders as a regulatory success story in Telangana state. The Japan Times covered oil supply rerouting around the Strait of Hormuz as a logistics solution arriving in May shipments. Irish Times focused on Ryanair's crisis management facing potential two-hundred-dollar oil barrel prices and operational disruption warnings. TechCrunch attributed Lucid's sales decline to seat supplier issues, treating it as a production problem rather than regulatory enforcement. The same supply chain pressures look like effective enforcement to regional outlets and market catastrophe to business media, leaving readers unsure whether tighter oversight protects consumers or threatens economic stability.",
+      "why_this_matters": "LPG cylinder regulations affect cooking fuel costs for millions of households. Oil supply rerouting adds shipping time and costs that reach gas stations within thirty to sixty days of implementation.",
+      "watch_for": "Track enforcement announcements from state petroleum authorities for additional seizures. Oil futures markets will reflect any confirmed disruptions to alternative shipping routes by mid-May."
+    },
+    {
+      "role": "meanwhile",
+      "structural_force": "cooperation",
+      "synthesis": "Ninety-four cooperation stories ran today, representing eight percent of total coverage, with institutional reform leading at twelve articles. InForum covered a Depression-era family building their home from salvaged materials, showing economic resilience through community resourcefulness. Premium Times Nigeria reported on arrests in a corruption investigation, demonstrating institutional accountability in action. Borderland Beat documented law enforcement freeing captives from cartel cells while discovering internal governance documents. These stories share a pattern of people and institutions stepping up when systems strain, from humanitarian coordination between adversaries to worker protection during government shutdowns.",
+      "cross_spectrum": "Channel News Asia reported WHO warnings about attacks on Iranian health facilities as an institutional integrity story. The Hill covered Trump directing DHS to pay employees during the shutdown as executive intervention for worker protection. Al-Monitor documented cross-adversary humanitarian coordination as Iranian and US forces both search for missing personnel. BBC World featured Nigerians demanding voice in land decisions affecting their communities as civic participation. InForum highlighted Depression-era mutual aid through salvaged materials construction as historical community resilience. New York Times reported executive orders protecting federal workers as institutional reform during crisis periods. While national outlets focus on executive actions and international outlets emphasize humanitarian protocols, local outlets capture the daily cooperation that keeps communities functioning regardless of larger political tensions.",
+      "why_this_matters": "Local cooperation stories reveal community capacity that rarely makes national news but affects daily life reliability. Understanding who stepped up in your region during past crises helps identify resources when you need them.",
+      "watch_for": "Regional law enforcement announcements about organized crime disruption operations may indicate expanded cooperation between agencies. Community resilience projects funded through federal disaster preparedness grants become visible through local reporting rather than national coverage."
+    }
+  ]
 }
