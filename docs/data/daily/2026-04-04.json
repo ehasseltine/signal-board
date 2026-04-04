@@ -1,0 +1,1220 @@
+{
+  "date": "2026-04-04",
+  "generated": "2026-04-04T00:19:57Z",
+  "summary": {
+    "total_stories": 859,
+    "sources_reporting": 154,
+    "cross_domain": 582,
+    "cross_domain_pct": 68,
+    "ai_classified": 2,
+    "ai_classified_pct": 0,
+    "connection_insights": 2,
+    "top_domain": "Security",
+    "domain_distribution": {
+      "Security": 382,
+      "Legal": 301,
+      "Climate": 289,
+      "Information": 271,
+      "Governance": 261,
+      "Politics": 249,
+      "Economics": 197,
+      "Geopolitics": 92,
+      "Labor": 90,
+      "AI": 31
+    }
+  },
+  "temporal_context": {
+    "has_yesterday": true,
+    "yesterday_date": "2026-04-03",
+    "yesterday_total": 1288,
+    "today_total": 859,
+    "volume_change_pct": -33,
+    "domain_shifts": [
+      {
+        "domain": "geopolitics",
+        "label": "Geopolitics",
+        "yesterday": 264,
+        "today": 92,
+        "change_pct": -65
+      },
+      {
+        "domain": "economics",
+        "label": "Economics",
+        "yesterday": 323,
+        "today": 197,
+        "change_pct": -39
+      },
+      {
+        "domain": "governance",
+        "label": "Governance",
+        "yesterday": 421,
+        "today": 261,
+        "change_pct": -38
+      },
+      {
+        "domain": "domestic_politics",
+        "label": "Politics",
+        "yesterday": 325,
+        "today": 249,
+        "change_pct": -23
+      },
+      {
+        "domain": "security",
+        "label": "Security",
+        "yesterday": 487,
+        "today": 382,
+        "change_pct": -22
+      },
+      {
+        "domain": "ai",
+        "label": "AI",
+        "yesterday": 39,
+        "today": 31,
+        "change_pct": -21
+      },
+      {
+        "domain": "legal",
+        "label": "Legal",
+        "yesterday": 364,
+        "today": 301,
+        "change_pct": -17
+      },
+      {
+        "domain": "labor",
+        "label": "Labor",
+        "yesterday": 107,
+        "today": 90,
+        "change_pct": -16
+      },
+      {
+        "domain": "climate",
+        "label": "Climate",
+        "yesterday": 317,
+        "today": 289,
+        "change_pct": -9
+      },
+      {
+        "domain": "information",
+        "label": "Information",
+        "yesterday": 263,
+        "today": 271,
+        "change_pct": 3
+      }
+    ],
+    "surges": [],
+    "drops": [
+      {
+        "domain": "geopolitics",
+        "label": "Geopolitics",
+        "yesterday": 264,
+        "today": 92,
+        "change_pct": -65
+      },
+      {
+        "domain": "economics",
+        "label": "Economics",
+        "yesterday": 323,
+        "today": 197,
+        "change_pct": -39
+      },
+      {
+        "domain": "governance",
+        "label": "Governance",
+        "yesterday": 421,
+        "today": 261,
+        "change_pct": -38
+      }
+    ],
+    "persisting_forces": [],
+    "new_forces": [],
+    "faded_forces": [
+      {
+        "force": "military escalation",
+        "count": 16,
+        "domains": [
+          "security",
+          "geopolitics",
+          "economics"
+        ]
+      },
+      {
+        "force": "democratic erosion",
+        "count": 11,
+        "domains": [
+          "domestic_politics",
+          "governance",
+          "geopolitics"
+        ]
+      },
+      {
+        "force": "trade weaponization",
+        "count": 10,
+        "domains": [
+          "economics",
+          "geopolitics",
+          "governance"
+        ]
+      },
+      {
+        "force": "institutional accountability",
+        "count": 8,
+        "domains": [
+          "legal",
+          "governance",
+          "information"
+        ]
+      },
+      {
+        "force": "executive power consolidation",
+        "count": 5,
+        "domains": [
+          "governance",
+          "legal",
+          "security"
+        ]
+      }
+    ],
+    "yesterday_classified": 404,
+    "today_classified": 2
+  },
+  "top_stories": [],
+  "structural_forces": [],
+  "what_connects": [],
+  "cooperation": {
+    "total_cooperation_stories": 2,
+    "cooperation_rate": 0,
+    "by_type": [
+      {
+        "type": "civic participation",
+        "count": 1,
+        "sources": [
+          "BBC World"
+        ],
+        "domains": [
+          "Governance",
+          "Legal"
+        ],
+        "sample": {
+          "title": "'We want a voice in our land' - the people evicted to build Nigeria's capital",
+          "source": "BBC World",
+          "url": "https://www.bbc.com/news/articles/clyggr00x5vo?at_medium=RSS&at_campaign=rss",
+          "connection": "Government development authority displaces residents without honoring compensation agreements, creating a legal remedy gap for evicted populations."
+        }
+      },
+      {
+        "type": "institutional integrity",
+        "count": 1,
+        "sources": [
+          "Channel News Asia"
+        ],
+        "domains": [
+          "Security",
+          "Geopolitics"
+        ],
+        "sample": {
+          "title": "WHO warns about attacks on Iran health facilities, regional threat",
+          "source": "Channel News Asia",
+          "url": "https://www.channelnewsasia.com/world/world-health-organization-israel-united-states-iran-health-facilities-attacks-6036166",
+          "connection": "Attacks on health infrastructure weaponize civilian medical systems within a regional conflict, rendering healthcare a geopolitical target."
+        }
+      }
+    ],
+    "by_force": [
+      {
+        "force": "eminent domain without accountability",
+        "cooperation_count": 1,
+        "cooperation_types": [
+          "civic participation"
+        ],
+        "sample_title": "'We want a voice in our land' - the people evicted to build Nigeria's capital",
+        "sample_source": "BBC World"
+      },
+      {
+        "force": "health infrastructure as conflict casualty",
+        "cooperation_count": 1,
+        "cooperation_types": [
+          "institutional integrity"
+        ],
+        "sample_title": "WHO warns about attacks on Iran health facilities, regional threat",
+        "sample_source": "Channel News Asia"
+      }
+    ],
+    "highlights": [],
+    "all_source_urls": {
+      "BBC World": "https://www.bbc.com/news/articles/clyggr00x5vo?at_medium=RSS&at_campaign=rss",
+      "Channel News Asia": "https://www.channelnewsasia.com/world/world-health-organization-israel-united-states-iran-health-facilities-attacks-6036166"
+    },
+    "coverage_gap": []
+  },
+  "local_regional_exclusive": [
+    {
+      "title": "Four things we’d need to put data centers in space",
+      "source": "MIT Technology Review",
+      "url": "https://www.technologyreview.com/2026/04/03/1135073/four-things-wed-need-to-put-data-centers-in-space/",
+      "tier": "specialist",
+      "text_preview": "MIT Technology Review Explains: Let our writers untangle the complex, messy world of technology to help you understand what’s coming next. You can read more from the series here . In January, Elon Musk’s SpaceX filed an application with the US Federa",
+      "domains": [
+        "ai",
+        "information",
+        "economics",
+        "climate",
+        "domestic_politics"
+      ],
+      "connection": "",
+      "force_tag": "",
+      "context": "Technology magazine founded in 1899 and published by the Massachusetts Institute of Technology, covering artificial intelligence, biotechnology, and emerging technology impacts."
+    },
+    {
+      "title": "Bumping Bondi",
+      "source": "American Prospect",
+      "url": "https://prospect.org/2026/04/03/bumping-bondi-trump-cabinet-firings/",
+      "tier": "specialist",
+      "text_preview": "Why did Trump pick this week to fire his hyper-loyal but clumsy attorney general, Pam Bondi? He has mused about canning Bondi for months. Well, you might say the president had a bad week. He’s lost interest in his war and can’t figure out a way out. ",
+      "domains": [
+        "information",
+        "economics",
+        "climate",
+        "security",
+        "domestic_politics",
+        "legal"
+      ],
+      "connection": "",
+      "force_tag": "",
+      "context": "Magazine founded in 1990 by Robert Kuttner, Paul Starr, and Robert Reich, covering politics, policy, and economics from Washington DC."
+    },
+    {
+      "title": "Shelly Kittleson’s Abduction, Before and After",
+      "source": "Columbia Journalism Review",
+      "url": "https://www.cjr.org/analysis/shelly-kittleson-iraq-abduction-middle-east-kidnapped-journalist.php",
+      "tier": "specialist",
+      "text_preview": "​​Over the years, I have come to know that Shelly is a disciplined reporter and vigilant about her safety. But the risks to her, as for most journalists in the region, are part of the ecosystem.",
+      "domains": [],
+      "connection": "",
+      "force_tag": "",
+      "context": "Media criticism and journalism analysis publication founded in 1961 at the Columbia University Graduate School of Journalism in New York City."
+    },
+    {
+      "title": "Three Hundred Habeas Cases in Which the Government Has Defied Court Orders - Lawfare",
+      "source": "Lawfare",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNMG1xaURMTWkybnZRM0tvTEdMTmpycFFVV1R4UDVTNVlkdUZwWGxhQ2I0OHE5STJLNldwakw2SXhxRVNPOUhyZ0l3dElTeGNfV0YzZTQxendSVWJSUERsT0haNnhVY1RRbmc0SnVKNmJiUmdZay1RWkM1T01OZEt1VEVFQXlXNGhSQ2dwUDlyUUpJbWdGRHUzd185NFhWcG9jQWdWMHhPSlNQYWFsb1prbQ?oc=5",
+      "tier": "specialist",
+      "text_preview": "Three Hundred Habeas Cases in Which the Government Has Defied Court Orders &nbsp;&nbsp; Lawfare",
+      "domains": [
+        "legal"
+      ],
+      "connection": "",
+      "force_tag": "",
+      "context": "Publication founded in 2010 by Benjamin Wittes at the Brookings Institution, covering national security law, surveillance, cybersecurity, and executive power legal questions."
+    },
+    {
+      "title": "Coffee Break: The Fallacy of ESG, Baseball, Deep Education, and More AI Follies",
+      "source": "Naked Capitalism",
+      "url": "https://www.nakedcapitalism.com/2026/04/coffee-break-the-fallacy-of-esg-baseball-deep-education-and-more-ai-follies.html",
+      "tier": "specialist",
+      "text_preview": "Good afternoon. Time for a break. Given the wall-to-wall coverage by Yves and others here, nothing explicit on this Good Friday about the Ramadan War in West Asia. Instead, herewith a few reflections during holy season of the three great Abrahamic tr",
+      "domains": [
+        "security",
+        "legal"
+      ],
+      "connection": "",
+      "force_tag": "",
+      "context": "Independent financial and economics blog founded in 2006 by Susan Webber under the pen name Yves Smith, covering financial industry practices, economics, and policy."
+    },
+    {
+      "title": "Juez federal: Las continuas redadas de la Patrulla Fronteriza en California violaron orden judicial",
+      "source": "CalMatters",
+      "url": "https://calmatters.org/calmatters-en-espanol/2026/04/redadas-patrulla-fronteriza-en-california-violaron-orden-judicial/",
+      "tier": "local-regional",
+      "text_preview": "This article is also available in English. Read it here . Una jueza federal dictaminó que los agentes de la Patrulla Fronteriza continuaron realizando detenciones y arrestos ilegales después de que ella les ordenara que cesaran sus actividades. En un",
+      "domains": [
+        "climate",
+        "security",
+        "legal"
+      ],
+      "connection": "",
+      "force_tag": "",
+      "context": "Nonprofit newsroom founded in 2015 in Sacramento, covering California state government, policy, elections, and the state legislature for a general audience."
+    },
+    {
+      "title": "Judge upholds BLM approval of Rhyolite Ridge lithium mine",
+      "source": "Indian Country Today",
+      "url": "https://ictnews.org/news/judge-upholds-blm-approval-of-rhyolite-ridge-lithium-mine/",
+      "tier": "local-regional",
+      "text_preview": "This story was originally published by Nevada Current. Jeniffer Solis Nevada Current A federal judge upheld the approval of a massive open-pit lithium-boron mine on public lands in Southern Nevada, dealing a final blow to legal challenges by conserva",
+      "domains": [
+        "governance",
+        "information",
+        "climate",
+        "security",
+        "legal"
+      ],
+      "connection": "",
+      "force_tag": "",
+      "context": "Nonprofit digital news platform founded in 1981 as the Lakota Times, covering news, policy, and culture for American Indian and Alaska Native communities."
+    },
+    {
+      "title": "After court battles, clergy visit ICE detainees in Illinois and Minnesota",
+      "source": "Religion News Service",
+      "url": "https://religionnews.com/2026/04/03/after-lengthy-court-battles-clergy-finally-visit-immigrant-detainees-in-illinois-and-minnesota/",
+      "tier": "local-regional",
+      "text_preview": "(RNS) &#8212; Shortly after the Rev. Paul Joseph Keller, two fellow Catholic priests and a nun were ushered into the Broadview Immigration and Customs Enforcement facility outside Chicago on Thursday (April 2), a guard escorted five immigrant detaine",
+      "domains": [
+        "governance",
+        "climate",
+        "security",
+        "domestic_politics",
+        "legal"
+      ],
+      "connection": "",
+      "force_tag": "",
+      "context": "Nonprofit wire service and news outlet founded in 1934, providing independent coverage of religion, faith communities, spirituality, and ethics across all traditions."
+    },
+    {
+      "title": "Inspection finds dozens of violations of detention standards at El Paso immigration facility",
+      "source": "Texas Tribune",
+      "url": "https://feeds.texastribune.org/link/16799/17313292/texas-el-paso-camp-east-montana-immigration-inspection-violations",
+      "tier": "local-regional",
+      "text_preview": "Camp East Montana is seen in East El Paso, days before it was set to begin receiving U.S. Immigration and Customs Enforcement detainees, on Aug. 11, 2025.",
+      "domains": [
+        "labor",
+        "governance",
+        "legal"
+      ],
+      "connection": "",
+      "force_tag": "",
+      "context": "Nonprofit digital news organization founded in 2009 by Evan Smith, Ross Ramsey, and John Thornton, covering Texas state government, elections, and policy from Austin."
+    },
+    {
+      "title": "Fired for refusing to remove LGBTQ+ books, Tennessee librarian says she’d do it again",
+      "source": "The Advocate",
+      "url": "https://www.advocate.com/politics/states/fired-tn-library-director-speaks",
+      "tier": "local-regional",
+      "text_preview": "A Tennessee library director fired this week after refusing to relocate LGBTQ + books from a children's section says she stands by her decision, and sees her dismissal as part of a broader, deeply troubling shift in which public institutions are bein",
+      "domains": [
+        "governance",
+        "information",
+        "legal"
+      ],
+      "connection": "",
+      "force_tag": "",
+      "context": "LGBTQ+ news magazine founded in 1967 in Los Angeles, the oldest and largest publication serving LGBTQ+ communities, covering rights, culture, and politics."
+    },
+    {
+      "title": "Iran ‘skirmish’ has no effect on strong US economy, White House advisor claims",
+      "source": "Military Times",
+      "url": "https://www.militarytimes.com/veterans/2026/04/03/iran-skirmish-has-no-effect-on-strong-us-economy-white-house-advisor-claims/",
+      "tier": "local-regional",
+      "text_preview": "President Donald Trump’s policies have made the U.S. immune to the chaos in the oil markets and the impact on the global economy resulting from the Iran war, White House advisor Keven Hassett claimed Friday. “All the cumulative policies” Trump has pr",
+      "domains": [
+        "labor",
+        "economics",
+        "climate",
+        "security",
+        "geopolitics",
+        "legal"
+      ],
+      "connection": "",
+      "force_tag": "",
+      "context": "Independent news organization owned by Sightline Media Group, covering military policy, defense spending, veteran affairs, and service member communities across all branches."
+    },
+    {
+      "title": "'XO, Kitty' Season 3 Breakout Sule Thelwell Has a Pitch for Marius and Q Endgame",
+      "source": "Teen Vogue",
+      "url": "https://www.teenvogue.com/story/xo-kitty-season-3-breakout-sule-thelwell-marius-interview",
+      "tier": "local-regional",
+      "text_preview": "\"That fire was bright,” Thelwell tells Teen Vogue.",
+      "domains": [],
+      "connection": "",
+      "force_tag": "",
+      "context": "Digital publication owned by Conde Nast, relaunched online in 2017 with expanded political and cultural coverage aimed at young adult and Gen Z readers."
+    }
+  ],
+  "active_threads": [
+    {
+      "pair": [
+        "governance",
+        "legal"
+      ],
+      "label": "Governance + Legal",
+      "explanation": "Government actions challenged or upheld in courts",
+      "today_count": 167,
+      "trend": "rising",
+      "sample_articles": [
+        {
+          "title": "Iran Is Quickly Repairing Missile Bunkers, U.S. Intelligence Says",
+          "source": "New York Times",
+          "url": "https://www.nytimes.com/2026/04/03/us/politics/iran-missiles-launchers.html"
+        },
+        {
+          "title": "House Democrat Wages a Lonely Legal Fight Testing Congress’s Power",
+          "source": "New York Times",
+          "url": "https://www.nytimes.com/2026/04/03/us/politics/lamonica-mciver-immigration-congress-trump.html"
+        },
+        {
+          "title": "Justice Alito Was Taken to the Hospital Last Month in Undisclosed Incident",
+          "source": "New York Times",
+          "url": "https://www.nytimes.com/2026/04/03/us/politics/justice-alito-briefly-hospitalized.html"
+        }
+      ],
+      "ai_connections": [
+        "Government development authority displaces residents without honoring compensation agreements, creating a legal remedy gap for evicted populations."
+      ]
+    },
+    {
+      "pair": [
+        "information",
+        "security"
+      ],
+      "label": "Information + Security",
+      "explanation": "Information and Security",
+      "today_count": 162,
+      "trend": "rising",
+      "sample_articles": [
+        {
+          "title": "Exhaustive search underway in Iran to rescue downed F-15 airman",
+          "source": "NBC News",
+          "url": "https://www.nbcnews.com/nightly-news/video/exhaustive-search-underway-in-iran-to-rescue-downed-f-15-airman-260690501771"
+        },
+        {
+          "title": "What Trump Wants From Cuba",
+          "source": "The Atlantic",
+          "url": "https://www.theatlantic.com/newsletters/2026/04/trump-comes-for-cuba/686692/?utm_source=feed"
+        },
+        {
+          "title": "Trump’s Stone Age Threat Will Lead to Tragedy",
+          "source": "The Atlantic",
+          "url": "https://www.theatlantic.com/ideas/2026/04/trump-iran-war-weapons/686685/?utm_source=feed"
+        }
+      ],
+      "ai_connections": []
+    },
+    {
+      "pair": [
+        "climate",
+        "security"
+      ],
+      "label": "Climate + Security",
+      "explanation": "Environmental change creating security challenges",
+      "today_count": 152,
+      "trend": "rising",
+      "sample_articles": [
+        {
+          "title": "What We Know About the F-15E Strike Eagle Shot Down by Iran",
+          "source": "New York Times",
+          "url": "https://www.nytimes.com/2026/04/03/world/middleeast/f-15-us-fighter-jet-iran.html"
+        },
+        {
+          "title": "Ex-US Army Pilot Recalls Battle for Survival When Shot Down in Iraq",
+          "source": "New York Times",
+          "url": "https://www.nytimes.com/2026/04/03/world/middleeast/iraq-us-pow-rescue-survival.html"
+        },
+        {
+          "title": "Forced from their homes by Israeli bombing, displaced Lebanese face uncertainty ",
+          "source": "NBC News",
+          "url": "https://www.nbcnews.com/world/lebanon/lebanons-displaced-face-dire-conditions-turned-away-hezbollah-fear-rcna266534"
+        }
+      ],
+      "ai_connections": []
+    },
+    {
+      "pair": [
+        "legal",
+        "security"
+      ],
+      "label": "Legal + Security",
+      "explanation": "Legal and Security",
+      "today_count": 150,
+      "trend": "rising",
+      "sample_articles": [
+        {
+          "title": "Iran Is Quickly Repairing Missile Bunkers, U.S. Intelligence Says",
+          "source": "New York Times",
+          "url": "https://www.nytimes.com/2026/04/03/us/politics/iran-missiles-launchers.html"
+        },
+        {
+          "title": "Exhaustive search underway in Iran to rescue downed F-15 airman",
+          "source": "NBC News",
+          "url": "https://www.nbcnews.com/nightly-news/video/exhaustive-search-underway-in-iran-to-rescue-downed-f-15-airman-260690501771"
+        },
+        {
+          "title": "Forced from their homes by Israeli bombing, displaced Lebanese face uncertainty ",
+          "source": "NBC News",
+          "url": "https://www.nbcnews.com/world/lebanon/lebanons-displaced-face-dire-conditions-turned-away-hezbollah-fear-rcna266534"
+        }
+      ],
+      "ai_connections": []
+    },
+    {
+      "pair": [
+        "domestic_politics",
+        "governance"
+      ],
+      "label": "Politics + Governance",
+      "explanation": "Political conflict over how government agencies operate",
+      "today_count": 138,
+      "trend": "rising",
+      "sample_articles": [
+        {
+          "title": "House Democrat Wages a Lonely Legal Fight Testing Congress’s Power",
+          "source": "New York Times",
+          "url": "https://www.nytimes.com/2026/04/03/us/politics/lamonica-mciver-immigration-congress-trump.html"
+        },
+        {
+          "title": "Six Senate Races to Watch as Democrats Grow Bullish Ahead of Midterm Elections",
+          "source": "New York Times",
+          "url": "https://www.nytimes.com/2026/04/03/us/politics/senate-races-midterms-primary-election.html"
+        },
+        {
+          "title": "Big Banks Seeking a Piece of SpaceX’s I.P.O. Must Subscribe to Elon Musk’s Grok",
+          "source": "New York Times",
+          "url": "https://www.nytimes.com/2026/04/03/business/spacex-ipo-grok-elon-musk.html"
+        }
+      ],
+      "ai_connections": []
+    },
+    {
+      "pair": [
+        "governance",
+        "security"
+      ],
+      "label": "Governance + Security",
+      "explanation": "Defense policy and military strategy",
+      "today_count": 135,
+      "trend": "rising",
+      "sample_articles": [
+        {
+          "title": "Iran Is Quickly Repairing Missile Bunkers, U.S. Intelligence Says",
+          "source": "New York Times",
+          "url": "https://www.nytimes.com/2026/04/03/us/politics/iran-missiles-launchers.html"
+        },
+        {
+          "title": "Strong Jobs Numbers Make the Fed’s Job Easier",
+          "source": "New York Times",
+          "url": "https://www.nytimes.com/2026/04/03/business/economy/jobs-unemployment-inflation-fed-rates.html"
+        },
+        {
+          "title": "Artemis II Pilot Test Drove the Orion Capsule on the Way to the Moon",
+          "source": "New York Times",
+          "url": "https://www.nytimes.com/2026/04/03/science/nasa-artemis-ii-demonstration-moon-pilot.html"
+        }
+      ],
+      "ai_connections": []
+    },
+    {
+      "pair": [
+        "climate",
+        "legal"
+      ],
+      "label": "Climate + Legal",
+      "explanation": "Environmental lawsuits and climate litigation",
+      "today_count": 132,
+      "trend": "rising",
+      "sample_articles": [
+        {
+          "title": "In the Philippines, Rising Fuel Prices Force Travelers to Stay Home During Holy ",
+          "source": "New York Times",
+          "url": "https://www.nytimes.com/2026/04/03/world/asia/philippines-holy-week-oil-fuel-prices.html"
+        },
+        {
+          "title": "US Judge Denies Pirro Motion to Revive Quashed Fed Subpoenas",
+          "source": "Bloomberg",
+          "url": "https://www.bloomberg.com/news/articles/2026-04-03/us-judge-denies-pirro-motion-to-reconsider-quashed-fed-subpoenas"
+        },
+        {
+          "title": "Forced from their homes by Israeli bombing, displaced Lebanese face uncertainty ",
+          "source": "NBC News",
+          "url": "https://www.nbcnews.com/world/lebanon/lebanons-displaced-face-dire-conditions-turned-away-hezbollah-fear-rcna266534"
+        }
+      ],
+      "ai_connections": []
+    },
+    {
+      "pair": [
+        "domestic_politics",
+        "legal"
+      ],
+      "label": "Politics + Legal",
+      "explanation": "Political disputes reaching the courts",
+      "today_count": 131,
+      "trend": "rising",
+      "sample_articles": [
+        {
+          "title": "Trump Goes After Programs He Calls ‘Woke’ in Budget Proposal",
+          "source": "New York Times",
+          "url": "https://www.nytimes.com/2026/04/03/us/politics/trump-budget-proposal-woke.html"
+        },
+        {
+          "title": "House Democrat Wages a Lonely Legal Fight Testing Congress’s Power",
+          "source": "New York Times",
+          "url": "https://www.nytimes.com/2026/04/03/us/politics/lamonica-mciver-immigration-congress-trump.html"
+        },
+        {
+          "title": "Trump's ballroom fight sheds new light on an underground White House bunker",
+          "source": "NPR",
+          "url": "https://www.npr.org/2026/04/03/nx-s1-5772665/trump-ballroom-underground-military-bunker"
+        }
+      ],
+      "ai_connections": []
+    },
+    {
+      "pair": [
+        "domestic_politics",
+        "security"
+      ],
+      "label": "Politics + Security",
+      "explanation": "Defense and public safety as political issues",
+      "today_count": 125,
+      "trend": "rising",
+      "sample_articles": [
+        {
+          "title": "Trump Requests $1.5 Trillion for Military Spending",
+          "source": "New York Times",
+          "url": "https://www.nytimes.com/2026/04/03/us/politics/white-house-defense-budget.html"
+        },
+        {
+          "title": "What Trump Is Doing to the English Language",
+          "source": "New York Times",
+          "url": "https://www.nytimes.com/2026/04/03/opinion/trump-speech-language-verb.html"
+        },
+        {
+          "title": "Trump said Iran was 'decimated.' Then an American F-15E fighter jet was shot dow",
+          "source": "NBC News",
+          "url": "https://www.nbcnews.com/politics/white-house/trump-said-iran-was-decimated-american-f-15e-fighter-jet-was-shot-rcna266611"
+        }
+      ],
+      "ai_connections": []
+    },
+    {
+      "pair": [
+        "information",
+        "legal"
+      ],
+      "label": "Information + Legal",
+      "explanation": "Free speech, media law, and platform regulation",
+      "today_count": 118,
+      "trend": "rising",
+      "sample_articles": [
+        {
+          "title": "US Judge Denies Pirro Motion to Revive Quashed Fed Subpoenas",
+          "source": "Bloomberg",
+          "url": "https://www.bloomberg.com/news/articles/2026-04-03/us-judge-denies-pirro-motion-to-reconsider-quashed-fed-subpoenas"
+        },
+        {
+          "title": "Exhaustive search underway in Iran to rescue downed F-15 airman",
+          "source": "NBC News",
+          "url": "https://www.nbcnews.com/nightly-news/video/exhaustive-search-underway-in-iran-to-rescue-downed-f-15-airman-260690501771"
+        },
+        {
+          "title": "Bondi struggled to prosecute Trump foes. But will a new attorney general make a ",
+          "source": "AP News",
+          "url": "https://apnews.com/article/trump-bondi-justice-department-9071b8fd9a429267732b5d4238946eff"
+        }
+      ],
+      "ai_connections": []
+    },
+    {
+      "pair": [
+        "climate",
+        "information"
+      ],
+      "label": "Climate + Information",
+      "explanation": "Climate and Information",
+      "today_count": 113,
+      "trend": "new",
+      "sample_articles": [
+        {
+          "title": "US Judge Denies Pirro Motion to Revive Quashed Fed Subpoenas",
+          "source": "Bloomberg",
+          "url": "https://www.bloomberg.com/news/articles/2026-04-03/us-judge-denies-pirro-motion-to-reconsider-quashed-fed-subpoenas"
+        },
+        {
+          "title": "Bondi struggled to prosecute Trump foes. But will a new attorney general make a ",
+          "source": "AP News",
+          "url": "https://apnews.com/article/trump-bondi-justice-department-9071b8fd9a429267732b5d4238946eff"
+        },
+        {
+          "title": "What Trump Wants From Cuba",
+          "source": "The Atlantic",
+          "url": "https://www.theatlantic.com/newsletters/2026/04/trump-comes-for-cuba/686692/?utm_source=feed"
+        }
+      ],
+      "ai_connections": []
+    },
+    {
+      "pair": [
+        "economics",
+        "security"
+      ],
+      "label": "Economics + Security",
+      "explanation": "Military spending and conflict affecting markets",
+      "today_count": 109,
+      "trend": "rising",
+      "sample_articles": [
+        {
+          "title": "Trump Requests $1.5 Trillion for Military Spending",
+          "source": "New York Times",
+          "url": "https://www.nytimes.com/2026/04/03/us/politics/white-house-defense-budget.html"
+        },
+        {
+          "title": "Strong Jobs Numbers Make the Fed’s Job Easier",
+          "source": "New York Times",
+          "url": "https://www.nytimes.com/2026/04/03/business/economy/jobs-unemployment-inflation-fed-rates.html"
+        },
+        {
+          "title": "Some Marines graduate without their parents' presence amid ICE fears",
+          "source": "NBC News",
+          "url": "https://www.nbcnews.com/news/us-news/marines-graduation-ice-fears-parris-island-rcna266019"
+        }
+      ],
+      "ai_connections": []
+    },
+    {
+      "pair": [
+        "climate",
+        "governance"
+      ],
+      "label": "Climate + Governance",
+      "explanation": "Environmental regulation and climate policy implementation",
+      "today_count": 106,
+      "trend": "rising",
+      "sample_articles": [
+        {
+          "title": "US Judge Denies Pirro Motion to Revive Quashed Fed Subpoenas",
+          "source": "Bloomberg",
+          "url": "https://www.bloomberg.com/news/articles/2026-04-03/us-judge-denies-pirro-motion-to-reconsider-quashed-fed-subpoenas"
+        },
+        {
+          "title": "Forced from their homes by Israeli bombing, displaced Lebanese face uncertainty ",
+          "source": "NBC News",
+          "url": "https://www.nbcnews.com/world/lebanon/lebanons-displaced-face-dire-conditions-turned-away-hezbollah-fear-rcna266534"
+        },
+        {
+          "title": "Some Marines graduate without their parents' presence amid ICE fears",
+          "source": "NBC News",
+          "url": "https://www.nbcnews.com/news/us-news/marines-graduation-ice-fears-parris-island-rcna266019"
+        }
+      ],
+      "ai_connections": []
+    },
+    {
+      "pair": [
+        "domestic_politics",
+        "economics"
+      ],
+      "label": "Politics + Economics",
+      "explanation": "Economic conditions shaping political debate",
+      "today_count": 100,
+      "trend": "new",
+      "sample_articles": [
+        {
+          "title": "Trump Requests $1.5 Trillion for Military Spending",
+          "source": "New York Times",
+          "url": "https://www.nytimes.com/2026/04/03/us/politics/white-house-defense-budget.html"
+        },
+        {
+          "title": "Big Banks Seeking a Piece of SpaceX’s I.P.O. Must Subscribe to Elon Musk’s Grok",
+          "source": "New York Times",
+          "url": "https://www.nytimes.com/2026/04/03/business/spacex-ipo-grok-elon-musk.html"
+        },
+        {
+          "title": "Is Hochul the unlikely hero of Adams’ world indictments?",
+          "source": "Politico",
+          "url": "https://www.politico.com/newsletters/new-york-playbook-pm/2026/04/03/is-hochul-the-unlikely-hero-of-adams-world-indictments-00858598"
+        }
+      ],
+      "ai_connections": []
+    },
+    {
+      "pair": [
+        "economics",
+        "legal"
+      ],
+      "label": "Economics + Legal",
+      "explanation": "Antitrust enforcement, financial regulation, and corporate law",
+      "today_count": 98,
+      "trend": "new",
+      "sample_articles": [
+        {
+          "title": "In the Philippines, Rising Fuel Prices Force Travelers to Stay Home During Holy ",
+          "source": "New York Times",
+          "url": "https://www.nytimes.com/2026/04/03/world/asia/philippines-holy-week-oil-fuel-prices.html"
+        },
+        {
+          "title": "Is Hochul the unlikely hero of Adams’ world indictments?",
+          "source": "Politico",
+          "url": "https://www.politico.com/newsletters/new-york-playbook-pm/2026/04/03/is-hochul-the-unlikely-hero-of-adams-world-indictments-00858598"
+        },
+        {
+          "title": "US Judge Denies Pirro Motion to Revive Quashed Fed Subpoenas",
+          "source": "Bloomberg",
+          "url": "https://www.bloomberg.com/news/articles/2026-04-03/us-judge-denies-pirro-motion-to-reconsider-quashed-fed-subpoenas"
+        }
+      ],
+      "ai_connections": []
+    }
+  ],
+  "source_spectrum": {
+    "international": 292,
+    "national": 243,
+    "local-regional": 232,
+    "specialist": 41,
+    "explainer": 19,
+    "analysis": 12,
+    "newsletter": 9,
+    "government": 4,
+    "research": 3,
+    "think-tank": 3,
+    "podcast": 1
+  },
+  "questions": [
+    {
+      "question": "Which government actions are being challenged in court?",
+      "article_count": 167,
+      "domains": [
+        "Governance",
+        "Legal"
+      ],
+      "sources_by_tier": {
+        "national": [
+          {
+            "source": "New York Times",
+            "title": "Iran Is Quickly Repairing Missile Bunkers, U.S. Intelligence Says",
+            "url": "https://www.nytimes.com/2026/04/03/us/politics/iran-missiles-launchers.html",
+            "context": "Daily newspaper founded in 1851, owned by the New York Times Company, the largest newspaper by digital subscriptions globally, covering national and world affairs.",
+            "connection": ""
+          },
+          {
+            "source": "Politico",
+            "title": "Is Hochul the unlikely hero of Adams’ world indictments?",
+            "url": "https://www.politico.com/newsletters/new-york-playbook-pm/2026/04/03/is-hochul-the-unlikely-hero-of-adams-world-indictments-00858598",
+            "context": "Political news organization founded in 2007 by John Harris and Jim VandeHei, now owned by Axel Springer, covering Congress, the White House, campaigns, and policy.",
+            "connection": ""
+          }
+        ]
+      },
+      "ai_insights": [
+        "Government development authority displaces residents without honoring compensation agreements, creating a legal remedy gap for evicted populations."
+      ]
+    },
+    {
+      "question": "How is environmental change creating security risks?",
+      "article_count": 152,
+      "domains": [
+        "Climate",
+        "Security"
+      ],
+      "sources_by_tier": {
+        "national": [
+          {
+            "source": "New York Times",
+            "title": "What We Know About the F-15E Strike Eagle Shot Down by Iran",
+            "url": "https://www.nytimes.com/2026/04/03/world/middleeast/f-15-us-fighter-jet-iran.html",
+            "context": "Daily newspaper founded in 1851, owned by the New York Times Company, the largest newspaper by digital subscriptions globally, covering national and world affairs.",
+            "connection": ""
+          },
+          {
+            "source": "NBC News",
+            "title": "Forced from their homes by Israeli bombing, displaced Lebanese face uncertainty and sectarian tensio",
+            "url": "https://www.nbcnews.com/world/lebanon/lebanons-displaced-face-dire-conditions-turned-away-hezbollah-fear-rcna266534",
+            "context": "Broadcast news division of NBCUniversal, a subsidiary of Comcast, founded in 1940, providing national and international news across television and digital platforms.",
+            "connection": ""
+          }
+        ]
+      },
+      "ai_insights": []
+    },
+    {
+      "question": "What is the government actually doing right now?",
+      "article_count": 138,
+      "domains": [
+        "Politics",
+        "Governance"
+      ],
+      "sources_by_tier": {
+        "national": [
+          {
+            "source": "New York Times",
+            "title": "House Democrat Wages a Lonely Legal Fight Testing Congress’s Power",
+            "url": "https://www.nytimes.com/2026/04/03/us/politics/lamonica-mciver-immigration-congress-trump.html",
+            "context": "Daily newspaper founded in 1851, owned by the New York Times Company, the largest newspaper by digital subscriptions globally, covering national and world affairs.",
+            "connection": ""
+          },
+          {
+            "source": "Politico",
+            "title": "Is Hochul the unlikely hero of Adams’ world indictments?",
+            "url": "https://www.politico.com/newsletters/new-york-playbook-pm/2026/04/03/is-hochul-the-unlikely-hero-of-adams-world-indictments-00858598",
+            "context": "Political news organization founded in 2007 by John Harris and Jim VandeHei, now owned by Axel Springer, covering Congress, the White House, campaigns, and policy.",
+            "connection": ""
+          }
+        ]
+      },
+      "ai_insights": []
+    },
+    {
+      "question": "What military and defense policy decisions are being made?",
+      "article_count": 135,
+      "domains": [
+        "Governance",
+        "Security"
+      ],
+      "sources_by_tier": {
+        "national": [
+          {
+            "source": "New York Times",
+            "title": "Iran Is Quickly Repairing Missile Bunkers, U.S. Intelligence Says",
+            "url": "https://www.nytimes.com/2026/04/03/us/politics/iran-missiles-launchers.html",
+            "context": "Daily newspaper founded in 1851, owned by the New York Times Company, the largest newspaper by digital subscriptions globally, covering national and world affairs.",
+            "connection": ""
+          },
+          {
+            "source": "NBC News",
+            "title": "Forced from their homes by Israeli bombing, displaced Lebanese face uncertainty and sectarian tensio",
+            "url": "https://www.nbcnews.com/world/lebanon/lebanons-displaced-face-dire-conditions-turned-away-hezbollah-fear-rcna266534",
+            "context": "Broadcast news division of NBCUniversal, a subsidiary of Comcast, founded in 1940, providing national and international news across television and digital platforms.",
+            "connection": ""
+          }
+        ]
+      },
+      "ai_insights": []
+    },
+    {
+      "question": "What legal challenges are being filed, and what do they mean?",
+      "article_count": 131,
+      "domains": [
+        "Politics",
+        "Legal"
+      ],
+      "sources_by_tier": {
+        "national": [
+          {
+            "source": "New York Times",
+            "title": "Trump Goes After Programs He Calls ‘Woke’ in Budget Proposal",
+            "url": "https://www.nytimes.com/2026/04/03/us/politics/trump-budget-proposal-woke.html",
+            "context": "Daily newspaper founded in 1851, owned by the New York Times Company, the largest newspaper by digital subscriptions globally, covering national and world affairs.",
+            "connection": ""
+          },
+          {
+            "source": "NPR",
+            "title": "Trump's ballroom fight sheds new light on an underground White House bunker",
+            "url": "https://www.npr.org/2026/04/03/nx-s1-5772665/trump-ballroom-underground-military-bunker",
+            "context": "National Public Radio, a nonprofit media organization founded in 1970, funded by member stations and corporate sponsors, producing news programming for over 1,000 stations.",
+            "connection": ""
+          }
+        ]
+      },
+      "ai_insights": []
+    },
+    {
+      "question": "How are defense and security decisions being shaped by politics?",
+      "article_count": 125,
+      "domains": [
+        "Politics",
+        "Security"
+      ],
+      "sources_by_tier": {
+        "national": [
+          {
+            "source": "New York Times",
+            "title": "Trump Requests $1.5 Trillion for Military Spending",
+            "url": "https://www.nytimes.com/2026/04/03/us/politics/white-house-defense-budget.html",
+            "context": "Daily newspaper founded in 1851, owned by the New York Times Company, the largest newspaper by digital subscriptions globally, covering national and world affairs.",
+            "connection": ""
+          },
+          {
+            "source": "NBC News",
+            "title": "Trump said Iran was 'decimated.' Then an American F-15E fighter jet was shot down.",
+            "url": "https://www.nbcnews.com/politics/white-house/trump-said-iran-was-decimated-american-f-15e-fighter-jet-was-shot-rcna266611",
+            "context": "Broadcast news division of NBCUniversal, a subsidiary of Comcast, founded in 1940, providing national and international news across television and digital platforms.",
+            "connection": ""
+          }
+        ]
+      },
+      "ai_insights": []
+    },
+    {
+      "question": "How is the conflict affecting prices and the economy?",
+      "article_count": 109,
+      "domains": [
+        "Economics",
+        "Security"
+      ],
+      "sources_by_tier": {
+        "national": [
+          {
+            "source": "New York Times",
+            "title": "Trump Requests $1.5 Trillion for Military Spending",
+            "url": "https://www.nytimes.com/2026/04/03/us/politics/white-house-defense-budget.html",
+            "context": "Daily newspaper founded in 1851, owned by the New York Times Company, the largest newspaper by digital subscriptions globally, covering national and world affairs.",
+            "connection": ""
+          },
+          {
+            "source": "NBC News",
+            "title": "Some Marines graduate without their parents' presence amid ICE fears",
+            "url": "https://www.nbcnews.com/news/us-news/marines-graduation-ice-fears-parris-island-rcna266019",
+            "context": "Broadcast news division of NBCUniversal, a subsidiary of Comcast, founded in 1940, providing national and international news across television and digital platforms.",
+            "connection": ""
+          }
+        ]
+      },
+      "ai_insights": []
+    }
+  ],
+  "article_url_index": {
+    "New York Times": "https://www.nytimes.com/2026/04/03/world/middleeast/f-15-us-fighter-jet-iran.html",
+    "NPR": "https://www.npr.org/2026/04/03/nx-s1-5772665/trump-ballroom-underground-military-bunker",
+    "Politico": "https://www.politico.com/cartoons/2026/04/03/matt-wuerker-cartoons-april-2026-00859067",
+    "Bloomberg": "https://www.bloomberg.com/news/articles/2026-04-03/us-judge-denies-pirro-motion-to-reconsider-quashed-fed-subpoenas",
+    "NBC News": "https://www.nbcnews.com/nightly-news/video/exhaustive-search-underway-in-iran-to-rescue-downed-f-15-airman-260690501771",
+    "AP News": "https://apnews.com/article/code-talkers-choctaw-fort-worth-veterans-park-192e8a58f5b8b71111770e71a80af949",
+    "The Atlantic": "https://www.theatlantic.com/newsletters/2026/04/trump-comes-for-cuba/686692/?utm_source=feed",
+    "Reuters": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQdElPWHpkVnlyZ1V3SElmdk5IYks2LWl3THF6aVBDbm40M3RKQTl6Y3ZXYkVkdDhSZ0RjRXVRU19MbGVhNmJNX0FTZnlPV1lERFJRakhyZUtzOFp4RWtuNklxckoyUUtHV0xNSkU0czd6bjhMNDM1YjFnQTV3dWxlTzh5cXFhNVRHM1cxM2NfWld6WDUyMzNvSlFTZGx4UjYyeTRRX290M2dUcWxBQjFsTlBxbDBuZGFuZ1UzQnE2X1E1RGlfdzJ6UjVVa2U?oc=5",
+    "Fox News": "https://www.foxnews.com/sports/lakers-superstar-luka-doncic-suffers-season-ending-injury",
+    "CNBC": "https://www.cnbc.com/2026/04/03/us-fighter-jet-downed-in-iran.html",
+    "The Hill": "https://thehill.com/homenews/senate/5815864-collins-criticizes-trump-budget/",
+    "National Review": "https://www.nationalreview.com/2026/04/yes-boldly-go/",
+    "The Dispatch": "https://thedispatch.com/newsletter/boilingfrogs/pam-bondi-pete-hegseth-trump-firing/",
+    "ABC News": "https://abcnews.com/Politics/air-defenses-trump-hegseth-touted-american-dominance-iran/story?id=131690203",
+    "Washington Times": "https://www.washingtontimes.com/news/2026/apr/3/good-friday-across-latin-america-bringing-faith-streets/",
+    "Washington Examiner": "https://www.washingtonexaminer.com/news/world/4516087/state-department-order-us-citizen-leave-lebanon/",
+    "Business Insider": "https://www.businessinsider.com/inside-air-force-high-risk-search-and-rescue-missions-2026-4",
+    "Daily Wire": "https://www.dailywire.com/news/hegseth-fires-army-chief-of-chaplains-during-holy-week",
+    "BBC World": "https://www.bbc.com/news/articles/c0le43jw8e9o?at_medium=RSS&at_campaign=rss",
+    "RealClearPolitics": "https://www.realclearpolitics.com/2026/04/03/bondi_was_trumps_2nd_choice_and_she_never_quite_fit_696152.html",
+    "Reason": "https://reason.com/volokh/2026/04/03/accusing-someone-who-called-police-of-blatant-racial-profiling-may-be-defamation/",
+    "The Guardian World": "https://www.theguardian.com/world/2026/apr/03/cuba-to-release-pardon-prisoners-us-fuel-blockade",
+    "Al Jazeera": "https://www.aljazeera.com/video/newsfeed/2026/4/3/video-shows-the-moment-a-russian-drone-hit-an-apartment-in-ukraine?traffic_source=rss",
+    "France 24": "https://www.france24.com/en/tv-shows/eye-on-africa/20260403-uganda-in-shock-after-4-children-killed-in-kindergarden",
+    "The Hindu": "https://www.thehindu.com/news/national/kerala/k-annamalals-roadshow-energises-nda-campaign-in-kannur/article70820424.ece",
+    "Foreign Policy": "https://foreignpolicy.com/2026/04/03/iran-shoot-down-us-fighter-jet-missing-crew-missiles-drones-trump-war/",
+    "ABC Australia": "https://www.abc.net.au/news/2026-04-04/victoria-cocaine-syndicate-arrests/106531258",
+    "Deutsche Welle": "https://www.dw.com/en/trump-seeks-1-5t-for-defense-10-cut-to-domestic-programs/a-76657289?maca=en-rss-en-all-1573-rdf",
+    "South China Morning Post": "https://www.scmp.com/week-asia/lifestyle-culture/article/3348980/southeast-asia-seeks-soft-power-outlast-us300-billion-buzz?utm_source=rss_feed",
+    "NHK World": "http://www3.nhk.or.jp/news/html/20260404/k10015092011000.html",
+    "MIT Technology Review": "https://www.technologyreview.com/2026/04/03/1135073/four-things-wed-need-to-put-data-centers-in-space/",
+    "American Prospect": "https://prospect.org/2026/04/03/bumping-bondi-trump-cabinet-firings/",
+    "Columbia Journalism Review": "https://www.cjr.org/analysis/shelly-kittleson-iraq-abduction-middle-east-kidnapped-journalist.php",
+    "Lawfare": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNMG1xaURMTWkybnZRM0tvTEdMTmpycFFVV1R4UDVTNVlkdUZwWGxhQ2I0OHE5STJLNldwakw2SXhxRVNPOUhyZ0l3dElTeGNfV0YzZTQxendSVWJSUERsT0haNnhVY1RRbmc0SnVKNmJiUmdZay1RWkM1T01OZEt1VEVFQXlXNGhSQ2dwUDlyUUpJbWdGRHUzd185NFhWcG9jQWdWMHhPSlNQYWFsb1prbQ?oc=5",
+    "Naked Capitalism": "https://www.nakedcapitalism.com/2026/04/coffee-break-the-fallacy-of-esg-baseball-deep-education-and-more-ai-follies.html",
+    "The Verge": "https://www.theverge.com/ai-artificial-intelligence/907074/anthropic-openclaw-claude-subscription-ban",
+    "Wired": "https://www.wired.com/story/meta-pauses-work-with-mercor-after-data-breach-puts-ai-industry-secrets-at-risk/",
+    "404 Media": "https://www.404media.co/behind-the-blog-systems-as-designed/",
+    "Ars Technica": "https://arstechnica.com/space/2026/04/trump-proposes-steep-cut-to-nasa-budget-as-astronauts-head-for-the-moon/",
+    "CalMatters": "https://calmatters.org/calmatters-en-espanol/2026/04/redadas-patrulla-fronteriza-en-california-violaron-orden-judicial/",
+    "Indian Country Today": "https://ictnews.org/news/judge-upholds-blm-approval-of-rhyolite-ridge-lithium-mine/",
+    "Religion News Service": "https://religionnews.com/2026/04/03/after-lengthy-court-battles-clergy-finally-visit-immigrant-detainees-in-illinois-and-minnesota/",
+    "Civil Eats": "https://civileats.com/2026/04/03/trump-budget-request-cuts-nearly-5-billion-from-usda/",
+    "Carnegie Endowment": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5DQjY4R1Nra3BRR3hZZlZySmNGY1NEbDVWc3RVM3l5blhReXU0c1VqUVhiUmM1WUh3VnhhYmZSN2lFd3dWVDVaalpvWXFSS2s3RGZVVjBKR2ZCVHpndl9ZXzVMMWxkTmtQSXdsa2FPamc?oc=5",
+    "Roosevelt Institute": "https://rooseveltinstitute.org/roosevelt-rundown/people-need-to-believe-that-their-government-has-their-back/",
+    "Center for American Progress": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxOYVBjR09tUzFPLUlVWDB5c2pWQmlEVTMwZEN4UE9LLUEyWDVyckZTS25FcEp2SWYxY2FvYkNOVmxvbmxnTTVXRjBUd2RuNXFBZU5Bc19HaUdDWVh0WlBSbFJrWEhNb2dDN09HWDY4dkJtem5XaFIxRXpaRktpbTA3bnZmMDJtNHBoSVhGSE4wNGVFMFkyaUlLOW1DdTdpR2J6TUJZUUtJR0I1YWZ6Wlk2VUJpSUU0QUZVbHVkbFdVS094NHRpM21zMFUzRlJITndHUVMwOUxaWXIxWWJiNkN0c0s1c1BicjZnbV8xRnoyQktTV1VKdFF0WQ?oc=5",
+    "Times of India": "https://timesofindia.indiatimes.com/world/us/its-a-war-iran-strikes-second-us-jet-near-hormuz-trump-says-talks-remain-unaffected/articleshow/130009392.cms",
+    "Straits Times": "https://www.straitstimes.com/world/united-states/hide-find-water-us-ex-pilot-details-how-to-survive-being-shot-down",
+    "Brookings": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1zblU3cmxGN0kxTXZ1ajZPNWZqODd6ZVpzeWI5TmZnbFBsVlFOMU04Y1RfSEEyMmwxQTljeVY2RUNLaS1uUVlFQkUtVFYyNFBlZ1NsUWdRYV8zUlVEVnhoN1ZlNy02eVc5SkNydWFR?oc=5",
+    "Texas Tribune": "https://feeds.texastribune.org/link/16799/17313292/texas-el-paso-camp-east-montana-immigration-inspection-violations",
+    "The Advocate": "https://www.advocate.com/politics/states/fired-tn-library-director-speaks",
+    "Military Times": "https://www.militarytimes.com/news/your-military/2026/04/03/a-10-warthog-crashes-near-strait-of-hormuz/",
+    "Teen Vogue": "https://www.teenvogue.com/story/xo-kitty-season-3-breakout-sule-thelwell-marius-interview",
+    "National Catholic Reporter": "https://www.ncronline.org/vatican/vatican-news/pope-leos-way-cross-says-leaders-will-have-answer-god-starting-war",
+    "The Imprint": "https://imprintnews.org/child-welfare-2/oregon-lgbtq-foster-care/273607",
+    "Mississippi Free Press": "https://www.mississippifreepress.org/person-of-the-day-mary-margaret-duggan-theater-becomes-a-safehaven-for-student-overcoming-learning-challenges/",
+    "The Forward": "https://forward.com/culture/816919/gene-shalit-100-birthday-appreciation-jewish/",
+    "AsAmNews": "https://asamnews.com/2026/04/03/you-seem-pretty-sad-album-announced-olivia-rodrigo/",
+    "Inside Climate News": "https://insideclimatenews.org/news/03042026/virginia-gas-costs-tax-relief-electric-vehicles/",
+    "The Intercept": "https://theintercept.com/2026/04/03/less-lethal-chemical-weapons-tear-gas-protests/",
+    "Meduza": "https://meduza.io/en/news/2026/04/03/report-ukrainian-military-personnel-stationed-in-libya-carried-out-attack-on-russian-tanker-in-mediterranean",
+    "Rappler": "https://www.rappler.com/voices/thought-leaders/vantage-point-lto-motor-vehicle-certificate-dbp-dci-insurance/",
+    "Remezcla": "https://remezcla.com/culture/interview-book-of-awesome-latinas-author-mirtle-pena-calderon-ashley-k-stoyanov-ojeda/",
+    "El Diario NY": "https://eldiariony.com/2026/04/03/ni-natural-ni-inofensivo-por-que-el-tequila-vuelve-a-quedar-en-la-mira-de-los-medicos/",
+    "NBC News Latino": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPVGc2a1o3N2swUlRHelFRV0JwcWg1Uk0taGd3a19hR3cwU2pmWXRHQTdHd01pRHFaNUhKaWIxYnNQUEtJXy1rSjdFdl9ld2kzMEgtQjRfX2lSY29wOHB6WUpIV0VRZHF4R2hoZzFMRkEtaDg0Y1U3LVlGNWd3ajJfcjVNczd1MXhVSWFQbm93T0t6NkU?oc=5",
+    "The Root": "https://www.theroot.com/why-keke-palmers-explanation-of-a-shocking-sxsw-proposa-2000098377",
+    "Science News": "https://www.sciencenews.org/article/mind-wander-body-mental-health",
+    "Washington Post": "https://www.washingtonpost.com/national-security/2026/04/03/f-15-crash-iran-missing/",
+    "The Grio": "https://thegrio.com/2026/04/03/corinne-bailey-rae-turns-the-millennial-classic-put-your-records-on-into-a-story-of-empowerment-for-children/",
+    "KFF Health News": "https://kffhealthnews.org/news/article/the-week-in-brief-deloitte-medicaid-contractors-trump-big-beautiful-bill/",
+    "STAT News": "https://www.statnews.com/2026/04/03/trump-budget-nih-5-billion-cut-in-2027/?utm_campaign=rss",
+    "Atlanta Black Star": "https://atlantablackstar.com/2026/04/03/jill-scott-exposes-the-tense-moment-she-met-the-queen-of-soul-aretha-franklin-and-got-a-brutal-reality-check-she-never-saw-coming/",
+    "Task and Purpose": "https://taskandpurpose.com/news/military-f-15-iran/",
+    "AARP": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNcWpzLXo2V1hvR09xTU9WR1lSazFfNjNjSVhpTHY1d2xyT1NCenFONEVreElQaWVIQk9yR3pieldOUlR5MmV1LTF1ZFgxcVcyb1R2MGVsUV9pUkxMd2dnMlA3OXhRRTIwd2o0VUFCdXhzTXB4MFlSTVc5bEItdU5QV3ZDckhlUQ?oc=5",
+    "Education Week": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNSzNHN1RTZzNYQ1F5MFA2bkxUMHVjMUlRVkJzekRadXJVUm5XSGtkMndjZWowYW9iY0Z6SmViWkpRenl4UzBVejdHTkVYbENRMExBSko2UDRzZ2FSbzM3aWtpMG8tZi1hcVozWmFxVE5tSi1MclYxU1NVQ25HTUoyY19fb24tLVlnblVzQ3MwX2Q5X1lMZGNFM04wcVpHaHVIV0JHUl84Q1d2V09KbjdjTg?oc=5",
+    "Mountain State Spotlight": "https://mountainstatespotlight.org/2026/04/03/morrisey-foster-care-vetoes/",
+    "Bridge Michigan": "https://bridgemi.com/michigan-health-watch/michigan-kids-in-mental-health-crisis-sent-out-of-state-as-facilities-close/",
+    "VTDigger": "https://vtdigger.org/2026/04/03/mini-truck-owners-show-off-their-wheels-at-the-vermont-statehouse/",
+    "The Maine Monitor": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPbnp6RmlYWU9iaDlyUW5KVWdxTWNMNDQ3LUM2QWhjVTF6M04xR2xuOWtSSG5ZZUQ0YlVfUVZUVVBnOF90R252cmN1TzBNT3hjeE44eVZwN2ZVcWUxY2ItNGNZVE1TajhiOE9ralJoQXkxQ29pczNlYmQ0eXdITEgzUlVuMA?oc=5",
+    "Iowa Capital Dispatch": "https://iowacapitaldispatch.com/2026/04/03/accused-of-stealing-patients-money-jewelry-and-drugs-nurse-faces-sanctions/",
+    "Oregon Public Broadcasting": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOZ0d0TnBsWkI2UDZNWXZDY21LWGpYTW41ZVRaMG5LOWpIUGJNZEN1amowY2ZqWHAtenBrNGRxemVKYVJfSjBDTnZfRGJlUk1aOEh3OEIyQVo5SDZvb2w4Z0NwblR0MUZNTXBQdFU2QVFyMlRpZURfTnZKOW5VdTNkV3BxNzliaTVNMzBj?oc=5",
+    "Hoover Institution": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOY25WNWRocWRhR0FBS01GN1E0SkZmV3VSUXBCV1FlZUZDRTk5em9hSXN2Nk1GN0V6YU1kNEZQekRnc1JfZkItZGU2aDZmaEZaQndKZmFrMEI5aFM1TU1wQWdDdFZZcXE0TjFOa3VGbC03NUh4ZWJsUXZXZ1liYXV0WGlrTjVaSXVPSmN1Tw?oc=5",
+    "American Enterprise Institute": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5IR21YN2RYVDA2WWZrcGFXdy0wRmNsVlByT0hNWUJCOWF6Sjl3N19wTUppanpSUDBjTTRRTi1faGtfdGdMQTlqRVMwOHUxQUQ4V0pDOTJobFcwR0hLcERSVmJNTkcxTjFXRUU0ZEdFdw?oc=5",
+    "Wisconsin Examiner": "https://wisconsinexaminer.com/2026/04/03/evers-vetoes-gop-bills-for-no-tax-on-overtime-and-tips-requiring-counties-to-cooperate-with-ice/",
+    "Breitbart": "https://www.breitbart.com/politics/2026/04/03/white-houses-2027-budget-would-up-defense-spending-slash-73-billion-in-nondefense-spending/",
+    "The Blaze": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNTTFhdER1X0pfWXlIZlpLTEJoYXVSakJfcWhVenhvajJ3VXhpVHR3TTVxUlBUTGZuTzlQM0Zob1hYc1V1T2tfLXhkelFOeF9iR3EtRFlnQm1EVXFnMjBZZzNELS1FaWxYdHVVakhzUWhFc1ZyeHVDYTNHR0c5X0c5WUw4bGRkc0V3QURCOHNFUGQ3cWJXQUdvLThYVERETDB3ZjVGWmJYdkc4UGNGNEM5TGlMV3NsZFNvb1Ewd1JCdjVqN2F6VllYZw?oc=5",
+    "The Globe and Mail": "https://www.theglobeandmail.com/canada/article-how-the-artemis-ii-mission-is-rekindling-humanitys-long-love-affair/",
+    "Center on Budget and Policy Priorities": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOcnVPY1ZTU2ZtdGxVV0NFeDlrMWdVaHFobkhSdGJ3N3ZNdUJPTUplc01VbzFmT3pVdHJfNlduWGIzejdBV0diVi1fTzMzNjVfTmhHM1hueVBYU2hLeFg1aUxlVDAyRVpEdnRYZjJJeWl6Z1BKeWZiNTFQVzRna1FhUW9GYUlpbFZOM3U4YTI5MHgwNTZ6VThXQ085NFVFdW5JRW9tNjBRSEFBZ3BnTVE?oc=5",
+    "Taipei Times": "https://www.taipeitimes.com/News/front/archives/2026/04/04/2003855000",
+    "Channel News Asia": "https://www.channelnewsasia.com/wellness/eye-health-advice-ophthalmologists-6027886",
+    "Dawn": "https://www.dawn.com/news/1988282/petrol-price-reduces-to-rs378-per-litre-as-govt-cuts-levy-by-rs80",
+    "The Japan Times": "https://www.japantimes.co.jp/news/2026/04/04/japan/takaichi-australia-rare-earths/",
+    "Jamaica Observer": "https://www.jamaicaobserver.com/2026/04/03/victory-morgan-earns-baseball-scholarship/",
+    "Latin America Reports": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNdFV5N3ZHTWY3ODltMVQzWHhoTXlYdV9uU0trdmsyMmU5cHVlYnBZczlxLTJQbUVtT2xQcjZtMUFiRkZqdnJteVU3Ry1fdURwemFEMHlVS0JkQTJVdWtGcTZ3Y21rV1k1TS1yRXp6NWVkTDRFbDJSYkt1ek9VeWdDQkFYbDdoVUlXYUprNEFPQWJCcXgzbzVmZTQ5UnowOUVMajdROF84ZEdjdw?oc=5",
+    "Bangkok Post": "https://www.bangkokpost.com/business/general/3230233/huge-loan-needed-to-finance-fuel-subsidies",
+    "Colorado Sun": "https://coloradosun.com/2026/04/03/half-of-staff-at-boulders-noaa-global-monitoring-lab-face-furloughs-as-funding-freeze-drags-on/",
+    "Nevada Independent": "https://thenevadaindependent.com/article/nevada-is-suing-to-stop-trump-order-to-make-eligible-voter-lists-is-lombardo-looped-in/",
+    "Anadolu Agency": "https://www.aa.com.tr/en/world/pipeline-alternatives-including-routes-via-turkiye-gain-relevance-amid-strait-of-hormuz-concerns/3891213",
+    "The Lens": "https://thelensnola.org/2026/04/03/meta-entergy-louisiana-power-plants-ai-data-centers-2/",
+    "Montana Free Press": "https://montanafreepress.org/2026/04/03/pages-devoted-to-climate-change-have-disappeared-from-key-yellowstone-national-park-guidebook/",
+    "Source NM": "https://sourcenm.com/2026/04/03/blasting-begins-for-border-wall-on-cherished-new-mexico-mountain/",
+    "City Limits": "https://citylimits.org/councilmember-investigated-over-possible-bribes-in-shelter-contracting-and-what-else-happened-this-week-in-housing/",
+    "Idaho Capital Sun": "https://idahocapitalsun.com/briefs/idaho-democrats-bemoan-effects-of-state-budget-cuts-after-years-of-tax-cuts/",
+    "Voice of San Diego": "https://voiceofsandiego.org/2026/04/03/sacramento-report-two-gubernatorial-candidates-on-tijuana-river-pollution/",
+    "Kansas Reflector": "https://kansasreflector.com/2026/04/03/repub/trump-budget-seeks-43-boost-in-defense-spending-cuts-in-many-domestic-programs/",
+    "Mother Jones": "https://www.motherjones.com/politics/2026/04/republican-islamophobia-randy-fine-andy-ogles-trump/",
+    "TechCrunch": "https://techcrunch.com/2026/04/03/the-anonymous-social-app-that-thinks-it-can-work-in-saudi-arabia/",
+    "Arizona Mirror": "https://azmirror.com/2026/04/03/county-recorders-republican-lawmakers-push-for-more-say-on-elections-rule-book/",
+    "E&E News": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOeWJIX2xjQ0JBcFpNdXNUM0E3TXpQOUFmMEtvSnhhd3I4aHY4d0t3UnZ6SmFjTncxbTR3SzlQdk51MHdqV3BuM210aEMzdTE5VDJIRnludkJ5dGpadENocnVCUHotblJYby02MTZQOUs1aDVfejZteWI3czJDSE1qYjlKVlZXNzkzaGEyRU8yQVR0QVVrNEU0OVBVMA?oc=5",
+    "Council on Foreign Relations": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1aSFVtU2JSTVIzNGtVVXVuMEtXYl9WZ1pWQUtUdHREODlQTEljUnhMY2o4emZ3ME9FMG8ySXFudmlPV1NqLTI2UXV0VEhiTkZDVi02QUJmdkhRVTI2eXVKcnpGX2YtV0dxS3RueQ?oc=5",
+    "The War Zone": "https://www.twz.com/air/photos-of-f-15e-wreckage-emerge-amid-iranian-claims-it-shot-down-an-american-fighter",
+    "Cato Institute": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBYM2VRUkZUV05GUndJM21wRXZBVm9QMHRUT3pRY2dsQllHZ1huMTIwWExZNVh6NDJqODRHeGpCRV9iS2R4b1EyR0tzZHc4UDgzYmxBN05zSDdlTHAyWDd2a1dOZjIxT0NL?oc=5",
+    "Center for Strategic and International Studies": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOLXZ3a2V2dC1yLVpZMElMRWVnNTVSZi1WQmFhQXRtS3ExNXRpZXdQUkl0eWVSLXE0ampqdGxKZVo2X3pTeUpSd3ZHREVwdUtEM2cyLWQ4ei1MYnhGSGNYRDQ3QmVGZ2x4UXZiSFlTeXJ2TXloU3Z1UjhhZE9ISk5uUkNvQzlaS1BQT2lUZV91ZlFaZmVxeUFn?oc=5",
+    "Bipartisan Policy Center": "https://news.google.com/rss/articles/CBMingFBVV95cUxOM3NDYVhVOVl5bmdEaXRVTW1XUDFsMVZNeElVVzB5VlB2ZzlwYWtJbGhqRnIwNXoydGdqczM4amZSWXNhWmdGVldVX2ZZU2xxMUtXSkpRUHhaRmJGZmEwS0xMQTd5TTlhOXNuRXM3dGZrLUZBSC1qdmVnZXVfallaUGpMUGk2c2lSLTY2NzJLX19VQTNwbTUtQVAyQzBYZw?oc=5",
+    "Marketplace (APM)": "https://www.marketplace.org/episode/2026/04/03/gas-vs-gas",
+    "Matt Taibbi (Racket News)": "https://www.racket.news/p/listen-to-this-article-time-to-tune",
+    "The Lever (David Sirota)": "https://www.levernews.com/is-america-affordable-yet/",
+    "The Free Press (Bari Weiss)": "https://www.thefp.com/p/why-we-still-choose-to-go-to-the",
+    "Slow Boring (Matt Yglesias)": "https://www.slowboring.com/p/11-jobs-that-probably-wont-be-taken",
+    "White House": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQMk9nVUdaOTZreHRLMUQzOFpJQUtnQVZXVnFGcTFVNlVtanVqc0FSOEZlOUxvR1V1M0ZZT2pSZmswY3FpQTZIZnQ4RDdTa0FzeFFTWlYyMzVORTFLdWxzYVlWdWVFRzNLelFqRTVycUJ6VUQzSjVTSnNvd0RCVzYzYWFtdTFhQjVKSDQzamxscFBrMXg0WmlaQk9wZFJEQzYwZVdOOA?oc=5",
+    "Federal Reserve": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPSDc3cjRGdkJNNjRUR2hobWdBUTViY3JmUkpZYnhGTXNjYXRsYjFmaXJNWUpwRVNKZFNvdXhnczRYZHk0enJsUTBaM0JYT2JBR0lJM3RzV01fN1VKMGlZZ0RYWGFIZzRRLXZmdGhwQ3o3djZhYVpVc2tmbTZRX0lDMjM2YkhpZw?oc=5",
+    "Bureau of Labor Statistics": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOWjBmSnlNRGQ5WXNDaGVrbVJvcTRvNGRKMms3Umt4blRIVWVyNHFUbHhSNTVGMGU5bTdwVU83S2puRVhDbWZodklOcDlkMVFfZlZQdlZCQVRJR0JwZG0xdXlpNmx0bGJfZzRDV3FMNW5YVlRLYkNDMC1WdHNpWUdqTlpoV2ROT1MyYWpGUXpnaGpJdGVJSWUteUJ1RnJiU2ItVVQxSHQ0alJVY19oYlBvMnBSZDVwdkFp?oc=5",
+    "Census Bureau": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPYnh6bS1OTmdoZGFOYk9RbDdEcEhWMDNJeVBZYnE2RW9zNDk0WlF6bmFLVGdXYUNmUktRaG1LcWZ3emw1dl9hXzZvNllLVFYwWEttUlJlbW96WFl3dkFfdGhCdVQ0bURKS3hsaE5EUzV4UEk3ZTJPTDNTOXZQc2VDZ21Hejg?oc=5",
+    "Arkansas Times": "https://arktimes.com/arkansas-blog/2026/04/03/celebrate-maya-project-to-commemorate-maya-angelous-98th-birthday-starting-next-week",
+    "Capitol News Illinois": "https://capitolnewsillinois.com/news/7-years-after-legalization-final-cannabis-licensing-lawsuit-goes-to-court/",
+    "CT Mirror": "https://ctmirror.org/2026/04/03/ct-politics-news-dhs-hb-8002-bears/",
+    "GBH News": "https://www.wgbh.org/culture/performing-arts/2026-04-03/boston-youth-choirs-share-the-stage-to-premiere-piece-using-phillis-wheatleys-poetry",
+    "Georgia Recorder": "https://georgiarecorder.com/2026/04/03/repub/trump-asks-for-massive-43-boost-in-defense-spending-in-new-budget-request/",
+    "Florida Phoenix": "https://floridaphoenix.com/2026/04/03/marva-johnson-provides-insight-into-her-experience-as-famu-president-so-far/",
+    "Indiana Capital Chronicle": "https://indianacapitalchronicle.com/briefs/judge-kicks-dispute-over-same-last-name-candidate-back-to-indiana-election-commission/",
+    "Kentucky Lantern": "https://kentuckylantern.com/2026/04/03/repub/democratic-states-sue-trump-over-mail-in-ballot-order-joining-rush-to-courts/",
+    "InForum": "https://www.inforum.com/sports/prep/north-dakota-high-school-gymnastics-in-jeopardy-as-another-school-drops-program",
+    "Nebraska Examiner": "https://nebraskaexaminer.com/briefs/catholic-educators-honored-for-service-in-northeast-nebraska/",
+    "Post and Courier": "https://www.postandcourier.com/lh0a1354-jpg/image_545f35b6-2304-42d0-81f7-d75548280483.html",
+    "New Hampshire Bulletin": "https://newhampshirebulletin.com/2026/04/03/repub/democratic-states-sue-trump-over-mail-in-ballot-order-joining-rush-to-courts/",
+    "Spotlight PA": "https://www.spotlightpa.org/news/2026/04/trump-mail-voting-lawsuit-pennsylvania-23-states-elections/",
+    "Salt Lake Tribune": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNa3FHeTJ2RDNhTy1NVVBvbFNEcjFyZDU4bnNZYmhjQzNCbG1JekRBa0YtaklBNXA1UU10N0JGR2Mydl9pbExuN0d0QkRqRG12V28zMERjZjVKRU5lcjA2cTkzUlFBMVdSMy1SR0RlWTR4MWNpWmdmVklublJWcjdkNTNOQWpKaGZxb2hz?oc=5",
+    "WyoFile": "https://wyofile.com/local-lookout-social-media-addiction-aggressive-driving-more-pets-in-powell/",
+    "Rhode Island Current": "https://rhodeislandcurrent.com/2026/04/03/controversial-rent-stabilization-ordinance-clears-first-pass-before-providence-city-council/",
+    "South Dakota Searchlight": "https://southdakotasearchlight.com/2026/04/03/repub/democratic-states-sue-trump-over-mail-in-ballot-order-joining-rush-to-courts/",
+    "Optimist Daily": "https://www.optimistdaily.com/2026/04/podcast-transcript-april-3-2026-good-friday-good-news-speed-friending-fire-fungi-and-the-science-of-sleep/",
+    "Tennessee Lookout": "https://tennesseelookout.com/2026/04/03/repub/democratic-states-sue-trump-over-mail-in-ballot-order-joining-rush-to-courts/",
+    "Good Good Good": "https://www.goodgoodgood.co/articles/sea-turtle-marine-biologist-barnacles-rescue",
+    "Al-Monitor": "https://www.al-monitor.com/originals/2026/04/hide-find-water-us-ex-pilot-details-how-survive-being-shot-down",
+    "Middle East Eye": "https://www.middleeasteye.net/live-blog/live-blog-update/video-us-aircraft-search-pilots-after-fighter-jet-shot-down-iran",
+    "Premium Times Nigeria": "https://www.premiumtimesng.com/news/headlines/869218-adc-accuses-inec-chair-of-contempt-insists-on-proceeding-with-congresses.html",
+    "AllAfrica": "https://allafrica.com/stories/202604030638.html",
+    "Indian Express": "https://indianexpress.com/article/india/india-azerbaijan-relations-operation-sindoor-baku-reengagement-iran-evacuation-10617919/",
+    "Irish Times": "https://www.irishtimes.com/world/middle-east/2026/04/03/search-under-way-for-pilot-after-us-fighter-jet-shot-down-over-iran/",
+    "Detroit Free Press": "https://news.google.com/rss/articles/CBMijwJBVV95cUxPQ3BHalVCYU1QVWhmZ3RnbndVNVhMWDRMYlpLa3AyaDdFemQwMjNGTUtaNHlFdTF0WFNmMGxoWEpyWmw3QTQyckg2TkdOWktlUXYwM1oweW9oMDJ1VFlkOHkzWFBvVlkxZy1rZXNYeEhkQVJ1V3ZhMFFRR3JZSC1MNWN4bzNRY2ppZ3ZsMXpQOExFTFJ2Z0FOaGdXZnFWYThGbTV3aGM0NmVrcGpLLW1fMWZxR1ZKU1VvU0lZWFNRMVo1dzRHZ3NDUkNJT0V0RmJwYXBlSXJZbWhPOFdLaDNkYVEtUjhHU0lFbkZhTjFlRi1vYUZWRmVBSnR4MWdIaGV3eURKeEwya1lGQ0JjVmVB?oc=5",
+    "Tampa Bay Times": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOcVluekNrMVRnZDVsZDB4Sk1ENzBteG9sUVIyc2VoOEFmYVUwdlNIbW9ESGQyVTBLUkxOSHN5MHlKNmtEanZWVmxCSzlzR1Zsa1FHdEk3S25janhQWnpfX0Z4cUt4SGNNNVZzeDh0QkZwTmttN2ZlbFlLQWQ2dGYyajRiaTROMjE0WUlCSmhfMFVGd1J4NUdnRTBYY2M5UDMwQkQ2WEdZbDdaTzQzU1FtZzJHRHItdDlTdmRpMFZ3?oc=5",
+    "The Oregonian": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOZkdtTFYxT0ViXzR3eUdjYXhQUkhjdVUxZEFwUXkxbGFpcGQtajNla1VoMUUwWlpSZ2M5V3Rjckp5T3FEZDBWTzZhSjdnalFBSUpLZFp3MTVwN3FFRnM5cXkycXNIWUxrNzkxZkIybEwyN0NweXRYaFREaE1uQU1rbmQ2M0ZnRFlzdjZDNmRTeUFGUFN1R0owQ3pDSWJxcVVVQjkzcndKV3cwNWdoR3FnVEZiUdIBxwFBVV95cUxPUkhqc25iR3c2ZWVjRTVCTmZKbzFLcG10aGV6clBfbjhxM2JLcDlhY1VPRWNXbUh3QWhSeGo5WEYzQm4ya0JTTW9wZ21iUTZzZ2poU0Rsb2xhcEFVdDY4YzVoanVtakRJLTlKejd3WFFPeEZMbGxJeWlqWGlvUXJnaFREOFVwLWFFRWFTVmVCdy1sQjNUc1p2d2JGNVV6dV9FZm12b2ljVEViYmE2VnJMOElPSF9nYXFxSUlnWDRCTldZckJ0bU5J?oc=5",
+    "Atlantic Council": "https://www.atlanticcouncil.org/blogs/energysource/how-the-iran-war-could-shift-energy-policies-around-the-world/",
+    "NPR Politics Podcast": "https://www.npr.org/2026/04/03/nx-s1-5771769/trump-tries-to-sell-the-iran-war-a-month-after-it-started"
+  },
+  "event_divergence": [],
+  "narrative_divergence": []
+}

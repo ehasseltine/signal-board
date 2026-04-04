@@ -1,128 +1,136 @@
 {
   "date": "2026-04-03",
-  "generated": "2026-04-03T08:07:26Z",
+  "generated": "2026-04-04T00:20:10Z",
   "summary": {
-    "total_stories": 564,
-    "sources_reporting": 95,
-    "cross_domain": 393,
-    "cross_domain_pct": 70,
+    "total_stories": 1288,
+    "sources_reporting": 192,
+    "cross_domain": 882,
+    "cross_domain_pct": 68,
     "ai_classified": 404,
-    "ai_classified_pct": 72,
+    "ai_classified_pct": 31,
     "connection_insights": 332,
-    "top_domain": "Governance",
+    "top_domain": "Security",
     "domain_distribution": {
-      "Governance": 184,
-      "Geopolitics": 164,
-      "Security": 156,
-      "Legal": 112,
-      "Economics": 109,
-      "Politics": 108,
-      "Climate": 62,
-      "Information": 45,
-      "Labor": 28,
-      "AI": 23
+      "Security": 487,
+      "Governance": 421,
+      "Legal": 364,
+      "Politics": 325,
+      "Economics": 323,
+      "Climate": 317,
+      "Geopolitics": 264,
+      "Information": 263,
+      "Labor": 107,
+      "AI": 39
     }
   },
   "temporal_context": {
     "has_yesterday": true,
     "yesterday_date": "2026-04-02",
-    "yesterday_total": 1913,
-    "today_total": 564,
-    "volume_change_pct": -71,
+    "yesterday_total": 1947,
+    "today_total": 1288,
+    "volume_change_pct": -34,
     "domain_shifts": [
-      {
-        "domain": "information",
-        "label": "Information",
-        "yesterday": 248,
-        "today": 45,
-        "change_pct": -82
-      },
-      {
-        "domain": "economics",
-        "label": "Economics",
-        "yesterday": 452,
-        "today": 109,
-        "change_pct": -76
-      },
-      {
-        "domain": "labor",
-        "label": "Labor",
-        "yesterday": 104,
-        "today": 28,
-        "change_pct": -73
-      },
-      {
-        "domain": "legal",
-        "label": "Legal",
-        "yesterday": 380,
-        "today": 112,
-        "change_pct": -71
-      },
       {
         "domain": "climate",
         "label": "Climate",
-        "yesterday": 206,
-        "today": 62,
-        "change_pct": -70
-      },
-      {
-        "domain": "security",
-        "label": "Security",
-        "yesterday": 519,
-        "today": 156,
-        "change_pct": -70
-      },
-      {
-        "domain": "domestic_politics",
-        "label": "Politics",
-        "yesterday": 360,
-        "today": 108,
-        "change_pct": -70
-      },
-      {
-        "domain": "governance",
-        "label": "Governance",
-        "yesterday": 602,
-        "today": 184,
-        "change_pct": -69
+        "yesterday": 212,
+        "today": 317,
+        "change_pct": 50
       },
       {
         "domain": "ai",
         "label": "AI",
-        "yesterday": 74,
-        "today": 23,
-        "change_pct": -69
+        "yesterday": 75,
+        "today": 39,
+        "change_pct": -48
       },
       {
         "domain": "geopolitics",
         "label": "Geopolitics",
-        "yesterday": 458,
-        "today": 164,
-        "change_pct": -64
-      }
-    ],
-    "surges": [],
-    "drops": [
+        "yesterday": 461,
+        "today": 264,
+        "change_pct": -43
+      },
       {
-        "domain": "information",
-        "label": "Information",
-        "yesterday": 248,
-        "today": 45,
-        "change_pct": -82
+        "domain": "governance",
+        "label": "Governance",
+        "yesterday": 616,
+        "today": 421,
+        "change_pct": -32
       },
       {
         "domain": "economics",
         "label": "Economics",
-        "yesterday": 452,
-        "today": 109,
-        "change_pct": -76
+        "yesterday": 460,
+        "today": 323,
+        "change_pct": -30
+      },
+      {
+        "domain": "domestic_politics",
+        "label": "Politics",
+        "yesterday": 369,
+        "today": 325,
+        "change_pct": -12
+      },
+      {
+        "domain": "security",
+        "label": "Security",
+        "yesterday": 523,
+        "today": 487,
+        "change_pct": -7
+      },
+      {
+        "domain": "legal",
+        "label": "Legal",
+        "yesterday": 388,
+        "today": 364,
+        "change_pct": -6
+      },
+      {
+        "domain": "information",
+        "label": "Information",
+        "yesterday": 252,
+        "today": 263,
+        "change_pct": 4
       },
       {
         "domain": "labor",
         "label": "Labor",
-        "yesterday": 104,
-        "today": 28,
-        "change_pct": -73
+        "yesterday": 107,
+        "today": 107,
+        "change_pct": 0
+      }
+    ],
+    "surges": [
+      {
+        "domain": "climate",
+        "label": "Climate",
+        "yesterday": 212,
+        "today": 317,
+        "change_pct": 50
+      }
+    ],
+    "drops": [
+      {
+        "domain": "ai",
+        "label": "AI",
+        "yesterday": 75,
+        "today": 39,
+        "change_pct": -48
+      },
+      {
+        "domain": "geopolitics",
+        "label": "Geopolitics",
+        "yesterday": 461,
+        "today": 264,
+        "change_pct": -43
+      },
+      {
+        "domain": "governance",
+        "label": "Governance",
+        "yesterday": 616,
+        "today": 421,
+        "change_pct": -32
       }
     ],
     "persisting_forces": [
@@ -171,15 +179,14 @@
         "insight": "Bank settlement for facilitating abuse reveals institutional failure to detect and report suspicious financial activity tied to criminal behavior."
       },
       {
-        "force": "executive politicization of justice",
-        "yesterday_count": 9,
+        "force": "alliance destabilization",
+        "yesterday_count": 5,
         "today_count": 2,
         "domains": [
-          "domestic_politics",
-          "legal",
-          "governance"
+          "geopolitics",
+          "security"
         ],
-        "insight": "Executive weaponization of law enforcement: Trump's demand for vengeful prosecution by his attorney general reveals how executive power can corrupt the justice system's independence."
+        "insight": "Regional military conflict exposes fractures in NATO alliance as US commitment becomes unpredictable."
       },
       {
         "force": "alliance fragmentation",
@@ -193,16 +200,6 @@
         "insight": "Unilateral U.S. policy threat destabilizes alliance structure and creates security uncertainty for allied nations dependent on collective defense."
       },
       {
-        "force": "alliance destabilization",
-        "yesterday_count": 5,
-        "today_count": 2,
-        "domains": [
-          "geopolitics",
-          "security"
-        ],
-        "insight": "Regional military conflict exposes fractures in NATO alliance as US commitment becomes unpredictable."
-      },
-      {
         "force": "institutional erosion",
         "yesterday_count": 3,
         "today_count": 2,
@@ -212,6 +209,17 @@
           "geopolitics"
         ],
         "insight": "Defense leadership purges reshape military command structure and institutional stability during ongoing strategic operations."
+      },
+      {
+        "force": "executive politicization of justice",
+        "yesterday_count": 9,
+        "today_count": 2,
+        "domains": [
+          "domestic_politics",
+          "legal",
+          "governance"
+        ],
+        "insight": "Executive weaponization of law enforcement: Trump's demand for vengeful prosecution by his attorney general reveals how executive power can corrupt the justice system's independence."
       }
     ],
     "new_forces": [
@@ -236,6 +244,25 @@
         "insight": "Beijing leverages regional diplomatic role to contain Taliban instability that threatens Pakistan and broader Asia-Pacific security."
       },
       {
+        "force": "geopolitical risk premium",
+        "count": 3,
+        "domains": [
+          "economics",
+          "geopolitics"
+        ],
+        "insight": "Market rallies on hopes for Hormuz reopening show how geopolitical risk (Iran-US conflict) directly prices into asset valuations and regional trade flows."
+      },
+      {
+        "force": "regulatory capture / institutional neglect",
+        "count": 3,
+        "domains": [
+          "domestic_politics",
+          "legal",
+          "governance"
+        ],
+        "insight": "ICE detention standards failures expose systemic gaps in federal custody oversight affecting vulnerable populations."
+      },
+      {
         "force": "weaponization of humanitarian infrastructure",
         "count": 3,
         "domains": [
@@ -246,15 +273,6 @@
         "insight": "Military targeting of civilian health infrastructure is a weapon to displace and destabilize populations."
       },
       {
-        "force": "geopolitical risk premium",
-        "count": 3,
-        "domains": [
-          "economics",
-          "geopolitics"
-        ],
-        "insight": "Market rallies on hopes for Hormuz reopening show how geopolitical risk (Iran-US conflict) directly prices into asset valuations and regional trade flows."
-      },
-      {
         "force": "diplomatic signaling",
         "count": 3,
         "domains": [
@@ -262,16 +280,6 @@
           "geopolitics"
         ],
         "insight": "Cuba frames prisoner release as humanitarian gesture while responding to U.S. pressure, masking political negotiation as moral action."
-      },
-      {
-        "force": "authoritarian democratic capture",
-        "count": 3,
-        "domains": [
-          "geopolitics",
-          "governance",
-          "security"
-        ],
-        "insight": "Military junta orchestrates civilian elections as facade legitimacy, consolidating authoritarian control through democratic theater."
       },
       {
         "force": "state-sponsored infrastructure targeting",
@@ -284,14 +292,14 @@
         "insight": "Foreign cyber attack on domestic law enforcement surveillance systems creates national security vulnerability requiring federal coordination."
       },
       {
-        "force": "regulatory capture / institutional neglect",
+        "force": "authoritarian democratic capture",
         "count": 3,
         "domains": [
-          "domestic_politics",
-          "legal",
-          "governance"
+          "geopolitics",
+          "governance",
+          "security"
         ],
-        "insight": "ICE detention standards failures expose systemic gaps in federal custody oversight affecting vulnerable populations."
+        "insight": "Military junta orchestrates civilian elections as facade legitimacy, consolidating authoritarian control through democratic theater."
       }
     ],
     "faded_forces": [
@@ -323,21 +331,21 @@
         ]
       },
       {
-        "force": "executive consolidation",
-        "count": 12,
-        "domains": [
-          "governance",
-          "domestic_politics",
-          "legal"
-        ]
-      },
-      {
         "force": "conflict-driven commodity volatility",
         "count": 12,
         "domains": [
           "economics",
           "geopolitics",
           "security"
+        ]
+      },
+      {
+        "force": "executive consolidation",
+        "count": 12,
+        "domains": [
+          "governance",
+          "domestic_politics",
+          "legal"
         ]
       }
     ],
@@ -358,8 +366,8 @@
       "source_count": 14,
       "tier_count": 3,
       "tiers": [
-        "international",
         "national",
+        "international",
         "specialist"
       ],
       "domains": [
@@ -551,8 +559,8 @@
       "source_count": 10,
       "tier_count": 3,
       "tiers": [
-        "international",
         "national",
+        "international",
         "local-regional"
       ],
       "domains": [
@@ -742,10 +750,10 @@
       "source_count": 9,
       "tier_count": 4,
       "tiers": [
-        "international",
         "national",
-        "government",
-        "local-regional"
+        "international",
+        "local-regional",
+        "government"
       ],
       "domains": [
         "Economics",
@@ -938,8 +946,8 @@
       "source_count": 7,
       "tier_count": 3,
       "tiers": [
-        "international",
         "national",
+        "international",
         "local-regional"
       ],
       "domains": [
@@ -1131,8 +1139,8 @@
       "source_count": 4,
       "tier_count": 2,
       "tiers": [
-        "international",
-        "national"
+        "national",
+        "international"
       ],
       "domains": [
         "Geopolitics",
@@ -1279,9 +1287,9 @@
       "source_count": 4,
       "tier_count": 3,
       "tiers": [
-        "international",
         "national",
-        "specialist"
+        "specialist",
+        "international"
       ],
       "domains": [
         "Governance",
@@ -1452,8 +1460,8 @@
       "source_count": 3,
       "tier_count": 2,
       "tiers": [
-        "international",
-        "national"
+        "national",
+        "international"
       ],
       "domains": [
         "Politics",
@@ -1578,8 +1586,8 @@
       "source_count": 3,
       "tier_count": 2,
       "tiers": [
-        "international",
-        "national"
+        "national",
+        "international"
       ],
       "domains": [
         "Security",
@@ -1693,8 +1701,8 @@
       "source_count": 2,
       "tier_count": 2,
       "tiers": [
-        "analysis",
-        "national"
+        "national",
+        "analysis"
       ],
       "domains": [
         "Labor",
@@ -1800,8 +1808,8 @@
       "source_count": 3,
       "tier_count": 2,
       "tiers": [
-        "international",
-        "national"
+        "national",
+        "international"
       ],
       "domains": [
         "Geopolitics",
@@ -2452,50 +2460,29 @@
   ],
   "what_connects": [
     {
-      "headline": "Myanmar’s Min Aung Hlaing: The general who made himself president",
-      "structural_force": "democratic facade masking authoritarian control",
-      "total_sources": 6,
-      "spectrum_segments": 4,
-      "left_sources": [
-        "NBC News"
-      ],
-      "right_sources": [
-        "RealClearPolitics"
-      ],
-      "international_sources": [
-        "The Japan Times",
-        "Rappler"
-      ],
-      "local_regional_sources": [
-        "Post and Courier",
-        "InForum"
-      ],
-      "article_count": 8,
-      "domains": [
-        "governance",
-        "domestic_politics"
-      ],
-      "sample_connection": "Military maintains power by replacing formal dictatorship with nominally civilian structures while controlling electoral outcomes."
-    },
-    {
       "headline": "Iran says shot down F-35 fighter jet with new defence system",
       "structural_force": "military escalation",
-      "total_sources": 21,
-      "spectrum_segments": 3,
+      "total_sources": 37,
+      "spectrum_segments": 4,
       "left_sources": [
-        "ABC News"
+        "ABC News",
+        "Washington Post"
       ],
       "right_sources": [
-        "Fox News",
+        "RealClearPolitics",
+        "Daily Wire",
         "Washington Examiner"
       ],
       "international_sources": [
         "Dawn",
-        "The Globe and Mail",
-        "Al Jazeera"
+        "The Japan Times",
+        "Taipei Times"
       ],
-      "local_regional_sources": [],
-      "article_count": 26,
+      "local_regional_sources": [
+        "The Oregonian",
+        "Teen Vogue"
+      ],
+      "article_count": 50,
       "domains": [
         "security",
         "geopolitics",
@@ -2504,24 +2491,91 @@
       "sample_connection": "Iran's military claim reflects escalating Middle East conflict with potential regional power balance implications."
     },
     {
-      "headline": "Bank of America's $105m settlement with Epstein victims wins preliminary approval",
-      "structural_force": "institutional accountability",
-      "total_sources": 13,
-      "spectrum_segments": 3,
+      "headline": "The One Thing Trump Wanted That Pam Bondi Failed to Deliver",
+      "structural_force": "executive politicization of justice",
+      "total_sources": 32,
+      "spectrum_segments": 4,
+      "left_sources": [
+        "American Prospect",
+        "The Intercept",
+        "New York Times"
+      ],
+      "right_sources": [
+        "Daily Wire"
+      ],
+      "international_sources": [
+        "Dawn",
+        "South China Morning Post",
+        "The Globe and Mail"
+      ],
+      "local_regional_sources": [
+        "CT Mirror",
+        "Tennessee Lookout",
+        "Ohio Capital Journal"
+      ],
+      "article_count": 49,
+      "domains": [
+        "domestic_politics",
+        "legal",
+        "governance"
+      ],
+      "sample_connection": "Executive weaponization of law enforcement: Trump's demand for vengeful prosecution by his attorney general reveals how executive power can corrupt the justice system's independence."
+    },
+    {
+      "headline": "Jealous ex-boyfriend accused of ‘vicious’ acid attack that left college student severely burned: DA",
+      "structural_force": "violent crime prosecution",
+      "total_sources": 31,
+      "spectrum_segments": 4,
       "left_sources": [
         "NPR"
       ],
-      "right_sources": [],
+      "right_sources": [
+        "The Blaze",
+        "Daily Wire",
+        "Fox News"
+      ],
       "international_sources": [
-        "Dawn",
-        "Channel News Asia",
-        "The Hindu"
+        "Al Jazeera",
+        "South China Morning Post",
+        "France 24"
       ],
       "local_regional_sources": [
-        "Atlanta Black Star",
+        "Arkansas Times",
+        "Jewish Telegraphic Agency",
+        "The Forward"
+      ],
+      "article_count": 41,
+      "domains": [
+        "security",
+        "legal",
+        "information"
+      ],
+      "sample_connection": ""
+    },
+    {
+      "headline": "Bank of America's $105m settlement with Epstein victims wins preliminary approval",
+      "structural_force": "institutional accountability",
+      "total_sources": 28,
+      "spectrum_segments": 4,
+      "left_sources": [
+        "NPR"
+      ],
+      "right_sources": [
+        "The Blaze",
+        "Daily Wire",
+        "Reason"
+      ],
+      "international_sources": [
+        "Dawn",
+        "Bangkok Post",
+        "Taipei Times"
+      ],
+      "local_regional_sources": [
+        "Indian Country Today",
+        "Alabama Political Reporter",
         "InForum"
       ],
-      "article_count": 19,
+      "article_count": 39,
       "domains": [
         "legal",
         "governance",
@@ -2530,145 +2584,140 @@
       "sample_connection": "Bank settlement for facilitating abuse reveals institutional failure to detect and report suspicious financial activity tied to criminal behavior."
     },
     {
-      "headline": "トランプ大統領 輸入医薬品に100％の追加関税 署名 日本は15％",
-      "structural_force": "trade weaponization",
-      "total_sources": 10,
-      "spectrum_segments": 3,
-      "left_sources": [],
+      "headline": "Nuclear rockets, moon bases and NASA’s Mars plan",
+      "structural_force": "space race geopolitics",
+      "total_sources": 28,
+      "spectrum_segments": 4,
+      "left_sources": [
+        "The Atlantic",
+        "Mother Jones"
+      ],
       "right_sources": [
-        "Breitbart",
-        "The Blaze"
+        "Daily Wire",
+        "Reason"
       ],
       "international_sources": [
-        "Channel News Asia",
-        "Taipei Times",
-        "NHK World"
+        "Bangkok Post",
+        "ABC Australia",
+        "Global Voices"
       ],
       "local_regional_sources": [
-        "Georgia Recorder"
+        "Ohio Capital Journal",
+        "New Hampshire Bulletin",
+        "South Dakota Searchlight"
       ],
-      "article_count": 11,
+      "article_count": 33,
       "domains": [
-        "economics",
-        "geopolitics",
-        "governance"
+        "security",
+        "information",
+        "climate"
       ],
-      "sample_connection": "Trade tariffs weaponize economic policy to pressure nations, with bilateral agreements creating carve-outs for allies."
+      "sample_connection": "NASA's Mars strategy integrates space exploration ambitions, climate-resilient infrastructure, and U.S. technological dominance in competition with other spacefaring nations."
     },
     {
-      "headline": "Pete Hegseth forces out Army's top officer",
-      "structural_force": "democratic erosion",
-      "total_sources": 10,
-      "spectrum_segments": 3,
+      "headline": "US Interim Attorney General Todd Blanche calls speculation surrounding Bondi's firing 'simply not true'",
+      "structural_force": "executive power consolidation",
+      "total_sources": 25,
+      "spectrum_segments": 4,
       "left_sources": [
-        "NBC News"
+        "NPR"
       ],
-      "right_sources": [],
+      "right_sources": [
+        "Washington Examiner",
+        "Reason",
+        "Fox News"
+      ],
       "international_sources": [
-        "France 24",
-        "Al Jazeera",
-        "Balkan Insight"
+        "BBC World",
+        "Times of India"
       ],
       "local_regional_sources": [
-        "Florida Phoenix"
+        "Arizona Mirror",
+        "Stateline",
+        "National Catholic Reporter"
       ],
-      "article_count": 11,
+      "article_count": 28,
       "domains": [
         "domestic_politics",
-        "governance",
-        "geopolitics"
+        "legal",
+        "governance"
       ],
-      "sample_connection": "Political appointee removes senior military officer, raising questions about civilian control and institutional independence within defense hierarchy."
+      "sample_connection": "Executive personnel decisions become legal/political disputes when firing rationales are disputed through official channels."
     },
     {
-      "headline": "Anciana abusada en hogar en Nueva York: sentencian a vecino con historial de delitos sexuales",
-      "structural_force": "criminal justice prosecution",
-      "total_sources": 8,
-      "spectrum_segments": 3,
+      "headline": "Silenced, but not defeated: Raghav Chadha hints at blowback after removal as AAP deputy leader",
+      "structural_force": "intra-party power struggle",
+      "total_sources": 23,
+      "spectrum_segments": 4,
       "left_sources": [
-        "ABC News"
+        "NPR"
       ],
-      "right_sources": [],
+      "right_sources": [
+        "RealClearPolitics",
+        "Reason",
+        "National Review"
+      ],
       "international_sources": [
-        "South China Morning Post",
-        "ABC Australia"
+        "Al Jazeera",
+        "Times of India",
+        "The Hindu"
       ],
       "local_regional_sources": [
-        "El Diario NY",
-        "Post and Courier",
-        "InForum"
+        "The 19th",
+        "Rhode Island Current",
+        "Ohio Capital Journal"
       ],
-      "article_count": 9,
+      "article_count": 29,
       "domains": [
-        "legal",
+        "domestic_politics",
         "economics",
         "security"
       ],
       "sample_connection": ""
     },
     {
-      "headline": "How Gender Medicine Set Itself Up for Disaster",
-      "structural_force": "institutional transparency deficit",
-      "total_sources": 7,
-      "spectrum_segments": 3,
-      "left_sources": [],
+      "headline": "Anciana abusada en hogar en Nueva York: sentencian a vecino con historial de delitos sexuales",
+      "structural_force": "criminal justice prosecution",
+      "total_sources": 22,
+      "spectrum_segments": 4,
+      "left_sources": [
+        "ABC News"
+      ],
       "right_sources": [
-        "RealClearPolitics"
+        "Reason"
       ],
       "international_sources": [
-        "France 24",
-        "Dawn",
-        "Times of India"
+        "BBC World",
+        "Bangkok Post",
+        "Jamaica Observer"
       ],
       "local_regional_sources": [
+        "CT Mirror",
         "El Diario NY",
-        "CT Mirror"
+        "Honolulu Star-Advertiser"
       ],
-      "article_count": 7,
+      "article_count": 27,
       "domains": [
         "legal",
-        "climate",
-        "governance"
+        "economics",
+        "climate"
       ],
-      "sample_connection": "Medical policy decisions made in closed forums without transparent deliberation create legal and institutional vulnerability when challenged."
-    },
-    {
-      "headline": "Pakistan says a new round of peace talks with Afghanistan is underway in China",
-      "structural_force": "great power mediation",
-      "total_sources": 4,
-      "spectrum_segments": 2,
-      "left_sources": [
-        "NPR"
-      ],
-      "right_sources": [],
-      "international_sources": [
-        "South China Morning Post",
-        "Dawn",
-        "Taipei Times"
-      ],
-      "local_regional_sources": [],
-      "article_count": 4,
-      "domains": [
-        "geopolitics",
-        "security",
-        "ai"
-      ],
-      "sample_connection": "Beijing leverages regional diplomatic role to contain Taliban instability that threatens Pakistan and broader Asia-Pacific security."
+      "sample_connection": ""
     }
   ],
   "cooperation": {
     "total_cooperation_stories": 140,
-    "cooperation_rate": 25,
+    "cooperation_rate": 11,
     "by_type": [
       {
         "type": "institutional reform",
         "count": 26,
         "sources": [
-          "Fox News",
-          "Dawn",
-          "Indian Express",
           "El Diario NY",
-          "The Dispatch"
+          "Dawn",
+          "Ohio Capital Journal",
+          "Taipei Times",
+          "Jamaica Observer"
         ],
         "domains": [
           "Governance",
@@ -2686,11 +2735,11 @@
         "type": "civic participation",
         "count": 14,
         "sources": [
-          "Montana Free Press",
-          "Indian Express",
-          "AsAmNews",
-          "Global Voices",
-          "Middle East Eye"
+          "CT Mirror",
+          "Capitol News Illinois",
+          "Ohio Capital Journal",
+          "Taipei Times",
+          "AllAfrica"
         ],
         "domains": [
           "Governance",
@@ -2708,11 +2757,11 @@
         "type": "community organizing",
         "count": 5,
         "sources": [
-          "Montana Free Press",
-          "Reasons to be Cheerful",
-          "The Dispatch",
           "Jamaica Observer",
-          "The Hindu"
+          "Reasons to be Cheerful",
+          "The Hindu",
+          "Montana Free Press",
+          "The Dispatch"
         ],
         "domains": [
           "Governance",
@@ -2730,9 +2779,9 @@
         "type": "cross-party collaboration",
         "count": 3,
         "sources": [
-          "Politico Europe",
           "The Hill",
-          "Ohio Capital Journal"
+          "Ohio Capital Journal",
+          "Politico Europe"
         ],
         "domains": [
           "Politics",
@@ -2859,9 +2908,9 @@
         "force": "institutional accountability",
         "cooperation_count": 4,
         "cooperation_types": [
-          "legal accountability process",
+          "institutional reform",
           "legal process integrity",
-          "institutional reform"
+          "legal accountability process"
         ],
         "sample_title": "Blake Lively's sexual harassment claims against Justin Baldoni tossed out but robust case remains",
         "sample_source": "NPR"
@@ -2963,16 +3012,6 @@
         "context": "Independent digital news outlet founded in 2014, covering news, politics, and cultural issues affecting Asian American and Pacific Islander communities."
       },
       {
-        "title": "An iconic Chinatown building to become “cultural anchor”",
-        "source": "AsAmNews",
-        "url": "https://asamnews.com/2026/04/02/chinatown-landmark-empress-of-china-building-reborn/",
-        "tier": "local-regional",
-        "cooperation_type": "civic institution building",
-        "force_tag": "community heritage preservation",
-        "connection": "",
-        "context": "Independent digital news outlet founded in 2014, covering news, politics, and cultural issues affecting Asian American and Pacific Islander communities."
-      },
-      {
         "title": "Maltrato y falta de atención médica a migrantes embarazadas, denuncian organizaciones",
         "source": "El Diario NY",
         "url": "https://eldiariony.com/2026/04/03/maltrato-y-falta-de-atencion-medica-a-migrantes-embarazadas-denuncian-organizaciones/",
@@ -2980,26 +3019,6 @@
         "cooperation_type": "advocacy and institutional accountability",
         "force_tag": "medical negligence in detention",
         "connection": "Government agencies fail to enforce medical care standards for vulnerable populations in custody, creating systemic rights violations.",
-        "context": "Spanish-language daily newspaper founded in 1913 in New York City, owned by ImpreMedia, serving Latino communities with coverage of immigration, politics, and culture."
-      },
-      {
-        "title": "Senadores demócratas exigen respuestas tras detención de guatemalteca en el aeropuerto de San Francisco",
-        "source": "El Diario NY",
-        "url": "https://eldiariony.com/2026/04/03/senadores-democratas-exigen-respuestas-tras-detencion-de-guatemalteca-en-el-aeropuerto-de-san-francisco/",
-        "tier": "local-regional",
-        "cooperation_type": "legislative oversight",
-        "force_tag": "surveillance overreach in immigration enforcement",
-        "connection": "Democratic senators challenge executive use of surveillance data (TSA) to enforce immigration detention, raising oversight and due process concerns.",
-        "context": "Spanish-language daily newspaper founded in 1913 in New York City, owned by ImpreMedia, serving Latino communities with coverage of immigration, politics, and culture."
-      },
-      {
-        "title": "ICE detecta graves violaciones en el mayor centro de detención de inmigrantes en Texas",
-        "source": "El Diario NY",
-        "url": "https://eldiariony.com/2026/04/02/ice-detecta-graves-violaciones-en-el-mayor-centro-de-detencion-de-inmigrantes-en-texas/",
-        "tier": "local-regional",
-        "cooperation_type": "institutional reform",
-        "force_tag": "institutional oversight and enforcement",
-        "connection": "Federal agency inspection findings create legal accountability pressure on detention facility operations and conditions.",
         "context": "Spanish-language daily newspaper founded in 1913 in New York City, owned by ImpreMedia, serving Latino communities with coverage of immigration, politics, and culture."
       },
       {
@@ -3011,6 +3030,36 @@
         "force_tag": "capital consolidation",
         "connection": "Regional economic development requires coordinated policy and infrastructure investment at state and local government level.",
         "context": "Nonprofit newsroom part of the States Newsroom network, founded in 2019, covering Ohio state government, elections, and policy from Columbus."
+      },
+      {
+        "title": "Do Protests Drive Voter Registration?",
+        "source": "Montana Free Press",
+        "url": "https://montanafreepress.org/2026/04/02/do-protests-drive-voter-registration/",
+        "tier": "local-regional",
+        "cooperation_type": "civic participation",
+        "force_tag": "protest as political mobilization",
+        "connection": "",
+        "context": "Nonprofit newsroom founded in 2018, covering Montana state government, public lands, energy policy, and community affairs from Helena and Missoula."
+      },
+      {
+        "title": "Officials, advocates warn ICE targeting Cook County domestic violence courthouse",
+        "source": "Capitol News Illinois",
+        "url": "https://capitolnewsillinois.com/news/officials-advocates-warn-ice-targeting-cook-county-domestic-violence-courthouse/",
+        "tier": "local-regional",
+        "cooperation_type": "civic participation",
+        "force_tag": "jurisdictional conflict",
+        "connection": "Federal immigration enforcement directly contradicts state law protecting vulnerable populations accessing domestic violence courts.",
+        "context": "Nonprofit newsroom part of the States Newsroom network, covering the Illinois state legislature, Governor's office, and statewide policy from Springfield."
+      },
+      {
+        "title": "Public higher education is the people’s business",
+        "source": "CT Mirror",
+        "url": "https://ctmirror.org/2026/04/03/public-higher-education-is-the-peoples-business/",
+        "tier": "local-regional",
+        "cooperation_type": "civic participation",
+        "force_tag": "institutional transparency",
+        "connection": "",
+        "context": "Connecticut Mirror, a nonprofit newsroom founded in 2010, covering state government, public policy, education, and health care in Connecticut."
       }
     ],
     "all_source_urls": {
@@ -3181,19 +3230,6 @@
       "context": "Magazine and digital news platform published by the nonprofit AARP, founded in 1958, covering health, caregiving, retirement, and policy affecting older Americans."
     },
     {
-      "title": "What’s Working in Teacher Retention - Education Week",
-      "source": "Education Week",
-      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQeFZWbWlKSUJMaUlWa3NDWlFqSnF5cjExT2h5Tms4RWVESjBIUnVVMnhNSWJuVFZYNVNwa2t5SnJoaUtrX0ZaczJlejQ4VFFxLVpobzJmazNZTmVKS3hqMEhFVlJubXZoaTZ4b1oySkZ3RWhlMWRWUlFEdlU2UmVfMkczMA?oc=5",
-      "tier": "specialist",
-      "text_preview": "What’s Working in Teacher Retention &nbsp;&nbsp; Education Week",
-      "domains": [
-        "labor"
-      ],
-      "connection": "",
-      "force_tag": "workforce retention strategies",
-      "context": "National news publication founded in 1981, covering K-12 education policy, school reform, teaching practice, and educational equity across the United States."
-    },
-    {
       "title": "Development & Advancement jobs in River Falls - The Chronicle of Higher Education",
       "source": "The Chronicle of Higher Education",
       "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE5OV3BIV0dkQnhUckxyYmZJRUZqblhjNUdFMUtXNmJrd0FUQTI4ZGNCMV9ydWhFWXdjd0pOMnRnT1FlQ0tUb3ZiMk1Ta183QlRhSjJicFBsdWlzREtHVUk1cGRDc3lQckMtenJrZDBMakRkdGxHaDUyeFczYXk?oc=5",
@@ -3231,40 +3267,23 @@
       "connection": "",
       "force_tag": "",
       "context": "Public media organization founded in 1922, funded by member donations and the Corporation for Public Broadcasting, covering Oregon and Pacific Northwest news and culture."
+    },
+    {
+      "title": "Turning Ohio’s economic development around: What can be done",
+      "source": "Ohio Capital Journal",
+      "url": "https://ohiocapitaljournal.com/2026/04/03/turning-ohios-economic-development-around-what-can-be-done/",
+      "tier": "local-regional",
+      "text_preview": "The Ohio burgee waving along with the national flag of the United States of America. (Stock photo from Getty Images.) American communities have always competed for economic advantage. In the 19th century, St. Louis and Chicago competed to attract the",
+      "domains": [
+        "economics",
+        "governance"
+      ],
+      "connection": "Regional economic development requires coordinated policy and infrastructure investment at state and local government level.",
+      "force_tag": "capital consolidation",
+      "context": "Nonprofit newsroom part of the States Newsroom network, founded in 2019, covering Ohio state government, elections, and policy from Columbus."
     }
   ],
   "active_threads": [
-    {
-      "pair": [
-        "geopolitics",
-        "security"
-      ],
-      "label": "Geopolitics + Security",
-      "explanation": "Military tensions between nations",
-      "today_count": 90,
-      "trend": "falling",
-      "sample_articles": [
-        {
-          "title": "Pakistan says a new round of peace talks with Afghanistan is underway in China",
-          "source": "NPR",
-          "url": "https://www.npr.org/2026/04/03/g-s1-116299/pakistan-says-a-new-round-of-peace-talks-with-afghanistan-is-underway-in-china"
-        },
-        {
-          "title": "In Syria, Kidnappings of Women and Girls Fuel a Minority Group’s Fears",
-          "source": "New York Times",
-          "url": "https://www.nytimes.com/2026/04/03/world/middleeast/syria-kidnapping-alawite-woman-girls.html"
-        },
-        {
-          "title": "French-Owned Container Ship Exits Hormuz in First Since Iran War",
-          "source": "Bloomberg",
-          "url": "https://www.bloomberg.com/news/articles/2026-04-03/french-owned-container-ship-exits-hormuz-in-first-since-iran-war"
-        }
-      ],
-      "ai_connections": [
-        "Beijing leverages regional diplomatic role to contain Taliban instability that threatens Pakistan and broader Asia-Pacific security.",
-        "Systematic abductions of a religious minority reveal state failure to protect vulnerable populations amid sectarian conflict."
-      ]
-    },
     {
       "pair": [
         "governance",
@@ -3272,8 +3291,8 @@
       ],
       "label": "Governance + Legal",
       "explanation": "Government actions challenged or upheld in courts",
-      "today_count": 48,
-      "trend": "falling",
+      "today_count": 204,
+      "trend": "rising",
       "sample_articles": [
         {
           "title": "The One Thing Trump Wanted That Pam Bondi Failed to Deliver",
@@ -3298,106 +3317,13 @@
     },
     {
       "pair": [
-        "economics",
-        "geopolitics"
-      ],
-      "label": "Economics + Geopolitics",
-      "explanation": "Trade, sanctions, and global economic competition",
-      "today_count": 41,
-      "trend": "falling",
-      "sample_articles": [
-        {
-          "title": "Turkish Disinflation Unscathed by Iran War in March",
-          "source": "Bloomberg",
-          "url": "https://www.bloomberg.com/news/articles/2026-04-03/turkish-inflation-surprises-with-bigger-than-expected-drop"
-        },
-        {
-          "title": "French-Owned Container Ship Exits Hormuz in First Since Iran War",
-          "source": "Bloomberg",
-          "url": "https://www.bloomberg.com/news/articles/2026-04-03/french-owned-container-ship-exits-hormuz-in-first-since-iran-war"
-        },
-        {
-          "title": "Jera’s US Purchase Deal With Commonwealth LNG Terminated",
-          "source": "Bloomberg",
-          "url": "https://www.bloomberg.com/news/articles/2026-04-03/jera-s-us-purchase-agreement-with-commonwealth-lng-terminated"
-        }
-      ],
-      "ai_connections": [
-        "Turkey's inflation resilience despite regional war indicates economic decoupling or market expectations of conflict containment.",
-        "First Western ship exiting Hormuz since war signals cautious resumption of international shipping despite military tensions."
-      ]
-    },
-    {
-      "pair": [
-        "domestic_politics",
-        "governance"
-      ],
-      "label": "Politics + Governance",
-      "explanation": "Political conflict over how government agencies operate",
-      "today_count": 36,
-      "trend": "falling",
-      "sample_articles": [
-        {
-          "title": "The One Thing Trump Wanted That Pam Bondi Failed to Deliver",
-          "source": "New York Times",
-          "url": "https://www.nytimes.com/2026/04/02/opinion/pam-bondi-fired-trump.html"
-        },
-        {
-          "title": "Late Night Says Goodbye to Pam Bondi",
-          "source": "New York Times",
-          "url": "https://www.nytimes.com/2026/04/03/arts/television/late-night-pam-bondi.html"
-        },
-        {
-          "title": "Chuck Schumer insists calling DHS funding shutdown 'political' posturing' is 'no",
-          "source": "Fox News",
-          "url": "https://www.foxnews.com/media/chuck-schumer-insists-calling-dhs-funding-shutdown-political-posturing-not-fair"
-        }
-      ],
-      "ai_connections": [
-        "Executive weaponization of law enforcement: Trump's demand for vengeful prosecution by his attorney general reveals how executive power can corrupt the justice system's independence.",
-        "Executive staff turnover and selective immunity in Trump administration signals concentration of power around favored advisors while removing institutional checks."
-      ]
-    },
-    {
-      "pair": [
-        "economics",
-        "governance"
-      ],
-      "label": "Economics + Governance",
-      "explanation": "Tax policy, trade agreements, and government spending",
-      "today_count": 34,
-      "trend": "falling",
-      "sample_articles": [
-        {
-          "title": "Jera’s US Purchase Deal With Commonwealth LNG Terminated",
-          "source": "Bloomberg",
-          "url": "https://www.bloomberg.com/news/articles/2026-04-03/jera-s-us-purchase-agreement-with-commonwealth-lng-terminated"
-        },
-        {
-          "title": "Indonesia Flags Tightly Held Companies in Effort to Satisfy MSCI",
-          "source": "Bloomberg",
-          "url": "https://www.bloomberg.com/news/articles/2026-04-03/indonesia-flags-tycoon-linked-firms-for-concentrated-ownership"
-        },
-        {
-          "title": "Indonesian Finance Minister Purbaya on Growth, Stability",
-          "source": "Bloomberg",
-          "url": "https://www.bloomberg.com/news/videos/2026-04-03/indonesian-finance-minister-sadewa-on-growth-stability-video"
-        }
-      ],
-      "ai_connections": [
-        "War-driven energy market instability causes LNG buyer to withdraw from US infrastructure deal requiring federal approval.",
-        "Regulator addresses market transparency gaps to meet international index inclusion standards, targeting concentrated ownership structures."
-      ]
-    },
-    {
-      "pair": [
         "governance",
         "security"
       ],
       "label": "Governance + Security",
       "explanation": "Defense policy and military strategy",
-      "today_count": 31,
-      "trend": "falling",
+      "today_count": 173,
+      "trend": "rising",
       "sample_articles": [
         {
           "title": "ICE detention deaths are on a record pace. One Texas facility bears the brunt",
@@ -3423,12 +3349,12 @@
     {
       "pair": [
         "domestic_politics",
-        "legal"
+        "governance"
       ],
-      "label": "Politics + Legal",
-      "explanation": "Political disputes reaching the courts",
-      "today_count": 21,
-      "trend": "falling",
+      "label": "Politics + Governance",
+      "explanation": "Political conflict over how government agencies operate",
+      "today_count": 169,
+      "trend": "rising",
       "sample_articles": [
         {
           "title": "The One Thing Trump Wanted That Pam Bondi Failed to Deliver",
@@ -3436,112 +3362,19 @@
           "url": "https://www.nytimes.com/2026/04/02/opinion/pam-bondi-fired-trump.html"
         },
         {
-          "title": "Colorado House advances conversion therapy lawsuit bill; GOP lawmaker calls it ‘",
-          "source": "Fox News",
-          "url": "https://www.foxnews.com/politics/colorado-house-advances-conversion-therapy-lawsuit-bill-gop-lawmaker-calls-slap-face-scotus"
+          "title": "Late Night Says Goodbye to Pam Bondi",
+          "source": "New York Times",
+          "url": "https://www.nytimes.com/2026/04/03/arts/television/late-night-pam-bondi.html"
         },
         {
-          "title": "Florida, Mississippi join wave of states tightening voter citizenship rules",
+          "title": "Chuck Schumer insists calling DHS funding shutdown 'political' posturing' is 'no",
           "source": "Fox News",
-          "url": "https://www.foxnews.com/politics/florida-mississippi-join-wave-states-tightening-voter-citizenship-rules"
+          "url": "https://www.foxnews.com/media/chuck-schumer-insists-calling-dhs-funding-shutdown-political-posturing-not-fair"
         }
       ],
       "ai_connections": [
         "Executive weaponization of law enforcement: Trump's demand for vengeful prosecution by his attorney general reveals how executive power can corrupt the justice system's independence.",
-        "State legislature moves to circumvent federal judicial decision through alternative civil remedy, escalating federalism conflict over LGBTQ+ rights."
-      ]
-    },
-    {
-      "pair": [
-        "geopolitics",
-        "governance"
-      ],
-      "label": "Geopolitics + Governance",
-      "explanation": "International diplomacy and alliance management",
-      "today_count": 18,
-      "trend": "new",
-      "sample_articles": [
-        {
-          "title": "Cuba releasing 2,010 prisoners as the US pressures the island's government",
-          "source": "NPR",
-          "url": "https://www.npr.org/2026/04/03/g-s1-116297/cuba-releasing-2-010-prisoners-as-the-us-pressures-the-islands-government"
-        },
-        {
-          "title": "Myanmar Junta Chief Ascends to President, Five Years After Coup",
-          "source": "New York Times",
-          "url": "https://www.nytimes.com/2026/04/03/world/asia/myanmar-president-min-aung-hlaing.html"
-        },
-        {
-          "title": "Cuba Says It Is Pardoning More Than 2,000 Prisoners",
-          "source": "New York Times",
-          "url": "https://www.nytimes.com/2026/04/02/world/americas/cuba-prisoner-release.html"
-        }
-      ],
-      "ai_connections": [
-        "Cuba frames prisoner release as humanitarian gesture while responding to U.S. pressure, masking political negotiation as moral action.",
-        "Military junta orchestrates civilian elections as facade legitimacy, consolidating authoritarian control through democratic theater."
-      ]
-    },
-    {
-      "pair": [
-        "domestic_politics",
-        "geopolitics"
-      ],
-      "label": "Politics + Geopolitics",
-      "explanation": "Politics and Geopolitics",
-      "today_count": 18,
-      "trend": "stable",
-      "sample_articles": [
-        {
-          "title": "Cosmopolitan Shanghai Is an Uneasy Fit in China’s Narrative of Western Sins",
-          "source": "New York Times",
-          "url": "https://www.nytimes.com/2026/04/03/world/asia/shanghai-dispatch-architecture.html"
-        },
-        {
-          "title": "How Giorgia Meloni Fell to Earth",
-          "source": "New York Times",
-          "url": "https://www.nytimes.com/2026/04/03/opinion/trump-europe-iran-meloni-italy.html"
-        },
-        {
-          "title": "Why Trump’s war speech failed: Declaring victory but still bombing Iran back to ",
-          "source": "Fox News",
-          "url": "https://www.foxnews.com/media/why-trumps-war-speech-failed-declaring-victory-still-bombing-iran-back-stone-ages"
-        }
-      ],
-      "ai_connections": [
-        "China's political narrative of Western victimhood conflicts with Shanghai's cosmopolitan identity and historical international character.",
-        "Domestic political vulnerability in Italy's right-wing leadership threatens the stability of European governance and nationalist movements across the continent."
-      ]
-    },
-    {
-      "pair": [
-        "economics",
-        "security"
-      ],
-      "label": "Economics + Security",
-      "explanation": "Military spending and conflict affecting markets",
-      "today_count": 14,
-      "trend": "falling",
-      "sample_articles": [
-        {
-          "title": "French-Owned Container Ship Exits Hormuz in First Since Iran War",
-          "source": "Bloomberg",
-          "url": "https://www.bloomberg.com/news/articles/2026-04-03/french-owned-container-ship-exits-hormuz-in-first-since-iran-war"
-        },
-        {
-          "title": "Fan spotted with laptop, apparently logging work hours from Wrigley Field stands",
-          "source": "Fox News",
-          "url": "https://www.foxnews.com/sports/fan-spotted-laptop-apparently-logging-work-hours-from-wrigley-field-stands-during-cubs-day-game"
-        },
-        {
-          "title": "Microsoft to invest $10 billion in Japan for AI and cyber defence expansion - Re",
-          "source": "Reuters",
-          "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOS00wUDd0Y1YxQ1RaektWX1JPY0VDaEZNa0ZOczdCZWJKUVhvRjJlWWxqX3FyWnRwU1N3Z0NqMkdLbDdiZU9xa3Vxb1lBZ2pvWEJiMjJvX2Z3eExGVGx4SWpPeHkzb0FCTm9Hakg5ZTBXaEZYWFBuRGdaSkpMRklnTXRYM01ybW9BTm5BbG9xR0dCV1JIY2ZTa05CRWRmLWpfODNFajNUZDFyaFBEM0J1WE5xTnlpbDFsQUpN?oc=5"
-        }
-      ],
-      "ai_connections": [
-        "First Western ship exiting Hormuz since war signals cautious resumption of international shipping despite military tensions.",
-        "U.S. tech firm channels AI and defense investment to allied nation, structuring technological advantage geopolitically."
+        "Executive staff turnover and selective immunity in Trump administration signals concentration of power around favored advisors while removing institutional checks."
       ]
     },
     {
@@ -3551,8 +3384,8 @@
       ],
       "label": "Legal + Security",
       "explanation": "Legal and Security",
-      "today_count": 14,
-      "trend": "falling",
+      "today_count": 165,
+      "trend": "rising",
       "sample_articles": [
         {
           "title": "Lindsey Buckingham's alleged stalker speaks out after Fleetwood Mac star attacke",
@@ -3578,12 +3411,228 @@
     {
       "pair": [
         "climate",
+        "security"
+      ],
+      "label": "Climate + Security",
+      "explanation": "Environmental change creating security challenges",
+      "today_count": 157,
+      "trend": "rising",
+      "sample_articles": [
+        {
+          "title": "Nuclear rockets, moon bases and NASA’s Mars plan",
+          "source": "Politico",
+          "url": "https://www.politico.com/video/2026/04/02/nuclear-rockets-moon-bases-and-nasas-mars-plan-1994266"
+        },
+        {
+          "title": "C-suite execs are paying surgeons big money to look fresh-faced, approachable, a",
+          "source": "Business Insider",
+          "url": "https://www.businessinsider.com/plastic-surgery-c-suite-executives-beauty-trends-look-younger-2026-4"
+        },
+        {
+          "title": "Iranian women footballers reveal ‘enormous pressure’ of the Asian Cup saga",
+          "source": "Al Jazeera",
+          "url": "https://www.aljazeera.com/sports/2026/4/3/iranian-women-footballers-reveal-enormous-pressure-of-the-asian-cup-saga?traffic_source=rss"
+        }
+      ],
+      "ai_connections": [
+        "NASA's Mars strategy integrates space exploration ambitions, climate-resilient infrastructure, and U.S. technological dominance in competition with other spacefaring nations.",
+        "Potential military escalation in energy-critical region threatens European energy security and climate transition timelines."
+      ]
+    },
+    {
+      "pair": [
+        "geopolitics",
+        "security"
+      ],
+      "label": "Geopolitics + Security",
+      "explanation": "Military tensions between nations",
+      "today_count": 153,
+      "trend": "stable",
+      "sample_articles": [
+        {
+          "title": "Pakistan says a new round of peace talks with Afghanistan is underway in China",
+          "source": "NPR",
+          "url": "https://www.npr.org/2026/04/03/g-s1-116299/pakistan-says-a-new-round-of-peace-talks-with-afghanistan-is-underway-in-china"
+        },
+        {
+          "title": "In Syria, Kidnappings of Women and Girls Fuel a Minority Group’s Fears",
+          "source": "New York Times",
+          "url": "https://www.nytimes.com/2026/04/03/world/middleeast/syria-kidnapping-alawite-woman-girls.html"
+        },
+        {
+          "title": "French-Owned Container Ship Exits Hormuz in First Since Iran War",
+          "source": "Bloomberg",
+          "url": "https://www.bloomberg.com/news/articles/2026-04-03/french-owned-container-ship-exits-hormuz-in-first-since-iran-war"
+        }
+      ],
+      "ai_connections": [
+        "Beijing leverages regional diplomatic role to contain Taliban instability that threatens Pakistan and broader Asia-Pacific security.",
+        "Systematic abductions of a religious minority reveal state failure to protect vulnerable populations amid sectarian conflict."
+      ]
+    },
+    {
+      "pair": [
+        "economics",
+        "governance"
+      ],
+      "label": "Economics + Governance",
+      "explanation": "Tax policy, trade agreements, and government spending",
+      "today_count": 143,
+      "trend": "rising",
+      "sample_articles": [
+        {
+          "title": "Jera’s US Purchase Deal With Commonwealth LNG Terminated",
+          "source": "Bloomberg",
+          "url": "https://www.bloomberg.com/news/articles/2026-04-03/jera-s-us-purchase-agreement-with-commonwealth-lng-terminated"
+        },
+        {
+          "title": "Indonesia Flags Tightly Held Companies in Effort to Satisfy MSCI",
+          "source": "Bloomberg",
+          "url": "https://www.bloomberg.com/news/articles/2026-04-03/indonesia-flags-tycoon-linked-firms-for-concentrated-ownership"
+        },
+        {
+          "title": "Indonesian Finance Minister Purbaya on Growth, Stability",
+          "source": "Bloomberg",
+          "url": "https://www.bloomberg.com/news/videos/2026-04-03/indonesian-finance-minister-sadewa-on-growth-stability-video"
+        }
+      ],
+      "ai_connections": [
+        "War-driven energy market instability causes LNG buyer to withdraw from US infrastructure deal requiring federal approval.",
+        "Regulator addresses market transparency gaps to meet international index inclusion standards, targeting concentrated ownership structures."
+      ]
+    },
+    {
+      "pair": [
+        "domestic_politics",
+        "security"
+      ],
+      "label": "Politics + Security",
+      "explanation": "Defense and public safety as political issues",
+      "today_count": 142,
+      "trend": "rising",
+      "sample_articles": [
+        {
+          "title": "What Happens if Trump Ends the Iran War ‘Shortly’",
+          "source": "The Dispatch",
+          "url": "https://thedispatch.com/podcast/dispatch-podcast/what-happens-if-trump-ends-the-iran-war-shortly/"
+        },
+        {
+          "title": "Did Trump's Iran Address Move the Needle?",
+          "source": "RealClearPolitics",
+          "url": "https://www.realclearpolitics.com/2026/04/02/did_trumps_iran_address_move_the_needle_696108.html"
+        },
+        {
+          "title": "Trump hails ‘victories’ in Iran; China’s underwater tunnels: SCMP’s 7 highlights",
+          "source": "South China Morning Post",
+          "url": "https://www.scmp.com/news/world/article/3348885/trump-hails-victories-iran-chinas-underwater-tunnels-scmps-7-highlights?utm_source=rss_feed"
+        }
+      ],
+      "ai_connections": [
+        "Potential Iran war termination merges foreign policy decision-making with domestic political strategy and military doctrine.",
+        "Unilateral U.S. policy threat destabilizes alliance structure and creates security uncertainty for allied nations dependent on collective defense."
+      ]
+    },
+    {
+      "pair": [
+        "domestic_politics",
+        "legal"
+      ],
+      "label": "Politics + Legal",
+      "explanation": "Political disputes reaching the courts",
+      "today_count": 138,
+      "trend": "rising",
+      "sample_articles": [
+        {
+          "title": "The One Thing Trump Wanted That Pam Bondi Failed to Deliver",
+          "source": "New York Times",
+          "url": "https://www.nytimes.com/2026/04/02/opinion/pam-bondi-fired-trump.html"
+        },
+        {
+          "title": "Colorado House advances conversion therapy lawsuit bill; GOP lawmaker calls it ‘",
+          "source": "Fox News",
+          "url": "https://www.foxnews.com/politics/colorado-house-advances-conversion-therapy-lawsuit-bill-gop-lawmaker-calls-slap-face-scotus"
+        },
+        {
+          "title": "Florida, Mississippi join wave of states tightening voter citizenship rules",
+          "source": "Fox News",
+          "url": "https://www.foxnews.com/politics/florida-mississippi-join-wave-states-tightening-voter-citizenship-rules"
+        }
+      ],
+      "ai_connections": [
+        "Executive weaponization of law enforcement: Trump's demand for vengeful prosecution by his attorney general reveals how executive power can corrupt the justice system's independence.",
+        "State legislature moves to circumvent federal judicial decision through alternative civil remedy, escalating federalism conflict over LGBTQ+ rights."
+      ]
+    },
+    {
+      "pair": [
+        "economics",
+        "security"
+      ],
+      "label": "Economics + Security",
+      "explanation": "Military spending and conflict affecting markets",
+      "today_count": 138,
+      "trend": "rising",
+      "sample_articles": [
+        {
+          "title": "French-Owned Container Ship Exits Hormuz in First Since Iran War",
+          "source": "Bloomberg",
+          "url": "https://www.bloomberg.com/news/articles/2026-04-03/french-owned-container-ship-exits-hormuz-in-first-since-iran-war"
+        },
+        {
+          "title": "Fan spotted with laptop, apparently logging work hours from Wrigley Field stands",
+          "source": "Fox News",
+          "url": "https://www.foxnews.com/sports/fan-spotted-laptop-apparently-logging-work-hours-from-wrigley-field-stands-during-cubs-day-game"
+        },
+        {
+          "title": "Microsoft to invest $10 billion in Japan for AI and cyber defence expansion - Re",
+          "source": "Reuters",
+          "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOS00wUDd0Y1YxQ1RaektWX1JPY0VDaEZNa0ZOczdCZWJKUVhvRjJlWWxqX3FyWnRwU1N3Z0NqMkdLbDdiZU9xa3Vxb1lBZ2pvWEJiMjJvX2Z3eExGVGx4SWpPeHkzb0FCTm9Hakg5ZTBXaEZYWFBuRGdaSkpMRklnTXRYM01ybW9BTm5BbG9xR0dCV1JIY2ZTa05CRWRmLWpfODNFajNUZDFyaFBEM0J1WE5xTnlpbDFsQUpN?oc=5"
+        }
+      ],
+      "ai_connections": [
+        "First Western ship exiting Hormuz since war signals cautious resumption of international shipping despite military tensions.",
+        "U.S. tech firm channels AI and defense investment to allied nation, structuring technological advantage geopolitically."
+      ]
+    },
+    {
+      "pair": [
+        "information",
+        "security"
+      ],
+      "label": "Information + Security",
+      "explanation": "Information and Security",
+      "today_count": 135,
+      "trend": "rising",
+      "sample_articles": [
+        {
+          "title": "Lindsey Buckingham's alleged stalker speaks out after Fleetwood Mac star attacke",
+          "source": "Fox News",
+          "url": "https://www.foxnews.com/entertainment/lindsey-buckinghams-alleged-stalker-speaks-out-after-fleetwood-mac-star-attacked-la"
+        },
+        {
+          "title": "Fan spotted with laptop, apparently logging work hours from Wrigley Field stands",
+          "source": "Fox News",
+          "url": "https://www.foxnews.com/sports/fan-spotted-laptop-apparently-logging-work-hours-from-wrigley-field-stands-during-cubs-day-game"
+        },
+        {
+          "title": "NASA's Artemis II crew commits to moon trajectory after critical burn sends Orio",
+          "source": "Fox News",
+          "url": "https://www.foxnews.com/us/nasas-artemis-ii-crew-commits-moon-trajectory-after-critical-burn-sends-orion-deep-space"
+        }
+      ],
+      "ai_connections": [
+        "Authoritarian governance enforces data control and platform surveillance by restricting foreign apps and channeling users toward state systems."
+      ]
+    },
+    {
+      "pair": [
+        "climate",
         "governance"
       ],
       "label": "Climate + Governance",
       "explanation": "Environmental regulation and climate policy implementation",
-      "today_count": 13,
-      "trend": "falling",
+      "today_count": 120,
+      "trend": "rising",
       "sample_articles": [
         {
           "title": "Nuclear rockets, moon bases and NASA’s Mars plan",
@@ -3608,144 +3657,110 @@
     },
     {
       "pair": [
-        "governance",
-        "labor"
+        "climate",
+        "legal"
       ],
-      "label": "Governance + Labor",
-      "explanation": "Workplace regulation and labor law enforcement",
-      "today_count": 13,
-      "trend": "falling",
+      "label": "Climate + Legal",
+      "explanation": "Environmental lawsuits and climate litigation",
+      "today_count": 116,
+      "trend": "rising",
       "sample_articles": [
         {
-          "title": "Trump admin saves taxpayers $1 billion in fraud crackdown of student aid program",
+          "title": "Iranian women footballers reveal ‘enormous pressure’ of the Asian Cup saga",
+          "source": "Al Jazeera",
+          "url": "https://www.aljazeera.com/sports/2026/4/3/iranian-women-footballers-reveal-enormous-pressure-of-the-asian-cup-saga?traffic_source=rss"
+        },
+        {
+          "title": "Artemis II astronauts ignite engines and head for lunar flyby",
+          "source": "France 24",
+          "url": "https://www.france24.com/en/americas/20260403-artemis-ii-astronauts-ignite-engines-and-head-for-lunar-flyby"
+        },
+        {
+          "title": "Police video shows Tiger Woods saying he called Trump after flipping car",
+          "source": "Washington Examiner",
+          "url": "https://www.washingtonexaminer.com/news/white-house/4514730/video-tiger-woods-called-trump-car-crash/"
+        }
+      ],
+      "ai_connections": [
+        "Environmental and cultural protection collides with border enforcement, forcing courts to weigh competing statutory obligations."
+      ]
+    },
+    {
+      "pair": [
+        "information",
+        "legal"
+      ],
+      "label": "Information + Legal",
+      "explanation": "Free speech, media law, and platform regulation",
+      "today_count": 114,
+      "trend": "rising",
+      "sample_articles": [
+        {
+          "title": "Lindsey Buckingham's alleged stalker speaks out after Fleetwood Mac star attacke",
           "source": "Fox News",
-          "url": "https://www.foxnews.com/media/trump-admin-saves-taxpayers-1-billion-fraud-crackdown-student-aid-programs"
+          "url": "https://www.foxnews.com/entertainment/lindsey-buckinghams-alleged-stalker-speaks-out-after-fleetwood-mac-star-attacked-la"
         },
         {
-          "title": "Pete Hegseth has intervened in military promotions for more than a dozen senior ",
-          "source": "NBC News",
-          "url": "https://www.nbcnews.com/politics/national-security/hegseth-intervened-military-promotions-dozen-senior-officers-rcna266062"
+          "title": "Police chatter frantic in harrowing moments after Tiger Woods' car crash: 911 au",
+          "source": "Fox News",
+          "url": "https://www.foxnews.com/sports/police-chatter-harrowing-moment-tiger-woods-car-crash-revealed"
         },
         {
-          "title": "Some TSA officers say they're still hurting after receiving backpay",
-          "source": "ABC News",
-          "url": "https://abcnews.com/US/tsa-officers-hurting-after-receiving-backpay/story?id=131609300"
+          "title": "Tiger Woods was 'hoping to' play in Masters before shocking DUI arrest, bodycam ",
+          "source": "Fox News",
+          "url": "https://www.foxnews.com/sports/tiger-woods-hoping-play-masters-shocking-dui-arrest-bodycam-footage-shows"
         }
       ],
       "ai_connections": [
-        "Fraud controls in student aid administration create economic pressure on beneficiaries and program integrity.",
-        "Secretary of Defense weaponizes promotion authority to enforce political loyalty over merit in military personnel systems."
+        "Bank settlement for facilitating abuse reveals institutional failure to detect and report suspicious financial activity tied to criminal behavior.",
+        "Misinformation falsifies international legal procedures to undermine ICC accountability mechanisms."
       ]
     },
     {
       "pair": [
         "climate",
-        "economics"
+        "information"
       ],
-      "label": "Climate + Economics",
-      "explanation": "Energy costs, food prices, and insurance rates linked to environmental change",
-      "today_count": 12,
-      "trend": "stable",
+      "label": "Climate + Information",
+      "explanation": "Climate and Information",
+      "today_count": 111,
+      "trend": "rising",
       "sample_articles": [
-        {
-          "title": "Bangladesh cuts working hours to save energy amid Middle East crisis - Reuters",
-          "source": "Reuters",
-          "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNTXVrRmQ3bUVMNklRcE5LVmRobndfaktMVWh5bFRVN1M0YVYweUVtWEtZUmpjQjcybTFqNzdtSVpLZWxmelh3U2pqdTdzODR5UDMwWDFmQ1N0SDRSMi02ZUpGeUppbkN4TW5Ha1VMYmxMeThMSV9PUXFtUDNBdGlncFU0ekx6N3BZUjBvLVlrNjFpQmFQYTczS083NnZ5Tklfdlg3WXlIMnFzbU5ZaGRTWS1qaWlWZHdMWDhGSGo5ek02RVFQU0dLUDE4LTVZSExrM21jYzlUY1E?oc=5"
-        },
-        {
-          "title": "Europe must prepare for 'long-lasting' energy shock, EU energy commissioner tell",
-          "source": "Reuters",
-          "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOaEVNa25SUi1oZkdQM1pJajBwZmVtRWNoYURNcXMxZ29pS01xN0Q0dnBWNXdRaVB5X1A2dnZMVnpFNm13YnNtLXc5RWdvaC0tclpTMWluSXktMzdMUmtnaEJZclBmMlVKQ1ROYUlubmN0LVI2anR6aXVERFNmTnRrRVEyVWdDYVl6OUZ0OHJncExsSFZsdTZGeEI2Q0VobnpOMWhJOGRjLVh1Sjd1TE9BMWJiUWlfZGdKM3JMY1B5TXlHelNVRUpCUQ?oc=5"
-        },
-        {
-          "title": "A day in the life of Asia’s fuel crisis",
-          "source": "The Guardian World",
-          "url": "https://www.theguardian.com/world/2026/apr/03/asia-fuel-crisis-iran-war-ordinary-workers"
-        }
-      ],
-      "ai_connections": [
-        "Energy crisis from Middle East instability forces national labor hour reductions as immediate mitigation.",
-        "Geopolitical energy disruption prompts EU-level policy coordination on long-term energy security and shock resilience."
-      ]
-    },
-    {
-      "pair": [
-        "climate",
-        "security"
-      ],
-      "label": "Climate + Security",
-      "explanation": "Environmental change creating security challenges",
-      "today_count": 11,
-      "trend": "falling",
-      "sample_articles": [
-        {
-          "title": "Nuclear rockets, moon bases and NASA’s Mars plan",
-          "source": "Politico",
-          "url": "https://www.politico.com/video/2026/04/02/nuclear-rockets-moon-bases-and-nasas-mars-plan-1994266"
-        },
         {
           "title": "C-suite execs are paying surgeons big money to look fresh-faced, approachable, a",
           "source": "Business Insider",
           "url": "https://www.businessinsider.com/plastic-surgery-c-suite-executives-beauty-trends-look-younger-2026-4"
         },
         {
-          "title": "Iranian women footballers reveal ‘enormous pressure’ of the Asian Cup saga",
-          "source": "Al Jazeera",
-          "url": "https://www.aljazeera.com/sports/2026/4/3/iranian-women-footballers-reveal-enormous-pressure-of-the-asian-cup-saga?traffic_source=rss"
+          "title": "Astronauts on Artemis II ran into a problem every office worker recognizes",
+          "source": "Business Insider",
+          "url": "https://www.businessinsider.com/artemis-astronauts-microsoft-outlook-accessing-email-nasa-mission-control-problem-2026-4"
+        },
+        {
+          "title": "Which movies are releasing this Friday on OTT?",
+          "source": "Times of India",
+          "url": "https://timesofindia.indiatimes.com/web-series/news/hindi/friday-ott-releases-of-the-week-march-30-april-5-sitaare-zameen-par-bloodhounds-2-maamla-legal-hai-2-and-more/articleshow/129993911.cms"
         }
       ],
-      "ai_connections": [
-        "NASA's Mars strategy integrates space exploration ambitions, climate-resilient infrastructure, and U.S. technological dominance in competition with other spacefaring nations.",
-        "Potential military escalation in energy-critical region threatens European energy security and climate transition timelines."
-      ]
+      "ai_connections": []
     }
   ],
   "source_spectrum": {
-    "international": 337,
-    "national": 131,
-    "local-regional": 64,
-    "specialist": 10,
-    "explainer": 9,
-    "analysis": 7,
-    "newsletter": 3,
-    "government": 2,
-    "research": 1
+    "international": 560,
+    "local-regional": 274,
+    "national": 264,
+    "specialist": 79,
+    "explainer": 33,
+    "analysis": 33,
+    "government": 23,
+    "newsletter": 14,
+    "research": 5,
+    "podcast": 3
   },
   "questions": [
     {
-      "question": "What is the current state of international military tensions?",
-      "article_count": 90,
-      "domains": [
-        "Geopolitics",
-        "Security"
-      ],
-      "sources_by_tier": {
-        "national": [
-          {
-            "source": "NPR",
-            "title": "Pakistan says a new round of peace talks with Afghanistan is underway in China",
-            "url": "https://www.npr.org/2026/04/03/g-s1-116299/pakistan-says-a-new-round-of-peace-talks-with-afghanistan-is-underway-in-china",
-            "context": "National Public Radio, a nonprofit media organization founded in 1970, funded by member stations and corporate sponsors, producing news programming for over 1,000 stations.",
-            "connection": "Beijing leverages regional diplomatic role to contain Taliban instability that threatens Pakistan and broader Asia-Pacific security."
-          },
-          {
-            "source": "New York Times",
-            "title": "In Syria, Kidnappings of Women and Girls Fuel a Minority Group’s Fears",
-            "url": "https://www.nytimes.com/2026/04/03/world/middleeast/syria-kidnapping-alawite-woman-girls.html",
-            "context": "Daily newspaper founded in 1851, owned by the New York Times Company, the largest newspaper by digital subscriptions globally, covering national and world affairs.",
-            "connection": "Systematic abductions of a religious minority reveal state failure to protect vulnerable populations amid sectarian conflict."
-          }
-        ]
-      },
-      "ai_insights": [
-        "Beijing leverages regional diplomatic role to contain Taliban instability that threatens Pakistan and broader Asia-Pacific security.",
-        "Systematic abductions of a religious minority reveal state failure to protect vulnerable populations amid sectarian conflict.",
-        "First Western ship exiting Hormuz since war signals cautious resumption of international shipping despite military tensions."
-      ]
-    },
-    {
       "question": "Which government actions are being challenged in court?",
-      "article_count": 48,
+      "article_count": 204,
       "domains": [
         "Governance",
         "Legal"
@@ -3791,86 +3806,8 @@
       ]
     },
     {
-      "question": "How are trade and global power shifts affecting the US economy?",
-      "article_count": 41,
-      "domains": [
-        "Economics",
-        "Geopolitics"
-      ],
-      "sources_by_tier": {
-        "national": [
-          {
-            "source": "Bloomberg",
-            "title": "Turkish Disinflation Unscathed by Iran War in March",
-            "url": "https://www.bloomberg.com/news/articles/2026-04-03/turkish-inflation-surprises-with-bigger-than-expected-drop",
-            "context": "Financial data and news company founded in 1981 by Michael Bloomberg, dominant in financial information services, covering global markets, economics, and business.",
-            "connection": "Turkey's inflation resilience despite regional war indicates economic decoupling or market expectations of conflict containment."
-          },
-          {
-            "source": "Reuters",
-            "title": "Trump vows to hit more Iranian infrastructure as nations seek to open Hormuz - Reuters",
-            "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOWUQxejBWTi1ieGdGUmhOZ0ZRWHpfS0JwTng4SVFVVkVFQ3pycnYwcTU1N2JER0RrVmE1Q05nNUdNd2t6RHQwcHl5STVVMHlTR0ExVWx4Y1RNMjBxNUF5bkVSU05IenNJQTItR3VDSkVkYUlqZjJMSmtaWktzXzVzSjJHWkx0eWhOMGRsNmRRVXI2WnJyVElQbzBTdE1xLUxjOFVhNFBiS2tTbHJOVmRxUlVGRzlNdU9EWXZMTkd3?oc=5",
-            "context": "International news agency founded in 1851 in London, now owned by Thomson Reuters, operating as one of the largest global wire services.",
-            "connection": "Military escalation threatens global oil supplies through the Strait of Hormuz, triggering economic consequences for energy-dependent nations."
-          }
-        ]
-      },
-      "ai_insights": [
-        "Turkey's inflation resilience despite regional war indicates economic decoupling or market expectations of conflict containment.",
-        "First Western ship exiting Hormuz since war signals cautious resumption of international shipping despite military tensions.",
-        "War-driven energy market instability causes LNG buyer to withdraw from US infrastructure deal requiring federal approval."
-      ]
-    },
-    {
-      "question": "What is the government actually doing right now?",
-      "article_count": 36,
-      "domains": [
-        "Politics",
-        "Governance"
-      ],
-      "sources_by_tier": {
-        "national": [
-          {
-            "source": "New York Times",
-            "title": "The One Thing Trump Wanted That Pam Bondi Failed to Deliver",
-            "url": "https://www.nytimes.com/2026/04/02/opinion/pam-bondi-fired-trump.html",
-            "context": "Daily newspaper founded in 1851, owned by the New York Times Company, the largest newspaper by digital subscriptions globally, covering national and world affairs.",
-            "connection": "Executive weaponization of law enforcement: Trump's demand for vengeful prosecution by his attorney general reveals how executive power can corrupt the justice system's independence."
-          },
-          {
-            "source": "Fox News",
-            "title": "Chuck Schumer insists calling DHS funding shutdown 'political' posturing' is 'not fair'",
-            "url": "https://www.foxnews.com/media/chuck-schumer-insists-calling-dhs-funding-shutdown-political-posturing-not-fair",
-            "context": "Cable news network founded in 1996 by Rupert Murdoch, owned by Fox Corporation, providing 24-hour news, opinion, and political commentary from New York.",
-            "connection": "Democratic opposition to shutdown frames agency reform goals as political justification for budgetary standoff."
-          }
-        ],
-        "international": [
-          {
-            "source": "Al Jazeera",
-            "title": "Myanmar’s coup leader elected president by pro-military parliament",
-            "url": "https://www.aljazeera.com/news/2026/4/3/myanmars-coup-leader-elected-president-by-pro-military-parliament?traffic_source=rss",
-            "context": "International news network founded in 1996, funded by the government of Qatar, headquartered in Doha, covering global news with Middle East emphasis.",
-            "connection": "Military coup leader consolidates power through controlled parliamentary election without genuine democratic process."
-          },
-          {
-            "source": "The Hindu",
-            "title": "Assembly elections LIVE: CM Mamata blames AIMIM, ISF for Malda gherao; accuses BJP, Congress of 'ins",
-            "url": "https://www.thehindu.com/elections/election-2026-assembly-polls-kerala-puducherry-tamil-nadu-west-bengal-april-3-2026-live-updates/article70818539.ece",
-            "context": "Indian English-language newspaper founded in 1878 in Chennai, owned by the Kasturi and Sons family trust, covering national and international news.",
-            "connection": "Political leadership blames opposition parties for disrupting judicial administration, revealing partisan fragmentation in state governance."
-          }
-        ]
-      },
-      "ai_insights": [
-        "Executive weaponization of law enforcement: Trump's demand for vengeful prosecution by his attorney general reveals how executive power can corrupt the justice system's independence.",
-        "Executive staff turnover and selective immunity in Trump administration signals concentration of power around favored advisors while removing institutional checks.",
-        "Democratic opposition to shutdown frames agency reform goals as political justification for budgetary standoff."
-      ]
-    },
-    {
       "question": "What military and defense policy decisions are being made?",
-      "article_count": 31,
+      "article_count": 173,
       "domains": [
         "Governance",
         "Security"
@@ -3916,8 +3853,197 @@
       ]
     },
     {
+      "question": "What is the government actually doing right now?",
+      "article_count": 169,
+      "domains": [
+        "Politics",
+        "Governance"
+      ],
+      "sources_by_tier": {
+        "national": [
+          {
+            "source": "New York Times",
+            "title": "The One Thing Trump Wanted That Pam Bondi Failed to Deliver",
+            "url": "https://www.nytimes.com/2026/04/02/opinion/pam-bondi-fired-trump.html",
+            "context": "Daily newspaper founded in 1851, owned by the New York Times Company, the largest newspaper by digital subscriptions globally, covering national and world affairs.",
+            "connection": "Executive weaponization of law enforcement: Trump's demand for vengeful prosecution by his attorney general reveals how executive power can corrupt the justice system's independence."
+          },
+          {
+            "source": "Fox News",
+            "title": "Chuck Schumer insists calling DHS funding shutdown 'political' posturing' is 'not fair'",
+            "url": "https://www.foxnews.com/media/chuck-schumer-insists-calling-dhs-funding-shutdown-political-posturing-not-fair",
+            "context": "Cable news network founded in 1996 by Rupert Murdoch, owned by Fox Corporation, providing 24-hour news, opinion, and political commentary from New York.",
+            "connection": "Democratic opposition to shutdown frames agency reform goals as political justification for budgetary standoff."
+          }
+        ],
+        "international": [
+          {
+            "source": "Al Jazeera",
+            "title": "Myanmar’s coup leader elected president by pro-military parliament",
+            "url": "https://www.aljazeera.com/news/2026/4/3/myanmars-coup-leader-elected-president-by-pro-military-parliament?traffic_source=rss",
+            "context": "International news network founded in 1996, funded by the government of Qatar, headquartered in Doha, covering global news with Middle East emphasis.",
+            "connection": "Military coup leader consolidates power through controlled parliamentary election without genuine democratic process."
+          },
+          {
+            "source": "The Hindu",
+            "title": "Assembly elections LIVE: CM Mamata blames AIMIM, ISF for Malda gherao; accuses BJP, Congress of 'ins",
+            "url": "https://www.thehindu.com/elections/election-2026-assembly-polls-kerala-puducherry-tamil-nadu-west-bengal-april-3-2026-live-updates/article70818539.ece",
+            "context": "Indian English-language newspaper founded in 1878 in Chennai, owned by the Kasturi and Sons family trust, covering national and international news.",
+            "connection": "Political leadership blames opposition parties for disrupting judicial administration, revealing partisan fragmentation in state governance."
+          }
+        ]
+      },
+      "ai_insights": [
+        "Executive weaponization of law enforcement: Trump's demand for vengeful prosecution by his attorney general reveals how executive power can corrupt the justice system's independence.",
+        "Executive staff turnover and selective immunity in Trump administration signals concentration of power around favored advisors while removing institutional checks.",
+        "Democratic opposition to shutdown frames agency reform goals as political justification for budgetary standoff."
+      ]
+    },
+    {
+      "question": "How is environmental change creating security risks?",
+      "article_count": 157,
+      "domains": [
+        "Climate",
+        "Security"
+      ],
+      "sources_by_tier": {
+        "national": [
+          {
+            "source": "Politico",
+            "title": "Nuclear rockets, moon bases and NASA’s Mars plan",
+            "url": "https://www.politico.com/video/2026/04/02/nuclear-rockets-moon-bases-and-nasas-mars-plan-1994266",
+            "context": "Political news organization founded in 2007 by John Harris and Jim VandeHei, now owned by Axel Springer, covering Congress, the White House, campaigns, and policy.",
+            "connection": "NASA's Mars strategy integrates space exploration ambitions, climate-resilient infrastructure, and U.S. technological dominance in competition with other spacefaring nations."
+          },
+          {
+            "source": "Business Insider",
+            "title": "C-suite execs are paying surgeons big money to look fresh-faced, approachable, and less irritable",
+            "url": "https://www.businessinsider.com/plastic-surgery-c-suite-executives-beauty-trends-look-younger-2026-4",
+            "context": "Digital news outlet founded in 2007, owned by Axel Springer since 2015, covering business, technology, finance, and corporate news for a global audience.",
+            "connection": ""
+          }
+        ],
+        "international": [
+          {
+            "source": "Al Jazeera",
+            "title": "Iranian women footballers reveal ‘enormous pressure’ of the Asian Cup saga",
+            "url": "https://www.aljazeera.com/sports/2026/4/3/iranian-women-footballers-reveal-enormous-pressure-of-the-asian-cup-saga?traffic_source=rss",
+            "context": "International news network founded in 1996, funded by the government of Qatar, headquartered in Doha, covering global news with Middle East emphasis.",
+            "connection": ""
+          },
+          {
+            "source": "South China Morning Post",
+            "title": "Trump hails ‘victories’ in Iran; China’s underwater tunnels: SCMP’s 7 highlights",
+            "url": "https://www.scmp.com/news/world/article/3348885/trump-hails-victories-iran-chinas-underwater-tunnels-scmps-7-highlights?utm_source=rss_feed",
+            "context": "English-language newspaper founded in 1903 in Hong Kong, owned by Alibaba Group since 2016, covering Asia-Pacific business, geopolitics, and Chinese affairs.",
+            "connection": ""
+          }
+        ],
+        "local-regional": [
+          {
+            "source": "El Diario NY",
+            "title": "Netflix muestra un curioso bajón de audiencia en la película de ´Peaky Blinders: El Hombre Inmortal´",
+            "url": "https://eldiariony.com/2026/04/02/netflix-muestra-un-curioso-bajon-de-audiencia-en-la-pelicula-de-peaky-blinders-el-hombre-inmortal/",
+            "context": "Spanish-language daily newspaper founded in 1913 in New York City, owned by ImpreMedia, serving Latino communities with coverage of immigration, politics, and culture.",
+            "connection": ""
+          }
+        ]
+      },
+      "ai_insights": [
+        "NASA's Mars strategy integrates space exploration ambitions, climate-resilient infrastructure, and U.S. technological dominance in competition with other spacefaring nations.",
+        "Potential military escalation in energy-critical region threatens European energy security and climate transition timelines."
+      ]
+    },
+    {
+      "question": "What is the current state of international military tensions?",
+      "article_count": 153,
+      "domains": [
+        "Geopolitics",
+        "Security"
+      ],
+      "sources_by_tier": {
+        "national": [
+          {
+            "source": "NPR",
+            "title": "Pakistan says a new round of peace talks with Afghanistan is underway in China",
+            "url": "https://www.npr.org/2026/04/03/g-s1-116299/pakistan-says-a-new-round-of-peace-talks-with-afghanistan-is-underway-in-china",
+            "context": "National Public Radio, a nonprofit media organization founded in 1970, funded by member stations and corporate sponsors, producing news programming for over 1,000 stations.",
+            "connection": "Beijing leverages regional diplomatic role to contain Taliban instability that threatens Pakistan and broader Asia-Pacific security."
+          },
+          {
+            "source": "New York Times",
+            "title": "In Syria, Kidnappings of Women and Girls Fuel a Minority Group’s Fears",
+            "url": "https://www.nytimes.com/2026/04/03/world/middleeast/syria-kidnapping-alawite-woman-girls.html",
+            "context": "Daily newspaper founded in 1851, owned by the New York Times Company, the largest newspaper by digital subscriptions globally, covering national and world affairs.",
+            "connection": "Systematic abductions of a religious minority reveal state failure to protect vulnerable populations amid sectarian conflict."
+          }
+        ]
+      },
+      "ai_insights": [
+        "Beijing leverages regional diplomatic role to contain Taliban instability that threatens Pakistan and broader Asia-Pacific security.",
+        "Systematic abductions of a religious minority reveal state failure to protect vulnerable populations amid sectarian conflict.",
+        "First Western ship exiting Hormuz since war signals cautious resumption of international shipping despite military tensions."
+      ]
+    },
+    {
+      "question": "How are defense and security decisions being shaped by politics?",
+      "article_count": 142,
+      "domains": [
+        "Politics",
+        "Security"
+      ],
+      "sources_by_tier": {
+        "national": [
+          {
+            "source": "The Dispatch",
+            "title": "What Happens if Trump Ends the Iran War ‘Shortly’",
+            "url": "https://thedispatch.com/podcast/dispatch-podcast/what-happens-if-trump-ends-the-iran-war-shortly/",
+            "context": "Online news and commentary publication founded in 2019 by Jonah Goldberg and Stephen Hayes, covering politics, policy, and cultural analysis from Washington DC.",
+            "connection": "Potential Iran war termination merges foreign policy decision-making with domestic political strategy and military doctrine."
+          },
+          {
+            "source": "RealClearPolitics",
+            "title": "Did Trump's Iran Address Move the Needle?",
+            "url": "https://www.realclearpolitics.com/2026/04/02/did_trumps_iran_address_move_the_needle_696108.html",
+            "context": "Political news aggregation website founded in 2000 by John McIntyre and Tom Bevan, curating articles and polling averages from across the political spectrum.",
+            "connection": ""
+          }
+        ],
+        "international": [
+          {
+            "source": "South China Morning Post",
+            "title": "Trump hails ‘victories’ in Iran; China’s underwater tunnels: SCMP’s 7 highlights",
+            "url": "https://www.scmp.com/news/world/article/3348885/trump-hails-victories-iran-chinas-underwater-tunnels-scmps-7-highlights?utm_source=rss_feed",
+            "context": "English-language newspaper founded in 1903 in Hong Kong, owned by Alibaba Group since 2016, covering Asia-Pacific business, geopolitics, and Chinese affairs.",
+            "connection": ""
+          },
+          {
+            "source": "Times of India",
+            "title": "Which movies are releasing this Friday on OTT?",
+            "url": "https://timesofindia.indiatimes.com/web-series/news/hindi/friday-ott-releases-of-the-week-march-30-april-5-sitaare-zameen-par-bloodhounds-2-maamla-legal-hai-2-and-more/articleshow/129993911.cms",
+            "context": "India's largest English-language daily newspaper by circulation, founded in 1838, owned by the Bennett Coleman family, covering national and international news.",
+            "connection": ""
+          }
+        ],
+        "podcast": [
+          {
+            "source": "Ezra Klein Show",
+            "title": "Why Iran Believes It Has the Upper Hand",
+            "url": "https://www.nytimes.com/2026/04/03/opinion/ezra-klein-podcast-suzanne-maloney.html",
+            "context": "New York Times podcast hosted by journalist Ezra Klein, featuring long-form interviews and analysis on politics, policy, technology, and ideas.",
+            "connection": ""
+          }
+        ]
+      },
+      "ai_insights": [
+        "Potential Iran war termination merges foreign policy decision-making with domestic political strategy and military doctrine.",
+        "Unilateral U.S. policy threat destabilizes alliance structure and creates security uncertainty for allied nations dependent on collective defense.",
+        "Cross-border tensions in Central Europe reflect both judicial accountability and diplomatic alignment concerns amid regional instability."
+      ]
+    },
+    {
       "question": "What legal challenges are being filed, and what do they mean?",
-      "article_count": 21,
+      "article_count": 138,
       "domains": [
         "Politics",
         "Legal"
@@ -3975,7 +4101,7 @@
     },
     {
       "question": "How is the conflict affecting prices and the economy?",
-      "article_count": 14,
+      "article_count": 138,
       "domains": [
         "Economics",
         "Security"
@@ -4116,8 +4242,391 @@
     "Irish Times": "https://www.irishtimes.com/world/middle-east/2026/04/03/iran-war-oil-latest-trump-us-news-israel/",
     "Indian Express": "https://indianexpress.com/article/india/india-inducts-nuclear-powered-ballistic-missile-submarine-ins-aridhaman-10616916/",
     "Tampa Bay Times": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPOC16UkNXVlBpTVhXUEE0YmJUTmJISTNWUmFiS0FGNUVnVGhnNHp1WHBfbmgtb1M0dUl5V2x0R2k5dm5EenpVQXZtZXZNU0pobUVXN09lVkdWSmtvRklzRG5wX0c3Q2hsWFlPaW9FU2NGaU52UVV2cXZGMUM0clc1dTVWYkZPY2tYZzJnOE5yTWQ4ZjVuR2pZT2d1QnUzTFQ1VWpiNUJaNDNiUUJPSnRKNUpPMTZPSjg?oc=5",
-    "The Oregonian": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQUzJfSFVtOU9td3c0S1ZNWURKSzhfVThnZU5zckZfNnJ4R0hzM2lwUzM4eEx5ZEFIaHhDdWROMDNrT1pJMFg0eUVBNkMyekhyQk81YzBhZlA5dWp3QVN0TURGbU1MMlhqeFhadHVBVnFyakxfc3FEYVRwWUVHVnJFbllJS3ozTHBEaUVhblJNVWVycEVtcUl5a1F4V1dnM0stN3U2aksxT3J1U2xkaUJnYVZWZFphTmNpYURuUWZDRVF5OW1hUmfSAdoBQVVfeXFMTmd5SEVHeERCU0VMTzMzcjcwRTZjTVliNGt6Q2VSQ0lSSjRjMEVlRjdWeW5VcHA3RkVCdTBPTWxiSFBkRjhidG1CbXdHNndfUDdSUmhPU3l1dkFERU1yN25YMWh6Y0pkTFg0U19MNHhtVk5kZTZtTnJmSmJ0TDhKaW9KV0ZGdTNGTVczV2xrUjFTRnBJaUFRSF9NU2NSc2VsY2VmVE8zN21wZmlqdWhhYkpLUUt1TVZTcFpqUXBFTGVKRDFVcWJ2RGpWS29CVndrNUQ0ZGRULU9sQkE?oc=5"
+    "The Oregonian": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQUzJfSFVtOU9td3c0S1ZNWURKSzhfVThnZU5zckZfNnJ4R0hzM2lwUzM4eEx5ZEFIaHhDdWROMDNrT1pJMFg0eUVBNkMyekhyQk81YzBhZlA5dWp3QVN0TURGbU1MMlhqeFhadHVBVnFyakxfc3FEYVRwWUVHVnJFbllJS3ozTHBEaUVhblJNVWVycEVtcUl5a1F4V1dnM0stN3U2aksxT3J1U2xkaUJnYVZWZFphTmNpYURuUWZDRVF5OW1hUmfSAdoBQVVfeXFMTmd5SEVHeERCU0VMTzMzcjcwRTZjTVliNGt6Q2VSQ0lSSjRjMEVlRjdWeW5VcHA3RkVCdTBPTWxiSFBkRjhidG1CbXdHNndfUDdSUmhPU3l1dkFERU1yN25YMWh6Y0pkTFg0U19MNHhtVk5kZTZtTnJmSmJ0TDhKaW9KV0ZGdTNGTVczV2xrUjFTRnBJaUFRSF9NU2NSc2VsY2VmVE8zN21wZmlqdWhhYkpLUUt1TVZTcFpqUXBFTGVKRDFVcWJ2RGpWS29CVndrNUQ0ZGRULU9sQkE?oc=5",
+    "Ezra Klein Show": "https://www.nytimes.com/2026/04/03/opinion/ezra-klein-podcast-suzanne-maloney.html",
+    "AP News": "https://apnews.com/article/artemis-moon-astronauts-nasa-8c66ed4f206f92b9d96c818d4dc056b4",
+    "National Review": "https://www.nationalreview.com/2026/04/europes-right-wing-parties-cant-afford-to-neglect-young-people/",
+    "Daily Wire": "https://www.dailywire.com/news/the-newsoms-are-parenting-from-another-planet-and-they-want-to-be-americas-parents-too",
+    "The Federalist": "https://thefederalist.com/2026/04/03/trump-needs-a-vicious-operator-to-bring-justice-back-to-the-justice-department/?utm_source=rss&utm_medium=rss&utm_campaign=trump-needs-a-vicious-operator-to-bring-justice-back-to-the-justice-department",
+    "The Diplomat": "https://thediplomat.com/2026/04/revisiting-donald-trump-and-kim-jong-uns-last-meeting/",
+    "American Prospect": "https://prospect.org/2026/04/03/chuck-schumer-congress-budget-dhs-ice-funding/",
+    "Columbia Journalism Review": "https://www.cjr.org/laurels-and-darts/what-fills-the-gap-crisis-pregnancy-centers-texas-maternal-cnn-west-bank.php",
+    "Lawfare": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1UQVZmQ3pET3hDS1lNaXAyZHFqdVFjaDJqU3NRVF82VmRHLVhTVnVqcWlFbHV5QTlKVTZrenpua1dkREhUdHE3SW5DekFBbEswcXNDV3A0TGhRZ29tTXhRVnJIZGs3aW9KTVQxdndiemwwcW5heURieQ?oc=5",
+    "EPI Blog": "https://www.epi.org/blog/march-job-gains-make-up-for-february-losses-trend-remains-notably-weak/",
+    "Grist": "https://grist.org/energy/salt-river-project-election-phoenix-arizona-solar-data-centers/",
+    "OnLabor": "https://onlabor.org/april-3-2026/",
+    "ProPublica": "https://www.propublica.org/article/peptide-safety-fda-compounding-pharmacies",
+    "Pew Research Center": "https://www.pewresearch.org/science/2026/04/03/energy-2026-acknowledgments/",
+    "The Verge": "https://www.theverge.com/transportation/906539/mercedes-steer-by-wire-steering-yoke-eqs",
+    "Vox": "https://www.vox.com/climate/484618/snow-drought-heatwave-us-west-water-rationing-spring",
+    "Rest of World": "https://restofworld.org/2026/amazon-ultrafast-delivery-us-india-china/?utm_source=rss&utm_medium=rss&utm_campaign=feeds",
+    "CalMatters": "https://calmatters.org/newsletter/california-vision-care-children/",
+    "The Marshall Project": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOTzNTSERWaFNwTUlBVWE3RWZQeG5pY2VMNmRReVZ1ZUVkNGNPaUhMMktSRzhZZ2tqTUpCV2RnVjk4b0lLdF9sMHJwVzhmNVdGQk9HNjhVRWlBNDdZSkVFMnE4QzlkRlFCZGIyZVdrUl9obDl5bF93MWYyR0pMZC1IU2JLZw?oc=5",
+    "The 19th": "https://19thnews.org/2026/04/ama-gender-affirming-care-politics/",
+    "Stateline": "https://stateline.org/2026/04/03/repub/trumps-save-america-act-would-end-voter-registration-drives-nationwide/",
+    "Documented": "https://documentedny.com/2026/04/03/latino-immigrants-leave-nyc-for-suburbs/",
+    "Christianity Today": "https://www.christianitytoday.com/2026/04/the-cross-that-saves-and-heals/",
+    "Religion News Service": "https://religionnews.com/2026/04/03/the-manosphere-and-the-gospel-of-self-optimization/",
+    "Carnegie Endowment": "https://news.google.com/rss/articles/CBMikgFBVV95cUxORkgydjJ5QVVwWW5ycjNwVnppTlRCUGZ3b3RtSXNDbGNaWDVybjY3Q0JBYVlCeE56T3kzVVV0Tm1JLWtLT0pVSno3RVNUdmxxbnRNU3E0c1FkMjlGM19Uem1QN1FjTkUzVVdNdkJwTU5jWUZQcUs5enRPdjBnd3ktdXBBQnBaSERDODVEemd6bklaUQ?oc=5",
+    "Latino USA": "https://www.latinousa.org/2026/04/03/therealestatedolls/",
+    "Brookings": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPUFJYdzV4T1ZFSUViUVpobmsyendYRmptVzBHbU9yYVF0Z2ZpaWNjZDV6NFNuUXpzdDV4VjFQeW9uNERVbGFzQjgxWFdFM01TUXhKdEhITmdaWEI3eDVfblVtT0Q2cDVabDhUSmRjVEFUdEd6TVF0bXV2c0VXVHFIZVJrTGRVdw?oc=5",
+    "Texas Tribune": "https://feeds.texastribune.org/link/16799/17312954/texas-ombudsman-investigate-university-complaints",
+    "Jewish Telegraphic Agency": "https://www.jta.org/2026/04/03/culture/a-lost-novel-from-1943-predicted-the-holocaust-now-it-has-been-recovered",
+    "The Advocate": "https://www.advocate.com/politics/national/pam-bondi-lgbtq-attacks-tenure",
+    "Military Times": "https://www.militarytimes.com/news/your-military/2026/04/03/us-fighter-jet-shot-down-over-iran/",
+    "Daily Yonder": "https://dailyyonder.com/qa-rural-indianas-new-congress-hopeful/2026/04/03/",
+    "Teen Vogue": "https://www.teenvogue.com/story/blue-ivy-carter-herself-as-inspiration-y2k-look",
+    "Honolulu Civil Beat": "https://www.civilbeat.org/2026/04/why-i-think-most-of-us-genuinely-love-our-country/",
+    "National Catholic Reporter": "https://www.ncronline.org/vatican/pope-leo-speaks-israeli-ukrainian-presidents-good-friday",
+    "Mississippi Free Press": "https://www.mississippifreepress.org/publishers-note-april-is-about-reflection-and-renewal/",
+    "The Forward": "https://forward.com/fast-forward/816886/pro-palestinian-rally-at-buchenwald-memorial-is-shut-down-by-german-authorities/",
+    "Inside Climate News": "https://insideclimatenews.org/news/03042026/craig-watts-fights-poultry-farming-system/",
+    "The Intercept": "https://theintercept.com/2026/04/03/penis-costume-no-kings-protest-alabama-censorship/",
+    "Meduza": "https://meduza.io/en/news/2026/04/03/rbc-reports-russia-seeks-to-lift-moratorium-on-telecom-inspections-to-verify-wiretapping-systems",
+    "Protocol Africa": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPc3JwQWhoTFlnUGpPOTZLVWotZGVyUzVfQklKRElQdmV0dVM5ckdENGg0U2xFRTlqLV9UTl9PbFp5cmhJZFdSbUNIaEViSkh1ZGM5WmVINUtObzZnQ2RyWXJpM0kwVTNINnlXVUwyUmkzU2dDcWN0VTBET2E4YU9fLVMwLUJJc0ZsZ3JpNlVlYWNyYVh4ZUlnNGR5UFVQeXdXLTQzemp6bmjSAa4BQVVfeXFMTWN0ZnNTem4wWldUMXd4QjNtSlJ3Si1YZFpmQjZLZWdoSm80bTFsYnAzTmlsU0VFMzFRSUpGajdJTmdiUE8xd1c0WHhrVVBmbThBVzFwRDJ4bk01NDgzN0RtVzZSY1V5amNUNkpscEcxcnh3SnhRLUdKbHlwdGJKM2NBOWlydFBpbkZnb3k4NzRYY0lIMUNhUEtvSVpXUUh6bkZrdXNzNmpxZ3JjR2dn?oc=5",
+    "The Root": "https://www.theroot.com/brandy-shares-where-she-stands-now-with-brother-ray-j-2000098295",
+    "Just Security": "https://www.justsecurity.org/134602/governance-emerging-technologies-counterterrorism-unsc/?utm_source=rss&utm_medium=rss&utm_campaign=governance-emerging-technologies-counterterrorism-unsc",
+    "Science News": "https://www.sciencenews.org/article/conversion-therapy-supreme-court-lgbtq",
+    "The Grio": "https://thegrio.com/2026/04/03/meet-5-black-candidates-ready-to-take-office-in-2026/",
+    "KFF Health News": "https://kffhealthnews.org/news/article/tax-tips-aca-affordable-care-act-obamacare-subsidies-income-owing/",
+    "STAT News": "https://www.statnews.com/2026/04/03/trump-budget-health-care-12-percent-cut-hhs/?utm_campaign=rss",
+    "Task and Purpose": "https://taskandpurpose.com/tech-tactics/us-military-right-to-repair/",
+    "Mountain State Spotlight": "https://mountainstatespotlight.org/2026/04/03/morrisey-dark-money-pac/",
+    "Bridge Michigan": "https://bridgemi.com/michigan-health-watch/state-lowers-vaccine-age-recommendation-in-se-michigan-amid-measles-outbreak/",
+    "VTDigger": "https://vtdigger.org/2026/04/03/a-vermont-community-had-a-vision-impact-investors-helped-make-it-happen/",
+    "The Maine Monitor": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5BUlk5VlAxamNPRDBwUVhIQjBVMWM3Y1ZpUGNldGtJQUM2LUpMZElNYkJTQl9LbWVlOVRJTThGVms0SXdka2F0RzJiUWNfSkdTWlNfRXlubW5kUFNMU3hoQ3dvdHdzQ0otcFpFRGRYMTVIYlZY?oc=5",
+    "Iowa Capital Dispatch": "https://iowacapitaldispatch.com/2026/04/03/repub/reports-us-fighter-jet-downed-over-iran-status-of-crew-unknown/",
+    "American Enterprise Institute": "https://news.google.com/rss/articles/CBMickFVX3lxTE1lNVRrY3FCOGFNUHVqdGxUU3hZV01XbmFfZUpHQXVLS1JPWElXeVZ5TktZdWtQanQ4S1lCbmlyeEZFX0kzNk8xVWZTcDR1YjBJdlZiSEVIMHBVbklCSG95Ykg5cjc5cXBmZFE5cjlXWjZhdw?oc=5",
+    "Wisconsin Examiner": "https://wisconsinexaminer.com/2026/04/03/wisconsin-supreme-court-candidates-trade-barbs-on-elections-abortion-in-sole-debate/",
+    "Hudson Institute": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOYUpBcFpHdEJqNllGeEJoLXJhakhmRzM1TjNLRE5CTUw4YmRkTU1ZZzJyVHd4S0R3RFVtT0k3ZkhzQVpJaV9aM0V4aGhTMDdBZEdlQkdBUmdvM2d4Y2VOMkVZRklqWHhiaEotS3hwYkpibFBESnMwOE5EUFhYU09nenBhcGgxRjRMLUxReC1pUE1RZGgzZEU3d0JVT2htWm9OdmoydUpIYjR1NE0?oc=5",
+    "Nevada Independent": "https://thenevadaindependent.com/article/a-nevada-judge-ruled-ice-cant-lock-up-everyone-facing-deportation-heres-what-it-means/",
+    "Caribbean National Weekly": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxQMTBMakdTVV9hOENuanFieDdoWTdzNmYzdm93b3d6TFpHTGE3dDBqTTRDeE1ORHlERmZrQ0NNQU1hRUJzUFd4dWNmSndYMFJ1UlVpUnp4R0xacUFpMDBqNmk3SjNQTW9SZzJ0cnM2VVFhNDVveGc2clhKTlJFMHRfQmpfS1lvRFMtdG5KeFhfbmJkRFNiU0QzWm1hN3BNWGhQbEM4QnlFV25IOHdjZDY1ellVZ2NTWGpJNW9UYUktelFrS0ZmdzlmSWd0OUtsMEg5ckRNcEFmWTdvZ2VVMzhQSVVnZnV0Z0ZDd29B?oc=5",
+    "The Lens": "https://thelensnola.org/2026/04/03/louisiana-voter-data-bill-hb691-privacy-homeland-security/",
+    "Source NM": "https://sourcenm.com/2026/04/03/repub/trump-asks-for-massive-43-boost-in-defense-spending-in-new-budget-request/",
+    "NC Health News": "https://www.northcarolinahealthnews.org/2026/04/03/drilling-down-on-ai-use-in-dentistry/",
+    "Voice of San Diego": "https://voiceofsandiego.org/2026/04/03/morning-report-south-bays-hot-spot/",
+    "Haitian Times": "https://haitiantimes.com/2026/04/03/ariana-milagro-lafond-house-of-challenge/",
+    "Kansas Reflector": "https://kansasreflector.com/2026/04/03/repub/trumps-save-america-act-would-end-voter-registration-drives-nationwide/",
+    "Mother Jones": "https://www.motherjones.com/politics/2026/04/attorney-general-pam-bondi-fired-justice-department/",
+    "TechCrunch": "https://techcrunch.com/2026/04/03/europes-cyber-agency-blames-hacking-gangs-for-massive-data-breach-and-leak/",
+    "Arizona Mirror": "https://azmirror.com/2026/04/03/repub/voter-registration-drives-helped-2-1-million-americans-in-2024-trumps-save-act-would-end-that/",
+    "E&E News": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQdjNiS3E4eVRub2lmZlJ6bklwekRCbjNUWlN1VENQQkd2WEJKR3dQN2FGSWxQbHBaUERsbDdZd0FUOC16Yi1tZDJ6QXdvOXBGUGRwU0V1aUg4NGVMcUpLM2pJNUhtNGh1SEZ0aGtzMVR5Ml9WbERtSjB4YkJxbGVQQktyUVRJSHA5cGEzZVduOVZLM1JVeWxFQmxRcVZzMzdCckVHUDFSNA?oc=5",
+    "Nature News": "https://www.nature.com/articles/d41586-026-01105-7",
+    "Urban Institute": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOcGN2X3lYZ0dFRHB2eENiNU83eHppc1p3aFBGd1dnOWVNNHNzdDdGVnZBRlgzbEI3anZHYmJkNWlmWjRnV2dEX25TbkN4b1pkVTJsb3Rpb1ZlUXVWMEVkcXJqZ01NVWpNb215T0I2MlJ2VTJOSkNfZ2FNQU1tZERBbjJvZktzNXdhMnBuQ2hmbGZGYlNFUGc?oc=5",
+    "Cato Institute": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQSGJBT1pld1FZWjhLSDhYSHNDLXZ6LUprSjhTWndzSnJfSC1PQ19CUjZvbG1Vd0dET1RNcU9HcjVpQmJjSlRab2tPQkZWWnB3WTk5ZXd4TEtEdTkxTHRqVUdfTFlQdGVWNWw2Q1lUOFdsRVB6b0JTQ2VxT0hpREV4M211bWVISjU0ODJGZWY2Zw?oc=5",
+    "NPR Up First": "https://www.npr.org/2026/04/03/nx-s1-5772604/pam-bondi-out-iran-charges-strait-tolls-international-meeting-on-hormuz",
+    "Heather Cox Richardson": "https://heathercoxrichardson.substack.com/p/april-2-2026",
+    "Matt Taibbi (Racket News)": "https://www.racket.news/p/livestream-todays-news-10-am-et-final",
+    "Slow Boring (Matt Yglesias)": "https://www.slowboring.com/p/the-two-homelessness-problems",
+    "GAO Reports": "https://www.gao.gov/products/gao-26-107529",
+    "Radiolab": "https://radiolab.org/podcast/life-in-a-barrel",
+    "Federal Reserve": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNS3ZrQnR5SmtObHNSS1B2OE51dmN5dzRXamkzTnp1eGhGcWpjU0QzMjBLTEIyMHA5V08xcWhFbVVPdnZVdHY5UGJVdHVOTS1aTDVOVmwyNHhCTlJQUTVoRGJHSXVSVDU5cEt3cTZXZ2QtaFctQWJ6OGNlRENDd2s2ay1CanRSVmc?oc=5",
+    "Bureau of Labor Statistics": "https://news.google.com/rss/articles/CBMibkFVX3lxTE4yRUJKZmVVUlJfTDFRQlQ2WDdGOHE2Mk1SSWNaR1BMWVVzdjhuZHBGWEFNVkZJZUdjWVI5RGVmWVZYMUZnUUxyT0ZrcDJYVEphUFRER0ZrdS11cGRUR2puYWR5N3NobXVlMUpOMmhR?oc=5",
+    "Alabama Political Reporter": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNNEVISXdOeTNBMEhxMTVxZGtPY28wRzI3WlZpZVNHTEJlY3JLb2NhTzFvUXZBY0pEN0REQ2pKTllkdUpQOXZXX0ZvWWlKRlNpbGlQazd6SzNuM1pkV29yZ1l2ZHozRWRQNDJBVGltUHJqSzAyemd2WjFjVVQ1R3lWQ0RWWkNud3NQc2pJbW41Vjg0bkhsT25lX3hYSHUtYlls?oc=5",
+    "Arkansas Times": "https://arktimes.com/arkansas-blog/2026/04/03/pearls-about-swine-hog-season-a-disappointing-success",
+    "GBH News": "https://www.wgbh.org/news/local/2026-04-03/gbh-daily-get-off-your-phone",
+    "NJ Spotlight News": "https://www.njspotlightnews.org/2026/04/op-ed-the-race-to-read-on-grade-level-is-new-jerseys-to-win/",
+    "Indiana Capital Chronicle": "https://indianacapitalchronicle.com/2026/04/03/bears-keep-talking-stadium-deal-with-illinois-but-indiana-leaders-stay-optimistic/",
+    "Kentucky Lantern": "https://kentuckylantern.com/2026/04/03/repub/trump-asks-for-massive-43-boost-in-defense-spending-in-new-budget-request/",
+    "Oklahoma Watch": "https://oklahomawatch.org/2026/04/03/choose-your-own-voters-republican-lawmakers-send-high-stakes-ballot-initiatives-to-low-turnout-election/",
+    "Nebraska Examiner": "https://nebraskaexaminer.com/2026/04/03/repub/trumps-save-america-act-would-end-voter-registration-drives-nationwide/",
+    "New Hampshire Bulletin": "https://newhampshirebulletin.com/2026/04/03/repub/reports-us-fighter-jet-downed-over-iran-status-of-crew-unknown/",
+    "Salt Lake Tribune": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOZUhUWUw0UjJ4UWNlNWJsLU8wTVhSQ1hQLTFPc0ltRUxJMEZWa2tTWGg2ZTZOdGNWQTFHZXE5QU80bzdtYzBSOVNfSlB1N1RyY3VYd3YzRENNLWRsaERnRVhtOC1ESGNXc0RHV3BITDI0SUVhd2JLX0drYVpmN0xlMlg3SQ?oc=5",
+    "Rhode Island Current": "https://rhodeislandcurrent.com/2026/04/03/a-love-letter-to-rhode-island/",
+    "South Dakota Searchlight": "https://southdakotasearchlight.com/2026/04/03/repub/trumps-save-america-act-would-end-voter-registration-drives-nationwide/",
+    "Tennessee Lookout": "https://tennesseelookout.com/2026/04/03/stockard-on-the-stump-tennessee-republicans-couldnt-wait-to-unveil-memphis-schools-audit/",
+    "Good Good Good": "https://www.goodgoodgood.co/articles/climate-papa-playdate",
+    "Philadelphia Inquirer": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPZ21DTUpYSG1WWWM5ejY3c1dGb19CSE1EenlJUUljNXR4SXpsQnVsX0FIVEZOWjAxbjVhNGlpSERKTHl5UVNxWG5VcV9QekkxMWtVRDZvZ2tkVXJ5U0pIUmJUOHB0eVgzN0ZVM2diMk9CYWJpSTFnb0ZfMlF4WC1TMGJNNUQwUWFWR2RMWUVXeGpPbWdzYmlYZklkaE9LYXBVOW1RYWZzTQ?oc=5",
+    "Detroit Free Press": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPRVY0eENmSEppcF9SM3FLRnNRYllIY2dVeFpGOW1XT0wxU1J6azdqRTcxbFdOcnBuZ0UyZFl6eGlUMFlhQklCdVgzMXdBdlFwaHAzM3Mza3V3V2V0TTRPaWM0ZTNHMERDUC1jZjgwQ2pYNy1BRmtWWUNoNFpUNFhJLVBsVlBZNUVzUVNBQVlBdHUtbld2bGgzN253U0pPVFhXb3otekxVWmdBMk1sYjk1c1JVVXlCUjlk?oc=5",
+    "Honolulu Star-Advertiser": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQeVo2YlpXcFdUYWJBeC1sakxHanJIRGVWZkkxT2NNSUhHa1BueGxLcFFsbURjRzYzWG12M2xmb0NCanQ3cmNKR0JrRmZOWWtkVWpDZ2poa0xYT3l6a3BILUZMN3hPZnZVUUFhclh1eFJyU21rRzQ2dVFETEg3ZUFLb2xKUzQzTzdDWU43LU1ZdFNkUHRYeHFabWJ6Q1dtd3MybDc1RjdwYVJvYnU5aThz?oc=5",
+    "Word on Fire": "https://www.wordonfire.org/articles/contemplating-the-cross/"
   },
+  "event_divergence": [
+    {
+      "structural_force": "military escalation",
+      "shared_entities": [
+        "iran",
+        "trump"
+      ],
+      "divergence": {
+        "score": 0.7983,
+        "keyword_divergence": 0.9291,
+        "tier_spread": 3,
+        "source_count": 10,
+        "article_count": 11
+      },
+      "sources": [
+        "War on the Rocks",
+        "Dawn",
+        "South China Morning Post",
+        "Reuters",
+        "Washington Examiner",
+        "Middle East Eye",
+        "Al Jazeera",
+        "The Globe and Mail",
+        "Al-Monitor",
+        "Times of India"
+      ],
+      "tiers": [
+        "national",
+        "international",
+        "specialist"
+      ],
+      "articles": [
+        {
+          "title": "Iran says shot down F-35 fighter jet with new defence system",
+          "source": "South China Morning Post",
+          "url": "https://www.scmp.com/news/world/middle-east/article/3348936/iran-says-shot-it-down-f-35-fighter-jet-new-defence-system?utm_source=rss_feed",
+          "tier": "international",
+          "force_tag": "military escalation",
+          "connection": "Iran's military claim reflects escalating Middle East conflict with potential regional power balance implications.",
+          "context": "English-language newspaper founded in 1903 in Hong Kong, owned by Alibaba Group since 2016, covering Asia-Pacific business, geopolitics, and Chinese affairs."
+        },
+        {
+          "title": "Trump threatens more strikes on Iran’s infrastructure as efforts to reopen Strait of Hormuz continue",
+          "source": "The Globe and Mail",
+          "url": "https://www.theglobeandmail.com/world/article-trump-threatens-more-strikes-on-iranian-infrastructure-as-efforts-to/",
+          "tier": "international",
+          "force_tag": "military escalation",
+          "connection": "Military strikes on infrastructure combined with strategic shipping concerns reflect economic-security integration in Iran conflict.",
+          "context": "Canadian national newspaper of record, founded in 1844 in Toronto, owned by the Woodbridge Company, covering Canadian politics, business, and international affairs."
+        },
+        {
+          "title": "Trump teases strikes against Iranian bridges and ‘electric power plants’",
+          "source": "Washington Examiner",
+          "url": "https://www.washingtonexaminer.com/news/4514896/trump-teases-strikes-against-iranian-bridges-and-electric-power-plants/",
+          "tier": "national",
+          "force_tag": "military escalation over diplomacy",
+          "connection": "Public signaling of escalated military targeting aims to coerce adversary capitulation through infrastructure destruction threat.",
+          "context": "Daily news and opinion publication based in Washington DC, owned by Clarity Media Group and Philip Anschutz, covering politics, policy, and government."
+        },
+        {
+          "title": "'Bridges next, then electric power plants': Trump issues fresh threat to Iran as war rages on",
+          "source": "Times of India",
+          "url": "https://timesofindia.indiatimes.com/world/us/bridges-next-then-electric-power-plants-trump-says-us-hasnt-even-started-destroying-whats-left-in-iran/articleshow/129993235.cms",
+          "tier": "international",
+          "force_tag": "military escalation and infrastructure targeting",
+          "connection": "Escalating threats to civilian infrastructure signal broadening military targets in an ongoing state conflict with contested damage assessments.",
+          "context": "India's largest English-language daily newspaper by circulation, founded in 1838, owned by the Bennett Coleman family, covering national and international news."
+        },
+        {
+          "title": "Israel under fire from Iran missiles as Trump issues new warning",
+          "source": "Al-Monitor",
+          "url": "https://www.al-monitor.com/originals/2026/04/israel-under-fire-iran-missiles-trump-issues-new-warning",
+          "tier": "international",
+          "force_tag": "military escalation and tit-for-tat strikes",
+          "connection": "Iranian missile strikes trigger U.S. military escalation threats, deepening direct conflict between two powers.",
+          "context": "Independent news website founded in 2011 by Jamal Daniel, covering Middle East politics, policy, and society through regional correspondents and expert analysis."
+        },
+        {
+          "title": "US blows up key Iranian bridge, steel plants",
+          "source": "Dawn",
+          "url": "https://www.dawn.com/news/1987961/us-blows-up-key-iranian-bridge-steel-plants",
+          "tier": "international",
+          "force_tag": "military escalation spiral",
+          "connection": "Military escalation transforms diplomatic crisis into direct kinetic conflict between nuclear-armed powers.",
+          "context": "Pakistani English-language newspaper founded in 1941 by Muhammad Ali Jinnah, published from Karachi, covering national politics and South Asian affairs as Pakistan's oldest newspaper."
+        },
+        {
+          "title": "Iran says second US F-35 downed over central Iran",
+          "source": "Middle East Eye",
+          "url": "https://www.middleeasteye.net/live-blog/live-blog-update/iran-says-second-us-f-35-downed-over-central-iran",
+          "tier": "international",
+          "force_tag": "military escalation spiral",
+          "connection": "Military escalation between US and Iran raises stakes for direct great-power conflict with unpredictable consequences.",
+          "context": "London-based independent news website founded in 2014, covering Middle East and North African politics, conflict, and human rights through regional and international correspondents."
+        },
+        {
+          "title": "Iran war: What is happening on day 35 of US-Israeli attacks?",
+          "source": "Al Jazeera",
+          "url": "https://www.aljazeera.com/news/2026/4/3/iran-war-what-is-happening-on-day-35-of-us-israeli-attacks?traffic_source=rss",
+          "tier": "international",
+          "force_tag": "military escalation targeting dual-use infrastructure",
+          "connection": "Military strikes on civilian research and infrastructure escalate regional conflict.",
+          "context": "International news network founded in 1996, funded by the government of Qatar, headquartered in Doha, covering global news with Middle East emphasis."
+        }
+      ],
+      "all_article_count": 11
+    },
+    {
+      "structural_force": "authoritarian democratic capture",
+      "shared_entities": [
+        "myanmar"
+      ],
+      "divergence": {
+        "score": 0.5882,
+        "keyword_divergence": 0.7897,
+        "tier_spread": 2,
+        "source_count": 3,
+        "article_count": 3
+      },
+      "sources": [
+        "BBC World",
+        "Reuters",
+        "New York Times"
+      ],
+      "tiers": [
+        "national",
+        "international"
+      ],
+      "articles": [
+        {
+          "title": "Myanmar Junta Chief Ascends to President, Five Years After Coup",
+          "source": "New York Times",
+          "url": "https://www.nytimes.com/2026/04/03/world/asia/myanmar-president-min-aung-hlaing.html",
+          "tier": "national",
+          "force_tag": "authoritarian democratic capture",
+          "connection": "Military junta orchestrates civilian elections as facade legitimacy, consolidating authoritarian control through democratic theater.",
+          "context": "Daily newspaper founded in 1851, owned by the New York Times Company, the largest newspaper by digital subscriptions globally, covering national and world affairs."
+        },
+        {
+          "title": "Myanmar junta chief Min Aung Hlaing elected president by pro-military parliament - Reuters",
+          "source": "Reuters",
+          "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPbVhVQ2owNm5SYXN2SlU1cUFQWXZmQmg5YzRXRFpBcFdwN1RBZlI1eHpNSEJ3YzNKUGkwMEZYYl8yS3h4eDJmQ3ZBWlFpeFRqRGdGUFRxUS1HNGNVQk9OeHlyN1NoU0d6d3Njbl9uOW5uR2dOY1pFWkJaVDZZeHlMZE9sVG50d3RTU09UVkJFVkN4Q21DTXhpdE9CN3RiVUl1THpEcVdUb0I3azNJTGRGc3ZkS0pMdw?oc=5",
+          "tier": "national",
+          "force_tag": "authoritarian institutional capture",
+          "connection": "Military junta consolidates power by controlling parliament's presidential selection process.",
+          "context": "International news agency founded in 1851 in London, now owned by Thomson Reuters, operating as one of the largest global wire services."
+        },
+        {
+          "title": "Myanmar's coup leader who set off a brutal civil war becomes president",
+          "source": "BBC World",
+          "url": "https://www.bbc.com/news/articles/c1782nk0018o?at_medium=RSS&at_campaign=rss",
+          "tier": "international",
+          "force_tag": "authoritarian consolidation, democratic collapse",
+          "connection": "Military coup leader legitimizes authoritarian rule through parliamentary process amid ongoing civil violence.",
+          "context": "British Broadcasting Corporation's international news service, funded by the UK license fee, providing global news coverage from bureaus in over 50 countries."
+        }
+      ],
+      "all_article_count": 3
+    },
+    {
+      "structural_force": "diplomatic signaling",
+      "shared_entities": [
+        "cuba"
+      ],
+      "divergence": {
+        "score": 0.5868,
+        "keyword_divergence": 0.7869,
+        "tier_spread": 2,
+        "source_count": 3,
+        "article_count": 3
+      },
+      "sources": [
+        "NPR",
+        "Straits Times",
+        "New York Times"
+      ],
+      "tiers": [
+        "national",
+        "international"
+      ],
+      "articles": [
+        {
+          "title": "Cuba releasing 2,010 prisoners as the US pressures the island's government",
+          "source": "NPR",
+          "url": "https://www.npr.org/2026/04/03/g-s1-116297/cuba-releasing-2-010-prisoners-as-the-us-pressures-the-islands-government",
+          "tier": "national",
+          "force_tag": "diplomatic signaling",
+          "connection": "Cuba frames prisoner release as humanitarian gesture while responding to U.S. pressure, masking political negotiation as moral action.",
+          "context": "National Public Radio, a nonprofit media organization founded in 1970, funded by member stations and corporate sponsors, producing news programming for over 1,000 stations."
+        },
+        {
+          "title": "Cuba Says It Is Pardoning More Than 2,000 Prisoners",
+          "source": "New York Times",
+          "url": "https://www.nytimes.com/2026/04/02/world/americas/cuba-prisoner-release.html",
+          "tier": "national",
+          "force_tag": "diplomatic negotiation signaling",
+          "connection": "Cuba's prisoner release could serve dual purposes: domestic humanitarian messaging and strategic leverage in U.S.-Cuba negotiations.",
+          "context": "Daily newspaper founded in 1851, owned by the New York Times Company, the largest newspaper by digital subscriptions globally, covering national and world affairs."
+        },
+        {
+          "title": "Cuba to free 2,010 prisoners from island jails in 'sovereign gesture'",
+          "source": "Straits Times",
+          "url": "https://www.straitstimes.com/world/cuba-to-free-2010-prisoners-from-island-jails-in-sovereign-gesture",
+          "tier": "international",
+          "force_tag": "diplomatic signaling via clemency",
+          "connection": "Prisoner release announced during U.S.-Cuba negotiations signals state-level diplomatic outreach and reciprocal concessions between adversaries.",
+          "context": "Singapore's English-language broadsheet newspaper, founded in 1845, owned by Singapore Press Holdings, covering Southeast Asian and global news, politics, and business."
+        }
+      ],
+      "all_article_count": 3
+    },
+    {
+      "structural_force": "democratic erosion",
+      "shared_entities": [
+        "myanmars",
+        "hlaing",
+        "min",
+        "aung"
+      ],
+      "divergence": {
+        "score": 0.4963,
+        "keyword_divergence": 0.6576,
+        "tier_spread": 1,
+        "source_count": 5,
+        "article_count": 5
+      },
+      "sources": [
+        "The Japan Times",
+        "Bangkok Post",
+        "France 24",
+        "ABC Australia",
+        "Al Jazeera"
+      ],
+      "tiers": [
+        "international"
+      ],
+      "articles": [
+        {
+          "title": "Myanmar's Min Aung Hlaing: The general who made himself president",
+          "source": "Bangkok Post",
+          "url": "https://www.bangkokpost.com/world/3229958/myanmars-min-aung-hlaing-the-general-who-made-himself-president",
+          "tier": "international",
+          "force_tag": "democratic erosion",
+          "connection": "Military leader consolidates power through election despite democratic appearance, undermining civilian rule.",
+          "context": "Thai English-language newspaper founded in 1946, owned by the Post Publishing Public Company, covering Southeast Asian news, politics, and business."
+        },
+        {
+          "title": "Myanmar junta chief Min Aung Hlaing elected president",
+          "source": "ABC Australia",
+          "url": "https://www.abc.net.au/news/2026-04-03/min-aung-hlaing-elected-new-myanmar-president/106530476",
+          "tier": "international",
+          "force_tag": "democratic erosion + authoritarian entrenchment",
+          "connection": "Military junta leader's election as president consolidates authoritarian control while signaling regional instability to international actors.",
+          "context": "Australian Broadcasting Corporation, a government-funded public broadcaster founded in 1932, covering Australian domestic and international news."
+        },
+        {
+          "title": "Myanmar's Min Aung Hlaing: The general who made himself president",
+          "source": "The Japan Times",
+          "url": "https://www.japantimes.co.jp/news/2026/04/03/asia-pacific/politics/myanmar-military-general-president/",
+          "tier": "international",
+          "force_tag": "democratic erosion through military control",
+          "connection": "Military coup leader consolidates power through parliamentary election, exemplifying democratic erosion through institutional manipulation.",
+          "context": "Japan's oldest English-language newspaper, founded in 1897 in Tokyo, owned by News2u Holdings, covering Japanese politics, culture, and Asia-Pacific affairs."
+        },
+        {
+          "title": "Myanmar’s coup leader elected president by pro-military parliament",
+          "source": "Al Jazeera",
+          "url": "https://www.aljazeera.com/news/2026/4/3/myanmars-coup-leader-elected-president-by-pro-military-parliament?traffic_source=rss",
+          "tier": "international",
+          "force_tag": "democratic erosion through authoritarian institutionalization",
+          "connection": "Military coup leader consolidates power through controlled parliamentary election without genuine democratic process.",
+          "context": "International news network founded in 1996, funded by the government of Qatar, headquartered in Doha, covering global news with Middle East emphasis."
+        },
+        {
+          "title": "Myanmar’s parliament elects coup-leading general as civilian president",
+          "source": "France 24",
+          "url": "https://www.france24.com/en/asia-pacific/20260403-myanmar-junta-chief-elected-as-president",
+          "tier": "international",
+          "force_tag": "democratic erosion through institutional manipulation",
+          "connection": "Military leader circumvents constitution's civilian presidency requirement through proxy election in parliament.",
+          "context": "French international news network launched in 2006, funded by the French government through France Médias Monde, broadcasting in French, English, Arabic, and Spanish."
+        }
+      ],
+      "all_article_count": 5
+    }
+  ],
   "narrative_divergence": [
     {
       "topic": "Security + Geopolitics",
@@ -4325,41 +4834,41 @@
     }
   ],
   "editorial": {
-    "headline": "Executive appointments become legal battlegrounds as personnel decisions concentrate wartime power",
-    "accessible_headline": "Trump fires top military leaders while building legal cases around hirings",
-    "subheadline": "Defense Secretary Hegseth's removal of Army leadership during Iran conflict centralizes war decisions in civilian appointees facing their own legal challenges",
-    "synthesis": "The collision between executive personnel decisions and legal accountability is creating a new form of institutional crisis, one where the power to hire and fire becomes itself a contested battlefield. Defense Secretary Pete Hegseth forced out the Army's top officer this week while simultaneously defending the firing rationale for Attorney General Pam Bondi through official channels, a pattern that transforms routine personnel management into high-stakes political theater. When these decisions happen during active military conflict with Iran, the stakes compound because personnel choices directly affect war-making authority, concentrating critical decisions in civilian appointees who are themselves navigating legal challenges.\n\nThe structural force underneath this pattern extends beyond any single appointment. Across 16 articles covering military escalation with Iran, the thread connecting Trump's threats against Iranian infrastructure to personnel changes at the Pentagon reveals how executive power consolidation operates during conflict. Local outlets like the Georgia Recorder covered how 'Liberation Day' tariffs celebrated by the administration connect to this same centralizing impulse, while specialist sources at War on the Rocks analyzed how the Iran conflict trajectory depends precisely on the decision-making structure that personnel changes are reshaping. National outlets owned or influenced by tech companies covered the individual firings as separate stories, missing the systematic concentration of authority that local and specialist media identified as the through-line.\n\nMeanwhile, the cooperation that sustains institutional function continues in spaces the conflict hasn't reached. Indonesian officials are working with international bodies to satisfy transparency standards for tightly held companies, Tamil Nadu doctors are creating rap videos to inspire young voter participation, and dozens of community members gathered in New Mexico to search for missing Siletz tribal citizen Manuel Bayya. These stories, covered primarily by local, regional, and ethnic media, represent the institutional repair work that happens alongside institutional stress. The Black Church organizing described in The Dispatch and the Chinatown community forums covered by AsAmNews show civic infrastructure adapting and strengthening even as executive power consolidates at the federal level.\n\nWhat national coverage systematically missed was how these personnel battles connect to the trade weaponization force that generated zero cooperation stories across 10 articles. The same executive power that removes military leadership unilaterally imposes tariffs without legislative process, creating a consistent pattern of concentrated authority that operates across economic and military domains. High Country News covered how border wall construction in New Mexico forces courts to weigh environmental protection against enforcement mandates, a story that reveals how executive priorities reshape legal frameworks in ways that bypass normal democratic input. When institutional accountability does emerge, as in the Bank of America settlement with Epstein victims that won preliminary approval, it takes the form of financial remedies for past institutional failures rather than structural changes to prevent future capture.\n\nThe coverage gap itself carries information about media capture. Stories about AI language models embedding Western worldviews, reported by specialist outlet Naked Capitalism, and regime change policy reversals analyzed by War on the Rocks, appeared in sources without tech oligarch ownership or influence. The pattern suggests that the concentration of media ownership parallels the concentration of executive authority, creating information architectures that obscure the very patterns of institutional capture they should be exposing. The thread worth watching is whether legal challenges to personnel decisions create precedents that constrain future executive authority, or whether the legal system itself becomes another domain where concentrated power reshapes institutional norms in real time.",
-    "cooperation_highlight": "In Tamil Nadu, doctors created rap videos to inspire young voters to participate in elections, turning medical expertise into civic engagement tools. The Hindu reported how healthcare professionals used creative communication to bridge the gap between institutional knowledge and democratic participation, demonstrating how professional communities can strengthen civic infrastructure through cultural innovation.",
-    "coverage_gap_note": "High Country News covered environmental and cultural conflicts from border wall construction in New Mexico that national outlets missed entirely, revealing how executive enforcement priorities create legal battles between competing statutory obligations that directly affect local communities.",
-    "thread_to_watch": "Legal challenges to Defense Secretary Hegseth's personnel decisions during active military operations with Iran will establish precedents for whether executive firing authority can be constrained through judicial review during wartime, with initial court filings expected within two weeks.",
-    "newsletter_lead": "The thing that stopped me reading 564 articles today was seeing the same pattern across completely different domains. Executive personnel decisions are becoming legal battlegrounds at the exact moment when those personnel decisions determine who makes war decisions with Iran. The concentration of authority that removes Army leadership without legislative oversight is the same force imposing tariffs unilaterally, and local media are connecting these dots while national outlets treat them as separate stories.",
-    "generated": "2026-04-03T08:07:58Z",
+    "headline": "Executive personnel decisions trigger legal disputes when firing rationales face institutional challenge",
+    "accessible_headline": "When the president fires people, the reasons become court cases",
+    "subheadline": "From Pentagon purges to attorney general removals, personnel moves now routinely escalate into constitutional conflicts over executive authority.",
+    "synthesis": "The machinery of executive power is grinding against its own institutional constraints, creating legal disputes where personnel decisions once moved quietly through administrative channels. When Defense Secretary Pete Hegseth forces out the Army's top officer, when Attorney General Todd Blanche disputes speculation about Pam Bondi's firing, when military leadership changes happen during active conflict, what emerges is not just policy disagreement but constitutional questions about where executive authority ends and institutional independence begins. The pattern runs deeper than any single firing because it reveals how personnel decisions have become weapons in a larger struggle over who controls the permanent government.\n\nThis executive consolidation plays out simultaneously with military escalation that follows the same logic of centralized control. Iran claims to have shot down an F-35 fighter jet while Trump signals potential strikes against Iranian infrastructure, each side using public military positioning to coerce the other's capitulation. The connection between domestic personnel purges and international military posturing is structural, not coincidental, both reflecting a governing philosophy that treats institutional resistance as enemy action requiring decisive response. When civilian control of the military becomes a tool for removing inconvenient voices rather than ensuring democratic accountability, the distinction between domestic and foreign threats starts to collapse.\n\nMeanwhile, trade policy operates through the same centralized authority, with presidential tariffs imposed unilaterally while creating carve-outs for allies like Japan, which faces 15% additional tariffs on medical imports compared to the 100% imposed elsewhere. The Georgia Recorder notes how 'Liberation Day' tariffs celebrate executive economic power while Democrats pan the concentration of trade authority in presidential hands. This weaponization of economic policy mirrors the personnel purges because both treat institutional processes as obstacles rather than safeguards, converting what were once administrative functions into political loyalty tests.\n\nThe cooperation signals appear most strongly where institutional oversight still functions independently. Indonesian companies work to satisfy MSCI standards for market inclusion, Indian officials face CBI bribery charges, and Tamil Nadu doctors create rap videos to inspire young voter participation. These stories share a commitment to institutional integrity that operates regardless of political pressure, suggesting that democratic accountability survives when enforcement mechanisms remain insulated from executive interference. The High Country News covers how border wall construction hits a treasured New Mexico mountain, forcing courts to weigh environmental protection against security enforcement, the kind of institutional balancing that requires independent judicial review.\n\nWhat national outlets owned or funded by tech companies consistently miss is how these constitutional conflicts look from inside affected communities. Indian Country Today covers the search for missing Siletz tribal citizen Manuel Bayya, AsAmNews reports on Pelosi successors facing off in Chinatown forums, El Diario NY documents medical neglect of pregnant migrants in detention. These local sources show how executive power consolidation creates direct consequences for vulnerable populations that lose institutional protection when oversight fails, while national coverage focuses on the political theater rather than the human cost of institutional capture.",
+    "cooperation_highlight": "Indonesian companies are working to satisfy MSCI inclusion standards through improved transparency and governance practices, according to Bloomberg, while Indian officials face CBI corruption charges in a case that demonstrates independent enforcement continuing despite political pressure.",
+    "coverage_gap_note": "National outlets missed how AI language models embed Western worldviews that mislead non-Western users (Naked Capitalism) and how border wall construction threatens culturally significant mountains in New Mexico (High Country News).",
+    "thread_to_watch": "Watch for legal challenges to executive personnel decisions as they move through federal courts, particularly any rulings that establish precedent for when firing rationales must meet institutional review standards rather than political preference.",
+    "newsletter_lead": "I read 1,288 articles today and the pattern that kept showing up was personnel decisions turning into constitutional crises. When the Defense Secretary fires the Army's top officer, when the Attorney General has to defend firing rationales, when military leadership changes during active conflict, what looks like routine administration becomes a legal dispute about executive power limits. The machinery of government is grinding against itself.",
+    "generated": "2026-04-04T00:20:49Z",
     "model": "claude-sonnet-4-20250514"
   },
   "story_syntheses": [
     {
       "role": "thread",
       "structural_force": "trade weaponization",
-      "synthesis": "Presidential tariff authority operates without legislative oversight, allowing executives to weaponize trade policy unilaterally. Today's pharmaceutical tariffs demonstrate this mechanism: Trump imposed 100% tariffs on imported medicines through executive order, instantly reshaping global supply chains and pricing. This concentration of economic power transforms trade from commerce into diplomatic pressure, forcing allies into compliance through market access. The weaponization extends beyond bilateral pressure to reshape entire industrial networks, as China's Belt and Road Initiative consolidated in response to Western protectionism.",
-      "cross_spectrum": "Breitbart celebrated the pharmaceutical tariffs as 'Liberation Day vindication' and interviewed supportive industry executives rather than affected consumers. NHK World reported Japan received a 15% exemption from the medicine tariffs and detailed the diplomatic negotiations that secured the carve-out. Times of India analyzed how the tariffs would redirect pharmaceutical manufacturing from China to Indian suppliers within eighteen months. Georgia Recorder framed the tariffs as partisan theater and quoted Democrats calling the policy economically destructive without mentioning industry support. The Blaze focused on executive power expansion and interviewed constitutional scholars questioning the lack of Congressional approval for the trade barriers. When outlets frame the same tariff as economic liberation, diplomatic negotiation, industrial opportunity, or constitutional overreach, readers inhabit different realities about the same policy.",
-      "why_this_matters": "If your prescription costs jumped this week, presidential tariff policy directly changed your medicine prices without Congress voting on it. Check your pharmacy receipts against generic alternatives, because 100% tariffs on brand-name imports mean identical drugs now cost wildly different amounts depending on their country of origin.",
-      "watch_for": "Senate Finance Committee hearings on tariff authority scheduled within 30 days, and pharmaceutical industry legal challenges to the executive orders expected by month's end."
+      "synthesis": "Presidential tariff power has become the primary weapon for economic coercion without congressional approval. Trump's new 100% tariff on pharmaceutical imports demonstrates how executive authority now shapes global supply chains through unilateral trade barriers. The tariffs create carve-outs for allies while weaponizing medical access, forcing companies to relocate manufacturing or absorb massive cost increases. This concentration of trade policy in executive hands transforms commercial relationships into instruments of state pressure, making economic policy indistinguishable from foreign policy.",
+      "cross_spectrum": "Breitbart celebrated Liberation Day tariffs as vindication of economic nationalism while ignoring pharmaceutical access costs for American consumers. The Blaze reported pharmaceutical industry pushback against the executive order but framed it as partisan opposition rather than supply chain disruption. NHK World led with Japan's 15% pharmaceutical tariff exemption, treating the policy as bilateral negotiation rather than unilateral economic coercion. Times of India analyzed how US tariffs would redirect pharmaceutical manufacturing from India to domestic American production facilities. Foreign Policy connected tariff policy to China's Belt and Road expansion, showing how Western protectionism strengthened competitor industrial strategy. Georgia Recorder quoted Democratic criticism of Liberation Day while Republicans praised the anniversary, framing trade policy as partisan celebration rather than economic mechanism. If you read only conservative outlets, tariffs look like economic victory. If you read international sources, they look like supply chain warfare.",
+      "why_this_matters": "Your prescription drug costs are about to change. The 100% pharmaceutical tariff hits brand-name medications first, meaning generic alternatives may become the only affordable option for many chronic conditions previously covered by insurance at reasonable copay rates.",
+      "watch_for": "Implementation details for the pharmaceutical tariff schedule, which the administration has not yet released, will determine which specific medications face the full 100% rate versus graduated increases."
     },
     {
       "role": "gap",
-      "structural_force": "democratic erosion",
-      "synthesis": "Defense Secretary Pete Hegseth forced out the Army's top officer this week, raising questions about civilian control and military independence. The framing divergence matters because audiences receive completely different narratives about the same executive action: routine personnel management versus authoritarian institutional capture. The most striking gap lies between NBC's focus on procedural concerns and international outlets contextualizing the move within global patterns of military politicization.",
-      "cross_spectrum": "NBC News reported Hegseth removed the Army officer for performance issues and interviewed Pentagon officials defending the decision as standard leadership transition. Al Jazeera covered Myanmar's coup leader becoming president and drew parallels between military politicization in authoritarian regimes and democratic backsliding patterns. France 24 reported the Myanmar parliament election and emphasized how military leaders legitimize power grabs through civilian institutions and procedural theater. ABC Australia analyzed Myanmar's democratic collapse and traced how military influence gradually captured civilian government before the complete takeover in recent years. Bangkok Post profiled Myanmar's Min Aung Hlaing and detailed his systematic dismantling of democratic institutions over the past several election cycles. American outlets frame military personnel changes as administrative decisions while international outlets recognize institutional capture patterns from global democratic breakdowns.",
-      "why_this_matters": "Military leadership changes under political pressure follow predictable patterns that international observers recognize from other countries. When defense officials lose jobs for reasons beyond military performance, institutional independence weakens even if the immediate personnel change seems routine or justified.",
-      "watch_for": "Congressional Armed Services Committee response to the removal and any additional senior military officer departures in the coming two weeks."
+      "structural_force": "military escalation",
+      "synthesis": "Iran and the US are fighting a shooting war with contested casualty claims and infrastructure strikes. International outlets report Iranian downing of F-35 jets while American sources focus on Trump's infrastructure threats. The most striking divergence: Dawn reports actual US destruction of Iranian bridges and steel plants while Washington Examiner treats the same targets as future threats Trump is considering.",
+      "cross_spectrum": "South China Morning Post reported Iran's claim to have shot down F-35 fighters using new defense systems without US confirmation of aircraft losses. The Globe and Mail focused on Trump's infrastructure strike threats while covering Strait of Hormuz reopening efforts as parallel diplomatic track. Washington Examiner framed Trump's bridge and power plant threats as strategic signaling rather than reporting whether strikes had already occurred. Times of India quoted Trump's escalating rhetoric about civilian infrastructure while describing war as ongoing rather than threatened. Al-Monitor reported Iranian missile strikes on Israel triggering US military escalation in a broadening regional conflict. Dawn stated flatly that the US had already blown up Iranian bridges and steel plants as accomplished military facts. Middle East Eye reported a second US F-35 downed over central Iran, treating air losses as confirmed rather than claimed. Al Jazeera tracked day 35 of US-Israeli attacks as an established timeline, assuming sustained military operations rather than episodic threats. Some outlets report a war that is happening. Others report threats of a war that might happen.",
+      "why_this_matters": "If you are reading only American sources, you may not know that international outlets are reporting active military strikes and downed aircraft as accomplished facts rather than future possibilities or unconfirmed claims.",
+      "watch_for": "Congressional authorization votes for military action against Iran, which have not been scheduled despite reports of ongoing strikes, will clarify whether this is coordinated policy or unauthorized executive military action."
     },
     {
       "role": "meanwhile",
       "structural_force": "cooperation",
-      "synthesis": "Today brought 140 cooperation stories across 25% of all news coverage, with institutional reform leading at 26 articles and civic participation generating 14 stories. High Country News covered New Mexico communities organizing to protect Sacred Mountain from border wall construction, forcing federal courts to balance enforcement against conservation law. Indian Country Today reported the Siletz tribal search effort for missing citizen Manuel Bayya, showing how tribal governance mobilizes community resources when federal systems fail. AsAmNews detailed Chinatown preserving cultural heritage through converting historic buildings into community anchors, demonstrating grassroots institution-building that national outlets missed entirely.",
-      "cross_spectrum": "NBC News covered Pete Hegseth's military personnel decisions as isolated administrative changes without exploring institutional health or democratic norms context. High Country News investigated the same federal enforcement policies but focused on community coalitions successfully using courts to protect sacred sites from government overreach. The Hindu reported Tamil Nadu doctors creating rap videos to increase youth voter turnout and detailed the creative civic engagement strategies. Montana Free Press covered local election participation initiatives and interviewed volunteers registering rural voters despite transportation and access barriers. El Diario NY investigated pregnant migrants denied medical care in federal detention and traced how advocacy organizations force institutional accountability. While national outlets treat government actions as isolated policy moves, local outlets document communities actively building democratic participation and holding institutions accountable.",
-      "why_this_matters": "Your local civic infrastructure operates daily whether national news covers it or not. Community organizing, voter registration drives, and accountability advocacy happen in every region, creating democratic resilience that exists independent of federal political theater or dysfunction.",
-      "watch_for": "Local election offices publishing voter registration deadlines for upcoming municipal elections, typically 30 days before election dates in most states."
+      "synthesis": "Today brought 140 cooperation stories at an 11% rate, with institutional reform leading the way. High Country News covered environmental groups and tribal leaders joining forces to challenge border wall blasting that threatens sacred sites in New Mexico. Indian Country Today reported dozens gathering to search for missing Siletz tribal citizen Manuel Bayya, showing community organizing when institutions fail. El Diario NY investigated advocacy organizations documenting medical neglect of pregnant migrants in detention. Ohio Capital Journal analyzed how regional economic development requires coordinated state and local investment rather than competing for the same projects.",
+      "cross_spectrum": "High Country News reported environmental and religious institutions filing joint court challenges against border wall construction while national security outlets ignored the legal coalition entirely. Indian Country Today covered community search efforts for missing tribal members while mainstream outlets skipped missing persons cases in indigenous communities. AsAmNews reported detailed candidate forums in Chinatown for Pelosi's House seat while national political coverage focused only on fundraising numbers. El Diario NY investigated systematic medical violations in immigrant detention through advocacy organization documentation while national immigration coverage stayed on policy debates. Ohio Capital Journal analyzed regional economic coordination strategies while business publications covered only corporate location incentives. Montana Free Press examined how protests drive voter registration through community organizing while political outlets treated protests as partisan conflict rather than civic engagement. Local outlets cover the work. National outlets cover the fight.",
+      "why_this_matters": "Your region's most important cooperation stories likely happened today without making national news. Local outlets covered community organizing, institutional accountability, and cross-sector collaboration that directly affects your access to services and civic participation opportunities.",
+      "watch_for": "The New Mexico border wall court case, where environmental and tribal groups challenge federal enforcement authority, could establish precedent for how competing federal mandates get resolved in court."
     }
   ]
 }

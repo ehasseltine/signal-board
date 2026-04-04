@@ -8,7 +8,7 @@
     <link>https://signal-board.org</link>
     <description>Daily news analysis from 300 sources across the political spectrum, across borders, and across languages. See what no single outlet can show you.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 03 Apr 2026 08:09:01 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 04 Apr 2026 00:21:41 GMT</lastBuildDate>
     <atom:link href="https://signal-board.org/rss.xml" rel="self" type="application/rss+xml" />
     <copyright>Elise Hasseltine</copyright>
     <managingEditor>elise@elisehasseltine.com (Elise Hasseltine)</managingEditor>
@@ -19,14 +19,24 @@
       <link>https://signal-board.org</link>
     </image>
     <item>
-      <title>Trump fires top military leaders while building legal cases around hirings</title>
+      <title>Signal Board - 2026-04-04</title>
+      <link>https://signal-board.org/archive/2026-04-04/</link>
+      <guid isPermaLink="true">https://signal-board.org/archive/2026-04-04/</guid>
+      <pubDate>Sat, 04 Apr 2026 07:00:00 GMT</pubDate>
+      <description>Daily news analysis from 300 sources for 2026-04-04</description>
+      <dc:creator>Elise Hasseltine</dc:creator>
+      <signal:sources>154</signal:sources>
+      <signal:articles>859</signal:articles>
+    </item>
+    <item>
+      <title>When the president fires people, the reasons become court cases</title>
       <link>https://signal-board.org/archive/2026-04-03/</link>
       <guid isPermaLink="true">https://signal-board.org/archive/2026-04-03/</guid>
       <pubDate>Fri, 03 Apr 2026 07:00:00 GMT</pubDate>
-      <description>The collision between executive personnel decisions and legal accountability is creating a new form of institutional crisis, one where the power to hire and fire becomes itself a contested battlefield. Defense Secretary Pete Hegseth forced out the Army&apos;s top officer this week while simultaneously defending the firing rationale for Attorney General Pam Bondi through official channels, a pattern that transforms routine personnel management into high-stakes political theater. When these decisions happen during active military conflict with Iran, the stakes compound because personnel choices directly affect war-making authority, concentrating critical decisions in civilian appointees who are themselves navigating legal challenges.</description>
+      <description>The machinery of executive power is grinding against its own institutional constraints, creating legal disputes where personnel decisions once moved quietly through administrative channels. When Defense Secretary Pete Hegseth forces out the Army&apos;s top officer, when Attorney General Todd Blanche disputes speculation about Pam Bondi&apos;s firing, when military leadership changes happen during active conflict, what emerges is not just policy disagreement but constitutional questions about where executive authority ends and institutional independence begins. The pattern runs deeper than any single firing because it reveals how personnel decisions have become weapons in a larger struggle over who controls the permanent government.</description>
       <dc:creator>Elise Hasseltine</dc:creator>
-      <signal:sources>95</signal:sources>
-      <signal:articles>564</signal:articles>
+      <signal:sources>192</signal:sources>
+      <signal:articles>1288</signal:articles>
     </item>
     <item>
       <title>Signal Board - 2026-04-02</title>
