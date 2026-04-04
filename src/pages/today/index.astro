@@ -645,7 +645,7 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
       <span class="section-label r" style="font-size: 13px; margin-bottom: 20px; display: block;">How outlets told it differently</span>
       {(() => {
         // Collect tiers present in these rows for the legend
-        const tiersPresent = new Set<string>();
+        const tiersPresent: Set<string> = new Set();
         outletRows.forEach((s: string) => {
           const name = extractOutletFromSentence(s);
           if (name) {
@@ -654,7 +654,7 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
             tiersPresent.add(mapped);
           }
         });
-        const tierLegendItems: Array<{key: string, label: string}> = [
+        const tierLegendItems: {key: string, label: string}[] = [
           {key: 'national', label: 'National'},
           {key: 'international', label: 'International'},
           {key: 'local', label: 'Local & Regional'},
@@ -830,7 +830,7 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
     <div style="padding: 32px 0 0;">
       <span class="section-label r section-label-teal" style="font-size: 13px; margin-bottom: 20px; display: block;">How outlets framed it</span>
       {(() => {
-        const tiersPresent = new Set<string>();
+        const tiersPresent: Set<string> = new Set();
         outletRows.forEach((s: string) => {
           const name = extractOutletFromSentence(s);
           if (name) {
@@ -839,7 +839,7 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
             tiersPresent.add(mapped);
           }
         });
-        const tierLegendItems: Array<{key: string, label: string}> = [
+        const tierLegendItems: {key: string, label: string}[] = [
           {key: 'national', label: 'National'},
           {key: 'international', label: 'International'},
           {key: 'local', label: 'Local & Regional'},
