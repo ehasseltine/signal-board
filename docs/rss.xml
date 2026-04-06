@@ -8,7 +8,7 @@
     <link>https://signal-board.org</link>
     <description>Daily news analysis from 300 sources across the political spectrum, across borders, and across languages. See what no single outlet can show you.</description>
     <language>en-us</language>
-    <lastBuildDate>Sun, 05 Apr 2026 07:58:48 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 06 Apr 2026 08:26:48 GMT</lastBuildDate>
     <atom:link href="https://signal-board.org/rss.xml" rel="self" type="application/rss+xml" />
     <copyright>Elise Hasseltine</copyright>
     <managingEditor>elise@elisehasseltine.com (Elise Hasseltine)</managingEditor>
@@ -18,6 +18,16 @@
       <title>Signal Board</title>
       <link>https://signal-board.org</link>
     </image>
+    <item>
+      <title>War turns energy and food into weapons as colleges partner with Pentagon</title>
+      <link>https://signal-board.org/archive/2026-04-06/</link>
+      <guid isPermaLink="true">https://signal-board.org/archive/2026-04-06/</guid>
+      <pubDate>Mon, 06 Apr 2026 07:00:00 GMT</pubDate>
+      <description>The collision of military escalation and supply chain vulnerability reveals how warfare now operates through economic infrastructure rather than territorial conquest. When Trump threatens military action over the Strait of Hormuz, the immediate effect appears in India&apos;s emergency fertilizer tenders and Australia&apos;s fuel shortage charts, forcing agricultural nations to compete for basic inputs during critical planting windows. This weaponization of necessity connects directly to what specialist outlet Naked Capitalism documented about university research partnerships with military institutions, where defense priorities become embedded in academic work through funding structures. The pattern suggests that military conflict increasingly operates through the civilian systems people depend on for food, energy, and education, making the distinction between wartime and peacetime less meaningful for ordinary life.</description>
+      <dc:creator>Elise Hasseltine</dc:creator>
+      <signal:sources>77</signal:sources>
+      <signal:articles>507</signal:articles>
+    </item>
     <item>
       <title>US jets shot down over Iran as government custody fails kids</title>
       <link>https://signal-board.org/archive/2026-04-05/</link>
