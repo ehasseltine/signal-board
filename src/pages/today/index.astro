@@ -576,7 +576,7 @@ body { background: var(--bg); color: var(--white); font-family: var(--sans);
   cursor: pointer;
   overflow: hidden;
   transition: transform 0.12s var(--ease), box-shadow 0.12s;
-  min-height: 22px;
+  min-height: 32px;
 }
 .sg-cell:hover { transform: scale(1.06); z-index: 10; }
 .sg-cell.selected { box-shadow: 0 0 0 2px var(--yellow); z-index: 20; }
@@ -780,47 +780,6 @@ const easeOut = t => 1 - Math.pow(1 - t, 3);
 const easeOutQuart = t => 1 - Math.pow(1 - t, 4);
 function seededRand(seed) { return ((Math.sin(seed) * 43758.5453) % 1 + 1) % 1; }
 
-// Map any domain_distribution keys to internal LABEL_KEYS
-// Handles: new display names ("War & Conflict"), old names ("Security"), and internal keys ("war_and_conflict")
-function mapDomainDist(dom) {
-  var MAP = {
-    'War & Conflict': 'war_and_conflict',
-    "Who's in Charge": 'whos_in_charge',
-    'Rules & Courts': 'rules_and_courts',
-    'Money & Prices': 'money_and_prices',
-    'Oil & Energy': 'oil_and_energy',
-    'Global Relations': 'global_relations',
-    'Rights & Justice': 'rights_and_justice',
-    'AI & Technology': 'ai_and_technology',
-    'Communities': 'communities',
-    'Health': 'health',
-    'Work & Workers': 'work_and_workers',
-    'Media & Info': 'media_and_information',
-    'The Environment': 'the_environment',
-    'Food & Land': 'food_and_land',
-    'People Power': 'people_power',
-    'Security': 'war_and_conflict',
-    'Geopolitics': 'global_relations',
-    'Governance': 'whos_in_charge',
-    'Economics': 'money_and_prices',
-    'Politics': 'whos_in_charge',
-    'Legal': 'rules_and_courts',
-    'Climate': 'the_environment',
-    'Information': 'media_and_information',
-    'Labor': 'work_and_workers',
-    'AI': 'ai_and_technology',
-  };
-  var counts = {};
-  LABEL_KEYS.forEach(function(k) { counts[k] = 0; });
-  Object.keys(dom).forEach(function(rawKey) {
-    var internal = MAP[rawKey] || rawKey;
-    if (counts.hasOwnProperty(internal)) {
-      counts[internal] += dom[rawKey];
-    }
-  });
-  return counts;
-}
-
 
 /* ═════════════════════════════════════════
    BOOT — fetch today + 6 days, then init
@@ -872,7 +831,35 @@ function mapDomainDist(dom) {
     var date = dates[i];
     validDates.push(date);
     var dom = (data.summary || {}).domain_distribution || {};
-    var labelCounts = mapDomainDist(dom);
+    // Map ANY key format to internal LABEL_KEYS:
+    // - New display: "War & Conflict" → war_and_conflict
+    // - Old 10-key:  "Security"       → war_and_conflict
+    // - Internal:    "war_and_conflict" stays as-is
+    var KEY_MAP = {
+      'War & Conflict':'war_and_conflict', 'Security':'war_and_conflict',
+      "Who's in Charge":'whos_in_charge', 'Governance':'whos_in_charge', 'Politics':'whos_in_charge',
+      'Rules & Courts':'rules_and_courts', 'Legal':'rules_and_courts',
+      'Money & Prices':'money_and_prices', 'Economics':'money_and_prices',
+      'Oil & Energy':'oil_and_energy',
+      'Global Relations':'global_relations', 'Geopolitics':'global_relations',
+      'Rights & Justice':'rights_and_justice',
+      'AI & Technology':'ai_and_technology', 'AI':'ai_and_technology',
+      'Communities':'communities',
+      'Health':'health',
+      'Work & Workers':'work_and_workers', 'Labor':'work_and_workers',
+      'Media & Info':'media_and_information', 'Information':'media_and_information',
+      'The Environment':'the_environment', 'Climate':'the_environment',
+      'Food & Land':'food_and_land',
+      'People Power':'people_power',
+    };
+    var labelCounts = {};
+    LABEL_KEYS.forEach(function(k) { labelCounts[k] = 0; });
+    Object.keys(dom).forEach(function(rawKey) {
+      var internal = KEY_MAP[rawKey] || rawKey;
+      if (labelCounts.hasOwnProperty(internal)) {
+        labelCounts[internal] += dom[rawKey];
+      }
+    });
     dayData[date] = {
       total: (data.summary || {}).total_stories || 0,
       labels: labelCounts,
@@ -1149,59 +1136,39 @@ function initDivergence(todayData) {
 
   var score = topCluster.divergence ? topCluster.divergence.score : (topCluster.score || 0);
   var articles = topCluster.articles || [];
-  var sources = topCluster.sources || [];
-  var sourceCount = sources.length || articles.length;
+  var sourceCount = topCluster.sources ? topCluster.sources.length : articles.length;
   var entities = topCluster.entities || [];
   var forceLabel = topCluster.structural_force || topCluster.label || '';
 
-  // Map raw structural_force key to display name
-  var FORCE_DISPLAY = {
-    'war_and_conflict': 'War & Conflict',
-    'whos_in_charge': "Who's in Charge",
-    'rules_and_courts': 'Rules & Courts',
-    'money_and_prices': 'Money & Prices',
-    'oil_and_energy': 'Oil & Energy',
-    'global_relations': 'Global Relations',
-    'rights_and_justice': 'Rights & Justice',
-    'ai_and_technology': 'AI & Technology',
-    'communities': 'Communities',
-    'health': 'Health',
-    'work_and_workers': 'Work & Workers',
-    'media_and_information': 'Media & Information',
-    'the_environment': 'The Environment',
-    'food_and_land': 'Food & Land',
-    'people_power': 'People Power',
-  };
-  var forceDisplay = FORCE_DISPLAY[forceLabel] || forceLabel;
-
   // Update header text
   titleEl.textContent = sourceCount + ' sources. One event. Today.';
-  subEl.textContent = 'The same ' + (entities[0] || forceDisplay) + ' story \u2014 measured by how differently it was framed.';
+  subEl.textContent = 'The same ' + (entities[0] || forceLabel) + ' story \u2014 measured by how differently it was framed.';
 
-  // Build lookup from articles for tier and title
-  var articleLookup = {};
-  articles.forEach(function(a) {
-    if (a.source) articleLookup[a.source] = { tier: a.tier || 'international', title: a.title || '' };
+  // Build nodes sorted by tier for left-to-right spread
+  var TIER_ORDER = ['national','newsletter','analysis','international','specialist','local-regional','government'];
+  var TIER_COLORS = {
+    national: '#FF2D55', international: '#FF9500', 'local-regional': '#30D158',
+    specialist: '#0A84FF', analysis: '#BF5AF2', newsletter: '#FFD60A', government: '#5AC8FA'
+  };
+  var sorted = articles.slice().sort(function(a, b) {
+    return TIER_ORDER.indexOf(a.tier || 'international') - TIER_ORDER.indexOf(b.tier || 'international');
   });
-
-  // Build all nodes from sources[] (37), using articleLookup for tier/title where available
-  var TIER_ORDER = ['national','newsletter','analysis','government','international','specialist','local-regional'];
-  var PALETTE = ['#FF2D55','#FF6B00','#FFD60A','#FF9500','#30D158','#00D4FF','#0A84FF','#BF5AF2','#5AC8FA','#34C759'];
-  var tierBase = {'national':0,'newsletter':1,'analysis':2,'government':3,'international':4,'specialist':7,'local-regional':5};
-
-  var nodeSource = sources.length > 0 ? sources : articles.map(function(a){ return a.source; });
-  var nodes = nodeSource.map(function(sourceName) {
-    var info = articleLookup[sourceName] || { tier: 'international', title: '' };
-    return { source: sourceName, tier: info.tier, title: info.title };
-  }).sort(function(a, b) {
-    return TIER_ORDER.indexOf(a.tier) - TIER_ORDER.indexOf(b.tier);
-  }).map(function(n, i, arr) {
-    var base = tierBase[n.tier] || 4;
+  // Assign colors: use tier color as base, but when multiple sources share
+  // the same tier, cycle through a palette so they're visually distinct
+  var PALETTE = ['#FF2D55','#FF9500','#FFD60A','#30D158','#0A84FF','#BF5AF2','#00D4FF','#5AC8FA','#FF6B00','#34C759'];
+  var tierUsedCount = {};
+  var nodes = sorted.map(function(a, i) {
+    var tier = a.tier || 'international';
+    tierUsedCount[tier] = (tierUsedCount[tier] || 0);
+    var baseColor = TIER_COLORS[tier] || '#FF9500';
+    // If there are multiple sources of same tier, rotate palette so they\'re visually distinct
+    var color = tierUsedCount[tier] === 0 ? baseColor : PALETTE[(PALETTE.indexOf(baseColor) + tierUsedCount[tier]) % PALETTE.length];
+    tierUsedCount[tier]++;
     return {
-      source: n.source,
-      color: PALETTE[(base + Math.floor(i/4)) % PALETTE.length],
-      title: n.title,
-      angle: arr.length > 1 ? i / (arr.length - 1) : 0.5,
+      source: a.source || ('Source ' + i),
+      color: color,
+      title: a.title || '',
+      angle: sorted.length > 1 ? i / (sorted.length - 1) : 0.5,
       phase: seededRand(i * 11 + 5) * Math.PI * 2,
     };
   });
