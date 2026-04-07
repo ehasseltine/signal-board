@@ -748,115 +748,28 @@ body { background: var(--bg); color: var(--white); font-family: var(--sans);
 <script is:inline>
 /* ══════════════════════════════════════════
    SIGNAL BOARD — THE SEISMOGRAPH
-   Real data. 11 days. 15 labels. 300 sources.
+   Live data. 7-day rolling window. 15 labels.
 ══════════════════════════════════════════ */
 
-/* ─── REAL DATA — 11 days reclassified ── */
-const DATA = {
-  dates: [
-    '2026-04-07','2026-04-06','2026-04-05','2026-04-04','2026-04-03',
-    '2026-04-02','2026-04-01','2026-03-31','2026-03-30','2026-03-29','2026-03-28'
-  ],
-  labels: {
-    war_and_conflict:      { name: 'War & Conflict',     color: '#FF2D55' },
-    whos_in_charge:        { name: "Who's in Charge",    color: '#FF9500' },
-    rules_and_courts:      { name: 'Rules & Courts',     color: '#FFD60A' },
-    money_and_prices:      { name: 'Money & Prices',     color: '#30D158' },
-    oil_and_energy:        { name: 'Oil & Energy',       color: '#FF6B00' },
-    global_relations:      { name: 'Global Relations',   color: '#0A84FF' },
-    rights_and_justice:    { name: 'Rights & Justice',   color: '#BF5AF2' },
-    ai_and_technology:     { name: 'AI & Technology',    color: '#00D4FF' },
-    communities:           { name: 'Communities',        color: '#34C759' },
-    health:                { name: 'Health',             color: '#5AC8FA' },
-    work_and_workers:      { name: 'Work & Workers',     color: '#FF9500' },
-    media_and_information: { name: 'Media & Info',       color: '#BF5AF2' },
-    the_environment:       { name: 'The Environment',    color: '#34C759' },
-    food_and_land:         { name: 'Food & Land',        color: '#FFD60A' },
-    people_power:          { name: 'People Power',       color: '#FF2D55' },
-  },
-  // Real counts per date per label from reclassified articles.json
-  days: {
-    '2026-04-07': { total:648,  war_and_conflict:176, whos_in_charge:129, rules_and_courts:101, money_and_prices:132, oil_and_energy:82,  global_relations:132, rights_and_justice:54,  ai_and_technology:111, communities:73,  health:55,  work_and_workers:35,  media_and_information:26,  the_environment:29,  food_and_land:18,  people_power:18  },
-    '2026-04-06': { total:1619, war_and_conflict:414, whos_in_charge:435, rules_and_courts:303, money_and_prices:287, oil_and_energy:176, global_relations:314, rights_and_justice:232, ai_and_technology:262, communities:217, health:137, work_and_workers:88,  media_and_information:125, the_environment:70,  food_and_land:49,  people_power:27  },
-    '2026-04-05': { total:967,  war_and_conflict:300, whos_in_charge:183, rules_and_courts:121, money_and_prices:136, oil_and_energy:100, global_relations:209, rights_and_justice:95,  ai_and_technology:165, communities:115, health:53,  work_and_workers:56,  media_and_information:63,  the_environment:32,  food_and_land:33,  people_power:19  },
-    '2026-04-04': { total:1882, war_and_conflict:488, whos_in_charge:426, rules_and_courts:340, money_and_prices:323, oil_and_energy:156, global_relations:362, rights_and_justice:232, ai_and_technology:301, communities:267, health:103, work_and_workers:138, media_and_information:117, the_environment:74,  food_and_land:57,  people_power:42  },
-    '2026-04-03': { total:1532, war_and_conflict:321, whos_in_charge:388, rules_and_courts:327, money_and_prices:325, oil_and_energy:152, global_relations:275, rights_and_justice:183, ai_and_technology:245, communities:178, health:111, work_and_workers:103, media_and_information:83,  the_environment:67,  food_and_land:57,  people_power:28  },
-    '2026-04-02': { total:2027, war_and_conflict:463, whos_in_charge:561, rules_and_courts:444, money_and_prices:435, oil_and_energy:188, global_relations:342, rights_and_justice:282, ai_and_technology:285, communities:245, health:156, work_and_workers:132, media_and_information:137, the_environment:86,  food_and_land:49,  people_power:42  },
-    '2026-04-01': { total:2041, war_and_conflict:419, whos_in_charge:546, rules_and_courts:510, money_and_prices:394, oil_and_energy:156, global_relations:320, rights_and_justice:359, ai_and_technology:335, communities:265, health:154, work_and_workers:134, media_and_information:157, the_environment:92,  food_and_land:70,  people_power:63  },
-    '2026-03-31': { total:2030, war_and_conflict:426, whos_in_charge:478, rules_and_courts:488, money_and_prices:417, oil_and_energy:197, global_relations:339, rights_and_justice:340, ai_and_technology:321, communities:287, health:156, work_and_workers:141, media_and_information:163, the_environment:81,  food_and_land:61,  people_power:75  },
-    '2026-03-30': { total:2782, war_and_conflict:734, whos_in_charge:649, rules_and_courts:526, money_and_prices:619, oil_and_energy:326, global_relations:581, rights_and_justice:397, ai_and_technology:425, communities:357, health:174, work_and_workers:194, media_and_information:174, the_environment:102, food_and_land:78,  people_power:124 },
-    '2026-03-29': { total:1307, war_and_conflict:319, whos_in_charge:318, rules_and_courts:198, money_and_prices:171, oil_and_energy:89,  global_relations:229, rights_and_justice:151, ai_and_technology:232, communities:133, health:72,  work_and_workers:67,  media_and_information:67,  the_environment:42,  food_and_land:30,  people_power:94  },
-    '2026-03-28': { total:2334, war_and_conflict:519, whos_in_charge:585, rules_and_courts:412, money_and_prices:423, oil_and_energy:191, global_relations:394, rights_and_justice:297, ai_and_technology:356, communities:246, health:133, work_and_workers:156, media_and_information:140, the_environment:83,  food_and_land:89,  people_power:182 },
-  },
-  // Real article samples for detail panel (from April 7 top divergence clusters)
-  sampleArticles: {
-    '2026-04-07': {
-      war_and_conflict: [
-        { source:'Bloomberg', title:'Iran War: Trump Escalates Iran Threats Ahead of Tuesday Deadline' },
-        { source:'Reuters', title:'Under airstrikes, Iran defiant on eve of Trump ceasefire deadline' },
-        { source:'Al Jazeera', title:'Iran live updates: Casualties reported from missile strikes in Israel' },
-        { source:'Dawn', title:'Debris from US aircraft downed in Iran during rescue mission' },
-        { source:'Middle East Eye', title:'US says over 13,000 targets struck inside Iran' },
-        { source:'Taipei Times', title:'25 killed in Iranian airstrikes; ceasefire proposals circulate' },
-      ],
-      oil_and_energy: [
-        { source:'CNBC', title:'Oil prices slide as Trump warns Iran to open Strait of Hormuz by Tuesday' },
-        { source:'Bloomberg', title:'European Gas Ticks Higher as Trump Threatens Iran War Escalation' },
-        { source:'Al-Monitor', title:'Iran Guards preparing plan for new order in Strait of Hormuz' },
-        { source:'Washington Examiner', title:'Iran vows to continue Strait of Hormuz chokehold in face of Trump threats' },
-        { source:'Times of India', title:'Air India revises fuel surcharge amid energy crunch' },
-      ],
-      money_and_prices: [
-        { source:'Bloomberg', title:'India Returns to Buying Venezuelan Crude to Ease Supply Crunch' },
-        { source:'Reuters', title:'Stocks stumble, oil above $110 as Trump Iran deadline nears' },
-        { source:'Straits Times', title:'Bitcoin ticks up even as Trump Iran war threats cloud markets' },
-        { source:'CNBC', title:'Asia markets trade mixed as investors assess Trump Iran war comments' },
-      ],
-      communities: [
-        { source:'Hechinger Report', title:'Trump squeezed Brown U. for $50 million in job training — here\'s who gets it' },
-        { source:'Ohio Capital Journal', title:'Navigator cuts leave Americans with less help to find Obamacare plans' },
-        { source:'High Country News', title:'A new era of industrial logging looms' },
-        { source:'Indian Country Today', title:'Prediction markets challenge tribal casinos\' hard-won place in US gambling' },
-      ],
-      people_power: [
-        { source:'National Catholic Reporter', title:'Catholic Workers wear homemade ankle monitors in solidarity with migrants' },
-        { source:'Oregon Public Broadcasting', title:'Christians in southern Lebanon mark Easter amid Israeli invasion' },
-        { source:'Borderland Beat', title:'Organized Crime Shifts Strategy: Disposing of Bodies to Avoid More Scrutiny' },
-      ],
-      whos_in_charge: [
-        { source:'The Hill', title:'Netanyahu says he spoke with Trump, congratulated him on rescuing downed pilot' },
-        { source:'AP News', title:'Vance campaigns for Hungary\'s Orban as Pentagon cancels Iran briefings' },
-        { source:'Deutsche Welle', title:'Iran war jeopardizes US global leadership, warns Italian minister' },
-        { source:'Rappler', title:'US and Iran receive peace proposal as Trump vows hell if Strait stays shut' },
-      ],
-    },
-    '2026-03-30': {
-      war_and_conflict: [
-        { source:'Reuters', title:'Iran launches largest missile barrage since conflict began — 847 projectiles in 6 hours' },
-        { source:'Al Jazeera', title:'Israel strikes Iranian nuclear facility at Fordow' },
-        { source:'BBC World', title:'US carrier group enters Persian Gulf as Iran fires on Saudi oil infrastructure' },
-        { source:'Dawn', title:'Pakistan closes airspace as Iran-US conflict expands to Gulf states' },
-      ],
-      oil_and_energy: [
-        { source:'Bloomberg', title:'Oil hits $127 as Hormuz closes for first time in modern history' },
-        { source:'CNBC', title:'Gas prices surge 40 cents overnight — worst single-day jump since 2022' },
-        { source:'Financial Times', title:'Europe activates emergency energy reserves as Gulf shipping halts' },
-        { source:'Reuters', title:'Saudi Aramco force majeure: no crude exports for 72 hours' },
-      ],
-      people_power: [
-        { source:'Post and Courier', title:'Charleston port workers refuse to load weapons bound for Gulf' },
-        { source:'InForum', title:'North Dakota farmers organize to pressure senators on fertilizer crisis' },
-        { source:'AllAfrica', title:'African Union calls emergency summit on food supply chain crisis' },
-        { source:'Al Jazeera', title:'No Kings protests draw 2 million across 400 US cities' },
-      ],
-    },
-  },
-  // Today's top divergence cluster — all 37 real sources from pipeline
-  // divergence data loaded at runtime from /data/daily/latest.json
-  divergence: null,
+/* ── LABEL DEFINITIONS (static — never changes) ── */
+const LABELS = {
+  war_and_conflict:      { name: 'War & Conflict',     color: '#FF2D55' },
+  whos_in_charge:        { name: "Who's in Charge",    color: '#FF9500' },
+  rules_and_courts:      { name: 'Rules & Courts',     color: '#FFD60A' },
+  money_and_prices:      { name: 'Money & Prices',     color: '#30D158' },
+  oil_and_energy:        { name: 'Oil & Energy',       color: '#FF6B00' },
+  global_relations:      { name: 'Global Relations',   color: '#0A84FF' },
+  rights_and_justice:    { name: 'Rights & Justice',   color: '#BF5AF2' },
+  ai_and_technology:     { name: 'AI & Technology',    color: '#00D4FF' },
+  communities:           { name: 'Communities',        color: '#34C759' },
+  health:                { name: 'Health',             color: '#5AC8FA' },
+  work_and_workers:      { name: 'Work & Workers',     color: '#FF9500' },
+  media_and_information: { name: 'Media & Info',       color: '#BF5AF2' },
+  the_environment:       { name: 'The Environment',    color: '#34C759' },
+  food_and_land:         { name: 'Food & Land',        color: '#FFD60A' },
+  people_power:          { name: 'People Power',       color: '#FF2D55' },
 };
-
-const LABEL_KEYS = Object.keys(DATA.labels);
+const LABEL_KEYS = Object.keys(LABELS);
 
 /* ─────────────────────────────────────────
    UTILITY
@@ -865,17 +778,83 @@ const rAF = fn => requestAnimationFrame(fn);
 const lerp = (a, b, t) => a + (b - a) * t;
 const easeOut = t => 1 - Math.pow(1 - t, 3);
 const easeOutQuart = t => 1 - Math.pow(1 - t, 4);
+function seededRand(seed) { return ((Math.sin(seed) * 43758.5453) % 1 + 1) % 1; }
+
 
 /* ═════════════════════════════════════════
-   1. GAME OF LIFE — hero
+   BOOT — fetch today + 6 days, then init
 ═════════════════════════════════════════ */
-(function initGoL() {
-  const canvas = document.getElementById('gol-canvas');
+(async function boot() {
+  // 0. Fire GoL and count-ups immediately (no data dependency)
+  initGoL();
+  initCountUps();
+  initNav();
+
+  // 1. Fetch today's data
+  var todayData;
+  try {
+    var r = await fetch('/data/daily/latest.json');
+    todayData = await r.json();
+  } catch(e) {
+    console.error('Failed to load latest.json', e);
+    return;
+  }
+
+  var todayDate = todayData.date;
+
+  // 2. Generate the 7 dates: today and 6 days back
+  function addDays(dateStr, n) {
+    var d = new Date(dateStr + 'T12:00:00Z');
+    d.setUTCDate(d.getUTCDate() + n);
+    return d.toISOString().split('T')[0];
+  }
+  var dates = [];
+  for (var i = 0; i < 7; i++) {
+    dates.push(addDays(todayDate, -i));
+  }
+
+  // 3. Fetch the 6 older days in parallel
+  var olderFetches = dates.slice(1).map(function(date) {
+    return fetch('/data/daily/' + date + '.json')
+      .then(function(r) { return r.ok ? r.json() : null; })
+      .catch(function() { return null; });
+  });
+  var olderResults = await Promise.all(olderFetches);
+
+  // 4. Build dayData map: date -> { total, labels: {key: count} }
+  var allResults = [todayData].concat(olderResults);
+  var dayData = {};
+  var validDates = [];
+
+  allResults.forEach(function(data, i) {
+    if (!data) return;
+    var date = dates[i];
+    validDates.push(date);
+    var dom = (data.summary || {}).domain_distribution || {};
+    var labelCounts = {};
+    LABEL_KEYS.forEach(function(k) { labelCounts[k] = dom[k] || 0; });
+    dayData[date] = {
+      total: (data.summary || {}).total_stories || 0,
+      labels: labelCounts,
+    };
+  });
+
+  // 5. Init data-dependent sections
+  initSeismograph(validDates, dayData);
+  initDivergence(todayData);
+})();
+
+
+/* ═════════════════════════════════════════
+   1. GAME OF LIFE — hero canvas
+═════════════════════════════════════════ */
+function initGoL() {
+  var canvas = document.getElementById('gol-canvas');
   if (!canvas) return;
-  const ctx = canvas.getContext('2d');
-  const SZ = 13;
-  const COLS = ['#FF2D55','#FF9500','#30D158','#0A84FF','#BF5AF2','#FFD60A'];
-  let W, H, cols, rows, grid, next, colors;
+  var ctx = canvas.getContext('2d');
+  var SZ = 13;
+  var COLS = ['#FF2D55','#FF9500','#30D158','#0A84FF','#BF5AF2','#FFD60A'];
+  var W, H, cols, rows, grid, next, colors;
 
   function resize() {
     W = canvas.width  = window.innerWidth;
@@ -883,32 +862,32 @@ const easeOutQuart = t => 1 - Math.pow(1 - t, 4);
     cols = Math.ceil(W/SZ)+1; rows = Math.ceil(H/SZ)+1;
     grid = new Uint8Array(cols*rows); next = new Uint8Array(cols*rows);
     colors = new Uint8Array(cols*rows);
-    for (let i=0;i<grid.length;i++) { grid[i]=Math.random()<0.2?1:0; colors[i]=Math.floor(Math.random()*6); }
+    for (var i=0;i<grid.length;i++) { grid[i]=Math.random()<0.2?1:0; colors[i]=Math.floor(Math.random()*6); }
   }
 
   function step() {
-    for (let r=0;r<rows;r++) for (let c=0;c<cols;c++) {
-      let n=0, idx=r*cols+c;
-      for (let dr=-1;dr<=1;dr++) for (let dc=-1;dc<=1;dc++) {
+    for (var r=0;r<rows;r++) for (var c=0;c<cols;c++) {
+      var n=0, idx=r*cols+c;
+      for (var dr=-1;dr<=1;dr++) for (var dc=-1;dc<=1;dc++) {
         if(!dr&&!dc) continue;
         n+=grid[((r+dr+rows)%rows)*cols+((c+dc+cols)%cols)];
       }
       if (grid[idx]) next[idx]=(n===2||n===3)?1:0;
       else { next[idx]=n===3?1:0; if(n===3) colors[idx]=Math.floor(Math.random()*6); }
     }
-    [grid,next]=[next,grid];
+    var tmp=grid; grid=next; next=tmp;
   }
 
-  let fr=0;
+  var fr=0;
   function draw() {
     ctx.clearRect(0,0,W,H);
-    for (let r=0;r<rows;r++) for (let c=0;c<cols;c++) {
+    for (var r=0;r<rows;r++) for (var c=0;c<cols;c++) {
       if (!grid[r*cols+c]) continue;
       ctx.globalAlpha=0.48; ctx.fillStyle=COLS[colors[r*cols+c]];
       ctx.beginPath(); ctx.roundRect(c*SZ+1,r*SZ+1,SZ-2,SZ-2,2); ctx.fill();
     }
     ctx.globalAlpha=1;
-    const g=ctx.createLinearGradient(0,0,0,H);
+    var g=ctx.createLinearGradient(0,0,0,H);
     g.addColorStop(0,'rgba(8,8,14,0.35)'); g.addColorStop(0.45,'rgba(8,8,14,0.55)'); g.addColorStop(1,'rgba(8,8,14,0.96)');
     ctx.fillStyle=g; ctx.fillRect(0,0,W,H);
     fr++; if(fr%4===0) step();
@@ -916,106 +895,97 @@ const easeOutQuart = t => 1 - Math.pow(1 - t, 4);
   }
   resize(); draw();
   window.addEventListener('resize', resize);
-
-  // Count-ups
-  const io = new IntersectionObserver(entries => entries.forEach(e => {
-    if(!e.isIntersecting) return; io.unobserve(e.target);
-    const target=parseInt(e.target.dataset.target), dur=1400, start=performance.now();
-    function tick(now) {
-      const t=Math.min(1,(now-start)/dur), ease=easeOutQuart(t);
-      e.target.textContent=Math.round(ease*target).toLocaleString();
-      if(t<1) rAF(tick);
-    }
-    rAF(tick);
-  }), {threshold:0.5});
-  document.querySelectorAll('.hs-n[data-target]').forEach(el=>io.observe(el));
-})();
+}
 
 
 /* ═════════════════════════════════════════
-   2. THE SEISMOGRAPH
-   11 cols × 15 rows of living bars.
+   COUNT-UPS — hero stats
+═════════════════════════════════════════ */
+function initCountUps() {
+  var io = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if(!e.isIntersecting) return; io.unobserve(e.target);
+      var target=parseInt(e.target.dataset.target), dur=1400, start=performance.now();
+      function tick(now) {
+        var t=Math.min(1,(now-start)/dur), ease=easeOutQuart(t);
+        e.target.textContent=Math.round(ease*target).toLocaleString();
+        if(t<1) rAF(tick);
+      }
+      rAF(tick);
+    });
+  }, {threshold:0.5});
+  document.querySelectorAll('.hs-n[data-target]').forEach(function(el){io.observe(el)});
+}
+
+
+/* ═════════════════════════════════════════
+   2. THE SEISMOGRAPH — 7 cols × 15 rows
    Height = normalized article volume.
    Color = label color, varying by day.
-   Selected cell → detail panel with real articles.
+   Selected cell → detail panel.
 ═════════════════════════════════════════ */
-(function initSeismograph() {
-  const datesRow  = document.getElementById('sg-dates');
-  const labelsCol = document.getElementById('sg-labels');
-  const gridEl    = document.getElementById('sg-grid');
-  const detailEl  = document.getElementById('sg-detail-inner');
+function initSeismograph(dates, dayData) {
+  var datesRow  = document.getElementById('sg-dates');
+  var labelsCol = document.getElementById('sg-labels');
+  var gridEl    = document.getElementById('sg-grid');
+  var detailEl  = document.getElementById('sg-detail-inner');
   if (!datesRow || !labelsCol || !gridEl) return;
 
-  const DATES = DATA.dates;           // 11 days newest→oldest
-  const LABEL_KEYS_SORTED = Object.keys(DATA.labels);
-
-  // Max value across all cells (for normalization)
-  let globalMax = 0;
-  DATES.forEach(date => {
-    LABEL_KEYS_SORTED.forEach(key => {
-      const v = DATA.days[date]?.[key] || 0;
-      if (v > globalMax) globalMax = v;
-    });
-  });
-
   // Per-label max (for per-label normalization — gives each row full height range)
-  const labelMax = {};
-  LABEL_KEYS_SORTED.forEach(key => {
-    labelMax[key] = Math.max(...DATES.map(d => DATA.days[d]?.[key] || 0));
+  var labelMax = {};
+  LABEL_KEYS.forEach(function(key) {
+    var vals = dates.map(function(d) {
+      return dayData[d] ? (dayData[d].labels[key] || 0) : 0;
+    });
+    labelMax[key] = Math.max.apply(null, vals);
   });
 
-  // Track selected cell
-  let selected = null;
+  var selected = null;
 
   // ── Build date headers ──────────────────
-  DATES.forEach((date, i) => {
-    const el = document.createElement('div');
+  dates.forEach(function(date, i) {
+    var el = document.createElement('div');
     el.className = 'sg-date-label' + (i===0 ? ' today' : '');
-    // Format: Apr 7
-    const d = new Date(date + 'T12:00:00Z');
+    var d = new Date(date + 'T12:00:00Z');
     el.textContent = d.toLocaleDateString('en-US', { month:'short', day:'numeric' });
     datesRow.appendChild(el);
   });
 
   // ── Build label column ──────────────────
-  LABEL_KEYS_SORTED.forEach(key => {
-    const el = document.createElement('div');
+  LABEL_KEYS.forEach(function(key) {
+    var el = document.createElement('div');
     el.className = 'sg-label-row';
-    el.textContent = DATA.labels[key].name;
+    el.textContent = LABELS[key].name;
     el.dataset.key = key;
-    el.style.color = DATA.labels[key].color + '99';
-    el.addEventListener('click', () => {
-      // Clicking a label highlights all cells in that row
-    });
+    el.style.color = LABELS[key].color + '99';
     labelsCol.appendChild(el);
   });
 
   // ── Build grid: one column per date ──────
-  const cells = {}; // cells[date][key] = element
+  var cells = {};
 
-  DATES.forEach((date, di) => {
-    const col = document.createElement('div');
+  dates.forEach(function(date, di) {
+    var col = document.createElement('div');
     col.className = 'sg-col';
     cells[date] = {};
 
-    LABEL_KEYS_SORTED.forEach(key => {
-      const val = DATA.days[date]?.[key] || 0;
-      // Use per-label normalization so every row uses its full height range
-      const pct = labelMax[key] > 0 ? (val / labelMax[key] * 100) : 0;
-      const color = DATA.labels[key].color;
+    LABEL_KEYS.forEach(function(key) {
+      var val = dayData[date] ? (dayData[date].labels[key] || 0) : 0;
+      var pct = labelMax[key] > 0 ? (val / labelMax[key] * 100) : 0;
+      var color = LABELS[key].color;
 
-      const cell = document.createElement('div');
+      var cell = document.createElement('div');
       cell.className = 'sg-cell';
       cell.dataset.date = date;
       cell.dataset.key = key;
       cell.dataset.val = val;
 
-      const fill = document.createElement('div');
+      var fill = document.createElement('div');
       fill.className = 'sg-cell-fill';
       fill.style.height = '0%';
-      fill.style.background = `linear-gradient(0deg, ${color}DD, ${color}66)`;
+      fill.style.background = 'linear-gradient(0deg, ' + color + 'DD, ' + color + '66)';
 
-      const num = document.createElement('div');
+      var num = document.createElement('div');
       num.className = 'sg-cell-num';
       num.style.color = color;
       num.textContent = val;
@@ -1023,26 +993,26 @@ const easeOutQuart = t => 1 - Math.pow(1 - t, 4);
       cell.appendChild(fill);
       cell.appendChild(num);
       col.appendChild(cell);
-      cells[date][key] = { cell, fill, pct, val };
+      cells[date][key] = { cell: cell, fill: fill, pct: pct, val: val };
 
-      // Click handler
-      cell.addEventListener('click', () => selectCell(date, key, color));
+      cell.addEventListener('click', (function(dt, ky, cl) {
+        return function() { selectCell(dt, ky, cl); };
+      })(date, key, color));
     });
 
     gridEl.appendChild(col);
   });
 
   // ── Animate bars in on scroll ────────────
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(e => {
+  var io = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
       if (!e.isIntersecting) return;
       io.unobserve(e.target);
-      // Stagger by column
-      DATES.forEach((date, di) => {
-        LABEL_KEYS_SORTED.forEach((key, li) => {
-          const { fill, pct } = cells[date][key];
-          setTimeout(() => {
-            fill.style.height = Math.max(pct, 4) + '%';
+      dates.forEach(function(date, di) {
+        LABEL_KEYS.forEach(function(key, li) {
+          var c = cells[date][key];
+          setTimeout(function() {
+            c.fill.style.height = Math.max(c.pct, 4) + '%';
           }, di * 35 + li * 8);
         });
       });
@@ -1052,11 +1022,11 @@ const easeOutQuart = t => 1 - Math.pow(1 - t, 4);
 
   // ── Sync label row heights with grid rows ─
   function syncLabelHeights() {
-    const firstCol = gridEl.querySelector('.sg-col');
+    var firstCol = gridEl.querySelector('.sg-col');
     if (!firstCol) return;
-    const cellEls = firstCol.querySelectorAll('.sg-cell');
-    const labelEls = labelsCol.querySelectorAll('.sg-label-row');
-    cellEls.forEach((cellEl, i) => {
+    var cellEls = firstCol.querySelectorAll('.sg-cell');
+    var labelEls = labelsCol.querySelectorAll('.sg-label-row');
+    cellEls.forEach(function(cellEl, i) {
       if (labelEls[i]) {
         labelEls[i].style.height = cellEl.offsetHeight + 'px';
       }
@@ -1067,79 +1037,53 @@ const easeOutQuart = t => 1 - Math.pow(1 - t, 4);
 
   // ── Cell selection + detail panel ────────
   function selectCell(date, key, color) {
-    // Deselect previous
     if (selected) {
-      const prev = cells[selected.date]?.[selected.key];
+      var prev = cells[selected.date] && cells[selected.date][selected.key];
       if (prev) prev.cell.classList.remove('selected');
-      const prevLabel = labelsCol.querySelector(`[data-key="${selected.key}"]`);
+      var prevLabel = labelsCol.querySelector('[data-key="' + selected.key + '"]');
       if (prevLabel) prevLabel.classList.remove('active');
     }
 
-    selected = { date, key };
+    selected = { date: date, key: key };
     cells[date][key].cell.classList.add('selected');
-    const labelEl = labelsCol.querySelector(`[data-key="${key}"]`);
+    var labelEl = labelsCol.querySelector('[data-key="' + key + '"]');
     if (labelEl) labelEl.classList.add('active');
 
     renderDetail(date, key, color);
   }
 
   function renderDetail(date, key, color) {
-    const val = DATA.days[date]?.[key] || 0;
-    const label = DATA.labels[key].name;
-    const d = new Date(date + 'T12:00:00Z');
-    const dateStr = d.toLocaleDateString('en-US', { weekday:'short', month:'short', day:'numeric' });
+    var val = dayData[date] ? (dayData[date].labels[key] || 0) : 0;
+    var label = LABELS[key].name;
+    var d = new Date(date + 'T12:00:00Z');
+    var dateStr = d.toLocaleDateString('en-US', { weekday:'short', month:'short', day:'numeric' });
 
-    // Get sample articles for this date/key
-    const samples = DATA.sampleArticles?.[date]?.[key] || [];
+    var articleHTML = '<div class="sdi-article"><div class="sdi-title" style="color:var(--dim)">' +
+      val + ' articles tagged "' + label + '" on ' + dateStr + '.<br>Full article list in the pipeline.' +
+      '</div></div>';
 
-    // If no samples, show closest available date
-    let articleHTML = '';
-    if (samples.length) {
-      articleHTML = samples.map(a => `
-        <div class="sdi-article">
-          <div class="sdi-src" style="color:${color}">${a.source}</div>
-          <div class="sdi-title">${a.title}</div>
-        </div>
-      `).join('');
-    } else {
-      // Generic message — real articles exist in pipeline
-      articleHTML = `<div class="sdi-article"><div class="sdi-title" style="color:var(--dim)">
-        ${val} articles tagged "${label}" on ${dateStr}.<br>Full article list in the pipeline.
-      </div></div>`;
-    }
+    detailEl.innerHTML =
+      '<div class="sdi-header">' +
+        '<span class="sdi-label" style="color:' + color + '">' + label + '</span>' +
+        '<span class="sdi-date">' + dateStr + '</span>' +
+        '<span class="sdi-count" style="color:' + color + '">' + val + ' articles</span>' +
+      '</div>' +
+      '<div class="sdi-articles">' + articleHTML + '</div>';
 
-    detailEl.innerHTML = `
-      <div class="sdi-header">
-        <span class="sdi-label" style="color:${color}">${label}</span>
-        <span class="sdi-date">${dateStr}</span>
-        <span class="sdi-count" style="color:${color}">${val} articles</span>
-      </div>
-      <div class="sdi-articles">${articleHTML}</div>
-    `;
-
-    // Scroll detail into view
     detailEl.closest('.sg-detail').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
 
   // Auto-select today's highest cell on load
-  setTimeout(() => {
-    const todayDate = DATES[0];
-    let maxKey = 'war_and_conflict', maxVal = 0;
-    LABEL_KEYS_SORTED.forEach(key => {
-      const v = DATA.days[todayDate]?.[key] || 0;
+  setTimeout(function() {
+    var todayDate = dates[0];
+    var maxKey = 'war_and_conflict', maxVal = 0;
+    LABEL_KEYS.forEach(function(key) {
+      var v = dayData[todayDate] ? (dayData[todayDate].labels[key] || 0) : 0;
       if (v > maxVal) { maxVal = v; maxKey = key; }
     });
-    selectCell(todayDate, maxKey, DATA.labels[maxKey].color);
+    selectCell(todayDate, maxKey, LABELS[maxKey].color);
   }, 1800);
-})();
-
-
-/* ═════════════════════════════════════════
-   3. DIVERGENCE — 37 sources, one event
-   Source dots start at center, drift to
-   their frame position on a spectrum.
-   Score 0.901 = almost total divergence.
-═════════════════════════════════════════ */
+}
 
 
 /* ═════════════════════════════════════════
@@ -1147,85 +1091,61 @@ const easeOutQuart = t => 1 - Math.pow(1 - t, 4);
    Source dots start at center, drift to
    their frame position on a spectrum.
 ═════════════════════════════════════════ */
-(async function initDivergence() {
-  const canvas = document.getElementById('diverge-canvas');
-  const tip = document.getElementById('div-tooltip');
+function initDivergence(todayData) {
+  var canvas = document.getElementById('diverge-canvas');
+  var tip = document.getElementById('div-tooltip');
   if (!canvas || !tip) return;
-  const ctx = canvas.getContext('2d');
+  var ctx = canvas.getContext('2d');
 
-  const scoreEl = document.getElementById('div-score-big');
-  const titleEl = document.getElementById('div-title');
-  const subEl = document.getElementById('div-sub');
+  var scoreEl = document.getElementById('div-score-big');
+  var titleEl = document.getElementById('div-title');
+  var subEl = document.getElementById('div-sub');
 
-  // Fetch divergence data from pipeline
-  let divData;
-  try {
-    const resp = await fetch('/data/daily/latest.json');
-    const json = await resp.json();
-    const ed = json.event_divergence;
-    if (ed && ed.length > 0) {
-      const cluster = ed[0];
-      const score = cluster.divergence?.score || cluster.score || 0;
-      const sourceCount = cluster.sources?.length || cluster.articles?.length || 0;
-      const entities = cluster.entities || [];
-      const label = cluster.structural_force || cluster.label || '';
-      
-      // Build article dots from sources or articles array
-      const articles = [];
-      const rawArticles = cluster.articles || cluster.sources || [];
-      rawArticles.forEach(function(a, i) {
-        const total = rawArticles.length;
-        // Distribute angle evenly across 0-1 spectrum
-        const angle = total > 1 ? i / (total - 1) : 0.5;
-        // Color by tier
-        const tierColors = {
-          'national': '#FF2D55',
-          'international': '#0A84FF',
-          'local-regional': '#30D158',
-          'specialist': '#BF5AF2',
-          'analysis': '#FFD60A',
-        };
-        const color = tierColors[a.tier] || '#FF9500';
-        articles.push({
-          source: a.source || a.name || ('Source ' + i),
-          color: color,
-          angle: angle,
-          tier: a.tier || 'national',
-        });
-      });
-
-      divData = {
-        score: score,
-        sources: sourceCount,
-        articleCount: cluster.article_count || articles.length,
-        label: label,
-        entities: entities,
-        articles: articles,
-      };
-
-      // Update header text
-      titleEl.textContent = sourceCount + ' sources. One event. Today.';
-      subEl.textContent = 'The same ' + (entities[0] || label) + ' story — measured by how differently it was framed.';
-    }
-  } catch(e) {
-    console.warn('Could not load divergence data:', e);
-    titleEl.textContent = 'Divergence data unavailable';
-    return;
-  }
-
-  if (!divData || !divData.articles.length) {
+  var topCluster = (todayData.event_divergence || [])[0];
+  if (!topCluster) {
     titleEl.textContent = 'No divergence cluster found today';
     return;
   }
 
+  var score = topCluster.divergence ? topCluster.divergence.score : (topCluster.score || 0);
+  var articles = topCluster.articles || [];
+  var sourceCount = topCluster.sources ? topCluster.sources.length : articles.length;
+  var entities = topCluster.entities || [];
+  var forceLabel = topCluster.structural_force || topCluster.label || '';
+
+  // Update header text
+  titleEl.textContent = sourceCount + ' sources. One event. Today.';
+  subEl.textContent = 'The same ' + (entities[0] || forceLabel) + ' story \u2014 measured by how differently it was framed.';
+
+  // Build nodes sorted by tier for left-to-right spread
+  var TIER_ORDER = ['national','newsletter','analysis','international','specialist','local-regional','government'];
+  var TIER_COLORS = {
+    national: '#FF2D55', international: '#FF9500', 'local-regional': '#30D158',
+    specialist: '#0A84FF', analysis: '#BF5AF2', newsletter: '#FFD60A', government: '#5AC8FA'
+  };
+  var sorted = articles.slice().sort(function(a, b) {
+    return TIER_ORDER.indexOf(a.tier || 'international') - TIER_ORDER.indexOf(b.tier || 'international');
+  });
+  var nodes = sorted.map(function(a, i) {
+    return {
+      source: a.source || ('Source ' + i),
+      color: TIER_COLORS[a.tier] || '#FF9500',
+      title: a.title || '',
+      angle: sorted.length > 1 ? i / (sorted.length - 1) : 0.5,
+      phase: seededRand(i * 11 + 5) * Math.PI * 2,
+    };
+  });
+
+  if (!nodes.length) return;
+
   // Animate score number
-  const targetScore = divData.score;
-  const io0 = new IntersectionObserver(function(entries) {
+  var targetScore = score;
+  var io0 = new IntersectionObserver(function(entries) {
     entries.forEach(function(e) {
       if (!e.isIntersecting) return; io0.unobserve(e.target);
-      const dur=1600, start=performance.now();
+      var dur=1600, start=performance.now();
       function tick(now) {
-        const t=Math.min(1,(now-start)/dur), ease=easeOut(t);
+        var t=Math.min(1,(now-start)/dur), ease=easeOut(t);
         scoreEl.textContent = (ease * targetScore).toFixed(2);
         if(t<1) rAF(tick);
       }
@@ -1234,49 +1154,47 @@ const easeOutQuart = t => 1 - Math.pow(1 - t, 4);
   }, {threshold:0.5});
   io0.observe(scoreEl);
 
-  let W, H, nodes=[], progress=0, started=false;
+  var W, H, builtNodes=[], progress=0, started=false;
 
-  function build() {
+  function buildNodes() {
     W = canvas.offsetWidth; H = 380; canvas.height = H;
     canvas.width = W;
-
-    const cy = H * 0.5;
-
-    function seededRand(seed) { return ((Math.sin(seed) * 43758.5453) % 1 + 1) % 1; }
-    nodes = divData.articles.map(function(a, i) {
+    var cy = H * 0.5;
+    builtNodes = nodes.map(function(a, i) {
       return {
         source: a.source,
         color: a.color,
+        title: a.title,
         angle: a.angle,
         tx: 40 + a.angle * (W - 80) + (seededRand(i*7+1) - 0.5) * 40,
         ty: cy + (seededRand(i*13+3) - 0.5) * H * 0.7,
         x: W/2, y: cy,
-        phase: seededRand(i*11+5) * Math.PI * 2,
+        phase: a.phase,
       };
     });
   }
 
-  let t=0;
-  function draw(timestamp) {
+  var t=0;
+  function draw() {
     ctx.clearRect(0,0,W,H);
     t += 0.012;
     if (!started) { rAF(draw); return; }
     progress = Math.min(1, progress + 0.014);
-    const ease = easeOut(progress);
+    var ease = easeOut(progress);
+    var totalDots = builtNodes.length;
 
-    const totalDots = nodes.length;
-    nodes.forEach(function(n, i) {
-      const startAt = (i / totalDots) * 0.45;
-      const dotP = Math.max(0, Math.min(1, (progress - startAt) / (1 - startAt)));
-      const dotEase = easeOut(dotP);
+    builtNodes.forEach(function(n, i) {
+      var startAt = (i / totalDots) * 0.45;
+      var dotP = Math.max(0, Math.min(1, (progress - startAt) / (1 - startAt)));
+      var dotEase = easeOut(dotP);
       n.x = lerp(W/2, n.tx, dotEase);
       n.y = lerp(H/2, n.ty, dotEase);
     });
 
     // Connection line
-    if (nodes.length >= 2) {
-      const xs = nodes.map(function(n){return n.x});
-      const x0=Math.min.apply(null,xs)-20, x1=Math.max.apply(null,xs)+20;
+    if (builtNodes.length >= 2) {
+      var xs = builtNodes.map(function(n){return n.x});
+      var x0=Math.min.apply(null,xs)-20, x1=Math.max.apply(null,xs)+20;
       ctx.globalAlpha = ease * 0.15;
       ctx.strokeStyle = 'rgba(255,255,255,0.4)';
       ctx.lineWidth = 1; ctx.setLineDash([4,6]);
@@ -1285,22 +1203,19 @@ const easeOutQuart = t => 1 - Math.pow(1 - t, 4);
     }
 
     // Source dots
-    nodes.forEach(function(n, i) {
-      const startAt = (i / totalDots) * 0.45;
-      const dotP = Math.max(0, Math.min(1, (progress - startAt) / (1 - startAt)));
+    builtNodes.forEach(function(n, i) {
+      var startAt = (i / totalDots) * 0.45;
+      var dotP = Math.max(0, Math.min(1, (progress - startAt) / (1 - startAt)));
       if (dotP === 0) return;
-      const pulse = 0.78 + 0.22 * Math.sin(t*1.3 + n.phase);
-      // Glow
-      const grd = ctx.createRadialGradient(n.x,n.y,0,n.x,n.y,26);
+      var pulse = 0.78 + 0.22 * Math.sin(t*1.3 + n.phase);
+      var grd = ctx.createRadialGradient(n.x,n.y,0,n.x,n.y,26);
       grd.addColorStop(0, n.color+'AA'); grd.addColorStop(1, n.color+'00');
       ctx.globalAlpha = 0.5*dotP*pulse; ctx.fillStyle = grd;
       ctx.beginPath(); ctx.arc(n.x,n.y,26,0,Math.PI*2); ctx.fill();
-      // Core
       ctx.globalAlpha = dotP*pulse; ctx.fillStyle = n.color;
       ctx.beginPath(); ctx.arc(n.x,n.y,11,0,Math.PI*2); ctx.fill();
-      // Label
       if (dotP > 0.7) {
-        const a = (dotP-0.7)/0.3;
+        var a = (dotP-0.7)/0.3;
         ctx.globalAlpha = a*0.85; ctx.fillStyle = n.color;
         ctx.font = "bold 10px 'Space Grotesk'"; ctx.textAlign='center'; ctx.textBaseline='top';
         ctx.fillText(n.source, n.x, n.y+15);
@@ -1309,12 +1224,12 @@ const easeOutQuart = t => 1 - Math.pow(1 - t, 4);
 
     // Spectrum labels
     if (ease > 0.7) {
-      const a = (ease-0.7)/0.3;
+      var a = (ease-0.7)/0.3;
       ctx.globalAlpha = a*0.3; ctx.fillStyle='#F0F0F5';
       ctx.font="bold 9px 'Space Mono'"; ctx.textAlign='left'; ctx.textBaseline='middle';
-      ctx.fillText('← FRAME A', 16, H*0.5);
+      ctx.fillText('\u2190 FRAME A', 16, H*0.5);
       ctx.textAlign='right';
-      ctx.fillText('FRAME B →', W-16, H*0.5);
+      ctx.fillText('FRAME B \u2192', W-16, H*0.5);
       ctx.globalAlpha = a*0.06; ctx.strokeStyle='#ffffff';
       ctx.lineWidth=1; ctx.setLineDash([4,6]);
       ctx.beginPath(); ctx.moveTo(40, H*0.5); ctx.lineTo(W-40, H*0.5); ctx.stroke();
@@ -1325,40 +1240,41 @@ const easeOutQuart = t => 1 - Math.pow(1 - t, 4);
   }
 
   // Replay animation on scroll into view
-  const io = new IntersectionObserver(function(entries) {
+  var io = new IntersectionObserver(function(entries) {
     entries.forEach(function(e) {
       if (e.isIntersecting) {
-        build();
+        buildNodes();
         progress = 0;
-        nodes.forEach(function(n) { n.x = W/2; n.y = H/2; });
+        builtNodes.forEach(function(n) { n.x = W/2; n.y = H/2; });
         started = true;
         rAF(draw);
       }
     });
   }, { threshold: 0.2 });
   io.observe(canvas.closest('.diverge-sec'));
-  window.addEventListener('resize', function() { if (started) { build(); progress=0; } });
+  window.addEventListener('resize', function() { if (started) { buildNodes(); progress=0; } });
 
   canvas.addEventListener('mousemove', function(e) {
-    const rect=canvas.getBoundingClientRect();
-    const mx=(e.clientX-rect.left)*(W/rect.width);
-    const my=(e.clientY-rect.top)*(280/rect.height);
-    const hit=nodes.find(function(n){return Math.hypot(mx-n.x,my-n.y)<18});
+    var rect=canvas.getBoundingClientRect();
+    var mx=(e.clientX-rect.left)*(W/rect.width);
+    var my=(e.clientY-rect.top)*(280/rect.height);
+    var hit=builtNodes.find(function(n){return Math.hypot(mx-n.x,my-n.y)<18});
     if (hit) {
       tip.style.display='block';
       tip.style.left=(e.clientX+14)+'px'; tip.style.top=(e.clientY-8)+'px';
-      tip.innerHTML='<div class="tt-name" style="color:'+hit.color+'">'+hit.source+'</div>';
+      tip.innerHTML='<div class="tt-name" style="color:'+hit.color+'">'+hit.source+'</div>' +
+        (hit.title ? '<div class="tt-text">'+hit.title+'</div>' : '');
     } else tip.style.display='none';
   });
   canvas.addEventListener('mouseleave',function(){tip.style.display='none'});
-})();
+}
 
 
 /* ─── NAV scroll state ──────────────────── */
-(function(){
+function initNav() {
   var nav=document.querySelector('.nav');
   window.addEventListener('scroll',function(){nav.classList.toggle('solid',window.scrollY>80)},{passive:true});
-})();
+}
 </script>
 
 </body>
