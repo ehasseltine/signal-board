@@ -832,7 +832,28 @@ function seededRand(seed) { return ((Math.sin(seed) * 43758.5453) % 1 + 1) % 1; 
     validDates.push(date);
     var dom = (data.summary || {}).domain_distribution || {};
     var labelCounts = {};
+    // Map both new keys (war_and_conflict) and old keys (Security/Geopolitics)
+    // so the seismograph works with any version of latest.json
+    var OLD_TO_NEW = {
+      'Security':         'war_and_conflict',
+      'Geopolitics':      'global_relations',
+      'Governance':       'whos_in_charge',
+      'Economics':        'money_and_prices',
+      'Politics':         'whos_in_charge',
+      'Legal':            'rules_and_courts',
+      'Climate':          'the_environment',
+      'Information':      'media_and_information',
+      'Labor':            'work_and_workers',
+      'AI':               'ai_and_technology',
+    };
+    // Accumulate — new keys take precedence, old keys add to mapped bucket
     LABEL_KEYS.forEach(function(k) { labelCounts[k] = dom[k] || 0; });
+    Object.keys(dom).forEach(function(oldKey) {
+      var newKey = OLD_TO_NEW[oldKey];
+      if (newKey && labelCounts[newKey] === 0) {
+        labelCounts[newKey] = dom[oldKey] || 0;
+      }
+    });
     dayData[date] = {
       total: (data.summary || {}).total_stories || 0,
       labels: labelCounts,
@@ -1126,10 +1147,20 @@ function initDivergence(todayData) {
   var sorted = articles.slice().sort(function(a, b) {
     return TIER_ORDER.indexOf(a.tier || 'international') - TIER_ORDER.indexOf(b.tier || 'international');
   });
+  // Assign colors: use tier color as base, but when multiple sources share
+  // the same tier, cycle through a palette so they're visually distinct
+  var PALETTE = ['#FF2D55','#FF9500','#FFD60A','#30D158','#0A84FF','#BF5AF2','#00D4FF','#5AC8FA','#FF6B00','#34C759'];
+  var tierUsedCount = {};
   var nodes = sorted.map(function(a, i) {
+    var tier = a.tier || 'international';
+    tierUsedCount[tier] = (tierUsedCount[tier] || 0);
+    var baseColor = TIER_COLORS[tier] || '#FF9500';
+    // If there are multiple sources of same tier, rotate palette so they\'re visually distinct
+    var color = tierUsedCount[tier] === 0 ? baseColor : PALETTE[(PALETTE.indexOf(baseColor) + tierUsedCount[tier]) % PALETTE.length];
+    tierUsedCount[tier]++;
     return {
       source: a.source || ('Source ' + i),
-      color: TIER_COLORS[a.tier] || '#FF9500',
+      color: color,
       title: a.title || '',
       angle: sorted.length > 1 ? i / (sorted.length - 1) : 0.5,
       phase: seededRand(i * 11 + 5) * Math.PI * 2,
