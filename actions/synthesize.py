@@ -95,7 +95,7 @@ Return valid JSON with these fields:
   "accessible_headline": "A short, plain-English headline (max 12 words, 8th grade reading level) that a friend would text you. Describe the structural pattern in plain terms a reader would recognize from their own life, not the policy categories it falls under. No jargon. No words like 'clusters', 'weaponizes', 'escalation', 'signals'. Example: 'The Pentagon is planning ground operations in Iran. Here's what 18 outlets saw.'",
   "subheadline": "One sentence expanding on the headline with a specific detail or connection",
   "synthesis": "Maximum 3 paragraphs, maximum 200 words total. Every sentence must add new information or connection. Do not restate points made in the Thread, Gap, or Meanwhile sections. The close synthesis should ONLY contain observations that emerge from reading across all three sections — connections the individual sections could not make on their own.",
-  "cooperation_highlight": "One specific cooperation story (2-3 sentences) drawn from the data, with source attribution",
+  "coverage_gap_highlight": "One specific story (1-2 sentences) that only local, regional, or specialist outlets covered, and what the national silence says about structural forces.",
   "coverage_gap_note": "One specific observation (1-2 sentences) about what national coverage missed that local/regional sources caught",
   "thread_to_watch": "One structural force or pattern (1-2 sentences) worth watching in coming days. MUST name a specific institution, regulation, deadline, or measurable threshold. If you cannot name something concrete, omit this field. Abstract observations like 'information asymmetry is operating as a structural barrier' waste the reader's time. The reader should be able to check a specific source or set a calendar reminder.",
   "newsletter_lead": "2-3 sentences. Conversational opening for the email newsletter. First person. Name the single most striking thing you found reading across all sources today. Write it the way you'd start a message to a smart friend: 'The thing that stopped me today was...' or 'I read [article_count] articles and the pattern that kept showing up was...' Not a headline. An observation. This should make a subscriber want to click through to the full analysis."
@@ -110,7 +110,7 @@ STORY_SYNTHESIS_SYSTEM_PROMPT = f"""You are the editorial voice of Signal Board.
 
 1. THE DAILY THREAD — the story with the widest cross-tier coverage, showing how outlets from different worlds converge on the same structural force
 2. THE DAILY GAP — the story where framing diverges most sharply between outlet types, revealing what the gap between those frames tells us
-3. MEANWHILE — the cooperation and civic participation stories that local and specialist outlets cover while the national cycle ignores them
+3. MEANWHILE — the structural coverage gap: what local, regional, and specialist outlets covered that national media missed entirely, and what that silence reveals about who owns and funds the press
 
 For each story, you will write focused editorial analysis that gives readers genuine insight, not a data summary but a narrative that helps them understand what this story means, how different outlets are shaping it, why it matters to their life, and what to watch for next.
 
@@ -175,9 +175,9 @@ End with ONE pattern sentence (15-30 words) that delivers the editorial punchlin
 
 SPECIFIC GAP SECTION INSTRUCTIONS: The Gap synthesis paragraph should: (1) State what the story is (one sentence). (2) State why the framing divergence matters, what is LOST when audiences get different versions (one to two sentences). (3) Name the most striking single divergence, the one pair of framings most different from each other (one sentence). Do NOT list every outlet's framing in the synthesis paragraph. The framing rows do that. The Gap exists to show that the SAME events get packaged into DIFFERENT realities for different audiences. The synthesis should make the reader feel the stakes of that divergence, not catalog it.
 
-SPECIFIC MEANWHILE SECTION INSTRUCTIONS: The Meanwhile section must feel warm and specific, not statistical. Open with the cooperation count and rate, then immediately go to specific stories from specific outlets. Name the outlet, name the story, say what happened in one sentence. The cross_spectrum should contrast how national outlets covered an event versus how local outlets covered the same event, with specific outlet names and specific differences. Each framing row should be a full 20-30 word sentence, not a label. Make the reader feel like they are discovering outlets they have never heard of.
+SPECIFIC MEANWHILE SECTION INSTRUCTIONS: The Meanwhile section is about structural silence — not what was covered, but what wasn't, and why. Open by naming the specific stories that only local/regional/specialist outlets covered. Don't editorialize about whether they're "important" — show the reader exactly what was covered and let them draw the conclusion. The cross_spectrum should contrast national outlet coverage with local/specialist coverage on the same day, making the gap visible and concrete. Ask: is this a story about platform economics, about ownership, about proximity, about what national editors think their audience cares about? Name the structural force that explains the silence.
 
-CRITICAL ACCURACY RULE FOR MEANWHILE: In the "synthesis" field, you may ONLY name outlets that appear in the cooperation data provided to you (the highlights, by_type sources, or cooperation articles). Do not infer or assume that an outlet covered cooperation stories just because it appears elsewhere in the pipeline. If an outlet is not explicitly tagged as covering cooperation, do not name it in the Meanwhile synthesis. The cross_spectrum field may reference non-cooperation outlets for framing contrast (e.g. "while [national outlet] focused on X, [local outlet] covered Y"), but the synthesis must only name verified cooperation sources.
+CRITICAL ACCURACY RULE FOR MEANWHILE: Only name outlets that appear in the local_exclusive data provided. Do not infer coverage. If an outlet is not listed as having covered something exclusively, do not attribute coverage to it.
 
 **why_this_matters** (40-60 words maximum): Ground this story in personal relevance. Be SPECIFIC, not universal. Do not write "if you have a 401(k) or work in a regulated industry" because that is everyone. Instead, name the specific impact: what specific thing changed, what should the reader check, what is different about their life because of this story? The reader should learn ONE specific thing they did not know before reading this paragraph. If the paragraph could appear on any day about any topic, it is too vague. Cut it and write something that could only be true today.
 
@@ -207,9 +207,9 @@ Return valid JSON with this structure:
     }},
     {{
       "role": "meanwhile",
-      "structural_force": "cooperation",
-      "synthesis": "80-120 words. Count + rate, then specific stories from specific outlets.",
-      "cross_spectrum": "National vs local contrast, 20-30 words per outlet + pattern sentence.",
+      "structural_force": "coverage gap",
+      "synthesis": "80-120 words. Name specific stories only local/regional/specialist outlets covered. Identify the structural force that explains the silence.",
+      "cross_spectrum": "Contrast what national outlets covered vs what local/specialist outlets covered on the same day. 20-30 words per outlet. End with a pattern sentence naming why the gap exists.",
       "why_this_matters": "...",
       "watch_for": "..."
     }}
@@ -293,35 +293,18 @@ def build_synthesis_input(analysis: dict) -> str:
                 parts.append(f"     {tier_name}: \"{sample.get('title', '')}\" ({sample.get('source', '')})")
         parts.append("")
 
-    # Cooperation stories
-    coop = analysis.get("cooperation", {})
-    if coop and coop.get("total_cooperation_stories", 0) > 0:
-        parts.append(f"COOPERATION ({coop['total_cooperation_stories']} stories, {coop['cooperation_rate']}% of coverage):")
-        for ct in coop.get("by_type", [])[:6]:
-            sample = ct.get("sample", {})
-            parts.append(f"  - {ct['type']} ({ct['count']} articles): \"{sample.get('title', '')}\" ({sample.get('source', '')})")
-        highlights = coop.get("highlights", [])
-        if highlights:
-            parts.append("  HIGHLIGHTS (from local/regional/specialist sources):")
-            for h in highlights[:4]:
-                parts.append(f"    \"{h['title']}\" ({h['source']}, {h.get('tier', 'unknown')})")
-                if h.get("connection"):
-                    parts.append(f"    Connection: {h['connection']}")
-        coverage_gap = coop.get("coverage_gap", [])
-        if coverage_gap:
-            parts.append("  COOPERATION GAPS (forces with no decency signals):")
-            for gap in coverage_gap[:3]:
-                parts.append(f"    {gap['force']} ({gap['article_count']} articles, zero cooperation)")
-        parts.append("")
-
-    # Local/regional exclusive stories
+    # Local/regional/specialist exclusive stories (the structural gap)
     local = analysis.get("local_regional_exclusive", [])
     if local:
-        parts.append("STORIES NATIONAL MEDIA MISSED:")
-        for l in local[:5]:
+        parts.append("STORIES NATIONAL MEDIA MISSED (only local/regional/specialist outlets covered these):")
+        for l in local[:8]:
             parts.append(f"  - \"{l['title']}\" ({l['source']}, {l.get('tier', 'unknown')})")
             if l.get("connection"):
-                parts.append(f"    Connection: {l['connection']}")
+                parts.append(f"    Why it matters structurally: {l['connection']}")
+        parts.append("")
+        parts.append(f"Coverage gap note: {len(local)} stories only appeared in non-national outlets. "
+                     f"This is the structural gap — not random omission, but the result of platform economics "
+                     f"that starve local and specialist newsrooms.")
         parts.append("")
 
     # Bridging stories
@@ -359,7 +342,6 @@ def build_story_synthesis_input(analysis: dict) -> str:
     """
     parts = []
     stories = analysis.get("top_stories", [])
-    coop = analysis.get("cooperation", {})
     event_divergence = analysis.get("event_divergence", [])
     divergence = analysis.get("narrative_divergence", [])
     bridges = analysis.get("what_connects", [])
@@ -491,56 +473,28 @@ def build_story_synthesis_input(analysis: dict) -> str:
             parts.append(f"Connection: {conn.get('text', '')}")
         parts.append("")
 
-    # ── MEANWHILE: cooperation stories ──
+    # ── MEANWHILE: the structural coverage gap ──
+    # What local, regional, and specialist outlets covered that national media missed entirely.
+    # This is the third story — not cooperation, not decency, but the structural silence.
     parts.append("=" * 60)
     parts.append("STORY 3: MEANWHILE")
-    parts.append(f"Role: Who showed up today — cooperation, civic participation, people being decent")
+    parts.append("Role: The structural coverage gap — stories that only appeared in local, regional, or specialist outlets")
+    parts.append("The editorial question: what does national media systematically miss, and why?")
     parts.append("=" * 60)
 
-    if coop:
-        parts.append(f"Total cooperation stories: {coop.get('total_cooperation_stories', 0)}")
-        parts.append(f"Cooperation rate: {coop.get('cooperation_rate', 0)}% of all coverage")
-
-        by_type = coop.get("by_type", [])
-        if by_type:
-            parts.append("\nCooperation by type:")
-            for ct in by_type[:8]:
-                sample = ct.get("sample", {})
-                parts.append(f"  {ct['type']} ({ct['count']} articles)")
-                if sample:
-                    parts.append(f"    Example: \"{sample.get('title', '')}\" ({sample.get('source', '')})")
-                for src in ct.get("sources", [])[:4]:
-                    parts.append(f"    Source: {src}")
-
-        highlights = coop.get("highlights", [])
-        if highlights:
-            parts.append(f"\nHighlight stories ({len(highlights)}):")
-            for h in highlights[:6]:
-                parts.append(f"  \"{h.get('title', '')}\" ({h.get('source', '')}, {h.get('tier', '')})")
-                if h.get("connection"):
-                    parts.append(f"    {h['connection']}")
-                if h.get("cooperation_type"):
-                    parts.append(f"    Type: {h['cooperation_type']}")
-                if h.get("force_tag"):
-                    parts.append(f"    Force: {h['force_tag']}")
-
-        coverage_gap = coop.get("coverage_gap", [])
-        if coverage_gap:
-            parts.append("\nForces with ZERO cooperation signals:")
-            for gap in coverage_gap[:4]:
-                parts.append(f"  {gap['force']} ({gap['article_count']} articles)")
-                if gap.get("note"):
-                    parts.append(f"    {gap['note']}")
-
-    # Local/regional exclusive context
     if local_exclusive:
-        parts.append(f"\nStories only local/regional/specialist outlets covered:")
-        for l in local_exclusive[:6]:
-            parts.append(f"  \"{l.get('title', '')}\" ({l.get('source', '')}, {l.get('tier', '')})")
+        parts.append(f"Stories ONLY local/regional/specialist outlets covered ({len(local_exclusive)} total):")
+        for l in local_exclusive[:10]:
+            parts.append(f"  [{l.get('tier', 'unknown')}] \"{l.get('title', '')}\" ({l.get('source', '')})")
             if l.get("connection"):
-                parts.append(f"    {l['connection']}")
+                parts.append(f"    Structural connection: {l['connection']}")
             if l.get("context"):
-                parts.append(f"    Context: {l['context']}")
+                parts.append(f"    Source context: {l['context']}")
+        parts.append("")
+        parts.append("These are not niche stories. Ask: what structural force explains why national outlets "
+                     "didn't cover this? Is it platform economics? Ownership? Proximity to the community affected?")
+    else:
+        parts.append("No exclusive local/regional/specialist stories identified today.")
 
     return "\n".join(parts)
 

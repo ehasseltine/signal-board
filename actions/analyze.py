@@ -1361,7 +1361,6 @@ def generate_daily_analysis(articles, analysis_date, history):
     top_stories = analyze_top_stories(articles)
     structural_forces = analyze_structural_forces_map(articles)
     what_connects = analyze_what_connects(articles)
-    cooperation = analyze_cooperation_stories(articles)
     local_regional_exclusive = analyze_local_regional_exclusive(articles)
     active_threads = analyze_domain_collisions(articles, history)
     source_spectrum = analyze_source_spectrum(articles)
@@ -1413,7 +1412,6 @@ def generate_daily_analysis(articles, analysis_date, history):
         "top_stories": top_stories,
         "structural_forces": structural_forces,
         "what_connects": what_connects,
-        "cooperation": cooperation,
         "local_regional_exclusive": local_regional_exclusive,
         "active_threads": active_threads,
         "source_spectrum": source_spectrum,
@@ -1469,16 +1467,11 @@ def print_summary(analysis):
             print(f"  {i}. {b['headline'][:60]}")
             print(f"     Force: {b.get('structural_force', 'n/a')} | {b['spectrum_segments']}/4 segments | {b['total_sources']} sources")
 
-    if analysis.get("cooperation"):
-        coop = analysis["cooperation"]
-        print(f"\n--- WHERE PEOPLE ARE BEING DECENT ({coop['total_cooperation_stories']} stories, {coop['cooperation_rate']}% of coverage) ---")
-        for ct in coop.get("by_type", [])[:5]:
-            print(f"  • {ct['type']:30s}  {ct['count']:3d} articles  [{', '.join(ct['domains'][:2])}]")
-            print(f"    Example: {ct['sample']['title'][:70]}")
-        if coop.get("coverage_gap"):
-            print(f"\n  Coverage gaps (forces with no cooperation signals):")
-            for gap in coop["coverage_gap"][:3]:
-                print(f"    ? {gap['force']} ({gap['article_count']} articles)")
+    local_excl = analysis.get("local_regional_exclusive", [])
+    if local_excl:
+        print(f"\n--- STRUCTURAL COVERAGE GAP ({len(local_excl)} stories only in local/regional/specialist) ---")
+        for l in local_excl[:5]:
+            print(f"  [{l.get('tier','')}] {l['source']}: {l.get('title','')[:70]}")
 
     if analysis.get("questions"):
         print(f"\n--- QUESTIONS PEOPLE ARE ASKING ---")

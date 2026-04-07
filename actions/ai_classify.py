@@ -41,54 +41,106 @@ DOMAIN_DESCRIPTIONS = {
     "legal": "Legal — Courts, judges, lawsuits, legislation, constitutional law, enforcement, DOJ, civil rights, regulations, executive orders challenged in court",
 }
 
+# Canonical force vocabulary — constrained list that clusters cleanly.
+# The model MUST choose one of these. Free-form tags produce unmergeable noise.
+FORCE_VOCABULARY = """
+Pick the single best match from this list. If none fits well, pick the closest.
+
+Military & Conflict:
+- military escalation          (armed conflict intensifying, strikes, casualties)
+- military de-escalation       (ceasefire, withdrawal, peace talks succeeding)
+- coercive diplomacy           (threat of force used to extract political concession)
+- proxy conflict               (nations fighting through third-party actors)
+- civilian harm in conflict    (non-combatants killed, displaced, or economically harmed by war)
+
+Economics & Trade:
+- trade weaponization          (tariffs, sanctions, or export controls used as geopolitical leverage)
+- supply chain disruption      (war, policy, or disaster breaking production and delivery)
+- market volatility            (prices, currencies, or asset values swinging sharply)
+- regulatory capture           (industry influencing the rules meant to govern it)
+- automation displacing workers (AI or robots replacing human jobs at scale)
+- media consolidation          (ownership concentration reducing independent journalism)
+
+Governance & Power:
+- democratic erosion           (institutions, courts, or elections undermined by executive power)
+- democratic resilience        (institutions, courts, or civil society pushing back successfully)
+- electoral competition        (election campaigns, polls, voting access, electoral outcomes)
+- institutional accountability (officials, agencies, or corporations held to account)
+- executive overreach          (executive branch acting beyond legal authority)
+- information manipulation     (state or platform actors distorting public knowledge)
+
+Energy & Resources:
+- energy weaponization         (oil, gas, or electricity used as geopolitical leverage)
+- resource chokepoint          (control of a critical supply route or extraction site)
+- climate-driven disruption    (extreme weather, drought, or emissions affecting economy or policy)
+- food security threat         (agricultural supply disrupted by conflict, climate, or policy)
+
+Technology & Society:
+- platform power               (tech platforms controlling access to information or commerce)
+- AI governance gap            (AI deployed faster than regulation or safety frameworks)
+- surveillance expansion       (governments or companies extending monitoring of populations)
+
+Labor & Community:
+- labor precarity              (workers losing security through gig work, layoffs, or automation)
+- community organizing         (residents, workers, or communities building collective power)
+- mutual aid                   (people providing direct support outside formal institutions)
+
+Other:
+- geopolitical realignment     (alliances, partnerships, or spheres of influence shifting)
+- public health pressure       (disease, addiction, or healthcare costs straining communities)
+- other                        (use only if genuinely none of the above fit)
+"""
+
 # System prompt for batched classification
-BATCH_SYSTEM_PROMPT = """You classify news articles for Signal Board, a daily practice of reading the world through the conviction that people are inherently good and that the information architecture is failing them.
+BATCH_SYSTEM_PROMPT = """You classify news articles for Signal Board.
 
-You will receive a numbered list of articles (title + summary). For EACH article, you must:
+You will receive a numbered list of articles (title + summary). For EACH article:
 
-1. Assign one or more domain tags from the list below
-2. If the article touches 2+ domains, write ONE sentence (max 20 words) explaining the STRUCTURAL connection — not just naming the topics, but WHY they intersect in this story
-3. Assign a "force_tag" — a 2-5 word label for the underlying structural force at work (e.g., "automation displacing workers", "trade weaponization", "democratic erosion", "information asymmetry", "regulatory capture", "media consolidation", "platform monopoly", "algorithmic gatekeeping", "newsroom financial dependency"). This is the deeper pattern, not the headline topic. Pay particular attention to stories about tech companies acquiring media outlets, funding newsrooms, signing AI licensing deals with publishers, or controlling information distribution through platforms and algorithms — these are structural forces of media capture.
-4. Answer the SEVENTH QUESTION: "Where in this story are people being decent, and why is that not the headline?" Look for evidence of cooperation, mutual aid, community response, institutional integrity, people inside systems trying to fix them, cross-group solidarity, or ordinary decency. Set "cooperation" to true if ANY of these are present, even subtly. Set "cooperation_type" to a brief label (e.g., "mutual aid", "community organizing", "institutional reform", "cross-party collaboration", "volunteer response", "whistleblowing", "civic participation"). If no cooperation is visible, set both to false/"".
+1. DOMAINS: Assign one or more domain tags from the list below. Only tag domains genuinely central to the article.
+   - Consumer product reviews, lifestyle, recipes, celebrity gossip, entertainment, sports with no policy angle: return empty domains list.
+
+2. CONNECTION: If 2+ domains are tagged, write ONE sentence (max 20 words) explaining the STRUCTURAL mechanism connecting them — not just naming the topics, but WHY this specific story sits at their intersection.
+
+3. FORCE_TAG: Choose the single best-matching structural force from the vocabulary below. This is the underlying pattern driving the story, not the surface topic. You MUST pick from the provided list — do not invent new labels.
 
 Domains:
 {domains}
 
+Force vocabulary:
+{forces}
+
 Rules:
-- Only tag domains that are genuinely central to the article, not just mentioned in passing
-- Consumer product reviews, lifestyle content, recipes, celebrity gossip, entertainment, and sports should get NO domains — return empty domains list
-- The connection sentence should explain WHY these topics overlap, not just name them
-- The force_tag should name the structural force or pattern at work — think like a systems analyst, not a headline writer
-- For the cooperation question: look beneath the headline. A protest IS civic participation. A whistleblower IS institutional integrity. Workers organizing IS cooperation. Do not require the article to be "positive" — cooperation often happens inside crisis. But do not stretch: a politician giving a speech is not cooperation unless the speech describes actual cooperative action.
-- Be specific to each article, not generic
+- force_tag must exactly match one of the labels in the force vocabulary (e.g. "military escalation", "regulatory capture")
+- connection sentence explains mechanism, not topic names
+- Be precise. If uncertain between two forces, pick the one most central to WHY this story exists today.
 
 Respond ONLY with a valid JSON array, one object per article in order:
 [
-  {{"id": 1, "domains": ["domain_key", ...], "connection": "sentence or empty string", "force_tag": "structural force label", "cooperation": true/false, "cooperation_type": "label or empty string"}},
+  {{"id": 1, "domains": ["domain_key", ...], "connection": "sentence or empty string", "force_tag": "force label from vocabulary"}},
   ...
 ]"""
 
 # Single-article fallback prompt (for stragglers)
-SINGLE_SYSTEM_PROMPT = """You classify news articles for Signal Board, a daily practice of reading the world through the conviction that people are inherently good and that the information architecture is failing them.
+SINGLE_SYSTEM_PROMPT = """You classify news articles for Signal Board.
 
-Given an article's title and summary, you must:
+Given an article's title and summary:
 1. Assign one or more domain tags from the list below
-2. If the article touches 2+ domains, write ONE sentence (max 20 words) explaining the structural connection
-3. Assign a "force_tag" — a 2-5 word label for the underlying structural force at work (including media capture forces like "media consolidation", "platform monopoly", "newsroom financial dependency", "algorithmic gatekeeping")
-4. Answer the seventh question: "Where are people being decent?" Set "cooperation" to true if there is evidence of cooperation, mutual aid, community response, or institutional integrity. Set "cooperation_type" to a brief label.
+2. If 2+ domains, write ONE sentence (max 20 words) explaining the structural mechanism connecting them
+3. Assign a force_tag — pick from the force vocabulary below, exact match required
 
 Domains:
 {domains}
 
+Force vocabulary:
+{forces}
+
 Rules:
-- Only tag domains that are genuinely central to the article, not just mentioned in passing
-- Consumer product reviews, lifestyle, recipes, celebrity gossip, entertainment, sports: NO domains (empty list)
-- Connection sentence: explain WHY these topics overlap, not just name them
-- force_tag: the deeper structural pattern (e.g., "regulatory capture", "automation displacing workers", "media consolidation", "platform monopoly")
-- cooperation: look beneath the headline for evidence of people being decent, even inside crisis
+- Only tag domains genuinely central to the article
+- Consumer reviews, lifestyle, recipes, celebrity gossip, entertainment, sports: empty domains
+- force_tag must exactly match a label in the force vocabulary
 
 Respond ONLY with valid JSON:
-{{"domains": ["domain_key", ...], "connection": "sentence or empty string", "force_tag": "structural force label", "cooperation": true/false, "cooperation_type": "label or empty string"}}"""
+{{"domains": ["domain_key", ...], "connection": "sentence or empty string", "force_tag": "force label from vocabulary"}}"""
 
 
 def get_client():
@@ -110,6 +162,42 @@ def parse_ai_response(text: str) -> any:
     if text.startswith("json"):
         text = text[4:].strip()
     return json.loads(text)
+
+
+# Canonical force labels extracted from FORCE_VOCABULARY
+CANONICAL_FORCES = [
+    "military escalation", "military de-escalation", "coercive diplomacy",
+    "proxy conflict", "civilian harm in conflict",
+    "trade weaponization", "supply chain disruption", "market volatility",
+    "regulatory capture", "automation displacing workers", "media consolidation",
+    "democratic erosion", "democratic resilience", "electoral competition",
+    "institutional accountability", "executive overreach", "information manipulation",
+    "energy weaponization", "resource chokepoint", "climate-driven disruption",
+    "food security threat",
+    "platform power", "AI governance gap", "surveillance expansion",
+    "labor precarity", "community organizing", "mutual aid",
+    "geopolitical realignment", "public health pressure", "other",
+]
+
+
+def validate_force_tag(raw_tag: str) -> str:
+    """Snap a model-returned force tag to the closest canonical label."""
+    if not raw_tag:
+        return ""
+    tag_lower = raw_tag.lower().strip()
+    # Exact match first
+    if tag_lower in CANONICAL_FORCES:
+        return tag_lower
+    # Partial match — find canonical force with most word overlap
+    tag_words = set(tag_lower.split())
+    best, best_score = "", 0
+    for canon in CANONICAL_FORCES:
+        canon_words = set(canon.split())
+        score = len(tag_words & canon_words) / max(len(tag_words | canon_words), 1)
+        if score > best_score:
+            best, best_score = canon, score
+    # Accept if reasonable overlap; otherwise "other"
+    return best if best_score >= 0.3 else "other"
 
 
 def validate_domains(raw_domains: list) -> list:
@@ -137,7 +225,7 @@ def classify_batch_chunk(articles_chunk: list[dict], chunk_index: int, client) -
     Returns list of classification results aligned with input order.
     """
     domain_list = "\n".join(f"- {v}" for v in DOMAIN_DESCRIPTIONS.values())
-    system = BATCH_SYSTEM_PROMPT.format(domains=domain_list)
+    system = BATCH_SYSTEM_PROMPT.format(domains=domain_list, forces=FORCE_VOCABULARY)
 
     # Build the numbered article list
     lines = []
@@ -174,15 +262,11 @@ def classify_batch_chunk(articles_chunk: list[dict], chunk_index: int, client) -
             if r:
                 domains = validate_domains(r.get("domains", []))
                 connection = r.get("connection", "")
-                force_tag = r.get("force_tag", "")
-                cooperation = bool(r.get("cooperation", False))
-                cooperation_type = r.get("cooperation_type", "") if cooperation else ""
+                force_tag = validate_force_tag(r.get("force_tag", ""))
                 output.append({
                     "domains": domains,
                     "connection": connection if len(domains) > 1 else "",
                     "force_tag": force_tag,
-                    "cooperation": cooperation,
-                    "cooperation_type": cooperation_type,
                 })
             else:
                 output.append(None)
@@ -218,15 +302,11 @@ def classify_batch_chunk(articles_chunk: list[dict], chunk_index: int, client) -
                         if r:
                             domains = validate_domains(r.get("domains", []))
                             connection = r.get("connection", "")
-                            force_tag = r.get("force_tag", "")
-                            cooperation = bool(r.get("cooperation", False))
-                            cooperation_type = r.get("cooperation_type", "") if cooperation else ""
+                            force_tag = validate_force_tag(r.get("force_tag", ""))
                             output.append({
                                 "domains": domains,
                                 "connection": connection if len(domains) > 1 else "",
                                 "force_tag": force_tag,
-                                "cooperation": cooperation,
-                                "cooperation_type": cooperation_type,
                             })
                         else:
                             output.append(None)
@@ -311,8 +391,9 @@ def classify_batch(articles: list[dict], batch_size: int = 12) -> list[dict]:
                 a["cross_domain"] = len(result["domains"]) > 1
                 a["connection"] = result.get("connection", "")
                 a["force_tag"] = result.get("force_tag", "")
-                a["cooperation"] = result.get("cooperation", False)
-                a["cooperation_type"] = result.get("cooperation_type", "")
+                # Cooperation fields removed — too noisy at Haiku cost point
+                a.pop("cooperation", None)
+                a.pop("cooperation_type", None)
                 ai_count += 1
             else:
                 # Fallback to keywords
@@ -320,8 +401,8 @@ def classify_batch(articles: list[dict], batch_size: int = 12) -> list[dict]:
                 a["cross_domain"] = len(a["domains"]) > 1
                 a["connection"] = ""
                 a["force_tag"] = ""
-                a["cooperation"] = False
-                a["cooperation_type"] = ""
+                a.pop("cooperation", None)
+                a.pop("cooperation_type", None)
                 fallback_count += 1
             article_idx += 1
 
@@ -336,7 +417,7 @@ def classify_article(title: str, summary: str, client=None) -> dict:
     if client is None:
         return None
     domain_list = "\n".join(f"- {v}" for v in DOMAIN_DESCRIPTIONS.values())
-    system = SINGLE_SYSTEM_PROMPT.format(domains=domain_list)
+    system = SINGLE_SYSTEM_PROMPT.format(domains=domain_list, forces=FORCE_VOCABULARY)
     user_msg = f"Title: {title}\nSummary: {summary[:400] if summary else '(no summary)'}"
     try:
         response = client.messages.create(
@@ -348,15 +429,11 @@ def classify_article(title: str, summary: str, client=None) -> dict:
         result = parse_ai_response(response.content[0].text)
         domains = validate_domains(result.get("domains", []))
         connection = result.get("connection", "")
-        force_tag = result.get("force_tag", "")
-        cooperation = bool(result.get("cooperation", False))
-        cooperation_type = result.get("cooperation_type", "") if cooperation else ""
+        force_tag = validate_force_tag(result.get("force_tag", ""))
         return {
             "domains": domains,
             "connection": connection if len(domains) > 1 else "",
             "force_tag": force_tag,
-            "cooperation": cooperation,
-            "cooperation_type": cooperation_type,
         }
     except Exception:
         return None
