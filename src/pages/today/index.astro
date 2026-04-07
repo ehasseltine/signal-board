@@ -525,39 +525,43 @@ body { background: var(--bg); color: var(--white); font-family: var(--sans);
 .sg-title { font-family: var(--mono); font-size: clamp(22px, 3vw, 34px); font-weight: 700; letter-spacing: -0.02em; color: var(--white); margin-bottom: 6px; }
 .sg-sub   { font-family: var(--mono); font-size: 11px; color: var(--dim); letter-spacing: 0.05em; }
 
-/* Date labels */
+/* Date labels — must mirror grid column layout exactly */
 .sg-dates {
-  display: flex; padding-left: 130px;
-  padding-right: 16px;
-  margin-bottom: 4px;
-  gap: 3px;
+  display: flex;
+  padding-left: 136px;  /* label-col 128 + 8 gap */
+  padding-right: 0;
+  margin-bottom: 8px;
+  gap: 4px;             /* matches grid column gap */
 }
 .sg-date-label {
   flex: 1; text-align: center;
-  font-family: var(--mono); font-size: 9px; color: var(--faint);
-  letter-spacing: 0.05em; text-transform: uppercase;
+  font-family: var(--mono); font-size: 10px; color: var(--faint);
+  letter-spacing: 0.06em; text-transform: uppercase;
 }
-.sg-date-label.today { color: var(--yellow); }
+.sg-date-label.today { color: var(--yellow); font-weight: 700; }
 
-/* Grid layout */
+/* Grid layout — 8px spacing scale throughout */
 .sg-grid-wrap {
   display: flex;
-  padding: 0 16px 0 0;
+  gap: 8px;             /* gap between label col and grid */
+  padding: 0;
   overflow-x: auto;
 }
 .sg-labels {
-  width: 130px; flex-shrink: 0;
+  width: 128px; flex-shrink: 0;
   display: flex; flex-direction: column;
+  gap: 4px;             /* matches grid row gap */
 }
 .sg-label-row {
-  display: flex; align-items: flex-end; justify-content: flex-end;
-  padding-right: 10px;
-  font-family: var(--mono); font-size: 9px; color: var(--dim);
+  display: flex; align-items: center; justify-content: flex-end;
+  padding-right: 0;
+  height: 24px;         /* fixed row height — grid cells match */
+  font-family: var(--mono); font-size: 10px; color: var(--dim);
   letter-spacing: 0.04em; text-transform: uppercase;
   cursor: pointer; transition: color 0.15s;
   user-select: none;
-  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-  line-height: 1.2;
+  white-space: nowrap;
+  line-height: 1;
 }
 .sg-label-row:hover { color: var(--white); }
 .sg-label-row.active { color: var(--white); font-weight: 700; }
@@ -565,14 +569,14 @@ body { background: var(--bg); color: var(--white); font-family: var(--sans);
 .sg-grid {
   flex: 1;
   display: flex;
-  gap: 3px;
+  gap: 4px;             /* column gap */
   align-items: stretch;
 }
 
 /* Detail panel */
 .sg-detail {
-  margin-top: 12px;
-  padding: 0 16px 0 130px;
+  margin-top: 16px;
+  padding: 0 0 0 136px;
   min-height: 180px;
 }
 .sg-detail-inner {
@@ -583,7 +587,7 @@ body { background: var(--bg); color: var(--white); font-family: var(--sans);
   transition: all 0.3s var(--ease);
 }
 .sdi-hint { font-family: var(--mono); font-size: 11px; color: var(--faint); }
-.sdi-header { display: flex; align-items: baseline; gap: 16px; margin-bottom: 16px; flex-wrap: wrap; }
+.sdi-header { display: flex; align-items: baseline; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
 .sdi-label { font-family: var(--mono); font-size: 13px; font-weight: 700; color: var(--white); }
 .sdi-date  { font-family: var(--mono); font-size: 11px; color: var(--faint); }
 .sdi-count { font-family: var(--mono); font-size: 11px; font-weight: 700; }
@@ -600,7 +604,7 @@ body { background: var(--bg); color: var(--white); font-family: var(--sans);
 
 /* ── SPIKE ANNOTATIONS ──────────────────── */
 .sg-annotations {
-  padding: 16px 16px 8px 130px;
+  padding: 32px 0 8px 136px; /* 2rem top gap from grid */
 }
 .sg-annotation {
   display: inline-block;
@@ -627,20 +631,22 @@ body { background: var(--bg); color: var(--white); font-family: var(--sans);
   line-height: 1; letter-spacing: -0.04em; color: var(--yellow);
 }
 .div-title { font-family: var(--mono); font-size: clamp(16px, 2vw, 22px); font-weight: 700; color: var(--white); margin-bottom: 4px; }
-.div-sub   { font-family: var(--mono); font-size: 11px; color: var(--dim); line-height: 1.6; }
+.div-sub   { font-family: var(--mono); font-size: 11px; color: var(--dim); line-height: 1.8; white-space: pre-line; }
 .div-evidence {
-  padding: 0 0 24px;
-  display: flex; flex-wrap: wrap; gap: 8px;
+  padding: 16px 0 32px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px 24px;       /* row 1rem, column 1.5rem */
 }
 .div-ev-card {
-  background: var(--bg3); border: 1px solid var(--faint); border-radius: 6px;
-  padding: 8px 12px; max-width: 320px;
+  background: var(--bg3); border: 1px solid var(--faint); border-radius: 8px;
+  padding: 12px 16px;
   font-family: var(--mono); font-size: 10px; line-height: 1.5;
 }
-.div-ev-src { font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 2px; }
+.div-ev-src { font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; }
 .div-ev-title { color: var(--dim); font-style: italic; }
 
-#diverge-canvas { display: block; width: 100%; height: 380px; }
+#diverge-canvas { display: block; width: 100%; height: 480px; } /* taller for label room */
 
 /* ── SHARED TOOLTIP ───────────────────── */
 .tooltip {
@@ -661,13 +667,14 @@ body { background: var(--bg); color: var(--white); font-family: var(--sans);
 
 /* ── RESPONSIVE ───────────────────────── */
 @media (max-width: 600px) {
-  .sg-dates { padding-left: 100px; }
-  .sg-labels { width: 100px; }
-  .sg-label-row { font-size: 8px; }
-  .sg-detail { padding-left: 100px; }
+  .sg-dates { padding-left: 104px; }
+  .sg-labels { width: 96px; }
+  .sg-label-row { font-size: 8px; height: 20px; }
+  .sg-detail { padding-left: 104px; }
   .hero-stats { gap: 20px; }
-  .sg-annotations { padding-left: 100px; }
+  .sg-annotations { padding-left: 104px; }
   .corpus-strip { gap: 20px; padding: 16px 20px; }
+  #diverge-canvas { height: 360px; }
 }
   </style>
 </head>
@@ -1226,7 +1233,7 @@ function initSeismograph(dates, dayData) {
 
   dates.forEach(function(date, di) {
     var col = document.createElement('div');
-    col.style.cssText = 'flex:1; display:flex; flex-direction:column; gap:3px;';
+    col.style.cssText = 'flex:1; display:flex; flex-direction:column; gap:4px;';
     cells[date] = {};
 
     LABEL_KEYS.forEach(function(key) {
@@ -1235,7 +1242,7 @@ function initSeismograph(dates, dayData) {
       var color = LABELS[key].color;
 
       var cell = document.createElement('div');
-      cell.style.cssText = 'flex:1; position:relative; background:#18182A; border-radius:2px; cursor:pointer; overflow:hidden; min-height:22px; transition:transform 0.12s;';
+      cell.style.cssText = 'height:24px; flex:none; position:relative; background:#18182A; border-radius:2px; cursor:pointer; overflow:hidden; transition:transform 0.12s;';
       cell.dataset.date = date;
       cell.dataset.key = key;
       cell.dataset.val = val;
@@ -1283,20 +1290,7 @@ function initSeismograph(dates, dayData) {
   }, { threshold: 0.1 });
   io.observe(gridEl);
 
-  // ── Sync label row heights with grid rows ─
-  function syncLabelHeights() {
-    var firstCol = gridEl.children[0];
-    if (!firstCol) return;
-    var cellEls = firstCol.children;
-    var labelEls = labelsCol.querySelectorAll('.sg-label-row');
-    for (var i = 0; i < cellEls.length; i++) {
-      if (labelEls[i]) {
-        labelEls[i].style.height = cellEls[i].offsetHeight + 'px';
-      }
-    }
-  }
-  window.addEventListener('resize', syncLabelHeights);
-  setTimeout(syncLabelHeights, 200);
+  // Label and grid rows are both fixed 24px + 4px gap — no sync needed.
 
   // ── Build spike annotations ────────────
   // Find the biggest moves: which labels spiked the most on which days
@@ -1376,8 +1370,8 @@ function initSeismograph(dates, dayData) {
     detailEl.innerHTML =
       '<div class="sdi-header">' +
         '<span class="sdi-label" style="color:' + color + '">' + label + '</span>' +
-        '<span class="sdi-date">' + dateStr + '</span>' +
-        '<span class="sdi-count" style="color:' + color + '">' + val + ' articles</span>' +
+        '<span class="sdi-date"> \u00B7 ' + dateStr + '</span>' +
+        '<span class="sdi-count" style="color:' + color + '"> \u00B7 ' + val + ' articles</span>' +
       '</div>' +
       storyHTML +
       '<div class="sdi-articles">' + articleHTML + '</div>';
@@ -1463,11 +1457,11 @@ function initDivergence(todayData) {
 
   // Update header text with specific story
   titleEl.textContent = sourceCount + ' sources. ' + articleCount + ' articles. One story.';
-  var subText = storyName ? storyName + ' \u2014 ' : '';
-  subText += forceDisplay + ' framing divergence score: ' + score.toFixed(2);
-  if (kwDiv) subText += ' · Keyword divergence: ' + kwDiv.toFixed(2);
-  subText += '\n' + (storyDesc ? storyDesc : 'Measured by how differently each outlet framed the same event.');
-  subEl.textContent = subText;
+  var line1 = storyName ? storyName + ' \u2014 ' : '';
+  line1 += forceDisplay + ' framing divergence: ' + score.toFixed(2);
+  if (kwDiv) line1 += ' \u00B7 Keyword divergence: ' + kwDiv.toFixed(2);
+  var line2 = storyDesc ? storyDesc : 'Measured by how differently each outlet framed the same event.';
+  subEl.innerHTML = '<span>' + line1 + '</span><br><span style="color:var(--yellow);opacity:0.7">' + line2 + '</span>';
 
   // Build evidence cards from articles
   if (evidenceEl && articles.length > 0) {
@@ -1535,21 +1529,54 @@ function initDivergence(todayData) {
   var W, H, builtNodes=[], progress=0, started=false;
 
   function buildNodes() {
-    W = canvas.offsetWidth; H = 380; canvas.height = H;
+    W = canvas.offsetWidth; H = 480; canvas.height = H;
     canvas.width = W;
-    var cy = H * 0.5;
+    var cy = H * 0.48;
+    var INSET_L = 80;   /* room for left labels */
+    var INSET_R = 120;  /* room for right labels */
+    var INSET_Y = 48;   /* top/bottom padding */
     builtNodes = nodes.map(function(a, i) {
       return {
         source: a.source,
         color: a.color,
         title: a.title,
         angle: a.angle,
-        tx: 40 + a.angle * (W - 80) + (seededRand(i*7+1) - 0.5) * 40,
-        ty: cy + (seededRand(i*13+3) - 0.5) * H * 0.7,
+        tx: INSET_L + a.angle * (W - INSET_L - INSET_R) + (seededRand(i*7+1) - 0.5) * 32,
+        ty: INSET_Y + (seededRand(i*13+3)) * (H - INSET_Y * 2),
         x: W/2, y: cy,
         phase: a.phase,
+        labelY: 0,  /* will be set by collision pass */
       };
     });
+    /* ── Label collision avoidance ──────────── */
+    /* Sort by x to process left-to-right, then nudge overlapping labels */
+    var sorted = builtNodes.slice().sort(function(a,b) { return a.tx - b.tx; });
+    var LABEL_H = 14;  /* approx label height */
+    var LABEL_W = 80;  /* approx label width */
+    for (var i = 0; i < sorted.length; i++) {
+      var n = sorted[i];
+      n.labelY = n.ty + 18; /* default: below dot */
+      /* Check against all previously placed labels */
+      for (var j = 0; j < i; j++) {
+        var other = sorted[j];
+        var dx = Math.abs(n.tx - other.tx);
+        var dy = Math.abs(n.labelY - other.labelY);
+        if (dx < LABEL_W && dy < LABEL_H) {
+          /* Collision detected — try above the dot */
+          n.labelY = n.ty - 22;
+          /* Check again above */
+          for (var k = 0; k < i; k++) {
+            var o2 = sorted[k];
+            if (Math.abs(n.tx - o2.tx) < LABEL_W && Math.abs(n.labelY - o2.labelY) < LABEL_H) {
+              /* Still colliding — offset further */
+              n.labelY = n.ty - 36;
+              break;
+            }
+          }
+          break;
+        }
+      }
+    }
   }
 
   var t=0;
@@ -1594,23 +1621,28 @@ function initDivergence(todayData) {
       ctx.beginPath(); ctx.arc(n.x,n.y,11,0,Math.PI*2); ctx.fill();
       if (dotP > 0.7) {
         var a = (dotP-0.7)/0.3;
+        /* Use pre-computed labelY with collision avoidance */
+        var ly = lerp(H/2 + 18, n.labelY, dotEase);
+        var above = (n.labelY < n.ty);  /* label above dot? */
         ctx.globalAlpha = a*0.85; ctx.fillStyle = n.color;
-        ctx.font = "bold 10px 'Space Grotesk'"; ctx.textAlign='center'; ctx.textBaseline='top';
-        ctx.fillText(n.source, n.x, n.y+15);
+        ctx.font = "bold 10px 'Space Grotesk'"; ctx.textAlign='center';
+        ctx.textBaseline = above ? 'bottom' : 'top';
+        ctx.fillText(n.source, n.x, ly);
       }
     });
 
     // Spectrum labels — specific to the actual story
     if (ease > 0.7) {
       var a = (ease-0.7)/0.3;
-      ctx.globalAlpha = a*0.3; ctx.fillStyle='#F0F0F5';
+      var midY = H * 0.48;
+      ctx.globalAlpha = a*0.25; ctx.fillStyle='#F0F0F5';
       ctx.font="bold 9px 'Space Mono'"; ctx.textAlign='left'; ctx.textBaseline='middle';
-      ctx.fillText('\u2190 US MILITARY FRAME', 16, H*0.5);
+      ctx.fillText('\u2190 US MILITARY FRAME', 16, H - 24);
       ctx.textAlign='right';
-      ctx.fillText('IRAN SOVEREIGNTY FRAME \u2192', W-16, H*0.5);
-      ctx.globalAlpha = a*0.06; ctx.strokeStyle='#ffffff';
+      ctx.fillText('IRAN SOVEREIGNTY FRAME \u2192', W-16, H - 24);
+      ctx.globalAlpha = a*0.05; ctx.strokeStyle='#ffffff';
       ctx.lineWidth=1; ctx.setLineDash([4,6]);
-      ctx.beginPath(); ctx.moveTo(40, H*0.5); ctx.lineTo(W-40, H*0.5); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(80, H - 24); ctx.lineTo(W-120, H - 24); ctx.stroke();
       ctx.setLineDash([]);
     }
     ctx.globalAlpha=1; ctx.textAlign='left'; ctx.textBaseline='alphabetic';
