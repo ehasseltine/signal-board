@@ -576,7 +576,7 @@ body { background: var(--bg); color: var(--white); font-family: var(--sans);
   cursor: pointer;
   overflow: hidden;
   transition: transform 0.12s var(--ease), box-shadow 0.12s;
-  min-height: 22px;
+  min-height: 32px;
 }
 .sg-cell:hover { transform: scale(1.06); z-index: 10; }
 .sg-cell.selected { box-shadow: 0 0 0 2px var(--yellow); z-index: 20; }
@@ -831,27 +831,33 @@ function seededRand(seed) { return ((Math.sin(seed) * 43758.5453) % 1 + 1) % 1; 
     var date = dates[i];
     validDates.push(date);
     var dom = (data.summary || {}).domain_distribution || {};
-    var labelCounts = {};
-    // Map both new keys (war_and_conflict) and old keys (Security/Geopolitics)
-    // so the seismograph works with any version of latest.json
-    var OLD_TO_NEW = {
-      'Security':         'war_and_conflict',
-      'Geopolitics':      'global_relations',
-      'Governance':       'whos_in_charge',
-      'Economics':        'money_and_prices',
-      'Politics':         'whos_in_charge',
-      'Legal':            'rules_and_courts',
-      'Climate':          'the_environment',
-      'Information':      'media_and_information',
-      'Labor':            'work_and_workers',
-      'AI':               'ai_and_technology',
+    // Map ANY key format to internal LABEL_KEYS:
+    // - New display: "War & Conflict" → war_and_conflict
+    // - Old 10-key:  "Security"       → war_and_conflict
+    // - Internal:    "war_and_conflict" stays as-is
+    var KEY_MAP = {
+      'War & Conflict':'war_and_conflict', 'Security':'war_and_conflict',
+      "Who's in Charge":'whos_in_charge', 'Governance':'whos_in_charge', 'Politics':'whos_in_charge',
+      'Rules & Courts':'rules_and_courts', 'Legal':'rules_and_courts',
+      'Money & Prices':'money_and_prices', 'Economics':'money_and_prices',
+      'Oil & Energy':'oil_and_energy',
+      'Global Relations':'global_relations', 'Geopolitics':'global_relations',
+      'Rights & Justice':'rights_and_justice',
+      'AI & Technology':'ai_and_technology', 'AI':'ai_and_technology',
+      'Communities':'communities',
+      'Health':'health',
+      'Work & Workers':'work_and_workers', 'Labor':'work_and_workers',
+      'Media & Info':'media_and_information', 'Information':'media_and_information',
+      'The Environment':'the_environment', 'Climate':'the_environment',
+      'Food & Land':'food_and_land',
+      'People Power':'people_power',
     };
-    // Accumulate — new keys take precedence, old keys add to mapped bucket
-    LABEL_KEYS.forEach(function(k) { labelCounts[k] = dom[k] || 0; });
-    Object.keys(dom).forEach(function(oldKey) {
-      var newKey = OLD_TO_NEW[oldKey];
-      if (newKey && labelCounts[newKey] === 0) {
-        labelCounts[newKey] = dom[oldKey] || 0;
+    var labelCounts = {};
+    LABEL_KEYS.forEach(function(k) { labelCounts[k] = 0; });
+    Object.keys(dom).forEach(function(rawKey) {
+      var internal = KEY_MAP[rawKey] || rawKey;
+      if (labelCounts.hasOwnProperty(internal)) {
+        labelCounts[internal] += dom[rawKey];
       }
     });
     dayData[date] = {
