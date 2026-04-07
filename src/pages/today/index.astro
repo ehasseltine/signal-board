@@ -527,9 +527,10 @@ body { background: var(--bg); color: var(--white); font-family: var(--sans);
 
 /* Date labels */
 .sg-dates {
-  display: flex; padding-left: 120px;
+  display: flex; padding-left: 130px;
   padding-right: 16px;
   margin-bottom: 4px;
+  gap: 3px;
 }
 .sg-date-label {
   flex: 1; text-align: center;
@@ -545,7 +546,7 @@ body { background: var(--bg); color: var(--white); font-family: var(--sans);
   overflow-x: auto;
 }
 .sg-labels {
-  width: 120px; flex-shrink: 0;
+  width: 130px; flex-shrink: 0;
   display: flex; flex-direction: column;
 }
 .sg-label-row {
@@ -555,6 +556,8 @@ body { background: var(--bg); color: var(--white); font-family: var(--sans);
   letter-spacing: 0.04em; text-transform: uppercase;
   cursor: pointer; transition: color 0.15s;
   user-select: none;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  line-height: 1.2;
 }
 .sg-label-row:hover { color: var(--white); }
 .sg-label-row.active { color: var(--white); font-weight: 700; }
@@ -569,7 +572,7 @@ body { background: var(--bg); color: var(--white); font-family: var(--sans);
 /* Detail panel */
 .sg-detail {
   margin-top: 12px;
-  padding: 0 16px 0 120px;
+  padding: 0 16px 0 130px;
   min-height: 180px;
 }
 .sg-detail-inner {
@@ -580,7 +583,7 @@ body { background: var(--bg); color: var(--white); font-family: var(--sans);
   transition: all 0.3s var(--ease);
 }
 .sdi-hint { font-family: var(--mono); font-size: 11px; color: var(--faint); }
-.sdi-header { display: flex; align-items: baseline; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }
+.sdi-header { display: flex; align-items: baseline; gap: 16px; margin-bottom: 16px; flex-wrap: wrap; }
 .sdi-label { font-family: var(--mono); font-size: 13px; font-weight: 700; color: var(--white); }
 .sdi-date  { font-family: var(--mono); font-size: 11px; color: var(--faint); }
 .sdi-count { font-family: var(--mono); font-size: 11px; font-weight: 700; }
@@ -597,7 +600,7 @@ body { background: var(--bg); color: var(--white); font-family: var(--sans);
 
 /* ── SPIKE ANNOTATIONS ──────────────────── */
 .sg-annotations {
-  padding: 16px 16px 8px 120px;
+  padding: 16px 16px 8px 130px;
 }
 .sg-annotation {
   display: inline-block;
@@ -658,12 +661,12 @@ body { background: var(--bg); color: var(--white); font-family: var(--sans);
 
 /* ── RESPONSIVE ───────────────────────── */
 @media (max-width: 600px) {
-  .sg-dates { padding-left: 90px; }
-  .sg-labels { width: 90px; }
+  .sg-dates { padding-left: 100px; }
+  .sg-labels { width: 100px; }
   .sg-label-row { font-size: 8px; }
-  .sg-detail { padding-left: 90px; }
+  .sg-detail { padding-left: 100px; }
   .hero-stats { gap: 20px; }
-  .sg-annotations { padding-left: 90px; }
+  .sg-annotations { padding-left: 100px; }
   .corpus-strip { gap: 20px; padding: 16px 20px; }
 }
   </style>
