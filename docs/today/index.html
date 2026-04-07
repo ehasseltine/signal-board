@@ -255,20 +255,23 @@ function initSeismograph(dates, dayData) {
       var color = LABELS[key].color;
 
       var cell = document.createElement('div');
-      cell.className = 'sg-cell';
+      cell.style.cssText = 'flex:1; position:relative; background:#18182A; border-radius:2px; cursor:pointer; overflow:hidden; min-height:32px; transition:transform 0.12s;';
       cell.dataset.date = date;
       cell.dataset.key = key;
       cell.dataset.val = val;
+      cell.addEventListener('mouseover', function(){cell.style.transform='scale(1.06)';cell.style.zIndex='10';});
+      cell.addEventListener('mouseout', function(){cell.style.transform='';cell.style.zIndex='';});
 
       var fill = document.createElement('div');
-      fill.className = 'sg-cell-fill';
-      fill.style.height = '0%';
+      fill.style.cssText = 'position:absolute; bottom:0; left:0; right:0; border-radius:2px; opacity:0.85; height:0%; transition:height 1.2s cubic-bezier(0.16,1,0.3,1);';
       fill.style.background = 'linear-gradient(0deg, ' + color + 'DD, ' + color + '66)';
 
       var num = document.createElement('div');
-      num.className = 'sg-cell-num';
+      num.style.cssText = 'position:absolute; bottom:2px; left:0; right:0; text-align:center; font-family:Space Mono,monospace; font-size:8px; font-weight:700; pointer-events:none; z-index:5; opacity:0; transition:opacity 0.15s;';
       num.style.color = color;
       num.textContent = val;
+      cell.addEventListener('mouseover', function(){num.style.opacity='1';});
+      cell.addEventListener('mouseout', function(){num.style.opacity='0';});
 
       cell.appendChild(fill);
       cell.appendChild(num);
@@ -389,39 +392,53 @@ function initDivergence(todayData) {
 
   var score = topCluster.divergence ? topCluster.divergence.score : (topCluster.score || 0);
   var articles = topCluster.articles || [];
-  var sourceCount = topCluster.sources ? topCluster.sources.length : articles.length;
+  var allSources = topCluster.sources || [];  // 37 source name strings
+  var sourceCount = allSources.length || articles.length;
   var entities = topCluster.entities || [];
-  var forceLabel = topCluster.structural_force || topCluster.label || '';
+  var rawForce = topCluster.structural_force || topCluster.label || '';
+
+  // Display name mapping (raw key → readable)
+  var FORCE_DISPLAY = {
+    'war_and_conflict':'War & Conflict','whos_in_charge':"Who's in Charge",
+    'rules_and_courts':'Rules & Courts','money_and_prices':'Money & Prices',
+    'oil_and_energy':'Oil & Energy','global_relations':'Global Relations',
+    'rights_and_justice':'Rights & Justice','ai_and_technology':'AI & Technology',
+    'communities':'Communities','health':'Health','work_and_workers':'Work & Workers',
+    'media_and_information':'Media & Information','the_environment':'The Environment',
+    'food_and_land':'Food & Land','people_power':'People Power',
+  };
+  var forceDisplay = FORCE_DISPLAY[rawForce] || rawForce;
 
   // Update header text
   titleEl.textContent = sourceCount + ' sources. One event. Today.';
-  subEl.textContent = 'The same ' + (entities[0] || forceLabel) + ' story \u2014 measured by how differently it was framed.';
+  subEl.textContent = 'The same ' + forceDisplay + ' story \u2014 measured by how differently it was framed.';
 
-  // Build nodes sorted by tier for left-to-right spread
-  var TIER_ORDER = ['national','newsletter','analysis','international','specialist','local-regional','government'];
-  var TIER_COLORS = {
-    national: '#FF2D55', international: '#FF9500', 'local-regional': '#30D158',
-    specialist: '#0A84FF', analysis: '#BF5AF2', newsletter: '#FFD60A', government: '#5AC8FA'
-  };
-  var sorted = articles.slice().sort(function(a, b) {
-    return TIER_ORDER.indexOf(a.tier || 'international') - TIER_ORDER.indexOf(b.tier || 'international');
+  // Build ALL nodes from sources[] (37), using articles[] only for tier/title lookup
+  var articleLookup = {};
+  articles.forEach(function(a) {
+    if (a.source) articleLookup[a.source] = { tier: a.tier || 'international', title: a.title || '' };
   });
-  // Assign colors: use tier color as base, but when multiple sources share
-  // the same tier, cycle through a palette so they're visually distinct
-  var PALETTE = ['#FF2D55','#FF9500','#FFD60A','#30D158','#0A84FF','#BF5AF2','#00D4FF','#5AC8FA','#FF6B00','#34C759'];
-  var tierUsedCount = {};
-  var nodes = sorted.map(function(a, i) {
-    var tier = a.tier || 'international';
-    tierUsedCount[tier] = (tierUsedCount[tier] || 0);
-    var baseColor = TIER_COLORS[tier] || '#FF9500';
-    // If there are multiple sources of same tier, rotate palette so they\'re visually distinct
-    var color = tierUsedCount[tier] === 0 ? baseColor : PALETTE[(PALETTE.indexOf(baseColor) + tierUsedCount[tier]) % PALETTE.length];
-    tierUsedCount[tier]++;
+
+  var TIER_ORDER = ['national','newsletter','analysis','government','international','specialist','local-regional'];
+  var PALETTE = ['#FF2D55','#FF6B00','#FFD60A','#FF9500','#30D158','#00D4FF','#0A84FF','#BF5AF2','#5AC8FA','#34C759'];
+
+  // Build node for each of the 37 sources
+  var rawNodes = allSources.map(function(srcName) {
+    var info = articleLookup[srcName] || { tier: 'international', title: '' };
+    return { source: srcName, tier: info.tier, title: info.title };
+  }).sort(function(a, b) {
+    return TIER_ORDER.indexOf(a.tier) - TIER_ORDER.indexOf(b.tier);
+  });
+
+  // Assign position and color
+  var nodes = rawNodes.map(function(n, i) {
+    var tierBase = {'national':0,'newsletter':1,'analysis':2,'government':3,'international':4,'specialist':7,'local-regional':5};
+    var base = tierBase[n.tier] || 4;
     return {
-      source: a.source || ('Source ' + i),
-      color: color,
-      title: a.title || '',
-      angle: sorted.length > 1 ? i / (sorted.length - 1) : 0.5,
+      source: n.source,
+      color: PALETTE[(base + Math.floor(i / 4)) % PALETTE.length],
+      title: n.title,
+      angle: rawNodes.length > 1 ? i / (rawNodes.length - 1) : 0.5,
       phase: seededRand(i * 11 + 5) * Math.PI * 2,
     };
   });
