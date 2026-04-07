@@ -140,76 +140,74 @@ def compute_force_similarity(tag1: str, tag2: str) -> float:
 
 def cluster_by_structural_force(articles):
     """
-    Cluster articles by structural force — the underlying pattern driving the story.
+    Cluster articles by domain label — the 15 plain-language taxonomy labels.
 
-    This is fundamentally different from keyword clustering. Two articles might
-    share zero keywords but be driven by the same force:
-    - "Tariffs on Chinese EVs" (economics + geopolitics)
-    - "Auto workers fear plant closures" (labor + economics)
-    Both are driven by "trade policy reshaping labor markets."
+    Previously grouped by force_tag (now retired). New strategy:
+    1. Group articles by their most specific label combination (domain pair or single)
+    2. Merge groups that share dominant labels and have keyword overlap
+    3. This is topic-agnostic: works on any news, any day, any year
 
-    Strategy:
-    1. Group articles with identical or near-identical force_tags
-    2. Then merge groups whose force_tags are semantically similar
-    3. Fall back to domain-pair + keyword clustering for articles without force_tags
+    Why domain pairs: a story tagged [war_and_conflict, oil_and_energy] is a
+    different cluster from one tagged [war_and_conflict, whos_in_charge], even
+    though both contain war_and_conflict. The combination is the structural unit.
     """
-    # Separate AI-tagged from keyword-only
-    ai_articles = [a for a in articles if a.get("force_tag") and a.get("domains")]
-    keyword_articles = [a for a in articles if not a.get("force_tag") and a.get("domains")]
+    # Only work with articles that have domain labels
+    labeled = [a for a in articles if a.get("domains")]
+    unlabeled = [a for a in articles if not a.get("domains")]
 
-    # Step 1: Group by normalized force tag
-    force_groups = defaultdict(list)
-    for a in ai_articles:
-        tag = normalize_force_tag(a["force_tag"])
-        force_groups[tag].append(a)
+    # Step 1: Group by dominant label pair (or single label if only one)
+    # Use the top-2 labels by frequency within each article's domain list
+    def label_key(a):
+        doms = sorted(a.get("domains", []))
+        if len(doms) >= 2:
+            return tuple(doms[:2])   # first two alphabetically = stable key
+        elif len(doms) == 1:
+            return (doms[0],)
+        return ("untagged",)
 
-    # Step 2: Merge similar force tags (e.g., "military escalation" and "regional military escalation")
+    label_groups = defaultdict(list)
+    for a in labeled:
+        label_groups[label_key(a)].append(a)
+
+    # Step 2: Merge groups that share at least one label AND have keyword overlap
+    # This merges e.g. (war_and_conflict, global_relations) with
+    # (global_relations, oil_and_energy) if their articles share keywords
     merged_groups = []
-    used_tags = set()
-    tag_list = sorted(force_groups.keys(), key=lambda t: len(force_groups[t]), reverse=True)
+    used_keys = set()
+    keys_by_size = sorted(label_groups.keys(), key=lambda k: len(label_groups[k]), reverse=True)
 
-    for tag in tag_list:
-        if tag in used_tags:
+    for key in keys_by_size:
+        if key in used_keys:
             continue
-        group = list(force_groups[tag])
-        used_tags.add(tag)
+        group = list(label_groups[key])
+        used_keys.add(key)
+        key_labels = set(key)
 
-        # Find similar tags to merge
-        for other_tag in tag_list:
-            if other_tag in used_tags:
+        # Merge other groups that share a label with this one
+        for other_key in keys_by_size:
+            if other_key in used_keys:
                 continue
-            sim = compute_force_similarity(tag, other_tag)
-            if sim >= 0.4:  # 40% word overlap = same structural force
-                group.extend(force_groups[other_tag])
-                used_tags.add(other_tag)
+            other_labels = set(other_key)
+            # Merge if: shares a label AND groups aren't too large already
+            if key_labels & other_labels and len(group) < 200:
+                group.extend(label_groups[other_key])
+                used_keys.add(other_key)
 
-        if len(group) >= 2:  # Need at least 2 articles to form a cluster
+        if len(group) >= 2:
             merged_groups.append(group)
 
-    # Step 3: For keyword-only articles, try to assign them to existing force clusters
-    # based on domain overlap + keyword similarity
-    for a in keyword_articles:
-        best_group = None
-        best_score = 0
-        a_domains = set(a.get("domains", []))
-        a_keywords = set(extract_keywords(a.get("title", "") + " " + a.get("summary", "")[:200], min_len=4, top_n=10))
-
+    # Step 3: Assign unlabeled articles to best matching group by keyword overlap
+    for a in unlabeled:
+        a_kw = set(extract_keywords(a.get("title", "") + " " + a.get("summary", "")[:200], min_len=4, top_n=10))
+        best_group, best_score = None, 0
         for group in merged_groups:
-            # Check domain overlap
-            group_domains = set()
-            group_keywords = set()
-            for ga in group[:5]:  # Sample first 5
-                group_domains.update(ga.get("domains", []))
-                group_keywords.update(extract_keywords(ga.get("title", ""), min_len=4, top_n=5))
-
-            domain_overlap = len(a_domains & group_domains) / max(len(a_domains | group_domains), 1)
-            keyword_overlap = len(a_keywords & group_keywords) / max(len(a_keywords | group_keywords), 1)
-            score = domain_overlap * 0.6 + keyword_overlap * 0.4
-
-            if score > best_score and score >= 0.3:
-                best_score = score
-                best_group = group
-
+            grp_kw = set()
+            for ga in group[:5]:
+                grp_kw.update(extract_keywords(ga.get("title", ""), min_len=4, top_n=5))
+            if a_kw and grp_kw:
+                score = len(a_kw & grp_kw) / len(a_kw | grp_kw)
+                if score > best_score and score >= 0.25:
+                    best_score, best_group = score, group
         if best_group is not None:
             best_group.append(a)
 
@@ -477,18 +475,21 @@ def analyze_event_divergence(articles, exclude_force=None):
 
     exclude_force: if provided, skip this force tag (already used for Thread)
     """
-    classified = [a for a in articles if a.get("domains") and a.get("force_tag")]
+    # Use all articles with domain labels — force_tag is retired
+    classified = [a for a in articles if a.get("domains")]
     force_clusters = cluster_by_structural_force(classified)
 
     all_event_clusters = []
 
     for force_cluster in force_clusters:
-        # Get the primary force tag for this cluster
-        force_tags = Counter(normalize_force_tag(a.get("force_tag", ""))
-                            for a in force_cluster if a.get("force_tag"))
-        primary_force = force_tags.most_common(1)[0][0] if force_tags else ""
+        # Get the primary label combination for this cluster
+        label_counts = Counter()
+        for a in force_cluster:
+            for d in a.get("domains", []):
+                label_counts[d] += 1
+        primary_force = label_counts.most_common(1)[0][0] if label_counts else ""
 
-        # Skip the force already used for Thread
+        # Skip the label already used for Thread
         if exclude_force and primary_force == exclude_force:
             continue
 
@@ -1361,7 +1362,6 @@ def generate_daily_analysis(articles, analysis_date, history):
     top_stories = analyze_top_stories(articles)
     structural_forces = analyze_structural_forces_map(articles)
     what_connects = analyze_what_connects(articles)
-    cooperation = analyze_cooperation_stories(articles)
     local_regional_exclusive = analyze_local_regional_exclusive(articles)
     active_threads = analyze_domain_collisions(articles, history)
     source_spectrum = analyze_source_spectrum(articles)
@@ -1413,7 +1413,6 @@ def generate_daily_analysis(articles, analysis_date, history):
         "top_stories": top_stories,
         "structural_forces": structural_forces,
         "what_connects": what_connects,
-        "cooperation": cooperation,
         "local_regional_exclusive": local_regional_exclusive,
         "active_threads": active_threads,
         "source_spectrum": source_spectrum,
@@ -1469,16 +1468,11 @@ def print_summary(analysis):
             print(f"  {i}. {b['headline'][:60]}")
             print(f"     Force: {b.get('structural_force', 'n/a')} | {b['spectrum_segments']}/4 segments | {b['total_sources']} sources")
 
-    if analysis.get("cooperation"):
-        coop = analysis["cooperation"]
-        print(f"\n--- WHERE PEOPLE ARE BEING DECENT ({coop['total_cooperation_stories']} stories, {coop['cooperation_rate']}% of coverage) ---")
-        for ct in coop.get("by_type", [])[:5]:
-            print(f"  • {ct['type']:30s}  {ct['count']:3d} articles  [{', '.join(ct['domains'][:2])}]")
-            print(f"    Example: {ct['sample']['title'][:70]}")
-        if coop.get("coverage_gap"):
-            print(f"\n  Coverage gaps (forces with no cooperation signals):")
-            for gap in coop["coverage_gap"][:3]:
-                print(f"    ? {gap['force']} ({gap['article_count']} articles)")
+    local_excl = analysis.get("local_regional_exclusive", [])
+    if local_excl:
+        print(f"\n--- STRUCTURAL COVERAGE GAP ({len(local_excl)} stories only in local/regional/specialist) ---")
+        for l in local_excl[:5]:
+            print(f"  [{l.get('tier','')}] {l['source']}: {l.get('title','')[:70]}")
 
     if analysis.get("questions"):
         print(f"\n--- QUESTIONS PEOPLE ARE ASKING ---")

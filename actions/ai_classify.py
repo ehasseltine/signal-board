@@ -28,67 +28,151 @@ except ImportError:
 
 ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
 
+# ——————————————————————————————————————————————————————————————————————————————
+# SIGNAL BOARD CANONICAL TAXONOMY v1.0
+# 15 plain-language labels. Written for a 5th-grade reading level.
+# Articles can and should receive MULTIPLE labels — the point is that everything is connected.
+# Locked: see GitHub issue #taxonomy-v1
+# ——————————————————————————————————————————————————————————————————————————————
+
 DOMAIN_DESCRIPTIONS = {
-    "ai": "AI — Artificial intelligence, machine learning, automation, algorithms, AI regulation, chatbots, deepfakes, semiconductors",
-    "labor": "Labor — Jobs, workers, wages, unions, layoffs, gig economy, working conditions, employment law",
-    "governance": "Governance — Government agencies, executive orders, federal/state policy, public services, regulatory actions, FEMA, EPA, FDA, USDA",
-    "information": "Information — Media, journalism, social platforms, misinformation, data privacy, surveillance, tech companies, content moderation",
-    "economics": "Economics — Markets, trade, inflation, GDP, interest rates, prices, corporate earnings, supply chains, housing, debt",
-    "climate": "Climate — Environment, energy, emissions, extreme weather, fossil fuels, renewables, pollution, water, agriculture, biodiversity",
-    "security": "Security — Military, defense, cybersecurity, terrorism, policing, intelligence agencies, weapons, national security",
-    "geopolitics": "Geopolitics — International relations, diplomacy, foreign policy, NATO, UN, sanctions, wars, treaties between nations",
-    "domestic_politics": "Politics — U.S. political parties, elections, campaigns, Congress, partisan conflicts, voting, political strategy",
-    "legal": "Legal — Courts, judges, lawsuits, legislation, constitutional law, enforcement, DOJ, civil rights, regulations, executive orders challenged in court",
+    "war_and_conflict": (
+        "War & Conflict — Fighting, weapons, military operations, airstrikes, casualties, "
+        "soldiers, hostages, war crimes, peace talks, ceasefire, nuclear weapons, terrorism, "
+        "drone strikes, invasions, occupations, armed groups"
+    ),
+    "whos_in_charge": (
+        "Who's in Charge — Elections, who holds power, presidents and prime ministers, "
+        "parliaments and congresses, challenges to leaders, coups, protests against government, "
+        "authoritarian leaders, democratic backsliding, political parties, voting rights, "
+        "executive orders, government appointments, impeachment"
+    ),
+    "rules_and_courts": (
+        "Rules & Courts — Laws being passed or struck down, court cases, judges, lawsuits, "
+        "legal fights, criminal charges, police, prisons, immigration courts, deportation orders, "
+        "constitutional rights, civil rights, discrimination, corporate penalties, regulation"
+    ),
+    "money_and_prices": (
+        "Money & Prices — What things cost, inflation, wages, markets, trade, tariffs, "
+        "corporate earnings, debt, housing costs, supply chains, sanctions, economic inequality, "
+        "poverty, currency, banking, investment, recession, unemployment"
+    ),
+    "oil_and_energy": (
+        "Oil & Energy — Oil, gas, coal, pipelines, energy prices, fuel shortages, power grids, "
+        "shipping routes for energy, energy sanctions, OPEC, refineries, nuclear power, "
+        "strategic oil reserves, energy as a weapon"
+    ),
+    "the_environment": (
+        "The Environment — Climate change, extreme weather, floods, wildfires, drought, "
+        "pollution, clean energy, solar, wind, emissions, biodiversity, water supply, "
+        "land use, environmental laws, plastic waste, oceans, forests"
+    ),
+    "ai_and_technology": (
+        "AI & Technology — Artificial intelligence, automation, social media platforms, "
+        "surveillance cameras and tracking, algorithms deciding outcomes, data privacy, "
+        "deepfakes, misinformation spread by platforms, robots, tech company power, "
+        "internet access, cybersecurity, hacking"
+    ),
+    "health": (
+        "Health — Disease outbreaks, healthcare access, hospitals closing or opening, "
+        "medicine costs, mental health, overdoses and addiction, food safety, "
+        "public health emergencies, vaccines, reproductive health, disability rights"
+    ),
+    "work_and_workers": (
+        "Work & Workers — Jobs, wages, layoffs, unions, strikes, gig work, labor rights, "
+        "workplace safety, child labor, unpaid work, automation replacing jobs, "
+        "worker organizing, minimum wage, benefits, working conditions"
+    ),
+    "communities": (
+        "Communities — Local government, neighborhoods, schools, housing, homelessness, "
+        "local hospitals and services, community responses to crisis, Indigenous communities, "
+        "rural areas, small towns, city neighborhoods, local elections, "
+        "displacement, gentrification"
+    ),
+    "media_and_information": (
+        "Media & Information — Who controls what people know, journalism closures, "
+        "propaganda and disinformation, censorship, press freedom, newsroom layoffs, "
+        "social media manipulation, state-controlled media, information gaps, "
+        "language access, who gets a platform and who doesn't"
+    ),
+    "rights_and_justice": (
+        "Rights & Justice — Civil rights, human rights, immigrant rights, LGBTQ rights, "
+        "racial justice, gender equality, disability rights, police violence, "
+        "accountability for abuse, access to justice, due process, "
+        "political prisoners, freedom of speech and assembly"
+    ),
+    "global_relations": (
+        "Global Relations — Countries dealing with each other, alliances, treaties, "
+        "diplomacy, UN and international bodies, sanctions between countries, "
+        "foreign aid, trade agreements, border disputes, great power competition, "
+        "NATO, regional blocs, espionage"
+    ),
+    "food_and_land": (
+        "Food & Land — Farming, food prices, hunger, food supply disruptions, "
+        "land ownership and access, agricultural policy, food adulteration, "
+        "water rights, fishing rights, livestock, crop failures, "
+        "food deserts, indigenous land rights"
+    ),
+    "people_power": (
+        "People Power — Protests, community organizing, mutual aid, strikes, "
+        "civil disobedience, grassroots movements, civic participation, "
+        "whistleblowers, community-led solutions, voter organizing, "
+        "solidarity, people holding institutions accountable from below"
+    ),
 }
 
+# force_tag is retired. Classification now uses only the 15 plain-language domain labels.
+# Articles receive ALL labels that genuinely apply — multi-tagging is correct, not noise.
+FORCE_VOCABULARY = ""  # kept for import compatibility only
+
 # System prompt for batched classification
-BATCH_SYSTEM_PROMPT = """You classify news articles for Signal Board, a daily practice of reading the world through the conviction that people are inherently good and that the information architecture is failing them.
+BATCH_SYSTEM_PROMPT = """You classify news articles for Signal Board.
 
-You will receive a numbered list of articles (title + summary). For EACH article, you must:
+Signal Board uses 15 plain-language topic labels. Your job is to tag each article with EVERY label that genuinely applies. Most news stories touch more than one topic — that's intentional. A story about fuel prices during a war should get both "Oil & Energy" AND "War & Conflict" AND "Money & Prices". Do not limit to one label.
 
-1. Assign one or more domain tags from the list below
-2. If the article touches 2+ domains, write ONE sentence (max 20 words) explaining the STRUCTURAL connection — not just naming the topics, but WHY they intersect in this story
-3. Assign a "force_tag" — a 2-5 word label for the underlying structural force at work (e.g., "automation displacing workers", "trade weaponization", "democratic erosion", "information asymmetry", "regulatory capture", "media consolidation", "platform monopoly", "algorithmic gatekeeping", "newsroom financial dependency"). This is the deeper pattern, not the headline topic. Pay particular attention to stories about tech companies acquiring media outlets, funding newsrooms, signing AI licensing deals with publishers, or controlling information distribution through platforms and algorithms — these are structural forces of media capture.
-4. Answer the SEVENTH QUESTION: "Where in this story are people being decent, and why is that not the headline?" Look for evidence of cooperation, mutual aid, community response, institutional integrity, people inside systems trying to fix them, cross-group solidarity, or ordinary decency. Set "cooperation" to true if ANY of these are present, even subtly. Set "cooperation_type" to a brief label (e.g., "mutual aid", "community organizing", "institutional reform", "cross-party collaboration", "volunteer response", "whistleblowing", "civic participation"). If no cooperation is visible, set both to false/"".
+You will receive a numbered list of articles (title + summary). For EACH article:
 
-Domains:
+1. LABELS: Assign every label from the list below that is genuinely central to the article.
+   - Pure entertainment, celebrity gossip, sports scores, recipes, product reviews with no social/political/economic dimension: return empty labels list.
+   - When in doubt, include the label. Under-tagging loses connections. Over-tagging is always correctable.
+
+2. CONNECTION: If 2+ labels are tagged, write ONE plain-English sentence (max 20 words) saying HOW these topics connect in this specific story. Write it so a 10-year-old could understand.
+   Example: "War in the Middle East is making gas more expensive for families everywhere."
+   NOT: "Geopolitical conflict creates supply chain disruption impacting energy markets."
+
+Labels:
 {domains}
 
 Rules:
-- Only tag domains that are genuinely central to the article, not just mentioned in passing
-- Consumer product reviews, lifestyle content, recipes, celebrity gossip, entertainment, and sports should get NO domains — return empty domains list
-- The connection sentence should explain WHY these topics overlap, not just name them
-- The force_tag should name the structural force or pattern at work — think like a systems analyst, not a headline writer
-- For the cooperation question: look beneath the headline. A protest IS civic participation. A whistleblower IS institutional integrity. Workers organizing IS cooperation. Do not require the article to be "positive" — cooperation often happens inside crisis. But do not stretch: a politician giving a speech is not cooperation unless the speech describes actual cooperative action.
-- Be specific to each article, not generic
+- Label keys must exactly match keys in the list (e.g. "war_and_conflict", "money_and_prices")
+- Tag every label that applies — stories are connected by design
+- Connection sentence must be plain English, not policy language
+- No force_tag field — it is retired
 
 Respond ONLY with a valid JSON array, one object per article in order:
 [
-  {{"id": 1, "domains": ["domain_key", ...], "connection": "sentence or empty string", "force_tag": "structural force label", "cooperation": true/false, "cooperation_type": "label or empty string"}},
+  {{"id": 1, "domains": ["label_key", ...], "connection": "plain English sentence or empty string"}},
   ...
 ]"""
 
 # Single-article fallback prompt (for stragglers)
-SINGLE_SYSTEM_PROMPT = """You classify news articles for Signal Board, a daily practice of reading the world through the conviction that people are inherently good and that the information architecture is failing them.
+SINGLE_SYSTEM_PROMPT = """You classify news articles for Signal Board.
 
-Given an article's title and summary, you must:
-1. Assign one or more domain tags from the list below
-2. If the article touches 2+ domains, write ONE sentence (max 20 words) explaining the structural connection
-3. Assign a "force_tag" — a 2-5 word label for the underlying structural force at work (including media capture forces like "media consolidation", "platform monopoly", "newsroom financial dependency", "algorithmic gatekeeping")
-4. Answer the seventh question: "Where are people being decent?" Set "cooperation" to true if there is evidence of cooperation, mutual aid, community response, or institutional integrity. Set "cooperation_type" to a brief label.
+Given an article's title and summary, assign EVERY plain-language label from the list below that genuinely applies. Most articles touch multiple topics — tag all of them.
 
-Domains:
+1. LABELS: Every label that is central to this story. Pure entertainment/sports/celebrity with no social dimension: return empty list.
+2. CONNECTION: If 2+ labels tagged, one plain-English sentence (max 20 words) saying how they connect. Write for a 10-year-old.
+
+Labels:
 {domains}
 
 Rules:
-- Only tag domains that are genuinely central to the article, not just mentioned in passing
-- Consumer product reviews, lifestyle, recipes, celebrity gossip, entertainment, sports: NO domains (empty list)
-- Connection sentence: explain WHY these topics overlap, not just name them
-- force_tag: the deeper structural pattern (e.g., "regulatory capture", "automation displacing workers", "media consolidation", "platform monopoly")
-- cooperation: look beneath the headline for evidence of people being decent, even inside crisis
+- Tag every label that applies — multi-tagging is correct
+- connection must be plain English, not policy jargon
+- No force_tag field
 
 Respond ONLY with valid JSON:
-{{"domains": ["domain_key", ...], "connection": "sentence or empty string", "force_tag": "structural force label", "cooperation": true/false, "cooperation_type": "label or empty string"}}"""
+{{"domains": ["label_key", ...], "connection": "plain English sentence or empty string"}}"""
 
 
 def get_client():
@@ -110,6 +194,17 @@ def parse_ai_response(text: str) -> any:
     if text.startswith("json"):
         text = text[4:].strip()
     return json.loads(text)
+
+
+# Canonical force labels extracted from FORCE_VOCABULARY
+# CANONICAL_FORCES retired. The 15 plain-language domain labels are now the taxonomy.
+# Kept as empty list for any code that imports this name.
+CANONICAL_FORCES = list(DOMAIN_DESCRIPTIONS.keys())
+
+
+def validate_force_tag(raw_tag: str) -> str:
+    """Retired — force_tag is no longer used. Returns empty string."""
+    return ""
 
 
 def validate_domains(raw_domains: list) -> list:
@@ -136,7 +231,7 @@ def classify_batch_chunk(articles_chunk: list[dict], chunk_index: int, client) -
     Classify a chunk of 10-15 articles in a single API call.
     Returns list of classification results aligned with input order.
     """
-    domain_list = "\n".join(f"- {v}" for v in DOMAIN_DESCRIPTIONS.values())
+    domain_list = "\n".join(f"- {k}: {v}" for k, v in DOMAIN_DESCRIPTIONS.items())
     system = BATCH_SYSTEM_PROMPT.format(domains=domain_list)
 
     # Build the numbered article list
@@ -174,15 +269,9 @@ def classify_batch_chunk(articles_chunk: list[dict], chunk_index: int, client) -
             if r:
                 domains = validate_domains(r.get("domains", []))
                 connection = r.get("connection", "")
-                force_tag = r.get("force_tag", "")
-                cooperation = bool(r.get("cooperation", False))
-                cooperation_type = r.get("cooperation_type", "") if cooperation else ""
                 output.append({
                     "domains": domains,
                     "connection": connection if len(domains) > 1 else "",
-                    "force_tag": force_tag,
-                    "cooperation": cooperation,
-                    "cooperation_type": cooperation_type,
                 })
             else:
                 output.append(None)
@@ -218,15 +307,9 @@ def classify_batch_chunk(articles_chunk: list[dict], chunk_index: int, client) -
                         if r:
                             domains = validate_domains(r.get("domains", []))
                             connection = r.get("connection", "")
-                            force_tag = r.get("force_tag", "")
-                            cooperation = bool(r.get("cooperation", False))
-                            cooperation_type = r.get("cooperation_type", "") if cooperation else ""
                             output.append({
                                 "domains": domains,
                                 "connection": connection if len(domains) > 1 else "",
-                                "force_tag": force_tag,
-                                "cooperation": cooperation,
-                                "cooperation_type": cooperation_type,
                             })
                         else:
                             output.append(None)
@@ -310,18 +393,19 @@ def classify_batch(articles: list[dict], batch_size: int = 12) -> list[dict]:
                 a["domains"] = result["domains"]
                 a["cross_domain"] = len(result["domains"]) > 1
                 a["connection"] = result.get("connection", "")
-                a["force_tag"] = result.get("force_tag", "")
-                a["cooperation"] = result.get("cooperation", False)
-                a["cooperation_type"] = result.get("cooperation_type", "")
+                # Retired fields — remove if present from old data
+                a.pop("force_tag", None)
+                a.pop("cooperation", None)
+                a.pop("cooperation_type", None)
                 ai_count += 1
             else:
                 # Fallback to keywords
                 a["domains"] = tag_article(a["title"], a.get("summary", ""), a.get("text", ""))
                 a["cross_domain"] = len(a["domains"]) > 1
                 a["connection"] = ""
-                a["force_tag"] = ""
-                a["cooperation"] = False
-                a["cooperation_type"] = ""
+                a.pop("force_tag", None)
+                a.pop("cooperation", None)
+                a.pop("cooperation_type", None)
                 fallback_count += 1
             article_idx += 1
 
@@ -335,7 +419,7 @@ def classify_article(title: str, summary: str, client=None) -> dict:
     """Classify a single article. Use classify_batch for bulk processing."""
     if client is None:
         return None
-    domain_list = "\n".join(f"- {v}" for v in DOMAIN_DESCRIPTIONS.values())
+    domain_list = "\n".join(f"- {k}: {v}" for k, v in DOMAIN_DESCRIPTIONS.items())
     system = SINGLE_SYSTEM_PROMPT.format(domains=domain_list)
     user_msg = f"Title: {title}\nSummary: {summary[:400] if summary else '(no summary)'}"
     try:
@@ -348,15 +432,9 @@ def classify_article(title: str, summary: str, client=None) -> dict:
         result = parse_ai_response(response.content[0].text)
         domains = validate_domains(result.get("domains", []))
         connection = result.get("connection", "")
-        force_tag = result.get("force_tag", "")
-        cooperation = bool(result.get("cooperation", False))
-        cooperation_type = result.get("cooperation_type", "") if cooperation else ""
         return {
             "domains": domains,
             "connection": connection if len(domains) > 1 else "",
-            "force_tag": force_tag,
-            "cooperation": cooperation,
-            "cooperation_type": cooperation_type,
         }
     except Exception:
         return None

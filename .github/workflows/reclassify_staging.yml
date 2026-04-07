@@ -1,0 +1,71 @@
+name: Reclassify + Analyze + Synthesize (staging)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  reclassify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout staging
+        uses: actions/checkout@v4
+        with:
+          ref: staging
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install feedparser anthropic
+
+      - name: Restore articles.json from main
+        run: |
+          git fetch origin main
+          git checkout origin/main -- data/articles.json
+          echo "articles.json restored from main:"
+          python3 -c "
+          import json
+          from collections import Counter
+          with open('data/articles.json') as f:
+              d = json.load(f)
+          arts = d.get('articles', [])
+          dates = Counter(a['date'] for a in arts)
+          print(f'  Total articles: {len(arts)}')
+          for date, count in sorted(dates.items(), reverse=True)[:3]:
+              print(f'  {date}: {count}')
+          "
+
+      - name: Reclassify today (Stage 1b — new constrained force vocabulary)
+        working-directory: actions
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python reclassify_today.py
+
+      - name: Run daily analysis (Stage 2 — cluster + divergence + coverage gap)
+        working-directory: actions
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python analyze.py
+
+      - name: Run editorial synthesis (Stage 3 — narrative + headline)
+        working-directory: actions
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python synthesize.py
+
+      - name: Commit results to staging
+        run: |
+          git config user.name "Signal Board Bot"
+          git config user.email "bot@signalboard.org"
+          git add data/articles.json data/daily/
+          if git diff --staged --quiet; then
+            echo "No data changes"
+          else
+            git commit -m "data: reclassify + analyze + synthesize with new force vocabulary ($(date +%Y-%m-%d))"
+            git push origin staging
+          fi
