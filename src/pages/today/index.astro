@@ -517,11 +517,11 @@ body { background: var(--bg); color: var(--white); font-family: var(--sans);
 
 /* ── SEISMOGRAPH ──────────────────────── */
 .seismograph-sec {
-  padding: 48px 0 0;
+  padding: 48px 32px 0;
   background: var(--bg);
   min-height: 100vh;
 }
-.sg-header { padding: 0 32px 28px; }
+.sg-header { padding: 0 0 32px; }
 .sg-title { font-family: var(--mono); font-size: clamp(22px, 3vw, 34px); font-weight: 700; letter-spacing: -0.02em; color: var(--white); margin-bottom: 6px; }
 .sg-sub   { font-family: var(--mono); font-size: 11px; color: var(--dim); letter-spacing: 0.05em; }
 
@@ -537,7 +537,10 @@ body { background: var(--bg); color: var(--white); font-family: var(--sans);
   flex: 1; text-align: center;
   font-family: var(--mono); font-size: 10px; color: var(--faint);
   letter-spacing: 0.06em; text-transform: uppercase;
+  padding: 4px 0;
+  border-right: 1px solid rgba(240,240,245,0.06);
 }
+.sg-date-label:last-child { border-right: none; }
 .sg-date-label.today { color: var(--yellow); font-weight: 700; }
 
 /* Grid layout — 8px spacing scale throughout */
@@ -556,12 +559,15 @@ body { background: var(--bg); color: var(--white); font-family: var(--sans);
   display: flex; align-items: center; justify-content: flex-end;
   padding-right: 0;
   height: 24px;         /* fixed row height — grid cells match */
+  max-height: 24px;
   font-family: var(--mono); font-size: 10px; color: var(--dim);
   letter-spacing: 0.04em; text-transform: uppercase;
   cursor: pointer; transition: color 0.15s;
   user-select: none;
   white-space: nowrap;
-  line-height: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 24px;
 }
 .sg-label-row:hover { color: var(--white); }
 .sg-label-row.active { color: var(--white); font-weight: 700; }
@@ -578,6 +584,11 @@ body { background: var(--bg); color: var(--white); font-family: var(--sans);
   margin-top: 16px;
   padding: 0 0 0 136px;
   min-height: 180px;
+}
+
+/* Ensure label column has no extra height from wrapped text */
+.sg-labels > .sg-label-row {
+  flex: none;
 }
 .sg-detail-inner {
   background: var(--bg2);
@@ -605,6 +616,7 @@ body { background: var(--bg); color: var(--white); font-family: var(--sans);
 /* ── SPIKE ANNOTATIONS ──────────────────── */
 .sg-annotations {
   padding: 32px 0 8px 136px; /* 2rem top gap from grid */
+  clear: both;
 }
 .sg-annotation {
   display: inline-block;
@@ -667,9 +679,10 @@ body { background: var(--bg); color: var(--white); font-family: var(--sans);
 
 /* ── RESPONSIVE ───────────────────────── */
 @media (max-width: 600px) {
+  .seismograph-sec { padding: 48px 16px 0; }
   .sg-dates { padding-left: 104px; }
   .sg-labels { width: 96px; }
-  .sg-label-row { font-size: 8px; height: 20px; }
+  .sg-label-row { font-size: 8px; height: 20px; max-height: 20px; line-height: 20px; }
   .sg-detail { padding-left: 104px; }
   .hero-stats { gap: 20px; }
   .sg-annotations { padding-left: 104px; }
@@ -796,7 +809,7 @@ var LABELS = {
   health:                { name: 'Health',             color: '#5AC8FA' },
   work_and_workers:      { name: 'Work & Workers',     color: '#FF9500' },
   media_and_information: { name: 'Media & Info',       color: '#BF5AF2' },
-  the_environment:       { name: 'The Environment',    color: '#34C759' },
+  the_environment:       { name: 'Environment',        color: '#34C759' },
   food_and_land:         { name: 'Food & Land',        color: '#FFD60A' },
   people_power:          { name: 'People Power',       color: '#FF2D55' },
 };
@@ -1552,30 +1565,31 @@ function initDivergence(todayData) {
     /* Sort by x to process left-to-right, then nudge overlapping labels */
     var sorted = builtNodes.slice().sort(function(a,b) { return a.tx - b.tx; });
     var LABEL_H = 14;  /* approx label height */
-    var LABEL_W = 80;  /* approx label width */
+    var LABEL_W = 72;  /* approx label width */
+    /* Try multiple candidate positions: below, above, further above/below */
+    var offsets = [18, -22, -36, 32, -50, 46];
     for (var i = 0; i < sorted.length; i++) {
       var n = sorted[i];
-      n.labelY = n.ty + 18; /* default: below dot */
-      /* Check against all previously placed labels */
-      for (var j = 0; j < i; j++) {
-        var other = sorted[j];
-        var dx = Math.abs(n.tx - other.tx);
-        var dy = Math.abs(n.labelY - other.labelY);
-        if (dx < LABEL_W && dy < LABEL_H) {
-          /* Collision detected — try above the dot */
-          n.labelY = n.ty - 22;
-          /* Check again above */
-          for (var k = 0; k < i; k++) {
-            var o2 = sorted[k];
-            if (Math.abs(n.tx - o2.tx) < LABEL_W && Math.abs(n.labelY - o2.labelY) < LABEL_H) {
-              /* Still colliding — offset further */
-              n.labelY = n.ty - 36;
-              break;
-            }
+      var placed = false;
+      for (var oi = 0; oi < offsets.length; oi++) {
+        var candY = n.ty + offsets[oi];
+        /* Clamp to canvas bounds */
+        candY = Math.max(12, Math.min(H - 12, candY));
+        var collides = false;
+        for (var j = 0; j < i; j++) {
+          var other = sorted[j];
+          if (Math.abs(n.tx - other.tx) < LABEL_W && Math.abs(candY - other.labelY) < LABEL_H) {
+            collides = true;
+            break;
           }
+        }
+        if (!collides) {
+          n.labelY = candY;
+          placed = true;
           break;
         }
       }
+      if (!placed) n.labelY = n.ty + 18; /* fallback */
     }
   }
 
