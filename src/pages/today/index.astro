@@ -438,916 +438,844 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
 }
 
 ---
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{editorial?.accessible_headline || 'Signal Board'} | Signal Board</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+/* ══════════════════════════════════════════
+   SIGNAL BOARD — THE SEISMOGRAPH
+   Clean, minimal chrome. Data is the design.
+   Game of Life palette on deep dark.
+══════════════════════════════════════════ */
 
-<BaseLayout title={`${(editorial?.accessible_headline || editorial?.headline || 'Today').slice(0, 55)} | Signal Board`} description={editorial?.subheadline || `Daily analysis from 300 sources across borders, languages, and political orientations.`} dateStr={dateStr} totalStories={totalStories} sourcesReporting={sourcesReporting}>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-<!-- MASTHEAD — NAVY -->
-<header class="masthead-wrap" role="banner">
-  <!-- Decorative constellation — represents interconnected sources -->
-  <svg class="masthead-constellation" viewBox="0 0 800 600" fill="none" aria-hidden="true" style="position: absolute; top: 0; right: 0; width: 55%; height: 100%; opacity: 0.14; pointer-events: none;">
-    <!-- Connection lines -->
-    <line x1="120" y1="80" x2="340" y2="160" stroke="#42F0A5" stroke-width="1" opacity="0.8"/>
-    <line x1="340" y1="160" x2="580" y2="120" stroke="#1B2A4B" stroke-width="1" opacity="0.6"/>
-    <line x1="580" y1="120" x2="700" y2="280" stroke="#F87575" stroke-width="1" opacity="0.7"/>
-    <line x1="340" y1="160" x2="260" y2="340" stroke="#FDB833" stroke-width="1" opacity="0.5"/>
-    <line x1="260" y1="340" x2="480" y2="380" stroke="#1789FC" stroke-width="1" opacity="0.6"/>
-    <line x1="480" y1="380" x2="700" y2="280" stroke="#42F0A5" stroke-width="1" opacity="0.4"/>
-    <line x1="480" y1="380" x2="620" y2="500" stroke="#F87575" stroke-width="1" opacity="0.5"/>
-    <line x1="260" y1="340" x2="140" y2="480" stroke="#1789FC" stroke-width="1" opacity="0.3"/>
-    <line x1="140" y1="480" x2="380" y2="520" stroke="#FDB833" stroke-width="1" opacity="0.4"/>
-    <line x1="380" y1="520" x2="620" y2="500" stroke="#42F0A5" stroke-width="1" opacity="0.5"/>
-    <line x1="580" y1="120" x2="480" y2="380" stroke="#1B2A4B" stroke-width="0.5" opacity="0.3"/>
-    <line x1="120" y1="80" x2="260" y2="340" stroke="#F87575" stroke-width="0.5" opacity="0.4"/>
-    <!-- Nodes — sources -->
-    <circle cx="120" cy="80" r="4" fill="#F87575" opacity="0.7"/>
-    <circle cx="340" cy="160" r="6" fill="#42F0A5" opacity="0.6"/>
-    <circle cx="580" cy="120" r="5" fill="#1789FC" opacity="0.5"/>
-    <circle cx="700" cy="280" r="4" fill="#F87575" opacity="0.6"/>
-    <circle cx="260" cy="340" r="7" fill="#FDB833" opacity="0.5"/>
-    <circle cx="480" cy="380" r="5" fill="#42F0A5" opacity="0.4"/>
-    <circle cx="620" cy="500" r="4" fill="#1789FC" opacity="0.5"/>
-    <circle cx="140" cy="480" r="3" fill="#F87575" opacity="0.4"/>
-    <circle cx="380" cy="520" r="5" fill="#FDB833" opacity="0.4"/>
-    <!-- Smaller orbiting dots -->
-    <circle cx="200" cy="110" r="2" fill="#42F0A5" opacity="0.3"/>
-    <circle cx="460" cy="140" r="2" fill="#1789FC" opacity="0.2"/>
-    <circle cx="640" cy="200" r="2" fill="#F87575" opacity="0.3"/>
-    <circle cx="360" cy="260" r="2" fill="#FDB833" opacity="0.2"/>
-    <circle cx="540" cy="440" r="2" fill="#42F0A5" opacity="0.25"/>
-    <circle cx="200" cy="420" r="2" fill="#1789FC" opacity="0.2"/>
-  </svg>
-  <div class="wrap" style="position: relative; z-index: 1;">
-    <nav aria-label="Signal Board navigation" style="padding-top: 24px; display: flex; justify-content: flex-end; gap: 24px;">
-      <a href="/about/" style="font-family: 'Inter', sans-serif; font-size: 13px; color: var(--on-navy-dim); text-decoration: none; transition: color 0.2s;">About</a>
-      <a href="/archive/" style="font-family: 'Inter', sans-serif; font-size: 13px; color: var(--on-navy-dim); text-decoration: none; transition: color 0.2s;">Archive</a>
-      <a href="https://substack.com/@elisehasseltine" target="_blank" rel="noopener" style="font-family: 'Inter', sans-serif; font-size: 13px; color: var(--on-navy-dim); text-decoration: none; transition: color 0.2s;">Subscribe</a>
-    </nav>
-    <div class="masthead">
-      <div class="r">
-        <div class="display masthead-title">SIGNAL</div>
-        <div class="display masthead-title">BOARD</div>
-      </div>
-      <span class="masthead-date r d1">{dateStr}</span>
-      <h1 class="masthead-hook r d2">
-        {editorial?.accessible_headline || editorial?.headline || `Today, ${totalMonitoredSources} sources published ${totalStories} stories. When you see them together, a picture emerges.`}
-      </h1>
-      <p class="masthead-sub r d3">
-        {editorial?.subheadline || `${crossDomain} stories crossed domain boundaries, ${crossDomainPct}% of everything we read. That's where the connections live.`}
-      </p>
-      <div class="scroll-cue" aria-hidden="true">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <path d="M7,8 L12,14 L17,8" stroke="var(--magenta)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.7"/>
-        </svg>
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="margin-top: -10px;">
-          <path d="M7,8 L12,14 L17,8" stroke="var(--magenta)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.35"/>
-        </svg>
-      </div>
+:root {
+  --bg:    #08080E;
+  --bg2:   #10101A;
+  --bg3:   #18182A;
+  --white: #F0F0F5;
+  --dim:   rgba(240,240,245,0.4);
+  --faint: rgba(240,240,245,0.12);
+  --yellow:#FFD60A;
+  --mono:  'Space Mono', monospace;
+  --sans:  'Space Grotesk', sans-serif;
+  --ease:  cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--white); font-family: var(--sans);
+       overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+
+/* ── NAV ──────────────────────────────── */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  height: 48px; display: flex; align-items: center; justify-content: space-between;
+  padding: 0 28px;
+  background: rgba(8,8,14,0); transition: background 0.3s;
+}
+.nav.solid { background: rgba(8,8,14,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--faint); }
+.nav-logo { font-family: var(--mono); font-size: 13px; font-weight: 700; color: var(--yellow); letter-spacing: 0.15em; }
+.nav-right { display: flex; gap: 20px; align-items: center; }
+.nav-right a { font-family: var(--mono); font-size: 11px; color: var(--dim); text-decoration: none; letter-spacing: 0.06em; transition: color 0.15s; }
+.nav-right a:hover { color: var(--white); }
+.nav-sub { border: 1px solid rgba(255,214,10,0.35); padding: 4px 12px; border-radius: 100px; color: var(--yellow) !important; }
+
+/* ── HERO ─────────────────────────────── */
+.hero {
+  position: relative; height: 100vh; min-height: 560px;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  overflow: hidden;
+}
+#gol-canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+.hero-content {
+  position: relative; z-index: 2;
+  padding: 0 32px clamp(56px, 8vh, 88px);
+}
+.hero-eyebrow { font-family: var(--mono); font-size: 11px; font-weight: 700; color: var(--yellow); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 16px; }
+.hero-hed {
+  font-size: clamp(44px, 7.5vw, 108px); font-weight: 700;
+  line-height: 0.95; letter-spacing: -0.04em;
+  margin-bottom: clamp(24px, 4vh, 40px);
+}
+.hero-hed em { font-style: normal; background: linear-gradient(90deg, #FF9500, #FF2D55); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.hero-stats { display: flex; gap: 36px; flex-wrap: wrap; }
+.hs { display: flex; flex-direction: column; gap: 3px; }
+.hs-n { font-family: var(--mono); font-size: clamp(28px, 3.5vw, 42px); font-weight: 700; line-height: 1; }
+.hs-l { font-family: var(--mono); font-size: 9px; color: var(--faint); letter-spacing: 0.1em; text-transform: uppercase; }
+.hero-scroll { position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%); font-family: var(--mono); font-size: 11px; color: var(--faint); animation: bob 2.4s ease-in-out infinite; }
+@keyframes bob { 0%,100%{opacity:0.3;transform:translateX(-50%) translateY(0)} 50%{opacity:0.7;transform:translateX(-50%) translateY(6px)} }
+
+/* ── SEISMOGRAPH ──────────────────────── */
+.seismograph-sec {
+  padding: 48px 0 0;
+  background: var(--bg);
+  min-height: 100vh;
+}
+.sg-header {
+  padding: 0 32px 28px;
+}
+.sg-title { font-family: var(--mono); font-size: clamp(22px, 3vw, 34px); font-weight: 700; letter-spacing: -0.02em; color: var(--white); margin-bottom: 6px; }
+.sg-sub   { font-family: var(--mono); font-size: 11px; color: var(--dim); letter-spacing: 0.05em; }
+
+/* Date labels */
+.sg-dates {
+  display: flex; padding-left: 120px; /* align with grid */
+  padding-right: 16px;
+  margin-bottom: 4px;
+}
+.sg-date-label {
+  flex: 1; text-align: center;
+  font-family: var(--mono); font-size: 9px; color: var(--faint);
+  letter-spacing: 0.05em; text-transform: uppercase;
+}
+.sg-date-label.today { color: var(--yellow); }
+
+/* Grid layout */
+.sg-grid-wrap {
+  display: flex;
+  padding: 0 16px 0 0;
+  overflow-x: auto;
+}
+.sg-labels {
+  width: 120px; flex-shrink: 0;
+  display: flex; flex-direction: column;
+}
+.sg-label-row {
+  display: flex; align-items: flex-end; justify-content: flex-end;
+  padding-right: 10px;
+  font-family: var(--mono); font-size: 9px; color: var(--dim);
+  letter-spacing: 0.04em; text-transform: uppercase;
+  cursor: pointer; transition: color 0.15s;
+  user-select: none;
+}
+.sg-label-row:hover { color: var(--white); }
+.sg-label-row.active { color: var(--white); font-weight: 700; }
+
+/* The bar grid itself */
+.sg-grid {
+  flex: 1;
+  display: flex;           /* 11 columns */
+  gap: 3px;
+  align-items: stretch;
+}
+.sg-col {
+  flex: 1;
+  display: flex; flex-direction: column;
+  gap: 3px;
+}
+.sg-cell {
+  flex: 1;
+  position: relative;
+  background: var(--bg3);
+  border-radius: 2px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.12s var(--ease), box-shadow 0.12s;
+  min-height: 22px;
+}
+.sg-cell:hover { transform: scale(1.06); z-index: 10; }
+.sg-cell.selected { box-shadow: 0 0 0 2px var(--yellow); z-index: 20; }
+.sg-cell-fill {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  border-radius: 2px;
+  transition: height 1.2s var(--ease), opacity 0.3s;
+  opacity: 0.85;
+}
+.sg-cell:hover .sg-cell-fill { opacity: 1; }
+/* Number inside cell — shown on hover */
+.sg-cell-num {
+  position: absolute; bottom: 2px; left: 0; right: 0;
+  text-align: center;
+  font-family: var(--mono); font-size: 8px; font-weight: 700;
+  color: rgba(0,0,0,0.7);
+  opacity: 0; transition: opacity 0.15s;
+  pointer-events: none; z-index: 5;
+}
+.sg-cell:hover .sg-cell-num { opacity: 1; }
+
+/* Detail panel */
+.sg-detail {
+  margin-top: 12px;
+  padding: 0 16px 0 120px;
+  min-height: 180px;
+}
+.sg-detail-inner {
+  background: var(--bg2);
+  border: 1px solid var(--faint);
+  border-radius: 10px;
+  padding: 24px;
+  transition: all 0.3s var(--ease);
+}
+.sdi-hint { font-family: var(--mono); font-size: 11px; color: var(--faint); }
+.sdi-header { display: flex; align-items: baseline; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }
+.sdi-label { font-family: var(--mono); font-size: 13px; font-weight: 700; color: var(--white); }
+.sdi-date  { font-family: var(--mono); font-size: 11px; color: var(--faint); }
+.sdi-count { font-family: var(--mono); font-size: 11px; font-weight: 700; }
+.sdi-articles { display: flex; flex-wrap: wrap; gap: 8px; }
+.sdi-article {
+  background: var(--bg3); border: 1px solid var(--faint); border-radius: 6px;
+  padding: 10px 14px; max-width: 360px;
+  cursor: default; transition: border-color 0.15s;
+}
+.sdi-article:hover { border-color: rgba(255,255,255,0.2); }
+.sdi-src { font-family: var(--mono); font-size: 9px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 4px; }
+.sdi-title { font-size: 12px; line-height: 1.5; color: var(--dim); }
+
+/* ── DIVERGENCE ───────────────────────── */
+.diverge-sec {
+  padding: 64px 32px;
+  background: var(--bg2);
+  border-top: 1px solid var(--faint);
+}
+.div-header {
+  display: flex; align-items: baseline; gap: 20px; flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+.div-score-big {
+  font-family: var(--mono); font-size: clamp(56px, 8vw, 96px); font-weight: 700;
+  line-height: 1; letter-spacing: -0.04em; color: var(--yellow);
+}
+.div-title { font-family: var(--mono); font-size: clamp(16px, 2vw, 22px); font-weight: 700; color: var(--white); margin-bottom: 4px; }
+.div-sub   { font-family: var(--mono); font-size: 11px; color: var(--dim); }
+#diverge-canvas { display: block; width: 100%; height: 380px; }
+
+/* ── SHARED TOOLTIP ───────────────────── */
+.tooltip {
+  position: fixed; z-index: 500; display: none;
+  background: rgba(8,8,14,0.97); border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 6px; padding: 10px 14px; max-width: 260px;
+  pointer-events: none;
+}
+.tt-name  { font-family: var(--mono); font-size: 11px; font-weight: 700; color: var(--white); margin-bottom: 3px; }
+.tt-meta  { font-family: var(--mono); font-size: 10px; color: var(--yellow); margin-bottom: 3px; }
+.tt-text  { font-size: 11px; color: var(--dim); line-height: 1.5; font-style: italic; }
+
+/* ── FOOTER ───────────────────────────── */
+.footer { background: var(--bg); border-top: 1px solid var(--faint); padding: 28px 32px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.f-logo { font-family: var(--mono); font-size: 13px; font-weight: 700; color: var(--white); letter-spacing: 0.1em; }
+.f-meta { font-family: var(--mono); font-size: 10px; color: var(--faint); }
+.f-cta  { font-family: var(--mono); font-size: 11px; color: var(--yellow); text-decoration: none; border-bottom: 1px solid rgba(255,214,10,0.3); }
+
+/* ── RESPONSIVE ───────────────────────── */
+@media (max-width: 600px) {
+  .sg-dates { padding-left: 90px; }
+  .sg-labels { width: 90px; }
+  .sg-label-row { font-size: 8px; }
+  .sg-detail { padding-left: 90px; }
+  .hero-stats { gap: 20px; }
+}
+  </style>
+</head>
+<body data-date={dateStr} data-headline={editorial?.accessible_headline || ''}>
+
+<nav class="nav">
+  <span class="nav-logo">SB</span>
+  <div class="nav-right">
+    <a href="/archive">Archive</a>
+    <a href="/about">About</a>
+  </div>
+</nav>
+
+<!-- HERO — GoL canvas + date + minimal intro -->
+<section class="hero">
+  <canvas id="gol-canvas"></canvas>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Signal Board · {dateStr}</div>
+    <h1 class="hero-hed"><em>{editorial?.accessible_headline?.split(' ').slice(0,4).join(' ') || "Today's Signal"}</em><br>300 sources.<br>What they covered.</h1>
+    <div class="hero-stats">
+      <div class="hs"><span class="hs-n" data-target={String(totalStories || 24105)}>0</span><span class="hs-l">articles</span></div>
+      <div class="hs"><span class="hs-n" data-target="300">0</span><span class="hs-l">sources</span></div>
+      <div class="hs"><span class="hs-n" data-target="15">0</span><span class="hs-l">topics</span></div>
     </div>
   </div>
-  <!-- Constellation lines bleeding below the navy masthead -->
-  <svg class="constellation-bleed" viewBox="0 0 600 120" fill="none" aria-hidden="true">
-    <line x1="100" y1="0" x2="200" y2="80" stroke="var(--ink)" stroke-width="1"/>
-    <line x1="200" y1="80" x2="400" y2="40" stroke="var(--ink)" stroke-width="1"/>
-    <line x1="400" y1="40" x2="550" y2="100" stroke="var(--ink)" stroke-width="0.5"/>
-    <circle cx="200" cy="80" r="3" fill="var(--tangerine)" opacity="0.3"/>
-    <circle cx="400" cy="40" r="2" fill="var(--ink)" opacity="0.2"/>
-  </svg>
-</header>
+  <div class="hero-scroll">scroll ↓</div>
+</section>
 
-<main id="main-content" style="position: relative; z-index: 1;">
-
-<!-- SUMMARY CARDS — CREAM -->
-<div class="wrap-wide" style="padding-top: clamp(48px, 7vw, 80px); padding-bottom: clamp(24px, 4vw, 40px);">
-  <div class="summary-grid cascade-parent">
-
-    {threadStory && (
-    <a href="#thread" class="summary-card summary-card-tangerine cascade" style="text-decoration: none; color: inherit;">
-      <div class="card-label">
-        <svg width="18" height="14" viewBox="0 0 22 18" fill="none" style="vertical-align: -2px; margin-right: 6px;" aria-hidden="true">
-          <line x1="1" y1="4" x2="21" y2="4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-          <line x1="4" y1="9" x2="18" y2="9" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" opacity="0.5"/>
-          <line x1="7" y1="14" x2="15" y2="14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" opacity="0.25"/>
-        </svg>The Daily Thread
-      </div>
-      <div class="card-stat" data-count-to={threadStory.articleCount}>{threadStory.articleCount}</div>
-      <div class="stat-annotation stat-annotation-red">articles from {threadStory.sourceCount} sources</div>
-      <div class="card-hook">{threadStory.title}</div>
-      <span class="card-arrow">Read &darr;</span>
-    </a>
-    )}
-
-    {gapStory && (
-    <a href="#gap" class="summary-card summary-card-violet cascade" style="text-decoration: none; color: inherit;">
-      <div class="card-label card-label-violet">
-        <svg width="16" height="14" viewBox="0 0 20 18" fill="none" style="vertical-align: -2px; margin-right: 6px;" aria-hidden="true">
-          <rect x="1" y="1" width="6" height="16" rx="1" fill="currentColor"/>
-          <rect x="13" y="1" width="6" height="16" rx="1" fill="currentColor" opacity="0.25"/>
-        </svg>The Daily Gap
-      </div>
-      <div class="card-stat card-stat-violet" data-count-to={gapStory.sourceCount}>{gapStory.sourceCount}</div>
-      <div class="stat-annotation stat-annotation-violet">sources covering what others miss</div>
-      <div class="card-hook">{gapStory.title}</div>
-      <span class="card-arrow">Read &darr;</span>
-    </a>
-    )}
-
-    <a href="#meanwhile" class="summary-card summary-card-cyan cascade" style="text-decoration: none; color: inherit;">
-      <div class="card-label card-label-cyan">
-        <svg width="16" height="16" viewBox="0 0 20 20" fill="none" style="vertical-align: -2px; margin-right: 6px;" aria-hidden="true">
-          <circle cx="10" cy="10" r="4" fill="currentColor"/>
-          <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5" opacity="0.3"/>
-        </svg>Meanwhile
-      </div>
-      <div class="card-stat card-stat-cyan" data-count-to={cooperation?.total_cooperation_stories || 0}>{cooperation?.total_cooperation_stories || '—'}</div>
-      <div class="stat-annotation stat-annotation-cyan">{cooperation ? `stories of people showing up (${cooperation.cooperation_rate}%)` : 'who showed up today'}</div>
-      <div class="card-hook">{cooperation ? (() => {
-        const rate = cooperation.cooperation_rate;
-        const fraction = rate >= 28 ? 'About one in three' : rate >= 23 ? 'About one in four' : rate >= 18 ? 'About one in five' : rate >= 15 ? 'About one in six' : rate >= 12 ? 'About one in eight' : `${rate}% of`;
-        return `${fraction} stories today showed people showing up for each other.`;
-      })() : 'Who showed up today?'}</div>
-      <span class="card-arrow">Read &darr;</span>
-    </a>
-
-  </div>
-</div>
-
-<!-- ================================================================ -->
-<!-- THE DAILY THREAD — PEACH ROOM                                    -->
-<!-- ================================================================ -->
-<div class="section-diagonal section-diagonal--cream-to-thread" aria-hidden="true"></div>
-{threadStory && (
-<article id="thread" class="section-world thread-world" aria-label="The Daily Thread" style="overflow: hidden;">
-<div class="wrap" style="position: relative; z-index: 1;">
-  <div style="padding: 48px 0 0;">
-    <span class="section-label section-label-magenta r">
-      <svg class="cat-icon" width="22" height="18" viewBox="0 0 22 18" fill="none" aria-hidden="true"><line x1="1" y1="4" x2="21" y2="4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="4" y1="9" x2="18" y2="9" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" opacity="0.5"/><line x1="7" y1="14" x2="15" y2="14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" opacity="0.25"/></svg>
-      The Daily Thread
-    </span>
-    <h2 class="headline headline-thread r d1">{threadStory.title}</h2>
-
-    {threadStory.changeDescription && (
-      <p class="r d1" style="font-family: 'Caveat', cursive; font-size: clamp(18px, 2vw, 22px); color: var(--tangerine-text); margin-top: 8px;">
-        {threadStory.changeDescription}
-      </p>
-    )}
+<!-- THE SEISMOGRAPH — core visual -->
+<section class="seismograph-sec" id="seismograph-sec">
+  <div class="sg-header">
+    <div class="sg-title">The Seismograph</div>
+    <div class="sg-sub">Each column is a day. Each row is a topic. Height = how much was covered. Tap any cell.</div>
   </div>
 
-  <!-- COVERAGE METER — the data visualization unique to Signal Board -->
-  <div class="r d2" style="margin-top: 32px; padding: 28px 0; border-top: 1px solid rgba(27,42,74,0.08); border-bottom: 1px solid rgba(27,42,74,0.08);">
-    <div style="display: flex; align-items: center; gap: 24px; flex-wrap: wrap;">
-      <div>
-        <div class="display" style="font-size: clamp(48px, 7vw, 72px); line-height: 1; color: var(--tangerine);">{threadStory.articleCount}</div>
-        <div class="stat-annotation stat-annotation-red" style="margin-top: 6px;">articles across {threadStory.sourceCount} sources</div>
-      </div>
-      <div style="flex: 1; min-width: min(200px, 100%);">
-        <div class="coverage-meter">
-          <div class="coverage-meter-fill" style={`width: ${Math.min(100, Math.round((threadStory.articleCount / Math.max(totalStories, 1)) * 100))}%;`}></div>
-        </div>
-        <div style="display: flex; justify-content: space-between; margin-top: 8px;">
-          <span style="font-family: 'Inter', sans-serif; font-size: 13px; color: var(--ink-mid); font-weight: 600;">
-            {Math.round((threadStory.articleCount / Math.max(totalStories, 1)) * 100)}% of today's coverage
-          </span>
-          <span style="font-family: 'Inter', sans-serif; font-size: 13px; color: var(--ink-light);">
-            {threadStory.sourceCount} sources &middot; {totalStories} total stories
-          </span>
-        </div>
-        {Object.keys(threadStory.sourceTiers).length > 0 && (
-        <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px;">
-          {Object.entries(threadStory.sourceTiers).map(([tier, count]) => (
-            <span style="font-family: 'Inter', sans-serif; font-size: 11px; color: var(--ink-light); background: var(--ink-faint); padding: 3px 8px; border-radius: 12px;">
-              {tierLabel(tier)}: {count}
-            </span>
-          ))}
-        </div>
-        )}
-      </div>
-    </div>
+  <!-- Date labels top -->
+  <div class="sg-dates" id="sg-dates"></div>
+
+  <!-- The grid -->
+  <div class="sg-grid-wrap">
+    <!-- Label column left -->
+    <div class="sg-labels" id="sg-labels"></div>
+    <!-- Bar grid -->
+    <div class="sg-grid" id="sg-grid"></div>
   </div>
 
-  <!-- SYNTHESIS — lead sentence callout + collapsible rest -->
-  {threadStory.synthesis && (() => {
-    const synthSentences = splitSentences(threadStory.synthesis);
-    const lead = synthSentences[0] || '';
-    const rest = synthSentences.slice(1).join(' ');
-    return (
-    <div style="padding: 28px 0 0;">
-      <div class="r">
-        <p class="synthesis-lead" set:html={linkifyText(lead, threadUrlMap)} />
-        {rest && (
-        <details class="synthesis-details">
-          <summary>Read the full analysis</summary>
-          <div class="synthesis-body">
-            <p class="body" style="font-size: clamp(17px, 1.8vw, 20px); line-height: 1.8; margin-bottom: 0;" set:html={linkifyText(rest, threadUrlMap)} />
-          </div>
-        </details>
-        )}
-      </div>
-    </div>
-    );
-  })()}
-
-  <!-- CROSS-SPECTRUM — framing exhibit -->
-  {threadStory.crossSpectrum && (() => {
-    const allSentences = splitSentences(threadStory.crossSpectrum);
-    // A sentence is an outlet framing row if it starts with a known outlet name.
-    // Everything else is a pattern/summary sentence for the callout card.
-    const outletRows = allSentences.filter(s => extractOutletFromSentence(s) !== null);
-    const summaryRows = allSentences.filter(s => extractOutletFromSentence(s) === null);
-    return (
-    <div style="padding: 32px 0 0;">
-      <span class="section-label r" style="font-size: 13px; margin-bottom: 20px; display: block;">How outlets told it differently</span>
-      {(() => {
-        // Collect tiers present in these rows for the legend
-        const tiersPresent = new Set();
-        for (const s of outletRows) {
-          const name = extractOutletFromSentence(s);
-          if (name) {
-            const t = getOutletTier(name);
-            const mapped = t === 'international' ? 'international' : (t === 'local-regional' || t === 'lived') ? 'local' : (t === 'specialist' || t === 'domain') ? 'specialist' : (t === 'analysis' || t === 'think-tank') ? 'analysis' : 'national';
-            tiersPresent.add(mapped);
-          }
-        }
-        const tierLegendItems = [
-          {key: 'national', label: 'National'},
-          {key: 'international', label: 'International'},
-          {key: 'local', label: 'Local & Regional'},
-          {key: 'specialist', label: 'Specialist'},
-          {key: 'analysis', label: 'Analysis'},
-        ].filter(t => tiersPresent.has(t.key));
-        return tierLegendItems.length >= 2 ? (
-          <div class="tier-legend r">
-            {tierLegendItems.map(t => (
-              <span class="tier-legend-item">
-                <span class={`tier-dot tier-dot--${t.key}`}></span>
-                {t.label}
-              </span>
-            ))}
-          </div>
-        ) : null;
-      })()}
-      <div class="r cascade-parent" style="display: flex; flex-direction: column; gap: 0;">
-        {outletRows.map((sentence: string, i: number) => {
-          const outletName = extractOutletFromSentence(sentence);
-          let label: string;
-          let tierForColor: string;
-          if (outletName) {
-            label = outletName;
-            const t = getOutletTier(outletName);
-            if (t === 'international') tierForColor = 'international';
-            else if (t === 'local-regional' || t === 'lived') tierForColor = 'local';
-            else if (t === 'specialist' || t === 'domain') tierForColor = 'specialist';
-            else if (t === 'analysis' || t === 'think-tank') tierForColor = 'analysis';
-            else tierForColor = 'national';
-          } else {
-            const fallbackMatch = sentence.match(/^([A-Z][A-Za-z0-9\s'.]+?)\s+[a-z]/);
-            if (fallbackMatch && fallbackMatch[1].trim().length > 2) {
-              label = fallbackMatch[1].replace(/'s$/, '').trim();
-            } else {
-              label = `Perspective ${i + 1}`;
-            }
-            tierForColor = '';
-          }
-          const outletUrl = lookupOutletUrl(label, threadUrlMap);
-          const ctx = getSourceContext(label);
-          return (
-          <div class="framing-row cascade" data-tier={tierForColor || undefined}>
-            <div class="framing-label">
-              {tierForColor && <span class={`framing-tier-dot framing-tier-dot--${tierForColor}`} aria-label={tierForColor}></span>}
-              <div>
-                {outletUrl ? <a href={outletUrl} target="_blank" rel="noopener" class="outlet-link">{label}</a> : label}
-                {ctx && <div class="outlet-context">{ctx}</div>}
-              </div>
-            </div>
-            <div class="framing-content">{sentence.trim()}</div>
-          </div>
-          );
-        })}
-      </div>
-      {summaryRows.length > 0 && (
-      <div class="pattern-box--thread r" style="border-radius: var(--radius-sm);">
-        <span style="font-family: 'Inter', sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--tangerine-text); display: block; margin-bottom: 8px;">The pattern</span>
-        <p style="font-family: 'Lora', Georgia, serif; font-size: clamp(15px, 1.6vw, 18px); line-height: 1.65; color: var(--ink-body); margin: 0;">{summaryRows.join(' ')}</p>
-      </div>
-      )}
-    </div>
-    );
-  })()}
-</div>
-
-<!-- WHY THIS MATTERS — warm editorial wash -->
-{threadStory.whyThisMatters && (
-<div class="editorial-wash r" style="margin-top: 32px; overflow: hidden;">
-  <div class="wrap">
-    <p style="font-family: 'Lora', serif; font-style: italic; font-size: clamp(19px, 2.2vw, 26px); line-height: 1.7; color: var(--ink); max-width: 680px;" set:html={linkifyText(threadStory.whyThisMatters, threadUrlMap)} />
-  </div>
-</div>
-)}
-
-<div class="wrap">
-  <!-- WATCH FOR (pipeline) -->
-  {threadStory.watchFor && (
-  <div style="padding: 28px 0 0;">
-    <div class="r callout-wash callout-wash-chartreuse">
-      <div class="watch-for-card" style="border-left: 4px solid var(--moss); padding: 14px 18px; background: var(--moss-wash); border-radius: 0 8px 8px 0;">
-        <span style="font-family: 'Inter', sans-serif; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--moss-text); font-weight: 600; display: block; margin-bottom: 8px;">What to watch for</span>
-        <p class="body" style="font-size: clamp(15px, 1.5vw, 17px); line-height: 1.8; color: var(--ink); margin: 0;" set:html={linkifyText(threadStory.watchFor, threadUrlMap)} />
-      </div>
-    </div>
-  </div>
-  )}
-
-  <!-- THREAD TO WATCH (editorial) -->
-  {editorial?.thread_to_watch && (
-  <div style="padding: 16px 0 0;">
-    <div class="r callout-wash callout-wash-chartreuse">
-      <div style="border-left: 4px solid var(--moss); padding: 14px 18px; background: var(--moss-wash); border-radius: 0 8px 8px 0;">
-        <span style="font-family: 'Inter', sans-serif; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--moss-text); font-weight: 600; display: block; margin-bottom: 8px;">Thread to watch</span>
-        <p class="body" style="font-size: clamp(15px, 1.5vw, 17px); line-height: 1.8; color: var(--ink); margin: 0;" set:html={escapeHtml(editorial.thread_to_watch)} />
-      </div>
-    </div>
-  </div>
-  )}
-
-
-</div>
-</article>
-)}
-
-<div class="section-diagonal section-diagonal--thread-to-gap" aria-hidden="true"></div>
-
-<!-- ================================================================ -->
-<!-- THE DAILY GAP — NAVY HEADER + LAVENDER ROOM                      -->
-<!-- ================================================================ -->
-{gapStory && (
-<!-- Gap header strip — navy (compact: just label + headline) -->
-<div class="navy" style="padding-bottom: 0; margin-top: -1px;">
-<div class="wrap">
-  <div style="padding: 48px 0 32px;">
-    <span class="section-label section-label-violet r" style="color: var(--cyan);">
-      <svg class="cat-icon" width="20" height="18" viewBox="0 0 20 18" fill="none" aria-hidden="true"><rect x="1" y="1" width="6" height="16" rx="1" fill="currentColor"/><rect x="13" y="1" width="6" height="16" rx="1" fill="currentColor" opacity="0.25"/></svg>
-      The Daily Gap
-    </span>
-    <h2 class="headline headline-gap r d1">{gapStory.title}</h2>
-  </div>
-</div>
-</div>
-
-<div class="section-diagonal section-diagonal--gap-navy-to-body" aria-hidden="true"></div>
-<!-- Gap body — lavender room -->
-<article id="gap" class="section-world gap-world" aria-label="The Daily Gap" style="margin-top: -1px;">
-<div class="wrap">
-
-  <!-- Article + source count — now on teal wash reading surface -->
-  <div class="r" style="display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap; padding-top: 8px;">
-    <div class="display" style="font-size: clamp(40px, 6vw, 64px); line-height: 1; color: var(--violet);">{gapStory.articleCount}</div>
-    <div class="stat-annotation" style="color: var(--ink-mid);">
-      articles from <strong style="color: var(--violet); font-weight: 700;">{gapStory.sourceCount} sources</strong> covering what others missed
-    </div>
-  </div>
-  {gapStory.changeDescription && (
-    <p class="r d1" style="font-family: 'Caveat', cursive; font-size: clamp(18px, 2vw, 22px); color: var(--violet-text); margin-top: 8px;">
-      {gapStory.changeDescription}
-    </p>
-  )}
-
-  <!-- COVERAGE GAP NOTE — only shown when the note matches the Gap section's structural force -->
-  {editorial?.coverage_gap_note && coverageGapMatchesGap && (
-  <div style="padding: 32px 0 0;">
-    <div class="r">
-      <div style="padding: 28px 32px; background: var(--white); border-radius: var(--radius-md); border-left: 4px solid var(--violet); box-shadow: var(--shadow-card);">
-        <span style="font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 14px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--violet-text); display: block; margin-bottom: 12px;">What national coverage missed</span>
-        <p style="font-family: 'Lora', serif; font-size: clamp(17px, 1.9vw, 22px); line-height: 1.75; color: var(--ink); margin: 0;" set:html={escapeHtml(editorial.coverage_gap_note)} />
-      </div>
-    </div>
-  </div>
-  )}
-
-  <!-- SYNTHESIS — lead sentence callout + collapsible rest -->
-  {gapStory.synthesis && (() => {
-    const synthSentences = splitSentences(gapStory.synthesis);
-    const lead = synthSentences[0] || '';
-    const rest = synthSentences.slice(1).join(' ');
-    return (
-    <div style="padding: 28px 0 0;">
-      <div class="r">
-        <p class="synthesis-lead" set:html={linkifyText(lead, gapUrlMap)} />
-        {rest && (
-        <details class="synthesis-details">
-          <summary>Read the full analysis</summary>
-          <div class="synthesis-body">
-            <p class="body" style="font-size: clamp(16px, 1.7vw, 19px); line-height: 1.8; margin-bottom: 0;" set:html={linkifyText(rest, gapUrlMap)} />
-          </div>
-        </details>
-        )}
-      </div>
-    </div>
-    );
-  })()}
-
-  <!-- FRAMING INSIGHTS — framing exhibit for Gap (prefer crossSpectrum from Pass 2) -->
-  {(gapStory.crossSpectrum || (gapStory.insights && gapStory.insights.length > 0)) && (() => {
-    const allSentences = gapStory.crossSpectrum
-      ? splitSentences(gapStory.crossSpectrum)
-      : gapStory.insights.slice(0, 6);
-    // A sentence is an outlet framing row if it starts with a known outlet name.
-    // Everything else is a pattern/summary sentence for the callout card.
-    const outletRows = allSentences.filter(s => extractOutletFromSentence(s) !== null);
-    const summaryRows = allSentences.filter(s => extractOutletFromSentence(s) === null);
-    return (
-    <div style="padding: 32px 0 0;">
-      <span class="section-label r section-label-teal" style="font-size: 13px; margin-bottom: 20px; display: block;">How outlets framed it</span>
-      {(() => {
-        const tiersPresent = new Set();
-        for (const s of outletRows) {
-          const name = extractOutletFromSentence(s);
-          if (name) {
-            const t = getOutletTier(name);
-            const mapped = t === 'international' ? 'international' : (t === 'local-regional' || t === 'lived') ? 'local' : (t === 'specialist' || t === 'domain') ? 'specialist' : (t === 'analysis' || t === 'think-tank') ? 'analysis' : 'national';
-            tiersPresent.add(mapped);
-          }
-        }
-        const tierLegendItems = [
-          {key: 'national', label: 'National'},
-          {key: 'international', label: 'International'},
-          {key: 'local', label: 'Local & Regional'},
-          {key: 'specialist', label: 'Specialist'},
-          {key: 'analysis', label: 'Analysis'},
-        ].filter(t => tiersPresent.has(t.key));
-        return tierLegendItems.length >= 2 ? (
-          <div class="tier-legend r">
-            {tierLegendItems.map(t => (
-              <span class="tier-legend-item">
-                <span class={`tier-dot tier-dot--${t.key}`}></span>
-                {t.label}
-              </span>
-            ))}
-          </div>
-        ) : null;
-      })()}
-      <div class="r cascade-parent" style="display: flex; flex-direction: column; gap: 0;">
-        {outletRows.map((sentence: string, i: number) => {
-          const outletName = extractOutletFromSentence(sentence);
-          let label: string;
-          let tierForColor: string;
-          if (outletName) {
-            label = outletName;
-            const t = getOutletTier(outletName);
-            if (t === 'international') tierForColor = 'international';
-            else if (t === 'local-regional' || t === 'lived') tierForColor = 'local';
-            else if (t === 'specialist' || t === 'domain') tierForColor = 'specialist';
-            else if (t === 'analysis' || t === 'think-tank') tierForColor = 'analysis';
-            else tierForColor = 'national';
-          } else {
-            const fallbackMatch = sentence.match(/^([A-Z][A-Za-z0-9\s'.]+?)\s+[a-z]/);
-            if (fallbackMatch && fallbackMatch[1].trim().length > 2) {
-              label = fallbackMatch[1].replace(/'s$/, '').trim();
-            } else {
-              label = '';
-            }
-            tierForColor = '';
-          }
-          const outletUrl = label ? lookupOutletUrl(label, gapUrlMap) : '';
-          return (
-          <div class="framing-row cascade" data-tier={tierForColor || undefined}>
-            {label && (() => {
-              const ctx = getSourceContext(label);
-              return (
-              <div class="framing-label">
-                {tierForColor && <span class={`framing-tier-dot framing-tier-dot--${tierForColor}`} aria-label={tierForColor}></span>}
-                <div>
-                  {outletUrl ? <a href={outletUrl} target="_blank" rel="noopener" class="outlet-link">{label}</a> : label}
-                  {ctx && <div class="outlet-context">{ctx}</div>}
-                </div>
-              </div>
-              );
-            })()}
-            <div class="framing-content">
-              <span>{sentence.trim()}</span>
-            </div>
-          </div>
-          );
-        })}
-      </div>
-      {summaryRows.length > 0 && (
-      <div class="pattern-box--gap r" style="border-radius: var(--radius-sm);">
-        <span style="font-family: 'Inter', sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--violet-text); display: block; margin-bottom: 8px;">The pattern</span>
-        <p style="font-family: 'Lora', Georgia, serif; font-size: clamp(15px, 1.6vw, 18px); line-height: 1.65; color: var(--ink-body); margin: 0;">{summaryRows.join(' ')}</p>
-      </div>
-      )}
-    </div>
-    );
-  })()}
-
-  <!-- WHY THIS MATTERS — warm editorial wash -->
-  {gapStory.whyThisMatters && (
-  <div class="editorial-wash r" style="overflow: hidden;">
-    <p class="body" style="font-style: italic; font-size: clamp(17px, 1.9vw, 21px); line-height: 1.7;" set:html={linkifyText(gapStory.whyThisMatters, gapUrlMap)} />
-  </div>
-  )}
-
-
-</div>
-</article>
-)}
-
-<div class="section-diagonal section-diagonal--gap-to-meanwhile" aria-hidden="true"></div>
-
-<!-- ================================================================ -->
-<!-- MEANWHILE — MINT ROOM                                            -->
-<!-- ================================================================ -->
-{meanwhileStory && (
-<article id="meanwhile" class="section-world meanwhile-world" aria-label="Meanwhile" style="overflow: hidden;">
-<div class="wrap" style="position: relative; z-index: 1;">
-  <div style="padding: 48px 0 0;">
-    <span class="section-label section-label-cyan r">
-      <svg class="cat-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="4" fill="currentColor"/><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5" opacity="0.3"/></svg>
-      Meanwhile
-    </span>
-    <h2 class="headline headline-meanwhile r d1">{meanwhileStory.title}</h2>
-
-    <!-- Big number + cooperation type cards -->
-    <div class="r d2" style="margin-top: 24px;">
-      <div style="display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap;">
-        <div class="display" style="font-size: clamp(48px, 8vw, 80px); line-height: 1; color: var(--cyan);">{cooperation?.total_cooperation_stories || meanwhileStory.articleCount}</div>
-        <div class="stat-annotation stat-annotation-green" style="font-size: clamp(18px, 2vw, 24px);">
-          stories of cooperation, {cooperation?.cooperation_rate || 25}% of everything we read
-        </div>
-      </div>
-      {cooperation && cooperation.by_type && cooperation.by_type.length > 0 && (
-        <div class="coop-grid">
-          {cooperation.by_type.map((t: any) => (
-            <div class="coop-type-card">
-              <div class="coop-type-count">{t.count}</div>
-              <div class="coop-type-label">{t.type}</div>
-            </div>
-          ))}
-        </div>
-      )}
-    </div>
-  </div>
-
-  <!-- SYNTHESIS — lead sentence callout + collapsible rest -->
-  {meanwhileStory.synthesis && (() => {
-    const synthSentences = splitSentences(meanwhileStory.synthesis);
-    const lead = synthSentences[0] || '';
-    const rest = synthSentences.slice(1).join(' ');
-    return (
-    <div style="padding: 32px 0 0;">
-      <div class="r">
-        <p class="synthesis-lead" set:html={linkifyText(lead, meanwhileUrlMap)} />
-        {rest && (
-        <details class="synthesis-details">
-          <summary>Read the full analysis</summary>
-          <div class="synthesis-body">
-            <p class="body" style="font-size: clamp(17px, 1.8vw, 20px); line-height: 1.75; margin-bottom: 0; color: var(--ink);" set:html={linkifyText(rest, meanwhileUrlMap)} />
-          </div>
-        </details>
-        )}
-      </div>
-    </div>
-    );
-  })()}
-
-  <!-- COOPERATION HIGHLIGHTS — visual cards for specific stories -->
-  {cooperation && cooperation.highlights && cooperation.highlights.length > 0 && (
-  <div style="padding: 24px 0 0;">
-    <span class="section-label section-label-cyan r" style="font-size: 13px; margin-bottom: 8px; display: block;">Stories of people showing up</span>
-    <div class="coop-highlights">
-      {cooperation.highlights.slice(0, 6).map((h: any) => (
-        <a href={h.url || '#'} target="_blank" rel="noopener" class="coop-highlight-card" style="text-decoration: none; color: inherit;">
-          <div class="coop-highlight-source">{h.source}</div>
-          <div class="coop-highlight-title">{h.title}</div>
-          {h.cooperation_type && <span class="coop-highlight-type">{h.cooperation_type}</span>}
-        </a>
-      ))}
-    </div>
-  </div>
-  )}
-
-  <!-- WHY THIS MATTERS -->
-  {meanwhileStory.whyThisMatters && (
-  <div style="padding: 24px 0 0;">
-    <div class="r">
-      <p class="body" style="font-size: clamp(16px, 1.7vw, 19px); line-height: 1.8; color: var(--ink-mid);" set:html={linkifyText(meanwhileStory.whyThisMatters, meanwhileUrlMap)} />
-    </div>
-  </div>
-  )}
-
-  <!-- WATCH FOR -->
-  {meanwhileStory.watchFor && (
-  <div style="padding: 24px 0 0;">
-    <div class="r callout-wash callout-wash-chartreuse">
-      <div class="watch-for-card" style="border-left: 4px solid var(--moss); padding: 14px 18px; background: var(--moss-wash); border-radius: 0 8px 8px 0;">
-        <span style="font-family: 'Inter', sans-serif; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--moss-text); font-weight: 600; display: block; margin-bottom: 8px;">What to watch for</span>
-        <p class="body" style="font-size: clamp(15px, 1.5vw, 17px); line-height: 1.8; color: var(--ink); margin: 0;" set:html={linkifyText(meanwhileStory.watchFor, meanwhileUrlMap)} />
-      </div>
-    </div>
-  </div>
-  )}
-
-  <!-- SOURCE FOOTNOTES — minimal, just outlet names -->
-  {cooperation && cooperation.highlights && cooperation.highlights.length > 0 && (
-  <div style="padding: 24px 0 0;">
-    <div class="r" style="font-family: 'Inter', sans-serif; font-size: 12px; color: var(--ink-light); line-height: 1.8;">
-      Sources: {cooperation.highlights.slice(0, 6).map((h: any, i: number) => (
-        <span>
-          <a href={h.url || '#'} target="_blank" rel="noopener" style="color: var(--cyan-text); text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1px;">{h.source}</a>{i < Math.min(cooperation.highlights.length, 6) - 1 ? ', ' : ''}
-        </span>
-      ))}
-    </div>
-  </div>
-  )}
-
-  <div style="padding-bottom: 48px;"></div>
-</div>
-</article>
-)}
-
-</main>
-
-<div class="section-diagonal section-diagonal--meanwhile-to-footer" aria-hidden="true"></div>
-
-<!-- ================================================================ -->
-<!-- FOOTER — CREAM                                                   -->
-<!-- ================================================================ -->
-
-<!-- ================================================================ -->
-<!-- THE SEISMOGRAPH — 11-day visual intelligence layer               -->
-<!-- Game of Life palette. Canvas-based. No text.                     -->
-<!-- ================================================================ -->
-<section id="seismograph" style="background:#08080E; padding: 64px 0 0; border-top: 1px solid rgba(255,255,255,0.06);">
-  <div style="padding: 0 32px 28px;">
-    <div style="font-family:'Space Mono',monospace; font-size:clamp(22px,3vw,34px); font-weight:700; letter-spacing:-0.02em; color:#F0F0F5; margin-bottom:6px;">The Seismograph</div>
-    <div style="font-family:'Space Mono',monospace; font-size:11px; color:rgba(240,240,245,0.4); letter-spacing:0.05em;">Each column is a day. Each row is a topic. Height = how much was covered. Tap any cell.</div>
-  </div>
-  <div id="sg-dates" style="display:flex; padding-left:120px; padding-right:16px; margin-bottom:4px;"></div>
-  <div style="display:flex; padding:0 16px 0 0; overflow-x:auto;">
-    <div id="sg-labels" style="width:120px; flex-shrink:0; display:flex; flex-direction:column;"></div>
-    <div id="sg-grid" style="flex:1; display:flex; gap:3px; align-items:stretch;"></div>
-  </div>
-  <div id="sg-detail" style="margin-top:12px; padding:0 16px 0 120px; min-height:160px;">
-    <div id="sg-detail-inner" style="background:#10101A; border:1px solid rgba(255,255,255,0.08); border-radius:10px; padding:24px;">
-      <div style="font-family:'Space Mono',monospace; font-size:11px; color:rgba(240,240,245,0.25);">Tap any cell to see what was covered</div>
+  <!-- Selected cell detail panel -->
+  <div class="sg-detail" id="sg-detail">
+    <div class="sg-detail-inner" id="sg-detail-inner">
+      <div class="sdi-hint">Tap any cell to see what was covered</div>
     </div>
   </div>
 </section>
 
-<!-- DIVERGENCE CONSTELLATION -->
-<section id="divergence-vis" style="background:#10101A; padding:64px 32px; border-top:1px solid rgba(255,255,255,0.06);">
-  <div style="display:flex; align-items:baseline; gap:20px; flex-wrap:wrap; margin-bottom:32px;">
-    <span id="div-score-big" style="font-family:'Space Mono',monospace; font-size:clamp(56px,8vw,96px); font-weight:700; line-height:1; letter-spacing:-0.04em; color:#FFD60A;">0.00</span>
-    <div>
-      <div style="font-family:'Space Mono',monospace; font-size:clamp(16px,2vw,22px); font-weight:700; color:#F0F0F5; margin-bottom:4px;">sources. One event. Today.</div>
-      <div style="font-family:'Space Mono',monospace; font-size:11px; color:rgba(240,240,245,0.4);">The same story — measured by how differently it was framed.</div>
+
+<!-- TODAY'S DIVERGENCE — sources, one event, different realities -->
+<section class="diverge-sec">
+  <div class="div-header">
+    <span class="div-score-big" id="div-score-big">0.00</span>
+    <div class="div-header-text">
+      <div class="div-title" id="div-title">Loading divergence data...</div>
+      <div class="div-sub" id="div-sub"></div>
     </div>
   </div>
-  <canvas id="diverge-canvas" style="display:block; width:100%; height:380px;"></canvas>
-  <div id="div-tooltip" style="position:fixed; z-index:500; display:none; background:rgba(8,8,14,0.97); border:1px solid rgba(255,255,255,0.1); border-radius:6px; padding:10px 14px; max-width:260px; pointer-events:none; font-family:'Space Mono',monospace; font-size:11px; color:#F0F0F5;"></div>
+  <canvas id="diverge-canvas"></canvas>
+  <div id="div-tooltip" class="tooltip"></div>
 </section>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
 
 
-
-<footer role="contentinfo" style="background: var(--cream); content-visibility: auto; contain-intrinsic-size: auto 600px;">
-<div class="wrap">
-  <div class="section">
-    <h2 class="section-label r" style="margin: 0;">Today's Sources</h2>
-
-    <div class="r d1" style="margin-top: 4px;">
-      <div class="display" style="font-size: clamp(80px, 16vw, 180px); line-height: 1; color: var(--ink);">{totalStories}</div>
-    </div>
-    <p class="stat-annotation r d2" style="font-size: 22px; margin-top: 4px;">articles analyzed today</p>
-
-    <div class="r d3" style="margin-top: 20px; max-width: 500px;">
-      <div style="height: 14px; border-radius: 7px; overflow: hidden; display: flex; gap: 2px;" role="progressbar" aria-valuenow={crossDomainPct} aria-valuemin="0" aria-valuemax="100" aria-label={`${crossDomainPct}% of stories crossed domain boundaries`}>
-        <div style={`width: ${crossDomainPct * 0.22}%; background: var(--tangerine); border-radius: 7px 0 0 7px;`}></div>
-        <div style={`width: ${crossDomainPct * 0.20}%; background: var(--cyan);`}></div>
-        <div style={`width: ${crossDomainPct * 0.20}%; background: var(--violet);`}></div>
-        <div style={`width: ${crossDomainPct * 0.20}%; background: var(--moss);`}></div>
-        <div style={`width: ${crossDomainPct * 0.18}%; background: var(--navy);`}></div>
-        <div style={`flex: 1; background: rgba(27,42,74,0.4); border-radius: 0 7px 7px 0;`}></div>
-      </div>
-      <div style="display: flex; justify-content: space-between; margin-top: 8px;">
-        <span style="font-family: 'Inter', sans-serif; font-size: 12px; color: var(--ink-mid); font-weight: 500;">{crossDomain} cross-domain</span>
-        <span style="font-family: 'Inter', sans-serif; font-size: 12px; color: var(--ink-light);">{totalStories} total</span>
-      </div>
-    </div>
-
-    <div class="pills r d4">
-      {domains.slice(0, 12).map((domain: string) => {
-        const dc = getDomainColor(domain);
-        return (
-          <span class="pill" style={`background: ${dc.bg}; border-color: transparent;`}>
-            <span style={`display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: ${dc.dot}; margin-right: 6px; vertical-align: middle;`}></span>
-            {domain}
-          </span>
-        );
-      })}
-    </div>
-
-    <!-- Editorial sign-off -->
-    <p class="r" style="margin-top: 32px; font-family: 'Lora', Georgia, serif; font-size: clamp(15px, 1.5vw, 18px); color: var(--ink-mid); max-width: 600px; line-height: 1.7;">
-      Signal Board reads {totalMonitoredSources} sources every day across the political spectrum, across borders, and across languages, because the outlets being squeezed out by consolidation and platform economics are the ones doing the most essential reporting.
-    </p>
-
-    <!-- Substack CTA — oversized Abril Fatface -->
-    <div class="r" style="margin-top: 40px;">
-      <a href="https://substack.com/@elisehasseltine" target="_blank" rel="noopener" class="cta-oversized">
-        Get tomorrow's<br>analysis <span class="cta-arrow">&rarr;</span>
-      </a>
-      <p style="font-family: 'Inter', sans-serif; font-size: 13px; color: var(--ink-light); margin-top: 12px;">Free on Substack. No algorithms, just the picture.</p>
-    </div>
-
-    <nav aria-label="Footer navigation" style="margin-top: 40px; font-family: 'Inter', sans-serif; font-size: 13px; color: var(--ink-light);">
-      <a href="/about/" style="color: var(--ink-light);">About</a>&ensp;·&ensp;<a href="/archive/" style="color: var(--ink-light);">Archive</a>&ensp;·&ensp;<a href="https://substack.com/@elisehasseltine" target="_blank" rel="noopener" style="color: var(--ink-light);">Subscribe</a>&ensp;·&ensp;<a href="https://github.com/ehasseltine/signal-board" target="_blank" rel="noopener" style="color: var(--ink-light);">Source</a>
-    </nav>
-
-    <div style="margin-top: 20px; padding-bottom: 32px; font-family: 'Inter', sans-serif; font-size: 11px; color: var(--ink-light); opacity: 0.7;">
-      Signal Board · Created by <a href="https://www.elisehasseltine.com" style="color: var(--ink-light);">Elise Hasseltine</a> · Last updated: <time datetime={dateStr}>{dateStr}</time> · No tracking · No ads
-    </div>
-  </div>
-</div>
+<!-- FOOTER -->
+<footer class="footer">
+  <span class="f-logo">Signal Board</span>
+  <span class="f-meta">300 sources · daily · no algorithm · Elise Hasseltine</span>
+  <a href="/about" class="f-cta">About →</a>
 </footer>
 
-
 <script is:inline>
-  // Count-up animation for summary card stats
-  // Respects prefers-reduced-motion: shows final number immediately
-  (function () {
-    var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    var counters = document.querySelectorAll('[data-count-to]');
-    if (!counters.length || prefersReducedMotion) return;
+/* ══════════════════════════════════════════
+   SIGNAL BOARD — THE SEISMOGRAPH
+   Live data. 7-day rolling window. 15 labels.
+══════════════════════════════════════════ */
 
-    // Set initial state: show 0
-    counters.forEach(function (el) {
-      var target = parseInt(el.getAttribute('data-count-to') || '0', 10);
-      if (target > 0) el.textContent = '0';
-    });
+/* ── LABEL DEFINITIONS (static — never changes) ── */
+const LABELS = {
+  war_and_conflict:      { name: 'War & Conflict',     color: '#FF2D55' },
+  whos_in_charge:        { name: "Who's in Charge",    color: '#FF9500' },
+  rules_and_courts:      { name: 'Rules & Courts',     color: '#FFD60A' },
+  money_and_prices:      { name: 'Money & Prices',     color: '#30D158' },
+  oil_and_energy:        { name: 'Oil & Energy',       color: '#FF6B00' },
+  global_relations:      { name: 'Global Relations',   color: '#0A84FF' },
+  rights_and_justice:    { name: 'Rights & Justice',   color: '#BF5AF2' },
+  ai_and_technology:     { name: 'AI & Technology',    color: '#00D4FF' },
+  communities:           { name: 'Communities',        color: '#34C759' },
+  health:                { name: 'Health',             color: '#5AC8FA' },
+  work_and_workers:      { name: 'Work & Workers',     color: '#FF9500' },
+  media_and_information: { name: 'Media & Info',       color: '#BF5AF2' },
+  the_environment:       { name: 'The Environment',    color: '#34C759' },
+  food_and_land:         { name: 'Food & Land',        color: '#FFD60A' },
+  people_power:          { name: 'People Power',       color: '#FF2D55' },
+};
+const LABEL_KEYS = Object.keys(LABELS);
 
-    function animateCount(el, target) {
-      var duration = 1200;
-      var start = performance.now();
-      function step(now) {
-        var elapsed = now - start;
-        var progress = Math.min(elapsed / duration, 1);
-        var eased = 1 - Math.pow(1 - progress, 3);
-        el.textContent = String(Math.round(eased * target));
-        if (progress < 1) requestAnimationFrame(step);
+/* ─────────────────────────────────────────
+   UTILITY
+───────────────────────────────────────── */
+const rAF = fn => requestAnimationFrame(fn);
+const lerp = (a, b, t) => a + (b - a) * t;
+const easeOut = t => 1 - Math.pow(1 - t, 3);
+const easeOutQuart = t => 1 - Math.pow(1 - t, 4);
+function seededRand(seed) { return ((Math.sin(seed) * 43758.5453) % 1 + 1) % 1; }
+
+
+/* ═════════════════════════════════════════
+   BOOT — fetch today + 6 days, then init
+═════════════════════════════════════════ */
+(async function boot() {
+  // 0. Fire GoL and count-ups immediately (no data dependency)
+  initGoL();
+  initCountUps();
+  initNav();
+
+  // 1. Fetch today's data
+  var todayData;
+  try {
+    var r = await fetch('/data/daily/latest.json');
+    todayData = await r.json();
+  } catch(e) {
+    console.error('Failed to load latest.json', e);
+    return;
+  }
+
+  var todayDate = todayData.date;
+
+  // 2. Generate the 7 dates: today and 6 days back
+  function addDays(dateStr, n) {
+    var d = new Date(dateStr + 'T12:00:00Z');
+    d.setUTCDate(d.getUTCDate() + n);
+    return d.toISOString().split('T')[0];
+  }
+  var dates = [];
+  for (var i = 0; i < 7; i++) {
+    dates.push(addDays(todayDate, -i));
+  }
+
+  // 3. Fetch the 6 older days in parallel
+  var olderFetches = dates.slice(1).map(function(date) {
+    return fetch('/data/daily/' + date + '.json')
+      .then(function(r) { return r.ok ? r.json() : null; })
+      .catch(function() { return null; });
+  });
+  var olderResults = await Promise.all(olderFetches);
+
+  // 4. Build dayData map: date -> { total, labels: {key: count} }
+  var allResults = [todayData].concat(olderResults);
+  var dayData = {};
+  var validDates = [];
+
+  allResults.forEach(function(data, i) {
+    if (!data) return;
+    var date = dates[i];
+    validDates.push(date);
+    var dom = (data.summary || {}).domain_distribution || {};
+    var labelCounts = {};
+    LABEL_KEYS.forEach(function(k) { labelCounts[k] = dom[k] || 0; });
+    dayData[date] = {
+      total: (data.summary || {}).total_stories || 0,
+      labels: labelCounts,
+    };
+  });
+
+  // 5. Init data-dependent sections
+  initSeismograph(validDates, dayData);
+  initDivergence(todayData);
+})();
+
+
+/* ═════════════════════════════════════════
+   1. GAME OF LIFE — hero canvas
+═════════════════════════════════════════ */
+function initGoL() {
+  var canvas = document.getElementById('gol-canvas');
+  if (!canvas) return;
+  var ctx = canvas.getContext('2d');
+  var SZ = 13;
+  var COLS = ['#FF2D55','#FF9500','#30D158','#0A84FF','#BF5AF2','#FFD60A'];
+  var W, H, cols, rows, grid, next, colors;
+
+  function resize() {
+    W = canvas.width  = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+    cols = Math.ceil(W/SZ)+1; rows = Math.ceil(H/SZ)+1;
+    grid = new Uint8Array(cols*rows); next = new Uint8Array(cols*rows);
+    colors = new Uint8Array(cols*rows);
+    for (var i=0;i<grid.length;i++) { grid[i]=Math.random()<0.2?1:0; colors[i]=Math.floor(Math.random()*6); }
+  }
+
+  function step() {
+    for (var r=0;r<rows;r++) for (var c=0;c<cols;c++) {
+      var n=0, idx=r*cols+c;
+      for (var dr=-1;dr<=1;dr++) for (var dc=-1;dc<=1;dc++) {
+        if(!dr&&!dc) continue;
+        n+=grid[((r+dr+rows)%rows)*cols+((c+dc+cols)%cols)];
       }
-      requestAnimationFrame(step);
+      if (grid[idx]) next[idx]=(n===2||n===3)?1:0;
+      else { next[idx]=n===3?1:0; if(n===3) colors[idx]=Math.floor(Math.random()*6); }
     }
+    var tmp=grid; grid=next; next=tmp;
+  }
 
-    var observer = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          var el = entry.target;
-          var target = parseInt(el.getAttribute('data-count-to') || '0', 10);
-          if (target > 0) animateCount(el, target);
-          observer.unobserve(el);
-        }
-      });
-    }, { threshold: 0.3 });
+  var fr=0;
+  function draw() {
+    ctx.clearRect(0,0,W,H);
+    for (var r=0;r<rows;r++) for (var c=0;c<cols;c++) {
+      if (!grid[r*cols+c]) continue;
+      ctx.globalAlpha=0.48; ctx.fillStyle=COLS[colors[r*cols+c]];
+      ctx.beginPath(); ctx.roundRect(c*SZ+1,r*SZ+1,SZ-2,SZ-2,2); ctx.fill();
+    }
+    ctx.globalAlpha=1;
+    var g=ctx.createLinearGradient(0,0,0,H);
+    g.addColorStop(0,'rgba(8,8,14,0.35)'); g.addColorStop(0.45,'rgba(8,8,14,0.55)'); g.addColorStop(1,'rgba(8,8,14,0.96)');
+    ctx.fillStyle=g; ctx.fillRect(0,0,W,H);
+    fr++; if(fr%4===0) step();
+    rAF(draw);
+  }
+  resize(); draw();
+  window.addEventListener('resize', resize);
+}
 
-    counters.forEach(function (el) { observer.observe(el); });
-  })();
 
-  /* ══════════════════════════════════════════
-     SIGNAL BOARD SEISMOGRAPH + DIVERGENCE
-     Reads daily JSON files from /data/daily/
-  ══════════════════════════════════════════ */
-  (function() {
-    'use strict';
-    var LABEL_KEYS=['war_and_conflict','whos_in_charge','rules_and_courts','money_and_prices','oil_and_energy','global_relations','rights_and_justice','ai_and_technology','communities','health','work_and_workers','media_and_information','the_environment','food_and_land','people_power'];
-    var LN={'war_and_conflict':'War & Conflict','whos_in_charge':"Who's in Charge",'rules_and_courts':'Rules & Courts','money_and_prices':'Money & Prices','oil_and_energy':'Oil & Energy','global_relations':'Global Relations','rights_and_justice':'Rights & Justice','ai_and_technology':'AI & Technology','communities':'Communities','health':'Health','work_and_workers':'Work & Workers','media_and_information':'Media & Info','the_environment':'The Environment','food_and_land':'Food & Land','people_power':'People Power'};
-    var LC={'war_and_conflict':'#FF2D55','whos_in_charge':'#FF9500','rules_and_courts':'#FFD60A','money_and_prices':'#30D158','oil_and_energy':'#FF6B00','global_relations':'#0A84FF','rights_and_justice':'#BF5AF2','ai_and_technology':'#00D4FF','communities':'#34C759','health':'#5AC8FA','work_and_workers':'#FF9500','media_and_information':'#BF5AF2','the_environment':'#34C759','food_and_land':'#FFD60A','people_power':'#FF2D55'};
-    function eO(t){return 1-Math.pow(1-t,3);}
-    function lerp(a,b,t){return a+(b-a)*t;}
+/* ═════════════════════════════════════════
+   COUNT-UPS — hero stats
+═════════════════════════════════════════ */
+function initCountUps() {
+  var io = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if(!e.isIntersecting) return; io.unobserve(e.target);
+      var target=parseInt(e.target.dataset.target), dur=1400, start=performance.now();
+      function tick(now) {
+        var t=Math.min(1,(now-start)/dur), ease=easeOutQuart(t);
+        e.target.textContent=Math.round(ease*target).toLocaleString();
+        if(t<1) rAF(tick);
+      }
+      rAF(tick);
+    });
+  }, {threshold:0.5});
+  document.querySelectorAll('.hs-n[data-target]').forEach(function(el){io.observe(el)});
+}
 
-    var todayEl=document.querySelector('time[datetime]');
-    var todayDate=todayEl?todayEl.getAttribute('datetime'):new Date().toISOString().split('T')[0];
-    var dates=[];
-    for(var i=0;i<11;i++){var d=new Date(todayDate+'T12:00:00Z');d.setUTCDate(d.getUTCDate()-i);dates.push(d.toISOString().split('T')[0]);}
 
-    Promise.all(dates.map(function(date){
-      return fetch('/data/daily/'+date+'.json').then(function(r){return r.ok?r.json():null;}).catch(function(){return null;});
-    })).then(function(results){
-      var dayData={},validDates=[];
-      results.forEach(function(data,i){
-        if(!data)return;
-        var date=dates[i];validDates.push(date);
-        var counts={};LABEL_KEYS.forEach(function(k){counts[k]=0;});
-        var dom=(data.summary||{}).domain_distribution||{};
-        LABEL_KEYS.forEach(function(k){if(dom[k]!==undefined)counts[k]=dom[k];});
-        dayData[date]={total:(data.summary||{}).total_stories||0,labels:counts,date:date,divergence:(data.event_divergence||[])[0]||null};
-      });
-      if(validDates.length>0)buildSG(validDates,dayData);
-      if(results[0])buildDiv(results[0]);
+/* ═════════════════════════════════════════
+   2. THE SEISMOGRAPH — 7 cols × 15 rows
+   Height = normalized article volume.
+   Color = label color, varying by day.
+   Selected cell → detail panel.
+═════════════════════════════════════════ */
+function initSeismograph(dates, dayData) {
+  var datesRow  = document.getElementById('sg-dates');
+  var labelsCol = document.getElementById('sg-labels');
+  var gridEl    = document.getElementById('sg-grid');
+  var detailEl  = document.getElementById('sg-detail-inner');
+  if (!datesRow || !labelsCol || !gridEl) return;
+
+  // Per-label max (for per-label normalization — gives each row full height range)
+  var labelMax = {};
+  LABEL_KEYS.forEach(function(key) {
+    var vals = dates.map(function(d) {
+      return dayData[d] ? (dayData[d].labels[key] || 0) : 0;
+    });
+    labelMax[key] = Math.max.apply(null, vals);
+  });
+
+  var selected = null;
+
+  // ── Build date headers ──────────────────
+  dates.forEach(function(date, i) {
+    var el = document.createElement('div');
+    el.className = 'sg-date-label' + (i===0 ? ' today' : '');
+    var d = new Date(date + 'T12:00:00Z');
+    el.textContent = d.toLocaleDateString('en-US', { month:'short', day:'numeric' });
+    datesRow.appendChild(el);
+  });
+
+  // ── Build label column ──────────────────
+  LABEL_KEYS.forEach(function(key) {
+    var el = document.createElement('div');
+    el.className = 'sg-label-row';
+    el.textContent = LABELS[key].name;
+    el.dataset.key = key;
+    el.style.color = LABELS[key].color + '99';
+    labelsCol.appendChild(el);
+  });
+
+  // ── Build grid: one column per date ──────
+  var cells = {};
+
+  dates.forEach(function(date, di) {
+    var col = document.createElement('div');
+    col.className = 'sg-col';
+    cells[date] = {};
+
+    LABEL_KEYS.forEach(function(key) {
+      var val = dayData[date] ? (dayData[date].labels[key] || 0) : 0;
+      var pct = labelMax[key] > 0 ? (val / labelMax[key] * 100) : 0;
+      var color = LABELS[key].color;
+
+      var cell = document.createElement('div');
+      cell.className = 'sg-cell';
+      cell.dataset.date = date;
+      cell.dataset.key = key;
+      cell.dataset.val = val;
+
+      var fill = document.createElement('div');
+      fill.className = 'sg-cell-fill';
+      fill.style.height = '0%';
+      fill.style.background = 'linear-gradient(0deg, ' + color + 'DD, ' + color + '66)';
+
+      var num = document.createElement('div');
+      num.className = 'sg-cell-num';
+      num.style.color = color;
+      num.textContent = val;
+
+      cell.appendChild(fill);
+      cell.appendChild(num);
+      col.appendChild(cell);
+      cells[date][key] = { cell: cell, fill: fill, pct: pct, val: val };
+
+      cell.addEventListener('click', (function(dt, ky, cl) {
+        return function() { selectCell(dt, ky, cl); };
+      })(date, key, color));
     });
 
-    function buildSG(dates,dayData){
-      var dr=document.getElementById('sg-dates'),lc=document.getElementById('sg-labels'),gr=document.getElementById('sg-grid');
-      if(!dr||!lc||!gr)return;
-      var lmax={};LABEL_KEYS.forEach(function(k){lmax[k]=Math.max.apply(null,dates.map(function(d){return(dayData[d]&&dayData[d].labels[k])||0;}));if(!lmax[k])lmax[k]=1;});
-      dates.forEach(function(date,i){
-        var el=document.createElement('div');
-        el.style.cssText='flex:1;text-align:center;font-family:Space Mono,monospace;font-size:9px;letter-spacing:.05em;text-transform:uppercase;';
-        el.style.color=i===0?'#FFD60A':'rgba(240,240,245,0.25)';
-        var d=new Date(date+'T12:00:00Z');
-        el.textContent=d.toLocaleDateString('en-US',{month:'short',day:'numeric'});
-        dr.appendChild(el);
-      });
-      LABEL_KEYS.forEach(function(key){
-        var el=document.createElement('div');
-        el.style.cssText='display:flex;align-items:flex-end;justify-content:flex-end;padding-right:10px;font-family:Space Mono,monospace;font-size:9px;letter-spacing:.04em;text-transform:uppercase;cursor:pointer;user-select:none;flex:1;';
-        el.style.color=LC[key]+'99';el.textContent=LN[key];
-        lc.appendChild(el);
-      });
-      var cells={};
-      dates.forEach(function(date,di){
-        var col=document.createElement('div');
-        col.style.cssText='flex:1;display:flex;flex-direction:column;gap:3px;';
-        cells[date]={};
-        LABEL_KEYS.forEach(function(key){
-          var val=(dayData[date]&&dayData[date].labels[key])||0;
-          var pct=(val/lmax[key]*100);
-          var cell=document.createElement('div');
-          cell.style.cssText='flex:1;position:relative;background:#18182A;border-radius:2px;cursor:pointer;overflow:hidden;min-height:20px;transition:transform .12s;';
-          var fill=document.createElement('div');
-          fill.style.cssText='position:absolute;bottom:0;left:0;right:0;border-radius:2px;height:0%;transition:height 1.2s cubic-bezier(0.16,1,0.3,1);';
-          fill.style.background='linear-gradient(0deg,'+LC[key]+'DD,'+LC[key]+'66)';
-          cell.appendChild(fill);col.appendChild(cell);
-          cells[date][key]={cell:cell,fill:fill,pct:pct,val:val};
-          cell.addEventListener('mouseover',function(){cell.style.transform='scale(1.05)';cell.style.zIndex='10';});
-          cell.addEventListener('mouseout',function(){cell.style.transform='';cell.style.zIndex='';});
-          cell.addEventListener('click',function(){selCell(date,key,val,cells);});
+    gridEl.appendChild(col);
+  });
+
+  // ── Animate bars in on scroll ────────────
+  var io = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (!e.isIntersecting) return;
+      io.unobserve(e.target);
+      dates.forEach(function(date, di) {
+        LABEL_KEYS.forEach(function(key, li) {
+          var c = cells[date][key];
+          setTimeout(function() {
+            c.fill.style.height = Math.max(c.pct, 4) + '%';
+          }, di * 35 + li * 8);
         });
-        gr.appendChild(col);
       });
-      var io=new IntersectionObserver(function(entries){
-        if(!entries[0].isIntersecting)return;io.disconnect();
-        dates.forEach(function(date,di){LABEL_KEYS.forEach(function(key,li){var c=cells[date][key];if(!c)return;setTimeout(function(){c.fill.style.height=Math.max(c.pct,3)+'%';},di*35+li*8);});});
-        setTimeout(function(){
-          var tk='war_and_conflict',tv=0;
-          if(dayData[dates[0]])LABEL_KEYS.forEach(function(k){var v=dayData[dates[0]].labels[k]||0;if(v>tv){tv=v;tk=k;}});
-          selCell(dates[0],tk,tv,cells);
-        },1800);
-      },{threshold:0.1});
-      io.observe(gr);
-      function syncH(){var fc=gr.querySelector('div');if(!fc)return;var ces=fc.querySelectorAll('div'),les=lc.querySelectorAll('div');ces.forEach(function(c,i){if(les[i])les[i].style.height=c.offsetHeight+'px';});}
-      window.addEventListener('resize',syncH);setTimeout(syncH,300);
-    }
+    });
+  }, { threshold: 0.1 });
+  io.observe(gridEl);
 
-    var _sel=null;
-    function selCell(date,key,val,cells){
-      if(_sel)_sel.style.boxShadow='';
-      var c=cells[date]&&cells[date][key];
-      if(c){c.cell.style.boxShadow='0 0 0 2px #FFD60A';c.cell.style.zIndex='20';_sel=c.cell;}
-      var di=document.getElementById('sg-detail-inner');if(!di)return;
-      var d=new Date(date+'T12:00:00Z');
-      var ds=d.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'});
-      di.innerHTML='<div style="font-family:Space Mono,monospace;font-size:13px;font-weight:700;color:'+LC[key]+';margin-bottom:8px;">'+LN[key]+' &nbsp;<span style="color:rgba(240,240,245,0.4)">'+ds+'</span> &nbsp;<span style="color:'+LC[key]+'">'+val+' articles</span></div><div style="font-family:Space Mono,monospace;font-size:11px;color:rgba(240,240,245,0.35);">Tap other cells to explore 11 days of coverage patterns.</div>';
-    }
-
-    function buildDiv(data){
-      var scoreEl=document.getElementById('div-score-big');
-      var canvas=document.getElementById('diverge-canvas');
-      var tip=document.getElementById('div-tooltip');
-      if(!canvas)return;
-      var div=(data.event_divergence||[])[0];if(!div)return;
-      var score=div.divergence?div.divergence.score:0;
-      var articles=div.articles||[];
-      if(scoreEl){
-        var io0=new IntersectionObserver(function(entries){if(!entries[0].isIntersecting)return;io0.disconnect();var dur=1600,start=performance.now();function tick(now){var t=Math.min(1,(now-start)/dur),ease=eO(t);scoreEl.textContent=(ease*score).toFixed(2);if(t<1)requestAnimationFrame(tick);}requestAnimationFrame(tick);},{threshold:0.5});
-        io0.observe(scoreEl);
-        var hdr=scoreEl.parentElement;if(hdr){var divs=hdr.querySelectorAll('div>div');if(divs[0])divs[0].textContent=articles.length+' sources. One event. Today.';}
+  // ── Sync label row heights with grid rows ─
+  function syncLabelHeights() {
+    var firstCol = gridEl.querySelector('.sg-col');
+    if (!firstCol) return;
+    var cellEls = firstCol.querySelectorAll('.sg-cell');
+    var labelEls = labelsCol.querySelectorAll('.sg-label-row');
+    cellEls.forEach(function(cellEl, i) {
+      if (labelEls[i]) {
+        labelEls[i].style.height = cellEl.offsetHeight + 'px';
       }
-      var TC={national:'#FF2D55',international:'#FF9500','local-regional':'#30D158',specialist:'#0A84FF',analysis:'#BF5AF2',newsletter:'#FFD60A',government:'#5AC8FA'};
-      var tierOrd=['national','newsletter','analysis','international','specialist','local-regional','government'];
-      var sorted=articles.slice().sort(function(a,b){return tierOrd.indexOf(a.tier||'international')-tierOrd.indexOf(b.tier||'international');});
-      var nodes=sorted.map(function(a,i){return{source:a.source,color:TC[a.tier]||'#FF9500',title:a.title||'',angle:sorted.length>1?i/(sorted.length-1):0.5,phase:((Math.sin(i*7+1)*43758.5453)%1+1)%1*Math.PI*2};});
-      var ctx=canvas.getContext('2d'),W,H,progress=0,started=false,t2=0;
-      function bn(){W=canvas.offsetWidth;H=380;canvas.width=W;canvas.height=H;function sr(s){return((Math.sin(s)*43758.5453)%1+1)%1;}nodes.forEach(function(n,i){n.tx=40+n.angle*(W-80)+(sr(i*7+1)-0.5)*40;n.ty=H/2+(sr(i*13+3)-0.5)*H*0.65;n.x=W/2;n.y=H/2;});}
-      function draw(){
-        ctx.clearRect(0,0,W,H);t2+=0.012;
-        if(!started){requestAnimationFrame(draw);return;}
-        progress=Math.min(1,progress+0.012);
-        var tN=nodes.length;
-        nodes.forEach(function(n,i){var s=(i/tN)*0.45,dp=Math.max(0,Math.min(1,(progress-s)/(1-s))),de=eO(dp);n.x=lerp(W/2,n.tx,de);n.y=lerp(H/2,n.ty,de);});
-        if(progress>0.3&&nodes.length>=2){var xs=nodes.map(function(n){return n.x;});var x0=Math.min.apply(null,xs)-10,x1=Math.max.apply(null,xs)+10;ctx.globalAlpha=Math.min(1,(progress-0.3)/0.3)*0.12;ctx.strokeStyle='rgba(255,255,255,0.4)';ctx.lineWidth=1;ctx.setLineDash([4,6]);ctx.beginPath();ctx.moveTo(x0,H/2);ctx.lineTo(x1,H/2);ctx.stroke();ctx.setLineDash([]);}
-        nodes.forEach(function(n,i){var s=(i/tN)*0.45,dp=Math.max(0,Math.min(1,(progress-s)/(1-s)));if(!dp)return;var pulse=0.78+0.22*Math.sin(t2*1.3+n.phase);var grd=ctx.createRadialGradient(n.x,n.y,0,n.x,n.y,22);grd.addColorStop(0,n.color+'AA');grd.addColorStop(1,n.color+'00');ctx.globalAlpha=0.45*dp*pulse;ctx.fillStyle=grd;ctx.beginPath();ctx.arc(n.x,n.y,22,0,Math.PI*2);ctx.fill();ctx.globalAlpha=dp*pulse;ctx.fillStyle=n.color;ctx.beginPath();ctx.arc(n.x,n.y,10,0,Math.PI*2);ctx.fill();if(dp>0.7){var a=(dp-0.7)/0.3;ctx.globalAlpha=a*0.85;ctx.fillStyle=n.color;ctx.font="bold 10px 'Space Grotesk',sans-serif";ctx.textAlign='center';ctx.textBaseline='top';ctx.fillText(n.source,n.x,n.y+14);}});
-        if(progress>0.7){var a=(progress-0.7)/0.3;ctx.globalAlpha=a*0.28;ctx.fillStyle='#F0F0F5';ctx.font="bold 9px 'Space Mono',monospace";ctx.textAlign='left';ctx.textBaseline='middle';ctx.fillText('\u2190 US frame',16,H/2);ctx.textAlign='right';ctx.fillText('regional frame \u2192',W-16,H/2);}
-        ctx.globalAlpha=1;ctx.textAlign='left';ctx.textBaseline='alphabetic';
-        requestAnimationFrame(draw);
-      }
-      var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){bn();progress=0;nodes.forEach(function(n){n.x=W/2;n.y=H/2;});started=true;requestAnimationFrame(draw);}});},{threshold:0.2});
-      bn();io.observe(canvas.closest('section'));
-      window.addEventListener('resize',function(){if(started){bn();progress=0;}});
-      if(tip){canvas.addEventListener('mousemove',function(e){var rect=canvas.getBoundingClientRect(),mx=(e.clientX-rect.left)*(W/rect.width),my=(e.clientY-rect.top)*(380/rect.height),hit=null;nodes.forEach(function(n){if(Math.hypot(mx-n.x,my-n.y)<16)hit=n;});if(hit){tip.style.display='block';tip.style.left=(e.clientX+14)+'px';tip.style.top=(e.clientY-8)+'px';tip.innerHTML='<strong style="color:'+hit.color+'">'+hit.source+'</strong><br><em style="opacity:.7">'+hit.title+'</em>';}else tip.style.display='none';});canvas.addEventListener('mouseleave',function(){tip.style.display='none';});}
-    }
-  })();
+    });
+  }
+  window.addEventListener('resize', syncLabelHeights);
+  setTimeout(syncLabelHeights, 200);
 
+  // ── Cell selection + detail panel ────────
+  function selectCell(date, key, color) {
+    if (selected) {
+      var prev = cells[selected.date] && cells[selected.date][selected.key];
+      if (prev) prev.cell.classList.remove('selected');
+      var prevLabel = labelsCol.querySelector('[data-key="' + selected.key + '"]');
+      if (prevLabel) prevLabel.classList.remove('active');
+    }
+
+    selected = { date: date, key: key };
+    cells[date][key].cell.classList.add('selected');
+    var labelEl = labelsCol.querySelector('[data-key="' + key + '"]');
+    if (labelEl) labelEl.classList.add('active');
+
+    renderDetail(date, key, color);
+  }
+
+  function renderDetail(date, key, color) {
+    var val = dayData[date] ? (dayData[date].labels[key] || 0) : 0;
+    var label = LABELS[key].name;
+    var d = new Date(date + 'T12:00:00Z');
+    var dateStr = d.toLocaleDateString('en-US', { weekday:'short', month:'short', day:'numeric' });
+
+    var articleHTML = '<div class="sdi-article"><div class="sdi-title" style="color:var(--dim)">' +
+      val + ' articles tagged "' + label + '" on ' + dateStr + '.<br>Full article list in the pipeline.' +
+      '</div></div>';
+
+    detailEl.innerHTML =
+      '<div class="sdi-header">' +
+        '<span class="sdi-label" style="color:' + color + '">' + label + '</span>' +
+        '<span class="sdi-date">' + dateStr + '</span>' +
+        '<span class="sdi-count" style="color:' + color + '">' + val + ' articles</span>' +
+      '</div>' +
+      '<div class="sdi-articles">' + articleHTML + '</div>';
+
+    detailEl.closest('.sg-detail').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  // Auto-select today's highest cell on load
+  setTimeout(function() {
+    var todayDate = dates[0];
+    var maxKey = 'war_and_conflict', maxVal = 0;
+    LABEL_KEYS.forEach(function(key) {
+      var v = dayData[todayDate] ? (dayData[todayDate].labels[key] || 0) : 0;
+      if (v > maxVal) { maxVal = v; maxKey = key; }
+    });
+    selectCell(todayDate, maxKey, LABELS[maxKey].color);
+  }, 1800);
+}
+
+
+/* ═════════════════════════════════════════
+   3. DIVERGENCE — fetched from pipeline
+   Source dots start at center, drift to
+   their frame position on a spectrum.
+═════════════════════════════════════════ */
+function initDivergence(todayData) {
+  var canvas = document.getElementById('diverge-canvas');
+  var tip = document.getElementById('div-tooltip');
+  if (!canvas || !tip) return;
+  var ctx = canvas.getContext('2d');
+
+  var scoreEl = document.getElementById('div-score-big');
+  var titleEl = document.getElementById('div-title');
+  var subEl = document.getElementById('div-sub');
+
+  var topCluster = (todayData.event_divergence || [])[0];
+  if (!topCluster) {
+    titleEl.textContent = 'No divergence cluster found today';
+    return;
+  }
+
+  var score = topCluster.divergence ? topCluster.divergence.score : (topCluster.score || 0);
+  var articles = topCluster.articles || [];
+  var sourceCount = topCluster.sources ? topCluster.sources.length : articles.length;
+  var entities = topCluster.entities || [];
+  var forceLabel = topCluster.structural_force || topCluster.label || '';
+
+  // Update header text
+  titleEl.textContent = sourceCount + ' sources. One event. Today.';
+  subEl.textContent = 'The same ' + (entities[0] || forceLabel) + ' story \u2014 measured by how differently it was framed.';
+
+  // Build nodes sorted by tier for left-to-right spread
+  var TIER_ORDER = ['national','newsletter','analysis','international','specialist','local-regional','government'];
+  var TIER_COLORS = {
+    national: '#FF2D55', international: '#FF9500', 'local-regional': '#30D158',
+    specialist: '#0A84FF', analysis: '#BF5AF2', newsletter: '#FFD60A', government: '#5AC8FA'
+  };
+  var sorted = articles.slice().sort(function(a, b) {
+    return TIER_ORDER.indexOf(a.tier || 'international') - TIER_ORDER.indexOf(b.tier || 'international');
+  });
+  var nodes = sorted.map(function(a, i) {
+    return {
+      source: a.source || ('Source ' + i),
+      color: TIER_COLORS[a.tier] || '#FF9500',
+      title: a.title || '',
+      angle: sorted.length > 1 ? i / (sorted.length - 1) : 0.5,
+      phase: seededRand(i * 11 + 5) * Math.PI * 2,
+    };
+  });
+
+  if (!nodes.length) return;
+
+  // Animate score number
+  var targetScore = score;
+  var io0 = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (!e.isIntersecting) return; io0.unobserve(e.target);
+      var dur=1600, start=performance.now();
+      function tick(now) {
+        var t=Math.min(1,(now-start)/dur), ease=easeOut(t);
+        scoreEl.textContent = (ease * targetScore).toFixed(2);
+        if(t<1) rAF(tick);
+      }
+      rAF(tick);
+    });
+  }, {threshold:0.5});
+  io0.observe(scoreEl);
+
+  var W, H, builtNodes=[], progress=0, started=false;
+
+  function buildNodes() {
+    W = canvas.offsetWidth; H = 380; canvas.height = H;
+    canvas.width = W;
+    var cy = H * 0.5;
+    builtNodes = nodes.map(function(a, i) {
+      return {
+        source: a.source,
+        color: a.color,
+        title: a.title,
+        angle: a.angle,
+        tx: 40 + a.angle * (W - 80) + (seededRand(i*7+1) - 0.5) * 40,
+        ty: cy + (seededRand(i*13+3) - 0.5) * H * 0.7,
+        x: W/2, y: cy,
+        phase: a.phase,
+      };
+    });
+  }
+
+  var t=0;
+  function draw() {
+    ctx.clearRect(0,0,W,H);
+    t += 0.012;
+    if (!started) { rAF(draw); return; }
+    progress = Math.min(1, progress + 0.014);
+    var ease = easeOut(progress);
+    var totalDots = builtNodes.length;
+
+    builtNodes.forEach(function(n, i) {
+      var startAt = (i / totalDots) * 0.45;
+      var dotP = Math.max(0, Math.min(1, (progress - startAt) / (1 - startAt)));
+      var dotEase = easeOut(dotP);
+      n.x = lerp(W/2, n.tx, dotEase);
+      n.y = lerp(H/2, n.ty, dotEase);
+    });
+
+    // Connection line
+    if (builtNodes.length >= 2) {
+      var xs = builtNodes.map(function(n){return n.x});
+      var x0=Math.min.apply(null,xs)-20, x1=Math.max.apply(null,xs)+20;
+      ctx.globalAlpha = ease * 0.15;
+      ctx.strokeStyle = 'rgba(255,255,255,0.4)';
+      ctx.lineWidth = 1; ctx.setLineDash([4,6]);
+      ctx.beginPath(); ctx.moveTo(x0,H*0.42); ctx.lineTo(x1,H*0.42); ctx.stroke();
+      ctx.setLineDash([]);
+    }
+
+    // Source dots
+    builtNodes.forEach(function(n, i) {
+      var startAt = (i / totalDots) * 0.45;
+      var dotP = Math.max(0, Math.min(1, (progress - startAt) / (1 - startAt)));
+      if (dotP === 0) return;
+      var pulse = 0.78 + 0.22 * Math.sin(t*1.3 + n.phase);
+      var grd = ctx.createRadialGradient(n.x,n.y,0,n.x,n.y,26);
+      grd.addColorStop(0, n.color+'AA'); grd.addColorStop(1, n.color+'00');
+      ctx.globalAlpha = 0.5*dotP*pulse; ctx.fillStyle = grd;
+      ctx.beginPath(); ctx.arc(n.x,n.y,26,0,Math.PI*2); ctx.fill();
+      ctx.globalAlpha = dotP*pulse; ctx.fillStyle = n.color;
+      ctx.beginPath(); ctx.arc(n.x,n.y,11,0,Math.PI*2); ctx.fill();
+      if (dotP > 0.7) {
+        var a = (dotP-0.7)/0.3;
+        ctx.globalAlpha = a*0.85; ctx.fillStyle = n.color;
+        ctx.font = "bold 10px 'Space Grotesk'"; ctx.textAlign='center'; ctx.textBaseline='top';
+        ctx.fillText(n.source, n.x, n.y+15);
+      }
+    });
+
+    // Spectrum labels
+    if (ease > 0.7) {
+      var a = (ease-0.7)/0.3;
+      ctx.globalAlpha = a*0.3; ctx.fillStyle='#F0F0F5';
+      ctx.font="bold 9px 'Space Mono'"; ctx.textAlign='left'; ctx.textBaseline='middle';
+      ctx.fillText('\u2190 FRAME A', 16, H*0.5);
+      ctx.textAlign='right';
+      ctx.fillText('FRAME B \u2192', W-16, H*0.5);
+      ctx.globalAlpha = a*0.06; ctx.strokeStyle='#ffffff';
+      ctx.lineWidth=1; ctx.setLineDash([4,6]);
+      ctx.beginPath(); ctx.moveTo(40, H*0.5); ctx.lineTo(W-40, H*0.5); ctx.stroke();
+      ctx.setLineDash([]);
+    }
+    ctx.globalAlpha=1; ctx.textAlign='left'; ctx.textBaseline='alphabetic';
+    rAF(draw);
+  }
+
+  // Replay animation on scroll into view
+  var io = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) {
+        buildNodes();
+        progress = 0;
+        builtNodes.forEach(function(n) { n.x = W/2; n.y = H/2; });
+        started = true;
+        rAF(draw);
+      }
+    });
+  }, { threshold: 0.2 });
+  io.observe(canvas.closest('.diverge-sec'));
+  window.addEventListener('resize', function() { if (started) { buildNodes(); progress=0; } });
+
+  canvas.addEventListener('mousemove', function(e) {
+    var rect=canvas.getBoundingClientRect();
+    var mx=(e.clientX-rect.left)*(W/rect.width);
+    var my=(e.clientY-rect.top)*(280/rect.height);
+    var hit=builtNodes.find(function(n){return Math.hypot(mx-n.x,my-n.y)<18});
+    if (hit) {
+      tip.style.display='block';
+      tip.style.left=(e.clientX+14)+'px'; tip.style.top=(e.clientY-8)+'px';
+      tip.innerHTML='<div class="tt-name" style="color:'+hit.color+'">'+hit.source+'</div>' +
+        (hit.title ? '<div class="tt-text">'+hit.title+'</div>' : '');
+    } else tip.style.display='none';
+  });
+  canvas.addEventListener('mouseleave',function(){tip.style.display='none'});
+}
+
+
+/* ─── NAV scroll state ──────────────────── */
+function initNav() {
+  var nav=document.querySelector('.nav');
+  window.addEventListener('scroll',function(){nav.classList.toggle('solid',window.scrollY>80)},{passive:true});
+}
 </script>
 
-</BaseLayout>
+</body>
+</html>
