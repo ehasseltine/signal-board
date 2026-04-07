@@ -707,11 +707,11 @@ body { background: var(--bg); color: var(--white); font-family: var(--sans);
   <div class="sg-dates" id="sg-dates"></div>
 
   <!-- The grid -->
-  <div class="sg-grid-wrap">
+  <div class="sg-grid-wrap" style="display:flex; padding:0 16px 0 0; overflow-x:auto;">
     <!-- Label column left -->
-    <div class="sg-labels" id="sg-labels"></div>
+    <div class="sg-labels" id="sg-labels" style="width:120px; flex-shrink:0; display:flex; flex-direction:column;"></div>
     <!-- Bar grid -->
-    <div class="sg-grid" id="sg-grid"></div>
+    <div class="sg-grid" id="sg-grid" style="flex:1; display:flex; gap:3px; align-items:stretch; min-height:500px;"></div>
   </div>
 
   <!-- Selected cell detail panel -->
@@ -993,7 +993,7 @@ function initSeismograph(dates, dayData) {
 
   dates.forEach(function(date, di) {
     var col = document.createElement('div');
-    col.className = 'sg-col';
+    col.style.cssText = 'flex:1; display:flex; flex-direction:column; gap:3px;';
     cells[date] = {};
 
     LABEL_KEYS.forEach(function(key) {
