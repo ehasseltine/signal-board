@@ -8,7 +8,7 @@
     <link>https://signal-board.org</link>
     <description>Daily news analysis from 300 sources across the political spectrum, across borders, and across languages. See what no single outlet can show you.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 06 Apr 2026 08:26:48 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 07 Apr 2026 17:26:00 GMT</lastBuildDate>
     <atom:link href="https://signal-board.org/rss.xml" rel="self" type="application/rss+xml" />
     <copyright>Elise Hasseltine</copyright>
     <managingEditor>elise@elisehasseltine.com (Elise Hasseltine)</managingEditor>
@@ -19,14 +19,24 @@
       <link>https://signal-board.org</link>
     </image>
     <item>
-      <title>War turns energy and food into weapons as colleges partner with Pentagon</title>
+      <title>US officials pick sides in foreign elections while hiding war plans</title>
+      <link>https://signal-board.org/archive/2026-04-07/</link>
+      <guid isPermaLink="true">https://signal-board.org/archive/2026-04-07/</guid>
+      <pubDate>Tue, 07 Apr 2026 07:00:00 GMT</pubDate>
+      <description>The architecture of American power is operating through two channels that mirror each other in troubling ways. While Vice President Vance campaigns openly in Hungary to support Viktor Orban&apos;s reelection (coverage that appears across international outlets but barely registers in US national media), the Pentagon cancels public briefings just before launching military strikes against Iran. Both moves represent the same structural choice: abandoning democratic accountability when it constrains executive action. The pattern extends beyond these headline moments into the information ecosystem itself, where Oracle announces layoffs while investing billions in AI infrastructure that will automate the knowledge work its competitors depend on, and where a $65 billion acquisition of Universal Music consolidates cultural content production under the same financial structures driving media consolidation. What local outlets caught and national media missed tells the story of who gets cut out: federal job training money flowing to incarcerated workers through Brown University partnerships, tribal gaming rights threatened by prediction market loopholes, and atmospheric pollution from increased rocket launches driven by AI data center demand.</description>
+      <dc:creator>Elise Hasseltine</dc:creator>
+      <signal:sources>98</signal:sources>
+      <signal:articles>648</signal:articles>
+    </item>
+    <item>
+      <title>Signal Board - 2026-04-06</title>
       <link>https://signal-board.org/archive/2026-04-06/</link>
       <guid isPermaLink="true">https://signal-board.org/archive/2026-04-06/</guid>
       <pubDate>Mon, 06 Apr 2026 07:00:00 GMT</pubDate>
-      <description>The collision of military escalation and supply chain vulnerability reveals how warfare now operates through economic infrastructure rather than territorial conquest. When Trump threatens military action over the Strait of Hormuz, the immediate effect appears in India&apos;s emergency fertilizer tenders and Australia&apos;s fuel shortage charts, forcing agricultural nations to compete for basic inputs during critical planting windows. This weaponization of necessity connects directly to what specialist outlet Naked Capitalism documented about university research partnerships with military institutions, where defense priorities become embedded in academic work through funding structures. The pattern suggests that military conflict increasingly operates through the civilian systems people depend on for food, energy, and education, making the distinction between wartime and peacetime less meaningful for ordinary life.</description>
+      <description>Daily news analysis from 300 sources for 2026-04-06</description>
       <dc:creator>Elise Hasseltine</dc:creator>
-      <signal:sources>77</signal:sources>
-      <signal:articles>507</signal:articles>
+      <signal:sources>207</signal:sources>
+      <signal:articles>1619</signal:articles>
     </item>
     <item>
       <title>US jets shot down over Iran as government custody fails kids</title>
