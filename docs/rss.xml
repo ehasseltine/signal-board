@@ -8,7 +8,7 @@
     <link>https://signal-board.org</link>
     <description>Daily news analysis from 300 sources across the political spectrum, across borders, and across languages. See what no single outlet can show you.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 07 Apr 2026 19:15:15 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 07 Apr 2026 19:26:45 GMT</lastBuildDate>
     <atom:link href="https://signal-board.org/rss.xml" rel="self" type="application/rss+xml" />
     <copyright>Elise Hasseltine</copyright>
     <managingEditor>elise@elisehasseltine.com (Elise Hasseltine)</managingEditor>
@@ -19,11 +19,11 @@
       <link>https://signal-board.org</link>
     </image>
     <item>
-      <title>US officials pick sides in foreign elections while hiding war plans</title>
+      <title>Signal Board - 2026-04-07</title>
       <link>https://signal-board.org/archive/2026-04-07/</link>
       <guid isPermaLink="true">https://signal-board.org/archive/2026-04-07/</guid>
       <pubDate>Tue, 07 Apr 2026 07:00:00 GMT</pubDate>
-      <description>The architecture of American power is operating through two channels that mirror each other in troubling ways. While Vice President Vance campaigns openly in Hungary to support Viktor Orban&apos;s reelection (coverage that appears across international outlets but barely registers in US national media), the Pentagon cancels public briefings just before launching military strikes against Iran. Both moves represent the same structural choice: abandoning democratic accountability when it constrains executive action. The pattern extends beyond these headline moments into the information ecosystem itself, where Oracle announces layoffs while investing billions in AI infrastructure that will automate the knowledge work its competitors depend on, and where a $65 billion acquisition of Universal Music consolidates cultural content production under the same financial structures driving media consolidation. What local outlets caught and national media missed tells the story of who gets cut out: federal job training money flowing to incarcerated workers through Brown University partnerships, tribal gaming rights threatened by prediction market loopholes, and atmospheric pollution from increased rocket launches driven by AI data center demand.</description>
+      <description>Daily news analysis from 300 sources for 2026-04-07</description>
       <dc:creator>Elise Hasseltine</dc:creator>
       <signal:sources>98</signal:sources>
       <signal:articles>648</signal:articles>
@@ -49,14 +49,14 @@
       <signal:articles>387</signal:articles>
     </item>
     <item>
-      <title>Signal Board - 2026-04-04</title>
+      <title>Iran shot down US jets as trade routes get squeezed</title>
       <link>https://signal-board.org/archive/2026-04-04/</link>
       <guid isPermaLink="true">https://signal-board.org/archive/2026-04-04/</guid>
       <pubDate>Sat, 04 Apr 2026 07:00:00 GMT</pubDate>
-      <description>Daily news analysis from 300 sources for 2026-04-04</description>
+      <description>Today&apos;s coverage reveals how military escalation becomes a structural force reshaping everything from fuel distribution to regulatory enforcement. The downing of two US fighter jets by Iranian forces marks a transition from proxy warfare to direct state engagement, with one pilot rescued and regional security implications rippling outward. What emerges from reading across 160 sources is how this escalation operates as more than a bilateral military event, creating pressure waves that expose vulnerabilities in systems far from the conflict zone itself.</description>
       <dc:creator>Elise Hasseltine</dc:creator>
-      <signal:sources>154</signal:sources>
-      <signal:articles>859</signal:articles>
+      <signal:sources>160</signal:sources>
+      <signal:articles>1193</signal:articles>
     </item>
     <item>
       <title>When the president fires people, the reasons become court cases</title>
