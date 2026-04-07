@@ -8,7 +8,7 @@
     <link>https://signal-board.org</link>
     <description>Daily news analysis from 300 sources across the political spectrum, across borders, and across languages. See what no single outlet can show you.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 07 Apr 2026 19:26:45 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 07 Apr 2026 19:54:47 GMT</lastBuildDate>
     <atom:link href="https://signal-board.org/rss.xml" rel="self" type="application/rss+xml" />
     <copyright>Elise Hasseltine</copyright>
     <managingEditor>elise@elisehasseltine.com (Elise Hasseltine)</managingEditor>
@@ -49,14 +49,14 @@
       <signal:articles>387</signal:articles>
     </item>
     <item>
-      <title>Iran shot down US jets as trade routes get squeezed</title>
+      <title>Signal Board - 2026-04-04</title>
       <link>https://signal-board.org/archive/2026-04-04/</link>
       <guid isPermaLink="true">https://signal-board.org/archive/2026-04-04/</guid>
       <pubDate>Sat, 04 Apr 2026 07:00:00 GMT</pubDate>
-      <description>Today&apos;s coverage reveals how military escalation becomes a structural force reshaping everything from fuel distribution to regulatory enforcement. The downing of two US fighter jets by Iranian forces marks a transition from proxy warfare to direct state engagement, with one pilot rescued and regional security implications rippling outward. What emerges from reading across 160 sources is how this escalation operates as more than a bilateral military event, creating pressure waves that expose vulnerabilities in systems far from the conflict zone itself.</description>
+      <description>Daily news analysis from 300 sources for 2026-04-04</description>
       <dc:creator>Elise Hasseltine</dc:creator>
-      <signal:sources>160</signal:sources>
-      <signal:articles>1193</signal:articles>
+      <signal:sources>154</signal:sources>
+      <signal:articles>859</signal:articles>
     </item>
     <item>
       <title>When the president fires people, the reasons become court cases</title>
