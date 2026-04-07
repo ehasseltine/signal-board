@@ -1070,6 +1070,46 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
 <!-- ================================================================ -->
 <!-- FOOTER — CREAM                                                   -->
 <!-- ================================================================ -->
+
+<!-- ================================================================ -->
+<!-- THE SEISMOGRAPH — 11-day visual intelligence layer               -->
+<!-- Game of Life palette. Canvas-based. No text.                     -->
+<!-- ================================================================ -->
+<section id="seismograph" style="background:#08080E; padding: 64px 0 0; border-top: 1px solid rgba(255,255,255,0.06);">
+  <div style="padding: 0 32px 28px;">
+    <div style="font-family:'Space Mono',monospace; font-size:clamp(22px,3vw,34px); font-weight:700; letter-spacing:-0.02em; color:#F0F0F5; margin-bottom:6px;">The Seismograph</div>
+    <div style="font-family:'Space Mono',monospace; font-size:11px; color:rgba(240,240,245,0.4); letter-spacing:0.05em;">Each column is a day. Each row is a topic. Height = how much was covered. Tap any cell.</div>
+  </div>
+  <div id="sg-dates" style="display:flex; padding-left:120px; padding-right:16px; margin-bottom:4px;"></div>
+  <div style="display:flex; padding:0 16px 0 0; overflow-x:auto;">
+    <div id="sg-labels" style="width:120px; flex-shrink:0; display:flex; flex-direction:column;"></div>
+    <div id="sg-grid" style="flex:1; display:flex; gap:3px; align-items:stretch;"></div>
+  </div>
+  <div id="sg-detail" style="margin-top:12px; padding:0 16px 0 120px; min-height:160px;">
+    <div id="sg-detail-inner" style="background:#10101A; border:1px solid rgba(255,255,255,0.08); border-radius:10px; padding:24px;">
+      <div style="font-family:'Space Mono',monospace; font-size:11px; color:rgba(240,240,245,0.25);">Tap any cell to see what was covered</div>
+    </div>
+  </div>
+</section>
+
+<!-- DIVERGENCE CONSTELLATION -->
+<section id="divergence-vis" style="background:#10101A; padding:64px 32px; border-top:1px solid rgba(255,255,255,0.06);">
+  <div style="display:flex; align-items:baseline; gap:20px; flex-wrap:wrap; margin-bottom:32px;">
+    <span id="div-score-big" style="font-family:'Space Mono',monospace; font-size:clamp(56px,8vw,96px); font-weight:700; line-height:1; letter-spacing:-0.04em; color:#FFD60A;">0.00</span>
+    <div>
+      <div style="font-family:'Space Mono',monospace; font-size:clamp(16px,2vw,22px); font-weight:700; color:#F0F0F5; margin-bottom:4px;">sources. One event. Today.</div>
+      <div style="font-family:'Space Mono',monospace; font-size:11px; color:rgba(240,240,245,0.4);">The same story — measured by how differently it was framed.</div>
+    </div>
+  </div>
+  <canvas id="diverge-canvas" style="display:block; width:100%; height:380px;"></canvas>
+  <div id="div-tooltip" style="position:fixed; z-index:500; display:none; background:rgba(8,8,14,0.97); border:1px solid rgba(255,255,255,0.1); border-radius:6px; padding:10px 14px; max-width:260px; pointer-events:none; font-family:'Space Mono',monospace; font-size:11px; color:#F0F0F5;"></div>
+</section>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+
+
+
 <footer role="contentinfo" style="background: var(--cream); content-visibility: auto; contain-intrinsic-size: auto 600px;">
 <div class="wrap">
   <div class="section">
@@ -1130,44 +1170,6 @@ function getSourceGeo(sourceName: string): { country: string; geo: string; tier:
   </div>
 </div>
 </footer>
-
-
-<!-- ================================================================ -->
-<!-- THE SEISMOGRAPH — 11-day visual intelligence layer               -->
-<!-- Game of Life palette. Canvas-based. No text.                     -->
-<!-- ================================================================ -->
-<section id="seismograph" style="background:#08080E; padding: 64px 0 0; border-top: 1px solid rgba(255,255,255,0.06);">
-  <div style="padding: 0 32px 28px;">
-    <div style="font-family:'Space Mono',monospace; font-size:clamp(22px,3vw,34px); font-weight:700; letter-spacing:-0.02em; color:#F0F0F5; margin-bottom:6px;">The Seismograph</div>
-    <div style="font-family:'Space Mono',monospace; font-size:11px; color:rgba(240,240,245,0.4); letter-spacing:0.05em;">Each column is a day. Each row is a topic. Height = how much was covered. Tap any cell.</div>
-  </div>
-  <div id="sg-dates" style="display:flex; padding-left:120px; padding-right:16px; margin-bottom:4px;"></div>
-  <div style="display:flex; padding:0 16px 0 0; overflow-x:auto;">
-    <div id="sg-labels" style="width:120px; flex-shrink:0; display:flex; flex-direction:column;"></div>
-    <div id="sg-grid" style="flex:1; display:flex; gap:3px; align-items:stretch;"></div>
-  </div>
-  <div id="sg-detail" style="margin-top:12px; padding:0 16px 0 120px; min-height:160px;">
-    <div id="sg-detail-inner" style="background:#10101A; border:1px solid rgba(255,255,255,0.08); border-radius:10px; padding:24px;">
-      <div style="font-family:'Space Mono',monospace; font-size:11px; color:rgba(240,240,245,0.25);">Tap any cell to see what was covered</div>
-    </div>
-  </div>
-</section>
-
-<!-- DIVERGENCE CONSTELLATION -->
-<section id="divergence-vis" style="background:#10101A; padding:64px 32px; border-top:1px solid rgba(255,255,255,0.06);">
-  <div style="display:flex; align-items:baseline; gap:20px; flex-wrap:wrap; margin-bottom:32px;">
-    <span id="div-score-big" style="font-family:'Space Mono',monospace; font-size:clamp(56px,8vw,96px); font-weight:700; line-height:1; letter-spacing:-0.04em; color:#FFD60A;">0.00</span>
-    <div>
-      <div style="font-family:'Space Mono',monospace; font-size:clamp(16px,2vw,22px); font-weight:700; color:#F0F0F5; margin-bottom:4px;">sources. One event. Today.</div>
-      <div style="font-family:'Space Mono',monospace; font-size:11px; color:rgba(240,240,245,0.4);">The same story — measured by how differently it was framed.</div>
-    </div>
-  </div>
-  <canvas id="diverge-canvas" style="display:block; width:100%; height:380px;"></canvas>
-  <div id="div-tooltip" style="position:fixed; z-index:500; display:none; background:rgba(8,8,14,0.97); border:1px solid rgba(255,255,255,0.1); border-radius:6px; padding:10px 14px; max-width:260px; pointer-events:none; font-family:'Space Mono',monospace; font-size:11px; color:#F0F0F5;"></div>
-</section>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
 
 
 <script is:inline>
