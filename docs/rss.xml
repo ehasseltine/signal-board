@@ -8,7 +8,7 @@
     <link>https://signal-board.org</link>
     <description>Daily news analysis from 300 sources across the political spectrum, across borders, and across languages. See what no single outlet can show you.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 08 Apr 2026 08:18:30 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 08 Apr 2026 20:19:05 GMT</lastBuildDate>
     <atom:link href="https://signal-board.org/rss.xml" rel="self" type="application/rss+xml" />
     <copyright>Elise Hasseltine</copyright>
     <managingEditor>elise@elisehasseltine.com (Elise Hasseltine)</managingEditor>
@@ -18,46 +18,6 @@
       <title>Signal Board</title>
       <link>https://signal-board.org</link>
     </image>
-    <item>
-      <title>Companies broke their promises while kids face airport security in jail</title>
-      <link>https://signal-board.org/archive/2026-04-08/</link>
-      <guid isPermaLink="true">https://signal-board.org/archive/2026-04-08/</guid>
-      <pubDate>Wed, 08 Apr 2026 07:00:00 GMT</pubDate>
-      <description>The structural pattern emerging today connects corporate accountability to institutional surveillance, both operating in spaces where national media attention has systematically withdrawn. Food companies made public commitments to reduce pesticides on farms, then quietly abandoned those promises years later when the spotlight moved elsewhere, a story Civil Eats covered while national outlets focused on international conflict. Meanwhile, New York proposes body scanners for juvenile detention facilities, technology that treats children like airport security threats, covered only by The Imprint while national sources ignored the civil liberties implications. The gap isn&apos;t accidental but architectural: platform economics starve the local and specialist newsrooms that track how corporate promises dissolve and how surveillance expands into spaces where children have no choice but to comply. What emerges is a picture of institutional power operating without meaningful oversight in the domains where people actually live, eat, and send their children to school, while national attention concentrates on geopolitical drama that generates more engagement but affects fewer daily decisions.</description>
-      <dc:creator>Elise Hasseltine</dc:creator>
-      <signal:sources>101</signal:sources>
-      <signal:articles>689</signal:articles>
-    </item>
-    <item>
-      <title>Signal Board - 2026-04-07</title>
-      <link>https://signal-board.org/archive/2026-04-07/</link>
-      <guid isPermaLink="true">https://signal-board.org/archive/2026-04-07/</guid>
-      <pubDate>Tue, 07 Apr 2026 07:00:00 GMT</pubDate>
-      <description>Daily news analysis from 300 sources for 2026-04-07</description>
-      <dc:creator>Elise Hasseltine</dc:creator>
-      <signal:sources>98</signal:sources>
-      <signal:articles>648</signal:articles>
-    </item>
-    <item>
-      <title>Signal Board - 2026-04-06</title>
-      <link>https://signal-board.org/archive/2026-04-06/</link>
-      <guid isPermaLink="true">https://signal-board.org/archive/2026-04-06/</guid>
-      <pubDate>Mon, 06 Apr 2026 07:00:00 GMT</pubDate>
-      <description>Daily news analysis from 300 sources for 2026-04-06</description>
-      <dc:creator>Elise Hasseltine</dc:creator>
-      <signal:sources>207</signal:sources>
-      <signal:articles>1619</signal:articles>
-    </item>
-    <item>
-      <title>US jets shot down over Iran as government custody fails kids</title>
-      <link>https://signal-board.org/archive/2026-04-05/</link>
-      <guid isPermaLink="true">https://signal-board.org/archive/2026-04-05/</guid>
-      <pubDate>Sun, 05 Apr 2026 07:00:00 GMT</pubDate>
-      <description>The pattern cutting across today&apos;s coverage shows institutions designed to protect people buckling under the weight of political escalation. Military operations that put pilots deep in hostile airspace create hostage rescue conditions while petrochemical plants burn near civilian areas, exposing how quickly escalation makes protection impossible. Meanwhile, the same accountability mechanisms that should investigate sexual abuse of immigrant children in federal custody are being weaponized for partisan expulsion proceedings in state legislatures, leaving vulnerable populations without institutional protection while political energy flows toward procedural warfare. What connects the downed pilot story to the custody abuse story to the legislative expulsion story is institutional capture, where the systems meant to safeguard people become tools for political advantage, and the people who need protection most get systematically abandoned.</description>
-      <dc:creator>Elise Hasseltine</dc:creator>
-      <signal:sources>62</signal:sources>
-      <signal:articles>387</signal:articles>
-    </item>
     <item>
       <title>Iran shot down US jets as trade routes get squeezed</title>
       <link>https://signal-board.org/archive/2026-04-04/</link>
