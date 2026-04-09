@@ -8,7 +8,7 @@
     <link>https://signal-board.org</link>
     <description>Daily news analysis from 300 sources across the political spectrum, across borders, and across languages. See what no single outlet can show you.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 08 Apr 2026 08:18:30 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 09 Apr 2026 08:25:45 GMT</lastBuildDate>
     <atom:link href="https://signal-board.org/rss.xml" rel="self" type="application/rss+xml" />
     <copyright>Elise Hasseltine</copyright>
     <managingEditor>elise@elisehasseltine.com (Elise Hasseltine)</managingEditor>
@@ -18,6 +18,16 @@
       <title>Signal Board</title>
       <link>https://signal-board.org</link>
     </image>
+    <item>
+      <title>Iran talks happen while betting companies plan to profit from war</title>
+      <link>https://signal-board.org/archive/2026-04-09/</link>
+      <guid isPermaLink="true">https://signal-board.org/archive/2026-04-09/</guid>
+      <pubDate>Thu, 09 Apr 2026 07:00:00 GMT</pubDate>
+      <description>The same structural forces driving Iran negotiations are creating new financial instruments that let people bet on whether those negotiations will succeed. Thomas Peterffy&apos;s plan to professionalize prediction markets isn&apos;t separate from Vance&apos;s diplomatic mission, it&apos;s the financial architecture being built around it, where war and peace become tradeable commodities rather than human outcomes. Meanwhile, local outlets document what national media won&apos;t touch: Minnesota stealing federal disability payments from foster youth, tribal leaders navigating federal uncertainty, Hawaii communities waiting for disaster relief. The pattern connects across domains because the same platform economics that starve local newsrooms also concentrate decision-making power in fewer hands, whether those decisions involve military strategy, financial regulation, or which communities get federal support when disasters hit.</description>
+      <dc:creator>Elise Hasseltine</dc:creator>
+      <signal:sources>104</signal:sources>
+      <signal:articles>687</signal:articles>
+    </item>
     <item>
       <title>Companies broke their promises while kids face airport security in jail</title>
       <link>https://signal-board.org/archive/2026-04-08/</link>
