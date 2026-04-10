@@ -8,7 +8,7 @@
     <link>https://signal-board.org</link>
     <description>Daily news analysis from 300 sources across the political spectrum, across borders, and across languages. See what no single outlet can show you.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 09 Apr 2026 08:25:45 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 10 Apr 2026 08:26:21 GMT</lastBuildDate>
     <atom:link href="https://signal-board.org/rss.xml" rel="self" type="application/rss+xml" />
     <copyright>Elise Hasseltine</copyright>
     <managingEditor>elise@elisehasseltine.com (Elise Hasseltine)</managingEditor>
@@ -18,6 +18,16 @@
       <title>Signal Board</title>
       <link>https://signal-board.org</link>
     </image>
+    <item>
+      <title>Big news companies missed 12 stories about courts and workers that smaller outlets covered</title>
+      <link>https://signal-board.org/archive/2026-04-10/</link>
+      <guid isPermaLink="true">https://signal-board.org/archive/2026-04-10/</guid>
+      <pubDate>Fri, 10 Apr 2026 07:00:00 GMT</pubDate>
+      <description>The pattern underneath today&apos;s news reveals something about institutional accountability: specialist and local outlets are tracking system failures that national media ignores entirely. Lawfare documented researchers monitoring government non-compliance with habeas corpus requirements, while the Texas Tribune covered a death row sentence overturned after 47 years for a disabled defendant who lacked proper representation. These aren&apos;t feel-good local interest stories but documentation of legal system breakdowns that affect thousands of cases. Meanwhile, bridging coverage shows how international outlets like South China Morning Post and Times of India are covering US immigration cases and Chinese battery policy alongside domestic sources, creating a more complete information picture than any single tier provides. The cooperation worth noting appears in cross-border journalism itself, where outlets with different funding structures and audiences are independently verifying the same stories, from Putin&apos;s cease-fire announcement to China&apos;s industrial policy shifts.</description>
+      <dc:creator>Elise Hasseltine</dc:creator>
+      <signal:sources>95</signal:sources>
+      <signal:articles>641</signal:articles>
+    </item>
     <item>
       <title>Iran talks happen while betting companies plan to profit from war</title>
       <link>https://signal-board.org/archive/2026-04-09/</link>
