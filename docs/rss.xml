@@ -8,7 +8,7 @@
     <link>https://signal-board.org</link>
     <description>Daily news analysis from 300 sources across the political spectrum, across borders, and across languages. See what no single outlet can show you.</description>
     <language>en-us</language>
-    <lastBuildDate>Sat, 11 Apr 2026 07:54:16 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 12 Apr 2026 08:07:08 GMT</lastBuildDate>
     <atom:link href="https://signal-board.org/rss.xml" rel="self" type="application/rss+xml" />
     <copyright>Elise Hasseltine</copyright>
     <managingEditor>elise@elisehasseltine.com (Elise Hasseltine)</managingEditor>
@@ -18,6 +18,16 @@
       <title>Signal Board</title>
       <link>https://signal-board.org</link>
     </image>
+    <item>
+      <title>Military doctors prepare for new war injuries as violence spreads</title>
+      <link>https://signal-board.org/archive/2026-04-12/</link>
+      <guid isPermaLink="true">https://signal-board.org/archive/2026-04-12/</guid>
+      <pubDate>Sun, 12 Apr 2026 07:00:00 GMT</pubDate>
+      <description>The structural pattern emerging today reveals how violence adaptation operates across borders and institutions. Military medical corps are redesigning trauma protocols for drone warfare injuries, according to NC Health News, while Mexican cartels unleash intense shootouts over territorial control in Zacatecas, forcing civilians into hiding. These stories share no surface connection, yet both represent institutional responses to evolving violence that require new forms of preparation and protection. National outlets covered neither story, though both affect thousands of people directly. The coverage gap itself tells a story about platform economics: local newsrooms document the human reality of policy shifts and regional conflicts that national media, increasingly dependent on tech company funding and algorithms, systematically miss. What connects the military medical training and cartel violence is not just proximity to conflict, but the way communities adapt when the nature of harm itself changes, whether through new weapons technology or territorial warfare.</description>
+      <dc:creator>Elise Hasseltine</dc:creator>
+      <signal:sources>61</signal:sources>
+      <signal:articles>417</signal:articles>
+    </item>
     <item>
       <title>Defense companies and tech giants compete for military deals</title>
       <link>https://signal-board.org/archive/2026-04-11/</link>
