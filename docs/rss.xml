@@ -8,7 +8,7 @@
     <link>https://signal-board.org</link>
     <description>Daily news analysis from 300 sources across the political spectrum, across borders, and across languages. See what no single outlet can show you.</description>
     <language>en-us</language>
-    <lastBuildDate>Sun, 12 Apr 2026 08:07:08 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 13 Apr 2026 09:06:31 GMT</lastBuildDate>
     <atom:link href="https://signal-board.org/rss.xml" rel="self" type="application/rss+xml" />
     <copyright>Elise Hasseltine</copyright>
     <managingEditor>elise@elisehasseltine.com (Elise Hasseltine)</managingEditor>
@@ -18,6 +18,16 @@
       <title>Signal Board</title>
       <link>https://signal-board.org</link>
     </image>
+    <item>
+      <title>Trump says he&apos;ll block ships in key oil route</title>
+      <link>https://signal-board.org/archive/2026-04-13/</link>
+      <guid isPermaLink="true">https://signal-board.org/archive/2026-04-13/</guid>
+      <pubDate>Mon, 13 Apr 2026 07:00:00 GMT</pubDate>
+      <description>The announcement of a potential Strait of Hormuz blockade traveled through the global news system in a pattern that reveals how information architecture works during crisis moments. International outlets dedicated significant resources to the story, national outlets provided standard political coverage, but the announcement&apos;s economic implications for American families received almost no coverage from the sources that reach most US readers. Meanwhile, specialist outlets like Grist and High Country News were documenting how current energy policies already bypass tribal consultation and concentrate pollution in Louisiana communities, but these stories about who actually bears the costs of energy dominance remained invisible to readers of mainstream sources. The gap between crisis coverage and structural coverage creates an information environment where readers can follow breaking developments about oil routes without understanding how energy extraction already works as a system of wealth concentration and environmental harm in their own communities.</description>
+      <dc:creator>Elise Hasseltine</dc:creator>
+      <signal:sources>100</signal:sources>
+      <signal:articles>705</signal:articles>
+    </item>
     <item>
       <title>Military doctors prepare for new war injuries as violence spreads</title>
       <link>https://signal-board.org/archive/2026-04-12/</link>
