@@ -8,7 +8,7 @@
     <link>https://signal-board.org</link>
     <description>Daily news analysis from 300 sources across the political spectrum, across borders, and across languages. See what no single outlet can show you.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 13 Apr 2026 09:06:31 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 14 Apr 2026 08:31:01 GMT</lastBuildDate>
     <atom:link href="https://signal-board.org/rss.xml" rel="self" type="application/rss+xml" />
     <copyright>Elise Hasseltine</copyright>
     <managingEditor>elise@elisehasseltine.com (Elise Hasseltine)</managingEditor>
@@ -18,6 +18,16 @@
       <title>Signal Board</title>
       <link>https://signal-board.org</link>
     </image>
+    <item>
+      <title>Foreign news sources are doing most of the reporting Americans see</title>
+      <link>https://signal-board.org/archive/2026-04-14/</link>
+      <guid isPermaLink="true">https://signal-board.org/archive/2026-04-14/</guid>
+      <pubDate>Tue, 14 Apr 2026 07:00:00 GMT</pubDate>
+      <description>The numbers reveal something structural about how Americans now encounter the world: 414 international outlets covered today&apos;s news compared to just 139 US national sources, while local and regional newsrooms that once bridged global events to community impact contributed only 86 stories. This isn&apos;t just about volume but about whose perspective shapes understanding, particularly visible in Iran nuclear negotiations where outlets from Pakistan&apos;s Dawn to Algeria&apos;s sources provided context that American audiences received filtered through international framings rather than independent domestic analysis. When Amazon&apos;s satellite deal and India&apos;s caste politics both required international sources to explain their American implications, the dependency becomes a structural vulnerability in how the country processes information that affects it.</description>
+      <dc:creator>Elise Hasseltine</dc:creator>
+      <signal:sources>105</signal:sources>
+      <signal:articles>678</signal:articles>
+    </item>
     <item>
       <title>Trump says he&apos;ll block ships in key oil route</title>
       <link>https://signal-board.org/archive/2026-04-13/</link>
