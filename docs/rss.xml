@@ -8,7 +8,7 @@
     <link>https://signal-board.org</link>
     <description>Daily news analysis from 300 sources across the political spectrum, across borders, and across languages. See what no single outlet can show you.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 15 Apr 2026 08:32:40 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 16 Apr 2026 08:32:21 GMT</lastBuildDate>
     <atom:link href="https://signal-board.org/rss.xml" rel="self" type="application/rss+xml" />
     <copyright>Elise Hasseltine</copyright>
     <managingEditor>elise@elisehasseltine.com (Elise Hasseltine)</managingEditor>
@@ -18,6 +18,16 @@
       <title>Signal Board</title>
       <link>https://signal-board.org</link>
     </image>
+    <item>
+      <title>Major storm wrecks island homes while most news outlets look away</title>
+      <link>https://signal-board.org/archive/2026-04-16/</link>
+      <guid isPermaLink="true">https://signal-board.org/archive/2026-04-16/</guid>
+      <pubDate>Thu, 16 Apr 2026 07:00:00 GMT</pubDate>
+      <description>The most destructive weather event of early storm season happened in near-media silence, with only Grist reporting that a super typhoon devastated the Mariana Islands, destroying homes and cutting off basic services for island families. This structural gap appears alongside news volume dropping 67% overall, with coverage of people power movements falling 85% and food and land stories disappearing at the same rate. Meanwhile, stories that did break through show institutions working across traditional boundaries: a Pakistani army chief brokering US-Iran talks, Canada&apos;s new majority government navigating Indigenous relations, and even the First Lady pushing Congress on foster care reforms that only The Imprint covered among national outlets.</description>
+      <dc:creator>Elise Hasseltine</dc:creator>
+      <signal:sources>105</signal:sources>
+      <signal:articles>653</signal:articles>
+    </item>
     <item>
       <title>Courts open doors while agencies police themselves</title>
       <link>https://signal-board.org/archive/2026-04-15/</link>
