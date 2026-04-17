@@ -8,7 +8,7 @@
     <link>https://signal-board.org</link>
     <description>Daily news analysis from 300 sources across the political spectrum, across borders, and across languages. See what no single outlet can show you.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 16 Apr 2026 08:32:21 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 17 Apr 2026 08:31:37 GMT</lastBuildDate>
     <atom:link href="https://signal-board.org/rss.xml" rel="self" type="application/rss+xml" />
     <copyright>Elise Hasseltine</copyright>
     <managingEditor>elise@elisehasseltine.com (Elise Hasseltine)</managingEditor>
@@ -18,6 +18,16 @@
       <title>Signal Board</title>
       <link>https://signal-board.org</link>
     </image>
+    <item>
+      <title>Congress extends spy powers while defense contractors ask for billions more</title>
+      <link>https://signal-board.org/archive/2026-04-17/</link>
+      <guid isPermaLink="true">https://signal-board.org/archive/2026-04-17/</guid>
+      <pubDate>Fri, 17 Apr 2026 07:00:00 GMT</pubDate>
+      <description>The pattern threading through today&apos;s coverage reveals how federal power operates when local voices are structurally excluded from the conversation. Congress extended FISA surveillance authorities for ten more days while National Guard generals requested 100 new fighter jets annually, each decision carrying billion-dollar price tags that will reshape federal spending priorities. The stories that only local and specialist outlets covered tell us what gets lost in this process: home care workers on hunger strikes because 24-hour shifts harm both caregivers and patients, Medicaid disability protections delayed indefinitely, and the Makah Tribe still waiting for federal permits to resume traditional whale hunting practices their ancestors maintained for centuries.</description>
+      <dc:creator>Elise Hasseltine</dc:creator>
+      <signal:sources>94</signal:sources>
+      <signal:articles>693</signal:articles>
+    </item>
     <item>
       <title>Major storm wrecks island homes while most news outlets look away</title>
       <link>https://signal-board.org/archive/2026-04-16/</link>
