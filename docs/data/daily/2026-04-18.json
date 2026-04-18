@@ -1,0 +1,1786 @@
+{
+  "date": "2026-04-18",
+  "generated": "2026-04-18T08:03:24Z",
+  "summary": {
+    "total_stories": 483,
+    "sources_reporting": 70,
+    "cross_domain": 327,
+    "cross_domain_pct": 68,
+    "ai_classified": 0,
+    "ai_classified_pct": 0,
+    "connection_insights": 288,
+    "top_domain": "Global Relations",
+    "domain_distribution": {
+      "Global Relations": 136,
+      "War & Conflict": 134,
+      "Money & Prices": 109,
+      "Who's in Charge": 109,
+      "Oil & Energy": 75,
+      "Rules & Courts": 66,
+      "AI & Technology": 64,
+      "Rights & Justice": 57,
+      "Communities": 52,
+      "Media & Information": 36,
+      "Work & Workers": 23,
+      "Health": 22,
+      "People Power": 18,
+      "The Environment": 17,
+      "Food & Land": 16
+    }
+  },
+  "temporal_context": {
+    "has_yesterday": true,
+    "yesterday_date": "2026-04-17",
+    "yesterday_total": 1933,
+    "today_total": 483,
+    "volume_change_pct": -75,
+    "domain_shifts": [
+      {
+        "domain": "rules_and_courts",
+        "label": "Rules & Courts",
+        "yesterday": 462,
+        "today": 66,
+        "change_pct": -86
+      },
+      {
+        "domain": "health",
+        "label": "Health",
+        "yesterday": 122,
+        "today": 22,
+        "change_pct": -82
+      },
+      {
+        "domain": "the_environment",
+        "label": "The Environment",
+        "yesterday": 94,
+        "today": 17,
+        "change_pct": -82
+      },
+      {
+        "domain": "communities",
+        "label": "Communities",
+        "yesterday": 275,
+        "today": 52,
+        "change_pct": -81
+      },
+      {
+        "domain": "rights_and_justice",
+        "label": "Rights & Justice",
+        "yesterday": 283,
+        "today": 57,
+        "change_pct": -80
+      },
+      {
+        "domain": "whos_in_charge",
+        "label": "Who's in Charge",
+        "yesterday": 538,
+        "today": 109,
+        "change_pct": -80
+      },
+      {
+        "domain": "work_and_workers",
+        "label": "Work & Workers",
+        "yesterday": 114,
+        "today": 23,
+        "change_pct": -80
+      },
+      {
+        "domain": "ai_and_technology",
+        "label": "AI & Technology",
+        "yesterday": 304,
+        "today": 64,
+        "change_pct": -79
+      },
+      {
+        "domain": "food_and_land",
+        "label": "Food & Land",
+        "yesterday": 73,
+        "today": 16,
+        "change_pct": -78
+      },
+      {
+        "domain": "media_and_information",
+        "label": "Media & Information",
+        "yesterday": 137,
+        "today": 36,
+        "change_pct": -74
+      },
+      {
+        "domain": "money_and_prices",
+        "label": "Money & Prices",
+        "yesterday": 394,
+        "today": 109,
+        "change_pct": -72
+      },
+      {
+        "domain": "people_power",
+        "label": "People Power",
+        "yesterday": 54,
+        "today": 18,
+        "change_pct": -67
+      },
+      {
+        "domain": "global_relations",
+        "label": "Global Relations",
+        "yesterday": 392,
+        "today": 136,
+        "change_pct": -65
+      },
+      {
+        "domain": "war_and_conflict",
+        "label": "War & Conflict",
+        "yesterday": 377,
+        "today": 134,
+        "change_pct": -64
+      },
+      {
+        "domain": "oil_and_energy",
+        "label": "Oil & Energy",
+        "yesterday": 155,
+        "today": 75,
+        "change_pct": -52
+      }
+    ],
+    "surges": [],
+    "drops": [
+      {
+        "domain": "rules_and_courts",
+        "label": "Rules & Courts",
+        "yesterday": 462,
+        "today": 66,
+        "change_pct": -86
+      },
+      {
+        "domain": "health",
+        "label": "Health",
+        "yesterday": 122,
+        "today": 22,
+        "change_pct": -82
+      },
+      {
+        "domain": "the_environment",
+        "label": "The Environment",
+        "yesterday": 94,
+        "today": 17,
+        "change_pct": -82
+      }
+    ],
+    "persisting_forces": [],
+    "new_forces": [],
+    "faded_forces": [],
+    "yesterday_classified": 0,
+    "today_classified": 0
+  },
+  "top_stories": [],
+  "structural_forces": [],
+  "what_connects": [
+    {
+      "headline": "AI threatens the Internet Archive’s Wayback Machine",
+      "structural_force": "",
+      "total_sources": 24,
+      "spectrum_segments": 6,
+      "tier_breakdown": {
+        "national": [
+          "Reuters",
+          "Fox News",
+          "Business Insider",
+          "NBC News"
+        ],
+        "international": [
+          "Times of India",
+          "Channel News Asia",
+          "Premium Times Nigeria",
+          "ABC Australia"
+        ],
+        "local-regional": [
+          "El Diario NY",
+          "Post and Courier",
+          "Honolulu Civil Beat",
+          "Indian Country Today"
+        ],
+        "analysis": [
+          "American Enterprise Institute"
+        ],
+        "podcast": [
+          "Planet Money (NPR)"
+        ],
+        "newsletter": [
+          "The Free Press (Bari Weiss)"
+        ]
+      },
+      "article_count": 48,
+      "domains": [
+        "ai_and_technology",
+        "food_and_land",
+        "media_and_information"
+      ],
+      "sample_connection": "AI companies scraping the web threaten a major archive that preserves the internet's public record."
+    },
+    {
+      "headline": "Trump Extends Sanctions Exemption on Some Russian Oil as High Gas Prices Persist",
+      "structural_force": "",
+      "total_sources": 48,
+      "spectrum_segments": 5,
+      "tier_breakdown": {
+        "national": [
+          "Reuters",
+          "AP News",
+          "Business Insider",
+          "Fox News"
+        ],
+        "international": [
+          "The Japan Times",
+          "Channel News Asia",
+          "Al-Monitor",
+          "The Globe and Mail"
+        ],
+        "specialist": [
+          "Naked Capitalism",
+          "TechCrunch"
+        ],
+        "local-regional": [
+          "Colorado Sun",
+          "InForum",
+          "Arizona Mirror",
+          "El Diario NY"
+        ],
+        "analysis": [
+          "Hoover Institution"
+        ]
+      },
+      "article_count": 198,
+      "domains": [
+        "global_relations",
+        "money_and_prices",
+        "war_and_conflict"
+      ],
+      "sample_connection": "The U.S. is managing oil sanctions against Russia while gas prices stay high and Iran controls a key shipping route."
+    },
+    {
+      "headline": "Gold Star father says prior Afghanistan review smelled 'like a cover-up' as new look examines millions of docs",
+      "structural_force": "",
+      "total_sources": 18,
+      "spectrum_segments": 5,
+      "tier_breakdown": {
+        "national": [
+          "AP News",
+          "ABC News",
+          "NBC News",
+          "Fox News"
+        ],
+        "international": [
+          "Times of India",
+          "NHK World",
+          "ABC Australia",
+          "Irish Times"
+        ],
+        "government": [
+          "Supreme Court"
+        ],
+        "specialist": [
+          "Brennan Center"
+        ],
+        "local-regional": [
+          "Honolulu Star-Advertiser"
+        ]
+      },
+      "article_count": 33,
+      "domains": [
+        "rules_and_courts",
+        "work_and_workers",
+        "rights_and_justice"
+      ],
+      "sample_connection": "Families demand accountability and transparency when government decisions about military actions may have been hidden from the public."
+    },
+    {
+      "headline": "World's largest democracy votes against increasing women",
+      "structural_force": "",
+      "total_sources": 28,
+      "spectrum_segments": 3,
+      "tier_breakdown": {
+        "national": [
+          "AP News",
+          "Reuters",
+          "Fox News",
+          "NBC News"
+        ],
+        "international": [
+          "Channel News Asia",
+          "Times of India",
+          "Politico Europe",
+          "Premium Times Nigeria"
+        ],
+        "local-regional": [
+          "El Diario NY",
+          "Oregon Public Broadcasting",
+          "Honolulu Star-Advertiser",
+          "Indian Country Today"
+        ]
+      },
+      "article_count": 66,
+      "domains": [
+        "whos_in_charge",
+        "rights_and_justice",
+        "rules_and_courts"
+      ],
+      "sample_connection": "India's parliament rejected a law to give women more political representation in government."
+    },
+    {
+      "headline": "Lebanese lives torn apart as Israel ceasefire loomed",
+      "structural_force": "",
+      "total_sources": 19,
+      "spectrum_segments": 3,
+      "tier_breakdown": {
+        "international": [
+          "Times of India",
+          "Channel News Asia",
+          "NHK World",
+          "ABC Australia"
+        ],
+        "local-regional": [
+          "El Diario NY",
+          "Honolulu Civil Beat"
+        ],
+        "national": [
+          "AP News",
+          "NBC News",
+          "New York Times"
+        ]
+      },
+      "article_count": 30,
+      "domains": [
+        "communities",
+        "rights_and_justice",
+        "war_and_conflict"
+      ],
+      "sample_connection": "War destroys homes and kills civilians, leaving survivors traumatized and without shelter."
+    },
+    {
+      "headline": "Deaths of migrants in ICE custody hit record high under Trump",
+      "structural_force": "",
+      "total_sources": 17,
+      "spectrum_segments": 3,
+      "tier_breakdown": {
+        "national": [
+          "AP News",
+          "The Hill",
+          "Fox News",
+          "NPR"
+        ],
+        "international": [
+          "Times of India",
+          "Al-Monitor",
+          "ABC Australia",
+          "Irish Times"
+        ],
+        "local-regional": [
+          "El Diario NY",
+          "The Grio",
+          "Florida Phoenix",
+          "Tennessee Lookout"
+        ]
+      },
+      "article_count": 23,
+      "domains": [
+        "rights_and_justice",
+        "health",
+        "war_and_conflict"
+      ],
+      "sample_connection": "Deaths of migrants in government custody have reached a record high, raising serious human rights and health concerns."
+    },
+    {
+      "headline": "Israeli police destroy children’s footballs at Al-Aqsa mosque",
+      "structural_force": "",
+      "total_sources": 9,
+      "spectrum_segments": 3,
+      "tier_breakdown": {
+        "national": [
+          "Fox News"
+        ],
+        "international": [
+          "Taipei Times",
+          "BBC World",
+          "The Hindu",
+          "Al Jazeera"
+        ],
+        "local-regional": [
+          "El Diario NY",
+          "InForum"
+        ]
+      },
+      "article_count": 17,
+      "domains": [
+        "war_and_conflict",
+        "rights_and_justice",
+        "oil_and_energy"
+      ],
+      "sample_connection": "Israeli police destroyed children's belongings at a holy site, raising concerns about rights during the conflict."
+    },
+    {
+      "headline": "EXCLUSIVE: Inside Piki Lopez’s town hall as cousins rally for ABS-CBN",
+      "structural_force": "",
+      "total_sources": 6,
+      "spectrum_segments": 3,
+      "tier_breakdown": {
+        "national": [
+          "The Dispatch",
+          "Breitbart"
+        ],
+        "local-regional": [
+          "The Grio",
+          "Oregon Public Broadcasting"
+        ],
+        "international": [
+          "Anadolu Agency",
+          "Rappler"
+        ]
+      },
+      "article_count": 6,
+      "domains": [
+        "media_and_information",
+        "people_power",
+        "whos_in_charge"
+      ],
+      "sample_connection": "A media company's leadership rallies employees amid family disputes and questions about its survival."
+    }
+  ],
+  "local_regional_exclusive": [
+    {
+      "title": "Radhika Desai and Michael Hudson: The Blockade Stage of Trump’s Absurdities",
+      "source": "Naked Capitalism",
+      "url": "https://www.nakedcapitalism.com/2026/04/radhika-desai-and-michael-hudson-the-blockade-stage-of-trumps-absurdities.html",
+      "tier": "specialist",
+      "text_preview": "Radhika Desai and Michael Hudson on the media and market disconnect between Trump Iran barker talk and dire economic and political effects.",
+      "domains": [
+        "global_relations",
+        "money_and_prices",
+        "war_and_conflict"
+      ],
+      "connection": "Trump's threats against Iran create economic uncertainty and geopolitical tension affecting global markets.",
+      "force_tag": "",
+      "context": "Independent financial and economics blog founded in 2006 by Susan Webber under the pen name Yves Smith, covering financial industry practices, economics, and policy."
+    },
+    {
+      "title": "Montana State Sen. Jonathan Windy Boy drops out of U.S. House race, Dems allege sexual abuse",
+      "source": "Indian Country Today",
+      "url": "https://ictnews.org/news/montana-state-sen-jonathan-windy-boy-drops-out-of-u-s-house-race-dems-allege-sexual-abuse/",
+      "tier": "local-regional",
+      "text_preview": "This story was originally published by Daily Montanan. Micah Drew Daily Montanan Montana state Sen. Jonathan Windy Boy has suspended his campaign for the 2nd Congressional District citing a decline in health, but the Montana Democratic Party said Apr",
+      "domains": [
+        "whos_in_charge",
+        "rights_and_justice"
+      ],
+      "connection": "A candidate for office dropped out after allegations of sexual abuse against women emerged.",
+      "force_tag": "",
+      "context": "Nonprofit digital news platform founded in 1981 as the Lakota Times, covering news, policy, and culture for American Indian and Alaska Native communities."
+    },
+    {
+      "title": "‘Renovation Aloha’ Sued For Filming Native Hawaiian Bones",
+      "source": "Honolulu Civil Beat",
+      "url": "https://www.civilbeat.org/2026/04/renovation-aloha-sued-for-filming-native-hawaiian-bones/",
+      "tier": "local-regional",
+      "text_preview": "HGTV is releasing a re-edited version of the episode “Bones On The Big Island” after a Hawaiʻi judge ordered the original taken down.",
+      "domains": [
+        "rights_and_justice",
+        "communities",
+        "media_and_information"
+      ],
+      "connection": "A TV show was sued for disrespecting Native Hawaiian ancestors, and a court ordered it changed to protect Indigenous people's rights.",
+      "force_tag": "",
+      "context": "Nonprofit newsroom founded in 2010 by Pierre Omidyar in Honolulu, covering Hawaii state government, Pacific issues, and community accountability reporting."
+    },
+    {
+      "title": "“Desprecio por seguridad federal”: Nueva York pierde $74 millones por licencias de miles de inmigrantes con documentos v",
+      "source": "El Diario NY",
+      "url": "https://eldiariony.com/2026/04/18/desprecio-por-seguridad-federal-nueva-york-pierde-74-millones-por-licencias-de-miles-de-inmigrantes-con-documentos-vencidos/",
+      "tier": "local-regional",
+      "text_preview": "El DOT está retirando $74 millones en subvenciones federales a NY por mantener licencias de camioneros inmigrantes con autorizaciones de trabajo vencidas",
+      "domains": [
+        "rules_and_courts",
+        "money_and_prices",
+        "rights_and_justice"
+      ],
+      "connection": "Federal government is punishing New York with lost funding because the state let immigrant truck drivers keep licenses despite expired work permits.",
+      "force_tag": "",
+      "context": "Spanish-language daily newspaper founded in 1913 in New York City, owned by ImpreMedia, serving Latino communities with coverage of immigration, politics, and culture."
+    },
+    {
+      "title": "Family mourning after pregnant Atlanta mother of two shot and killed on highway: ‘My daughter will be vindicated’",
+      "source": "The Grio",
+      "url": "https://thegrio.com/2026/04/17/bianca-huntley-atlanta-pregnant-woman-shot-killed-highway/",
+      "tier": "local-regional",
+      "text_preview": "Bianca Huntley/Facebook Bianca Huntley had moved to Atlanta from North Carolina and was a &#8220;light,&#8221; according to her mother. Gloria Allen, the mother of Bianca Huntley, isn&#8217;t holding her tongue about what she believes happened to her",
+      "domains": [
+        "rights_and_justice"
+      ],
+      "connection": "",
+      "force_tag": "",
+      "context": "Digital news platform launched in 2009, now owned by Byron Allen's Allen Media Group, covering news, culture, politics, and entertainment for Black American audiences."
+    },
+    {
+      "title": "Portland Mayor Keith Wilson talks up Rose City resurgence at State of City speech - Oregon Public Broadcasting - OPB",
+      "source": "Oregon Public Broadcasting",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOeTNFMjUxalp4N1lOQ1VDYnhxdEJlUFZaY3Y3c0hJV1dwWnZ5S0xCbEE3R1BDc2tNSHFSV3VvY2JBclRHVk9BLXAtelZqU3M2UVpkTFZFWTdBUHhaWHZXallpT3hGdl8wVktHNDNfT1JUbVQ4ZE84MkJqdGpCRGo5d2dXcl82dzNjQjctLUJMRTAwSG9OMzJQWQ?oc=5",
+      "tier": "local-regional",
+      "text_preview": "Portland Mayor Keith Wilson talks up Rose City resurgence at State of City speech &nbsp;&nbsp; Oregon Public Broadcasting - OPB",
+      "domains": [
+        "communities",
+        "whos_in_charge"
+      ],
+      "connection": "Portland's mayor is promoting the city's recovery and future during his official address to citizens.",
+      "force_tag": "",
+      "context": "Public media organization founded in 1922, funded by member donations and the Corporation for Public Broadcasting, covering Oregon and Pacific Northwest news and culture."
+    },
+    {
+      "title": "League of Women Voters of Michigan Files Brief to Stop Justice Department from Obtaining Private Voter Data - Brennan Ce",
+      "source": "Brennan Center",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPOHAwS3JqTHRrMUFTSTFTNzdwWUgzbENscFFYc3FuVHJSMFJ0ODM1ZXZTUWx6MURhNUtmNGJnX1VQR3NYMFpXeGt0VnhSbGlVS2EwLVFNMnE5MWJEMEg4T1RNNnVXbnRLYmJhT2FxNUk2QndYb3FzcDE3T2tCaVFVUk0xVjdTdU9BcUtfeXZnN2MxY0hkc01uWkozT2lpS2dFLWY3NG56dzJFTi1YWWozcTdXakVqSS1reFVVag?oc=5",
+      "tier": "specialist",
+      "text_preview": "League of Women Voters of Michigan Files Brief to Stop Justice Department from Obtaining Private Voter Data &nbsp;&nbsp; Brennan Center for Justice",
+      "domains": [
+        "whos_in_charge",
+        "rules_and_courts",
+        "rights_and_justice"
+      ],
+      "connection": "Voting rights groups are fighting the government in court to protect private voter information from being collected.",
+      "force_tag": "",
+      "context": "Nonpartisan law and policy institute at New York University, founded in 1995, researching democracy, voting rights, campaign finance, and criminal justice reform."
+    },
+    {
+      "title": "Once close enough for an acquisition, Stripe and Airwallex are now going after each other",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/04/17/once-close-enough-for-an-acquisition-stripe-and-airwallex-are-now-going-after-each-other/",
+      "tier": "specialist",
+      "text_preview": "For most of its life, Airwallex and Stripe have mostly operated in different geographies, selling to different buyers. That's changing.",
+      "domains": [
+        "money_and_prices",
+        "ai_and_technology"
+      ],
+      "connection": "",
+      "force_tag": "",
+      "context": "Technology industry publication founded in 2005 by Michael Arrington, now owned by Yahoo, covering startups, venture capital, product launches, and Silicon Valley."
+    },
+    {
+      "title": "A historically unpopular Trump came to Phoenix to rally the base by bragging about Iran",
+      "source": "Arizona Mirror",
+      "url": "https://azmirror.com/2026/04/17/a-historically-unpopular-trump-came-to-phoenix-to-rally-the-base-by-bragging-about-iran/",
+      "tier": "local-regional",
+      "text_preview": "President Donald Trump speaks at an event in Phoenix on April 17, 2026, aimed at rallying the MAGA faithful ahead of the midterm elections. (Photo by Jerod MacDonald-Evoy/Arizona Mirror) President Donald Trump is historically unpopular and his approv",
+      "domains": [
+        "whos_in_charge",
+        "global_relations"
+      ],
+      "connection": "An unpopular president is campaigning in swing states while discussing tensions with Iran to energize his supporters.",
+      "force_tag": "",
+      "context": "Nonprofit newsroom part of the States Newsroom network, founded in 2018, covering Arizona state government, elections, and public policy."
+    },
+    {
+      "title": "For a Boise family of medical providers, Idaho criminal trans bathroom ban was the last straw",
+      "source": "Florida Phoenix",
+      "url": "https://floridaphoenix.com/2026/04/18/repub/for-a-boise-family-of-medical-providers-idaho-criminal-trans-bathroom-ban-was-the-last-straw/",
+      "tier": "local-regional",
+      "text_preview": "Michael and Dr. Angie Devitt reflect on their decision to move from Idaho after years of the Legislature and the governor approving anti-LGBTQ+ bills. (Photo by Kyle Pfannenstiel/Idaho Capital Sun) The Devitts have seen the Idaho Legislature and the ",
+      "domains": [
+        "rights_and_justice",
+        "people_power"
+      ],
+      "connection": "A family is leaving Idaho to protest the state's laws that discriminate against LGBTQ+ people, especially transgender individuals.",
+      "force_tag": "",
+      "context": "Nonprofit newsroom part of the States Newsroom network, founded in 2018, covering Florida state government, policy, and the legislature from Tallahassee."
+    },
+    {
+      "title": "Today in History, 1978: Fargo businessman dies in plane crash",
+      "source": "InForum",
+      "url": "https://www.inforum.com/community/today-in-history-1978-fargo-businessman-dies-in-plane-crash",
+      "tier": "local-regional",
+      "text_preview": "On April 18, 1978, a Fargo businessman and former military officer, William G. Akeley, was killed when his twin-engine plane crashed shortly after takeoff in St. Cloud, Minnesota.",
+      "domains": [
+        "war_and_conflict"
+      ],
+      "connection": "",
+      "force_tag": "",
+      "context": "Regional newspaper based in Fargo, North Dakota, owned by Forum Communications, covering North Dakota and the Upper Midwest including agriculture and energy policy."
+    },
+    {
+      "title": "Lebanon struggled to contain Hezbollah",
+      "source": "Post and Courier",
+      "url": "https://www.postandcourier.com/nation-world/lebanon-struggled-to-contain-hezbollah/article_acc32399-4fc3-47f8-a6c2-e041fe901fc7.html",
+      "tier": "local-regional",
+      "text_preview": "For years, the Lebanese government has been caught between Western demands to disarm Hezbollah, which the United States has long designated a terrorist organization, and fears of inflaming sectarian tensions, which were at the heart of a bloody 15-ye",
+      "domains": [
+        "war_and_conflict",
+        "global_relations",
+        "whos_in_charge"
+      ],
+      "connection": "Lebanon's weak government struggles between U.S. pressure to disarm Hezbollah and fear of triggering sectarian violence.",
+      "force_tag": "",
+      "context": "Daily newspaper founded in 1803 in Charleston, South Carolina, the oldest newspaper in the South, covering state politics, culture, and investigative reporting."
+    }
+  ],
+  "active_threads": [
+    {
+      "pair": [
+        "global_relations",
+        "war_and_conflict"
+      ],
+      "label": "Global Relations + War & Conflict",
+      "explanation": "Global Relations and War & Conflict",
+      "today_count": 80,
+      "trend": "stable",
+      "sample_articles": [
+        {
+          "title": "Trump Is Urged to Move on Nuclear Site Thought to Be Beyond Reach of Bombs",
+          "source": "New York Times",
+          "url": "https://www.nytimes.com/2026/04/17/us/politics/trump-iran-nuclear-site.html"
+        },
+        {
+          "title": "A Potent Threat in Strait of Hormuz: Iran’s ‘Mosquito Fleet’",
+          "source": "New York Times",
+          "url": "https://www.nytimes.com/2026/04/18/world/middleeast/iran-irgc-navy-strait-of-hormuz.html"
+        },
+        {
+          "title": "UK Bears Scars to Economy, Trump Ties Even as War Risks Subside",
+          "source": "Bloomberg",
+          "url": "https://www.bloomberg.com/news/articles/2026-04-18/uk-bears-scars-to-economy-trump-ties-even-as-war-risks-subside"
+        }
+      ],
+      "ai_connections": [
+        "Experts warn that military strikes alone cannot stop Iran from building nuclear weapons.",
+        "Iran's fast military boats in a crucial strait pose a threat to international shipping and U.S. interests."
+      ]
+    },
+    {
+      "pair": [
+        "global_relations",
+        "oil_and_energy"
+      ],
+      "label": "Global Relations + Oil & Energy",
+      "explanation": "Global Relations and Oil & Energy",
+      "today_count": 54,
+      "trend": "rising",
+      "sample_articles": [
+        {
+          "title": "Trump Extends Sanctions Exemption on Some Russian Oil as High Gas Prices Persist",
+          "source": "New York Times",
+          "url": "https://www.nytimes.com/2026/04/17/world/middleeast/russia-us-oil-sanctions.html"
+        },
+        {
+          "title": "Greek, Indian Tankers U-Turn Before Hormuz Amid Reopening Doubt",
+          "source": "Bloomberg",
+          "url": "https://www.bloomberg.com/news/articles/2026-04-18/greek-indian-tankers-u-turn-before-hormuz-amid-reopening-doubt"
+        },
+        {
+          "title": "US extends waiver on Russian oil sanctions to ease Iran war shortages despite Be",
+          "source": "AP News",
+          "url": "https://apnews.com/article/russian-oil-sanctions-iran-war-95ae06ece63f4f8c1f72ac3c2dc4251f"
+        }
+      ],
+      "ai_connections": [
+        "The U.S. is managing oil sanctions against Russia while gas prices stay high and Iran controls a key shipping route.",
+        "Tanker uncertainty about Strait of Hormuz reopening shows traders doubting Iran's promise to keep shipping open."
+      ]
+    },
+    {
+      "pair": [
+        "oil_and_energy",
+        "war_and_conflict"
+      ],
+      "label": "Oil & Energy + War & Conflict",
+      "explanation": "Oil & Energy and War & Conflict",
+      "today_count": 50,
+      "trend": "stable",
+      "sample_articles": [
+        {
+          "title": "Blaze Erupts at Russia’s Baltic Port After Ukraine Drone Attack",
+          "source": "Bloomberg",
+          "url": "https://www.bloomberg.com/news/articles/2026-04-18/russia-said-fire-broke-out-at-baltic-port-after-drone-attack"
+        },
+        {
+          "title": "US extends waiver on Russian oil sanctions to ease Iran war shortages despite Be",
+          "source": "AP News",
+          "url": "https://apnews.com/article/russian-oil-sanctions-iran-war-95ae06ece63f4f8c1f72ac3c2dc4251f"
+        },
+        {
+          "title": "US renews Russian oil waiver after pressure from countries dealing with Iran war",
+          "source": "Reuters",
+          "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNSkpBSFVfcGM2Uk9FbVBxTGQwSTQ5SExOeXVtRGM2Y1lOa2kxdVpYLTNXdkJ6WHJ0OGtmWVkyN2hna0hJanExVzFNTDRUa2hRZWJjOUU1SlhXQW5RQUd5S3lrS0dyd2p2eTBvRk1aMkFrQkVQSnpqVlY4ZnU2MnhDWi1xRzZjdUYybVk5dlFCWHVuVjh1YXN5ZVVEMzcydjN4b1lpTXBCYw?oc=5"
+        }
+      ],
+      "ai_connections": [
+        "Ukraine's drone attacks on Russian ports damage fuel infrastructure, disrupting energy supplies and raising global fuel costs.",
+        "The US is easing Russian oil sanctions to help Iran during wartime, balancing energy needs against political conflict."
+      ]
+    },
+    {
+      "pair": [
+        "global_relations",
+        "money_and_prices"
+      ],
+      "label": "Global Relations + Money & Prices",
+      "explanation": "Global Relations and Money & Prices",
+      "today_count": 44,
+      "trend": "stable",
+      "sample_articles": [
+        {
+          "title": "Trump Extends Sanctions Exemption on Some Russian Oil as High Gas Prices Persist",
+          "source": "New York Times",
+          "url": "https://www.nytimes.com/2026/04/17/world/middleeast/russia-us-oil-sanctions.html"
+        },
+        {
+          "title": "Bangladesh Continues Talks with IMF on Key Reforms Tied to Loan",
+          "source": "Bloomberg",
+          "url": "https://www.bloomberg.com/news/articles/2026-04-18/bangladesh-continues-talks-with-imf-on-key-reforms-tied-to-loan"
+        },
+        {
+          "title": "Greek, Indian Tankers U-Turn Before Hormuz Amid Reopening Doubt",
+          "source": "Bloomberg",
+          "url": "https://www.bloomberg.com/news/articles/2026-04-18/greek-indian-tankers-u-turn-before-hormuz-amid-reopening-doubt"
+        }
+      ],
+      "ai_connections": [
+        "The U.S. is managing oil sanctions against Russia while gas prices stay high and Iran controls a key shipping route.",
+        "Bangladesh negotiates economic reforms with the IMF to secure funding and reshape its government policies."
+      ]
+    },
+    {
+      "pair": [
+        "money_and_prices",
+        "war_and_conflict"
+      ],
+      "label": "Money & Prices + War & Conflict",
+      "explanation": "Money & Prices and War & Conflict",
+      "today_count": 37,
+      "trend": "stable",
+      "sample_articles": [
+        {
+          "title": "Blaze Erupts at Russia’s Baltic Port After Ukraine Drone Attack",
+          "source": "Bloomberg",
+          "url": "https://www.bloomberg.com/news/articles/2026-04-18/russia-said-fire-broke-out-at-baltic-port-after-drone-attack"
+        },
+        {
+          "title": "UK Bears Scars to Economy, Trump Ties Even as War Risks Subside",
+          "source": "Bloomberg",
+          "url": "https://www.bloomberg.com/news/articles/2026-04-18/uk-bears-scars-to-economy-trump-ties-even-as-war-risks-subside"
+        },
+        {
+          "title": "US renews Russian oil waiver after pressure from countries dealing with Iran war",
+          "source": "Reuters",
+          "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNSkpBSFVfcGM2Uk9FbVBxTGQwSTQ5SExOeXVtRGM2Y1lOa2kxdVpYLTNXdkJ6WHJ0OGtmWVkyN2hna0hJanExVzFNTDRUa2hRZWJjOUU1SlhXQW5RQUd5S3lrS0dyd2p2eTBvRk1aMkFrQkVQSnpqVlY4ZnU2MnhDWi1xRzZjdUYybVk5dlFCWHVuVjh1YXN5ZVVEMzcydjN4b1lpTXBCYw?oc=5"
+        }
+      ],
+      "ai_connections": [
+        "Ukraine's drone attacks on Russian ports damage fuel infrastructure, disrupting energy supplies and raising global fuel costs.",
+        "War damage to the UK economy and strain on US relations will cost Britain money and influence for months ahead."
+      ]
+    },
+    {
+      "pair": [
+        "money_and_prices",
+        "oil_and_energy"
+      ],
+      "label": "Money & Prices + Oil & Energy",
+      "explanation": "Money & Prices and Oil & Energy",
+      "today_count": 36,
+      "trend": "stable",
+      "sample_articles": [
+        {
+          "title": "Trump Extends Sanctions Exemption on Some Russian Oil as High Gas Prices Persist",
+          "source": "New York Times",
+          "url": "https://www.nytimes.com/2026/04/17/world/middleeast/russia-us-oil-sanctions.html"
+        },
+        {
+          "title": "Greek, Indian Tankers U-Turn Before Hormuz Amid Reopening Doubt",
+          "source": "Bloomberg",
+          "url": "https://www.bloomberg.com/news/articles/2026-04-18/greek-indian-tankers-u-turn-before-hormuz-amid-reopening-doubt"
+        },
+        {
+          "title": "Blaze Erupts at Russia’s Baltic Port After Ukraine Drone Attack",
+          "source": "Bloomberg",
+          "url": "https://www.bloomberg.com/news/articles/2026-04-18/russia-said-fire-broke-out-at-baltic-port-after-drone-attack"
+        }
+      ],
+      "ai_connections": [
+        "The U.S. is managing oil sanctions against Russia while gas prices stay high and Iran controls a key shipping route.",
+        "Tanker uncertainty about Strait of Hormuz reopening shows traders doubting Iran's promise to keep shipping open."
+      ]
+    },
+    {
+      "pair": [
+        "global_relations",
+        "whos_in_charge"
+      ],
+      "label": "Global Relations + Who's in Charge",
+      "explanation": "Global Relations and Who's in Charge",
+      "today_count": 26,
+      "trend": "falling",
+      "sample_articles": [
+        {
+          "title": "Trump Spat Gives Spain Leader Pedro Sánchez a Political Lifeline",
+          "source": "New York Times",
+          "url": "https://www.nytimes.com/2026/04/18/world/europe/pedro-sanchez-donald-trump-lifeline.html"
+        },
+        {
+          "title": "Bangladesh Continues Talks with IMF on Key Reforms Tied to Loan",
+          "source": "Bloomberg",
+          "url": "https://www.bloomberg.com/news/articles/2026-04-18/bangladesh-continues-talks-with-imf-on-key-reforms-tied-to-loan"
+        },
+        {
+          "title": "US and Cuban officials met recently in Havana amid new diplomatic push",
+          "source": "AP News",
+          "url": "https://apnews.com/article/cuba-trump-castro-diplomacy-af47a0625038a9f34d843b088300bab8"
+        }
+      ],
+      "ai_connections": [
+        "A Spanish leader gains political strength at home and approval abroad by publicly opposing Trump's policies.",
+        "Bangladesh negotiates economic reforms with the IMF to secure funding and reshape its government policies."
+      ]
+    },
+    {
+      "pair": [
+        "rights_and_justice",
+        "whos_in_charge"
+      ],
+      "label": "Rights & Justice + Who's in Charge",
+      "explanation": "Rights & Justice and Who's in Charge",
+      "today_count": 20,
+      "trend": "falling",
+      "sample_articles": [
+        {
+          "title": "Newsom demands answers from RFK Jr. over past comments about Black children on A",
+          "source": "The Hill",
+          "url": "https://thehill.com/policy/healthcare/5837359-newsom-demands-kennedy-answers/"
+        },
+        {
+          "title": "World's largest democracy votes against increasing women",
+          "source": "ABC Australia",
+          "url": "https://www.abc.net.au/news/2026-04-18/india-rejects-move-to-increase-women-in-parliament/106578754"
+        },
+        {
+          "title": "Opposition chose politics over progress, says Suresh Gopi on Constitution Amendm",
+          "source": "The Hindu",
+          "url": "https://www.thehindu.com/news/national/kerala/opposition-chose-politics-over-progress-says-suresh-gopi-on-constitution-amendment-bill-defeat/article70876754.ece"
+        }
+      ],
+      "ai_connections": [
+        "A governor is questioning health secretary over past comments about treating Black children with ADHD medications.",
+        "India's parliament rejected a law to give women more political representation in government."
+      ]
+    },
+    {
+      "pair": [
+        "rules_and_courts",
+        "whos_in_charge"
+      ],
+      "label": "Rules & Courts + Who's in Charge",
+      "explanation": "Rules & Courts and Who's in Charge",
+      "today_count": 15,
+      "trend": "falling",
+      "sample_articles": [
+        {
+          "title": "Key prosecutor in John Brennan investigation has been removed from case, AP sour",
+          "source": "AP News",
+          "url": "https://apnews.com/article/trump-brennan-russia-justice-department-3a2d8a77cdaa3ff339d079879f9f0ec6"
+        },
+        {
+          "title": "Trump and the IRS are in talks to resolve his $10 billion lawsuit over leaked ta",
+          "source": "NBC News",
+          "url": "https://www.nbcnews.com/politics/donald-trump/trump-irs-talks-resolve-10-billion-lawsuit-tax-records-leak-rcna333854"
+        },
+        {
+          "title": "Trump ballroom construction allowed for now, US appeals court says - Reuters",
+          "source": "Reuters",
+          "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNZGxtX0NwRHliNlptTk9ocm1nbzlXNEl4QjZfb1FiRlR0c2ZMSVUwNzlyMnhSZUd5OGZKekR0ZXZPQnFuQnlJTmZRQmU1SDVLM3VneDRvZDRyeEY0V2JTdGVDaGNaQmU2dktYREpMWjUwb05xdmVqbE43a19SNFV5eWpZSVB1WERvVU5sNzMzdVMyQnhZU29pd2s5NnZ0bXVSTXZuMnllcWphM2VUWlVjWXFWUTY?oc=5"
+        }
+      ],
+      "ai_connections": [
+        "A prosecutor investigating a former CIA director was removed from the case, raising questions about political influence over the justice system.",
+        "The president is suing a federal agency over how it handled his private tax information."
+      ]
+    },
+    {
+      "pair": [
+        "war_and_conflict",
+        "whos_in_charge"
+      ],
+      "label": "War & Conflict + Who's in Charge",
+      "explanation": "War & Conflict and Who's in Charge",
+      "today_count": 13,
+      "trend": "stable",
+      "sample_articles": [
+        {
+          "title": "NATO’s offer to help with Iran doesn’t ‘count,’ Trump says at TPUSA event",
+          "source": "Washington Examiner",
+          "url": "https://www.washingtonexaminer.com/news/white-house/4534401/trump-nato-tpusa/"
+        },
+        {
+          "title": "‘Trust Trump, not panicans’: Donald pushes ‘peace president’ image after 'reopen",
+          "source": "Times of India",
+          "url": "https://timesofindia.indiatimes.com/world/us/trust-trump-not-panicans-donald-pushes-the-peace-president-image-after-reopening-hormuz/articleshow/130347262.cms"
+        },
+        {
+          "title": "Trump frames Iran war as all but over in optimistic social media flurry",
+          "source": "Straits Times",
+          "url": "https://www.straitstimes.com/world/middle-east/trump-frames-iran-war-as-all-but-over-in-optimistic-social-media-flurry"
+        }
+      ],
+      "ai_connections": [
+        "Trump dismisses NATO's military support for potential Iran conflict, showing tensions between U.S. leadership and traditional alliances.",
+        "Trump claims he's bringing peace to Middle East conflicts while threatening military action against Iran."
+      ]
+    },
+    {
+      "pair": [
+        "money_and_prices",
+        "whos_in_charge"
+      ],
+      "label": "Money & Prices + Who's in Charge",
+      "explanation": "Money & Prices and Who's in Charge",
+      "today_count": 11,
+      "trend": "falling",
+      "sample_articles": [
+        {
+          "title": "Bangladesh Continues Talks with IMF on Key Reforms Tied to Loan",
+          "source": "Bloomberg",
+          "url": "https://www.bloomberg.com/news/articles/2026-04-18/bangladesh-continues-talks-with-imf-on-key-reforms-tied-to-loan"
+        },
+        {
+          "title": "Trades could save NFL draft lacking franchise QBs, polarizing players from being",
+          "source": "Fox News",
+          "url": "https://www.foxnews.com/outkick-sports/trades-could-save-nfl-draft-lacking-franchise-qbs-polarizing-players-from-being-yawner"
+        },
+        {
+          "title": "In Phoenix, Trump eyes lower petrol prices and frets about the midterms",
+          "source": "Straits Times",
+          "url": "https://www.straitstimes.com/world/united-states/in-phoenix-trump-eyes-lower-petrol-prices-and-frets-about-the-midterms"
+        }
+      ],
+      "ai_connections": [
+        "Bangladesh negotiates economic reforms with the IMF to secure funding and reshape its government policies.",
+        "A war with Iran is raising oil prices, which could hurt the president politically in upcoming elections."
+      ]
+    },
+    {
+      "pair": [
+        "rights_and_justice",
+        "war_and_conflict"
+      ],
+      "label": "Rights & Justice + War & Conflict",
+      "explanation": "Rights & Justice and War & Conflict",
+      "today_count": 11,
+      "trend": "rising",
+      "sample_articles": [
+        {
+          "title": "Russia has looted thousands of Ukrainian cultural objects in the war. Finding th",
+          "source": "AP News",
+          "url": "https://apnews.com/article/russia-ukraine-war-culture-art-heritage-93f96dac8cfb7af675abc1a5f90bcd40"
+        },
+        {
+          "title": "Israeli police destroy children’s footballs at Al-Aqsa mosque",
+          "source": "Al Jazeera",
+          "url": "https://www.aljazeera.com/video/newsfeed/2026/4/18/israeli-police-destroy-childrens-footballs-at-al-aqsa-mosque?traffic_source=rss"
+        },
+        {
+          "title": "Iranians fear sharpening pressure after war and crackdown",
+          "source": "Straits Times",
+          "url": "https://www.straitstimes.com/world/middle-east/iranians-fear-sharpening-pressure-after-war-and-crackdown"
+        }
+      ],
+      "ai_connections": [
+        "Russia's theft of Ukrainian cultural treasures during the war is erasing history and cultural heritage that belongs to Ukrainian people.",
+        "Israeli police destroyed children's belongings at a holy site, raising concerns about rights during the conflict."
+      ]
+    },
+    {
+      "pair": [
+        "communities",
+        "money_and_prices"
+      ],
+      "label": "Communities + Money & Prices",
+      "explanation": "Communities and Money & Prices",
+      "today_count": 11,
+      "trend": "rising",
+      "sample_articles": [
+        {
+          "title": "New Jersey Transit announces $150 train fare for World Cup",
+          "source": "NBC News",
+          "url": "https://www.nbcnews.com/video/shorts/new-jersey-transit-announces-150-train-fare-for-world-cup-261618757751"
+        },
+        {
+          "title": "NT councils flag cuts to street lights, pool hours as result of power prices",
+          "source": "ABC Australia",
+          "url": "https://www.abc.net.au/news/2026-04-18/nt-councils-power-price-increase-possible-community-service-cuts/106576648"
+        },
+        {
+          "title": "Flood-damaged roads cause 'catastrophic' impacts for NT businesses",
+          "source": "ABC Australia",
+          "url": "https://www.abc.net.au/news/2026-04-18/northern-territory-roads-damaged-floods-freight-tourism-farming/106575338"
+        }
+      ],
+      "ai_connections": [
+        "A transit authority raises train fares significantly for a major event affecting local commuters.",
+        "Rising power prices are forcing local councils to cut community services like street lights and pools."
+      ]
+    },
+    {
+      "pair": [
+        "money_and_prices",
+        "rules_and_courts"
+      ],
+      "label": "Money & Prices + Rules & Courts",
+      "explanation": "Money & Prices and Rules & Courts",
+      "today_count": 10,
+      "trend": "rising",
+      "sample_articles": [
+        {
+          "title": "Federal Court Temporarily Freezes Nexstar’s Merger With Tegna",
+          "source": "New York Times",
+          "url": "https://www.nytimes.com/2026/04/17/business/media/nexstar-tegna-merger-freeze.html"
+        },
+        {
+          "title": "Judge halts local TV giant Nexstar's takeover of rival Tegna until trial",
+          "source": "NPR",
+          "url": "https://www.npr.org/2026/04/17/nx-s1-5789059/judge-halts-nexstar-tegna-merger-lawsuits"
+        },
+        {
+          "title": "Federal judge blocks Nexstar-Tegna TV station merger until antitrust lawsuit is ",
+          "source": "AP News",
+          "url": "https://apnews.com/article/nextstar-tegna-merger-lawsuit-antitrust-ec9f2def13e1b31b0e2c0437b635a932"
+        }
+      ],
+      "ai_connections": [
+        "A court stopped two TV companies from merging while antitrust lawyers investigate whether the deal harms competition.",
+        "A judge blocked a major TV company's takeover because it could harm consumers and reduce local media competition."
+      ]
+    },
+    {
+      "pair": [
+        "ai_and_technology",
+        "money_and_prices"
+      ],
+      "label": "AI & Technology + Money & Prices",
+      "explanation": "AI & Technology and Money & Prices",
+      "today_count": 10,
+      "trend": "falling",
+      "sample_articles": [
+        {
+          "title": "Fermi Shares Plunge After Announcing Departure of CEO",
+          "source": "Bloomberg",
+          "url": "https://www.bloomberg.com/news/articles/2026-04-18/fermi-shares-plunge-after-announcing-departure-of-ceo"
+        },
+        {
+          "title": "Beijing set to launch Satellite Town as China's aerospace industry grows - Reute",
+          "source": "Reuters",
+          "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQa2J1aEJvUGwyb2xLSzJ5UG55SWZ0Y3JtRTQ4aHFOaHlJVFNqUGZqdGlpX0hLSnBPeFdieVlfYzQyOWxKMm5PMlFWMS1uVkhDV3k3bk9fdlEzdmdxaXhqUXgwRDRNOTQ0NUc4cGlXamlFMU5BSEhTVFhDekI4Y3VGTkJiZVhDeGhRNUd3TlBwcTM3SUpUWGNOQjRZUlRLT2d0THpkSm5zNV9PLWVFc1dSdGd4Rm1RUW1xeEh1aF8wek1tZw?oc=5"
+        },
+        {
+          "title": "Cruise passengers witness terrifying rescue at sea as stranded man and cat pulle",
+          "source": "Fox News",
+          "url": "https://www.foxnews.com/travel/cruise-passengers-witness-terrifying-rescue-sea-stranded-man-cat-pulled-failing-sailboat"
+        }
+      ],
+      "ai_connections": [
+        "Loss of CEO leadership at an AI campus developer caused investor panic and massive stock price collapse.",
+        "China is investing in aerospace technology as part of its competition with other nations for technological leadership."
+      ]
+    }
+  ],
+  "source_spectrum": {
+    "international": 331,
+    "national": 91,
+    "local-regional": 48,
+    "specialist": 4,
+    "analysis": 4,
+    "research": 2,
+    "podcast": 1,
+    "newsletter": 1,
+    "government": 1
+  },
+  "questions": [],
+  "article_url_index": {
+    "New York Times": "https://www.nytimes.com/2026/04/17/us/politics/trump-iran-nuclear-site.html",
+    "NPR": "https://www.npr.org/2026/04/17/nx-s1-5789059/judge-halts-nexstar-tegna-merger-lawsuits",
+    "Bloomberg": "https://www.bloomberg.com/news/articles/2026-04-18/lufthansa-s-100th-birthday-bash-leaves-little-cause-for-cheers",
+    "AP News": "https://apnews.com/article/russia-ukraine-war-culture-art-heritage-93f96dac8cfb7af675abc1a5f90bcd40",
+    "NBC News": "https://www.nbcnews.com/politics/donald-trump/trump-irs-talks-resolve-10-billion-lawsuit-tax-records-leak-rcna333854",
+    "Reuters": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNbjJyaklQZGIwZlpJVmdvbEN6dFFadGhNRFFpc1hYaXgtZTRELUFjSXhlMWpEeWxHSE5ZczAyYVRYbGNHQy1zWW03dU01VjhLaXEyREtkMEpXaVc0MDVVNWFWRGJoSmtRZ2JhR3FkSGgySDZfdjNSTlNIZ3p0RDNyS2dJaUI1YzE0bDBqQUtBcEtUanlSMjhfWE1WNUV6V25Jcl92Yy1NNFJvU0Z2b3FlVUhvc2VNbUU?oc=5",
+    "Fox News": "https://www.foxnews.com/us/air-force-academys-culex-thousands-cadets-realistic-24-hour-combat-simulation",
+    "CNBC": "https://www.cnbc.com/2026/04/17/jim-cramer-remarkable-rally-what-to-watch-ahead.html",
+    "The Hill": "https://thehill.com/policy/energy-environment/5837397-trump-extends-russian-oil-waiver/",
+    "Washington Examiner": "https://www.washingtonexaminer.com/news/white-house/4534401/trump-nato-tpusa/",
+    "ABC News": "https://abcnews.com/US/millions-severe-weather-threat-destructive-storms/story?id=132144664",
+    "Business Insider": "https://www.businessinsider.com/microsoft-job-offers-minecraft-50-rejections-what-worked-advice-2026-4",
+    "The Dispatch": "https://thedispatch.com/podcast/remnant/boba-tea-and-swahili-themed-lesbian-poetry-ruminant/",
+    "The Guardian World": "https://www.theguardian.com/world/2026/apr/18/young-bulgarians-election-wave-of-protests",
+    "BBC World": "https://www.bbc.com/news/articles/ckg045z73z1o?at_medium=RSS&at_campaign=rss",
+    "France 24": "https://www.france24.com/en/europe/20260418-sanchez-lula-rally-left-wing-leaders-in-spain-amid-far-right-surge",
+    "Al Jazeera": "https://www.aljazeera.com/video/newsfeed/2026/4/18/israeli-police-destroy-childrens-footballs-at-al-aqsa-mosque?traffic_source=rss",
+    "ABC Australia": "https://www.abc.net.au/news/2026-04-18/nsw-police-investigate-shootings-linked-to-organised-crime/106579834",
+    "The Hindu": "https://www.thehindu.com/news/national/karnataka/rural-summer-camp-akkareya-angala-launched-for-children-in-mandya-district-of-karnataka/article70876808.ece",
+    "NHK World": "http://www3.nhk.or.jp/news/html/20260418/k10015097971000.html",
+    "Deutsche Welle": "https://www.dw.com/en/india-parliament-fails-to-pass-women-s-quota-bill-after-delimitation-uproar/live-76840035?maca=en-rss-en-all-1573-rdf",
+    "South China Morning Post": "https://www.scmp.com/news/world/middle-east/article/3350563/iranians-fear-pressure-will-100-increase-after-us-israeli-strikes-stop?utm_source=rss_feed",
+    "Naked Capitalism": "https://www.nakedcapitalism.com/2026/04/radhika-desai-and-michael-hudson-the-blockade-stage-of-trumps-absurdities.html",
+    "Reason": "https://reason.com/volokh/2026/04/18/open-thread-178/",
+    "Indian Country Today": "https://ictnews.org/news/montana-state-sen-jonathan-windy-boy-drops-out-of-u-s-house-race-dems-allege-sexual-abuse/",
+    "Heritage Foundation": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQSnBLamU0UGZEbFM4b1R1Rlh3TDgyVW9wSmtFdnUtV084ellTcWNCcF9xNXBjeDlCQnNBdVFtaHpjQzBQZV9MUzNibEcxSzY1MklqOTJVWVlrdGpqVFpfVkRpX2lHYnVnR3JKLWhMMS1kZU1icFcwYV9jR3h5NjhYa1V3b2ZkQkRZVzZQY282eDNNNS1pbnNWZVU2STVrNTJKNmppVDh3?oc=5",
+    "Times of India": "https://timesofindia.indiatimes.com/business/india-business/da-hike-govt-approves-2-dearness-allowance-raise-for-central-govt-employees/articleshow/130349174.cms",
+    "Straits Times": "https://www.straitstimes.com/world/europe/ukraine-strikes-baltic-sea-port-volga-river-industrial-sites",
+    "Honolulu Civil Beat": "https://www.civilbeat.org/2026/04/renovation-aloha-sued-for-filming-native-hawaiian-bones/",
+    "El Diario NY": "https://eldiariony.com/2026/04/18/desprecio-por-seguridad-federal-nueva-york-pierde-74-millones-por-licencias-de-miles-de-inmigrantes-con-documentos-vencidos/",
+    "Washington Post": "https://www.washingtonpost.com/world/2026/04/17/hormuz-strait-reopens-iran-us-war/",
+    "Rappler": "https://www.rappler.com/science/discoveries-inventions/scientists-discovery-geological-history-grand-canyon/",
+    "The Grio": "https://thegrio.com/2026/04/17/bianca-huntley-atlanta-pregnant-woman-shot-killed-highway/",
+    "NBC News Latino": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQQ1UtTmRjMlBUWnZWSUx5b1o3aWZJNTdFcC1ONG05eUtSeHBYc041UjRUZ1BVY0gwak5Nd1lmTXNRXzBwYmlVMFJDdUJpUV9DTV9Kemk3b01fbEVZUk9WVWVUdEdFNE9oeVhSOC1LbHg1djdITlBud2NQUElycEkzOEE1eExBWjFoWTFDQVVKVE5ZN0lIcHFFVTZPRnE5Zk51U2MxMUZFejhIcllQLVJGSjRn?oc=5",
+    "AARP": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE92RDdObG9teDNGcE1la2pLczZ0MVJnenRncFpiM0FnUm1Sb3E1R2lKNTRnekg2OVJsYmZsMnZnb0NfcE93VzhjRnJJdko2NUNzUTJhaHJxNnRBZDVvSEVOYQ?oc=5",
+    "Oregon Public Broadcasting": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOeTNFMjUxalp4N1lOQ1VDYnhxdEJlUFZaY3Y3c0hJV1dwWnZ5S0xCbEE3R1BDc2tNSHFSV3VvY2JBclRHVk9BLXAtelZqU3M2UVpkTFZFWTdBUHhaWHZXallpT3hGdl8wVktHNDNfT1JUbVQ4ZE84MkJqdGpCRGo5d2dXcl82dzNjQjctLUJMRTAwSG9OMzJQWQ?oc=5",
+    "Hoover Institution": "https://news.google.com/rss/articles/CBMingFBVV95cUxOMlZtc0xlMURXZ3VZTGdOWldLWkVaYW9PcE9NQy1vb3RiZ01yUjYtUlkyMlB3eUNDWXdDMzdkOEVWOVd6Z0hVRVBNUzZvcFB4UTNFbnYwdDZkSldmb01aeURfNTBOa3BCdXMzWmpuMWlUdktHWnAzYTllV3B0cXNodFdqQ1dEUGZOekJoQkVNcFlXanlCdmlYa0N6WlJPQQ?oc=5",
+    "American Enterprise Institute": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5vN05jWHY3TkEzRlcwcVpnYU5CdG8ycXpjQ3NBN0pRNDZ6X3hwRWFwQm1OUWlkUGZJb3VVcThpSHVVWWwyRVdYdUVLZk0wMG1R?oc=5",
+    "Breitbart": "https://www.breitbart.com/entertainment/2026/04/17/jimmy-kimmel-stephen-colbert-silent-on-swalwell-rape-allegations-for-an-entire-week/",
+    "The Globe and Mail": "https://www.theglobeandmail.com/world/article-us-extends-waiver-allowing-countries-to-buy-russian-oil/",
+    "Brennan Center": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxORV9XVGktb0RUS0Q0d3lMQUhYZ2dXeXNTdFNqeDhnQTg5SmV5UEFBWVpWWTJmZWUwaVRBa1F6dWJUeTJxdDl0S1pwTWxJaFJEcEdpRFlrWXhyUmg1NlpsYkZfOXFDUGdDZXRvMTdONEMxSFpqbzFGQmpIeTV4VUs3cWNnTFFNOGlfQmx2MW1FNkdxcjk4OFRBcWZNZndSOWpMcEpwS19ZbzJkZ2U3cjJ5RlZVZ2xlWl93VmJjeTZKam9aUQ?oc=5",
+    "Dawn": "https://www.dawn.com/news/1992844/cdf-munir-concludes-3-day-iran-visit-discusses-sustainable-regional-peace-ispr",
+    "Taipei Times": "https://www.taipeitimes.com/News/front/archives/2026/04/18/2003855805",
+    "Channel News Asia": "https://www.channelnewsasia.com/world/oil-tankers-cross-iran-strait-hormuz-donald-trump-us-blockade-6065011",
+    "The Japan Times": "https://www.japantimes.co.jp/news/2026/04/18/japan/earthquake-northern-nagano/",
+    "Jamaica Observer": "https://www.jamaicaobserver.com/2026/04/17/second-sibling-dies-following-spanish-town-blaze/",
+    "Latin America Reports": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOLWdmQ2RqZ3R2ZWE1a3dyRGk2N0tsSGlWRTg1d1RJUUYxOGFKT3pOMnRjY01lU0d2RDJpUlNTYS1ZQWVqNk9ZTXVZVDJHZHJpXzEzZ1o1bjYzMzJIbktuQ0paSEkzY3podFlkZXJBWk00a0dpWnI0d0s2dUpIMWtENnhXNkFBSmVONm82bDFTZEpTbDBJTTFqZHJoeTllUkdSWl9xalRWTU03MkhzR0k2YXdZMWc?oc=5",
+    "Global Voices": "https://globalvoices.org/2026/04/18/ai-warfare-triggers-putin-as-kremlin-moves-to-dismantle-the-last-pieces-of-russian-internet/",
+    "Colorado Sun": "https://coloradosun.com/2026/04/17/tegna-nexstar-merger-blocked-9news-fox31-colorado/",
+    "Bangkok Post": "https://www.bangkokpost.com/opinion/opinion/3239299/thailand-is-failing-its-forests",
+    "Anadolu Agency": "https://www.aa.com.tr/en/world/turkiye-s-role-in-energy-transit-could-grow-amid-regional-tensions-turkish-envoy-to-damascus-says/3910313",
+    "TechCrunch": "https://techcrunch.com/2026/04/17/once-close-enough-for-an-acquisition-stripe-and-airwallex-are-now-going-after-each-other/",
+    "Mother Jones": "https://www.motherjones.com/politics/2026/04/cellphone-surveillance-firstwap-reports-lighthouse/",
+    "Arizona Mirror": "https://azmirror.com/2026/04/17/a-historically-unpopular-trump-came-to-phoenix-to-rally-the-base-by-bragging-about-iran/",
+    "Migration Policy Institute": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPZ3l2REJaR2JXdUpERTJtYmJpMEk2U2ZtSkdCdkcwMDBVd195VUJfdjRyNzUwRUtzdWxRZjNYd2xxVVdnSnp3eTZBall1OUhFc2VQZ1JLb1M0bDl3emJBc1BTUWdNSjBwRUZjRjhpR3AyQlZCcmhxTG1DWHhJX3hHZU1WX19pLUJFS3p0YnNSNlFQajJFeW9fZ0UwdVBRc2thRHBuVmZ3?oc=5",
+    "Planet Money (NPR)": "https://www.npr.org/2026/04/17/nx-s1-5789382/kalshi-polymarket-prediction-market-ceo-tarek-mansour",
+    "The Free Press (Bari Weiss)": "https://www.thefp.com/p/two-drinks-with-luke-burgis-a-serious",
+    "Supreme Court": "https://news.google.com/rss/articles/CBMifEFVX3lxTE5aMExia1ljclNtMTdkRHI0em5OS0ExNlpZa1VWZ3ExSHRTSzF4QW1CejBGd282YmVCTWFxRVJ3TnQyUnBJN0VpV3QxdG1ZdjZrSS1WTnh0dzZnaHNhUDdpTUpfb3FMSHVUUGd2RDZMd1hDREsyZzF1N0FQRVQ?oc=5",
+    "Census Bureau": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQWmlFZUxXbUtyOGFrQkNyUlg2WlpmQm8tY0FDa184WldJdW5OdG1ROGlhQWFyNk5kakk1T2tZYUlQT3otV0Q3MDUzN2pQWGNuRlVqUGx3UlFBNHRYclVvekUyQXZLMXY1SE03ZjdwaEE2b1E1ZGF1bnA2Sk9pV3FMZkoxM2pCT2dGTUo3TXlRMW9iT1pUS3c?oc=5",
+    "Florida Phoenix": "https://floridaphoenix.com/2026/04/18/repub/for-a-boise-family-of-medical-providers-idaho-criminal-trans-bathroom-ban-was-the-last-straw/",
+    "InForum": "https://www.inforum.com/america-250-50-years-ago-today-april-18-1976",
+    "Post and Courier": "https://www.postandcourier.com/nation-world/lebanon-struggled-to-contain-hezbollah/article_acc32399-4fc3-47f8-a6c2-e041fe901fc7.html",
+    "Tennessee Lookout": "https://tennesseelookout.com/2026/04/17/repub/national-guard-follows-the-constitution-general-says-of-troops-possibly-deployed-to-polls/",
+    "Al-Monitor": "https://www.al-monitor.com/originals/2026/04/iranians-fear-sharpening-pressure-after-war-and-crackdown",
+    "Premium Times Nigeria": "https://www.premiumtimesng.com/business/business-news/872744-airline-operators-suspend-planned-shutdown-temporarily-after-govt-intervention.html",
+    "Middle East Eye": "https://www.middleeasteye.net/live-blog/live-blog-update/gas-carriers-chemical-tankers-among-vessel-convoy-crossing-hormuz",
+    "Irish Times": "https://www.irishtimes.com/politics/2026/04/18/government-and-civil-servants-uneasy-over-presidents-choice-of-first-overseas-trip/",
+    "Politico Europe": "https://www.politico.com/news/2026/04/17/iran-war-global-energy-shift-00877861?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
+    "Indian Express": "https://indianexpress.com/article/india/priyanka-gandhi-vadra-bjp-womens-reservation-bill-delimitation-conspiracy-lok-sabha-10643050/",
+    "Honolulu Star-Advertiser": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPUXZhYkNmZ1BGOWhlMEl6QTZKTkdzdXJRd1doYW0xZ2JBa1dsQjVOWDdhZEw1bldYVWlRUWttZ1pNZXBpUXNqNGh6U0FOMGdUakg0bUQ2QVVCMXdDQXQ3WElNbkUxUTBCNjVyUHBPNDRCOXB2REthXzJ5S0RJd2pCdUJBMUYzRTloX3RqU21DekZLdm52OHh5dXFjOEVHb0J6UVEzaVdRMG5BLXVQNmRj?oc=5"
+  },
+  "event_divergence": [
+    {
+      "structural_force": "global_relations",
+      "shared_entities": [],
+      "divergence": {
+        "score": 0.8876,
+        "keyword_divergence": 0.9656,
+        "tier_spread": 3,
+        "source_count": 29,
+        "article_count": 112
+      },
+      "sources": [
+        "The Japan Times",
+        "Post and Courier",
+        "Channel News Asia",
+        "Al-Monitor",
+        "The Globe and Mail",
+        "Premium Times Nigeria",
+        "Irish Times",
+        "Taipei Times",
+        "Business Insider",
+        "France 24",
+        "South China Morning Post",
+        "BBC World",
+        "Washington Examiner",
+        "Rappler",
+        "Al Jazeera",
+        "AP News",
+        "Anadolu Agency",
+        "Arizona Mirror",
+        "Dawn",
+        "New York Times",
+        "Bloomberg",
+        "Straits Times",
+        "Reuters",
+        "Times of India",
+        "Deutsche Welle",
+        "The Hindu",
+        "The Hill",
+        "Middle East Eye",
+        "Washington Post"
+      ],
+      "tiers": [
+        "international",
+        "local-regional",
+        "national"
+      ],
+      "articles": [
+        {
+          "title": "Trump Extends Sanctions Exemption on Some Russian Oil as High Gas Prices Persist",
+          "source": "New York Times",
+          "url": "https://www.nytimes.com/2026/04/17/world/middleeast/russia-us-oil-sanctions.html",
+          "tier": "national",
+          "force_tag": "",
+          "connection": "The U.S. is managing oil sanctions against Russia while gas prices stay high and Iran controls a key shipping route.",
+          "context": "Daily newspaper founded in 1851, owned by the New York Times Company, the largest newspaper by digital subscriptions globally, covering national and world affairs."
+        },
+        {
+          "title": "US renews Russian oil waiver after pressure from countries dealing with Iran war price shocks - Reuters",
+          "source": "Reuters",
+          "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNSkpBSFVfcGM2Uk9FbVBxTGQwSTQ5SExOeXVtRGM2Y1lOa2kxdVpYLTNXdkJ6WHJ0OGtmWVkyN2hna0hJanExVzFNTDRUa2hRZWJjOUU1SlhXQW5RQUd5S3lrS0dyd2p2eTBvRk1aMkFrQkVQSnpqVlY4ZnU2MnhDWi1xRzZjdUYybVk5dlFCWHVuVjh1YXN5ZVVEMzcydjN4b1lpTXBCYw?oc=5",
+          "tier": "national",
+          "force_tag": "",
+          "connection": "Fighting near Iran is disrupting oil supplies worldwide, forcing the US to allow Russian oil to keep energy prices from skyrocketing.",
+          "context": "International news agency founded in 1851 in London, now owned by Thomson Reuters, operating as one of the largest global wire services."
+        },
+        {
+          "title": "US renews Russian oil waiver after pressure from countries dealing with Iran war price shocks",
+          "source": "Straits Times",
+          "url": "https://www.straitstimes.com/world/united-states/us-extends-waiver-allowing-countries-to-buy-russian-oil",
+          "tier": "international",
+          "force_tag": "",
+          "connection": "War in Iran is driving up oil prices worldwide, forcing countries to negotiate special deals to keep energy costs down.",
+          "context": "Singapore's English-language broadsheet newspaper, founded in 1845, owned by Singapore Press Holdings, covering Southeast Asian and global news, politics, and business."
+        },
+        {
+          "title": "U.S. renews Russian oil waiver after pressure from countries dealing with Iran war price shocks",
+          "source": "The Japan Times",
+          "url": "https://www.japantimes.co.jp/news/2026/04/18/world/us-russian-oil-waiver-renewal/",
+          "tier": "international",
+          "force_tag": "",
+          "connection": "The U.S. is easing oil sanctions on Russia despite its war with Ukraine because other countries need cheaper energy.",
+          "context": "Japan's oldest English-language newspaper, founded in 1897 in Tokyo, owned by News2u Holdings, covering Japanese politics, culture, and Asia-Pacific affairs."
+        },
+        {
+          "title": "Trump administration reverses course, extends Russian oil sanctions waiver",
+          "source": "The Hill",
+          "url": "https://thehill.com/policy/energy-environment/5837397-trump-extends-russian-oil-waiver/",
+          "tier": "national",
+          "force_tag": "",
+          "connection": "US oil sanctions on Russia affect world energy prices and are tied to the Iran conflict.",
+          "context": "Political news organization founded in 1994 in Washington DC, owned by Nexstar Media Group since 2021, covering Congress, the White House, and campaigns."
+        },
+        {
+          "title": "US extends sanctions waiver on Russian oil sales at sea",
+          "source": "France 24",
+          "url": "https://www.france24.com/en/europe/20260418-us-extends-sanctions-waiver-on-russian-oil-sales-at-sea",
+          "tier": "international",
+          "force_tag": "",
+          "connection": "The US is easing oil sanctions to help stabilize global energy prices.",
+          "context": "French international news network launched in 2006, funded by the French government through France Médias Monde, broadcasting in French, English, Arabic, and Spanish."
+        },
+        {
+          "title": "U.S. extends waiver allowing countries to buy Russian oil",
+          "source": "The Globe and Mail",
+          "url": "https://www.theglobeandmail.com/world/article-us-extends-waiver-allowing-countries-to-buy-russian-oil/",
+          "tier": "international",
+          "force_tag": "",
+          "connection": "Trump lets countries keep buying Russian oil despite U.S. sanctions, affecting global energy markets.",
+          "context": "Canadian national newspaper of record, founded in 1844 in Toronto, owned by the Woodbridge Company, covering Canadian politics, business, and international affairs."
+        },
+        {
+          "title": "US extends waiver allowing purchase of Russian oil",
+          "source": "Deutsche Welle",
+          "url": "https://www.dw.com/en/us-extends-waiver-allowing-purchase-of-russian-oil/a-76839756?maca=en-rss-en-all-1573-rdf",
+          "tier": "international",
+          "force_tag": "",
+          "connection": "The US lets other countries keep buying Russian oil despite sanctions, affecting global fuel supplies and prices.",
+          "context": "German international broadcaster founded in 1953 and funded by the German federal government, providing news in 30 languages from Bonn and Berlin."
+        }
+      ],
+      "all_article_count": 112
+    },
+    {
+      "structural_force": "whos_in_charge",
+      "shared_entities": [
+        "trump"
+      ],
+      "divergence": {
+        "score": 0.7085,
+        "keyword_divergence": 0.8993,
+        "tier_spread": 2,
+        "source_count": 8,
+        "article_count": 12
+      },
+      "sources": [
+        "Reuters",
+        "Politico Europe",
+        "Fox News",
+        "South China Morning Post",
+        "The Japan Times",
+        "NBC News",
+        "New York Times",
+        "Straits Times"
+      ],
+      "tiers": [
+        "international",
+        "national"
+      ],
+      "articles": [
+        {
+          "title": "Trump says review of UFO files found  'interesting' documents",
+          "source": "NBC News",
+          "url": "https://www.nbcnews.com/politics/donald-trump/trump-says-review-ufo-files-found-interesting-documents-rcna333389",
+          "tier": "national",
+          "force_tag": "",
+          "connection": "",
+          "context": "Broadcast news division of NBCUniversal, a subsidiary of Comcast, founded in 1940, providing national and international news across television and digital platforms."
+        },
+        {
+          "title": "Trump says first releases from Pentagon UFO study will come out 'very, very soon' after Phoenix rally tease",
+          "source": "Fox News",
+          "url": "https://www.foxnews.com/politics/trump-says-first-releases-pentagon-ufo-study-come-soon-phoenix-rally-tease",
+          "tier": "national",
+          "force_tag": "",
+          "connection": "",
+          "context": "Cable news network founded in 1996 by Rupert Murdoch, owned by Fox Corporation, providing 24-hour news, opinion, and political commentary from New York."
+        },
+        {
+          "title": "How feud with Trump helped Pope Leo find his voice",
+          "source": "Straits Times",
+          "url": "https://www.straitstimes.com/world/how-feud-with-trump-helped-pope-leo-find-his-voice",
+          "tier": "international",
+          "force_tag": "",
+          "connection": "",
+          "context": "Singapore's English-language broadsheet newspaper, founded in 1845, owned by Singapore Press Holdings, covering Southeast Asian and global news, politics, and business."
+        },
+        {
+          "title": "How Trump Helped Pope Leo Find His Voice",
+          "source": "New York Times",
+          "url": "https://www.nytimes.com/2026/04/18/world/europe/trump-pope-leo-iran.html",
+          "tier": "national",
+          "force_tag": "",
+          "connection": "Trump's attacks on the Pope pushed him to take stronger public positions instead of staying quiet.",
+          "context": "Daily newspaper founded in 1851, owned by the New York Times Company, the largest newspaper by digital subscriptions globally, covering national and world affairs."
+        },
+        {
+          "title": "Trump ballroom construction allowed for now, US appeals court says - Reuters",
+          "source": "Reuters",
+          "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNZGxtX0NwRHliNlptTk9ocm1nbzlXNEl4QjZfb1FiRlR0c2ZMSVUwNzlyMnhSZUd5OGZKekR0ZXZPQnFuQnlJTmZRQmU1SDVLM3VneDRvZDRyeEY0V2JTdGVDaGNaQmU2dktYREpMWjUwb05xdmVqbE43a19SNFV5eWpZSVB1WERvVU5sNzMzdVMyQnhZU29pd2s5NnZ0bXVSTXZuMnllcWphM2VUWlVjWXFWUTY?oc=5",
+          "tier": "national",
+          "force_tag": "",
+          "connection": "A court allowed the president's building project to continue despite legal challenges.",
+          "context": "International news agency founded in 1851 in London, now owned by Thomson Reuters, operating as one of the largest global wire services."
+        },
+        {
+          "title": "US court lets Trump resume work on US$400 million White House ballroom – for now",
+          "source": "South China Morning Post",
+          "url": "https://www.scmp.com/news/world/united-states-canada/article/3350557/us-court-lets-trump-resume-work-us400-million-white-house-ballroom-now?utm_source=rss_feed",
+          "tier": "international",
+          "force_tag": "",
+          "connection": "A court is deciding whether the president can build a ballroom at the White House.",
+          "context": "English-language newspaper founded in 1903 in Hong Kong, owned by Alibaba Group since 2016, covering Asia-Pacific business, geopolitics, and Chinese affairs."
+        },
+        {
+          "title": "Anthropic and Trump officials meet to discuss Mythos access",
+          "source": "The Japan Times",
+          "url": "https://www.japantimes.co.jp/business/2026/04/18/tech/anthropic-trump-officials-mythos/",
+          "tier": "international",
+          "force_tag": "",
+          "connection": "",
+          "context": "Japan's oldest English-language newspaper, founded in 1897 in Tokyo, owned by News2u Holdings, covering Japanese politics, culture, and Asia-Pacific affairs."
+        },
+        {
+          "title": "Trump to release reading of scripture days after angering many Christians",
+          "source": "Politico Europe",
+          "url": "https://www.politico.com/news/2026/04/17/trump-scripture-angering-christians-00879747?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
+          "tier": "international",
+          "force_tag": "",
+          "connection": "",
+          "context": "European edition of Politico launched in 2015 in Brussels through a partnership with Axel Springer, covering EU institutions, policy, and European governance."
+        }
+      ],
+      "all_article_count": 12
+    },
+    {
+      "structural_force": "global_relations",
+      "shared_entities": [
+        "chinas",
+        "ai"
+      ],
+      "divergence": {
+        "score": 0.6205,
+        "keyword_divergence": 0.9744,
+        "tier_spread": 1,
+        "source_count": 3,
+        "article_count": 3
+      },
+      "sources": [
+        "Taipei Times",
+        "Straits Times",
+        "South China Morning Post"
+      ],
+      "tiers": [
+        "international"
+      ],
+      "articles": [
+        {
+          "title": "G-7 steps up efforts to break China’s grip on critical minerals",
+          "source": "Straits Times",
+          "url": "https://www.straitstimes.com/world/united-states/g-7-steps-up-efforts-to-break-chinas-grip-on-critical-minerals",
+          "tier": "international",
+          "force_tag": "",
+          "connection": "Rich countries are trying to reduce their dependence on Chinese minerals for clean energy and technology.",
+          "context": "Singapore's English-language broadsheet newspaper, founded in 1845, owned by Singapore Press Holdings, covering Southeast Asian and global news, politics, and business."
+        },
+        {
+          "title": "As China’s biotech firms shift gears, can AI floor the accelerator?",
+          "source": "South China Morning Post",
+          "url": "https://www.scmp.com/business/china-business/article/3350421/chinas-biotech-firms-shift-gears-can-ai-floor-accelerator?utm_source=rss_feed",
+          "tier": "international",
+          "force_tag": "",
+          "connection": "Chinese drug companies are using AI to speed up development and strike billion-dollar deals.",
+          "context": "English-language newspaper founded in 1903 in Hong Kong, owned by Alibaba Group since 2016, covering Asia-Pacific business, geopolitics, and Chinese affairs."
+        },
+        {
+          "title": "FII expects strong year amid booming AI demand",
+          "source": "Taipei Times",
+          "url": "https://www.taipeitimes.com/News/biz/archives/2026/04/18/2003855792",
+          "tier": "international",
+          "force_tag": "",
+          "connection": "Strong demand for artificial intelligence technology is driving business growth and economic expansion.",
+          "context": "Taiwanese English-language daily newspaper founded in 1999, covering Taiwan domestic politics, cross-strait relations, and Asia-Pacific regional affairs."
+        }
+      ],
+      "all_article_count": 3
+    },
+    {
+      "structural_force": "global_relations",
+      "shared_entities": [
+        "pm"
+      ],
+      "divergence": {
+        "score": 0.6063,
+        "keyword_divergence": 1.0,
+        "tier_spread": 1,
+        "source_count": 2,
+        "article_count": 3
+      },
+      "sources": [
+        "Dawn",
+        "Middle East Eye"
+      ],
+      "tiers": [
+        "international"
+      ],
+      "articles": [
+        {
+          "title": "Canada stands in ‘full solidarity’ with Gulf partners, PM says",
+          "source": "Middle East Eye",
+          "url": "https://www.middleeasteye.net/live-blog/live-blog-update/canada-stands-full-solidarity-gulf-partners-pm-says",
+          "tier": "international",
+          "force_tag": "",
+          "connection": "Canada supports its Middle Eastern allies as ceasefires progress and regional shipping routes reopen.",
+          "context": "London-based independent news website founded in 2014, covering Middle East and North African politics, conflict, and human rights through regional and international correspondents."
+        },
+        {
+          "title": "Diesel price cut by Rs32 a litre, petrol unchanged",
+          "source": "Dawn",
+          "url": "https://www.dawn.com/news/1992815/diesel-price-cut-by-rs32-a-litre-petrol-unchanged",
+          "tier": "international",
+          "force_tag": "",
+          "connection": "A ceasefire deal between the US and Iran is lowering global oil prices, so Pakistan is cutting diesel prices for its people.",
+          "context": "Pakistani English-language newspaper founded in 1941 by Muhammad Ali Jinnah, published from Karachi, covering national politics and South Asian affairs as Pakistan's oldest newspaper."
+        }
+      ],
+      "all_article_count": 3
+    },
+    {
+      "structural_force": "war_and_conflict",
+      "shared_entities": [
+        "israeli"
+      ],
+      "divergence": {
+        "score": 0.5881,
+        "keyword_divergence": 0.9095,
+        "tier_spread": 1,
+        "source_count": 3,
+        "article_count": 3
+      },
+      "sources": [
+        "Al Jazeera",
+        "Middle East Eye",
+        "Straits Times"
+      ],
+      "tiers": [
+        "international"
+      ],
+      "articles": [
+        {
+          "title": "Israeli police destroy children’s footballs at Al-Aqsa mosque",
+          "source": "Al Jazeera",
+          "url": "https://www.aljazeera.com/video/newsfeed/2026/4/18/israeli-police-destroy-childrens-footballs-at-al-aqsa-mosque?traffic_source=rss",
+          "tier": "international",
+          "force_tag": "",
+          "connection": "Israeli police destroyed children's belongings at a holy site, raising concerns about rights during the conflict.",
+          "context": "International news network founded in 1996, funded by the government of Qatar, headquartered in Doha, covering global news with Middle East emphasis."
+        },
+        {
+          "title": "Israeli forces kill person in Negohot settlement, army says",
+          "source": "Middle East Eye",
+          "url": "https://www.middleeasteye.net/live-blog/live-blog-update/israeli-forces-kill-person-negohot-settlement-army-says",
+          "tier": "international",
+          "force_tag": "",
+          "connection": "Israeli military killed someone in an occupied settlement, raising questions about use of force and civilian safety.",
+          "context": "London-based independent news website founded in 2014, covering Middle East and North African politics, conflict, and human rights through regional and international correspondents."
+        },
+        {
+          "title": "UNICEF says Israeli fire kills two Gaza water truck drivers",
+          "source": "Straits Times",
+          "url": "https://www.straitstimes.com/world/middle-east/unicef-says-israeli-fire-kills-two-gaza-water-truck-drivers",
+          "tier": "international",
+          "force_tag": "",
+          "connection": "Military action has killed civilian workers and raised questions about protecting innocent people during conflict.",
+          "context": "Singapore's English-language broadsheet newspaper, founded in 1845, owned by Singapore Press Holdings, covering Southeast Asian and global news, politics, and business."
+        }
+      ],
+      "all_article_count": 3
+    },
+    {
+      "structural_force": "whos_in_charge",
+      "shared_entities": [
+        "delimitation",
+        "bill",
+        "priyanka",
+        "black"
+      ],
+      "divergence": {
+        "score": 0.568,
+        "keyword_divergence": 0.8692,
+        "tier_spread": 1,
+        "source_count": 3,
+        "article_count": 4
+      },
+      "sources": [
+        "The Hindu",
+        "Times of India",
+        "Indian Express"
+      ],
+      "tiers": [
+        "international"
+      ],
+      "articles": [
+        {
+          "title": "Owaisi criticises Union govt for ignoring his proposed amendments to Delimitation Bill",
+          "source": "The Hindu",
+          "url": "https://www.thehindu.com/news/national/telangana/owaisi-criticises-union-govt-for-ignoring-his-proposed-amendments-to-delimitation-bill/article70876692.ece",
+          "tier": "international",
+          "force_tag": "",
+          "connection": "",
+          "context": "Indian English-language newspaper founded in 1878 in Chennai, owned by the Kasturi and Sons family trust, covering national and international news."
+        },
+        {
+          "title": "'Black day for Centre, they felt a shock for first time': Priyanka on delimitation bill defeat",
+          "source": "Times of India",
+          "url": "https://timesofindia.indiatimes.com/india/big-win-for-democracy-priyanka-gandhi-after-delimitation-bill-defeated-in-lok-sabha/articleshow/130348523.cms",
+          "tier": "international",
+          "force_tag": "",
+          "connection": "Opposition parties defeated a government bill they saw as unfair to women's representation in Parliament.",
+          "context": "India's largest English-language daily newspaper by circulation, founded in 1838, owned by the Bennett Coleman family, covering national and international news."
+        },
+        {
+          "title": "‘They deserved this shock’: Priyanka Gandhi’s ‘Black Day’ dig at BJP after delimitation vote loss",
+          "source": "Indian Express",
+          "url": "https://indianexpress.com/article/india/priyanka-gandhi-vadra-bjp-womens-reservation-bill-delimitation-conspiracy-lok-sabha-10643050/",
+          "tier": "international",
+          "force_tag": "",
+          "connection": "Political party is criticizing election outcome that affects women's representation in parliament.",
+          "context": "Indian English-language daily newspaper founded in 1932, owned by the Indian Express Group, known for independent editorial positions and investigative reporting across India."
+        }
+      ],
+      "all_article_count": 4
+    },
+    {
+      "structural_force": "war_and_conflict",
+      "shared_entities": [
+        "iran",
+        "trump"
+      ],
+      "divergence": {
+        "score": 0.5522,
+        "keyword_divergence": 0.8918,
+        "tier_spread": 1,
+        "source_count": 2,
+        "article_count": 3
+      },
+      "sources": [
+        "Al Jazeera",
+        "Straits Times"
+      ],
+      "tiers": [
+        "international"
+      ],
+      "articles": [
+        {
+          "title": "Iran war: What is happening on day 50 of the US-Iran conflict?",
+          "source": "Al Jazeera",
+          "url": "https://www.aljazeera.com/news/2026/4/18/iran-war-what-is-happening-on-day-50-of-the-us-iran-conflict?traffic_source=rss",
+          "tier": "international",
+          "force_tag": "",
+          "connection": "Iran is using control of a critical shipping strait as leverage in its conflict with the United States.",
+          "context": "International news network founded in 1996, funded by the government of Qatar, headquartered in Doha, covering global news with Middle East emphasis."
+        },
+        {
+          "title": "Trump frames Iran war as all but over in optimistic social media flurry",
+          "source": "Straits Times",
+          "url": "https://www.straitstimes.com/world/middle-east/trump-frames-iran-war-as-all-but-over-in-optimistic-social-media-flurry",
+          "tier": "international",
+          "force_tag": "",
+          "connection": "The president claims a war is nearly over while his opponents say he's spreading false information to shape public opinion.",
+          "context": "Singapore's English-language broadsheet newspaper, founded in 1845, owned by Singapore Press Holdings, covering Southeast Asian and global news, politics, and business."
+        }
+      ],
+      "all_article_count": 3
+    },
+    {
+      "structural_force": "global_relations",
+      "shared_entities": [
+        "federal",
+        "tv",
+        "nexstars",
+        "tegna",
+        "nexstartegna"
+      ],
+      "divergence": {
+        "score": 0.5351,
+        "keyword_divergence": 0.6452,
+        "tier_spread": 2,
+        "source_count": 4,
+        "article_count": 4
+      },
+      "sources": [
+        "AP News",
+        "Colorado Sun",
+        "NPR",
+        "New York Times"
+      ],
+      "tiers": [
+        "local-regional",
+        "national"
+      ],
+      "articles": [
+        {
+          "title": "Federal Court Temporarily Freezes Nexstar’s Merger With Tegna",
+          "source": "New York Times",
+          "url": "https://www.nytimes.com/2026/04/17/business/media/nexstar-tegna-merger-freeze.html",
+          "tier": "national",
+          "force_tag": "",
+          "connection": "A court stopped two TV companies from merging while antitrust lawyers investigate whether the deal harms competition.",
+          "context": "Daily newspaper founded in 1851, owned by the New York Times Company, the largest newspaper by digital subscriptions globally, covering national and world affairs."
+        },
+        {
+          "title": "Judge halts local TV giant Nexstar's takeover of rival Tegna until trial",
+          "source": "NPR",
+          "url": "https://www.npr.org/2026/04/17/nx-s1-5789059/judge-halts-nexstar-tegna-merger-lawsuits",
+          "tier": "national",
+          "force_tag": "",
+          "connection": "A judge blocked a major TV company's takeover because it could harm consumers and reduce local media competition.",
+          "context": "National Public Radio, a nonprofit media organization founded in 1970, funded by member stations and corporate sponsors, producing news programming for over 1,000 stations."
+        },
+        {
+          "title": "Federal judge blocks Nexstar-Tegna TV station merger until antitrust lawsuit is settled",
+          "source": "AP News",
+          "url": "https://apnews.com/article/nextstar-tegna-merger-lawsuit-antitrust-ec9f2def13e1b31b0e2c0437b635a932",
+          "tier": "national",
+          "force_tag": "",
+          "connection": "A judge is blocking a major media merger to prevent one company from gaining too much market power and raising prices.",
+          "context": "Nonprofit news cooperative founded in 1846 and owned by its member newspapers and broadcasters, operating as a global wire service in 100 countries."
+        },
+        {
+          "title": "Federal judge blocks Nexstar-Tegna TV station merger until antitrust lawsuit is settled",
+          "source": "Colorado Sun",
+          "url": "https://coloradosun.com/2026/04/17/tegna-nexstar-merger-blocked-9news-fox31-colorado/",
+          "tier": "local-regional",
+          "force_tag": "",
+          "connection": "A court is stopping a big media company merger to protect competition and keep prices fair for customers.",
+          "context": "Journalist-owned nonprofit newsroom founded in 2018 by former Denver Post staff, covering Colorado politics, environment, economy, and community life."
+        }
+      ],
+      "all_article_count": 4
+    },
+    {
+      "structural_force": "ai_and_technology",
+      "shared_entities": [
+        "nagano",
+        "magnitude"
+      ],
+      "divergence": {
+        "score": 0.5139,
+        "keyword_divergence": 0.7611,
+        "tier_spread": 1,
+        "source_count": 3,
+        "article_count": 3
+      },
+      "sources": [
+        "The Hindu",
+        "South China Morning Post",
+        "The Japan Times"
+      ],
+      "tiers": [
+        "international"
+      ],
+      "articles": [
+        {
+          "title": "Strong quake shakes northern Nagano Prefecture",
+          "source": "The Japan Times",
+          "url": "https://www.japantimes.co.jp/news/2026/04/18/japan/earthquake-northern-nagano/",
+          "tier": "international",
+          "force_tag": "",
+          "connection": "",
+          "context": "Japan's oldest English-language newspaper, founded in 1897 in Tokyo, owned by News2u Holdings, covering Japanese politics, culture, and Asia-Pacific affairs."
+        },
+        {
+          "title": "Magnitude 5 quake hits Japan’s Nagano prefecture",
+          "source": "South China Morning Post",
+          "url": "https://www.scmp.com/news/asia/east-asia/article/3350559/magnitude-5-quake-hits-japans-nagano-prefecture?utm_source=rss_feed",
+          "tier": "international",
+          "force_tag": "",
+          "connection": "",
+          "context": "English-language newspaper founded in 1903 in Hong Kong, owned by Alibaba Group since 2016, covering Asia-Pacific business, geopolitics, and Chinese affairs."
+        },
+        {
+          "title": "Magnitude 5 earthquake strikes off mountainous Nagano in Japan, says NHK",
+          "source": "The Hindu",
+          "url": "https://www.thehindu.com/news/international/magnitude-5-earthquake-strikes-off-mountainous-nagano-in-japan-says-nhk/article70876592.ece",
+          "tier": "international",
+          "force_tag": "",
+          "connection": "",
+          "context": "Indian English-language newspaper founded in 1878 in Chennai, owned by the Kasturi and Sons family trust, covering national and international news."
+        }
+      ],
+      "all_article_count": 3
+    }
+  ],
+  "narrative_divergence": [],
+  "editorial": {
+    "headline": "Federal agencies sanction states while extending exemptions to adversaries they regulate",
+    "accessible_headline": "Government punishes New York but protects Russian oil companies",
+    "subheadline": "Immigration enforcement cuts state funding while energy policy extends sanctions relief to Moscow",
+    "synthesis": "The federal government is operating as two different entities depending on which industry it serves. New York loses $74 million in federal funding because the state allowed immigrant truck drivers to keep licenses despite expired work permits, according to El Diario NY, while Trump simultaneously extends sanctions exemptions on Russian oil to keep gas prices stable. The pattern reveals regulatory capture working in real time: enforcement flows downward to states and individuals while accommodation flows upward to industries with federal influence. Local outlets caught what national coverage missed entirely, from Montana's Democratic Party alleging sexual abuse against a Senate candidate to Portland's mayor promoting urban recovery while federal immigration policy undermines state economies. When the Internet Archive faces AI threats to its historical preservation work, the story bridges every outlet tier because information infrastructure affects everyone, but when federal policy creates economic winners and losers, only local newsrooms track the actual impact on communities.",
+    "coverage_gap_highlight": "El Diario NY reported that New York is losing $74 million in federal funding because the state let immigrant truck drivers keep licenses despite expired work permits, while national outlets ignored how immigration enforcement creates fiscal punishment for states.",
+    "coverage_gap_note": "Twelve stories appeared only in local, regional, or specialist outlets, revealing how platform economics starve the newsrooms that cover policy implementation rather than policy announcements.",
+    "thread_to_watch": "Federal funding mechanisms are being weaponized as enforcement tools against states that don't comply with immigration policy, creating a measurable fiscal pressure system that local outlets track but national media ignores.",
+    "newsletter_lead": "I read 483 articles today and the pattern that kept showing up was the federal government acting as two different entities. It punishes New York with $74 million in lost funding for letting immigrant truck drivers keep licenses, while simultaneously extending sanctions relief to Russian oil companies to keep gas prices down. The enforcement flows one direction, the accommodation flows another.",
+    "generated": "2026-04-18T08:03:40Z",
+    "model": "claude-sonnet-4-20250514"
+  },
+  "story_syntheses": [
+    {
+      "role": "gap",
+      "structural_force": "global_relations",
+      "synthesis": "The US extended waivers allowing countries to buy Russian oil despite sanctions, citing high gas prices and Middle East tensions. The framing divergence reveals how the same policy gets packaged as either pragmatic energy management or geopolitical weakness depending on the outlet's worldview. Reuters emphasized global market pressures while The Hill focused on Trump reversing course.",
+      "cross_spectrum": "Reuters reported the waiver as responding to countries facing Iran war price shocks, treating energy security as the primary driver. New York Times framed it as Trump managing persistent high gas prices while maintaining sanctions architecture. The Hill emphasized Trump reversing course on Russian sanctions, highlighting the policy flip rather than energy economics. Straits Times focused on war in Iran driving up oil prices worldwide and forcing energy negotiations. Japan Times presented it as the US easing sanctions despite Russia's Ukraine war because countries need cheaper energy. France 24 covered it as the US stabilizing global energy prices through sanctions relief. If you only read The Hill, this looks like Trump weakness on Russia; if you only read Reuters, it looks like smart crisis management.",
+      "why_this_matters": "Your gas prices and heating bills depend on how this policy actually works, not how it gets framed. The real question is whether waiving Russian oil sanctions stabilizes energy costs or undermines pressure on Putin's war machine.",
+      "watch_for": "No specific timeline mentioned in coverage for when the waiver expires or gets reviewed again."
+    },
+    {
+      "role": "meanwhile",
+      "structural_force": "coverage gap",
+      "synthesis": "While national media covered Trump's Russian oil waivers, local outlets reported stories national editors ignored entirely: a pregnant mother shot on an Atlanta highway, Montana's Senate candidate dropping out over abuse allegations, a TV show sued for filming Native Hawaiian bones, and New York losing federal funding over immigrant truck driver licenses. These aren't niche stories but they require proximity to affected communities and beat reporters who know local power structures, resources national outlets increasingly lack.",
+      "cross_spectrum": "The Grio covered a pregnant Atlanta mother killed on the highway, a story that never appeared in national outlets despite its human impact. Indian Country Today reported Montana Senate candidate Jonathan Windy Boy dropping out over sexual abuse allegations, missing from national political coverage. Honolulu Civil Beat investigated a TV show sued for filming Native Hawaiian bones, a story requiring cultural knowledge national outlets don't maintain. El Diario NY covered New York losing $74 million in federal funds over immigrant truck driver licenses, a policy story with direct financial impact. Arizona Mirror reported Trump rallying supporters in Phoenix while bragging about Iran, connecting local campaign events to foreign policy that national outlets covered separately. National outlets covered the oil waiver policy but missed the local implementation stories that show how federal decisions actually affect communities.",
+      "why_this_matters": "National media covers policies but not the people living under them. These local stories reveal how federal decisions play out in real communities, from immigration enforcement to Native rights to campaign dynamics.",
+      "watch_for": "No specific dates mentioned in the local coverage provided for upcoming hearings, elections, or policy deadlines."
+    }
+  ]
+}

@@ -8,7 +8,7 @@
     <link>https://signal-board.org</link>
     <description>Daily news analysis from 300 sources across the political spectrum, across borders, and across languages. See what no single outlet can show you.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 17 Apr 2026 08:31:37 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 18 Apr 2026 08:04:31 GMT</lastBuildDate>
     <atom:link href="https://signal-board.org/rss.xml" rel="self" type="application/rss+xml" />
     <copyright>Elise Hasseltine</copyright>
     <managingEditor>elise@elisehasseltine.com (Elise Hasseltine)</managingEditor>
@@ -18,6 +18,16 @@
       <title>Signal Board</title>
       <link>https://signal-board.org</link>
     </image>
+    <item>
+      <title>Government punishes New York but protects Russian oil companies</title>
+      <link>https://signal-board.org/archive/2026-04-18/</link>
+      <guid isPermaLink="true">https://signal-board.org/archive/2026-04-18/</guid>
+      <pubDate>Sat, 18 Apr 2026 07:00:00 GMT</pubDate>
+      <description>The federal government is operating as two different entities depending on which industry it serves. New York loses $74 million in federal funding because the state allowed immigrant truck drivers to keep licenses despite expired work permits, according to El Diario NY, while Trump simultaneously extends sanctions exemptions on Russian oil to keep gas prices stable. The pattern reveals regulatory capture working in real time: enforcement flows downward to states and individuals while accommodation flows upward to industries with federal influence. Local outlets caught what national coverage missed entirely, from Montana&apos;s Democratic Party alleging sexual abuse against a Senate candidate to Portland&apos;s mayor promoting urban recovery while federal immigration policy undermines state economies. When the Internet Archive faces AI threats to its historical preservation work, the story bridges every outlet tier because information infrastructure affects everyone, but when federal policy creates economic winners and losers, only local newsrooms track the actual impact on communities.</description>
+      <dc:creator>Elise Hasseltine</dc:creator>
+      <signal:sources>70</signal:sources>
+      <signal:articles>483</signal:articles>
+    </item>
     <item>
       <title>Congress extends spy powers while defense contractors ask for billions more</title>
       <link>https://signal-board.org/archive/2026-04-17/</link>
